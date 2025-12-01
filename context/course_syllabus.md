@@ -1,4 +1,4 @@
-# AI Workflow - Herramientas IA para tu rol profesional
+# AI Solutions - Fundamentos y Herramientas de IA para profesionales
 
 ## Objetivos
 
@@ -30,7 +30,6 @@
 ## Módulos y Clases
 
 ### Módulo 1: Fundamentos + Herramientas
-**Semanas 1-2 | 10 horas**
 
 **1. Fundamentos de IA + Identificar Tu Oportunidad** (2.5h)
 - IA, ML, LLMs: diferencias clave sin tecnicismos
@@ -83,7 +82,6 @@
 ---
 
 ### Módulo 2: Construcción + Validación
-**Semanas 3-5 | 15 horas**
 
 **5. Análisis Competitivo y Benchmarking** (2.5h)
 - Feature comparison matrix (5-7 competidores/alternativas)
@@ -145,7 +143,6 @@
 ---
 
 ### Módulo 3: Iteración + Presentación
-**Semanas 6-8 | 15 horas**
 
 **11. Iteración y Mejora Basada en Datos** (2.5h)
 - Priorización de mejoras (Impact vs. Effort matrix)
@@ -241,9 +238,9 @@ Proyecto construido iterativamente durante 8 semanas.
 
 ## Duración Total del Curso
 
-**Tiempo sincrónico:** 16 clases × 2.5h = 40 horas  
+**Tiempo sincrónico:** 16 clases × 3 = 48 horas  
 **Tiempo asincrónico:** 16 tareas × 2h = 32 horas  
-**Total:** 72 horas en 8 semanas (~9h/semana)
+**Total:** 80 horas en 8 semanas (~10h/semana)
 
 **Formato:**
 - 8 semanas | 2 clases/semana (martes y jueves)
