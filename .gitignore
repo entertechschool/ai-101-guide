@@ -1,0 +1,50 @@
+# Claude development files (proyecto-específicos)
+CLAUDE.md
+TODOS.md
+
+# Entregas de estudiantes (por cohorte)
+_entregas/ai-*/
+
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+.cache/
+.next/
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# Testing
+coverage/
+
+# Jekyll (si se usa GitHub Pages)
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
