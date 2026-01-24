@@ -26,11 +26,11 @@ Cada slide tiene un propósito específico:
    - `curriculum/class-{X}/lab/README.md` (partes para checkpoints)
    - `curriculum/class-{X-1}/README.md` (para transición de entrada)
    - `curriculum/class-{X+1}/README.md` (para preview de salida)
-   - `context/course_syllabus.md` (contexto general)
+   - `README.md` (contexto general)
 
 2. **Generar archivo**: `curriculum/class-{X}/slides/README.md`
 
-## Estructura Fija (10-12 slides máximo)
+## Estructura Fija (11-13 slides máximo)
 
 ```markdown
 <!-- .slide: data-background="#0A192F" -->
@@ -60,6 +60,22 @@ Cada slide tiene un propósito específico:
 [Cómo la IA resuelve esto]
 
 > **Realidad:** [Anti-hype - qué SÍ y qué NO puede hacer]
+
+---
+
+## 🎯 Pregunta Detonadora
+
+### [Pregunta desafiante con 4 opciones]
+
+**A)** [Opción plausible pero incorrecta]
+
+**B)** [Opción correcta]
+
+**C)** [Opción plausible pero incorrecta]
+
+**D)** [Opción plausible pero incorrecta]
+
+> 🕐 30 segundos para pensar → levanten la mano
 
 ---
 
@@ -182,7 +198,8 @@ Cada slide tiene un propósito específico:
 | Portada | — | Identificar clase | Siempre primero |
 | Transición | — | Conectar con clase anterior | Inicio |
 | Por Qué | — | Motivar con datos reales | Después de transición |
-| Demo | 🎬 | Mostrar ejemplo en vivo | Antes del lab |
+| **Pregunta Detonadora** | 🎯 | **Kahoot-style, 4 opciones, genera debate** | **Después de "Por Qué", antes de Demo** |
+| Demo | 🎬 | Mostrar ejemplo en vivo | Después de pregunta |
 | Concepto | — | Explicar idea clave | Entre demos |
 | Lab Time | — | Iniciar trabajo práctico | Centro de clase |
 | Checkpoint | — | Sincronizar progreso | Después de cada parte |
@@ -205,18 +222,43 @@ Cada slide tiene un propósito específico:
 ## Meta
 
 - **Líneas**: ~150 máximo
-- **Slides**: 10-12 (no más)
+- **Slides**: 11-13 (no más)
 - **Tiempo por slide**: ~2-3 min promedio
 - **Checkpoints**: Uno por cada parte del lab
 
 ## Validación
 
-- [ ] ≤ 12 slides
+- [ ] ≤ 13 slides
 - [ ] Tiene transición de entrada (clase anterior)
 - [ ] Tiene transición de salida (próxima clase)
+- [ ] **Tiene Pregunta Detonadora (4 opciones, estilo Kahoot)**
 - [ ] Al menos 1 demo en vivo
 - [ ] Checkpoints para cada parte del lab
 - [ ] Al menos 1 reflexión
 - [ ] Slide de entrega con requisitos claros
 - [ ] Anti-hype: menciona limitaciones de IA
 - [ ] Ejemplos conectan con trabajo real
+
+## Pregunta Detonadora: Guía de Diseño
+
+La pregunta debe:
+- Ser DESAFIANTE (no obvia)
+- Tener 1 respuesta correcta y 3 distractores plausibles
+- Conectar con el concepto principal de la clase
+- Generar debate sobre "por qué las otras NO"
+
+**Formato:**
+```markdown
+## 🎯 Pregunta Detonadora
+
+### [Pregunta que rete sus suposiciones]
+
+**A)** [Distractor plausible]
+**B)** [Respuesta correcta]
+**C)** [Distractor plausible]
+**D)** [Distractor plausible]
+
+> 🕐 30 segundos para pensar → levanten la mano
+```
+
+**IMPORTANTE:** La respuesta correcta y explicación de por qué las otras NO van en `facilitator/README.md`, NO en los slides.

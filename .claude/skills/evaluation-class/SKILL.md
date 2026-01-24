@@ -43,7 +43,7 @@ curriculum/class-{X-1}/README.md
 curriculum/class-{X+1}/README.md
 
 # Contexto del módulo
-context/course_syllabus.md
+README.md
 ```
 
 ### Paso 4: Aplicar checklist
@@ -125,7 +125,7 @@ context/course_syllabus.md
 | Cierre de módulo | Si es clase 4 u 8: |
 | | - Lab integra conceptos de las 3 anteriores |
 | | - Incluye test diagnóstico |
-| Adherencia syllabus | Tema coincide con course_syllabus.md |
+| Adherencia syllabus | Tema coincide con README.md (raíz) |
 
 ## Formato de Output
 

@@ -61,6 +61,29 @@ Contexto relevante sobre el estado actual de la IA:
 
 ## Momentos Clave de la Clase
 
+### Pregunta Detonadora
+
+**Respuesta correcta:** [Letra] - [Opción]
+
+**Por qué las otras NO:**
+| Opción | Por qué NO |
+|--------|-----------|
+| A | [Explicación concisa de por qué es incorrecta] |
+| C | [Explicación concisa de por qué es incorrecta] |
+| D | [Explicación concisa de por qué es incorrecta] |
+
+**Script post-votación:**
+```
+Facilitador: "¿Quién votó A? ¿Por qué?"
+[Escuchar respuestas]
+Facilitador: "Interesante. La respuesta es [X] porque [razón clave]."
+Facilitador: "Las otras opciones fallan porque [resumen rápido]."
+```
+
+**Tip:** No revelar la respuesta inmediatamente. Dejar que debatan 1-2 minutos.
+
+---
+
 ### Demo Principal
 
 **Qué mostrar:**
@@ -193,6 +216,7 @@ Al cerrar, planta la semilla:
 
 - [ ] < 250 líneas
 - [ ] Secciones de Conceptos, Analogías, Contexto, Errores, Checkpoints
+- [ ] **Pregunta Detonadora: respuesta correcta + por qué las otras NO**
 - [ ] Al menos 1 script de demo con plan B
 - [ ] Checkpoints con tiempos que suman ~150 min
 - [ ] Tips de facilitación para situaciones comunes

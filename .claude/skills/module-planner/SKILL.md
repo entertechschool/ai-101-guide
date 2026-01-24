@@ -75,7 +75,7 @@ Diseñar la arquitectura completa de un módulo de 4 clases ANTES de crear los r
    - M2 = clases 5-8 (Superpoderes Aplicados + Portfolio)
 
 2. Leer contexto existente:
-   - context/course_syllabus.md (fuente de verdad)
+   - README.md (fuente de verdad)
    - CLAUDE.md (convenciones del proyecto)
    - Si M > 1: módulo anterior (para continuidad)
 
@@ -218,7 +218,7 @@ Antes de aprobar este plan, verificar:
 - [ ] La clase 4/8 integra conceptos de las 3 anteriores
 - [ ] Hay conexión clara con módulos adyacentes
 - [ ] El glosario cubre todos los términos nuevos
-- [ ] context/course_syllabus.md está actualizado
+- [ ] README.md está actualizado
 ```
 
 ---
@@ -249,11 +249,11 @@ Después de generar MODULE-PLAN.md, verificar que:
 
 > **IMPORTANTE:** Después de aprobar un MODULE-PLAN.md, actualizar:
 
-1. **context/course_syllabus.md:**
+1. **README.md (raíz):**
    - Verificar que el contenido del módulo coincide
    - Actualizar si hay cambios
 
 2. **CLAUDE.md:**
    - Actualizar checklist de progreso si cambió
 
-El syllabus es la **única fuente de verdad** del contenido. Todos los skills leen de ahí.
+README.md (raíz) es la **única fuente de verdad** del contenido. Todos los skills leen de ahí.

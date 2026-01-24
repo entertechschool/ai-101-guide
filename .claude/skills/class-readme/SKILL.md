@@ -162,7 +162,7 @@ Antes de finalizar, verificar:
 
 ## Proceso de Ejecución
 
-1. **Leer syllabus:** Consultar `context/course_syllabus.md` para tema y contenido
+1. **Leer syllabus:** Consultar `README.md` para tema y contenido
 2. **Leer clase existente:** Si hay README previo, identificar qué preservar
 3. **Identificar módulo:** Determinar herramientas y enfoque
 4. **Generar README:** Siguiendo el template

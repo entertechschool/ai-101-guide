@@ -43,7 +43,7 @@ curriculum/class-{X}/slides/README.md
 curriculum/class-{X-1}/lab/README.md
 
 # Syllabus (contexto del módulo)
-context/course_syllabus.md
+README.md
 ```
 
 ### Paso 3: Generar archivo
