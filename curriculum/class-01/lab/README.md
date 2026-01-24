@@ -20,7 +20,7 @@ Resolver una tarea real de tu trabajo usando Claude, documentando el proceso y e
 ## Parte 1: Verificación y Primera Interacción (10 min)
 
 #### 1.1. Verificar acceso a Claude
-- Abre [claude.ai](https://claude.ai) en tu navegador
+- Abre [claude.ai](https://claude.ai){:target="_blank"} en tu navegador
 - Confirma que puedes ver la interfaz de chat
 - Si tienes problemas, levanta la mano para troubleshooting
 

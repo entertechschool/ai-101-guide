@@ -1,7 +1,7 @@
 # CLAUDE.md - AI 101 Guide
 
 ## Referencia Principal
-- **Syllabus (fuente de verdad):** [context/course_syllabus.md](context/course_syllabus.md)
+- **Syllabus (fuente de verdad):** [README.md](README.md)
 - **Propuesta comercial:** [context/propuesta_02.md](context/propuesta_02.md)
 - **Estructura:** 2 módulos (8 clases en 4 semanas)
 - **Formato:** 3h síncronas + 2h asíncronas por clase = 40h total
@@ -37,6 +37,20 @@ Cada clase tiene 4 archivos en `curriculum/class-XX/`:
 
 ---
 
+## Tiempos de Clase
+
+| Audiencia | Tiempo | Notas |
+|-----------|--------|-------|
+| **Estudiante** | 180 min (3h) | Lo que se comunica públicamente |
+| **Facilitador** | 150 min | Tiempo real de instrucción |
+| **Lab** | 60 min | Incluido en los 150 min |
+
+- El README del estudiante NO debe incluir tiempos detallados por fase
+- La guía del facilitador SÍ incluye checkpoints con tiempos (~150 min)
+- La diferencia de 30 min es buffer para breaks, troubleshooting, etc.
+
+---
+
 ## Estructura de Archivos
 
 ### README.md (raíz de clase)
@@ -46,7 +60,8 @@ Cada clase tiene 4 archivos en `curriculum/class-XX/`:
 # Título de la Clase
 
 ## Resumen (2-3 párrafos)
-## Estructura sugerida (tabla de fases - 180 min)
+## ¿Por qué te sirve?
+## ¿Qué haremos en clase? (sin tiempos)
 ## Objetivos de aprendizaje (3-4 items)
 ## Preparación para la clase
 ## Herramientas necesarias
@@ -84,6 +99,53 @@ Cada clase tiene 4 archivos en `curriculum/class-XX/`:
 ## Errores comunes de estudiantes
 ## Preguntas frecuentes
 ## Tips de facilitación
+```
+
+---
+
+## Principios Pedagógicos (OBLIGATORIO)
+
+Al crear contenido de clase, aplicar estos 9 principios:
+
+### 1. MOTIVATION_FIRST
+Siempre presentar el "por qué" y el valor práctico ANTES de enseñar cualquier técnica. Iniciar con demo de impacto (antes/después).
+
+### 2. ONE_CONCEPT_PER_CLASS
+Cada clase tiene UN solo concepto principal. No mezclar temas aunque estén relacionados. El concepto principal define el nombre de la clase.
+
+### 3. REAL_WORK_ONLY
+Los ejercicios deben usar tareas reales del trabajo del estudiante, nunca casos ficticios. El entregable debe ser USABLE en su contexto laboral real.
+
+### 4. VERIFIABLE_DELIVERABLE
+Todo entregable debe ser verificable objetivamente: screenshot, documento, prompt guardado, link funcional. "Entendí el concepto" NO es entregable válido.
+
+### 5. EXPLICIT_DEPENDENCIES
+Cada clase debe declarar qué requiere de clases anteriores y qué habilita para clases siguientes. El lab de Clase N usa outputs de Clase N-1 cuando sea posible.
+
+### 6. MAX_TWO_NEW_TOOLS
+Introducir máximo 2 herramientas nuevas por clase. Si son 2, deben ser comparables o complementarias. 3+ herramientas nuevas = PROHIBIDO.
+
+### 7. PORTFOLIO_BY_DEFAULT
+Cada entregable de clase ES automáticamente una pieza del portfolio. No hay "tarea de armar portfolio" separada. Se construye clase a clase.
+
+### 8. ANTI_HYPE_ALWAYS
+Siempre mencionar limitaciones, errores comunes y qué NO puede hacer la IA. Cada clase incluye al menos 1 momento de "esto NO funciona así".
+
+### 9. COMPETITIVE_COLLABORATION
+Incluir al menos 1 "battle" por módulo donde todos resuelven el mismo reto y votan el mejor resultado. Mismo problema, trabajo individual, votación de pares, discusión post-battle.
+
+### Checklist de Validación
+
+```
+[ ] MOTIVATION_FIRST: ¿Hay demo/ejemplo de impacto antes de la teoría?
+[ ] ONE_CONCEPT_PER_CLASS: ¿Puedo nombrar EL concepto en 3 palabras?
+[ ] REAL_WORK_ONLY: ¿El ejercicio usa trabajo real del estudiante?
+[ ] VERIFIABLE_DELIVERABLE: ¿Puedo verificar el entregable sin subjetividad?
+[ ] EXPLICIT_DEPENDENCIES: ¿Está claro qué necesita y qué habilita?
+[ ] MAX_TWO_NEW_TOOLS: ¿Son máximo 2 herramientas nuevas?
+[ ] PORTFOLIO_BY_DEFAULT: ¿El entregable es mostrable como portfolio?
+[ ] ANTI_HYPE_ALWAYS: ¿Hay al menos 1 momento de limitaciones/errores?
+[ ] COMPETITIVE_COLLABORATION: ¿Hay battle en este módulo? (mínimo 1)
 ```
 
 ---
@@ -127,20 +189,16 @@ git commit -m "tipo: descripción concisa"
 
 ## ⚠️ Fuente de Verdad (OBLIGATORIO)
 
-**context/course_syllabus.md es la fuente de verdad para:**
+**README.md es la única fuente de verdad para:**
 - Contenido de cada clase
 - Estructura de módulos
 - Entregables y tareas
-
-**README.md (raíz) es la fuente de verdad pública para:**
 - Descripción del curso
 - Tabla de contenidos con links a clases
-- Estado de progreso del curriculum
 
 **Al modificar contenido:**
-1. Actualizar primero `context/course_syllabus.md`
-2. Sincronizar `README.md` (raíz) si cambia estructura o progreso
-3. Los demás archivos referencian al syllabus
+1. Actualizar primero README.md
+2. Los demás archivos referencian a README.md
 
 ---
 

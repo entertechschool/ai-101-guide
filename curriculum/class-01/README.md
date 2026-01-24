@@ -6,17 +6,23 @@
 
 Esta primera clase de **AI 101** marca tu entrada al mundo de la inteligencia artificial como herramienta profesional. Desmitificamos la IA: separamos el hype de las capacidades reales, entendemos qué puede y qué NO puede hacer en 2025, y establecemos los tres niveles de dominio que exploraremos durante el curso. Más importante aún, tendrás tu primer "momento wow" usando Claude para resolver una tarea real de tu trabajo en una fracción del tiempo habitual. Esta experiencia práctica te mostrará por qué el 5% de profesionales que domina estas herramientas tiene una ventaja competitiva significativa.
 
-## Estructura sugerida
+---
 
-| **Fase** | **Duración** | **Descripción** |
-|----------|--------------|-----------------|
-| **1. Bienvenida + Contexto** | 10 min | Presentación rápida, objetivos del curso, por qué este momento es único |
-| **2. Demo Impactante** | 20 min | Tarea de 2 horas → 10 minutos con IA. El hook emocional |
-| **3. Fundamentos Anti-Hype** | 20 min | Qué puede/no puede la IA. Los 3 niveles de dominio |
-| **4. Setup + Troubleshooting** | 5 min | Verificar cuentas Claude (vienen preparados de tarea previa) |
-| **5. Lab: Tu Wow Moment** | 60 min | Ejercicio guiado + experimentación libre con tu trabajo real |
-| **6. Compartir Resultados** | 15 min | Showcase de 3-4 estudiantes, celebrar wins |
-| **7. Cierre + Tarea** | 10 min | Reflexión, preview Clase 2, asignar tarea |
+## ¿Por qué te sirve?
+
+- **El 95% de profesionales usa IA como Google.** Hacen una pregunta, obtienen una respuesta genérica, y concluyen que "no es tan útil". Hoy entenderás por qué están equivocados.
+- **La ventaja competitiva es real y medible.** Quienes dominan IA completan en minutos lo que otros hacen en horas. Esta clase te muestra exactamente cómo.
+- **No necesitas ser técnico.** La IA de 2025 está diseñada para profesionales como tú. Solo necesitas aprender a comunicarte con ella.
+
+---
+
+## ¿Qué haremos en clase?
+
+1. **Veremos una demo impactante** — Una tarea que normalmente toma 1+ hora, resuelta en minutos con IA
+2. **Separarás el hype de la realidad** — Qué puede y qué NO puede hacer la IA en 2025
+3. **Conocerás los 3 niveles de dominio** — Usuario, Operador, Constructor (y dónde estarás al terminar)
+4. **Resolverás una tarea real de TU trabajo** — Tu primer "wow moment" con Claude
+5. **Compartirás resultados con el grupo** — Celebrar wins y aprender de otros
 
 ## 🎯 Objetivos de aprendizaje
 
@@ -52,7 +58,7 @@ Al finalizar esta clase, serás capaz de:
 ### ✅ Tareas previas (OBLIGATORIAS)
 
 1. **Crear cuenta en Claude** ⚠️ REQUERIDO
-   - Ir a [claude.ai](https://claude.ai)
+   - Ir a [claude.ai](https://claude.ai){:target="_blank"}
    - Crear cuenta gratuita con email
    - Verificar que puedes acceder y ver la interfaz
    - *En clase solo haremos troubleshooting de 5 min, debes llegar con cuenta lista*
@@ -64,8 +70,8 @@ Al finalizar esta clase, serás capaz de:
 
 ### 📚 Recursos opcionales
 
-- [¿Qué es la IA? Explicación simple](https://www.anthropic.com/news/what-is-ai) - Anthropic
-- [Claude: Guía de inicio](https://docs.anthropic.com/claude/docs) - Documentación oficial
+- [¿Qué es la IA? Explicación simple](https://www.anthropic.com/news/what-is-ai){:target="_blank"} - Anthropic
+- [Claude: Guía de inicio](https://docs.anthropic.com/claude/docs){:target="_blank"} - Documentación oficial
 
 ---
 

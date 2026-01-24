@@ -1,143 +1,231 @@
-# Clase 01 - Referencia del Facilitador
+# Guía del Facilitador: El Nuevo Juego
 
-## 🔑 Conceptos Clave
-
-1. **LLM (Large Language Model):** Modelo entrenado con texto masivo que predice y genera lenguaje natural
-2. **Prompt:** La instrucción que le das a la IA — mientras más contexto, mejor resultado
-3. **Alucinación:** Cuando la IA genera información convincente pero incorrecta o inventada
-4. **Los 3 Niveles:** Usuario (95%) → Operador (meta AI 101) → Constructor (AI 201/301)
-
-## 🔗 Analogías Útiles
-
-1. **IA como amplificador <> Micrófono:** Amplifica tu voz, pero si cantas mal, amplifica eso también. Amplifica expertise Y mediocridad.
-2. **Prompt vago <> Pedir "comida" en restaurante:** Sin especificar, el chef decide. Con contexto ("vegetariano, picante, para llevar"), obtienes lo que necesitas.
-3. **Alucinaciones <> Estudiante que inventa respuestas:** Suena seguro, usa vocabulario correcto, pero está inventando porque no sabe que no sabe.
-4. **Claude vs ChatGPT <> iPhone vs Android:** Ambos son smartphones excelentes, fortalezas diferentes. Las habilidades transfieren.
+> **Tiempo real de instrucción:** ~150 min (los 30 min restantes son buffer para breaks y troubleshooting)
 
 ---
 
-## 📖 Historias Útiles
+## Preparación Previa
 
-### Los Primeros 20 Minutos
+### Materiales necesarios
+- [ ] Slides cargados y probados
+- [ ] Demo lista: prompt de email de disculpa a cliente VIP
+- [ ] PDF largo (15+ páginas) para demo de resumen
+- [ ] Acceso a Claude verificado
+- [ ] Lista de estudiantes y sus industrias (si disponible)
 
-Según estudios de retención en educación adulta, los primeros 20 minutos de un curso definen si el estudiante se "compra" el valor o pasa el resto evaluando si debería estar ahí.
-
-La demo no es un show. Es una promesa.
-
-**Estructura que funciona:**
-- "Vamos a resolver [tarea que todos conocen] en minutos"
-- **Antes:** Redactar email de disculpa a cliente enojado → brainstorm (10 min) + escribir (20 min) + revisar tono (15 min) + editar (10 min) = ~1 hora
-- **Ahora:** Lo hacemos en vivo, con ellos mirando, en 3 minutos
-
-El silencio que sigue es oro. Escepticismo → Curiosidad.
+### Ambiente
+- [ ] Pantalla compartida configurada
+- [ ] Audio probado
+- [ ] Chat/Q&A habilitado
 
 ---
 
-### Anti-Hype = Credibilidad
+## Estructura con Checkpoints (~150 min)
 
-Después del "wow", baja las expectativas. Suena contraintuitivo, pero construye confianza.
+### Fase 1: Bienvenida + Contexto (10 min)
+**Checkpoint:** min 0-10
 
-Diles qué NO puede hacer la IA: reemplazar juicio profesional, garantizar datos precisos, conocer info post-entrenamiento.
+**Objetivo:** Establecer tono, generar expectativa
+
+**Hacer:**
+- Presentación rápida (nombre, background, por qué enseñas esto)
+- "Este curso no es sobre IA, es sobre TU productividad"
+- Objetivos del curso en 1 slide
+
+**Frase clave:** "En 4 semanas, harán en minutos lo que hoy les toma horas"
+
+**Evitar:**
+- Biografías largas
+- Revisar syllabus en detalle (lo tienen en README)
+
+---
+
+### Fase 2: Demo Impactante (20 min)
+**Checkpoint:** min 10-30
+
+**Objetivo:** El hook emocional. Crear el "quiero aprender esto"
+
+**Hacer:**
+1. Plantear el problema: "Email de disculpa a cliente VIP enojado"
+2. Mostrar el proceso tradicional (~1 hora): brainstorm, redacción, revisión, tono
+3. Hacerlo EN VIVO con Claude en ~3 minutos
+4. Pausa dramática. Dejar que procesen.
+
+**Demo adicional (opcional):**
+- Resumen de PDF de 15+ páginas en 90 segundos
+
+**Frase clave:** "Esto no es magia. Es una habilidad que van a aprender."
+
+**Evitar:**
+- Prompts pre-preparados que parezcan trucados
+- Hablar demasiado después de la demo (dejar que el silencio hable)
+
+---
+
+### Fase 3: Fundamentos Anti-Hype (20 min)
+**Checkpoint:** min 30-50
+
+**Objetivo:** Bajar expectativas irreales, construir credibilidad
+
+**Hacer:**
+1. **Qué SÍ puede la IA:**
+   - Generar, resumir, reformatear texto
+   - Analizar patrones, comparar opciones
+   - Iterar rápido, nunca se cansa
+
+2. **Qué NO puede:**
+   - Reemplazar juicio profesional
+   - Garantizar datos precisos (fechas, números, citas)
+   - Conocer info post-entrenamiento
+   - Acceder a tus sistemas internos
+
+3. **Los 3 Niveles de Dominio:**
+   - Nivel 1: Usuario (95% está aquí)
+   - Nivel 2: Operador (meta de AI 101)
+   - Nivel 3: Constructor (AI 201/301)
+
+**Dinámica:** "Levanten la mano quienes creen que están en Nivel 1... ¿Qué los ha mantenido ahí?"
 
 **Frase clave:** "La IA amplifica. Si tienes expertise, la amplifica. Si no, amplifica tu mediocridad."
 
-Acabas de pasar de vendedor de humo a alguien que dice la verdad.
+---
+
+### Fase 4: Setup + Troubleshooting (5 min)
+**Checkpoint:** min 50-55
+
+**Objetivo:** Verificar que todos tienen acceso antes del lab
+
+**Hacer:**
+- "Levanten la mano quienes tienen Claude abierto y funcionando"
+- Troubleshooting rápido para quienes tienen problemas
+- Si >3 personas con problemas, pedir que se ayuden entre pares
+
+**Evitar:**
+- Gastar más de 5 min en esto (ya venían con tarea de crear cuenta)
 
 ---
 
-### Los Tres Niveles: Un Mapa
+### Fase 5: Lab - Tu Wow Moment (60 min)
+**Checkpoint:** min 55-115
 
-No lo presentes como teoría. Preséntalo como ubicación.
+**Objetivo:** Experiencia práctica con resultado real
 
-**Dinámica sugerida:**
-> "Levanten la mano quienes creen que están en Nivel 1"
->
-> [Manos arriba, algunas tímidas]
->
-> "¿Qué los ha mantenido ahí?"
+**Estructura interna:**
+- 10 min: Primera interacción guiada (todos hacen el mismo prompt)
+- 35 min: Tarea real individual
+- 15 min: Documentación y preparación de pitch
 
-Ahí salen los miedos reales. Las frustraciones. Los intentos fallidos. Ese es el momento donde se vuelven participantes activos.
+**Circulación durante el lab:**
+- Observar pantallas, identificar trabados
+- Preguntar: "¿Qué tarea elegiste?" (a quienes miran sin escribir)
+- NO corregir prompts vagos inmediatamente - dejar que experimenten frustración
 
----
-
-## 💡 Ejemplos Listos para Usar
-
-### Ejemplo 1: Prompt vago vs. completo
-
-**Vago:**
-```
-Ayúdame con un email
-```
-→ Respuesta genérica, inútil
-
-**Completo:**
-```
-Actúa como experto en comunicación corporativa.
-Redacta un email de disculpa a un cliente que recibió
-su pedido 5 días tarde. Tono empático pero profesional.
-Máximo 150 palabras. Incluye oferta de compensación.
-```
-→ Respuesta útil, lista para enviar
-
-**Tip para el momento:** Cuando veas un prompt vago en el lab, NO lo corrijas inmediato. Deja que experimenten la frustración 30 segundos. Luego pregunta: "¿Qué crees que le faltó?"
+**Señales de alerta:**
+| Señal | Qué hacer |
+|-------|-----------|
+| Mira pantalla sin escribir | "¿Qué tarea te toma más tiempo esta semana?" |
+| Prompt muy vago | Dejar que falle, luego: "¿Qué crees que le faltó?" |
+| Frustración a los 5 min | "Dividamos esto en partes más pequeñas" |
 
 ---
 
-### Ejemplo 2: Demo de email de disculpa
+### Fase 6: Compartir Resultados (15 min)
+**Checkpoint:** min 115-130
 
-**Contexto para dar en vivo:**
-```
-Eres gerente de servicio al cliente. Un cliente VIP
-(compra $5,000/mes) recibió producto dañado. Ya llamó
-2 veces sin solución. Está furioso en redes sociales.
-Redacta email que: reconozca el error, ofrezca solución
-concreta, recupere la relación. Tono: humano, no corporativo.
-```
+**Objetivo:** Celebrar wins, aprender de otros
 
-Este ejemplo funciona porque TODOS han vivido esto o algo similar.
+**Hacer:**
+1. Pedir 3-4 voluntarios (o elegir si no hay)
+2. 30 segundos c/u: qué tarea, cuánto tiempo ahorró, qué aprendió
+3. Aplausos genuinos (no forzados)
+4. Observar: ¿hay energía? ¿sorpresa? ¿escepticismo?
 
----
-
-### Ejemplo 3: Resumen ejecutivo
-
-**Para mostrar velocidad:**
-- Abre un PDF de 15+ páginas (puede ser cualquier reporte público)
-- Pega el texto en Claude
-- Prompt: "Resume en 5 bullets para un ejecutivo que tiene 2 minutos"
-
-Tiempo total: ~90 segundos. Impacto: alto.
+**Frase clave:** "Estos resultados son de su PRIMERA vez. Imaginen después de 4 semanas."
 
 ---
 
-## ⚠️ Errores Comunes en el Lab
+### Fase 7: Cierre + Tarea (20 min)
+**Checkpoint:** min 130-150
 
-| Señal | Qué está pasando | Qué hacer |
-|-------|------------------|-----------|
-| Mira pantalla sin escribir | Parálisis, no sabe qué tarea elegir | "¿Qué tarea te toma más tiempo esta semana?" |
-| "Ayúdame con esto" | Prompt vago | Dejar que falle, luego guiar |
-| Frustración a los 5 min | Tarea muy compleja | "Dividamos esto en partes" |
-| Copia prompts sin adaptar | No entiende estructura | Explicar RICE brevemente |
+**Objetivo:** Consolidar aprendizaje, crear anticipación
+
+**Hacer:**
+1. **Resumen (5 min):**
+   - "Hoy iniciaron su camino del Nivel 1 al Nivel 2"
+   - Recordar los 3 niveles
+
+2. **Tarea (5 min):**
+   - Screenshot de resultado más impresionante
+   - Prompt final que funcionó mejor
+   - Reflexión breve (3-5 oraciones)
+
+3. **Preview Clase 2 (5 min):**
+   - "El Arte del Prompt"
+   - "La diferencia entre resultados mediocres y extraordinarios"
+
+4. **Frase de cierre (5 min):**
+   - "Esta semana, cada vez que enfrenten una tarea repetitiva, pregúntense: ¿podría usar IA para esto?"
 
 ---
 
-## ✅ Señales de Éxito
+## Conceptos Clave
 
-**Funcionó si:**
+| Término | Definición para explicar |
+|---------|-------------------------|
+| **LLM** | Modelo entrenado con texto masivo que predice y genera lenguaje |
+| **Prompt** | Instrucción a la IA — mientras más contexto, mejor resultado |
+| **Alucinación** | Cuando la IA genera información convincente pero incorrecta |
+| **Los 3 Niveles** | Usuario (95%) → Operador (meta AI 101) → Constructor (AI 201/301) |
+
+---
+
+## Analogías Útiles
+
+| Concepto | Analogía |
+|----------|----------|
+| IA como amplificador | Micrófono: amplifica tu voz, pero si cantas mal, amplifica eso también |
+| Prompt vago | Pedir "comida" en restaurante: sin especificar, el chef decide |
+| Alucinaciones | Estudiante que inventa respuestas: suena seguro pero está inventando |
+| Claude vs ChatGPT | iPhone vs Android: ambos excelentes, fortalezas diferentes |
+
+---
+
+## Señales de Éxito
+
+**La clase funcionó si:**
 - 80%+ logró resultado útil en el lab
 - Hay energía en el showcase
 - Preguntan "¿cuándo es la siguiente clase?"
-- Algunos se quedan después
+- Algunos se quedan después para preguntar más
 
 **Alerta si:**
-- Frustración generalizada
+- Frustración generalizada durante el lab
 - Silencio en showcase
-- "Esto no aplica a mi trabajo"
+- Comentarios tipo "esto no aplica a mi trabajo"
 
 ---
 
-## 🎬 Cierre (10 min)
+## Errores Comunes del Facilitador
 
-1. "Hoy iniciaron su camino del Nivel 1 al Nivel 2"
-2. Tarea: Screenshot + prompt + reflexión
-3. Preview: "Clase 2: El Arte del Prompt — la diferencia entre resultados mediocres y extraordinarios"
-4. Frase final: "Esta semana, cada vez que enfrenten una tarea repetitiva, pregúntense: ¿podría usar IA para esto?"
+| Error | Corrección |
+|-------|------------|
+| Demo con prompts pre-armados | Hacer demo genuina, aceptar imperfección |
+| Corregir prompts vagos inmediatamente | Dejar que falle primero, luego guiar |
+| Hablar demasiado durante lab | Circula, observa, interviene solo si necesario |
+| Prometer demasiado | Anti-hype genuino, limitaciones reales |
+
+---
+
+## Preguntas Frecuentes
+
+**"¿Claude es mejor que ChatGPT?"**
+> Ambos son excelentes. Claude tiende a ser más preciso en tareas largas y tiene mejor "personalidad" para trabajo profesional. Las habilidades que aprenden aquí funcionan en ambos.
+
+**"¿La IA va a reemplazar mi trabajo?"**
+> La IA no reemplaza profesionales, pero profesionales que usan IA reemplazan a los que no. Este curso es sobre estar del lado correcto de esa ecuación.
+
+**"¿Qué pasa con la privacidad de mis datos?"**
+> Claude tiene políticas claras de no entrenar con datos de usuarios. Para trabajo sensible, hay opciones enterprise. Lo cubrimos más en Clase 6.
+
+**"¿Por qué Claude y no otro?"**
+> Es el más balanceado para productividad profesional. En Clase 4 veremos Gemini y Perplexity para tareas específicas.
