@@ -1,0 +1,166 @@
+---
+---
+
+@import "{{ site.theme }}";
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+/* OVERRIDES: */
+
+body {
+  font-family: "Geist", sans-serif !important;
+  background: #fff;
+  padding: 0;
+}
+.reset {
+  background: #fff;
+}
+.reset img {
+  width: 100%;
+}
+h1 {
+    margin-bottom: 28px;
+    font-size: 40px;
+}
+hr {
+    border-top: 1px dashed #ccc !important;
+    background: none !important;
+    outline: none !important;
+    margin: 50px 0px !important;
+}
+section {
+  width: 790px !important;
+  background: #fbfbfb;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.09);
+  margin-top: 1em;
+  border-radius: 10px !important;
+}
+nav {
+  top: 1em;
+}
+nav ul a:hover {
+  color: #2882d1;
+}
+ul {
+  list-style: disc;
+}
+ol ol ol {
+  margin-bottom: 0;
+}
+
+// Estilos para listas con casillas de verificación
+ul:has(input[type="checkbox"]) {
+  padding-left: 24px;
+}
+li:has(input[type="checkbox"]) {
+    list-style-type: none; /* Elimina la viñeta/marcador predeterminado */  
+}
+input[type="checkbox"] {
+    margin-right: 8px; /* Espacio entre la casilla y el texto */
+}
+
+code {
+  font-family: 'JetBrains Mono', 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal !important;
+}
+
+code.highlighter-rouge {
+  font-family: 'JetBrains Mono', 'Lucida Sans', Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal !important;
+  font-size: 13px;
+  color: #cc3524;
+  text-shadow: unset;
+  margin: 0 4px;
+  font-weight: 400;
+  padding: 2px 6px;
+  background: #F3F3F3;
+  border: 1px dashed #cc3524;
+  border-radius: 6px;
+}
+td:first-child {
+  border-left: 1px solid #e5e5e5;
+}
+td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
+}
+a {
+  color: #2882d1;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* Selecciona enlaces que contienen http (externos) y tienen el atributo target */
+a[href*="//"][target="_blank"]::after {
+    content: " \2197"; /* Código Unicode para la flecha superior derecha (↗) */
+    font-size: 0.7em;  /* Un poco más pequeña que el texto */
+    margin-left: 3px;   /* Separación del texto */
+    display: inline-block;
+    vertical-align: top;
+    transition: transform 0.2s ease; /* Para una micro-interacción moderna */
+}
+
+/* Efecto opcional: la flecha se mueve ligeramente al pasar el mouse */
+a[href*="//"][target="_blank"]:hover::after {
+    transform: translate(2px, -2px);
+}
+
+blockquote {
+  border-left: 1px solid #cc3524;
+}
+a:hover, a:active {
+    outline: 0;
+    text-decoration: underline;
+}
+
+.wrapper {
+  width: 800px !important;
+}
+
+@media print, screen and (max-width: 1060px) {
+
+  /* Prevent truncated assignment titles: */
+  header h1, section h1, footer h1 {
+    white-space: normal;
+  }
+  
+  /* Style cleanly with padding for narrow screens: */
+  section {
+    width: 790px !important;
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    padding: 2em 4em;
+    width: auto;
+  }
+}
+
+@media (max-width: 1400px) {
+  nav {
+    display: none !important;
+  }
+  footer {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  nav {
+    display: block !important;
+    width: 300px !important;
+    margin-left: -720px !important;
+  }
+  footer {
+    display: block !important;
+    margin-left: -620px !important;
+  }
+}
+
+/* Ocultar h3+ del nav lateral - solo mostrar h1 y h2 */
+nav ul li.tag-h3,
+nav ul li.tag-h4,
+nav ul li.tag-h5,
+nav ul li.tag-h6 {
+  display: none !important;
+}
