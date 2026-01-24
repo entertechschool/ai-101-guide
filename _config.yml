@@ -1,0 +1,6 @@
+theme: jekyll-theme-leap-day
+
+# Table of Contents - solo mostrar h2 en navegación lateral
+toc:
+  min_level: 2
+  max_level: 2
