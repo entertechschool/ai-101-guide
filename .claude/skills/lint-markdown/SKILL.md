@@ -1,7 +1,7 @@
 ---
 name: lint-markdown
 description: Valida Markdown para GitHub Pages: enlaces externos, escape de Liquid en código. Usar para revisar links, validar markdown, o antes de push.
-allowed-tools: Read, Glob, Grep, Edit
+allowed-tools: Read, Glob, Grep, Edit, WebFetch
 ---
 
 # Lint Markdown - Validador para GitHub Pages
@@ -10,6 +10,7 @@ allowed-tools: Read, Glob, Grep, Edit
 
 1. **Enlaces externos sin `{:target="_blank"}`** - Kramdown/Jekyll
 2. **Código con `{{` sin escape Liquid** - Evita errores de build
+3. **Enlaces rotos (HTTP 404)** - Verificación de URLs externas
 
 ---
 
@@ -21,7 +22,7 @@ Por defecto escanear `curriculum/` recursivamente. Si el usuario especifica un a
 
 ### Paso 2: Ejecutar validaciones
 
-Ejecutar ambas validaciones y reportar resultados combinados.
+Ejecutar las tres validaciones y reportar resultados combinados.
 
 ---
 
@@ -103,6 +104,44 @@ Envolver bloques de código que contienen `{{` con tags raw/endraw de Jekyll:
 
 ---
 
+## Validación 3: Enlaces Rotos (HTTP 404)
+
+### Objetivo
+
+Verificar que los enlaces externos devuelven HTTP 200 (o redirección válida).
+
+### Proceso
+
+1. Extraer todos los enlaces externos únicos (`https?://`) del alcance
+2. Para cada enlace único, usar WebFetch para verificar accesibilidad
+3. Reportar enlaces que devuelven 404 o error de conexión
+
+### Consideraciones
+
+- **Límite por ejecución:** Máximo 10 enlaces únicos por ejecución para evitar rate limiting
+- **Caché de sesión:** Si un enlace ya fue verificado en la sesión actual, no repetir
+- **Timeout/Error:** Si WebFetch falla con error de conexión, reportar como "No verificable"
+- **Redirecciones:** Son válidas si el destino final existe (301/302 → 200 = OK)
+- **Prioridad:** Verificar primero enlaces en archivos modificados recientemente
+
+### Detección
+
+Usar Grep para extraer URLs únicas:
+```regex
+https?://[^\s\)\]"']+
+```
+
+### Reporte de Estado
+
+| Estado | Significado |
+|--------|-------------|
+| ✅ 200 | Enlace válido |
+| ↪️ 301/302 | Redirección válida |
+| ❌ 404 | Enlace roto - requiere corrección |
+| ⚠️ Error | No verificable (timeout, conexión) |
+
+---
+
 ## Reporte de Resultados
 
 **Modo reporte (default):**
@@ -125,6 +164,15 @@ Envolver bloques de código que contienen `{{` con tags raw/endraw de Jekyll:
 | class-02/slides/README.md | 45 | json |
 
 **Total:** Y bloques a corregir
+
+### Enlaces rotos (HTTP 404)
+
+| Archivo | Línea | URL | Estado |
+|---------|-------|-----|--------|
+| class-01/README.md | 73 | https://anthropic.com/... | ❌ 404 |
+
+**Total:** W enlaces rotos
+**Verificados:** N de M enlaces únicos
 
 ### Sin problemas: Z archivos
 ```

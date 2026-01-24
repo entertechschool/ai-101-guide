@@ -70,7 +70,7 @@ Al finalizar esta clase, serás capaz de:
 
 ### 📚 Recursos opcionales
 
-- [¿Qué es la IA? Explicación simple](https://www.anthropic.com/news/what-is-ai){:target="_blank"} - Anthropic
+- [Introducción a Claude](https://support.claude.com/en/){:target="_blank"} - Centro de ayuda oficial
 - [Claude: Guía de inicio](https://docs.anthropic.com/claude/docs){:target="_blank"} - Documentación oficial
 
 ---
