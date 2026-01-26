@@ -30,6 +30,24 @@ El 5% la usa como un **superpoder**
 
 ---
 
+## Por qué estás aquí
+
+No es solo productividad
+
+Es **la brecha que se agranda cada mes**
+
+Entre quienes dominan IA y quienes no
+
+---
+
+## En 6 meses
+
+Dominar IA será **expectativa mínima** en muchos roles
+
+Hoy tienes ventaja de early adopter
+
+---
+
 ## Demo Time
 
 ### Tarea: Email de disculpa a cliente VIP
@@ -104,6 +122,28 @@ Nivel 3: CONSTRUCTOR
 
 ---
 
+## El Insight de Hoy
+
+### Prompt vs Sistema
+
+**Prompt:** "Ayúdame con este email"
+→ Resuelve UNA tarea
+
+**Sistema:** "Eres mi revisor. Mi contexto es X. Haz Y."
+→ Resuelve TODAS las tareas similares
+
+---
+
+## La Fórmula
+
+```
+SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
+```
+
+Hoy construirán su primer sistema reusable
+
+---
+
 ## Pregunta
 
 ### Levanten la mano quienes creen que están en Nivel 1
@@ -128,8 +168,9 @@ Nivel 3: CONSTRUCTOR
 ### Tu Primer "Wow Moment"
 
 1. Primera interacción guiada (10 min)
-2. Tu tarea real (35 min)
-3. Documentar resultado (15 min)
+2. **Tu primer sistema** (15 min)
+3. Tu tarea real (25 min)
+4. Documentar resultado (10 min)
 
 ---
 
@@ -176,7 +217,8 @@ Nivel 3: CONSTRUCTOR
 
 1. **Screenshot** de tu resultado más impresionante
 2. **Prompt final** que funcionó mejor
-3. **Reflexión breve** (3-5 oraciones)
+3. **Tu sistema base** (el revisor u otro que creaste)
+4. **Reflexión breve** (3-5 oraciones)
 
 ---
 

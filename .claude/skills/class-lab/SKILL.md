@@ -55,7 +55,7 @@ README.md
 ## Template: Lab Regular (Clases 1-3, 5-7)
 
 ```markdown
-# Lab: [Título del Lab]
+# Lab XX: Mi [Título del Lab]
 
 ## Objetivo
 
@@ -195,7 +195,7 @@ Antes de terminar, responde brevemente:
 ## Template: Lab de Cierre de Módulo (Clases 4 y 8)
 
 ```markdown
-# Lab: [Título - Integrador del Módulo]
+# Lab XX: Mi [Título - Integrador del Módulo]
 
 > **Cierre de Módulo** - Este lab integra todo lo aprendido en las últimas 4 clases.
 

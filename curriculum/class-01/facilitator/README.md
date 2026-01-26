@@ -60,6 +60,13 @@
 - Prompts pre-preparados que parezcan trucados
 - Hablar demasiado después de la demo (dejar que el silencio hable)
 
+**Transición al "por qué":**
+Después de la demo, no saltar directo a fundamentos. Hacer pausa:
+- "¿Por qué creen que el 95% no usa IA así?"
+- "¿Qué creen que cambia si dominan esto?"
+
+Conectar con: "Este curso no es solo productividad. Es sobre la brecha que se agranda cada mes entre quienes dominan esto y quienes no."
+
 ---
 
 ### Fase 3: Fundamentos Anti-Hype (20 min)
@@ -90,8 +97,23 @@
 
 ---
 
-### Fase 4: Setup + Troubleshooting (5 min)
+### Fase 3.5: El Insight Central (5 min)
 **Checkpoint:** min 50-55
+
+**Objetivo:** Plantar la semilla de "sistema > prompt"
+
+**Hacer:**
+1. "Antes del lab, quiero mostrarles LA diferencia entre usuarios y operadores"
+2. Mostrar slide Prompt vs Sistema
+3. "Un prompt resuelve UNA tarea. Un sistema resuelve TODAS las similares"
+4. "En el lab van a construir su primer sistema. No solo usar IA, sino crear algo reusable"
+
+**Frase clave:** "El prompt es la pregunta. El sistema es el superpoder."
+
+---
+
+### Fase 4: Setup + Troubleshooting (5 min)
+**Checkpoint:** min 55-60
 
 **Objetivo:** Verificar que todos tienen acceso antes del lab
 
@@ -106,14 +128,21 @@
 ---
 
 ### Fase 5: Lab - Tu Wow Moment (60 min)
-**Checkpoint:** min 55-115
+**Checkpoint:** min 60-120
 
-**Objetivo:** Experiencia práctica con resultado real
+**Objetivo:** Experiencia práctica + primer sistema reusable
 
 **Estructura interna:**
 - 10 min: Primera interacción guiada (todos hacen el mismo prompt)
-- 35 min: Tarea real individual
-- 15 min: Documentación y preparación de pitch
+- 15 min: **Construir primer sistema** (ejercicio del revisor)
+- 25 min: Tarea real individual usando el sistema o creando otro
+- 10 min: Documentación
+
+**Momento clave del lab:**
+Cuando terminen el ejercicio del revisor (min 25), hacer pausa grupal:
+- "¿Qué acaban de crear?"
+- "¿En qué se diferencia de solo hacer una pregunta?"
+- Reforzar: "Esto lo pueden reusar mañana. Y pasado. Y la próxima semana."
 
 **Circulación durante el lab:**
 - Observar pantallas, identificar trabados
@@ -130,7 +159,7 @@
 ---
 
 ### Fase 6: Compartir Resultados (15 min)
-**Checkpoint:** min 115-130
+**Checkpoint:** min 120-135
 
 **Objetivo:** Celebrar wins, aprender de otros
 
@@ -144,8 +173,8 @@
 
 ---
 
-### Fase 7: Cierre + Tarea (20 min)
-**Checkpoint:** min 130-150
+### Fase 7: Cierre + Tarea (15 min)
+**Checkpoint:** min 135-150
 
 **Objetivo:** Consolidar aprendizaje, crear anticipación
 
@@ -174,6 +203,7 @@
 |---------|-------------------------|
 | **LLM** | Modelo entrenado con texto masivo que predice y genera lenguaje |
 | **Prompt** | Instrucción a la IA — mientras más contexto, mejor resultado |
+| **Sistema** | Combinación de ROL + CONTEXTO + INSTRUCCIÓN que resuelve categorías de tareas, no solo una |
 | **Alucinación** | Cuando la IA genera información convincente pero incorrecta |
 | **Los 3 Niveles** | Usuario (95%) → Operador (meta AI 101) → Constructor (AI 201/301) |
 
@@ -194,9 +224,9 @@
 
 **La clase funcionó si:**
 - 80%+ logró resultado útil en el lab
+- Entienden la diferencia entre prompt y sistema
+- Preguntan "¿puedo crear sistemas para otras cosas?"
 - Hay energía en el showcase
-- Preguntan "¿cuándo es la siguiente clase?"
-- Algunos se quedan después para preguntar más
 
 **Alerta si:**
 - Frustración generalizada durante el lab

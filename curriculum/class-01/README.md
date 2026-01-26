@@ -10,19 +10,58 @@ Esta primera clase de **AI 101** marca tu entrada al mundo de la inteligencia ar
 
 ## ¿Por qué te sirve?
 
-- **El 95% de profesionales usa IA como Google.** Hacen una pregunta, obtienen una respuesta genérica, y concluyen que "no es tan útil". Hoy entenderás por qué están equivocados.
-- **La ventaja competitiva es real y medible.** Quienes dominan IA completan en minutos lo que otros hacen en horas. Esta clase te muestra exactamente cómo.
-- **No necesitas ser técnico.** La IA de 2025 está diseñada para profesionales como tú. Solo necesitas aprender a comunicarte con ella.
+### El problema real
+
+No es que la IA no funcione. Es que el 95% la usa mal:
+- Hacen una pregunta genérica
+- Obtienen una respuesta genérica
+- Concluyen "no es tan útil"
+- Siguen haciendo todo manualmente
+
+### Lo que cambia con este curso
+
+| Sin dominar IA | Dominando IA |
+|----------------|--------------|
+| 1 hora redactando email difícil | 5 minutos iterando con IA |
+| Research de días | Research de horas |
+| Ideas limitadas a tu experiencia | Ideas amplificadas por patrones globales |
+| Trabajo repetitivo = tu tiempo | Trabajo repetitivo = delegado |
+
+### Por qué AHORA
+
+- La brecha entre quienes dominan IA y quienes no **se agranda cada mes**
+- Las herramientas de hoy son accesibles (no necesitas programar)
+- Tu expertise + IA = ventaja competitiva real
+- En 6 meses, esto será expectativa mínima en muchos roles
+
+---
+
+## 💡 El Insight Central
+
+**Un prompt es una pregunta. Un sistema es un superpoder.**
+
+La mayoría usa IA así:
+> "Ayúdame a escribir un email"
+
+Los que dominan IA hacen esto:
+> "Eres mi revisor de comunicaciones. Mi contexto es [X]. Tu trabajo es [Y]. Cuando te pase algo, haz [Z]."
+
+La diferencia:
+- El **prompt** resuelve UNA tarea
+- El **sistema** resuelve TODAS las tareas similares, para siempre
+
+En esta clase construirás tu primer sistema reusable.
 
 ---
 
 ## ¿Qué haremos en clase?
 
-1. **Veremos una demo impactante** — Una tarea que normalmente toma 1+ hora, resuelta en minutos con IA
-2. **Separarás el hype de la realidad** — Qué puede y qué NO puede hacer la IA en 2025
-3. **Conocerás los 3 niveles de dominio** — Usuario, Operador, Constructor (y dónde estarás al terminar)
-4. **Resolverás una tarea real de TU trabajo** — Tu primer "wow moment" con Claude
-5. **Compartirás resultados con el grupo** — Celebrar wins y aprender de otros
+1. **Veremos una demo impactante** — Una tarea de 1+ hora resuelta en minutos
+2. **Separarás el hype de la realidad** — Qué puede y qué NO puede la IA
+3. **Conocerás los 3 niveles de dominio** — Usuario, Operador, Constructor
+4. **Construirás tu primer SISTEMA** — No solo un prompt, sino algo reusable
+5. **Resolverás una tarea real de TU trabajo** — Tu primer "wow moment"
+6. **Compartirás resultados** — Celebrar wins y aprender de otros
 
 ## 🎯 Objetivos de aprendizaje
 

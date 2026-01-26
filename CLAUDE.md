@@ -69,7 +69,7 @@ Cada clase tiene 4 archivos en `curriculum/class-XX/`:
 
 ### lab/README.md
 ```markdown
-# Lab: Título
+# Lab XX: Mi [Título]
 
 ## Objetivo (1 párrafo)
 ## Tiempo estimado (60 min)
@@ -159,6 +159,7 @@ Incluir al menos 1 "battle" por módulo donde todos resuelven el mismo reto y vo
 - **Tono Slides:** Educativo, conversacional
 - **Tono Facilitator:** Reflexivo, mentor-a-mentor
 - **Emojis:** Moderados, estratégicos
+- **Títulos de Lab:** Primera persona ("Mi") para ownership del estudiante
 
 ---
 

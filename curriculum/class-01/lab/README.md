@@ -1,4 +1,4 @@
-# Lab 01: Tu Primer "Wow Moment" con IA
+# Lab 01: Mi Primer "Wow Moment" con IA
 
 En este primer lab de AI 101, experimentarás de primera mano el poder de la IA aplicada a tu trabajo real. No se trata de aprender teoría, sino de obtener un resultado útil que puedas usar mañana mismo. Al terminar, tendrás evidencia concreta de lo que la IA puede hacer por ti.
 
@@ -40,7 +40,7 @@ mi productividad profesional.
 
 ---
 
-## Parte 2: Tu Tarea Real (35 min)
+## Parte 2: Tu Tarea Real (40 min)
 
 Esta es la parte más importante del lab. Vas a usar Claude para resolver algo real de tu trabajo.
 
@@ -48,14 +48,47 @@ Esta es la parte más importante del lab. Vas a usar Claude para resolver algo r
 
 Selecciona UNA de las siguientes opciones basada en lo que trajiste preparado:
 
-| Tipo de tarea | Ejemplo |
-|---------------|---------|
-| **Redacción** | Email difícil, propuesta, reporte |
-| **Análisis** | Resumir documento largo, extraer insights |
-| **Creación** | Ideas para presentación, outline de contenido |
-| **Investigación** | Comparar opciones, buscar mejores prácticas |
+| Tipo de tarea | Qué harás |
+|---------------|-----------|
+| **Destrabar** | Convertir una idea confusa en algo claro y estructurado |
+| **Simular** | Ver tu trabajo desde los ojos de un crítico o audiencia específica |
+| **Anticipar** | Descubrir qué puede salir mal con un plan antes de que pase |
+| **Extraer** | Obtener solo lo esencial de algo largo y denso |
+| **Estructurar** | Convertir caos (notas, ideas sueltas) en orden |
 
-#### 2.2. Escribe tu primer prompt (5 min)
+#### 2.2. Ejercicio guiado: Tu primer sistema (15 min)
+
+Antes de usar tu tarea real, experimenta con este mini-sistema pre-armado.
+
+**Paso 1: Copia este bloque completo en Claude:**
+
+```
+Eres mi revisor de comunicaciones profesionales.
+
+Mi contexto:
+- Rol: [completa con tu rol real]
+- Industria: [completa con tu industria]
+- Audiencia típica: [a quién le escribes normalmente]
+
+Tu trabajo: Cuando te pase un borrador o idea, dame feedback
+directo sobre claridad, tono y qué falta. Sin rodeos, sé honesto.
+```
+
+**Paso 2: Ahora pégale este borrador de prueba:**
+
+```
+Hola equipo, quería comentarles sobre el tema del proyecto que
+hablamos. Creo que deberíamos avanzar pero hay algunas cosas
+que ver. Me dicen qué opinan?
+```
+
+**Paso 3: Observa cómo lo analiza.**
+
+**Paso 4: Ahora prueba con algo TUYO.** Pega un borrador real que tengas pendiente y compara.
+
+> 💡 **El insight:** No fue un prompt mágico. Fue un SISTEMA: contexto + rol + instrucción clara. Esto lo puedes reusar mañana.
+
+#### 2.3. Escribe tu primer prompt (5 min)
 
 Usa esta estructura básica:
 
@@ -82,7 +115,7 @@ la fricción y destaque el valor que reciben.
 Preséntalo como un email listo para enviar, con subject line incluido.
 ```
 
-#### 2.3. Ejecuta e itera (20 min)
+#### 2.4. Ejecuta e itera (15 min)
 
 1. **Envía tu prompt** a Claude
 2. **Evalúa la respuesta**: ¿Es útil? ¿Qué le falta?
@@ -93,7 +126,7 @@ Preséntalo como un email listo para enviar, con subject line incluido.
    - "¿Qué le cambiarías para [audiencia específica]?"
 4. **Repite** hasta obtener algo realmente útil
 
-#### 2.4. Documenta tu resultado (5 min)
+#### 2.5. Documenta tu resultado (5 min)
 
 En un documento o nota, guarda:
 - Tu prompt final (el que mejor funcionó)
@@ -102,7 +135,7 @@ En un documento o nota, guarda:
 
 ---
 
-## Parte 3: Captura y Reflexión (15 min)
+## Parte 3: Captura y Reflexión (10 min)
 
 #### 3.1. Toma tu screenshot
 - Captura la pantalla mostrando tu resultado final
@@ -148,8 +181,9 @@ Responde mentalmente (o escríbelo):
    - ¿Qué lograste?
    - ¿Cuánto tiempo ahorraste?
    - ¿Qué te llevas de esta experiencia?
+4. **Tu sistema base** (el prompt de "revisor" u otro que creaste)
 
-**Formato:** Documento con los 3 elementos, subido a la plataforma del curso.
+**Formato:** Documento con los 4 elementos, subido a la plataforma del curso.
 
 ---
 
