@@ -173,25 +173,14 @@ Responde mentalmente (o escríbelo):
 
 ## 📝 Entregable
 
-**Para la tarea de esta semana, deberás entregar:**
+**Para la tarea de esta clase, deberás entregar:**
 
-1. **Screenshot** de tu resultado más impresionante
+1. **Screenshot(s)** de tu resultado más impresionante
 2. **Prompt final** que usaste (el que mejor funcionó)
 3. **Reflexión breve** (3-5 oraciones):
    - ¿Qué lograste?
    - ¿Cuánto tiempo ahorraste?
    - ¿Qué te llevas de esta experiencia?
-4. **Tu sistema base** (el prompt de "revisor" u otro que creaste)
 
-**Formato:** Documento con los 4 elementos, subido a la plataforma del curso.
+**Formato:** Documento de Google con los 3 elementos, compartir públicamente y pegar el link como entrega de esta tarea.
 
----
-
-## 💡 Tips para mejores resultados
-
-| Tip | Ejemplo |
-|-----|---------|
-| Sé específico | ❌ "Ayúdame con un email" → ✅ "Redacta un email de 150 palabras para..." |
-| Da contexto | ❌ "Resume esto" → ✅ "Resume para un ejecutivo que tiene 2 minutos" |
-| Pide formato | ❌ "Dame ideas" → ✅ "Dame 5 ideas en bullet points con pros y contras" |
-| Itera | No te quedes con la primera respuesta, refina |
