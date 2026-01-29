@@ -1,12 +1,23 @@
 # Lab 02: Mis Prompts Maestros
 
-Construirás 2 prompts maestros usando RICE y técnicas avanzadas, listos para reusar en tu trabajo.
+Construirás 2 prompts maestros usando RICE y técnicas avanzadas, listos para reusar en tu trabajo. Al terminar, tendrás prompts documentados que transforman tareas recurrentes en resultados consistentes.
 
 > ⏱️ **Tiempo total:** 60 minutos
 
 ### 🎯 Objetivo
 
 Crear 2 prompts maestros documentados: uno con RICE básico y otro con técnica avanzada (CoT o Few-shot).
+
+---
+
+## Antes de Empezar
+
+| Requisito | Verificación |
+|-----------|--------------|
+| Claude abierto | Tab lista para prompts |
+| 3 tareas reales | De tu trabajo actual |
+| Entregable Clase 01 | Tu sistema revisor (o similar) |
+| Google Doc | Listo para documentar |
 
 ---
 
@@ -65,6 +76,8 @@ Eres un [tu rol] con experiencia en [tu área].
 
 Ejecuta en Claude. ¿Es útil? Itera si es necesario.
 
+✅ **Checkpoint:** Tienes prompt RICE ensamblado, probado en Claude, y al menos 1 iteración de mejora.
+
 ---
 
 ## Parte 2: Prompt Battle (20 min)
@@ -77,6 +90,8 @@ Ejecuta en Claude. ¿Es útil? Itera si es necesario.
 1. **Escribe tu prompt** usando RICE (8 min)
 2. **Ejecuta y captura** screenshot (2 min)
 3. **Votación** — 3-4 voluntarios comparten, votamos el mejor (10 min)
+
+✅ **Checkpoint:** Tienes prompt para el reto del CEO, ejecutado, y screenshot capturado.
 
 ---
 
@@ -130,6 +145,8 @@ Input: [tu input real]
 
 **Crea, ejecuta y captura screenshot** (15 min)
 
+✅ **Checkpoint:** Tienes segundo prompt con técnica avanzada (CoT o Few-shot), ejecutado, y screenshot capturado.
+
 ---
 
 ## 📝 Entregable
@@ -166,3 +183,13 @@ Screenshot
 - [ ] ¿Incluí ejemplo de output deseado?
 - [ ] ¿Son para tareas REALES de mi trabajo?
 - [ ] ¿Los screenshots muestran resultados útiles?
+
+---
+
+## 💭 Reflexión
+
+Antes de entregar, responde mentalmente:
+
+1. ¿Cuál de los 4 elementos de RICE fue más difícil de definir? ¿Por qué?
+2. ¿El Ejemplo cambió significativamente la calidad del output?
+3. ¿Qué prompt de tu semana pasada mejoraría más con RICE?

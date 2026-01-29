@@ -12,36 +12,11 @@ El 95% de usuarios escribe prompts como mensajes de texto: vagos, sin estructura
 
 ## ¿Por qué te sirve?
 
-### El problema real
-
-La mayoría de usuarios hace prompts como este:
-> "Ayúdame a analizar estos datos"
-
-Y obtienen respuestas genéricas que no usan. Luego concluyen: "la IA no es tan útil".
-
-### La realidad
-
-No es que la IA no funcione. Es que:
-- No le das suficiente contexto
-- No especificas el formato de output
-- No incluyes ejemplos de lo que SÍ quieres
-- Esperas que adivine tu situación
-
-### Lo que cambia después de esta clase
-
-| Antes | Después |
-|-------|---------|
-| "Escribe un email de seguimiento" | Email genérico, tono incorrecto |
-| "Analiza estos datos" | Análisis superficial, sin insights útiles |
-| "Dame ideas para..." | Lista genérica copiada de internet |
-
-vs.
-
-| Con RICE | Resultado |
-|----------|-----------|
-| Rol + Instrucción + Contexto + Ejemplo | Email personalizado, tono exacto, listo para enviar |
-| Análisis estructurado con framework específico | Insights accionables, formato profesional |
-| Ideas con criterios y anti-ejemplos | Propuestas originales, relevantes a tu contexto |
+- **El 95% de usuarios** escribe prompts como mensajes de texto: vagos y sin estructura
+- **Resultado típico:** respuestas genéricas que requieren 5-10 iteraciones o se descartan
+- **La diferencia medible:** Un prompt RICE reduce iteraciones de 10 a 2 en promedio
+- **El secreto:** Mostrar un ejemplo de output deseado elimina el 80% de la ambigüedad
+- **Después de esta clase:** Tus prompts producirán resultados que usas tal cual, no que reescribes
 
 ---
 
@@ -136,9 +111,9 @@ E - Ejemplo     → Evolución de "Formato" (mucho más poderoso)
 
 ---
 
-## Qué traer a clase
+## Herramientas necesarias
 
-- 💻 Laptop con Claude abierto
-- 📝 3 tareas reales de tu trabajo (elegirás 2 para convertir en prompts)
-- 🔄 Tu prompt/sistema de Clase 01 para mejorarlo
-- 📸 Ejemplos de outputs que quieres lograr (si los tienes)
+- [ ] 💻 Laptop con Claude abierto
+- [ ] 📝 3 tareas reales de tu trabajo (elegirás 2 para convertir en prompts)
+- [ ] 🔄 Tu prompt/sistema de Clase 01 para mejorarlo
+- [ ] 📸 Ejemplos de outputs que quieres lograr (si los tienes)

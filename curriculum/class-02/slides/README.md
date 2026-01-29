@@ -1,9 +1,3 @@
-# Clase 02: El Arte del Prompt
-
-Presentación reveal.js para la segunda clase de AI 101.
-
----
-
 <!-- .slide: data-background="#0A192F" -->
 
 # Clase 02: El Arte del Prompt
@@ -164,7 +158,6 @@ Con Rol + Instrucción + Contexto + **Ejemplo**
 
 ## ✅ Checkpoint: Parte 3
 
-### Verifica:
 - [ ] Técnica elegida (CoT o Few-shot)
 - [ ] Segundo prompt maestro creado
 - [ ] Screenshot del resultado
@@ -183,29 +176,12 @@ Con Rol + Instrucción + Contexto + **Ejemplo**
 
 ---
 
-## 🔗 Preview: Clase 03
+## 📝 Entrega + Preview
 
-### Hoy lograste:
-- 2 prompts maestros documentados
-- Competiste en tu primer Prompt Battle
-
-### La próxima clase:
-- **Tu Copiloto de Contenido**
-- De prompts a flujos de trabajo completos
-- Contenido profesional publicable
-
-> **Tarea:** 2 prompts maestros documentados (RICE + técnica avanzada)
-
----
-
-## 📝 Entrega
-
-### Prompt 1: RICE
-- Nombre, uso, prompt completo, screenshot
-
-### Prompt 2: Técnica Avanzada
-- Nombre, técnicas usadas (RICE + CoT/Few-shot), prompt completo, screenshot
-
-**Formato:** Google Doc con link público
+### Tu entregable:
+- **Prompt 1:** RICE (nombre, uso, prompt, screenshot)
+- **Prompt 2:** Técnica avanzada (nombre, técnicas, prompt, screenshot)
+- **Formato:** Google Doc con link público
 
 ### Próxima clase: Tu Copiloto de Contenido
+De prompts individuales a flujos de trabajo completos → contenido profesional publicable
