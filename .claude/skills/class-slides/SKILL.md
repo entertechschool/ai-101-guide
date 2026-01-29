@@ -13,11 +13,14 @@ Crear slides optimizados para facilitar la clase. No son material de estudio, so
 ## Filosofía: Slides que Facilitan, No que Enseñan
 
 Cada slide tiene un propósito específico:
-- **TRANSICIÓN**: Conectar clases (entrada/salida)
-- **DEMO**: Mostrar ejemplo en vivo
-- **CHECKPOINT**: Sincronizar progreso del grupo
-- **REFLEXIÓN**: Consolidar conceptos clave
-- **PRÁCTICA**: Guiar ejercicio hands-on
+- **🔗 TRANSICIÓN**: Conectar clases (entrada/salida)
+- **🎬 DEMO**: Mostrar ejemplo en vivo
+- **🎯 COMPROBACIÓN**: Pregunta múltiple post-demo para validar comprensión
+- **🎯 COMPROBACIÓN-RESPUESTA**: Análisis de cada opción (correcta e incorrectas)
+- **✅ CHECKPOINT**: Sincronizar progreso del grupo
+- **💡 REFLEXIÓN**: Consolidar conceptos clave
+- **🧠 QUIZ PRE-LAB**: Pregunta detonadora antes del lab
+- **📝 ENTREGA**: Requisitos finales
 
 ## Proceso
 
@@ -30,7 +33,7 @@ Cada slide tiene un propósito específico:
 
 2. **Generar archivo**: `curriculum/class-{X}/slides/README.md`
 
-## Estructura Fija (11-13 slides máximo)
+## Estructura Fija (13-15 slides máximo)
 
 ```markdown
 <!-- .slide: data-background="#0A192F" -->
@@ -63,7 +66,7 @@ Cada slide tiene un propósito específico:
 
 ---
 
-## 🎯 Pregunta Detonadora
+## 🧠 Pregunta Detonadora
 
 ### [Pregunta desafiante con 4 opciones]
 
@@ -88,6 +91,37 @@ Cada slide tiene un propósito específico:
 [Descripción del proceso mejorado]
 
 > 🎬 **Demo en vivo** - [Descripción de lo que mostrará el facilitador]
+
+---
+
+## 🎯 COMPROBACIÓN
+
+### [Pregunta que valida comprensión de la demo]
+
+**A)** [Distractor: error común]
+
+**B)** [Distractor: confusión de conceptos]
+
+**C)** [Respuesta correcta]
+
+**D)** [Distractor: respuesta incompleta]
+
+> 🕐 30 segundos para pensar → levanten la mano
+
+---
+
+## 🎯 COMPROBACIÓN-RESPUESTA
+
+**Respuesta correcta: C**
+
+### Análisis:
+
+- **A:** ❌ [Por qué este error común falla]
+- **B:** ❌ [Por qué esta confusión es incorrecta]
+- **C:** ✅ [Por qué esta es la correcta - explicación clara]
+- **D:** ❌ [Por qué está incompleta]
+
+> **Regla memorable:** [Frase corta que resume el concepto clave]
 
 ---
 
@@ -196,16 +230,18 @@ Cada slide tiene un propósito específico:
 | Tipo | Icono | Propósito | Cuándo usar |
 |------|-------|-----------|-------------|
 | Portada | — | Identificar clase | Siempre primero |
-| Transición | — | Conectar con clase anterior | Inicio |
+| Transición | 🔗 | Conectar con clase anterior | Inicio |
 | Por Qué | — | Motivar con datos reales | Después de transición |
-| **Pregunta Detonadora** | 🎯 | **Kahoot-style, 4 opciones, genera debate** | **Después de "Por Qué", antes de Demo** |
-| Demo | 🎬 | Mostrar ejemplo en vivo | Después de pregunta |
+| **Pregunta Detonadora** | 🧠 | **Quiz pre-lab, 4 opciones, genera debate** | **Después de "Por Qué", antes de Demo** |
+| Demo | 🎬 | Mostrar ejemplo en vivo | Después de pregunta detonadora |
+| **COMPROBACIÓN** | 🎯 | **Pregunta múltiple post-demo** | **Inmediatamente después de Demo** |
+| **COMPROBACIÓN-RESPUESTA** | 🎯 | **Análisis de cada opción** | **Inmediatamente después de COMPROBACIÓN** |
 | Concepto | — | Explicar idea clave | Entre demos |
 | Lab Time | — | Iniciar trabajo práctico | Centro de clase |
-| Checkpoint | — | Sincronizar progreso | Después de cada parte |
-| Reflexión | — | Consolidar aprendizaje | Antes del cierre |
-| Preview | — | Anticipar próxima clase | Casi al final |
-| Entrega | — | Recordar requisitos | Siempre último |
+| Checkpoint | ✅ | Sincronizar progreso | Después de cada parte |
+| Reflexión | 💡 | Consolidar aprendizaje | Antes del cierre |
+| Preview | 🔗 | Anticipar próxima clase | Casi al final |
+| Entrega | 📝 | Recordar requisitos | Siempre último |
 
 ## Contenido Específico de AI 101
 
@@ -221,25 +257,29 @@ Cada slide tiene un propósito específico:
 
 ## Meta
 
-- **Líneas**: ~150 máximo
-- **Slides**: 11-13 (no más)
+- **Líneas**: ~180 máximo
+- **Slides**: 13-15 (no más)
 - **Tiempo por slide**: ~2-3 min promedio
 - **Checkpoints**: Uno por cada parte del lab
 
 ## Validación
 
-- [ ] ≤ 13 slides
+- [ ] ≤ 15 slides
 - [ ] Tiene transición de entrada (clase anterior)
 - [ ] Tiene transición de salida (próxima clase)
-- [ ] **Tiene Pregunta Detonadora (4 opciones, estilo Kahoot)**
+- [ ] **Tiene 🧠 Pregunta Detonadora (4 opciones, pre-demo)**
 - [ ] Al menos 1 demo en vivo
+- [ ] **Tiene 🎯 COMPROBACIÓN post-demo (4 opciones)**
+- [ ] **Tiene 🎯 COMPROBACIÓN-RESPUESTA con análisis de cada opción**
 - [ ] Checkpoints para cada parte del lab
 - [ ] Al menos 1 reflexión
 - [ ] Slide de entrega con requisitos claros
 - [ ] Anti-hype: menciona limitaciones de IA
 - [ ] Ejemplos conectan con trabajo real
 
-## Pregunta Detonadora: Guía de Diseño
+## 🧠 Pregunta Detonadora: Guía de Diseño
+
+**Propósito:** Activar conocimiento previo ANTES de la demo. Genera curiosidad.
 
 La pregunta debe:
 - Ser DESAFIANTE (no obvia)
@@ -249,7 +289,7 @@ La pregunta debe:
 
 **Formato:**
 ```markdown
-## 🎯 Pregunta Detonadora
+## 🧠 Pregunta Detonadora
 
 ### [Pregunta que rete sus suposiciones]
 
@@ -262,3 +302,58 @@ La pregunta debe:
 ```
 
 **IMPORTANTE:** La respuesta correcta y explicación de por qué las otras NO van en `facilitator/README.md`, NO en los slides.
+
+---
+
+## 🎯 COMPROBACIÓN + COMPROBACIÓN-RESPUESTA: Guía de Diseño
+
+**Propósito:** Validar comprensión DESPUÉS de la demo. Cierra el loop de aprendizaje.
+
+### COMPROBACIÓN (slide 1)
+- Pregunta directamente sobre lo que se mostró en la demo
+- Los distractores reflejan errores comunes de comprensión
+- Se vota/levanta mano ANTES de ver la respuesta
+
+### COMPROBACIÓN-RESPUESTA (slide 2)
+- Muestra la respuesta correcta
+- **Analiza CADA opción** - por qué las incorrectas fallan
+- Termina con una "regla memorable" de 1 frase
+
+**Formato COMPROBACIÓN:**
+```markdown
+## 🎯 COMPROBACIÓN
+
+### [Pregunta específica sobre la demo]
+
+**A)** [Error común: aplica técnica incorrectamente]
+**B)** [Confusión: mezcla conceptos similares]
+**C)** [Correcta: aplica el concepto demostrado]
+**D)** [Incompleta: respuesta parcial o superficial]
+
+> 🕐 30 segundos para pensar → levanten la mano
+```
+
+**Formato COMPROBACIÓN-RESPUESTA:**
+```markdown
+## 🎯 COMPROBACIÓN-RESPUESTA
+
+**Respuesta correcta: C**
+
+### Análisis:
+
+- **A:** ❌ [Por qué este error común falla - explicación breve]
+- **B:** ❌ [Por qué esta confusión es incorrecta]
+- **C:** ✅ [Por qué esta es correcta - qué hace bien]
+- **D:** ❌ [Por qué está incompleta - qué le falta]
+
+> **Regla memorable:** [Frase corta que resume el concepto]
+```
+
+### Diferencia entre Pregunta Detonadora y COMPROBACIÓN
+
+| Aspecto | 🧠 Pregunta Detonadora | 🎯 COMPROBACIÓN |
+|---------|------------------------|-----------------|
+| **Cuándo** | ANTES de la demo | DESPUÉS de la demo |
+| **Propósito** | Activar curiosidad | Validar comprensión |
+| **Respuesta en slides** | NO (va en facilitator) | SÍ (slide siguiente) |
+| **Distractores** | Suposiciones comunes | Errores de aplicación |

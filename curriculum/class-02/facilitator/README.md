@@ -29,8 +29,8 @@ Los estudiantes llegan con:
 
 ## Estructura con Checkpoints (~150 min)
 
-### Fase 1: Recap + Hook (15 min)
-**Checkpoint:** min 0-15
+### Fase 1: Recap + Hook (10 min)
+**Checkpoint:** min 0-10
 
 **Objetivo:** Reconectar con Clase 01, crear expectativa
 
@@ -49,7 +49,7 @@ Los estudiantes llegan con:
 ---
 
 ### Fase 2: Demo de Transformación (20 min)
-**Checkpoint:** min 15-35
+**Checkpoint:** min 10-30
 
 **Objetivo:** Demostrar visualmente el poder de un buen prompt
 
@@ -69,9 +69,10 @@ Los estudiantes llegan con:
    - Ejecutar, mostrar resultado personalizado
    - Pausa. Dejar que comparen.
 
-4. **Reflexión guiada** (4 min)
+4. **Transición a RICE** (4 min)
    - "¿Qué elemento hizo la mayor diferencia?"
    - Guiar hacia: "El ejemplo elimina ambigüedad"
+   - Presentar RICE en 1 slide (tabla resumen)
 
 **Frase clave:** "Mostrar es más poderoso que describir"
 
@@ -82,102 +83,98 @@ Los estudiantes llegan con:
 
 ---
 
-### Fase 3: Framework RICE (15 min)
-**Checkpoint:** min 35-50
+### Fase 3: Construir RICE con Práctica Inmediata (25 min)
+**Checkpoint:** min 30-55
 
-**Objetivo:** Que memoricen y entiendan cada componente
+**Objetivo:** Que construyan RICE MIENTRAS aprenden, no después
+
+> ⚠️ **CAMBIO CLAVE:** En lugar de 15 min de teoría pura, intercalamos explicación con micro-prácticas. Cada componente se explica Y se escribe inmediatamente.
 
 **Hacer:**
-1. **R = Rol** (3 min)
-   - "No es solo 'eres experto', es 'eres X con Y experiencia en Z'"
-   - Ejemplo vs contraejemplo rápido
 
-2. **I = Instrucción** (3 min)
-   - "Específica > Vaga"
-   - "Qué debe hacer EXACTAMENTE"
+1. **R = Rol** (5 min)
+   - Explicar: "No es solo 'eres experto', es 'eres X con Y experiencia en Z'" (2 min)
+   - **MICRO-PRÁCTICA:** "Escribe el ROL para TU tarea" (3 min)
+   - Pedir 1-2 ejemplos en voz alta
 
-3. **C = Contexto** (3 min)
-   - "Todo lo que la IA necesita saber para no adivinar"
-   - "Más contexto = Menos iteraciones"
+2. **I = Instrucción** (5 min)
+   - Explicar: "Específica > Vaga. Verbo de acción." (2 min)
+   - **MICRO-PRÁCTICA:** "Escribe la INSTRUCCIÓN para tu tarea" (3 min)
 
-4. **E = Ejemplo** (6 min) — ÉNFASIS AQUÍ
-   - "El upgrade desde Clase 01"
-   - Ejemplo de output deseado
-   - Anti-ejemplo de lo que NO quieres
-   - "Esto elimina el 80% de la ambigüedad"
+3. **C = Contexto** (5 min)
+   - Explicar: "Todo lo que la IA necesita para no adivinar" (2 min)
+   - **MICRO-PRÁCTICA:** "Escribe 3 bullets de CONTEXTO" (3 min)
+
+4. **E = Ejemplo** (10 min) — ÉNFASIS AQUÍ
+   - Explicar: "El upgrade. Muestra qué SÍ quieres Y qué NO quieres" (4 min)
+   - **MICRO-PRÁCTICA:** "Escribe 1 ejemplo de output + 2 anti-ejemplos" (6 min)
+
+**Al terminar:** Los estudiantes ya tienen un prompt RICE armado para su tarea real.
 
 **Frase clave:** "FORMATO te dice cómo. EJEMPLO te muestra exactamente qué."
 
-**Dinámica rápida:**
-Pedir a 2-3 estudiantes que digan en voz alta:
-- "R de..." → "Rol"
-- "I de..." → "Instrucción"
-- "C de..." → "Contexto"
-- "E de..." → "Ejemplo"
+---
+
+### Fase 4: Ensamblar y Probar (10 min)
+**Checkpoint:** min 55-65
+
+**Objetivo:** Que todos ejecuten su primer prompt RICE
+
+**Hacer:**
+1. "Junten los 4 componentes en un solo prompt" (2 min)
+2. "Ejecuten en Claude" (5 min)
+3. "¿Funcionó? ¿Qué ajustarían?" (3 min)
+
+**Circulación rápida:**
+| Señal | Qué hacer |
+|-------|-----------|
+| No ejecutó | "¿Cuál componente te falta?" |
+| Resultado malo | "¿Incluiste ejemplo de output?" |
+| Resultado bueno | "¿Lo usarías tal cual mañana?" |
 
 ---
 
-### Fase 4: Técnicas Avanzadas (15 min)
-**Checkpoint:** min 50-65
+### Fase 5: Anti-Hype + Técnicas Avanzadas (15 min)
+**Checkpoint:** min 65-80
 
-**Objetivo:** Introducir Chain of Thought y Few-shot
+**Objetivo:** Bajar expectativas irreales, introducir CoT/Few-shot brevemente
+
+> ⚠️ **CAMBIO:** Anti-hype ANTES de técnicas avanzadas para que no piensen que "hay un truco mágico"
 
 **Hacer:**
-1. **Chain of Thought** (7 min)
+
+1. **Mitos a destruir** (5 min) - 1 SLIDE con tabla
+   - "¿Cuál de estos han cometido?" (interacción)
+   - Prompts que fallan: 1 slide con 3 ejemplos malos
+
+2. **Chain of Thought** (4 min)
    - "Pedir que piense paso a paso ANTES de concluir"
-   - Demo rápida: análisis de decisión con vs sin CoT
-   - Cuándo usarlo: análisis complejos, decisiones, razonamiento
+   - Cuándo usarlo: análisis complejos, decisiones
+   - NO demo larga - solo concepto
 
-2. **Few-shot** (7 min)
+3. **Few-shot** (4 min)
    - "Enseñar con ejemplos de input → output"
-   - Demo: clasificación con 2-3 ejemplos
    - Cuándo usarlo: formatos específicos, consistencia
+   - NO demo larga - solo concepto
 
-**Frase clave:** "CoT para pensar. Few-shot para formatear."
-
-**Nota pedagógica:**
-No profundizar demasiado aquí. El lab es donde practican.
-Estas técnicas se consolidan con uso, no con explicación.
-
----
-
-### Fase 5: Anti-Hype - Prompts que Fallan (10 min)
-**Checkpoint:** min 65-75
-
-**Objetivo:** Prevenir errores comunes, bajar expectativas irreales
-
-**Hacer:**
-1. **Mitos a destruir** (5 min)
-   - "Existe el prompt perfecto" → La iteración es el proceso
-   - "Más largo = mejor" → Claridad > longitud
-   - "Copy-paste de internet" → Requiere adaptación
-   - "La IA entiende implícitos" → Explícito siempre gana
-
-2. **Prompts que fallan** (5 min)
-   - Rol sin contexto: "Eres experto. Analiza esto." → ¿Experto en qué?
-   - Instrucciones contradictorias: "Sé breve pero detallado"
-   - Pedir datos específicos: "¿Precio actual de Bitcoin?" → Puede inventar
+4. **Cierre de sección** (2 min)
+   - "CoT para pensar. Few-shot para formatear."
+   - "En el lab van a elegir UNA para su segundo prompt"
 
 **Frase clave:** "Si tu prompt requiere que la IA adivine, vas a iterar mucho"
 
-**Momento importante:**
-Este es el momento "anti-hype" obligatorio del principio ANTI_HYPE_ALWAYS.
-No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
+**Nota pedagógica:**
+Estas técnicas se consolidan con uso, no con explicación.
+El lab es donde las aplican.
 
 ---
 
-### Fase 6: Lab con Checkpoints (60 min)
-**Checkpoint:** min 75-135
+### Fase 6: Prompt Battle (25 min)
+**Checkpoint:** min 80-105
 
-**Estructura interna:**
-
-#### Parte 1: Demo Guiada (15 min) - min 75-90
-- Todos hacen los 3 niveles de prompt juntos
-- Observan la transformación en su propia pantalla
-- Reflexión rápida grupal al final
-
-#### Parte 2: Prompt Battle (20 min) - min 90-110
 **Este es el momento de COMPETITIVE_COLLABORATION**
+
+> ⚠️ **CAMBIO:** Battle ANTES del trabajo individual de técnicas avanzadas. Aprovecha la energía del grupo.
 
 **Setup:**
 - Anunciar el reto claramente
@@ -187,7 +184,7 @@ No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
 **Ejecución:**
 - 8 min: Escriben su prompt
 - 2 min: Ejecutan y capturan
-- 10 min: 3-4 voluntarios comparten, votación, discusión
+- 15 min: 3-4 voluntarios comparten, votación, discusión
 
 **Facilitación del Battle:**
 - Pedir voluntarios diversos (diferentes industrias/roles)
@@ -200,32 +197,50 @@ No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
 - Sorpresa al ver enfoques diferentes
 - "Ah, no pensé en incluir eso"
 
-#### Parte 3: Prompts Individuales (25 min) - min 110-135
-- 15 min: Prompt de Análisis (RICE + CoT)
-- 10 min: Prompt Reusable (RICE + Few-shot)
+---
+
+### Fase 7: Lab - Técnica Avanzada (25 min)
+**Checkpoint:** min 105-130
+
+**Objetivo:** Crear el segundo prompt maestro con CoT o Few-shot
+
+**Hacer:**
+1. Presentar las 2 opciones claramente (2 min)
+   - Chain of Thought: para análisis
+   - Few-shot: para formatos
+
+2. "Elige UNA según tu necesidad" (1 min)
+
+3. Trabajo individual (15 min)
+   - Crear prompt con técnica elegida
+   - Ejecutar y refinar
+
+4. Captura y documentación (7 min)
+   - Screenshot del prompt + resultado
+   - Guardar en formato de entregable
 
 **Circulación durante el lab:**
 
 | Señal | Qué hacer |
 |-------|-----------|
-| Mira pantalla sin escribir | "¿Cuál de tus 3 tareas elegiste?" |
-| Prompt muy corto | "¿Incluiste un ejemplo de output?" |
-| Frustración | "¿Qué parte de RICE te falta?" |
-| Terminó rápido | "¿Probaste agregar anti-ejemplos?" |
+| Confusión CoT vs Few-shot | "¿Tu tarea es análisis o formato?" |
+| Prompt muy largo | "CoT son pasos, no un ensayo" |
+| Few-shot sin ejemplos | "¿Cuáles son 2 ejemplos de input/output?" |
+| Terminó rápido | "¿Probaste ejecutarlo? ¿Funciona?" |
 
 ---
 
-### Fase 7: Showcase + Cierre (15 min)
-**Checkpoint:** min 135-150
+### Fase 8: Showcase + Cierre (20 min)
+**Checkpoint:** min 130-150
 
 **Objetivo:** Celebrar, consolidar, anticipar
 
 **Hacer:**
-1. **Showcase** (8 min)
+1. **Showcase** (10 min)
    - 2-3 voluntarios muestran su mejor prompt
    - Enfocarse en: qué técnica usaron, qué aprendieron
 
-2. **Consolidación** (4 min)
+2. **Consolidación** (5 min)
    - "RICE es su nueva base"
    - "CoT para análisis, Few-shot para formatos"
    - "El ejemplo es el diferenciador"
@@ -235,8 +250,30 @@ No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
    - "Crearán contenido profesional publicable"
    - "Sus prompts de hoy serán herramientas para mañana"
 
+4. **Entregable** (2 min)
+   - Recordar: 2 prompts (no 3)
+   - Formato simplificado
+   - Google Doc con screenshots
+
 **Frase de cierre:**
 > "Un prompt genérico produce resultados genéricos. Un prompt diseñado produce resultados extraordinarios."
+
+---
+
+## Nuevo Flujo de Energía
+
+```
+min 0-10:   ████████░░ (Recap + Hook - OK)
+min 10-30:  ██████████ (Demo transformación - PICO)
+min 30-55:  ████████░░ (RICE con práctica - ACTIVO)
+min 55-65:  ███████░░░ (Ensamblar y probar - MEDIO)
+min 65-80:  ██████░░░░ (Anti-hype + Técnicas - MEDIO-BAJO)
+min 80-105: ██████████ (Prompt Battle - PICO)
+min 105-130:███████░░░ (Lab individual - MEDIO)
+min 130-150:████████░░ (Showcase + Cierre - OK)
+```
+
+**Mejora:** No hay 30 min de teoría consecutiva. Alternan activo/pasivo.
 
 ---
 
@@ -266,15 +303,15 @@ No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
 ## Señales de Éxito
 
 **La clase funcionó si:**
-- 80%+ entiende y aplica RICE en sus prompts
+- 80%+ construyen un prompt RICE funcional durante la clase
 - El Prompt Battle genera energía y aprendizaje
-- Preguntan sobre cuándo usar CoT vs Few-shot
-- Sus prompts del lab son notablemente mejores que los de Clase 01
+- Todos tienen 2 prompts documentados al final
+- Los prompts son para tareas REALES de su trabajo
 
 **Alerta si:**
 - Siguen haciendo prompts sin ejemplo
 - No participan en el Battle (apatía)
-- Comentarios tipo "es mucho esfuerzo para un prompt"
+- No trajeron tareas reales (hacen ejemplos genéricos)
 
 ---
 
@@ -282,10 +319,11 @@ No minimizarlo. Los estudiantes recordarán esto cuando fallen sus prompts.
 
 | Error | Corrección |
 |-------|------------|
-| Sobreexplicar las técnicas | Menos teoría, más práctica |
+| Explicar RICE sin práctica | Micro-práctica después de cada letra |
 | Battle sin energía | Aumentar competitividad "¿Quién cree que puede ganar?" |
 | Saltarse el anti-hype | Es obligatorio, previene frustraciones futuras |
-| No dar suficiente tiempo para el lab | El lab ES la clase, la teoría es setup |
+| Dar demasiado tiempo para 3 prompts | Ahora son 2, tiempo suficiente |
+| Explicar CoT/Few-shot en profundidad | Solo concepto, el lab es donde practican |
 
 ---
 

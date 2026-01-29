@@ -1,292 +1,168 @@
 # Lab 02: Mis Prompts Maestros
 
-En este lab transformarás prompts básicos en prompts profesionales usando el framework RICE. Competirás con tus compañeros en un Prompt Battle y crearás 3 prompts maestros documentados que podrás reusar en tu trabajo real.
+Construirás 2 prompts maestros usando RICE y técnicas avanzadas, listos para reusar en tu trabajo.
 
 > ⏱️ **Tiempo total:** 60 minutos
 
 ### 🎯 Objetivo
 
-Crear 3 prompts maestros usando RICE y técnicas avanzadas (Chain of Thought, Few-shot), documentados en un formato que puedas reusar y compartir.
-
-### 🔑 Conceptos Clave
-
-- **RICE**: Rol + Instrucción + Contexto + Ejemplo
-- **Chain of Thought**: "Piensa paso a paso antes de responder"
-- **Few-shot**: Incluir ejemplos de input → output deseado
-- **Anti-ejemplo**: Mostrar qué NO quieres
+Crear 2 prompts maestros documentados: uno con RICE básico y otro con técnica avanzada (CoT o Few-shot).
 
 ---
 
-## Parte 1: De Bueno a Extraordinario (15 min)
+## Parte 1: Construye RICE con TU Tarea (20 min)
 
-Observa cómo el mismo prompt evoluciona en 3 niveles.
+Construye tu primer prompt RICE usando una de las 3 tareas reales que trajiste.
 
-### 1.1. Nivel 1: El Prompt Casual
-
-Copia y pega en Claude:
+### 1.1. R = Rol (2 min)
 
 ```
-Escribe un email de seguimiento después de una reunión.
+Eres un _______________ con experiencia en _______________.
 ```
 
-**Observa:** ¿Es útil? ¿Lo enviarías tal cual?
+### 1.2. I = Instrucción (2 min)
 
-### 1.2. Nivel 2: Con Estructura Básica (Clase 01)
+¿Qué debe hacer EXACTAMENTE? Verbo de acción + qué + para qué.
 
 ```
-Actúa como un profesional de negocios.
-
-Trabajo en una agencia de marketing digital y tuve una reunión
-con un cliente potencial sobre un proyecto de branding.
-
-Escribe un email de seguimiento post-reunión.
-
-Preséntalo como email listo para enviar con subject line.
+[Verbo] _______________________________________________
 ```
 
-**Observa:** Mejoró, pero ¿tiene tu tono? ¿Tu contexto específico?
+### 1.3. C = Contexto (3 min)
 
-### 1.3. Nivel 3: RICE Completo
+```
+- Audiencia: _______________
+- Situación: _______________
+- Restricciones: _______________
+```
+
+### 1.4. E = Ejemplo (5 min)
+
+**Output deseado:** `"[Fragmento de cómo debe verse]"`
+
+**Anti-ejemplos:**
+- NO quiero que sea ___
+- NO quiero que suene ___
+
+### 1.5. Ensambla y prueba (8 min)
 
 ```
 [ROL]
-Eres un consultor senior de marketing con 10 años de experiencia
-cerrando clientes corporativos. Tu tono es profesional pero cálido.
+Eres un [tu rol] con experiencia en [tu área].
 
 [INSTRUCCIÓN]
-Escribe un email de seguimiento para enviar 24 horas después
-de una reunión de discovery con un cliente potencial.
+[Tu instrucción específica]
 
 [CONTEXTO]
-- Cliente: Director de Marketing de empresa de tecnología (50-100 empleados)
-- Reunión: Discovery de 45 min sobre rebranding
-- Pain points mencionados: marca desactualizada, competidores más modernos
-- Próximo paso acordado: enviar propuesta en 1 semana
-- Mi empresa: Agencia boutique especializada en tech startups
+- [Tus bullets de contexto]
 
-[EJEMPLO de tono deseado]
-"Gracias por compartir los desafíos de [Empresa] tan abiertamente.
-Es exactamente el tipo de proyecto donde podemos agregar valor..."
+[EJEMPLO de output deseado]
+"[Tu ejemplo]"
 
-[ANTI-EJEMPLO - NO quiero esto]
-- Nada genérico tipo "fue un placer conocerlo"
-- Nada vendedor/agresivo tipo "no pierda esta oportunidad"
-- Nada largo (máximo 150 palabras)
+[ANTI-EJEMPLO]
+- [Tus anti-ejemplos]
 ```
 
-**Observa:** ¿Ves la diferencia? El ejemplo y anti-ejemplo eliminan ambigüedad.
-
-### 1.4. Reflexión grupal (3 min)
-
-- ¿Cuál de los 3 usarías en tu trabajo?
-- ¿Qué elemento hizo la mayor diferencia?
+Ejecuta en Claude. ¿Es útil? Itera si es necesario.
 
 ---
 
 ## Parte 2: Prompt Battle (20 min)
 
-### El Reto
-
-Todos van a resolver el **mismo problema** con su propio prompt. Después votamos el mejor.
-
 **Escenario:**
-> Tu jefe te pide que resumas un documento técnico de 10 páginas para presentar los puntos clave al CEO en 2 minutos. El CEO odia el tecnicismo y quiere saber: ¿qué significa esto para el negocio?
+> Tu jefe te pide que resumas un documento técnico de 10 páginas para el CEO en 2 minutos. El CEO odia el tecnicismo y quiere saber: ¿qué significa esto para el negocio?
 
-### 2.1. Escribe tu prompt (8 min)
+### Ejecución
 
-Usa RICE para crear tu mejor prompt. Puedes usar Claude para iterarlo.
-
-**Tip:** Piensa en:
-- ¿Qué rol sería más útil?
-- ¿Qué instrucción específica?
-- ¿Qué contexto sobre el CEO/empresa?
-- ¿Qué ejemplo de formato/tono?
-
-### 2.2. Ejecuta y captura (2 min)
-
-- Ejecuta tu prompt en Claude (usa cualquier texto técnico que tengas o inventa uno)
-- Captura screenshot del resultado
-
-### 2.3. Votación (10 min)
-
-**Formato:**
-1. 3-4 voluntarios comparten su prompt y resultado (2 min c/u)
-2. Votación rápida: ¿cuál funcionó mejor?
-3. Discusión: ¿qué hizo que el ganador funcionara?
+1. **Escribe tu prompt** usando RICE (8 min)
+2. **Ejecuta y captura** screenshot (2 min)
+3. **Votación** — 3-4 voluntarios comparten, votamos el mejor (10 min)
 
 ---
 
-## Parte 3: Mi Prompt de Análisis (15 min)
+## Parte 3: Técnica Avanzada (15 min)
 
-Ahora crearás tu primer prompt maestro para **analizar información**.
+Elige UNA técnica para tu segundo prompt maestro.
 
-### 3.1. Elige tu tarea de análisis
+### Opción A: Chain of Thought
 
-De las 3 tareas que trajiste, elige una que involucre:
-- Analizar datos o información
-- Evaluar opciones
-- Identificar patrones o problemas
-- Tomar decisiones basadas en información
-
-### 3.2. Aplica RICE + Chain of Thought
-
-Usa esta estructura:
+Para análisis y decisiones. Pide razonar paso a paso.
 
 ```
-[ROL]
-Eres un [experto relevante] con experiencia en [tu industria].
+[ROL] Eres un [experto] en [industria].
 
 [INSTRUCCIÓN]
-Analiza [qué cosa] y dame [qué resultado].
+Analiza [qué] y dame [resultado].
 
-Antes de dar tu conclusión, piensa paso a paso:
-1. Primero identifica [aspecto 1]
-2. Luego evalúa [aspecto 2]
-3. Considera [aspecto 3]
-4. Finalmente, concluye con [recomendación]
+Antes de concluir, piensa paso a paso:
+1. Identifica [aspecto 1]
+2. Evalúa [aspecto 2]
+3. Concluye con [recomendación]
 
 [CONTEXTO]
-- Mi situación: [describe]
-- Lo que ya sé: [información previa]
-- Mi objetivo: [qué quiero lograr]
-- Restricciones: [límites o condiciones]
+- Situación: ___
+- Objetivo: ___
 
-[EJEMPLO de output deseado]
-"Basado en el análisis:
-1. Hallazgo principal: ...
-2. Implicación para ti: ...
-3. Recomendación: ..."
+[EJEMPLO]
+"1. Hallazgo: ... 2. Implicación: ... 3. Recomendación: ..."
 ```
 
-### 3.3. Ejecuta e itera (5 min)
+### Opción B: Few-shot
 
-- Prueba tu prompt con información real
-- Refina según el resultado
-- Guarda la versión final
-
----
-
-## Parte 4: Mi Prompt Reusable (10 min)
-
-Crearás un segundo prompt maestro usando **Few-shot** para un formato específico.
-
-### 4.1. Elige tu tarea de formato
-
-Elige algo donde necesites un formato consistente:
-- Escribir emails de un tipo específico
-- Crear resúmenes ejecutivos
-- Generar bullets para presentaciones
-- Redactar posts o mensajes
-
-### 4.2. Aplica RICE + Few-shot
+Para formatos consistentes. Enseña con ejemplos.
 
 ```
-[ROL]
-Eres [rol] especializado en [área].
+[ROL] Eres [rol] en [área].
 
 [INSTRUCCIÓN]
-Genera [qué cosa] siguiendo exactamente el formato de los ejemplos.
+Genera [qué] siguiendo el formato de los ejemplos.
 
 [CONTEXTO]
-- Audiencia: [quién lo leerá]
-- Tono: [formal/casual/técnico]
-- Longitud: [especifica]
+- Audiencia: ___ / Tono: ___
 
 [EJEMPLOS]
-
-Ejemplo 1:
-Input: [input de ejemplo]
-Output: [output exacto que quieres]
-
-Ejemplo 2:
-Input: [otro input]
-Output: [otro output en el mismo formato]
-
----
+Input: [ejemplo 1] → Output: [resultado exacto]
+Input: [ejemplo 2] → Output: [mismo formato]
 
 Ahora genera para:
 Input: [tu input real]
 ```
 
-### 4.3. Documenta tu prompt maestro
-
-Guarda con este formato:
-
-```
-PROMPT MAESTRO: [Nombre descriptivo]
-Uso: [Para qué sirve]
-Técnicas: RICE + Few-shot
----
-[Tu prompt completo]
----
-Resultado esperado: [Qué obtienes]
-```
+**Crea, ejecuta y captura screenshot** (15 min)
 
 ---
 
 ## 📝 Entregable
 
-**Para la tarea de esta clase, deberás entregar 3 prompts maestros:**
+**2 prompts maestros en Google Doc:**
 
-### Prompt 1: Transformación (de Parte 1 o Battle)
+### Prompt 1: RICE (de Parte 1 o Battle)
 ```
-Nombre:
-Uso:
-Técnicas aplicadas: RICE + [otras]
+PROMPT MAESTRO: [Nombre]
+Uso: [Para qué]
 ---
 [Prompt completo]
 ---
-Screenshot del resultado
+Screenshot
 ```
 
-### Prompt 2: Análisis (de Parte 3)
+### Prompt 2: Técnica Avanzada (de Parte 3)
 ```
-Nombre:
-Uso:
-Técnicas aplicadas: RICE + Chain of Thought
+PROMPT MAESTRO: [Nombre]
+Técnicas: RICE + [CoT o Few-shot]
 ---
 [Prompt completo]
 ---
-Screenshot del resultado
+Screenshot
 ```
 
-### Prompt 3: Formato Reusable (de Parte 4)
-```
-Nombre:
-Uso:
-Técnicas aplicadas: RICE + Few-shot
----
-[Prompt completo]
----
-Screenshot del resultado
-```
-
-**Formato de entrega:** Documento de Google con los 3 prompts + screenshots, compartir públicamente y pegar el link como entrega.
+**Entrega:** Link público del Google Doc.
 
 ---
 
-## 🏆 Retos Adicionales (si terminas antes)
-
-### Reto 1: El Prompt Perfeccionista
-- Toma tu mejor prompt y agrega anti-ejemplos
-- ¿Mejoró el resultado?
-
-### Reto 2: Combina Técnicas
-- Crea un prompt que use Chain of Thought Y Few-shot
-- ¿Es más efectivo o demasiado largo?
-
-### Reto 3: El Prompt Universal
-- Crea un "meta-prompt" que genere otros prompts
-- Input: descripción de tarea → Output: prompt RICE completo
-
----
-
-## Checklist de Calidad
-
-Antes de entregar, verifica:
+## Checklist
 
 - [ ] ¿Cada prompt tiene los 4 elementos de RICE?
-- [ ] ¿Incluí al menos un ejemplo de output deseado?
-- [ ] ¿Mis prompts son para tareas REALES de mi trabajo?
+- [ ] ¿Incluí ejemplo de output deseado?
+- [ ] ¿Son para tareas REALES de mi trabajo?
 - [ ] ¿Los screenshots muestran resultados útiles?
-- [ ] ¿Podría reusar estos prompts mañana mismo?

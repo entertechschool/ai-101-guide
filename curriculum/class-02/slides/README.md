@@ -4,466 +4,208 @@ Presentación reveal.js para la segunda clase de AI 101.
 
 ---
 
-<!-- .slide: data-background="#1a1a2e" -->
+<!-- .slide: data-background="#0A192F" -->
 
-# El Arte del Prompt
+# Clase 02: El Arte del Prompt
+## De resultados mediocres a extraordinarios
 
-### AI 101 - Clase 2
-
-*Entertech School*
-
----
-
-## Recap: Clase 01
-
-Construiste tu **primer sistema** con Claude
-
-```
-SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
-```
-
-¿Cuántos lo usaron esta semana?
+*AI 101 - Entertech School*
 
 ---
 
-## Hoy
+## 🔗 Transición: Clase 01 → Clase 02
 
-De resultados **pobres** a **extraordinarios**
+### La clase pasada:
+- Construiste tu primer SISTEMA con Claude
+- Fórmula: `ROL + CONTEXTO + INSTRUCCIÓN`
 
-- Con la misma herramienta
+### Hoy:
+- Evolucionamos a **RICE** (Rol, Instrucción, Contexto, Ejemplo)
+- El Ejemplo es el upgrade que transforma resultados
 
-> "La IA no me da buenos resultados"
-
-- ¿Seguro que el problema es la IA?
-
----
-
-## Veamos
-
-### El mismo pedido, 3 niveles
-
-## Nivel 1: El Prompt Casual
-
-```
-Escribe un email de seguimiento
-después de una reunión.
-```
-
-### Resultado Nivel 1
-
-*[Demo en vivo con Claude]*
-
-> ¿Lo enviarías tal cual?
+> "La IA no me da buenos resultados" — ¿Seguro que el problema es la IA?
 
 ---
 
-## Nivel 2: Con Estructura
+## ¿Por Qué Esto Importa?
 
-```
-Actúa como un profesional de negocios.
-Trabajo en una agencia de marketing y tuve
-una reunión con un cliente potencial.
-Escribe un email de seguimiento post-reunión.
-Preséntalo como email listo para enviar.
-```
+### El problema:
+El 95% escribe prompts como mensajes de texto: vagos, sin estructura
 
-### Resultado Nivel 2
+### La oportunidad:
+Un prompt bien diseñado produce resultados que usas **tal cual**
 
-*[Demo en vivo con Claude]*
-
-> Mejor... pero ¿es TU tono?
+> **Realidad:** La iteración es inevitable. Pero un buen prompt reduce de 10 iteraciones a 2.
 
 ---
 
-## Nivel 3: RICE Completo
+## 🧠 Pregunta Detonadora
 
-```
-[ROL] Consultor senior de marketing
-[INSTRUCCIÓN] Email de seguimiento 24h post-meeting
-[CONTEXTO] Cliente: Dir. Marketing tech, pain points...
-[EJEMPLO] Tono deseado + anti-ejemplos
-```
+### ¿Cuál elemento de un prompt hace MÁS diferencia en la calidad del resultado?
 
-### Resultado Nivel 3
+**A)** El rol que le asignas a la IA
 
-*[Demo en vivo con Claude]*
+**B)** La longitud y detalle del prompt
 
-> **Esto sí lo uso**
+**C)** Los ejemplos de output deseado
 
----
+**D)** Las palabras que usas al inicio
 
-<!-- .slide: data-background="#16213e" -->
-
-## El Framework
-
-# RICE
+> 🕐 30 segundos para pensar → levanten la mano
 
 ---
 
-## RICE
+## 🎬 Demo: El Mismo Pedido, 3 Niveles
 
-| Letra | Significado |
-|-------|-------------|
-| **R** | Rol |
-| **I** | Instrucción |
-| **C** | Contexto |
-| **E** | Ejemplo |
-
----
-
-## R = Rol
-
-¿Quién quieres que sea la IA?
-
+### Nivel 1: Prompt Casual
 ```
-Eres un consultor senior de marketing
-con 10 años de experiencia cerrando
-clientes corporativos.
+Escribe un email de seguimiento después de una reunión.
 ```
 
-No: "Actúa como experto"
-Sí: "Eres X con Y experiencia en Z"
-
----
-
-## I = Instrucción
-
-¿Qué debe hacer **exactamente**?
-
+### Nivel 2: Con Estructura (Clase 01)
 ```
-Escribe un email de seguimiento para
-enviar 24 horas después de una reunión
-de discovery con un cliente potencial.
+Actúa como profesional de negocios.
+Trabajo en agencia de marketing, tuve reunión con cliente potencial.
+Escribe email de seguimiento post-reunión.
 ```
 
-Específica > Vaga
+### Nivel 3: RICE Completo
+Con Rol + Instrucción + Contexto + **Ejemplo**
+
+> 🎬 **Demo en vivo** - Veremos los 3 resultados y la diferencia
 
 ---
 
-## C = Contexto
+## 🎯 COMPROBACIÓN
 
-¿Qué información necesita?
+### ¿Qué hizo que el Nivel 3 produjera el mejor resultado?
 
-```
-- Cliente: Director de Marketing, empresa tech
-- Reunión: Discovery de 45 min sobre rebranding
-- Pain points: marca desactualizada
-- Próximo paso: enviar propuesta en 1 semana
-```
+**A)** Tenía más palabras y era más detallado
 
-Más contexto = Menos adivinanza
+**B)** Incluía un ejemplo concreto de cómo debe verse el output
 
----
+**C)** Usaba un rol más específico que los anteriores
 
-## E = Ejemplo
+**D)** Estaba mejor formateado con secciones claras
 
-¿Cómo debe verse el resultado?
-
-```
-[EJEMPLO de tono deseado]
-"Gracias por compartir los desafíos..."
-
-[ANTI-EJEMPLO - NO quiero esto]
-- Nada genérico tipo "fue un placer"
-- Nada vendedor tipo "no pierda esta oportunidad"
-```
+> 🕐 30 segundos para pensar → levanten la mano
 
 ---
 
-## El Secreto
+## 🎯 COMPROBACIÓN-RESPUESTA
 
-El **Ejemplo** elimina ambigüedad
+**Respuesta correcta: B**
 
-> Mostrar > Describir
+### Análisis:
 
----
+- **A:** ❌ Más palabras sin dirección clara no mejoran el resultado
+- **B:** ✅ El ejemplo elimina ambigüedad — la IA VE qué quieres, no tiene que adivinar
+- **C:** ❌ El rol ayuda, pero sin ejemplo el output sigue siendo genérico
+- **D:** ❌ El formato ayuda a organizar, pero el contenido (ejemplo) es lo que transforma
 
-## Evolución desde Clase 01
-
-```
-Clase 01          →  Clase 02
-─────────────────────────────
-ROL               →  R (Rol)
-TAREA             →  I (Instrucción)
-CONTEXTO          →  C (Contexto)
-FORMATO           →  E (Ejemplo) ✨
-```
-
-El Ejemplo es el upgrade
+> **Regla memorable:** Mostrar > Describir. Un ejemplo vale más que mil instrucciones.
 
 ---
 
-<!-- .slide: data-background="#0f3460" -->
+## Concepto Clave: Framework RICE
 
-## Técnicas Avanzadas
+| Letra | Pregunta | Tip |
+|-------|----------|-----|
+| **R** | ¿Quién debe ser la IA? | Específico > "experto" |
+| **I** | ¿Qué debe hacer exactamente? | Verbo de acción |
+| **C** | ¿Qué necesita saber? | Todo lo que evite que adivine |
+| **E** | ¿Cómo debe verse el resultado? | **Mostrar > Describir** |
 
----
-
-## Chain of Thought
-
-Pide a la IA que **piense paso a paso**
-
-```
-Antes de dar tu conclusión:
-1. Primero identifica los factores clave
-2. Luego evalúa pros y contras
-3. Considera los riesgos
-4. Finalmente, concluye con recomendación
-```
+### Anti-patrón:
+❌ "Sé breve pero detallado" — Instrucciones contradictorias
 
 ---
-
-## ¿Cuándo usar CoT?
-
-- Análisis complejos
-- Decisiones con múltiples factores
-- Cuando necesitas ver el razonamiento
-- Problemas matemáticos o lógicos
-
----
-
-## Few-shot
-
-Enseña con **ejemplos de input/output**
-
-```
-[EJEMPLOS]
-
-Input: "El proyecto va bien"
-Output: "✅ Proyecto en track"
-
-Input: "Hay algunos retrasos menores"
-Output: "⚠️ Proyecto con alertas"
-
-Ahora genera para:
-Input: [tu texto]
-```
-
----
-
-## ¿Cuándo usar Few-shot?
-
-- Formatos específicos y consistentes
-- Clasificaciones o categorizaciones
-- Cuando el ejemplo habla más que la instrucción
-- Templates reusables
-
----
-
-<!-- .slide: data-background="#e74c3c" -->
-
-## Anti-Hype
-
-### Prompts que Fallan
-
----
-
-## Mito 1
-
-> "Existe el prompt perfecto"
-
-**Realidad:** La iteración es parte del proceso
-
-El primer intento casi nunca es el mejor
-
----
-
-## Mito 2
-
-> "Más largo = Mejor"
-
-**Realidad:** Claridad > Longitud
-
-Un prompt de 50 palabras claras
-supera uno de 200 confusas
-
----
-
-## Mito 3
-
-> "Copy-paste de internet funciona"
-
-**Realidad:** Requiere adaptación
-
-Los prompts son contextuales
-
-Tu situación ≠ La del tutorial
-
----
-
-## Mito 4
-
-> "La IA entiende implícitos"
-
-**Realidad:** Explícito siempre gana
-
-Lo que no dices, la IA lo inventa
-
----
-
-## Prompts que Fallan
-
-### 1. Rol sin contexto
-
-```
-❌ Eres un experto. Analiza esto.
-```
-
-¿Experto en qué? ¿Analizar cómo?
-
----
-
-## Prompts que Fallan
-
-### 2. Instrucciones contradictorias
-
-```
-❌ Sé breve pero detallado.
-   Dame un resumen completo.
-   Máximo 100 palabras pero no omitas nada.
-```
-
----
-
-## Prompts que Fallan
-
-### 3. Pedir datos específicos
-
-```
-❌ ¿Cuál es el precio actual de Bitcoin?
-❌ ¿Cuántos empleados tiene Apple en 2025?
-```
-
-La IA puede inventar datos que no tiene
-
-**Siempre verifica datos factuales**
-
----
-
-## La Regla de Oro
-
-> "Si tu prompt requiere que la IA adivine,
-> probablemente vas a iterar mucho"
-
----
-
-<!-- .slide: data-background="#1a1a2e" -->
 
 ## Lab Time
 
----
+### Mis Prompts Maestros
 
-## Prompt Battle
+**Objetivo:** Crear 2 prompts maestros documentados
 
-**Mismo reto, diferentes soluciones**
+**Tiempo:** 60 min
 
-1. Todos escriben su mejor prompt
-2. Ejecutan en Claude
-3. Votamos el mejor resultado
-4. Discutimos qué funcionó
+**Partes:**
+1. Construye RICE con tu tarea (~20 min)
+2. Prompt Battle (~20 min)
+3. Técnica avanzada (~15 min)
 
----
-
-## El Reto
-
-> Tu jefe te pide que resumas un documento
-> técnico de 10 páginas para el CEO.
->
-> El CEO odia el tecnicismo y quiere saber:
-> ¿qué significa esto para el negocio?
-
-**8 minutos para tu prompt**
+> 💡 Tip: Empieza con el Ejemplo — define cómo debe verse el output
 
 ---
 
-## Lab: Tus 3 Prompts Maestros
+## ✅ Checkpoint: Parte 1
 
-1. **Prompt de transformación** (del Battle)
-2. **Prompt de análisis** (RICE + Chain of Thought)
-3. **Prompt reusable** (RICE + Few-shot)
+### Verifica:
+- [ ] Los 4 elementos de RICE escritos
+- [ ] Prompt ensamblado y probado en Claude
+- [ ] Al menos 1 iteración de mejora
 
-Documentados y listos para reusar
-
----
-
-## Formato de Documentación
-
-```
-PROMPT MAESTRO: [Nombre]
-Uso: [Para qué sirve]
-Técnicas: RICE + [otras]
----
-[Prompt completo]
----
-Screenshot del resultado
-```
+**Preguntas:**
+- ¿Cuál elemento costó más definir?
+- ¿El ejemplo cambió significativamente el resultado?
 
 ---
 
-## Tips para el Lab
+## ✅ Checkpoint: Parte 2 (Battle)
 
-| Tip | Ejemplo |
-|-----|---------|
-| Incluye anti-ejemplos | "NO quiero que sea vendedor" |
-| Usa CoT para análisis | "Primero identifica, luego evalúa..." |
-| Usa Few-shot para formatos | 2-3 ejemplos de input/output |
-| Itera sin miedo | El primer draft no es el final |
+### Verifica:
+- [ ] Prompt para el reto del CEO escrito
+- [ ] Ejecutado y screenshot capturado
+- [ ] Listo para compartir (si eres voluntario)
 
----
-
-## Showcase
-
-### Compartan su mejor prompt
-
-- ¿Qué técnicas usaste?
-- ¿Cuántas iteraciones?
-- ¿Lo usarías en tu trabajo?
+**Reto:** Resumir doc técnico de 10 páginas para CEO que odia tecnicismos
 
 ---
 
-## Entregable
+## ✅ Checkpoint: Parte 3
 
-### 3 Prompts Maestros
-
-1. Prompt de transformación + screenshot
-2. Prompt de análisis (CoT) + screenshot
-3. Prompt reusable (Few-shot) + screenshot
-
-Documentados en formato especificado
+### Verifica:
+- [ ] Técnica elegida (CoT o Few-shot)
+- [ ] Segundo prompt maestro creado
+- [ ] Screenshot del resultado
 
 ---
 
-## Preview: Clase 3
+## 💡 Reflexión
 
-### Tu Copiloto de Contenido
+### Hoy aprendiste:
+- Framework RICE completo
+- El poder del Ejemplo (mostrar > describir)
+- Técnicas avanzadas: Chain of Thought, Few-shot
 
-De prompts a **flujos de trabajo completos**
-
-Crearás contenido profesional publicable
-
----
-
-<!-- .slide: data-background="#1a1a2e" -->
-
-## Frase de Cierre
-
-> "Un prompt genérico produce resultados genéricos.
-> Un prompt diseñado produce resultados extraordinarios."
+### Pregunta para pensar:
+¿Qué prompts de tu semana pasada mejorarían con un buen Ejemplo?
 
 ---
 
-## La Tarea de esta Semana
+## 🔗 Preview: Clase 03
 
-Cada vez que uses Claude:
+### Hoy lograste:
+- 2 prompts maestros documentados
+- Competiste en tu primer Prompt Battle
 
-1. Aplica RICE
-2. Incluye al menos 1 ejemplo
-3. Nota la diferencia
+### La próxima clase:
+- **Tu Copiloto de Contenido**
+- De prompts a flujos de trabajo completos
+- Contenido profesional publicable
+
+> **Tarea:** 2 prompts maestros documentados (RICE + técnica avanzada)
 
 ---
 
-## Gracias
+## 📝 Entrega
 
-### Nos vemos en la Clase 3
+### Prompt 1: RICE
+- Nombre, uso, prompt completo, screenshot
 
-*Entertech School*
+### Prompt 2: Técnica Avanzada
+- Nombre, técnicas usadas (RICE + CoT/Few-shot), prompt completo, screenshot
+
+**Formato:** Google Doc con link público
+
+### Próxima clase: Tu Copiloto de Contenido

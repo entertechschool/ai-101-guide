@@ -67,20 +67,18 @@ El ejemplo es el secreto. Mostrar qué SÍ quieres (y qué NO) elimina ambigüed
 ## ¿Qué haremos en clase?
 
 1. **Veremos la transformación en vivo** — El mismo prompt en 3 niveles de calidad
-2. **Dominarás RICE** — El framework que profesionaliza tus prompts
+2. **Construirás RICE mientras aprendes** — Practica cada componente con TU tarea
 3. **Competirás en un Prompt Battle** — Mismo reto, diferentes soluciones, votación grupal
-4. **Aprenderás Chain of Thought** — Hacer que la IA "piense paso a paso"
-5. **Aplicarás Few-shot** — Enseñar con ejemplos concretos
-6. **Destruirás mitos** — Prompts que parecen buenos pero fallan
+4. **Conocerás técnicas avanzadas** — Chain of Thought y Few-shot para casos específicos
+5. **Destruirás mitos** — Prompts que parecen buenos pero fallan
 
 ## 🎯 Objetivos de aprendizaje
 
 Al finalizar esta clase, serás capaz de:
 
 1. **Aplicar el framework RICE** para estructurar cualquier prompt profesional
-2. **Usar Chain of Thought** para obtener análisis más profundos y razonados
-3. **Implementar Few-shot** cuando necesites un formato específico de output
-4. **Identificar por qué fallan los prompts** y cómo corregirlos
+2. **Usar técnicas avanzadas** (Chain of Thought, Few-shot) para casos específicos
+3. **Identificar por qué fallan los prompts** y cómo corregirlos
 
 ---
 
@@ -93,7 +91,7 @@ Al finalizar esta clase, serás capaz de:
 1. **Traer 3 tareas reales de tu trabajo** ⚠️ REQUERIDO
    - Tareas donde necesites generar, analizar o estructurar contenido
    - Ejemplos: redactar propuestas, analizar información, crear reportes
-   - *Sin esto, no podrás crear tus 3 prompts maestros*
+   - *Sin esto, no podrás crear tus 2 prompts maestros*
 
 2. **Revisar tu entregable de Clase 01**
    - Tu prompt básico será el punto de partida para mejorarlo
@@ -141,6 +139,6 @@ E - Ejemplo     → Evolución de "Formato" (mucho más poderoso)
 ## Qué traer a clase
 
 - 💻 Laptop con Claude abierto
-- 📝 3 tareas reales de tu trabajo para convertir en prompts
+- 📝 3 tareas reales de tu trabajo (elegirás 2 para convertir en prompts)
 - 🔄 Tu prompt/sistema de Clase 01 para mejorarlo
 - 📸 Ejemplos de outputs que quieres lograr (si los tienes)

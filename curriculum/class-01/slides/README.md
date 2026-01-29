@@ -4,162 +4,118 @@ Presentación reveal.js para la primera clase de AI 101.
 
 ---
 
-<!-- .slide: data-background="#1a1a2e" -->
+<!-- .slide: data-background="#0A192F" -->
 
-# El Nuevo Juego
+# Clase 01: El Nuevo Juego
+## Tu entrada al mundo de la IA profesional
 
-### AI 101 - Clase 1
-
-*Entertech School*
-
----
-
-## Hoy
-
-Descubrirás qué puede **realmente** hacer la IA en 2025
-
-Y qué sigue siendo ciencia ficción
+*AI 101 - Entertech School*
 
 ---
 
-## La Realidad
+## 🔗 Bienvenida
 
+### Primera clase de AI 101
+
+Hoy descubrirás:
+- Qué puede **realmente** hacer la IA en 2025
+- Qué sigue siendo ciencia ficción
+- Por qué el 5% tiene ventaja sobre el 95%
+
+> "En 6 meses, dominar IA será expectativa mínima en muchos roles"
+
+---
+
+## ¿Por Qué Esto Importa?
+
+### El problema:
 > "El 95% de profesionales usa IA como si fuera Google"
 
-El 5% la usa como un **superpoder**
+### La oportunidad:
+El 5% la usa como un **superpoder** — y la brecha se agranda cada mes
+
+> **Realidad:** La IA no reemplaza tu juicio profesional. Amplifica lo que ya sabes.
 
 ---
 
-## Por qué estás aquí
+## 🧠 Pregunta Detonadora
 
-No es solo productividad
+### ¿Qué diferencia al 5% que domina IA del 95% que no?
 
-Es **la brecha que se agranda cada mes**
+**A)** Tienen acceso a herramientas más caras
 
-Entre quienes dominan IA y quienes no
+**B)** Saben programar y crear sus propios modelos
 
----
+**C)** Usan sistemas reusables en vez de prompts únicos
 
-## En 6 meses
+**D)** Pasan más horas al día usando IA
 
-Dominar IA será **expectativa mínima** en muchos roles
-
-Hoy tienes ventaja de early adopter
+> 🕐 30 segundos para pensar → levanten la mano
 
 ---
 
-## Demo Time
+## 🎬 Demo: Email de Disculpa a Cliente VIP
 
-### Tarea: Email de disculpa a cliente VIP
-
-**Sin IA:** ~1 hora
-- Brainstorm (10 min)
-- Redacción (20 min)
-- Revisión de tono (15 min)
+### Antes (sin IA):
+- Brainstorm del tono (10 min)
+- Redacción inicial (20 min)
+- Revisión y ajustes (15 min)
 - Edición final (10 min)
+- **Total: ~1 hora**
+
+### Después (con IA):
+**~3 minutos** con el enfoque correcto
+
+> 🎬 **Demo en vivo** - Veremos la diferencia entre un prompt casual y un sistema
 
 ---
 
-## Demo Time
+## 🎯 COMPROBACIÓN
 
-### Con IA: ~3 minutos
+### ¿Por qué el segundo prompt produjo mejor resultado?
 
-*[Demo en vivo con Claude]*
+**A)** Era más largo y tenía más palabras
 
----
+**B)** Usaba palabras mágicas como "experto" y "profesional"
 
-<!-- .slide: data-background="#16213e" -->
+**C)** Incluía contexto específico y rol definido
 
-## Esto no es magia
+**D)** Se ejecutó en una versión más nueva de Claude
 
-Es una habilidad que van a aprender
-
----
-
-## Qué SÍ puede la IA
-
-- Generar, resumir, reformatear texto
-- Analizar patrones y comparar opciones
-- Iterar rápido (nunca se cansa)
-- Adaptarse a tu contexto específico
+> 🕐 30 segundos para pensar → levanten la mano
 
 ---
 
-## Qué NO puede la IA
+## 🎯 COMPROBACIÓN-RESPUESTA
 
-- Reemplazar tu juicio profesional
-- Garantizar datos precisos (fechas, números)
-- Conocer información después de su entrenamiento
-- Acceder a tus sistemas internos
+**Respuesta correcta: C**
 
----
+### Análisis:
 
-## La Frase Clave
+- **A:** ❌ Longitud ≠ calidad. Muchos prompts largos fallan por ser vagos
+- **B:** ❌ Las "palabras mágicas" no funcionan sin contexto real
+- **C:** ✅ El contexto específico elimina ambigüedad y el rol guía el tono
+- **D:** ❌ La versión de Claude no cambió — solo cambió el prompt
 
-> "La IA amplifica. Si tienes expertise, la amplifica. Si no, amplifica tu mediocridad."
-
----
-
-## Los 3 Niveles de Dominio
-
-```
-Nivel 1: USUARIO
-   → El 95% está aquí
-   → "Hazme un resumen de esto"
-
-         ↓
-
-Nivel 2: OPERADOR
-   → Donde estarás al terminar AI 101
-   → Prompts avanzados, workflow integrado
-
-         ↓
-
-Nivel 3: CONSTRUCTOR
-   → AI 201 y 301
-   → Crea soluciones con IA para otros
-```
+> **Regla memorable:** Prompt genérico = resultado genérico. Contexto específico = resultado específico.
 
 ---
 
-## El Insight de Hoy
+## Concepto Clave: Prompt vs Sistema
 
-### Prompt vs Sistema
+### Prompt:
+> "Ayúdame con este email"
 
-**Prompt:** "Ayúdame con este email"
 → Resuelve UNA tarea
 
-**Sistema:** "Eres mi revisor. Mi contexto es X. Haz Y."
+### Sistema:
+> "Eres mi revisor. Mi contexto es X. Cuando te pase algo, haz Y."
+
 → Resuelve TODAS las tareas similares
-
----
-
-## La Fórmula
 
 ```
 SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
 ```
-
-Hoy construirán su primer sistema reusable
-
----
-
-## Pregunta
-
-### Levanten la mano quienes creen que están en Nivel 1
-
-¿Qué los ha mantenido ahí?
-
----
-
-<!-- .slide: data-background="#0f3460" -->
-
-## Setup Check
-
-- Abre [claude.ai](https://claude.ai){:target="_blank"}
-- Confirma que puedes ver la interfaz
-
-*5 minutos para troubleshooting*
 
 ---
 
@@ -167,79 +123,85 @@ Hoy construirán su primer sistema reusable
 
 ### Tu Primer "Wow Moment"
 
-1. Primera interacción guiada (10 min)
-2. **Tu primer sistema** (15 min)
-3. Tu tarea real (25 min)
-4. Documentar resultado (10 min)
+**Objetivo:** Resolver una tarea real de tu trabajo con Claude
+
+**Tiempo:** 60 min
+
+**Partes:**
+1. Verificación y primera interacción (~10 min)
+2. Tu tarea real con sistema (~40 min)
+3. Captura y reflexión (~10 min)
+
+> 💡 Tip: Trae tu tarea preparada — sin ella, el lab pierde valor
 
 ---
 
-## Estructura del Prompt
+## ✅ Checkpoint: Parte 1
 
-```
-[ROL] Actúa como un experto en [tu área]
+### Verifica:
+- [ ] Claude abierto y funcionando
+- [ ] Primera interacción completada
+- [ ] Observaste cómo responde
 
-[CONTEXTO] Trabajo en [industria/rol] y necesito [objetivo]
-
-[TAREA] Ayúdame a [acción específica]
-
-[FORMATO] Preséntalo como [lista/párrafos/tabla]
-```
-
----
-
-## Tips para el Lab
-
-| Tip | Ejemplo |
-|-----|---------|
-| Sé específico | "Email de 150 palabras para..." |
-| Da contexto | "Resume para ejecutivo con 2 min" |
-| Pide formato | "5 ideas en bullets con pros/contras" |
-| Itera | No te quedes con la primera respuesta |
+**Preguntas:**
+- ¿Todos tienen Claude funcionando?
+- ¿Alguien tuvo problemas de acceso?
 
 ---
 
-## Showcase
+## ✅ Checkpoint: Parte 2
 
-### Comparte tu resultado
+### Verifica:
+- [ ] Creaste tu sistema de revisor
+- [ ] Probaste con tu tarea real
+- [ ] Iteraste al menos 2 veces
 
-- Qué tarea resolviste
-- Cuánto tiempo hubiera tomado sin IA
-- Qué aprendiste
-
-*30 segundos cada uno*
-
----
-
-## Tarea
-
-### Entregable de la semana
-
-1. **Screenshot** de tu resultado más impresionante
-2. **Prompt final** que funcionó mejor
-3. **Tu sistema base** (el revisor u otro que creaste)
-4. **Reflexión breve** (3-5 oraciones)
+**Preguntas:**
+- ¿Quién obtuvo un resultado que usaría mañana?
+- ¿Qué hizo más diferencia: el rol o el contexto?
 
 ---
 
-## Preview: Clase 2
+## ✅ Checkpoint: Parte 3
 
-### El Arte del Prompt
-
-La diferencia entre resultados **mediocres** y **extraordinarios**
-
----
-
-<!-- .slide: data-background="#1a1a2e" -->
-
-## Frase de Cierre
-
-> "Esta semana, cada vez que enfrenten una tarea repetitiva, pregúntense: ¿podría usar IA para esto?"
+### Verifica:
+- [ ] Screenshot capturado
+- [ ] Prompt final guardado
+- [ ] Reflexión escrita
 
 ---
 
-## Gracias
+## 💡 Reflexión
 
-### Nos vemos en la Clase 2
+### Hoy aprendiste:
+- La diferencia entre el 5% y el 95%
+- Qué puede y qué NO puede la IA
+- La fórmula: SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
 
-*Entertech School*
+### Pregunta para pensar:
+¿Qué tarea repetitiva de tu semana podrías convertir en un sistema?
+
+---
+
+## 🔗 Preview: Clase 02
+
+### Hoy lograste:
+- Tu primer "wow moment" con IA
+- Un sistema reusable (el revisor)
+
+### La próxima clase:
+- **El Arte del Prompt** — Framework RICE completo
+- Técnicas avanzadas: Chain of Thought, Few-shot
+
+> **Tarea:** Screenshot + prompt final + reflexión de 3-5 oraciones
+
+---
+
+## 📝 Entrega
+
+- Screenshot de tu resultado más impresionante
+- Prompt final que funcionó mejor
+- Tu sistema base (el revisor u otro)
+- Reflexión breve (3-5 oraciones)
+
+### Próxima clase: El Arte del Prompt
