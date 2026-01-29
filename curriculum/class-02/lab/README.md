@@ -1,12 +1,47 @@
-# Lab 02: Mis Prompts Maestros
+# Lab 02: Mi Sistema de Triage con IA
 
-Construirás 2 prompts maestros usando RICE y técnicas avanzadas, listos para reusar en tu trabajo. Al terminar, tendrás prompts documentados que transforman tareas recurrentes en resultados consistentes.
+Construirás un sistema de triage de mensajes de clientes que evoluciona en 4 fases. Cada fase agrega UNA técnica, y verás cómo mejora el resultado. Al terminar, tendrás un prompt maestro que combina Rol + Formato + Few-shot.
 
 > ⏱️ **Tiempo total:** 60 minutos
 
 ### 🎯 Objetivo
 
-Crear 2 prompts maestros documentados: uno con RICE básico y otro con técnica avanzada (CoT o Few-shot).
+Crear un prompt de triage que clasifica mensajes de clientes con prioridad, categoría y acción siguiente — y entender POR QUÉ cada técnica mejora el resultado.
+
+---
+
+## El Caso: PetShop Express
+
+Trabajas en **PetShop Express**, una tienda online de productos para mascotas. Recibes mensajes de clientes por WhatsApp, email y chat. Tu reto: clasificarlos rápidamente para que el equipo sepa qué atender primero.
+
+### Los 5 Mensajes para Clasificar
+
+```
+MENSAJE 1:
+"Hola, pedí comida especial para mi perro hace 5 días y no ha llegado.
+Mi perro tiene problemas renales y SOLO puede comer esta marca. Ya se
+me está acabando la que tengo. ¿Pueden decirme qué pasó con mi pedido?
+Número de orden: #45892"
+
+MENSAJE 2:
+"Vi en su Instagram un rascador para gatos que se ve muy bonito.
+¿Todavía lo tienen? ¿Cuánto cuesta? Mi gato destruyó el anterior jaja"
+
+MENSAJE 3:
+"PÉSIMO SERVICIO. Me llegó el producto equivocado y nadie me contesta.
+Llevo 3 días esperando respuesta. Quiero mi reembolso YA o voy a poner
+queja en redes sociales."
+
+MENSAJE 4:
+"Buenas tardes. Necesito que corrijan mi factura porque pusieron mal
+el RFC de mi empresa. No es urgente, pero sí necesito tenerla antes
+del viernes para cerrar mes. Gracias."
+
+MENSAJE 5:
+"Compré unas vitaminas para mi perro y no le funcionaron. Sigue igual
+de decaído. No sé si pedir reembolso, cambio por otra marca, o si
+ustedes me pueden recomendar algo mejor."
+```
 
 ---
 
@@ -15,181 +50,236 @@ Crear 2 prompts maestros documentados: uno con RICE básico y otro con técnica 
 | Requisito | Verificación |
 |-----------|--------------|
 | Claude abierto | Tab lista para prompts |
-| 3 tareas reales | De tu trabajo actual |
-| Entregable Clase 01 | Tu sistema revisor (o similar) |
-| Google Doc | Listo para documentar |
+| Los 5 mensajes | Copiados arriba ☝️ |
+| Google Doc | Para documentar tu evolución |
 
 ---
 
-## Parte 1: Construye RICE con TU Tarea (20 min)
+## Parte 1: El Caos — Sin Técnicas (10 min)
 
-Construye tu primer prompt RICE usando una de las 3 tareas reales que trajiste.
+Empezamos con el prompt más básico posible para ver qué pasa.
 
-### 1.1. R = Rol (2 min)
+### 1.1 Prompt inicial
 
-```
-Eres un _______________ con experiencia en _______________.
-```
-
-### 1.2. I = Instrucción (2 min)
-
-¿Qué debe hacer EXACTAMENTE? Verbo de acción + qué + para qué.
+Copia y pega en Claude:
 
 ```
-[Verbo] _______________________________________________
+Clasifica estos mensajes de clientes:
+
+[PEGA LOS 5 MENSAJES]
 ```
 
-### 1.3. C = Contexto (3 min)
+### 1.2 Observa el resultado
 
-```
-- Audiencia: _______________
-- Situación: _______________
-- Restricciones: _______________
-```
+Anota en tu Google Doc:
+- ¿El formato es consistente entre mensajes?
+- ¿Las categorías son claras o ambiguas?
+- ¿Sabrías qué hacer con cada mensaje basándote en la clasificación?
 
-### 1.4. E = Ejemplo (5 min)
+### 1.3 El problema
 
-**Output deseado:** `"[Fragmento de cómo debe verse]"`
+Sin estructura, cada mensaje se clasifica diferente. No hay formato estándar. Las prioridades son subjetivas.
 
-**Anti-ejemplos:**
-- NO quiero que sea ___
-- NO quiero que suene ___
-
-### 1.5. Ensambla y prueba (8 min)
-
-```
-[ROL]
-Eres un [tu rol] con experiencia en [tu área].
-
-[INSTRUCCIÓN]
-[Tu instrucción específica]
-
-[CONTEXTO]
-- [Tus bullets de contexto]
-
-[EJEMPLO de output deseado]
-"[Tu ejemplo]"
-
-[ANTI-EJEMPLO]
-- [Tus anti-ejemplos]
-```
-
-Ejecuta en Claude. ¿Es útil? Itera si es necesario.
-
-✅ **Checkpoint:** Tienes prompt RICE ensamblado, probado en Claude, y al menos 1 iteración de mejora.
+✅ **Checkpoint:** Tienes tu primera clasificación caótica documentada.
 
 ---
 
-## Parte 2: Prompt Battle (20 min)
+## Parte 2: +Rol — El Experto (15 min)
 
-**Escenario:**
-> Tu jefe te pide que resumas un documento técnico de 10 páginas para el CEO en 2 minutos. El CEO odia el tecnicismo y quiere saber: ¿qué significa esto para el negocio?
+Agregamos UN elemento: el rol de experto.
 
-### Ejecución
+### 2.1 Prompt con rol
 
-1. **Escribe tu prompt** usando RICE (8 min)
-2. **Ejecuta y captura** screenshot (2 min)
-3. **Votación** — 3-4 voluntarios comparten, votamos el mejor (10 min)
+```
+Eres un agente de soporte al cliente senior con 5 años de experiencia
+en e-commerce de productos para mascotas. Conoces los tipos de
+problemas más comunes y sabes priorizar según impacto en el cliente.
 
-✅ **Checkpoint:** Tienes prompt para el reto del CEO, ejecutado, y screenshot capturado.
+Clasifica estos mensajes de clientes:
+
+[PEGA LOS 5 MENSAJES]
+```
+
+### 2.2 Compara con Parte 1
+
+- ¿Mejoró la consistencia?
+- ¿Las prioridades tienen más sentido?
+- ¿Sigue habiendo problemas de formato?
+
+### 2.3 El avance y la limitación
+
+El rol mejora el CRITERIO de clasificación, pero el formato sigue siendo inconsistente. La IA "sabe más" pero no presenta la info de forma útil.
+
+✅ **Checkpoint:** Segunda clasificación con rol, comparación documentada.
 
 ---
 
-## Parte 3: Técnica Avanzada (15 min)
+## Parte 3: +Formato Estructurado (15 min)
 
-Elige UNA técnica para tu segundo prompt maestro.
+Agregamos formato de tabla con campos específicos.
 
-### Opción A: Chain of Thought
-
-Para análisis y decisiones. Pide razonar paso a paso.
+### 3.1 Prompt con rol + formato
 
 ```
-[ROL] Eres un [experto] en [industria].
+Eres un agente de soporte al cliente senior con 5 años de experiencia
+en e-commerce de productos para mascotas.
 
-[INSTRUCCIÓN]
-Analiza [qué] y dame [resultado].
+Clasifica estos mensajes en una tabla con las siguientes columnas:
 
-Antes de concluir, piensa paso a paso:
-1. Identifica [aspecto 1]
-2. Evalúa [aspecto 2]
-3. Concluye con [recomendación]
+| # | Prioridad | Categoría | Resumen (1 línea) | Acción siguiente | Tiempo máx |
+|---|-----------|-----------|-------------------|------------------|------------|
 
-[CONTEXTO]
-- Situación: ___
-- Objetivo: ___
+Usa estos códigos de prioridad:
+- 🔴 Alta: Requiere acción inmediata (cliente en riesgo, escalamiento)
+- 🟡 Media: Importante pero no urgente (puede esperar horas)
+- 🟢 Baja: Consulta general (puede esperar 24h)
 
-[EJEMPLO]
-"1. Hallazgo: ... 2. Implicación: ... 3. Recomendación: ..."
+Categorías permitidas: Envío, Producto, Facturación, Venta, Queja
+
+Mensajes a clasificar:
+
+[PEGA LOS 5 MENSAJES]
 ```
 
-### Opción B: Few-shot
+### 3.2 Compara con Parte 2
 
-Para formatos consistentes. Enseña con ejemplos.
+- ¿Ahora puedes comparar mensajes fácilmente?
+- ¿Los campos son útiles para tomar decisión?
+- ¿Hay consistencia en el formato?
+
+### 3.3 El avance
+
+El formato estructurado hace la clasificación ACCIONABLE. Ya no es texto libre — es una tabla que puedes usar para asignar trabajo.
+
+✅ **Checkpoint:** Tercera clasificación en tabla, campos consistentes.
+
+---
+
+## Parte 4: +Few-shot — Los Ejemplos (15 min)
+
+Agregamos 2 ejemplos que muestran EXACTAMENTE cómo clasificar.
+
+### 4.1 Prompt completo con Few-shot
 
 ```
-[ROL] Eres [rol] en [área].
+Eres un agente de soporte al cliente senior con 5 años de experiencia
+en e-commerce de productos para mascotas.
 
-[INSTRUCCIÓN]
-Genera [qué] siguiendo el formato de los ejemplos.
+Clasifica mensajes de clientes en una tabla con estas columnas:
 
-[CONTEXTO]
-- Audiencia: ___ / Tono: ___
+| # | Prioridad | Categoría | Resumen (1 línea) | Acción siguiente | Tiempo máx |
+|---|-----------|-----------|-------------------|------------------|------------|
 
-[EJEMPLOS]
-Input: [ejemplo 1] → Output: [resultado exacto]
-Input: [ejemplo 2] → Output: [mismo formato]
+Prioridades:
+- 🔴 Alta: Acción inmediata (cliente en riesgo, escalamiento)
+- 🟡 Media: Importante pero no urgente (horas)
+- 🟢 Baja: Consulta general (24h)
 
-Ahora genera para:
-Input: [tu input real]
+Categorías: Envío, Producto, Facturación, Venta, Queja
+
+### EJEMPLOS DE CLASIFICACIÓN CORRECTA:
+
+Mensaje: "Mi pedido llegó roto y necesito el producto para mañana porque
+es regalo de cumpleaños de mi hija"
+| 1 | 🔴 Alta | Envío | Producto dañado, urgencia por evento | Reenvío express + cupón disculpa | 2h |
+
+Mensaje: "¿Tienen descuento por volumen? Quiero comprar 10 bolsas de
+alimento para mi refugio"
+| 2 | 🟢 Baja | Venta | Consulta de precio mayoreo para refugio | Responder con política de descuentos | 24h |
+
+### AHORA CLASIFICA ESTOS MENSAJES:
+
+[PEGA LOS 5 MENSAJES]
 ```
 
-**Crea, ejecuta y captura screenshot** (15 min)
+### 4.2 Compara con Parte 3
 
-✅ **Checkpoint:** Tienes segundo prompt con técnica avanzada (CoT o Few-shot), ejecutado, y screenshot capturado.
+- ¿Los ejemplos "calibraron" mejor la prioridad?
+- ¿Las acciones siguientes son más específicas?
+- ¿El formato se mantuvo exactamente igual?
+
+### 4.3 El avance final
+
+Los ejemplos enseñan el CRITERIO específico. La IA ahora entiende no solo el formato, sino el RAZONAMIENTO detrás de cada clasificación.
+
+✅ **Checkpoint:** Clasificación final con las 3 técnicas combinadas.
+
+---
+
+## Parte 5: Análisis Crítico — Las Limitaciones (5 min)
+
+Revisa tus 4 clasificaciones y busca estos errores:
+
+### ⚠️ 3 Limitaciones Comunes de la IA en Triage
+
+**1. Prioridad incorrecta por contexto faltante**
+- Mensaje 4 dice "no urgente" pero tiene deadline real
+- ¿La IA respetó "no urgente" o detectó el deadline?
+- **Lección:** La IA puede sobre-confiar en lo que el cliente DICE vs lo que NECESITA
+
+**2. Categoría ambigua**
+- Mensaje 2: ¿Es "Venta" o "Producto"? (consulta de compra vs info de producto)
+- Mensaje 5: ¿Es "Producto", "Queja", o "Venta"? (múltiples categorías posibles)
+- **Lección:** Casos límite requieren juicio humano o categorías más específicas
+
+**3. Urgencia por tono vs urgencia real**
+- Mensaje 3 tiene tono urgente (mayúsculas, amenaza de redes)
+- Mensaje 1 tiene urgencia REAL (perro con dieta médica)
+- ¿La IA priorizó correctamente o se dejó llevar por el tono?
+- **Lección:** El enojo no siempre = mayor prioridad real
+
+### En tu Google Doc, anota:
+
+> **Error que encontré:** [Describe 1 error de clasificación]
+> **Por qué ocurrió:** [Tu hipótesis]
+> **Cómo lo corregiría:** [Ajuste al prompt o proceso manual]
+
+✅ **Checkpoint:** Análisis crítico completado con 1 error documentado.
 
 ---
 
 ## 📝 Entregable
 
-**2 prompts maestros en Google Doc:**
+**Google Doc con 3 secciones:**
 
-### Prompt 1: RICE (de Parte 1 o Battle)
-```
-PROMPT MAESTRO: [Nombre]
-Uso: [Para qué]
----
-[Prompt completo]
----
-Screenshot
-```
+### 1. Evolución del Prompt
+Muestra las 4 versiones y cómo mejoró cada una:
+- Versión 1: Sin técnicas
+- Versión 2: +Rol
+- Versión 3: +Formato
+- Versión 4: +Few-shot (tu prompt maestro final)
 
-### Prompt 2: Técnica Avanzada (de Parte 3)
+### 2. Tabla de Clasificación Final
+La tabla con los 5 mensajes clasificados usando tu prompt completo.
+
+### 3. Reflexión Crítica
 ```
-PROMPT MAESTRO: [Nombre]
-Técnicas: RICE + [CoT o Few-shot]
----
-[Prompt completo]
----
-Screenshot
+ERROR ENCONTRADO:
+- Mensaje #: ___
+- Error: ___
+- Por qué ocurrió: ___
+- Cómo lo corregiría: ___
 ```
 
 **Entrega:** Link público del Google Doc.
 
 ---
 
-## Checklist
+## Checklist Final
 
-- [ ] ¿Cada prompt tiene los 4 elementos de RICE?
-- [ ] ¿Incluí ejemplo de output deseado?
-- [ ] ¿Son para tareas REALES de mi trabajo?
-- [ ] ¿Los screenshots muestran resultados útiles?
+- [ ] ¿Documenté las 4 versiones del prompt?
+- [ ] ¿Mi tabla tiene los 5 mensajes clasificados?
+- [ ] ¿Identifiqué al menos 1 error/limitación de la IA?
+- [ ] ¿Expliqué cómo corregiría ese error?
 
 ---
 
-## 💭 Reflexión
+## 🚀 Bonus: Tus Mensajes Reales (Opcional)
 
-Antes de entregar, responde mentalmente:
+Si tienes acceso a mensajes reales de clientes de tu trabajo:
 
-1. ¿Cuál de los 4 elementos de RICE fue más difícil de definir? ¿Por qué?
-2. ¿El Ejemplo cambió significativamente la calidad del output?
-3. ¿Qué prompt de tu semana pasada mejoraría más con RICE?
+1. Anonimiza los datos (nombres, números de cuenta)
+2. Usa tu prompt maestro para clasificar 5 mensajes reales
+3. Compara: ¿Funcionó igual de bien? ¿Qué ajustes necesita?
+
+**Tip:** Los prompts que funcionan con casos mockup a veces fallan con datos reales. Eso es normal — es parte del proceso de refinamiento.

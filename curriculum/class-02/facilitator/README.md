@@ -8,9 +8,9 @@
 
 - **RICE**: Framework de prompts — Rol, Instrucción, Contexto, Ejemplo.
 - **Ejemplo**: Muestra de output deseado que elimina ambigüedad (mostrar > describir).
-- **Chain of Thought**: Pedir razonamiento paso a paso antes de la conclusión.
 - **Few-shot**: Enseñar con 2-3 ejemplos de input → output.
-- **Iteración**: Refinar el prompt basado en resultados (normal, no falla).
+- **Triage**: Clasificar y priorizar mensajes según urgencia e impacto.
+- **Iteración progresiva**: Agregar técnicas una a una para ver el impacto.
 
 ---
 
@@ -20,10 +20,10 @@
 Ingredientes (contexto), instrucciones (qué hacer), foto del plato terminado (ejemplo). Sin la foto, el chef interpreta.
 
 **Ejemplo vs descripción:**
-"Dame un email profesional" vs "Dame un email como este: [ejemplo]". El segundo elimina 90% de ambigüedad.
+"Dame una tabla de clasificación" vs "Dame una tabla como esta: [ejemplo]". El segundo elimina 90% de ambigüedad.
 
-**Chain of Thought como "muestra tu trabajo":**
-Como el profesor que pide ver el proceso, no solo la respuesta final. Reduce errores en análisis complejos.
+**Triage como urgencias de hospital:**
+No atiendes por orden de llegada — priorizas por gravedad. La IA puede ayudar a clasificar, pero el juicio final es humano.
 
 **Few-shot como enseñar por imitación:**
 Un niño aprende mejor viendo ejemplos que escuchando explicaciones. La IA también.
@@ -32,13 +32,41 @@ Un niño aprende mejor viendo ejemplos que escuchando explicaciones. La IA tambi
 
 ## Contexto Actual
 
-### Productividad: Los datos reales
+### Por qué triage y no email genérico
 
-Estudios recientes muestran ganancias de productividad del 25-30% con IA bien aplicada, y hasta 56% más rápido en tareas de conocimiento. Pero solo 13% de trabajadores reciben entrenamiento formal en IA.
+El ejercicio anterior (email de seguimiento) era abstracto y difícil de comparar entre estudiantes. El triage de mensajes:
+- Es universal (todos han recibido mensajes de clientes o equivalentes)
+- Tiene output verificable (tabla con campos fijos)
+- Permite comparación objetiva entre iteraciones
+- Introduce las limitaciones de forma natural
 
-> **Para mencionar en clase:** "La IA puede darte 30% más productividad, pero el 87% no recibe entrenamiento. Este curso los pone en el 13% que sí sabe usarla."
+### El caso PetShop Express
 
-**Fuentes:** [McKinsey State of AI](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), [SurveyMonkey AI Report](https://www.surveymonkey.com/curiosity/ai-workplace-statistics/)
+Elegimos productos para mascotas porque:
+- Producto simple y universal
+- Genera variedad natural de mensajes (urgencia médica, quejas, consultas)
+- No requiere conocimiento técnico específico
+- Los mensajes mockup cubren casos límite interesantes
+
+---
+
+## Los 5 Mensajes y Por Qué Cada Uno
+
+| # | Mensaje | Por qué lo incluimos |
+|---|---------|----------------------|
+| 1 | Pedido retrasado + perro con dieta especial | Urgencia REAL (médica) pero tono calmado |
+| 2 | Consulta de producto visto en IG | Categoría ambigua: ¿venta o soporte? |
+| 3 | Cliente enojado pidiendo reembolso | Tono urgente pero ¿es la mayor prioridad? |
+| 4 | Corrección de factura "no urgente" | Dice "no urgente" pero tiene deadline real |
+| 5 | Vitaminas que "no funcionaron" | Múltiples categorías posibles |
+
+### Errores esperados de la IA
+
+**Mensaje 1 vs 3:** La IA puede priorizar el mensaje 3 por el tono agresivo, cuando el mensaje 1 tiene urgencia real (salud del animal).
+
+**Mensaje 4:** La IA puede respetar "no urgente" ignorando el deadline del viernes.
+
+**Mensaje 2 y 5:** Categorías ambiguas que la IA asignará de forma inconsistente.
 
 ---
 
@@ -51,58 +79,68 @@ Estudios recientes muestran ganancias de productividad del 25-30% con IA bien ap
 **Por qué las otras NO:**
 | Opción | Por qué NO |
 |--------|-----------|
-| A | El rol ayuda, pero sin ejemplo el output sigue siendo genérico. |
+| A | El rol ayuda con criterio, pero sin ejemplo el formato es inconsistente. |
 | B | Más palabras sin dirección clara no mejoran nada. Calidad > cantidad. |
 | D | Las primeras palabras importan poco si falta el ejemplo concreto. |
 
 **Script post-votación:**
 ```
-Facilitador: "¿Quién votó B, que es la longitud? ¿Por qué?"
+Facilitador: "¿Quién votó A, que es el rol? ¿Por qué?"
 [Escuchar respuestas]
-Facilitador: "La respuesta es C. El ejemplo elimina ambigüedad — la IA VE qué quieres en vez de adivinar. Es la diferencia entre describir un plato y mostrar la foto."
+Facilitador: "El rol SÍ ayuda — lo veremos en el lab. Pero la respuesta es C.
+Los ejemplos calibran el criterio Y el formato. Mostrar > describir."
 ```
-
-**Tip:** Muchos votarán A (rol). Usar esto para mostrar la evolución de Clase 01 a 02.
 
 ---
 
-### Demo Principal
+### Demo Principal: Triage en 3 Niveles
+
+**Preparación:** Ten los 5 mensajes de PetShop Express listos. Ejecuta los 3 niveles ANTES de clase para tener los resultados.
 
 **Qué mostrar:**
-El mismo email de seguimiento post-reunión en 3 niveles: casual, estructurado (Clase 01), RICE completo.
+1. Nivel 1 (casual): Resultado caótico, formatos diferentes
+2. Nivel 2 (con rol): Mejor criterio, formato aún inconsistente
+3. Nivel 3 (RICE completo): Tabla consistente con prioridades calibradas
 
 **Script sugerido:**
 ```
-Facilitador: "Voy a mostrarles el mismo pedido, 3 formas diferentes..."
-[Nivel 1 - casual]
-Facilitador: "¿Enviarían esto a un cliente? Genérico, ¿verdad?"
-[Nivel 2 - con estructura]
-Facilitador: "Mejor. Pero ¿es SU tono? ¿Su estilo?"
-[Nivel 3 - RICE con ejemplo]
-Facilitador: "¿Qué cambió? El ejemplo le mostró exactamente cómo debe verse."
+Facilitador: "Tengo 5 mensajes de clientes. ¿Cuál atiendo primero?"
+[Nivel 1]
+Facilitador: "Miren el resultado. ¿Pueden comparar fácilmente? ¿Saben qué hacer?"
+[Nivel 2]
+Facilitador: "Mejor criterio. Pero ¿el formato es consistente?"
+[Nivel 3]
+Facilitador: "Ahora sí. Tabla, emojis de prioridad, acción siguiente clara.
+¿Qué cambió? Los EJEMPLOS le mostraron exactamente cómo clasificar."
 ```
 
 **Si algo sale mal:**
-Si el Nivel 3 no es perfecto: "Aquí iteraríamos. Pero noten que ya estamos 80% ahí vs 40% del Nivel 1."
+Si el Nivel 3 tiene errores visibles: "Perfecto — miren este error. [Señalar]. La IA clasificó [X] como [Y] cuando debería ser [Z]. Esto es NORMAL. Por eso el análisis crítico es parte del lab."
+
+---
 
 ### Transición al Lab
 
 **Script sugerido:**
 ```
-Facilitador: "Ahora ustedes van a construir RICE para su tarea real. Empiecen por el Ejemplo — definan cómo debe verse el output."
-Facilitador: "Levanten la mano cuando tengan los 4 componentes escritos."
+Facilitador: "Ahora ustedes van a construir esto paso a paso.
+Parte 1: Sin técnicas — vean el caos.
+Parte 2: Agregan rol — vean qué mejora.
+Parte 3: Agregan formato — vean la consistencia.
+Parte 4: Agregan ejemplos — vean la calibración.
+Parte 5: Encuentren los errores — porque SÍ habrá errores."
 ```
 
 ---
 
-## Errores Comunes
+## Errores Esperados de Estudiantes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "Mi prompt es muy largo" | Confunde longitud con calidad | "¿Tienes ejemplo? Eso importa más que las palabras" |
-| Prompt sin ejemplo | No internalizó el upgrade de hoy | "¿Cómo se ve un buen resultado para ti? Escríbelo" |
-| Confusión CoT vs Few-shot | Normal en primera exposición | "CoT para pensar, Few-shot para formatear" |
-| Battle sin energía | Falta competitividad | "¿Quién cree que puede ganar? Demuéstrenlo" |
+| "Mi prompt es muy largo" | Confunde longitud con calidad | "¿Tienes ejemplos? Eso importa más que las palabras" |
+| Solo documenta versión final | No comparó la evolución | "Vuelve a correr las 4 versiones y compara" |
+| No encuentra errores | Confía ciegamente en la IA | "Compara mensaje 1 vs 3. ¿Cuál priorizó? ¿Es correcto?" |
+| Categorías inventadas | No siguió las restricciones | "Las categorías son fijas: Envío, Producto, Facturación, Venta, Queja" |
 
 ---
 
@@ -114,8 +152,8 @@ No para todo. Tareas simples no lo necesitan. Pero cuando algo no funciona, RICE
 ### "¿Cuántos ejemplos en Few-shot?"
 2-3 suelen ser suficientes. Más de 5 puede confundir a la IA.
 
-### "¿Puedo mezclar CoT y Few-shot?"
-Sí, pero con cuidado. Prompts muy largos diluyen el foco. Prueba qué funciona para tu caso.
+### "¿Por qué la IA se equivoca en las prioridades?"
+Porque no tiene contexto completo. El mensaje 4 dice "no urgente" — la IA lo cree. Tú sabes que hay deadline. Ese juicio es humano.
 
 ### "¿Esto funciona en ChatGPT?"
 Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son universales.
@@ -127,27 +165,49 @@ Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son unive
 | Minuto | Checkpoint | Cómo validar |
 |--------|------------|--------------|
 | ~10 | Recap + hook | Pregunta sobre uso de sistema semana pasada |
-| ~30 | Demo 3 niveles | Comentarios sobre diferencia del ejemplo |
-| ~55 | RICE construido | Manos arriba: "¿Quién tiene los 4 componentes?" |
-| ~65 | Primer prompt probado | Pasear, verificar ejecución |
-| ~105 | Battle completado | Votación realizada, ganador anunciado |
-| ~130 | Segundo prompt listo | Screenshots de ambos prompts |
-| ~150 | Cierre | 2-3 compartieron, entregable claro |
+| ~25 | Demo 3 niveles | Comentarios sobre diferencia del ejemplo |
+| ~35 | Parte 1-2 completada | "¿Quién tiene las 2 primeras versiones?" |
+| ~55 | Parte 3 completada | "¿Quién tiene tabla con formato?" |
+| ~75 | Parte 4 completada | "¿Quién tiene los 5 mensajes clasificados?" |
+| ~85 | Análisis crítico | "¿Quién encontró un error? Compártanlo" |
+| ~95 | Cierre | Entregable claro, preview clase 03 |
+
+---
+
+## Sección Anti-Hype: Cómo Manejarla
+
+Esta clase tiene una sección explícita de limitaciones. Es intencional.
+
+**Script para introducir limitaciones:**
+```
+Facilitador: "La IA NO es perfecta. Vamos a ver 3 errores comunes.
+Esto no es para asustarlos — es para que sepan cuándo confiar y cuándo verificar."
+```
+
+**Los 3 errores a destacar:**
+1. **Prioridad por tono vs realidad:** Mensaje 3 suena urgente pero mensaje 1 tiene urgencia médica real
+2. **Respetar lo que el cliente DICE:** Mensaje 4 dice "no urgente" pero tiene deadline
+3. **Categorías ambiguas:** Mensaje 5 puede ser Producto, Queja, o Venta
+
+**Script para cerrar:**
+```
+Facilitador: "La IA clasifica. Tú validas. Esa combinación es más poderosa
+que cualquiera de los dos solos."
+```
 
 ---
 
 ## Tips de Facilitación
 
 ### Si el grupo está callado:
-- En el Battle, nombrar a alguien: "Carlos, ¿qué enfoque usaste? Compártenos"
-- Modelar primero mostrando tu propio prompt
+- En el análisis crítico, nombrar a alguien: "María, ¿qué error encontraste en mensaje 1?"
+- Compartir tu propio error primero: "Yo vi que la IA priorizó mensaje 3 sobre mensaje 1. ¿A ustedes les pasó?"
 
 ### Si alguien domina la conversación:
-- "Guardemos las técnicas avanzadas para después. Primero aseguremos que todos tienen RICE."
+- "Guardemos las técnicas avanzadas. ¿Alguien más encontró un error diferente?"
 
-### Si hay resistencia a la IA:
-- "El objetivo no es depender de IA, sino tener otra herramienta en tu arsenal"
-- Mostrar caso donde IA falló y el juicio humano fue necesario
+### Si hay frustración con errores de la IA:
+- "Exacto. Por eso el análisis crítico es parte del entregable. No es bug — es feature."
 
 ---
 
@@ -155,7 +215,9 @@ Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son unive
 
 Al cerrar, planta la semilla:
 
-> "La próxima clase vamos a pasar de prompts individuales a flujos de trabajo completos. Los prompts RICE que crearon hoy se convierten en bloques para crear contenido profesional publicable."
+> "Hoy construyeron UN prompt maestro para clasificar mensajes.
+> La próxima clase vamos a encadenar múltiples prompts para crear
+> contenido profesional publicable — de idea a pieza final."
 
 **Tarea para mencionar:**
-2 prompts maestros documentados — uno RICE básico, uno con técnica avanzada (CoT o Few-shot). Google Doc con screenshots.
+Google Doc con: 4 versiones del prompt, tabla de 5 mensajes, reflexión crítica con 1 error.
