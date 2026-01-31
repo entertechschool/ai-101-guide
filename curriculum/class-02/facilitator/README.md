@@ -139,7 +139,7 @@ Parte 5: Encuentren los errores — porque SÍ habrá errores."
 |-------|------------------|-----------|
 | "Mi prompt es muy largo" | Confunde longitud con calidad | "¿Tienes ejemplos? Eso importa más que las palabras" |
 | Solo documenta versión final | No comparó la evolución | "Vuelve a correr las 4 versiones y compara" |
-| No encuentra errores | Confía ciegamente en la IA | "Compara mensaje 1 vs 3. ¿Cuál priorizó? ¿Es correcto?" |
+| No encuentra errores | Confía ciegamente en la IA | "Usa la tabla de Parte 5: compara mensaje 1 vs 3, revisa si detectó el deadline del mensaje 4" |
 | Categorías inventadas | No siguió las restricciones | "Las categorías son fijas: Envío, Producto, Facturación, Venta, Queja" |
 
 ---
@@ -169,8 +169,8 @@ Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son unive
 | ~35 | Parte 1-2 completada | "¿Quién tiene las 2 primeras versiones?" |
 | ~55 | Parte 3 completada | "¿Quién tiene tabla con formato?" |
 | ~75 | Parte 4 completada | "¿Quién tiene los 5 mensajes clasificados?" |
-| ~85 | Análisis crítico | "¿Quién encontró un error? Compártanlo" |
-| ~95 | Cierre | Entregable claro, preview clase 03 |
+| ~90 | Análisis crítico | "¿Quién comparó mensaje 1 vs 3? ¿Cuál priorizó la IA?" |
+| ~100 | Cierre | Entregable claro, preview clase 03 |
 
 ---
 

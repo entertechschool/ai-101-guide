@@ -33,8 +33,8 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 ├─────────────────────────────┼───────────────────────────────┤
 │ 1. El Nuevo Juego           │ 5. Tu Primer Agente IA        │
 │ 2. El Arte del Prompt       │ 6. Tu Segundo Cerebro con IA  │
-│ 3. Tu Copiloto de Contenido │ 7. Portfolio + Caso de Éxito  │
-│ 4. Deep Research            │ 8. Demo Day + El Futuro       │
+│ 3. Tu Socio Pensante        │ 7. Portfolio + Caso de Éxito  │
+│ 4. Proyecto Integrador M1   │ 8. Demo Day + El Futuro       │
 └─────────────────────────────┴───────────────────────────────┘
 ```
 
@@ -64,16 +64,16 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 | # | Clase | Contenido | Entregable |
 |---|-------|-----------|------------|
 | 1 | [El Nuevo Juego](curriculum/class-01/) | Qué puede y NO puede la IA (anti-hype), 3 niveles de dominio, Setup Claude | Screenshot resultado + reflexión |
-| 2 | [El Arte del Prompt](curriculum/class-02/) | Anatomía de prompt efectivo (RICE), Chain of thought, few-shot, role-playing | 3 prompts maestros |
-| 3 | [Tu Copiloto de Contenido](curriculum/class-03/) | Escribir con IA: emails, reportes, posts. Editing vs Generación | Contenido profesional publicable |
-| 4 | [Deep Research](curriculum/class-04/) | Perplexity (95% citation verification), Gemini Deep Research, verificación de fuentes | Research doc + asistente configurado |
+| 2 | [El Arte del Prompt](curriculum/class-02/) | Anatomía de prompt efectivo (RICE), Few-shot, progresión iterativa | Evolución de prompt + reflexión crítica |
+| 3 | [Tu Socio Pensante](curriculum/class-03/) | IA como socio que extrae TU conocimiento, Claude Projects, brainstorming guiado | Claude Project + framework personal |
+| 4 | [Proyecto Integrador M1](curriculum/class-04/) | Integración de habilidades M1, Perplexity, Gemini Deep Research, Gems | Proyecto calificable completo |
 
 ### Salida del Módulo 1
 
-- ✅ Biblioteca personal de 5+ prompts documentados
-- ✅ 1 pieza de contenido publicada (usada en trabajo real)
-- ✅ 1 deep research completo con fuentes verificables
-- ✅ Metodología de research con IA dominada
+- ✅ Biblioteca personal de prompts documentados
+- ✅ 1 framework de conocimiento propio (extraído con IA)
+- ✅ 1 Gem de Gemini configurado
+- ✅ 1 proyecto integrador con research + sistema reusable
 
 ---
 
@@ -104,9 +104,9 @@ Proyecto construido clase a clase durante 4 semanas.
 | Clase | Pieza del Portfolio |
 |-------|---------------------|
 | 1 | Screenshot de "wow moment" + reflexión |
-| 2 | 3+ prompts maestros documentados |
-| 3 | 1 pieza de contenido profesional |
-| 4 | 1 deep research con fuentes |
+| 2 | Evolución de prompt + reflexión crítica |
+| 3 | Claude Project + framework de conocimiento personal |
+| 4 | Proyecto integrador M1 (research + sistema + Gem) |
 | 5 | 1 agente IA funcionando |
 | 6 | 1 segundo cerebro configurado |
 | 7-8 | 1 caso de éxito publicable |
@@ -124,9 +124,9 @@ Proyecto construido clase a clase durante 4 semanas.
 
 | Herramienta | Propósito | Clase de Intro |
 |-------------|-----------|----------------|
-| **Claude** | Asistente IA principal, contenido, agentes | Clase 1 |
-| **Perplexity** | Deep Research con fuentes verificables | Clase 4 |
-| **Gemini** | Deep Research, análisis extenso, Gems | Clase 4 |
+| **Claude** | Asistente IA principal, Projects, sistemas | Clase 1-3 |
+| **Perplexity** | Research con fuentes verificables | Clase 4 |
+| **Gemini** | Deep Research, Gems personalizados | Clase 4 |
 | **Make/n8n** | Agentes y automatización | Clase 5 |
 | **NotebookLM** | Segundo cerebro con IA | Clase 6 |
 | **Notion** | Portfolio + documentación | Clase 7 |

@@ -2,7 +2,7 @@
 
 Construirás un sistema de triage de mensajes de clientes que evoluciona en 4 fases. Cada fase agrega UNA técnica, y verás cómo mejora el resultado. Al terminar, tendrás un prompt maestro que combina Rol + Formato + Few-shot.
 
-> ⏱️ **Tiempo total:** 60 minutos
+> ⏱️ **Tiempo total:** 70 minutos
 
 ### 🎯 Objetivo
 
@@ -206,35 +206,52 @@ Los ejemplos enseñan el CRITERIO específico. La IA ahora entiende no solo el f
 
 ---
 
-## Parte 5: Análisis Crítico — Las Limitaciones (5 min)
+## Parte 5: Análisis Crítico — ¿Dónde Falló? (10 min)
 
-Revisa tus 4 clasificaciones y busca estos errores:
+La IA no es perfecta. Vamos a encontrar sus errores.
 
-### ⚠️ 3 Limitaciones Comunes de la IA en Triage
+### 5.1 Compara tus clasificaciones
 
-**1. Prioridad incorrecta por contexto faltante**
-- Mensaje 4 dice "no urgente" pero tiene deadline real
-- ¿La IA respetó "no urgente" o detectó el deadline?
-- **Lección:** La IA puede sobre-confiar en lo que el cliente DICE vs lo que NECESITA
+Abre tu Google Doc con las 4 versiones. Enfócate en la **Versión 4** (Few-shot) y responde:
 
-**2. Categoría ambigua**
-- Mensaje 2: ¿Es "Venta" o "Producto"? (consulta de compra vs info de producto)
-- Mensaje 5: ¿Es "Producto", "Queja", o "Venta"? (múltiples categorías posibles)
-- **Lección:** Casos límite requieren juicio humano o categorías más específicas
+| Mensaje | ¿Qué prioridad le dio la IA? | ¿Estás de acuerdo? | ¿Por qué sí/no? |
+|---------|------------------------------|--------------------| ----------------|
+| 1 (perro con dieta especial) | | | |
+| 3 (cliente enojado) | | | |
+| 4 (factura "no urgente") | | | |
 
-**3. Urgencia por tono vs urgencia real**
-- Mensaje 3 tiene tono urgente (mayúsculas, amenaza de redes)
-- Mensaje 1 tiene urgencia REAL (perro con dieta médica)
-- ¿La IA priorizó correctamente o se dejó llevar por el tono?
-- **Lección:** El enojo no siempre = mayor prioridad real
+### 5.2 Encuentra UN error
 
-### En tu Google Doc, anota:
+Busca un mensaje donde la IA se equivocó. Pistas de errores comunes:
 
-> **Error que encontré:** [Describe 1 error de clasificación]
-> **Por qué ocurrió:** [Tu hipótesis]
-> **Cómo lo corregiría:** [Ajuste al prompt o proceso manual]
+- **Mensaje 1 vs 3:** El mensaje 1 tiene urgencia REAL (salud del animal). El mensaje 3 tiene tono urgente (mayúsculas, amenaza). ¿Cuál priorizó la IA? ¿Es correcto?
 
-✅ **Checkpoint:** Análisis crítico completado con 1 error documentado.
+- **Mensaje 4:** Dice "no es urgente" pero tiene deadline real (viernes). ¿La IA detectó el deadline o se quedó con "no urgente"?
+
+- **Mensaje 5:** ¿Qué categoría le dio? Podría ser Producto, Queja, o Venta. ¿La categoría que eligió es la más útil?
+
+### 5.3 Documenta el error
+
+En tu Google Doc, escribe:
+
+```
+ERROR ENCONTRADO:
+- Mensaje #: ___
+- Qué hizo la IA: ___
+- Qué debería haber hecho: ___
+- Cómo ajustaría el prompt: ___
+```
+
+**Ejemplo de respuesta:**
+```
+ERROR ENCONTRADO:
+- Mensaje #: 4
+- Qué hizo la IA: Lo clasificó como 🟢 Baja porque dice "no urgente"
+- Qué debería haber hecho: 🟡 Media porque tiene deadline del viernes
+- Cómo ajustaría el prompt: Agregar regla "Detectar deadlines aunque el cliente diga 'no urgente'"
+```
+
+✅ **Checkpoint:** Tienes 1 error documentado con propuesta de corrección.
 
 ---
 
@@ -256,9 +273,9 @@ La tabla con los 5 mensajes clasificados usando tu prompt completo.
 ```
 ERROR ENCONTRADO:
 - Mensaje #: ___
-- Error: ___
-- Por qué ocurrió: ___
-- Cómo lo corregiría: ___
+- Qué hizo la IA: ___
+- Qué debería haber hecho: ___
+- Cómo ajustaría el prompt: ___
 ```
 
 **Entrega:** Link público del Google Doc.

@@ -86,6 +86,10 @@ que ver. Me dicen qué opinan?
 
 **Paso 4: Ahora prueba con algo TUYO.** Pega un borrador real que tengas pendiente y compara.
 
+> ✅ **Checkpoint intermedio:** ¿Tienes tu sistema de revisor funcionando?
+> Si la IA responde como experto que conoce tu contexto, continúa.
+> Si no, revisa que incluiste tu rol e industria.
+
 > 💡 **El insight:** No fue un prompt mágico. Fue un SISTEMA: contexto + rol + instrucción clara. Esto lo puedes reusar mañana.
 
 #### 2.3. Escribe tu primer prompt (5 min)

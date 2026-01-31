@@ -162,14 +162,14 @@ La IA clasifica, pero TÚ validas. El juicio humano no es opcional.
 
 **Objetivo:** Construir un prompt de triage que evoluciona en 4 fases
 
-**Tiempo:** 60 min
+**Tiempo:** 70 min
 
 **Fases:**
 1. El Caos (sin técnicas) — 10 min
 2. +Rol — 15 min
 3. +Formato — 15 min
 4. +Few-shot — 15 min
-5. Análisis crítico — 5 min
+5. Análisis crítico — 10 min
 
 > 💡 Tip: Documenta cada versión para ver la evolución
 

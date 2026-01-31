@@ -11,16 +11,16 @@
 ## Checklist de Progreso
 
 ### M1: Fundamentos + Primeros Superpoderes (Clases 1-4)
-- [ ] **Clase 1:** El Nuevo Juego
-- [ ] **Clase 2:** El Arte del Prompt
-- [ ] **Clase 3:** Tu Copiloto de Contenido
-- [ ] **Clase 4:** Research con IA: Gemini + Perplexity
+- [x] **Clase 1:** El Nuevo Juego
+- [x] **Clase 2:** El Arte del Prompt
+- [x] **Clase 3:** Tu Socio Pensante
+- [x] **Clase 4:** Proyecto Integrador M1
 
 ### M2: Superpoderes Aplicados + Portfolio (Clases 5-8)
-- [ ] **Clase 5:** Automatización sin código
-- [ ] **Clase 6:** Tu Asistente IA Personalizado
+- [ ] **Clase 5:** Tu Primer Agente IA
+- [ ] **Clase 6:** Tu Segundo Cerebro con IA
 - [ ] **Clase 7:** Portfolio + Caso de Éxito
-- [ ] **Clase 8:** Presentación + Siguientes Pasos
+- [ ] **Clase 8:** Demo Day + El Futuro
 
 ---
 
@@ -207,11 +207,12 @@ git commit -m "tipo: descripción concisa"
 
 | Herramienta | Propósito | Clase |
 |-------------|-----------|-------|
-| **Claude** | Asistente principal, contenido | 1-3 |
-| **Gemini** | Gems, Deep Research | 4 |
-| **Perplexity** | Spaces, fuentes verificables | 4 |
-| **Make/Zapier** | Automatización sin código | 5 |
-| **Notion** | Segundo cerebro + portfolio | 6 |
+| **Claude** | Asistente principal, Projects, sistemas | 1-3 |
+| **Gemini** | Deep Research, Gems personalizados | 4 |
+| **Perplexity** | Research con fuentes verificables | 4 |
+| **Make/n8n** | Agentes y automatización | 5 |
+| **NotebookLM** | Segundo cerebro con IA | 6 |
+| **Notion** | Portfolio + documentación | 7 |
 
 ---
 
@@ -220,11 +221,11 @@ git commit -m "tipo: descripción concisa"
 | Clase | Entregable |
 |-------|------------|
 | 1 | Screenshot resultado + reflexión |
-| 2 | 3 prompts maestros |
-| 3 | Contenido profesional publicable |
-| 4 | Research doc + asistente configurado |
-| 5 | 1 flujo automatizado |
-| 6 | Asistente configurado |
+| 2 | Evolución de prompt + reflexión crítica |
+| 3 | Claude Project + framework personal |
+| 4 | Proyecto integrador M1 (calificable) |
+| 5 | 1 agente funcionando |
+| 6 | Segundo cerebro configurado |
 | 7 | Caso de éxito publicable |
 | 8 | Presentación + plan desarrollo |
 
@@ -257,7 +258,7 @@ git commit -m "tipo: descripción concisa"
 
 ## Notas de Desarrollo
 
-*Última actualización: 2026-01-23*
+*Última actualización: 2026-01-31*
 
 - Propuesta 02 aprobada: 8 clases en 4 semanas
 - Nombre: "AI 101 - Desbloqueando el verdadero poder de la IA"
@@ -265,3 +266,7 @@ git commit -m "tipo: descripción concisa"
 - Duración: 40h total (24h sync + 16h async)
 - Estructura de carpetas simplificada vs Code 301
 - 8 skills de Claude Code creados para generación de contenido
+- **M1 completado:** Clases 01-04 implementadas
+  - Clases 01-02: Patrón "Tú → IA"
+  - Clase 03: Patrón "IA ↔ Tú" (socio pensante)
+  - Clase 04: Proyecto integrador calificable
