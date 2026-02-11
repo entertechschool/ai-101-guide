@@ -4,15 +4,15 @@
 
 ## Resumen
 
-En el Módulo 1 aprendiste a comunicarte con la IA y a usarla como herramienta manual. En esta clase das el salto: la IA deja de ser algo que usas y se convierte en algo que **trabaja por ti**. Construirás un agente de triage — un flujo automatizado que recibe mensajes desde un formulario, los clasifica con IA y envía un email con la clasificación y acción sugerida. Es la evolución directa de lo que hiciste en Clase 02: el mismo triage, pero ahora corre solo.
+En el Módulo 1 aprendiste a comunicarte con la IA y a usarla como herramienta manual. En esta clase das el salto: la IA deja de ser algo que usas y se convierte en algo que **trabaja por ti**. Construirás el cerebro de un agente de triage — un formulario con v0 que envía datos a Make, donde la IA clasifica con OpenRouter. Es la evolución directa de lo que hiciste en Clase 02: el mismo triage, pero ahora el agente piensa solo.
 
-La diferencia entre automatización y agente es una sola palabra: **decisión**. Una automatización sigue reglas fijas ("si llega email, reenviar a soporte"). Un agente usa IA para decidir ("si llega mensaje, IA lee el contenido, decide si es urgente/consulta/venta, y responde diferente en cada caso"). Hoy construirás tu primer agente.
+La diferencia entre automatización y agente es una sola palabra: **decisión**. Una automatización sigue reglas fijas ("si llega email, reenviar a soporte"). Un agente usa IA para decidir ("si llega mensaje, IA lee el contenido, decide si es urgente/consulta/venta"). Hoy construyes el cerebro. En Clase 06 le darás manos (Gmail), inteligencia (Router) y memoria (Google Sheets).
 
 ```
-┌──────────────┐     ┌──────────┐     ┌──────────────┐     ┌──────────┐
-│ FORMULARIO   │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │ ──→ │  GMAIL   │
-│ (v0.app)     │     │ (Make)   │     │ (OpenRouter)  │     │ (email)  │
-└──────────────┘     └──────────┘     └──────────────┘     └──────────┘
+┌──────────────────┐     ┌──────────┐     ┌──────────────┐
+│ FORMULARIO + DBG │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │
+│ (v0.app)         │     │ (Make)   │     │ (OpenRouter)  │
+└──────────────────┘     └──────────┘     └──────────────┘
 ```
 
 ---
@@ -38,16 +38,12 @@ Ya sabes crear prompts poderosos. Pero los ejecutas manualmente:
 ### La evolución desde Clase 02
 
 ```
-Clase 02: Tú + Claude → Triage manual
-   → Escribes prompt, pegas mensajes, lees resultado
-
+C02: Tú + Claude → Triage manual (pegas mensajes, lees resultado)
          ↓ AHORA ↓
-
-Clase 05: Form + Make + Grok → Triage automático
-   → Mensaje llega desde formulario, IA clasifica, email se envía SOLO
+C05: Form + Make + Grok → Triage automático (la IA clasifica SOLA)
 ```
 
-> 💡 **El prompt que escribiste en C02 se convierte en el "cerebro" de tu agente.**
+> 💡 **El prompt de C02 se convierte en el "cerebro" de tu agente.**
 
 ---
 
@@ -60,34 +56,34 @@ Automatización tradicional:
    IF email llega → THEN reenviar a soporte (siempre igual)
 
 Agente IA:
-   IF mensaje llega → IA LEE → DECIDE categoría → EMAIL con clasificación
-   ├── Urgente    → Email con alerta inmediata
-   ├── Consulta   → Email con draft de respuesta
-   └── Venta      → Email con registro de lead
+   IF mensaje llega → IA LEE → DECIDE categoría → acción diferente
+   ├── Urgente    → Alerta inmediata
+   ├── Consulta   → Respuesta estándar
+   └── Venta      → Registro de lead
 ```
 
-El agente tiene 4 componentes:
-1. **Entrada:** De dónde vienen los datos (formulario en v0)
+El agente tiene 3 componentes (hoy construimos los 3):
+1. **Entrada:** De dónde vienen los datos (formulario v0 con bloque debug)
 2. **Trigger:** Qué lo activa (webhook en Make)
 3. **Decisión:** IA que lee y clasifica (Grok vía OpenRouter — SystemPrompt + UserPrompt)
-4. **Acción:** Qué hace con la decisión (email vía Gmail)
+
+> 📌 En C06 agregamos el 4to componente: **Acción** (Gmail + Router + Google Sheets).
 
 ---
 
 ## ¿Qué haremos en clase?
 
 1. **Entenderás la diferencia** — Automatización vs agente (reglas fijas vs decisión IA) con demo en vivo
-2. **Crearás tu formulario con IA** — Usando v0 para generar un form profesional (refuerzo de Few-shot de C02)
-3. **Construirás tu agente en Make** — Webhook → OpenRouter (SystemPrompt + UserPrompt) → Gmail
-4. **Probarás con datos reales** — Enviar mensajes desde TU form y verificar clasificación en Gmail
-5. **Analizarás las fallas** — Porque tu agente TAMBIÉN se va a equivocar
+2. **Crearás tu formulario con IA** — Scaffolding con Gemini + v0 para generar un form con bloque debug (refuerzo C02-C03)
+3. **Construirás el cerebro del agente en Make** — Webhook → OpenRouter (API Key + SystemPrompt + UserPrompt)
+4. **Verás al agente pensar** — Enviar mensajes desde TU form y ver clasificación en Make History
 
 ## 🎯 Objetivos de aprendizaje
 
 Al finalizar esta clase, serás capaz de:
 
 1. **Distinguir entre automatización y agente IA** — Cuándo usar reglas fijas vs decisión con IA
-2. **Construir un agente funcional en Make** — Formulario + decisión IA + acción por email
+2. **Construir el cerebro de un agente en Make** — Formulario + webhook + decisión IA
 3. **Identificar cuándo un agente necesita supervisión humana** — Límites de la autonomía
 
 ---
@@ -125,13 +121,12 @@ Al finalizar esta clase, serás capaz de:
 
 - ¿Qué tareas repites diariamente que siguen un patrón de clasificar + actuar?
 - ¿Cuántos mensajes/emails clasificas manualmente por semana?
-- ¿Qué pasaría si alguien (o algo) clasificara por ti con 80% de precisión?
 
 ### 📚 Recursos opcionales
 
-- [Make: Getting Started](https://www.make.com/en/help/tutorials){:target="_blank"} — Tutorial básico
-- [OpenRouter Docs](https://openrouter.ai/docs){:target="_blank"} — Documentación de la API
-- [v0.dev](https://v0.dev){:target="_blank"} — Generador de interfaces con IA (lo usaremos en clase)
+- [Make: Getting Started](https://www.make.com/en/help/tutorials){:target="_blank"}
+- [OpenRouter Docs](https://openrouter.ai/docs){:target="_blank"}
+- [v0.dev](https://v0.dev){:target="_blank"} — Generador de interfaces con IA
 
 ---
 
@@ -145,35 +140,10 @@ Al finalizar esta clase, serás capaz de:
 - **Webhook**: URL única que recibe datos automáticamente cuando ocurre un evento externo
 - **API Key**: Contraseña que identifica tu cuenta al usar una API
 - **v0**: Herramienta de Vercel que genera interfaces web (formularios, páginas) a partir de un prompt
-- **Gemini**: IA de Google que usaremos como clarificador de estilo para el formulario (ya la conoces de C04)
+- **Bloque debug**: Panel en el formulario que muestra la respuesta del servidor y permite reintentar
+- **Gemini**: IA de Google que usaremos como scaffolding para el prompt de v0 (ya la conoces de C04)
 - **SystemPrompt**: Instrucciones permanentes que definen el ROL y REGLAS del agente (lo que el agente "es")
 - **UserPrompt**: Los datos específicos de cada mensaje que el agente debe procesar (lo que el agente "recibe")
-
----
-
-## La Evolución desde M1
-
-```
-M1: Tú operas la IA manualmente
-   Clase 01: Sistema básico → Tú escribes, IA responde
-   Clase 02: RICE + Few-shot → Tú escribes mejor, IA responde mejor
-   Clase 03: Socio pensante → IA pregunta, tú respondes
-   Clase 04: Integración → Tú combinas herramientas
-
-         ↓ CAMBIO DE PARADIGMA ↓
-
-M2: La IA opera por ti
-   Clase 05: Agente → La IA recibe, decide y actúa SIN que estés
-```
-
-### Refuerzo de técnicas M1
-
-| Técnica de M1 | Cómo la usas en C05 |
-|---------------|---------------------|
-| Few-shot / Ejemplo (C02) | Wireframe adjunto al prompt de v0 para generar tu form |
-| Socio pensante (C03) | Gemini como clarificador de estilo del formulario |
-| System prompt (C01) | SystemPrompt en OpenRouter define el rol del agente |
-| RICE (C02) | Estructura del UserPrompt con datos del formulario |
 
 ---
 

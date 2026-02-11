@@ -1,25 +1,26 @@
 # Lab 05: Mi Agente de Triage
 
-En Clase 02 clasificaste mensajes manualmente. Hoy ese proceso corre solo. Crearás un formulario con v0, conectarás un agente en Make que clasifica con IA y envía la decisión por email.
+En Clase 02 clasificaste mensajes manualmente. Hoy construyes el **cerebro** de un agente: un formulario con v0 que envía datos a Make, donde la IA clasifica con OpenRouter. El agente piensa — en C06 le daremos manos.
 
-> ⏱️ **Tiempo:** 60 minutos
+> ⏱️ **Tiempo:** 90 minutos
 
 ### 🎯 Objetivo
 
-Crear un agente que recibe mensajes desde un formulario, los clasifica con IA (Grok vía OpenRouter) y envía un email con la clasificación.
+Crear la primera mitad de un agente: formulario v0 con bloque debug → Webhook Make → OpenRouter (clasificación IA).
 
 ## Arquitectura
 
 ```
-[Formulario v0] → [Webhook Make] → [OpenRouter/Grok] → [Gmail]
+[Formulario v0 + Debug] → [Webhook Make] → [OpenRouter/Grok]
 ```
 
 | Componente | Qué hace | Herramienta |
 |------------|----------|-------------|
-| **Formulario** | Captura el mensaje del cliente | v0 (form deployado) |
+| **Formulario** | Captura el mensaje del cliente | v0 (form + bloque debug) |
 | **Webhook** | Recibe datos y activa el flujo | Make |
 | **Decisión** | Clasifica con IA (SystemPrompt + UserPrompt) | Grok Free vía OpenRouter |
-| **Acción** | Envía email con categoría y acción sugerida | Gmail en Make |
+
+> 💡 En C06 agregaremos Gmail, Router y Google Sheets para completar el agente.
 
 ## Antes de Empezar
 
@@ -35,13 +36,15 @@ Crear un agente que recibe mensajes desde un formulario, los clasifica con IA (G
 
 ## Parte 1: Concepto (15 min)
 
-**Pregunta detonadora:** ¿Cuál es la diferencia entre una automatización y un agente IA?
+**Pregunta detonadora 1:** ¿Cuál es la diferencia entre una automatización y un agente IA?
 
-El facilitador envía 3 mensajes desde un formulario. Observa cómo cada uno recibe una clasificación diferente y un email distinto.
+**Pregunta detonadora 2:** Imagina que recibes 100 mensajes al día. Con tu prompt manual de C02, ¿cuánto te toma clasificarlos?
+
+El facilitador envía 3 mensajes desde un formulario. Observa cómo cada uno recibe una clasificación diferente en Make History.
 
 ```
 Automatización: IF mensaje → THEN reenviar a soporte (siempre igual)
-Agente:         IF mensaje → IA LEE → DECIDE categoría → EMAIL diferente
+Agente:         IF mensaje → IA LEE → DECIDE categoría → acción diferente
 ```
 
 ✅ **Checkpoint:** Entiendes la diferencia entre automatización y agente.
@@ -50,9 +53,22 @@ Agente:         IF mensaje → IA LEE → DECIDE categoría → EMAIL diferente
 
 ## Parte 2: Crear tu Formulario con v0 (30 min)
 
-### 2.1 Genera tu form con Few-shot (refuerzo C02)
+### 2.1 Scaffolding con Gemini (refuerzo C03)
 
-Abre [v0.dev](https://v0.dev) y escribe un prompt. Adjunta tu wireframe como ejemplo visual — igual que Few-shot en C02:
+No sabes qué pedirle a v0? Usa Gemini como socio pensante — pídele que te ayude a estructurar el prompt antes de ir a v0:
+
+```
+Necesito crear un formulario de contacto para [mi negocio].
+Ayúdame a definir: qué campos necesito, qué estilo visual
+es apropiado, y cómo debería verse el layout.
+Dame 3 opciones con justificación para cada una.
+```
+
+Elige la opción que mejor represente tu marca.
+
+### 2.2 Prompt + wireframe a v0 (refuerzo Few-shot C02)
+
+Abre [v0.dev](https://v0.dev) y escribe un prompt. Adjunta tu wireframe como ejemplo visual:
 
 ```
 Crea un formulario de contacto para PetShop Express con:
@@ -64,11 +80,21 @@ Crea un formulario de contacto para PetShop Express con:
 [Adjunta tu wireframe como ejemplo de estilo]
 ```
 
-### 2.2 Usa Gemini como clarificador (refuerzo C03)
+### 2.3 Bloque debug
 
-Si no estás seguro del estilo, abre Gemini y pide 3 opciones con justificación. Elige la que mejor represente tu marca y ajusta el prompt de v0.
+Pide a v0 que agregue un panel de debug al formulario:
 
-### 2.3 Despliega tu formulario
+```
+Agrega un bloque de debug debajo del formulario que:
+- Muestre la respuesta del servidor después de enviar
+- Muestre un indicador de estado (enviando/éxito/error)
+- Incluya un botón de "Reintentar" si falla la conexión
+- Solo sea visible después del primer envío
+```
+
+> 💡 El bloque debug te permite ver si tu form se conectó bien al webhook sin abrir Make.
+
+### 2.4 Deploy + copiar URL
 
 1. Haz clic en **Deploy** para publicarlo
 2. Copia la URL de tu formulario
@@ -76,7 +102,7 @@ Si no estás seguro del estilo, abre Gemini y pide 3 opciones con justificación
 
 > 💡 Si v0 no funciona, el facilitador compartirá un formulario pre-armado.
 
-✅ **Checkpoint:** Formulario deployado con URL pública.
+✅ **Checkpoint:** Formulario deployado con URL pública y bloque debug visible.
 
 ---
 
@@ -84,13 +110,26 @@ Si no estás seguro del estilo, abre Gemini y pide 3 opciones con justificación
 
 ### 3.1 Clona el template
 
-El facilitador comparte el link del template. Clónalo a tu cuenta. Tiene 3 módulos: `[Webhook] → [OpenRouter] → [Gmail]`
+El facilitador comparte el link del template. Clónalo a tu cuenta. Tiene 2 módulos: `[Webhook] → [OpenRouter]`
 
 ### 3.2 Configura el Webhook
 
 Copia la URL del webhook. Tu formulario v0 enviará datos a esta URL.
 
-### 3.3 Personaliza el SystemPrompt
+### 3.3 Configura OpenRouter — API Key
+
+Este paso es nuevo y crítico. En el módulo OpenRouter de Make:
+
+1. Haz clic en el módulo OpenRouter → **Create a connection**
+2. Nombre de la conexión: "Mi OpenRouter"
+3. Pega tu API Key de OpenRouter (la que generaste antes de clase)
+4. Selecciona el modelo: **grok-3-mini-beta** (free)
+5. Haz clic en **Save** → espera el checkmark verde ✅
+6. Si ves error, verifica que la key no tenga espacios al inicio o final
+
+> ⚠️ Si tu key no funciona, pide la key de backup al facilitador.
+
+### 3.4 Personaliza el SystemPrompt
 
 En el módulo OpenRouter, edita el **SystemPrompt** — el ROL y REGLAS de tu agente:
 
@@ -114,7 +153,7 @@ RESUMEN: [1 línea]
 ACCIÓN: [qué hacer]
 ```
 
-### 3.4 Personaliza el UserPrompt
+### 3.5 Personaliza el UserPrompt
 
 El UserPrompt mapea los datos del formulario:
 
@@ -126,74 +165,37 @@ Mensaje: {{mensaje}}
 
 Verifica que los campos coincidan con tu formulario v0.
 
-### 3.5 Configura Gmail
-
-- **Para:** Tu email personal
-- **Asunto:** `[{{CATEGORÍA}}] Nuevo mensaje de {{nombre}}`
-- **Cuerpo:** Categoría + resumen + acción sugerida
-
 ### 3.6 Conecta tu form al webhook
 
-Actualiza tu formulario v0 para que envíe datos a la URL del webhook de Make.
+Actualiza tu formulario v0 para que envíe datos a la URL del webhook de Make. Usa el bloque debug para verificar que la conexión funciona.
 
-✅ **Checkpoint:** Agente armado, Gmail configurado, form conectado.
-
----
-
-## Parte 4: Probar con 5 Mensajes (15 min)
-
-Activa tu escenario en Make (switch ON). Desde TU formulario, envía los 5 mensajes de PetShop Express de C02:
-
-1. Perro con dieta especial, pedido retrasado
-2. Consulta sobre rascador para gatos
-3. Cliente enojado quiere reembolso
-4. Factura pendiente, "no es urgente" pero vence el viernes
-5. Vitaminas que no funcionaron
-
-Revisa tu Gmail y documenta en tu Google Doc:
-
-| # | Mensaje (resumen) | Categoría | ¿Correcto? | Acción sugerida |
-|---|-------------------|-----------|------------|-----------------|
-| 1 | Perro dieta especial | | | |
-| 2 | Rascador para gatos | | | |
-| 3 | Cliente enojado reembolso | | | |
-| 4 | Factura "no urgente" | | | |
-| 5 | Vitaminas no funcionaron | | | |
-
-✅ **Checkpoint:** 5 mensajes enviados, 5 emails recibidos con clasificación.
+✅ **Checkpoint:** Template clonado, API key conectada (checkmark verde), SystemPrompt personalizado, form conectado.
 
 ---
 
-## Parte 5: Análisis Crítico (10 min)
+## Parte 4: Primer Test — Ver al Agente Pensar (10 min)
 
-Abre tu Google Doc de C02 y compara: ¿el agente clasificó igual que tú manualmente? ¿Cometió los mismos errores?
+1. Activa tu escenario en Make (switch **ON**)
+2. Envía 1 mensaje desde TU formulario
+3. Ve a **Make History** → revisa el output de OpenRouter
+4. ¿La clasificación fue correcta? ¿El formato es el que pediste?
+5. Envía 1-2 mensajes más con categorías diferentes
+6. Toma screenshot de Make execution mostrando la clasificación
 
-**Documenta 1 falla:**
+> 💡 Usa el bloque debug de tu form para ver si el envío fue exitoso antes de revisar Make.
 
-```
-FALLA DEL AGENTE:
-- Mensaje #: ___
-- Qué hizo: ___
-- Qué debería haber hecho: ___
-- Causa probable: ___
-- Cómo mejoraría el SystemPrompt: ___
-```
+✅ **Checkpoint:** Al menos 2 mensajes clasificados visibles en Make History.
 
-**Reflexión:** ¿Qué proceso de TU trabajo podría ser un agente como este?
+---
 
-## 📝 Entregable
+## 📝 Entregable (Parcial — se completa en C06)
 
-**Google Doc con 4 secciones:**
+**Google Doc con 3 secciones:**
 
-1. **Mi Formulario + Agente** — URL del form v0 + screenshot del flujo en Make
-2. **SystemPrompt + UserPrompt** — Prompt completo (rol + categorías + reglas) + mapeo de datos
-3. **Resultados de Prueba** — Tabla con 5 mensajes y clasificación
-4. **Análisis Crítico** — 1 falla documentada + reflexión sobre tu trabajo
+1. **Mi Formulario** — URL del form v0 deployado + screenshot (con bloque debug visible)
+2. **Mi Agente (cerebro)** — Screenshot del flujo en Make (2 módulos) + SystemPrompt completo
+3. **Primer Test** — Screenshot de Make History mostrando clasificación de al menos 2 mensajes
 
 **Entrega:** Link público del Google Doc.
 
-## 🚀 Bonus (Opcional)
-
-1. Cambia las categorías a algo de tu trabajo real (no PetShop)
-2. Ajusta el SystemPrompt con criterios de tu industria
-3. Envía mensajes reales (anonimizados) desde tu form y compara
+📌 **Próxima clase** completamos el agente: Gmail + Router + Google Sheets + battle de agentes.

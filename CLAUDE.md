@@ -18,7 +18,7 @@
 
 ### M2: Superpoderes Aplicados + Portfolio (Clases 5-8)
 - [ ] **Clase 5:** Tu Primer Agente IA
-- [ ] **Clase 6:** Tu Segundo Cerebro con IA
+- [ ] **Clase 6:** Tu Agente Inteligente
 - [ ] **Clase 7:** Portfolio + Caso de Éxito
 - [ ] **Clase 8:** Demo Day + El Futuro
 
@@ -211,7 +211,7 @@ git commit -m "tipo: descripción concisa"
 | **Gemini** | Deep Research, Gems personalizados | 4 |
 | **Perplexity** | Research con fuentes verificables | 4 |
 | **Make/n8n** | Agentes y automatización | 5 |
-| **NotebookLM** | Segundo cerebro con IA | 6 |
+| **Google Sheets** | Logging de agente (en Make) | 6 |
 | **Notion** | Portfolio + documentación | 7 |
 
 ---
@@ -225,7 +225,7 @@ git commit -m "tipo: descripción concisa"
 | 3 | Claude Project + framework personal |
 | 4 | Proyecto integrador M1 (calificable) |
 | 5 | 1 agente funcionando |
-| 6 | Segundo cerebro configurado |
+| 6 | Agente inteligente con Router + Sheets |
 | 7 | Caso de éxito publicable |
 | 8 | Presentación + plan desarrollo |
 

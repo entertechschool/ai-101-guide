@@ -16,14 +16,14 @@
 
 ### En el Módulo 2:
 - La IA trabaja **POR ti** (hoy)
-- La IA te **conoce** (Clase 06)
+- La IA se vuelve **inteligente** (Clase 06)
 - Demuestras lo que lograste (Clase 07-08)
 
 > "M1 fue aprender a conducir. M2 es poner el piloto automático."
 
 ---
 
-## 🧠 Pregunta Detonadora
+## 🧠 Pregunta Detonadora 1
 
 ### ¿Cuál es la diferencia entre automatización y un agente IA?
 
@@ -39,11 +39,9 @@
 
 ---
 
-## 🧠 Pregunta Detonadora — Respuesta
+## 🧠 Pregunta Detonadora 1 — Respuesta
 
 **Respuesta correcta: B**
-
-### Análisis:
 
 - **A:** ❌ La velocidad no es la diferencia — ambos pueden ser rápidos
 - **B:** ✅ El agente DECIDE. La automatización solo ejecuta reglas fijas
@@ -54,25 +52,33 @@
 
 ---
 
-## La Evolución desde Clase 02
+## 🧠 Pregunta Detonadora 2
 
-### Clase 02: Triage MANUAL
-```
-Tú abres Claude
-   → Pegas los mensajes
-      → Lees la clasificación
-         → Tú tomas la acción
-```
+### Imagina que recibes 100 mensajes al día.
+### Con tu prompt manual de C02, ¿cuánto te toma clasificarlos?
 
-### Clase 05: Triage AUTOMÁTICO
-```
-Mensaje llega desde formulario (v0)
-   → Webhook lo recibe (Make)
-      → IA lo clasifica (OpenRouter/Grok)
-         → Email se envía solo (Gmail)
-```
+**A)** Lo mismo que con un agente — la IA siempre tarda igual
 
-> **El mismo prompt de C02 se convierte en el cerebro del agente.**
+**B)** El agente los clasifica en minutos, yo tardaría horas
+
+**C)** El agente clasifica rápido, pero necesito revisar cada uno
+
+**D)** B y C — clasifica rápido pero necesita supervisión
+
+> 🕐 30 segundos → levanten la mano
+
+---
+
+## 🧠 Pregunta Detonadora 2 — Respuesta
+
+**Respuesta correcta: D**
+
+- **A:** ❌ Con prompt manual TÚ eres el cuello de botella (copiar, pegar, leer, actuar)
+- **B:** ⚠️ Cierto a medias — sí es más rápido, pero...
+- **C:** ⚠️ Cierto a medias — necesita supervisión, pero no cada uno
+- **D:** ✅ El agente escala la velocidad, pero la supervisión no es opcional
+
+> **Escala + supervisión.** Un agente no reemplaza tu criterio — lo multiplica.
 
 ---
 
@@ -86,110 +92,31 @@ Mensaje llega desde formulario (v0)
 
 **Mensaje 3:** "QUIERO MI REEMBOLSO. Llevo 5 días esperando."
 
-### Observen qué pasa:
-- ¿Cada mensaje recibe un email diferente?
+### Observen en Make History:
+- ¿Cada mensaje recibió una clasificación diferente?
 - ¿La categoría fue correcta?
 - ¿La acción sugerida tiene sentido?
 
-> 🎬 **Demo en vivo** — Form v0 + Make + Grok vía OpenRouter + Gmail
-
----
-
-## 🎯 COMPROBACIÓN
-
-### El agente clasificó "QUIERO MI REEMBOLSO" como urgente. ¿Es correcto?
-
-**A)** Sí, el tono agresivo indica urgencia real
-
-**B)** No necesariamente, el tono no siempre indica urgencia real
-
-**C)** Sí, siempre que el cliente esté enojado es urgente
-
-**D)** Depende del modelo de IA que uses
-
-> 🕐 30 segundos para pensar → levanten la mano
-
----
-
-## 🎯 COMPROBACIÓN — Respuesta
-
-**Respuesta correcta: B**
-
-### Análisis:
-
-- **A:** ❌ Tono agresivo ≠ urgencia real (lección de C02)
-- **B:** ✅ El pedido de cumpleaños tiene urgencia temporal REAL. El reembolso es importante pero no tan inmediato
-- **C:** ❌ Clientes enojados merecen atención, pero la prioridad depende del impacto real
-- **D:** ❌ El modelo importa, pero el PROMPT es lo que define los criterios
-
-> **Misma lección de C02, ahora aplicada a un agente.** El prompt define la calidad de la decisión.
+> 🎬 **Demo en vivo** — Form v0 + Make + Grok vía OpenRouter
 
 ---
 
 ## Concepto Clave: Arquitectura del Agente
 
 ```
-┌──────────────┐     ┌──────────┐     ┌──────────────┐     ┌──────────┐
-│ FORMULARIO   │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │ ──→ │  GMAIL   │
-│ (v0.app)     │     │ (Make)   │     │ (OpenRouter)  │     │ (email)  │
-└──────────────┘     └──────────┘     └──────────────┘     └──────────┘
+┌──────────────────┐     ┌──────────┐     ┌──────────────┐
+│ FORMULARIO + DBG │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │
+│ (v0.app)         │     │ (Make)   │     │ (OpenRouter)  │
+└──────────────────┘     └──────────┘     └──────────────┘
 ```
 
 | Componente | Pregunta clave | Ejemplo |
 |------------|---------------|---------|
-| **Formulario** | ¿De dónde vienen los datos? | v0 form deployado |
+| **Formulario** | ¿De dónde vienen los datos? | v0 form + bloque debug |
 | **Webhook** | ¿Qué activa el flujo? | URL de Make |
 | **Decisión** | ¿Qué criterio usa? | SystemPrompt + UserPrompt |
-| **Acción** | ¿Qué hace con la decisión? | Email vía Gmail |
 
-### El prompt es el cerebro. El email es la mano.
-
----
-
-## v0: Tu Formulario con IA
-
-### ¿Qué es v0?
-- Herramienta de Vercel que genera interfaces web desde un prompt
-- Escribe qué quieres → v0 lo genera → Deploy con un clic
-
-### ¿Por qué lo usamos?
-- Necesitamos un origen de datos real (no curl ni JSON manual)
-- Refuerza **Few-shot de C02**: adjuntas un wireframe como ejemplo
-- Refuerza **Socio pensante de C03**: Gemini te ayuda a clarificar el estilo
-
-### Refuerzo de M1 en acción:
-
-| Técnica M1 | Cómo la usas aquí |
-|------------|-------------------|
-| Few-shot (C02) | Wireframe adjunto al prompt de v0 |
-| Socio pensante (C03) | Gemini como clarificador de estilo |
-| System prompt (C01) | SystemPrompt en OpenRouter |
-| RICE (C02) | Estructura del UserPrompt |
-
----
-
-## SystemPrompt vs UserPrompt
-
-### SystemPrompt — Lo que el agente "ES"
-```
-Eres un agente de triage para PetShop Express.
-Clasifica cada mensaje en: URGENTE, CONSULTA o VENTA.
-REGLAS: Tono agresivo NO es urgencia...
-```
-→ Define ROL + REGLAS + CATEGORÍAS
-→ Es permanente (no cambia entre mensajes)
-
-### UserPrompt — Lo que el agente "RECIBE"
-```
-Nuevo mensaje de: María López
-Email: maria@email.com
-Mensaje: Mi perro necesita dieta especial...
-```
-→ Mapea los datos del formulario
-→ Cambia con cada mensaje entrante
-
-### La combinación es clave:
-**Buen SystemPrompt + Buenos datos = Buena decisión**
+### Hoy construimos el cerebro. En C06 le damos manos.
 
 ---
 
@@ -197,12 +124,11 @@ Mensaje: Mi perro necesita dieta especial...
 
 | Herramienta | Rol | Costo |
 |-------------|-----|-------|
-| **v0** | Generar formulario con IA | Free (con cuenta) |
+| **v0** | Generar formulario con IA + bloque debug | Free (con cuenta) |
 | **Make** | Plataforma de automatización visual | Free (1,000 ops/mes) |
 | **OpenRouter** | Puerta a múltiples modelos de IA | Free (con Grok) |
 | **Grok** | Modelo de IA que toma la decisión | Free vía OpenRouter |
-| **Gmail** | Enviar email con clasificación | Tu cuenta de Google |
-| **Gemini** | Clarificador de estilo (ya conocida) | Free |
+| **Gemini** | Scaffolding del prompt de v0 (ya conocida) | Free |
 
 ### ¿Por qué no Claude directamente?
 - Claude es más poderoso pero requiere cuenta de pago para API
@@ -236,51 +162,36 @@ Mensaje: Mi perro necesita dieta especial...
 
 ### Mi Agente de Triage
 
-**Objetivo:** Crear un agente: Form v0 → Webhook Make → OpenRouter/Grok → Gmail
+**Objetivo:** Crear el cerebro del agente: Form v0 → Webhook Make → OpenRouter/Grok
+
+**Tiempo:** 90 min
 
 **Partes:**
-1. Concepto — Agente vs automatización (15 min)
-2. Crear formulario con v0 — Few-shot + Gemini (30 min)
-3. Construir agente en Make — SystemPrompt + UserPrompt + Gmail (35 min)
-4. Probar con 5 mensajes desde tu form (15 min)
-5. Análisis crítico — 1 falla documentada (10 min)
+1. Concepto — Agente vs automatización + preguntas detonadoras (15 min)
+2. Crear formulario con v0 — Scaffolding Gemini + Few-shot + Debug (30 min)
+3. Construir agente en Make — API Key + SystemPrompt + UserPrompt (35 min)
+4. Primer test — Ver al agente pensar en Make History (10 min)
 
 > 💡 Tip: Tu prompt de C02 es tu punto de partida para el SystemPrompt
 
 ---
 
-## ✅ Checkpoint: Parte 1-2
+## ✅ Checkpoints
 
-### Verifica:
+### Parte 1-2:
 - [ ] Entiendes la diferencia entre automatización y agente
-- [ ] Formulario creado en v0 y deployado
+- [ ] Formulario creado en v0 con bloque debug y deployado
 - [ ] URL del formulario copiada
 
-**Pregunta:** ¿Usaste tu wireframe como ejemplo para v0?
+### Parte 3:
+- [ ] Template clonado en Make (2 módulos: Webhook → OpenRouter)
+- [ ] API Key de OpenRouter conectada (checkmark verde)
+- [ ] SystemPrompt + UserPrompt personalizados
 
----
-
-## ✅ Checkpoint: Parte 3
-
-### Verifica:
-- [ ] Template clonado en Make (3 módulos: Webhook → OpenRouter → Gmail)
-- [ ] SystemPrompt personalizado (rol + categorías + reglas)
-- [ ] UserPrompt configurado con datos del formulario
-- [ ] Gmail apuntando a tu email
-
-**Pregunta:** ¿Tu SystemPrompt tiene regla para deadlines ocultos?
-
----
-
-## ✅ Checkpoint: Parte 4-5
-
-### Verifica:
-- [ ] 5 mensajes enviados desde tu formulario
-- [ ] 5 emails recibidos en Gmail con clasificación
-- [ ] Resultados documentados en tabla
-- [ ] 1 falla identificada y documentada
-
-**Pregunta para compartir:** ¿Qué error encontraste? ¿Cómo mejorarías el SystemPrompt?
+### Parte 4:
+- [ ] Al menos 2 mensajes enviados desde tu formulario
+- [ ] Clasificaciones visibles en Make History
+- [ ] Screenshot tomado para el entregable
 
 ---
 
@@ -288,8 +199,8 @@ Mensaje: Mi perro necesita dieta especial...
 
 ### Hoy aprendiste:
 - La diferencia entre automatización y agente IA
-- Cómo crear un formulario profesional con v0 (refuerzo M1)
-- Cómo construir un agente con Make + OpenRouter + Grok + Gmail
+- Cómo crear un formulario profesional con v0 + bloque debug
+- Cómo construir el cerebro de un agente en Make + OpenRouter
 - Que SystemPrompt + UserPrompt definen la calidad de la decisión
 - Que los agentes necesitan supervisión continua
 
@@ -300,13 +211,12 @@ Mensaje: Mi perro necesita dieta especial...
 
 ## 📝 Entrega + Preview
 
-### Tu entregable:
-1. **Mi formulario + agente** — URL del form v0 + screenshot del flujo en Make
-2. **SystemPrompt + UserPrompt** — Prompts completos y documentados
-3. **Resultados** — Tabla con 5 mensajes y clasificación
-4. **Análisis** — 1 falla + reflexión sobre tu trabajo
+### Tu entregable (parcial — se completa en C06):
+1. **Mi Formulario** — URL del form v0 + screenshot con bloque debug
+2. **Mi Agente (cerebro)** — Screenshot Make (2 módulos) + SystemPrompt
+3. **Primer Test** — Screenshot de Make History con clasificación
 
 **Formato:** Google Doc con link público
 
-### Próxima clase: Tu Segundo Cerebro con IA
-De un agente que clasifica mensajes → a una IA que conoce TODO tu contexto profesional
+### Próxima clase: Tu Agente Inteligente
+Completamos el agente con Gmail + Router + Google Sheets. Y battle: ¿quién clasifica mejor?

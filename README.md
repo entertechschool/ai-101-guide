@@ -32,7 +32,7 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 │       Superpoderes          │        + Portfolio            │
 ├─────────────────────────────┼───────────────────────────────┤
 │ 1. El Nuevo Juego           │ 5. Tu Primer Agente IA        │
-│ 2. El Arte del Prompt       │ 6. Tu Segundo Cerebro con IA  │
+│ 2. El Arte del Prompt       │ 6. Tu Agente Inteligente      │
 │ 3. Tu Socio Pensante        │ 7. Portfolio + Caso de Éxito  │
 │ 4. Proyecto Integrador M1   │ 8. Demo Day + El Futuro       │
 └─────────────────────────────┴───────────────────────────────┘
@@ -81,15 +81,15 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 
 | # | Clase | Contenido | Entregable |
 |---|-------|-----------|------------|
-| 5 | [Tu Primer Agente IA](curriculum/class-05/) | Agente vs automatización, trigger → decisión → acción, Make/n8n + Claude API | 1 agente funcionando |
-| 6 | [Tu Segundo Cerebro con IA](curriculum/class-06/) | NotebookLM (solo TUS fuentes), Custom Instructions Claude, integración stack | NotebookLM + Claude personalizado |
+| 5 | [Tu Primer Agente IA](curriculum/class-05/) | Agente vs automatización, Form v0 → Webhook → OpenRouter, construir cerebro del agente | Form v0 + agente en Make (parcial) |
+| 6 | [Tu Agente Inteligente](curriculum/class-06/) | Completar agente (Gmail + Router + Sheets), branching condicional, battle de agentes | Agente completo + Google Sheets log |
 | 7 | [Portfolio + Caso de Éxito](curriculum/class-07/) | Documentar wins (antes vs después), AI Portfolio, storytelling competencia IA | 1 caso de éxito publicable |
 | 8 | [Demo Day + El Futuro](curriculum/class-08/) | Presentaciones (5 min c/u), feedback de pares, roadmap personal, preview 201/301 | Presentación + plan desarrollo |
 
 ### Salida del Módulo 2
 
-- ✅ 1 agente IA funcionando (ahorrándote tiempo real)
-- ✅ Segundo cerebro configurado (NotebookLM + Claude)
+- ✅ 1 agente IA completo con branching y logging (Make)
+- ✅ Portfolio documentado en Notion
 - ✅ **LinkedIn post publicado** con caso de éxito (métricas reales)
 - ✅ Plan de 30 días con 3 próximos quick-wins identificados
 
@@ -107,8 +107,8 @@ Proyecto construido clase a clase durante 4 semanas.
 | 2 | Evolución de prompt + reflexión crítica |
 | 3 | Claude Project + framework de conocimiento personal |
 | 4 | Proyecto integrador M1 (research + sistema + Gem) |
-| 5 | 1 agente IA funcionando |
-| 6 | 1 segundo cerebro configurado |
+| 5 | Form v0 + agente parcial (cerebro) |
+| 6 | 1 agente inteligente con Router + Sheets |
 | 7-8 | 1 caso de éxito publicable |
 
 ### Entregables Finales
@@ -128,7 +128,7 @@ Proyecto construido clase a clase durante 4 semanas.
 | **Perplexity** | Research con fuentes verificables | Clase 4 |
 | **Gemini** | Deep Research, Gems personalizados | Clase 4 |
 | **Make/n8n** | Agentes y automatización | Clase 5 |
-| **NotebookLM** | Segundo cerebro con IA | Clase 6 |
+| **Google Sheets** | Logging de agente (en Make) | Clase 6 |
 | **Notion** | Portfolio + documentación | Clase 7 |
 
 ---
