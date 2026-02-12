@@ -33,7 +33,7 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 ├─────────────────────────────┼───────────────────────────────┤
 │ 1. El Nuevo Juego           │ 5. Tu Primer Agente IA        │
 │ 2. El Arte del Prompt       │ 6. Tu Agente Inteligente      │
-│ 3. Tu Socio Pensante        │ 7. Portfolio + Caso de Éxito  │
+│ 3. Tu Socio Pensante        │ 7. Mi Agente Real             │
 │ 4. Proyecto Integrador M1   │ 8. Demo Day + El Futuro       │
 └─────────────────────────────┴───────────────────────────────┘
 ```
@@ -83,13 +83,13 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 |---|-------|-----------|------------|
 | 5 | [Tu Primer Agente IA](curriculum/class-05/) | Agente vs automatización, Form v0 → Webhook → OpenRouter, construir cerebro del agente | Form v0 + agente en Make (parcial) |
 | 6 | [Tu Agente Inteligente](curriculum/class-06/) | Completar agente (Gmail + Router + Sheets), branching condicional, battle de agentes | Agente completo + Google Sheets log |
-| 7 | [Portfolio + Caso de Éxito](curriculum/class-07/) | Documentar wins (antes vs después), AI Portfolio, storytelling competencia IA | 1 caso de éxito publicable |
-| 8 | [Demo Day + El Futuro](curriculum/class-08/) | Presentaciones (5 min c/u), feedback de pares, roadmap personal, preview 201/301 | Presentación + plan desarrollo |
+| 7 | [Mi Agente Real](curriculum/class-07/) | Transferencia del patrón agente a caso real de trabajo, clonar y adaptar escenario C06 | Agente real funcionando + tabla resultados |
+| 8 | [Demo Day + El Futuro](curriculum/class-08/) | Presentar agente en vivo, publicar en LinkedIn, plan 30 días, test M2 | Presentación live + LinkedIn + plan desarrollo |
 
 ### Salida del Módulo 2
 
 - ✅ 1 agente IA completo con branching y logging (Make)
-- ✅ Portfolio documentado en Notion
+- ✅ 1 agente IA para tu caso real de trabajo (transferencia)
 - ✅ **LinkedIn post publicado** con caso de éxito (métricas reales)
 - ✅ Plan de 30 días con 3 próximos quick-wins identificados
 
@@ -109,14 +109,15 @@ Proyecto construido clase a clase durante 4 semanas.
 | 4 | Proyecto integrador M1 (research + sistema + Gem) |
 | 5 | Form v0 + agente parcial (cerebro) |
 | 6 | 1 agente inteligente con Router + Sheets |
-| 7-8 | 1 caso de éxito publicable |
+| 7 | Agente real funcionando para tu caso de trabajo |
+| 8 | Presentación live + LinkedIn post + plan 30 días |
 
 ### Entregables Finales
 
-- Portfolio documentado (Notion/documento)
+- Agente real funcionando para tu caso de trabajo
 - Caso de éxito publicado en LinkedIn
-- Presentación de 5 minutos
-- Plan de desarrollo personal
+- Presentación live de 5 minutos (demo en vivo)
+- Plan de desarrollo personal de 30 días
 
 ---
 
@@ -129,7 +130,7 @@ Proyecto construido clase a clase durante 4 semanas.
 | **Gemini** | Deep Research, Gems personalizados | Clase 4 |
 | **Make/n8n** | Agentes y automatización | Clase 5 |
 | **Google Sheets** | Logging de agente (en Make) | Clase 6 |
-| **Notion** | Portfolio + documentación | Clase 7 |
+| **LinkedIn** | Publicación de caso de éxito | Clase 8 |
 
 ---
 

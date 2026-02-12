@@ -20,7 +20,7 @@ Al finalizar el módulo, el estudiante podrá:
 
 1. **Construir un agente IA funcional** - Crear un flujo automatizado en Make que usa IA para tomar decisiones (triage), no solo ejecutar reglas fijas
 2. **Expandir un agente con lógica condicional y logging** - Agregar Router para branching, Google Sheets para registro, y Gmail para acción diferenciada
-3. **Documentar un caso de éxito profesional** - Convertir su mejor logro del curso en un caso de éxito con métricas antes/después, armado en portfolio Notion
+3. **Transferir el patrón agente a un caso real** - Aplicar la arquitectura de C05-C06 a un proceso genuino de su trabajo, clonando y adaptando el escenario
 4. **Presentar y comunicar competencia IA** - Presentar su trabajo en 5 minutos, publicar en LinkedIn y definir un plan de desarrollo de 30 días
 
 ---
@@ -29,11 +29,11 @@ Al finalizar el módulo, el estudiante podrá:
 
 ### Descripción
 
-Durante las clases 5-8, el estudiante escala de "usuario intencional" (M1) a "profesional que integra IA en su día a día" (M2). El módulo tiene dos fases: primero adquiere dos superpoderes nuevos (agente cerebro + agente inteligente), luego documenta y presenta toda su transformación.
+Durante las clases 5-8, el estudiante escala de "usuario intencional" (M1) a "profesional que integra IA en su día a día" (M2). El módulo tiene tres fases: construir un agente guiado (C05-C06), transferir a caso real (C07), y presentar + publicar (C08).
 
-La diferencia fundamental con M1: en M1 el estudiante aprendió a USAR IA. En M2 aprende a hacer que la IA trabaje POR él (C05-C06), y a DEMOSTRAR su competencia profesionalmente (C07-C08).
+La diferencia fundamental con M1: en M1 el estudiante aprendió a USAR IA. En M2 aprende a hacer que la IA trabaje POR él (C05-C06), a APLICAR a su contexto real (C07), y a DEMOSTRAR su competencia profesionalmente (C08).
 
-El portfolio completo en Notion integra las 7 clases del curso. No es un ejercicio académico — es evidencia profesional que el estudiante publica en LinkedIn y puede mostrar en entrevistas, evaluaciones o propuestas.
+El portfolio se construye clase a clase en un Google Doc. No es un ejercicio académico — es evidencia profesional que el estudiante publica en LinkedIn y puede mostrar en entrevistas, evaluaciones o propuestas.
 
 ### Evolución por Clase
 
@@ -41,14 +41,14 @@ El portfolio completo en Notion integra las 7 clases del curso. No es un ejercic
 |-------|---------|----------------------------------|
 | 5 | Cerebro del agente (Form → Webhook → OpenRouter) | Form v0 + agente parcial en Make |
 | 6 | Agente inteligente (Gmail + Router + Sheets) | 1 agente completo con branching + logging |
-| 7 | Storytelling + portfolio | Portfolio completo en Notion + caso de éxito + draft LinkedIn |
-| 8 | Presentación + futuro | Presentación en vivo + LinkedIn publicado + plan 30 días |
+| 7 | Transferencia a caso real | Agente real funcionando + tabla resultados + mejora documentada |
+| 8 | Presentación + futuro | Demo live + LinkedIn publicado + plan 30 días |
 
 ### Entregables del Módulo
 
 Al finalizar M2, el estudiante tiene:
 - 1 agente IA completo en Make (triage con Router + Gmail + Google Sheets)
-- 1 portfolio completo en Notion (piezas de C01-C07)
+- 1 agente IA para caso real de trabajo (transferencia C07)
 - 1 caso de éxito publicado en LinkedIn (métricas reales)
 - 1 plan de desarrollo de 30 días con 3 quick-wins
 
@@ -59,13 +59,13 @@ Al finalizar M2, el estudiante tiene:
 ```
 C05: "La IA trabaja POR ti"        → Construir el cerebro del agente
 C06: "La IA decide DIFERENTE"      → De flujo lineal a agente inteligente
-C07: "Demuestra lo que lograste"   → Storytelling + portfolio
-C08: "Comparte y planifica"        → Presentación + futuro
+C07: "Ahora hazlo para TI"         → Transferencia a caso real
+C08: "Demuestra y planifica"       → Demo live + LinkedIn + futuro
 ```
 
 ### Diseño Híbrido
 
-Las clases 5 y 6 construyen un agente completo en dos partes (C05 = cerebro, C06 = cuerpo inteligente). La clase 7 integra TODO el curso: el estudiante elige su MEJOR pieza (de cualquier clase, M1 o M2) y la convierte en caso de éxito publicable. La clase 8 es la culminación: presenta, publica y planifica.
+Las clases 5 y 6 construyen un agente completo en dos partes (C05 = cerebro, C06 = cuerpo inteligente) usando PetShop Express como caso guiado. La clase 7 es la prueba real: el estudiante toma el patrón y lo aplica a un proceso de SU trabajo. La clase 8 es la culminación: presenta su agente en vivo, publica en LinkedIn y planifica.
 
 ---
 
@@ -195,69 +195,67 @@ C06 (branching): Form → Webhook → OpenRouter → Router → [3 rutas Gmail] 
 
 **Dependencias:**
 - **Requiere:** C05 (agente cerebro: Form + Webhook + OpenRouter)
-- **Habilita:** C07 (pieza de portfolio — agente completo como evidencia)
+- **Habilita:** C07 (transferencia — agente completo como base para caso real)
 
 ---
 
-### Clase 7: Portfolio + Caso de Éxito
+### Clase 7: Mi Agente Real
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Concepto Principal** | Storytelling de competencia IA (documentar y narrar tu transformación) |
-| **Objetivo del Lab** | Armar portfolio en Notion + escribir caso de éxito + draft LinkedIn |
-| **Herramientas** | Notion (nueva), Claude (storytelling) |
-| **Entregable** | Portfolio en Notion + caso de éxito documentado + draft de LinkedIn post |
+| **Concepto Principal** | Transferencia — aplicar el patrón agente a tu caso real de trabajo |
+| **Objetivo del Lab** | Diseñar caso real + clonar y adaptar escenario C06 + probar con datos reales |
+| **Herramientas** | 0 nuevas (Make, OpenRouter, Gmail, Router, Sheets, Claude — todas de C05-C06) |
+| **Entregable** | Agente real funcionando + tabla resultados (esperado vs real) + mejora documentada |
 
-**Concepto clave:** No es "aprender Notion". Es aprender a DOCUMENTAR Y NARRAR tu transformación con IA. Notion es el vehículo, el storytelling es la habilidad.
+**Concepto clave:** No es aprender herramientas nuevas. Es demostrar que puedes APLICAR lo aprendido a un contexto nuevo. PetShop fue el entrenamiento — ahora construyes para TU trabajo.
+
+**Insight:** "La arquitectura se queda. El cerebro cambia."
+- Qué cambia: SystemPrompt, categorías, formulario, emails
+- Qué se queda: Webhook → OpenRouter → Router → Gmail → Sheets
 
 **Lo que construye:**
 
-1. **Portfolio en Notion** (template esqueleto)
-   - Estructura base proporcionada, estudiante personaliza
-   - Recopila piezas de C01-C06 (screenshots, frameworks, agente, resultados)
-   - Cada sección muestra una habilidad demostrable
+1. **Diseño del caso** (con tabla de 6 arquetipos por industria)
+   - Elegir proceso real de trabajo que involucre clasificar/priorizar/decidir
+   - Definir 3 categorías + reglas + acciones
+   - Escribir SystemPrompt con Claude como socio pensante (callback C03)
 
-2. **Caso de éxito** (la MEJOR pieza del curso)
-   - Elige de cualquier clase (M1 o M2) — la que tenga mejor antes/después
-   - Documenta: problema → qué hizo → resultado → métricas
-   - Escribe con ayuda de Claude como editor de storytelling
+2. **Agente adaptado** (clonando escenario C06)
+   - Clonar escenario en Make (Export/Import Blueprint)
+   - Nuevo formulario v0 con campos de su caso (scaffolding Gemini, callback C05)
+   - Adaptar módulo por módulo: OpenRouter, Router Filters, Gmail ×3, Sheets
 
-3. **LinkedIn post draft** (formato sugerido)
-   ```
-   Hook (1 línea impactante)
-   Problema (2-3 líneas)
-   Qué hice (2-3 líneas)
-   Resultado (1-2 líneas con métrica)
-   Takeaway (1 línea)
-   CTA (opcional)
-   ```
-
-4. **Preparar presentación** de 5 min para C08
+3. **Prueba + iteración** con datos reales
+   - 5 mensajes reales desde su formulario
+   - Tabla de resultados: esperado vs real
+   - Iterar SystemPrompt hasta mejorar precisión
 
 **Checkpoints del Lab:**
-1. Portfolio en Notion armado con piezas de al menos 5 clases (C01-C06)
-2. Caso de éxito completo (problema + solución + métricas antes/después)
-3. LinkedIn post en draft listo para publicar + presentación preparada
+1. Caso diseñado con 3 categorías + reglas + SystemPrompt
+2. Escenario clonado + formulario v0 nuevo deployado
+3. Módulos adaptados + form conectado al webhook
+4. 5 mensajes probados + al menos 1 mejora documentada
 
 **Glosario de la Clase:**
 
 | Término | Definición breve |
 |---------|------------------|
-| Notion | Herramienta de productividad para documentación, bases de datos y portfolio |
-| Caso de éxito | Narrativa estructurada que demuestra resultado medible con antes/después |
-| Storytelling | Arte de contar una historia que conecta, persuade y demuestra competencia |
-| Portfolio | Colección curada de evidencia profesional que demuestra habilidades |
-| Hook | Primera línea de un post diseñada para captar atención inmediata |
+| Transferencia | Aplicar un patrón aprendido (PetShop) a un contexto nuevo (tu trabajo) |
+| Caso de uso | Proceso real de tu trabajo que el agente va a resolver |
+| Iteración | Ciclo de probar → encontrar errores → mejorar SystemPrompt → re-probar |
+| Arquetipos | Patrones comunes de casos de triage por industria |
+| Clonación de escenario | Duplicar un escenario en Make como base para uno nuevo |
 
 **Anti-hype:**
-- Un portfolio bonito sin métricas reales no impresiona a nadie
-- Claude puede ayudarte a escribir el caso, pero las métricas tienen que ser REALES
-- LinkedIn no es magia — el post funciona si el contenido es genuino
-- "Uso IA" no es diferenciador. "Resolví X con IA y ahorré Y horas" sí lo es
+- Tu agente va a tener las mismas fallas que PetShop — nuevo caso, mismos tipos de errores
+- La habilidad no es que funcione perfecto — es saber CÓMO corregirlo
+- Un agente imperfecto para tu caso real vale más que uno perfecto de tutorial
+- Iterar con datos reales es lo que separa un prototipo de algo útil
 
 **Dependencias:**
-- **Requiere:** C01-C06 (todas las piezas del portfolio), habilidades de escritura con IA (C03)
-- **Habilita:** C08 (presentación lista, LinkedIn listo para publicar)
+- **Requiere:** C05-C06 (agente completo PetShop), C03 (socio pensante para SystemPrompt), C02 (RICE para diseño de reglas)
+- **Habilita:** C08 (presentar agente real en vivo + publicar en LinkedIn)
 
 ---
 
@@ -266,51 +264,52 @@ C06 (branching): Form → Webhook → OpenRouter → Router → [3 rutas Gmail] 
 | Aspecto | Detalle |
 |---------|---------|
 | **Concepto Principal** | Presentar, publicar y planificar (cierre del ciclo completo) |
-| **Objetivo del Lab** | Presentar portfolio, publicar LinkedIn en vivo, crear plan 30 días |
-| **Herramientas** | Notion (presentación), LinkedIn (publicación), Claude (roadmap) |
+| **Objetivo del Lab** | Test M2 + presentar agente en vivo + publicar LinkedIn + plan 30 días |
+| **Herramientas** | 0 nuevas (Make, LinkedIn, Claude — todas conocidas) |
 | **Entregable** | Presentación completada + LinkedIn publicado + plan 30 días con 3 quick-wins |
 | **Test Diagnóstico** | 8 preguntas (15 min) - no afecta calificación |
 
-**Estructura de la clase:**
+**Estructura de la clase (3 actos: PRESENTAR, PUBLICAR, PLANIFICAR):**
 
-1. **Pulir presentación** — Últimos ajustes al portfolio y presentación en Notion
-2. **Presentaciones** — 5 min por estudiante desde su portfolio en Notion
+1. **Test M2** — 8 preguntas, 15 min, diagnóstico (no afecta calificación)
+2. **Pulir + peer review** — Últimos ajustes + compañero prueba tu agente
+3. **Presentaciones** — 5 min por persona, DEMO EN VIVO (no slides)
    ```
-   El problema (30 seg)    → "En mi trabajo, [X] me costaba [Y]"
-   Qué hice (2 min)        → Herramienta/técnica que aplicó
-   El resultado (1 min)     → Antes/después con métricas
-   Lo que aprendí (1 min)   → Insight personal, limitaciones encontradas
-   Qué sigue (30 seg)      → Sus próximos 3 quick-wins
+   Mi problema (30 seg)     → "En mi trabajo, X me costaba Y"
+   Mi agente (2 min)        → Mostrar Make + explicar categorías
+   Demo en vivo (1.5 min)   → Alguien del PÚBLICO envía mensaje al agente
+   Lo que aprendí (1 min)   → 1 error corregido + 1 limitación honesta
    ```
-3. **Feedback de pares** — Cada estudiante recibe de cada compañero:
-   - 1 fortaleza específica
-   - 1 oportunidad de mejora
-4. **Publicar LinkedIn** — Todos publican su post juntos, en vivo (accountability grupal)
-5. **Roadmap personal** — Template con 3 quick-wins para los próximos 30 días
-6. **Cierre** — Preview de AI 201/301, certificado, celebración
+4. **Feedback de pares** — 1 fortaleza + 1 sugerencia por presentación
+5. **Publicar LinkedIn** — Todos publican juntos "3... 2... 1... PUBLICAR!"
+6. **Roadmap 30 días** — Con Claude, 3 quick-wins para esta semana
+7. **Cierre** — Del 95% al 5%, pathway AI 201/301
 
 **Checkpoints del Lab:**
-1. Presentación completada (5 min, desde Notion)
-2. Feedback dado y recibido de todos los compañeros
-3. LinkedIn post publicado + plan de 30 días con 3 quick-wins definidos
+1. Test M2 completado (15 min)
+2. Agente probado por un par (peer review)
+3. Presentación con demo live completada + feedback recibido
+4. LinkedIn post publicado + plan de 30 días con 3 quick-wins
 
 **Glosario de la Clase:**
 
 | Término | Definición breve |
 |---------|------------------|
-| Demo Day | Sesión de presentaciones donde cada estudiante muestra su mejor trabajo |
-| Feedback de pares | Evaluación entre compañeros para mejorar con perspectivas diversas |
-| Quick-win | Acción específica de alto impacto y baja dificultad que puedes ejecutar esta semana |
-| Roadmap | Plan con hitos claros y acciones concretas para desarrollo futuro |
+| Demo Day | Sesión donde cada estudiante muestra su agente funcionando en vivo |
+| Feedback de pares | Evaluación constructiva: 1 fortaleza + 1 sugerencia |
+| Quick-win | Acción específica de alto impacto y baja dificultad para esta semana |
+| Roadmap | Plan de 30 días con acciones concretas |
+| Accountability | Compromiso público que motiva a cumplir (publicar juntos) |
 
 **Anti-hype:**
 - Publicar en LinkedIn no te hace experto — la práctica continua sí
 - 4 semanas es el inicio, no el final — el plan de 30 días es lo que consolida el cambio
 - Las herramientas van a cambiar; las habilidades de pensamiento crítico con IA no
+- Tu agente necesita supervisión continua — ninguna IA reemplaza el criterio humano
 - El mejor indicador de éxito: ¿sigues usando lo que aprendiste 30 días después?
 
 **Dependencias:**
-- **Requiere:** C07 (portfolio listo, caso de éxito escrito, LinkedIn draft)
+- **Requiere:** C07 (agente real funcionando, probado, con 5 mensajes de prueba)
 - **Habilita:** Continuidad autónoma del estudiante, pathway a AI 201/301
 
 ---
@@ -323,8 +322,8 @@ C06 (branching): Form → Webhook → OpenRouter → Router → [3 rutas Gmail] 
 |--------------|-----------|
 | Triage manual con RICE (C02) | Triage automatizado con agente (C05) |
 | Claude Projects con instrucciones (C03) | Agente inteligente con branching + logging (C06) |
-| Gem de Gemini configurado (C04) | Portfolio completo con caso de éxito publicable (C07) |
-| Proyecto integrador individual (C04) | Presentación pública + LinkedIn + plan futuro (C08) |
+| Gem de Gemini configurado (C04) | Agente real para tu caso de trabajo (C07) |
+| Proyecto integrador individual (C04) | Demo live + LinkedIn + plan futuro (C08) |
 | "Sé usar IA" | "La IA trabaja para mí y puedo demostrarlo" |
 
 ### Semillas plantadas en M1 para M2
@@ -332,8 +331,8 @@ C06 (branching): Form → Webhook → OpenRouter → Router → [3 rutas Gmail] 
 - C02 (triage manual) → C05-C06 (mismo caso, ahora automatizado con branching)
 - C03 (Claude Projects) → C05 (SystemPrompt del agente)
 - C04 (Gems, múltiples herramientas) → C05-C06 (nuevas herramientas con confianza)
-- C04 (proyecto con métricas) → C07 (caso de éxito con storytelling)
-- Todos los entregables M1 → C07 (piezas del portfolio)
+- C04 (proyecto con métricas) → C08 (caso de éxito con métricas reales)
+- C05-C06 (agente PetShop) → C07 (transferencia a caso real)
 
 ---
 
@@ -343,8 +342,8 @@ C06 (branching): Form → Webhook → OpenRouter → Router → [3 rutas Gmail] 
 |-------|-------------------|-------------|--------|
 | 5 | Make, OpenRouter/Grok Free, v0 (vehículo pedagógico) | Gemini (C04) | 3 nuevas* |
 | 6 | Google Sheets en Make | Router + Gmail (módulos nativos Make) | 1 nueva |
-| 7 | Notion | Claude (storytelling) | 1 nueva |
-| 8 | (ninguna) | Notion, LinkedIn, Claude | 0 nuevas |
+| 7 | (ninguna) | Make, OpenRouter, Claude, Gemini (todas de C05-C06) | 0 nuevas |
+| 8 | (ninguna) | Make, LinkedIn, Claude | 0 nuevas |
 
 *C05 flexibiliza la regla MAX_TWO_NEW_TOOLS: v0 es vehículo pedagógico que refuerza M1, no herramienta central del curso. Las demás clases dentro del límite de 2.
 

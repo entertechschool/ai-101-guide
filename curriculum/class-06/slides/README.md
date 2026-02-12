@@ -183,5 +183,5 @@ BRANCHING (C06):
 
 **Formato:** Google Doc con link público
 
-### Próxima clase: Portfolio + Caso de Éxito
-Tu mejor logro del curso se convierte en un caso de éxito publicable para LinkedIn.
+### Próxima clase: Mi Agente Real
+Tomas el patrón de PetShop y construyes un agente para TU caso real de trabajo.

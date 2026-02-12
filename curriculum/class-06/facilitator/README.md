@@ -218,11 +218,10 @@ Tú tienes que mirar los datos y decidir qué mejorar."
 Al cerrar, planta la semilla:
 
 > "Ahora tienen un agente que decide, actúa diferente y registra todo.
-> Es evidencia real de lo que pueden hacer con IA.
-> Próxima clase: convierten su mejor logro del curso
-> — ya sea el agente, su prompt de C02, su proyecto de C04 —
-> en un caso de éxito publicable para LinkedIn.
-> Empiecen a pensar: ¿cuál fue su mejor momento del curso?"
+> PetShop fue el entrenamiento. Próxima clase: construyen un agente
+> para SU caso real de trabajo. Mismo patrón, su contexto.
+> Empiecen a pensar: ¿qué proceso de TU trabajo podría ser un agente?"
 
 **Tarea para mencionar:**
-Google Doc completo (C05+C06) con: form v0, agente completo (5+ módulos), resultados battle, Google Sheets log, análisis crítico.
+1. Google Doc completo (C05+C06) con: form v0, agente completo (5+ módulos), resultados battle, Google Sheets log, análisis crítico.
+2. Identificar 1 proceso manual de su trabajo + 5 mensajes reales de ese proceso.

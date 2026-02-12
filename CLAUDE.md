@@ -19,7 +19,7 @@
 ### M2: Superpoderes Aplicados + Portfolio (Clases 5-8)
 - [ ] **Clase 5:** Tu Primer Agente IA
 - [ ] **Clase 6:** Tu Agente Inteligente
-- [ ] **Clase 7:** Portfolio + Caso de Éxito
+- [ ] **Clase 7:** Mi Agente Real
 - [ ] **Clase 8:** Demo Day + El Futuro
 
 ---
@@ -212,7 +212,7 @@ git commit -m "tipo: descripción concisa"
 | **Perplexity** | Research con fuentes verificables | 4 |
 | **Make/n8n** | Agentes y automatización | 5 |
 | **Google Sheets** | Logging de agente (en Make) | 6 |
-| **Notion** | Portfolio + documentación | 7 |
+| **LinkedIn** | Publicación de caso de éxito | 8 |
 
 ---
 
@@ -226,7 +226,7 @@ git commit -m "tipo: descripción concisa"
 | 4 | Proyecto integrador M1 (calificable) |
 | 5 | 1 agente funcionando |
 | 6 | Agente inteligente con Router + Sheets |
-| 7 | Caso de éxito publicable |
+| 7 | Agente real funcionando + tabla resultados |
 | 8 | Presentación + plan desarrollo |
 
 ---
