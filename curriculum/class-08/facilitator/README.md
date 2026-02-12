@@ -166,6 +166,8 @@ Gracias por estas 4 semanas."
 | 9-12 personas | 3 min + 2 min feedback = 5 min | 45-60 min | Demo más corta |
 | 13+ personas | 3 min + feedback en chat = ~4 min | 52-60 min | Rondas paralelas en salas |
 
+**Buffer técnico: 5 min** — Los 5 min liberados de Pulir (15→10 min) son colchón para demos que fallan. Si ninguna demo falla, usa el tiempo extra para feedback grupal al final.
+
 **Herramientas de control de tiempo:**
 - Timer visible para todos
 - Tarjeta "30 segundos" cuando queda poco

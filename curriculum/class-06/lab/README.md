@@ -39,7 +39,12 @@ En Make, abre tu escenario: `Webhook → OpenRouter`. Verifica que funcione envi
 
 Haz clic en el **+** después de OpenRouter y agrega el módulo **Gmail > Send an Email**:
 
-1. **Conectar cuenta Gmail** — Autoriza permisos cuando Make lo pida
+1. **Conectar cuenta Gmail:**
+   1. En el módulo Gmail → Click **"Add a connection"**
+   2. Selecciona tu cuenta de Google
+   3. Click **"Allow"** en cada pantalla de permisos (pueden ser 2-3 pantallas)
+   4. Verifica el ✅ verde en la conexión
+   5. Si Google bloquea → prueba en ventana incógnito o con otro navegador
 2. **Para:** Tu email personal
 3. **Asunto:** `[{{CATEGORÍA}}] Nuevo mensaje de {{nombre}}`
 4. **Cuerpo:** La clasificación completa de OpenRouter (mapea el output)

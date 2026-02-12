@@ -139,13 +139,13 @@ SU agente clasificó SU mensaje. Eso no lo hizo un tutorial."
 |--------|------------|--------------|
 | ~5 | PD votada | Discusión caso vs tutorial completada |
 | ~15 | Demo completada | Preguntas sobre el caso del facilitador |
-| ~35 | Caso diseñado | "¿Quién tiene 3 categorías con reglas?" |
-| ~50 | Escenario clonado | "¿Quién duplicó su escenario en Make?" |
-| ~65 | Form v0 creado | "¿Quién tiene form nuevo deployado?" |
-| ~90 | Make adaptado | "¿Quién tiene todos los módulos actualizados?" |
-| ~110 | Form conectado | "¿Quién envía desde su form al webhook?" |
-| ~130 | 5 mensajes probados | "¿Quién tiene resultados en Sheets?" |
-| ~140 | Mejora documentada | "¿Quién encontró y corrigió al menos 1 error?" |
+| ~30 | Caso diseñado (Lab P1) | "¿Quién tiene 3 categorías con reglas?" |
+| ~40 | Escenario clonado (Lab P2) | "¿Quién duplicó su escenario en Make?" |
+| ~50 | Form v0 creado | "¿Quién tiene form nuevo deployado?" |
+| ~70 | Make adaptado | "¿Quién tiene todos los módulos actualizados?" |
+| ~75 | Form conectado al webhook | "¿Quién envía desde su form al webhook?" |
+| ~82 | 5 mensajes probados (Lab P3) | "¿Quién tiene resultados en Sheets?" |
+| ~90 | Mejora documentada | "¿Quién encontró y corrigió al menos 1 error?" |
 
 ---
 
@@ -182,9 +182,9 @@ Un agente imperfecto para tu caso real vale más que un agente perfecto de tutor
 - La habilidad de transferencia se practica igual
 
 ### Manejo de tiempo:
-- Parte 1 (diseñar) es donde más se atoran. Si a los 25 min no tienen caso, intervén.
-- Parte 2 (construir) fluye si el caso está definido.
-- Parte 3 (probar) siempre se queda corta — priorizar al menos 3 mensajes.
+- Parte 1 (diseñar, 10 min) es donde más se atoran. Si a los 7 min no tienen caso, intervén.
+- Parte 2 (construir, 35 min) fluye si el caso está definido.
+- Parte 3 (probar, 15 min) siempre se queda corta — priorizar al menos 3 mensajes.
 
 ---
 

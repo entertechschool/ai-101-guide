@@ -4,7 +4,7 @@
 
 Presentar tu agente en vivo, publicar tu caso en LinkedIn y crear un plan de desarrollo para los próximos 30 días.
 
-> ⏱️ **Tiempo estimado:** 100 minutos (incluyendo test)
+> ⏱️ **Tiempo estimado:** 60 minutos (sin contar test previo)
 
 ---
 
@@ -17,9 +17,7 @@ Presentar tu agente en vivo, publicar tu caso en LinkedIn y crear un plan de des
 | | LinkedIn abierta |
 | | Google Doc C05-C07 actualizado |
 
----
-
-## Parte 0: Test Diagnóstico M2 (15 min)
+### Test Diagnóstico M2 (15 min, pre-lab)
 
 - 8 preguntas de opción múltiple
 - No afecta calificación — **"es un espejo, no un examen"**
@@ -30,9 +28,9 @@ Presentar tu agente en vivo, publicar tu caso en LinkedIn y crear un plan de des
 
 ---
 
-## Parte 1: Pulir + Peer Review (15 min)
+## Parte 1: Pulir + Peer Review (10 min)
 
-### 1.1 Últimos ajustes al agente (10 min)
+### 1.1 Últimos ajustes al agente (5 min)
 
 - Envía 2 mensajes más desde tu formulario
 - Verifica en Google Sheets que clasifique correctamente
@@ -90,6 +88,8 @@ Después de cada presentación, el grupo da feedback:
 | Aprendizaje honesto | ¿Documentó errores y limitaciones? |
 
 > 💡 **Grupos grandes (10+):** Reducir a 3 min por persona o hacer rondas paralelas.
+
+> ⚠️ **Si tu demo falla en vivo:** Abre Make History y muestra un run exitoso anterior (máx 30 seg extra). Lo importante es demostrar que el agente funciona, no que la demo en vivo sea perfecta.
 
 > ✅ **Checkpoint:** Presentación completada + feedback recibido
 

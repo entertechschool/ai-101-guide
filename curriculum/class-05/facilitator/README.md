@@ -97,7 +97,7 @@ Este paso causó confusión en clase. Guía paso a paso:
 2. Haz clic en **Create a connection**
 3. Nombre: "Mi OpenRouter" (o el nombre que quieran)
 4. Pega la API Key de OpenRouter
-5. Selecciona modelo: **grok-3-mini-beta** (la opción free)
+5. Selecciona modelo: **grok-3-mini-beta:free**
 6. Clic en **Save** → espera checkmark verde ✅
 
 ### Troubleshooting:
@@ -109,6 +109,8 @@ Este paso causó confusión en clase. Guía paso a paso:
 | "Rate limit exceeded" | Key agotada o muchos intentos | Usar key de backup del facilitador |
 | "Invalid API key" | Key expirada o mal copiada | Generar nueva key en openrouter.ai |
 | Checkmark no aparece | Conexión lenta | Esperar 10 seg, si no → reintentar |
+
+> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models) antes de clase.
 
 > ⚠️ Ten tu key de backup lista. Si más de 2 estudiantes tienen problemas, compártela.
 

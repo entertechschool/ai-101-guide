@@ -4,7 +4,7 @@
 
 Construir un agente de triage/clasificación para tu caso real de trabajo, clonando el patrón de C05-C06 y adaptando cada pieza a tu contexto.
 
-> ⏱️ **Tiempo estimado:** 90 minutos
+> ⏱️ **Tiempo estimado:** 60 minutos
 
 ---
 
@@ -38,7 +38,7 @@ PetShop (C06):                         Tu Caso (C07):
 
 ---
 
-## Parte 1: Diseñar mi caso (20 min)
+## Parte 1: Diseñar mi caso (10 min)
 
 ### 1.1 Elegir caso
 
@@ -91,9 +91,9 @@ que podrían confundir al agente.
 
 ---
 
-## Parte 2: Construir mi agente (50 min)
+## Parte 2: Construir mi agente (35 min)
 
-### 2.1 Clonar escenario C06 (5 min)
+### 2.1 Clonar escenario C06 (3 min)
 
 En Make, duplica tu escenario de PetShop:
 1. Abre tu escenario de C06
@@ -103,7 +103,7 @@ En Make, duplica tu escenario de PetShop:
 
 > ⚠️ **Si perdiste tu escenario C06:** Avisa al facilitador — tiene un escenario de backup para compartir.
 
-### 2.2 Nuevo formulario v0 (15 min)
+### 2.2 Nuevo formulario v0 (10 min)
 
 Crea un formulario para TU caso (igual que en C05):
 
@@ -112,7 +112,7 @@ Crea un formulario para TU caso (igual que en C05):
 3. Agrega bloque debug (muestra respuesta + botón reintentar)
 4. Deploy en v0 → copia la URL pública
 
-### 2.3 Adaptar módulos en Make (25 min)
+### 2.3 Adaptar módulos en Make (18 min)
 
 Módulo por módulo, actualiza tu escenario clonado:
 
@@ -131,7 +131,7 @@ Módulo por módulo, actualiza tu escenario clonado:
 **d) Google Sheets** — Ajustar columnas si es necesario
 - Si cambiaste campos del form, actualiza los nombres de columna
 
-### 2.4 Conectar form al webhook (5 min)
+### 2.4 Conectar form al webhook (4 min)
 
 1. Copia la URL del webhook de tu nuevo escenario
 2. Pégala en el código de tu formulario v0
@@ -141,13 +141,13 @@ Módulo por módulo, actualiza tu escenario clonado:
 
 ---
 
-## Parte 3: Probar + Iterar (20 min)
+## Parte 3: Probar + Iterar (15 min)
 
-### 3.1 Enviar los 5 mensajes reales (5 min)
+### 3.1 Enviar los 5 mensajes reales (3 min)
 
 Desde tu nuevo formulario, envía tus 5 mensajes reales uno a uno. Verifica en Make History que cada uno se procese.
 
-### 3.2 Revisar Google Sheets (5 min)
+### 3.2 Revisar Google Sheets (4 min)
 
 Completa esta tabla de resultados:
 
@@ -159,7 +159,7 @@ Completa esta tabla de resultados:
 | 4 | ... | CAT1 | CAT2 | ❌ |
 | 5 | ... | CAT2 | CAT2 | ✅ |
 
-### 3.3 Iterar SystemPrompt (10 min)
+### 3.3 Iterar SystemPrompt (8 min)
 
 Según los resultados:
 

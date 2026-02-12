@@ -43,11 +43,9 @@ AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
 
 ## ¿Qué haremos en clase?
 
-1. **Test diagnóstico M2** (15 min) — 8 preguntas, no afecta calificación
-2. **Pulir agente + peer review** — Últimos ajustes + compañero prueba tu agente
-3. **Presentar agente EN VIVO** (5 min c/u) — Alguien del público envía mensaje a tu agente
-4. **Publicar en LinkedIn** — Momento de accountability grupal
-5. **Plan 30 días con Claude** — 3 quick-wins para seguir creciendo
+1. **Test + Pulir agente** — Test diagnóstico M2 (no afecta calificación) + últimos ajustes con peer review
+2. **Presentar agente EN VIVO** (5 min c/u) — Alguien del público envía mensaje a tu agente
+3. **Publicar en LinkedIn + Plan 30 días** — Accountability grupal + 3 quick-wins con Claude
 
 ---
 

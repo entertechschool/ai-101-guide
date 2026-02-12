@@ -123,9 +123,11 @@ Este paso es nuevo y crítico. En el módulo OpenRouter de Make:
 1. Haz clic en el módulo OpenRouter → **Create a connection**
 2. Nombre de la conexión: "Mi OpenRouter"
 3. Pega tu API Key de OpenRouter (la que generaste antes de clase)
-4. Selecciona el modelo: **grok-3-mini-beta** (free)
+4. Selecciona el modelo: **grok-3-mini-beta:free**
 5. Haz clic en **Save** → espera el checkmark verde ✅
 6. Si ves error, verifica que la key no tenga espacios al inicio o final
+
+> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models) si no lo encuentras.
 
 > ⚠️ Si tu key no funciona, pide la key de backup al facilitador.
 
