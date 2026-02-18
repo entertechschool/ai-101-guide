@@ -83,13 +83,13 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 |---|-------|-----------|------------|
 | 5 | [Tu Primer Agente IA](curriculum/class-05/) | Agente vs automatización, Form v0 → Webhook → OpenRouter, construir cerebro del agente | Form v0 + agente en Make (parcial) |
 | 6 | [Tu Agente Inteligente](curriculum/class-06/) | Completar agente (Gmail + Router + Sheets), branching condicional, battle de agentes | Agente completo + Google Sheets log |
-| 7 | [Mi Agente Real](curriculum/class-07/) | Transferencia del patrón agente a caso real de trabajo, clonar y adaptar escenario C06 | Agente real funcionando + tabla resultados |
+| 7 | [Mi Agente Real](curriculum/class-07/) | Agente generativo desde 0 (2 IAs encadenadas), 3 escenarios, deploy en Vercel + GitHub | Agente en Vercel + repo GitHub con SystemPrompts |
 | 8 | [Demo Day + El Futuro](curriculum/class-08/) | Presentar agente en vivo, publicar en LinkedIn, plan 30 días, test M2 | Presentación live + LinkedIn + plan desarrollo |
 
 ### Salida del Módulo 2
 
 - ✅ 1 agente IA completo con branching y logging (Make)
-- ✅ 1 agente IA para tu caso real de trabajo (transferencia)
+- ✅ 1 agente generativo para tu caso real (2 IAs encadenadas + deploy público)
 - ✅ **LinkedIn post publicado** con caso de éxito (métricas reales)
 - ✅ Plan de 30 días con 3 próximos quick-wins identificados
 

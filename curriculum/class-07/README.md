@@ -4,57 +4,77 @@
 
 ## Resumen
 
-En las Clases 05 y 06 construiste un agente completo para PetShop Express: formulario, webhook, cerebro con OpenRouter, Router con 3 rutas, Gmail diferenciado y Google Sheets como bitácora. Fue tu entrenamiento. Hoy es diferente: **construyes para TU trabajo real.**
+En las Clases 05 y 06 construiste un agente que **clasifica** mensajes: la IA leía un input, asignaba una categoría (URGENTE/CONSULTA/VENTA) y un Router enviaba emails etiquetados. Hoy das el siguiente paso: **un agente que genera contenido profesional.**
 
-Mismas herramientas. Mismo patrón. Diferente caso: **el tuyo.** Transferencia es la prueba real de aprendizaje — no es lo mismo seguir un tutorial que aplicar lo aprendido a un contexto nuevo. Si puedes tomar la arquitectura de PetShop y adaptarla a tu caso real, dominas el concepto.
+La diferencia clave: en vez de 1 IA que clasifica, encadenas **2 IAs**. La primera ANALIZA tu input desordenado y extrae estructura (JSON). La segunda GENERA un email HTML profesional a partir de esa estructura. Escribes garabatos → recibes un email profesional en tu correo. Y al final, publicas tu proyecto en GitHub: tu primer repositorio open-source con los SystemPrompts documentados.
 
 ---
 
 ## ¿Por qué te sirve?
 
-| Seguir tutorial | Aplicar a tu caso |
-|----------------|-------------------|
-| Copias paso a paso | Diseñas tus propias reglas |
-| Funciona con datos de ejemplo | Funciona con TUS datos reales |
-| Demuestras que sigues instrucciones | Demuestras que **sabes construir** |
-| No sabes qué hacer si algo cambia | Sabes adaptar a cualquier contexto |
+| C05-C06: Clasificar | C07: Generar |
+|---------------------|-------------|
+| 1 IA que pone etiquetas | 2 IAs encadenadas que crean contenido |
+| Output: categoría (URGENTE) | Output: email profesional completo |
+| Router decide la ruta | Pipeline transforma los datos |
+| Caso de tutorial (PetShop) | TU caso real (3 escenarios o propio) |
+| Entrega en Google Doc | Entrega en GitHub + Vercel (portfolio real) |
 
-> "Saber replicar un tutorial no es lo mismo que saber construir para TU trabajo."
+> "De clasificar a generar. De tutorial a proyecto publicado."
 
 ---
 
-## Insight: "La arquitectura se queda. El cerebro cambia."
+## Insight: "2 cerebros son mejor que 1"
 
 ```
-PetShop Express (C06):          Tu Caso (C07):
-┌────────────────────┐          ┌────────────────────┐
-│ URGENTE            │          │ [TU CATEGORÍA 1]   │
-│ CONSULTA           │          │ [TU CATEGORÍA 2]   │
-│ VENTA              │          │ [TU CATEGORÍA 3]   │
-└────────────────────┘          └────────────────────┘
+Arquitectura C07:
 
-Lo que CAMBIA:                  Lo que SE QUEDA:
-• SystemPrompt completo         • Webhook → OpenRouter → Router
-• Categorías y reglas           • Router → Gmail ×3
-• Formulario y campos           • Google Sheets (logging)
-• Emails (asuntos, emojis)      • Arquitectura completa
+Form v0 (textarea + campo extra + email)
+    │
+    ▼
+Webhook (Make)
+    │
+    ▼
+OpenRouter #1 — ANALIZAR
+(input crudo → JSON estructurado)
+    │
+    ├──────────────────┐
+    ▼                  ▼
+Google Sheets      OpenRouter #2 — GENERAR
+(registra log)     (JSON → email HTML profesional)
+                       │
+                       ▼
+                   Gmail → email al usuario
 ```
+
+**¿Por qué 2 IAs?** Especialización. OR#1 solo analiza (extrae estructura del caos). OR#2 solo genera (produce contenido profesional). Cada una hace un trabajo = mejor calidad que pedirle todo a una sola.
 
 ---
 
 ## ¿Qué haremos en clase?
 
-1. **Diseñar tu caso real** — Elegir proceso, definir categorías, reglas y acciones
-2. **Construir tu agente** — Clonar escenario C06 y adaptar cada módulo
-3. **Probar con mensajes reales** — Enviar datos reales, comparar esperado vs real, iterar
+1. **Diseñar tu caso** — Elegir escenario (o proponer el tuyo) + personalizar SystemPrompts con Claude
+2. **Construir tu agente** — Form v0 + Make con 5 módulos (Webhook → OR#1 → Sheets → OR#2 → Gmail)
+3. **Documentar y publicar** — Deploy en Vercel + repo en GitHub con README profesional
+
+---
+
+## Los 3 escenarios
+
+| # | Escenario | Escribes... | Recibes... |
+|---|-----------|-------------|------------|
+| 1 | Clarificador de Ideas | Idea desordenada | Brief profesional con fortalezas, gaps y próximos pasos |
+| 2 | Procesador de Notas de Reunión | Garabatos y abreviaturas | Acta ejecutiva con tabla de tareas y decisiones |
+| 3 | Generador de Feedback Profesional | Feedback crudo/emocional | Guía SBI con reformulaciones y tips de entrega |
+| 4 | Tu propio caso | Tu input real | Tu output profesional (diseñado con plantilla guiada) |
 
 ---
 
 ## Objetivos de aprendizaje
 
-1. Diseñar un caso de triage/clasificación basado en tu trabajo real
-2. Construir un agente funcional clonando y adaptando el escenario de C06
-3. Iterar el SystemPrompt con datos reales hasta mejorar la precisión
+1. Diseñar un caso de agente generativo con 2 SystemPrompts encadenados (analizar + generar)
+2. Construir un pipeline de 5 módulos en Make con 2 llamadas a OpenRouter
+3. Publicar tu primer proyecto en GitHub con documentación profesional de SystemPrompts
 
 ---
 
@@ -62,31 +82,32 @@ Lo que CAMBIA:                  Lo que SE QUEDA:
 
 ### Obligatorio
 
-1. **Escenario de C06 funcionando** — 5+ módulos en Make (Webhook → OpenRouter → Router → Gmail ×3 + Sheets)
-2. **Identificar 1 proceso manual** que involucre clasificación, triage o routing en tu trabajo
-3. **5 mensajes/inputs REALES** de ese proceso (escritos, copiados de email, chat, etc.)
-4. **Claude abierto** — lo usarás como socio pensante para diseñar tu SystemPrompt (callback C03)
+1. **Elegir tu escenario** — Revisa la tabla de 3 escenarios y decide cuál te interesa (o prepara tu caso propio)
+2. **Cuenta de GitHub** — Crear en github.com si no tienes una (es gratis)
+3. **API key de OpenRouter** funcionando (la misma de C05-C06)
+4. **Claude abierto** — lo usarás como socio pensante para personalizar SystemPrompts (callback C03)
 
 ### Reflexiona antes de clase
 
-- ¿Qué proceso repites más de 5 veces por semana que involucra decidir, clasificar o priorizar?
-- ¿Podrías dividir esos mensajes/inputs en 3 categorías claras?
+- ¿Qué información desordenada recibes regularmente que te gustaría que se transformara automáticamente en algo profesional?
+- ¿Notas de reunión? ¿Ideas sueltas? ¿Feedback que no sabes cómo dar?
 
 ---
 
 ## Glosario de nuevos términos
 
-- **Transferencia**: Aplicar un patrón aprendido (PetShop) a un contexto nuevo (tu trabajo)
-- **Caso de uso**: Proceso real de tu trabajo que el agente va a resolver
-- **Iteración**: Ciclo de probar → encontrar errores → mejorar SystemPrompt → re-probar
-- **Arquetipos**: Patrones comunes de casos de triage por industria
-- **Clonación de escenario**: Duplicar un escenario en Make como base para uno nuevo
+- **Encadenamiento de IAs**: Usar el output de una IA como input de otra — la primera analiza, la segunda genera
+- **Pipeline**: Secuencia de pasos donde cada módulo transforma los datos para el siguiente
+- **Repositorio (repo)**: Carpeta en GitHub que contiene el código de tu proyecto + documentación
+- **Deploy**: Publicar tu proyecto en internet para que cualquiera pueda acceder
+- **Open-source**: Código público que otros pueden ver, estudiar y aprender de él
 
 ---
 
 ## Herramientas necesarias
 
-- [ ] 💻 Laptop con Make abierto (escenario C06 funcionando)
-- [ ] 🧠 Claude abierto (socio pensante para diseñar SystemPrompt)
-- [ ] 📝 5 mensajes/inputs reales de tu proceso
-- [ ] 📋 Idea de tu caso de clasificación/triage
+- [ ] 💻 Laptop con Make abierto (crear nuevo escenario)
+- [ ] 🧠 Claude abierto (socio pensante para SystemPrompts)
+- [ ] 🔑 API key de OpenRouter (la misma de C05-C06)
+- [ ] 🐙 Cuenta de GitHub creada
+- [ ] 📧 Gmail configurado en Make (para recibir los emails generados)

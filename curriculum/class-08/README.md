@@ -4,7 +4,7 @@
 
 ## Resumen
 
-Culminación de 4 semanas. Esta clase tiene 3 actos: **PRESENTAR, PUBLICAR, PLANIFICAR.** Tu agente de C07 es la estrella — lo demuestras en vivo, no con slides. Alguien del público envía un mensaje a tu agente y todos ven cómo clasifica en tiempo real.
+Culminación de 4 semanas. Esta clase tiene 3 actos: **PRESENTAR, PUBLICAR, PLANIFICAR.** Tu agente de C07 es la estrella — lo demuestras en vivo, no con slides. Alguien del público abre tu URL de Vercel, envía un mensaje y todos ven el email profesional generado en tiempo real.
 
 Construir es la mitad. Comunicar lo que construiste es la otra mitad. Hoy cierras el ciclo: evidencia real de competencia IA, publicada profesionalmente, con un plan para seguir creciendo.
 
@@ -22,7 +22,7 @@ Construir es la mitad. Comunicar lo que construiste es la otra mitad. Hoy cierra
 | C04 | Integraste múltiples herramientas | Proyecto |
 | C05 | Construiste el cerebro de un agente | IA trabaja por ti |
 | C06 | Completaste un agente inteligente | Branching + logging |
-| C07 | Transferiste a TU caso real | Aplicación real |
+| C07 | Construiste agente generativo para TU caso | Aplicación real |
 | **C08** | **Presentas, publicas y planificas** | **Compartir** |
 
 > "Construir es la mitad. Comunicar lo que construiste es la otra mitad."
@@ -61,8 +61,8 @@ AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
 
 ### Obligatorio
 
-1. **Agente de C07 FUNCIONANDO** y probado (5+ módulos, clasificación correcta)
-2. **5 mensajes de prueba listos** para que el público los envíe desde tu formulario
+1. **Agente de C07 FUNCIONANDO** — URL de Vercel activa + escenario Make encendido + email llegando
+2. **5 mensajes de prueba listos** para que el público los envíe desde tu formulario (URL de Vercel)
 3. **Cuenta de LinkedIn** abierta y lista para publicar
 4. **Ensayar presentación de 5 min:**
    - Problema (30 seg) → Agente (2 min) → Demo (1.5 min) → Aprendizaje (1 min)

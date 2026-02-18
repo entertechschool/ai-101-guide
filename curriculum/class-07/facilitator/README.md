@@ -6,45 +6,52 @@
 
 ## Conceptos Clave
 
-- **Transferencia**: Aplicar un patrón aprendido (agente PetShop) a un contexto nuevo (caso real del estudiante). Es la prueba de que el aprendizaje fue real.
-- **Caso de uso real**: Proceso genuino del trabajo del estudiante, no un ejercicio ficticio. Debe involucrar clasificar, priorizar o decidir.
-- **Iteración**: Ciclo de probar → encontrar errores → mejorar SystemPrompt → re-probar. El agente mejora con datos reales.
-- **Clonación de escenario**: Duplicar un escenario en Make (Export/Import Blueprint) como base para construir uno nuevo.
-- **Arquetipos**: Patrones comunes de triage por industria que sirven de punto de partida.
+- **Encadenamiento de IAs**: Usar el output de una IA como input de otra. OR#1 analiza (extrae estructura), OR#2 genera (produce contenido). Es la evolución de C05-C06 donde solo clasificaban.
+- **Transferencia**: Aplicar los patrones aprendidos (form, webhook, Make, OpenRouter) a un caso nuevo — pero con arquitectura diferente (2 IAs en vez de Router).
+- **Deploy público**: El estudiante publica su primer proyecto con URL funcional (Vercel) y código documentado (GitHub). No es tarea — es portfolio real.
+- **SystemPrompts como documentación**: Los SystemPrompts SON el "cerebro" del agente. Documentarlos en un README es la pieza intelectual del proyecto.
 
 ---
 
 ## Analogías Útiles
 
-**PetShop = estacionamiento de autoescuela:**
-PetShop fue el estacionamiento donde aprendiste a manejar sin riesgo. C07 es la primera vez en la calle real. Mismas habilidades, contexto diferente.
+**OR#1 es el analista, OR#2 es el redactor:**
+Imagina una empresa donde alguien lee el email del cliente y llena un formulario estructurado (OR#1). Luego otro redacta la respuesta profesional basándose en ese formulario (OR#2). Mismo flujo, automatizado.
 
-**Clonar escenario = tener rueditas que quitas pieza por pieza:**
-No empiezas de cero — empiezas con algo que funciona y cambias una cosa a la vez.
+**v0 → Vercel → GitHub = escribir → publicar → archivar:**
+Creas el form (escribir), lo publicas en internet (publicar), y guardas el código con documentación (archivar). Es el ciclo completo de un proyecto real.
 
-**Tabla de arquetipos = menú en restaurante:**
-Es más fácil elegir del menú que inventar un plato. Los arquetipos dan opciones concretas para quienes no identifican su caso.
+**Los 3 escenarios = menú con plato sugerido:**
+Es más fácil elegir del menú que inventar un plato. Los escenarios dan opciones concretas para quienes se paralizan con "elige tu caso".
 
 ---
 
 ## Contexto Pedagógico
 
-### ¿Por qué transferencia?
+### ¿Por qué 2 IAs encadenadas?
 
-C05-C06 demostraron que los estudiantes pueden **seguir instrucciones** para construir un agente. C07 demuestra que pueden **aplicar** lo aprendido a un contexto nuevo. Aquí es donde se valida el aprendizaje real.
+C05-C06 demostraron que los estudiantes pueden conectar 1 IA con un Router para clasificar. C07 demuestra que pueden **encadenar 2 IAs** donde la primera prepara el input para la segunda. Esto es un patrón fundamental en automatización con IA: pipelines donde cada paso transforma los datos para el siguiente.
+
+### ¿Por qué GitHub en vez de CRE?
+
+CRE (Categoría-Razonamiento-Ejecución) era un framework de verificación valioso pero abstracto — los estudiantes verificaban una tabla y eso se quedaba en un Google Doc. GitHub les da algo tangible: un repositorio público con código y documentación. Es su primer proyecto open-source, lo pueden mostrar en LinkedIn y en C08.
+
+### ¿Por qué escenarios predefinidos?
+
+El diseño anterior pedía "elige tu caso" y el 30-40% se paralizaba. Los 3 escenarios eliminan la parálisis de página en blanco sin quitar la posibilidad de caso propio (opción 4). El escenario predefinido ya trae SystemPrompts listos — el estudiante solo personaliza.
 
 ### Riesgo principal
 
-Estudiantes que no logran identificar su caso. La tabla de arquetipos es la solución — reduce la decisión de "inventa algo" a "elige uno y personaliza".
+Estudiantes atascados en la configuración técnica de OR#1 (JSON malformado, headers incorrectos). Tener un escenario de Make pre-construido listo para compartir como backup.
 
 ### Callbacks pedagógicos
 
 | Clase | Técnica | Cómo se aplica en C07 |
 |-------|---------|----------------------|
-| C02 | RICE + Few-shot | Estructura del SystemPrompt para su caso |
-| C03 | Socio pensante | Claude diseña el SystemPrompt con preguntas |
-| C05 | Scaffolding Gemini | Gemini genera prompt para form v0 nuevo |
-| C05-C06 | Arquitectura agente | Se clona y adapta, no se reconstruye |
+| C02 | RICE + Few-shot | Estructura de los SystemPrompts |
+| C03 | Socio pensante | Claude personaliza SystemPrompts |
+| C05 | Form v0 + webhook | Mismo patrón, nuevo form |
+| C06 | OpenRouter + Make | Ahora con 2 OpenRouter encadenados |
 
 ---
 
@@ -52,69 +59,175 @@ Estudiantes que no logran identificar su caso. La tabla de arquetipos es la solu
 
 ### Crítico — Sin esto la clase no funciona
 
-1. **Tu propio agente para caso DIFERENTE** (no PetShop)
-   - Probado end-to-end: form → webhook → clasificación → email → Sheets
-   - Será tu demo en vivo. Debe funcionar sin fallas
-   - Prepara 3 mensajes de prueba para la demo
+1. **Tu propio agente funcionando** (escenario diferente al de los estudiantes)
+   - Probado end-to-end: form → webhook → OR#1 → Sheets → OR#2 → Gmail
+   - Muéstralo como demo en vivo. Debe funcionar sin fallas
+   - Prepara 2 inputs de prueba para la demo
+   - **Repo en GitHub** con README que documente tus SystemPrompts
 
-2. **6 arquetipos verificados** que funcionen con Grok Free
-   - SystemPrompts de backup por arquetipo (por si alguien necesita ayuda)
-   - Verifica que cada uno produce output en formato correcto
+2. **3 escenarios probados** con Gemini Flash en OpenRouter
+   - Verifica que los SystemPrompts del Apéndice producen JSON válido (OR#1)
+   - Verifica que OR#2 genera HTML legible en Gmail
+   - Ten los SystemPrompts listos para copiar/pegar si alguien necesita ayuda
 
-3. **Escenario de backup** para estudiantes atascados
-   - Un escenario simple pre-clonado con categorías genéricas
-   - Listo para compartir vía Blueprint export
+3. **Escenario de backup en Make** para estudiantes atascados
+   - Make con los 5 módulos pre-configurados
+   - Listo para clonar y compartir
 
-4. **Tabla de arquetipos** lista para compartir (digital o impresa)
+4. **Cuenta de GitHub del facilitador** lista para mostrar cómo editar README
 
-5. **Escenario pre-clonado** para quienes perdieron su C06
-   - Blueprint del agente PetShop completo para import rápido
+5. **Test de Gmail HTML**: envíate un email desde tu escenario y verifica que llega con formato (no como texto plano)
 
 ---
 
-## Momentos Clave de la Clase
+## Estructura de la Clase (~85 min instrucción / ~100 min con buffer)
 
-### Pregunta Detonadora (~5 min)
+### BLOQUE 1: Apertura (10 min)
 
-**Respuesta correcta: B** — Definir categorías y reglas de MI caso antes de tocar Make
+#### Pregunta Detonadora (~4 min)
+
+**Respuesta correcta: C** — Depende de CÓMO le pidas que las procese
 
 **Script post-votación:**
 ```
-"Si copias PetShop tal cual, tienes un agente que clasifica
-mensajes de una tienda de mascotas. Inútil para tu trabajo.
-PRIMERO defines TU caso — categorías, reglas, acciones.
-DESPUÉS adaptas la arquitectura. El orden importa."
+"La IA puede procesar cualquier cosa desordenada.
+Pero sin instrucciones claras, produce algo genérico.
+La magia está en el SystemPrompt: qué analizar, qué generar, en qué formato.
+Hoy construyen un agente con 2 cerebros: uno analiza, otro genera."
 ```
 
----
+#### Demo: Tu Agente EN VIVO (~6 min)
 
-### Demo: Tu Agente Propio (~10 min)
+Muestra tu agente completo. El impacto es ver el flujo de punta a punta:
 
-Muestra tu agente (caso diferente a PetShop):
-
-1. Explica brevemente: "Mi caso es [X]. Mis categorías son [A, B, C]."
-2. Envía un mensaje desde tu formulario
-3. Muestra en Make History cómo clasifica
-4. Muestra el email con la categoría correcta
-5. Muestra el registro en Sheets
+1. Abre tu formulario (URL de Vercel) — "Este es mi form público, cualquiera puede usarlo"
+2. Escribe algo desordenado en el textarea — en vivo, sin preparar
+3. Click en enviar
+4. Muestra en Make History cómo pasa por los 5 módulos
+5. Abre tu correo → muestra el email HTML que llegó
+6. Abre tu repo en GitHub → muestra el README con los SystemPrompts
 
 **Script clave:**
 ```
-"Mismo patrón que PetShop. Caso diferente.
-No seguí ningún tutorial nuevo para esto.
-Apliqué lo que ya sabía. Eso es transferencia."
+"Escribí esto en 30 segundos. Me llegó un email profesional.
+Mismo patrón que C05-C06. Pero ahora hay 2 IAs:
+una que analiza mi caos, otra que genera el email.
+Y mi proyecto está publicado en GitHub. Esto es lo que van a construir."
 ```
 
 ---
 
-### Momento WOW: Primer mensaje real clasificado
+### BLOQUE 2: Contexto + Arquitectura (10 min)
 
-Cuando el estudiante envía SU primer mensaje real desde SU formulario y ve la clasificación correcta en SU caso — ese es el WOW moment más potente del módulo. Es más impactante que C05 porque es **su caso real**, no PetShop.
+#### De clasificar a generar (~4 min)
+- Slide "La evolución C05-C06 → C07"
+- Enfatizar: antes la IA ponía una etiqueta (URGENTE), ahora CREA contenido
+- "En C06 la IA decidía. En C07 la IA produce."
 
+#### Nueva arquitectura (~3 min)
+- Slide con diagrama de 5 módulos
+- Explicar: "OR#1 es el analista — lee el caos y extrae estructura en JSON. OR#2 es el redactor — toma la estructura y escribe un email profesional."
+- Preguntar: "¿Por qué separar en 2? ¿No puede hacer todo en 1?"
+- Respuesta: "Especialización. Cada IA tiene un solo trabajo = mejor calidad."
+
+#### Anti-Hype (~3 min)
 ```
-"Miren su Sheets. Ese registro es de SU proceso.
-SU agente clasificó SU mensaje. Eso no lo hizo un tutorial."
+"Tu agente va a generar emails mediocres al principio.
+El JSON de OR#1 puede venir malformado.
+Gmail puede mostrar HTML como texto plano.
+Eso es normal. Lo importante es que sepan diagnosticar y mejorar."
 ```
+
+---
+
+### BLOQUE 3: Lab Parte 1 — Diseñar (10 min)
+
+Los estudiantes eligen escenario y revisan/personalizan SystemPrompts:
+
+- **[0-3 min]** Elegir escenario de la tabla (1, 2, 3 o propio)
+- **[3-10 min]** Revisar los SystemPrompts del Apéndice + personalizar con Claude
+
+**Intervención a los 5 min:** Si alguien no ha elegido escenario:
+- "¿Tienes reuniones? Escenario 2. ¿Das feedback? Escenario 3. ¿Tienes ideas? Escenario 1."
+- Si nada funciona → Escenario 2 (Notas de Reunión) es el más universal
+
+> **Checkpoint ~min 10:** "¿Quién tiene sus 2 SystemPrompts listos?" — Manos arriba.
+
+---
+
+### BLOQUE 4: Lab Parte 2 — Construir (40 min)
+
+#### Form v0 (8 min)
+- Nuevo form, no reusar el de PetShop — este tiene campos diferentes
+- Verificar que envía JSON al webhook
+
+#### Make: 5 módulos (25 min)
+- **Webhook** (~5 min): Crear nuevo escenario + webhook + test
+- **OpenRouter #1** (~7 min): HTTP module + headers + SystemPrompt #1 + temperature 0.3
+- **Google Sheets** (~5 min): Crear hoja + mapear columnas del JSON
+- **OpenRouter #2** (~5 min): Mismo HTTP module + SystemPrompt #2 + temperature 0.7
+- **Gmail** (~3 min): Enviar con output de OR#2 como HTML
+
+**Errores frecuentes en este bloque:**
+- OR#1 devuelve texto en vez de JSON → revisar SystemPrompt, agregar "Responde SOLO con JSON"
+- OR#2 no recibe el JSON de OR#1 → verificar mapping: `{{choices[0].message.content}}`
+- Gmail muestra HTML como texto → marcar opción "HTML" en el módulo Gmail
+- Headers de OpenRouter incorrectos → verificar `Bearer` antes del API key
+
+#### Conectar + smoke test (2 min)
+- Webhook URL en form → deploy → enviar 1 mensaje → verificar email + Sheets
+
+#### Deploy: v0 → Vercel → GitHub (5 min)
+- Deploy ya lo hicieron en v0
+- Desde Vercel → Connect to GitHub → repo auto-creado
+- Si tienen problemas de auth con GitHub → que autoricen la app de Vercel en GitHub settings
+
+> **Checkpoint ~min 50:** "¿Quién tiene form en Vercel, repo en GitHub y email funcionando?"
+
+---
+
+### BLOQUE 5: Lab Parte 3 — Documentar (10 min)
+
+#### Editar README en GitHub web (5 min)
+- Desde github.com → abrir repo → editar README.md → ícono de lápiz
+- Copiar estructura del lab (nombre, arquitectura, SystemPrompts, ejemplo)
+- Commit desde el navegador
+
+**Momento WOW:** Cuando ven su repo con README profesional documentando sus SystemPrompts.
+```
+"Miren su repo. Eso es open-source.
+Cualquiera puede ver cómo funciona tu agente.
+Los SystemPrompts son la propiedad intelectual de tu proyecto."
+```
+
+#### Test final + verificar (5 min)
+- 2 mensajes desde URL de Vercel → verificar emails + Sheets
+- Checklist: email HTML + Sheets 2 registros + repo con README + URL funcional
+
+> **Checkpoint ~min 60 del lab:** "¿Quién tiene repo con README + agente funcionando?"
+
+---
+
+### BLOQUE 6: Cierre (5 min)
+
+#### Reflexión rápida (~2 min)
+- "¿Quién recibió un email que realmente usaría en su trabajo?"
+- "¿Qué escenario eligieron? ¿Alguien hizo caso propio?"
+
+#### Preview C08 (~3 min)
+```
+"Próxima clase presentan ESTE agente en vivo.
+Alguien del público abre tu URL de Vercel y envía un mensaje.
+Todos ven el email llegar en tiempo real.
+5 minutos. Problema → Agente → Demo → Aprendizaje."
+```
+
+**Tarea para la próxima clase:**
+1. Pulir los SystemPrompts — probar con 3+ mensajes variados
+2. Verificar que la URL de Vercel funciona (no solo localhost)
+3. Ensayar presentación de 5 min
+4. Tener cuenta de LinkedIn abierta
+5. Opcional: agregar más ejemplos al README del repo
 
 ---
 
@@ -122,14 +235,14 @@ SU agente clasificó SU mensaje. Eso no lo hizo un tutorial."
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "No sé qué caso elegir" | No identifica patrón en su trabajo | Tabla de arquetipos + "¿Qué haces 5+ veces/semana que involucra decidir?" |
-| "Mi caso no encaja en triage" | Piensa muy literalmente | "¿Clasificas, priorizas o decides algo? Eso es triage" |
-| "Copié pero no funciona" | Filters aún dicen URGENTE/CONSULTA/VENTA | Cambiar a nuevas categorías — case-sensitive |
-| "SystemPrompt no clasifica bien" | Reglas vagas o ambiguas | "¿Tiene 3 categorías explícitas con reglas diferenciadas?" |
-| "No tengo 5 mensajes reales" | No preparó antes de clase | "Inventa 5 basados en experiencia. En la tarea, usa reales" |
-| "Router toma ruta equivocada" | Case sensitivity en Filters | Filter debe matchear EXACTO el output del SystemPrompt |
-| "Es igual que C06" | Ve la arquitectura, no el contenido | "La arquitectura sí. La TRANSFERENCIA es el aprendizaje" |
-| "Perdí mi escenario C06" | Problema técnico | Compartir escenario pre-clonado de backup |
+| "No sé qué escenario elegir" | Parálisis de elección | "¿Tienes reuniones? Escenario 2. Es el más universal" |
+| "OR#1 devuelve texto, no JSON" | SystemPrompt no es claro | Agregar al prompt: "Responde SOLO con el JSON, sin texto adicional ni markdown" |
+| "OR#2 no recibe nada" | Mapping incorrecto | Verificar que OR#2 lee `{{choices[0].message.content}}` del módulo OR#1 |
+| "El email llega como texto plano" | Gmail no está en modo HTML | En el módulo Gmail → marcar opción "HTML" en el campo de contenido |
+| "GitHub me pide autenticar" | Primera vez usando GitHub | Ayudar con OAuth flow — crear cuenta si es necesario |
+| "Vercel no conecta a GitHub" | Permisos de la app | Settings de GitHub → Applications → autorizar Vercel |
+| "El JSON viene con backticks" | OR#1 envuelve en markdown | Agregar al SystemPrompt: "No uses markdown. Solo JSON puro" |
+| "El email es genérico/malo" | SystemPrompt de OR#2 poco específico | Iterar el prompt: más instrucciones de formato, tono, secciones |
 
 ---
 
@@ -137,54 +250,37 @@ SU agente clasificó SU mensaje. Eso no lo hizo un tutorial."
 
 | Minuto | Checkpoint | Cómo validar |
 |--------|------------|--------------|
-| ~5 | PD votada | Discusión caso vs tutorial completada |
-| ~15 | Demo completada | Preguntas sobre el caso del facilitador |
-| ~30 | Caso diseñado (Lab P1) | "¿Quién tiene 3 categorías con reglas?" |
-| ~40 | Escenario clonado (Lab P2) | "¿Quién duplicó su escenario en Make?" |
-| ~50 | Form v0 creado | "¿Quién tiene form nuevo deployado?" |
-| ~70 | Make adaptado | "¿Quién tiene todos los módulos actualizados?" |
-| ~75 | Form conectado al webhook | "¿Quién envía desde su form al webhook?" |
-| ~82 | 5 mensajes probados (Lab P3) | "¿Quién tiene resultados en Sheets?" |
-| ~90 | Mejora documentada | "¿Quién encontró y corrigió al menos 1 error?" |
-
----
-
-## Sección Anti-Hype
-
-**Script para el momento de pruebas:**
-```
-"Tu agente va a tener las mismas fallas que PetShop.
-Nuevo caso, mismos tipos de errores.
-Pero ahora sabes CÓMO arreglarlos.
-Esa es la diferencia entre seguir un tutorial y saber CONSTRUIR."
-```
-
-**Mensaje clave:**
-Un agente imperfecto para tu caso real vale más que un agente perfecto de tutorial.
+| ~4 | PD votada | Discusión sobre análisis vs clasificación completada |
+| ~10 | Demo completada | Estudiantes vieron el flujo completo + repo en GitHub |
+| ~20 | SystemPrompts listos (Lab P1) | "¿Quién tiene 2 SystemPrompts?" |
+| ~35 | Make con OR#1 funcionando | "¿Quién tiene JSON válido saliendo de OR#1?" |
+| ~50 | Agente completo + GitHub | "¿Quién tiene email + Sheets + repo?" |
+| ~60 | README documentado + test final | "¿Quién tiene README con SystemPrompts + 2 mensajes probados?" |
 
 ---
 
 ## Tips de Facilitación
 
 ### Si el grupo avanza rápido:
-- Agregar 4ta categoría o lógica condicional más compleja
-- Probar con mensajes ambiguos que estresen al agente
-- Que ayuden a compañeros que están atascados
+- Que prueben con inputs extremos: texto muy corto, muy largo, en otro idioma
+- Que comparen outputs entre escenarios diferentes
+- Que ayuden a compañeros atascados con la configuración de Make
 
-### Si alguien está intimidado:
-- Emparejar con alguien que va bien
-- Empezar del arquetipo más cercano, no inventar desde cero
-- "Vuelve a la tabla. Elige uno. Personalizamos después."
+### Si alguien está intimidado por GitHub:
+- "Solo vas a editar un archivo de texto en una página web. No necesitas saber programar."
+- Mostrar en tu pantalla cómo se edita un README en GitHub web
+- Si realmente no pueden: que documenten SystemPrompts en un Google Doc como backup
 
-### Si alguien no identifica su caso:
-- "¿Recibes emails que clasificas? ¿Mensajes que priorizas? ¿Solicitudes que filtras?"
-- Si realmente no tiene caso: que use un arquetipo de la tabla como si fuera su caso
-- La habilidad de transferencia se practica igual
+### Si OR#1 produce JSON inválido consistentemente:
+- Agregar al SystemPrompt: "IMPORTANTE: No incluyas ```json ni backticks. Solo el JSON puro."
+- Reducir temperature a 0.1 temporalmente
+- Probar con un input más simple primero
 
 ### Manejo de tiempo:
-- Parte 1 (diseñar, 10 min) es donde más se atoran. Si a los 7 min no tienen caso, intervén.
-- Parte 2 (construir, 35 min) fluye si el caso está definido.
-- Parte 3 (probar, 15 min) siempre se queda corta — priorizar al menos 3 mensajes.
+- **Parte 1** (diseñar, 10 min): Rápido si eligen escenario predefinido. Si a los 5 min no eligieron, intervén.
+- **Parte 2** (construir, 40 min): Donde más se atoran es en OR#1 (JSON). Tener backup de Make listo.
+- **Parte 3** (documentar, 10 min): Lo más sencillo. Si van cortos de tiempo, priorizar al menos el README.
+- **Buffer real:** 15 min entre los 85 de instrucción y los 100 min de clase.
 
 ---
 
@@ -194,13 +290,14 @@ Al cerrar, planta la semilla:
 
 ```
 "Próxima clase presentan ESTE agente en vivo.
-No slides. No documento. Tu agente funcionando.
-5 minutos. Alguien del público envía un mensaje.
-El agente debe funcionar."
+Alguien del público abre tu URL de Vercel y envía un mensaje.
+Todos ven el email llegar en tiempo real.
+5 minutos. Problema → Agente → Demo → Aprendizaje."
 ```
 
 **Tarea para la próxima clase:**
-1. Pulir el agente — que los 5 mensajes clasifiquen correctamente
-2. Preparar 5 mensajes de prueba listos para que el público los envíe
+1. Pulir SystemPrompts — probar con 3+ mensajes variados
+2. Verificar que URL de Vercel funciona públicamente
 3. Ensayar presentación de 5 min: Problema → Agente → Demo → Aprendizaje
 4. Tener cuenta de LinkedIn abierta
+5. Opcional: agregar más ejemplos e imágenes al README del repo
