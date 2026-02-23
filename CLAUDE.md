@@ -212,7 +212,7 @@ git commit -m "tipo: descripción concisa"
 | **Perplexity** | Research con fuentes verificables | 4 |
 | **Make/n8n** | Agentes y automatización | 5 |
 | **Google Sheets** | Logging de agente (en Make) | 6 |
-| **GitHub** | Repositorio open-source, documentación de SystemPrompts | 7 |
+| **GitHub** | Repositorio open-source, documentación de SystemPrompts | 8 |
 | **LinkedIn** | Publicación de caso de éxito | 8 |
 
 ---
@@ -227,8 +227,8 @@ git commit -m "tipo: descripción concisa"
 | 4 | Proyecto integrador M1 (calificable) |
 | 5 | 1 agente funcionando |
 | 6 | Agente inteligente con Router + Sheets |
-| 7 | Agente en Vercel + repo GitHub con SystemPrompts |
-| 8 | Presentación + plan desarrollo |
+| 7 | Agente en Vercel (2 IAs encadenadas) |
+| 8 | Repo GitHub + LinkedIn post + presentación + plan desarrollo |
 
 ---
 

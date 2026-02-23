@@ -8,8 +8,8 @@
 
 - **Encadenamiento de IAs**: Usar el output de una IA como input de otra. OR#1 analiza (extrae estructura), OR#2 genera (produce contenido). Es la evolución de C05-C06 donde solo clasificaban.
 - **Transferencia**: Aplicar los patrones aprendidos (form, webhook, Make, OpenRouter) a un caso nuevo — pero con arquitectura diferente (2 IAs en vez de Router).
-- **Deploy público**: El estudiante publica su primer proyecto con URL funcional (Vercel) y código documentado (GitHub). No es tarea — es portfolio real.
-- **SystemPrompts como documentación**: Los SystemPrompts SON el "cerebro" del agente. Documentarlos en un README es la pieza intelectual del proyecto.
+- **Deploy público**: El estudiante publica su primer proyecto con URL funcional (Vercel). No es tarea — es portfolio real.
+- **SystemPrompts como documentación**: Los SystemPrompts SON el "cerebro" del agente. Guardarlos y documentarlos es la pieza intelectual del proyecto (se publican en GitHub en C08).
 
 ---
 
@@ -18,8 +18,8 @@
 **OR#1 es el analista, OR#2 es el redactor:**
 Imagina una empresa donde alguien lee el email del cliente y llena un formulario estructurado (OR#1). Luego otro redacta la respuesta profesional basándose en ese formulario (OR#2). Mismo flujo, automatizado.
 
-**v0 → Vercel → GitHub = escribir → publicar → archivar:**
-Creas el form (escribir), lo publicas en internet (publicar), y guardas el código con documentación (archivar). Es el ciclo completo de un proyecto real.
+**v0 → Vercel = escribir → publicar:**
+Creas el form (escribir) y lo publicas en internet (publicar). En C08 completan el ciclo con GitHub (archivar + documentar).
 
 **Los 3 escenarios = menú con plato sugerido:**
 Es más fácil elegir del menú que inventar un plato. Los escenarios dan opciones concretas para quienes se paralizan con "elige tu caso".
@@ -32,9 +32,9 @@ Es más fácil elegir del menú que inventar un plato. Los escenarios dan opcion
 
 C05-C06 demostraron que los estudiantes pueden conectar 1 IA con un Router para clasificar. C07 demuestra que pueden **encadenar 2 IAs** donde la primera prepara el input para la segunda. Esto es un patrón fundamental en automatización con IA: pipelines donde cada paso transforma los datos para el siguiente.
 
-### ¿Por qué GitHub en vez de CRE?
+### ¿Por qué deploy público?
 
-CRE (Categoría-Razonamiento-Ejecución) era un framework de verificación valioso pero abstracto — los estudiantes verificaban una tabla y eso se quedaba en un Google Doc. GitHub les da algo tangible: un repositorio público con código y documentación. Es su primer proyecto open-source, lo pueden mostrar en LinkedIn y en C08.
+Tener una URL funcional que cualquiera puede usar es más poderoso que un screenshot en un Google Doc. El agente deployado ES el portfolio. GitHub y la documentación open-source se completan en C08, donde hay más tiempo para hacerlo bien.
 
 ### ¿Por qué escenarios predefinidos?
 
@@ -63,7 +63,6 @@ Estudiantes atascados en la configuración técnica de OR#1 (JSON malformado, he
    - Probado end-to-end: form → webhook → OR#1 → Sheets → OR#2 → Gmail
    - Muéstralo como demo en vivo. Debe funcionar sin fallas
    - Prepara 2 inputs de prueba para la demo
-   - **Repo en GitHub** con README que documente tus SystemPrompts
 
 2. **3 escenarios probados** con Gemini Flash en OpenRouter
    - Verifica que los SystemPrompts del Apéndice producen JSON válido (OR#1)
@@ -74,9 +73,7 @@ Estudiantes atascados en la configuración técnica de OR#1 (JSON malformado, he
    - Make con los 5 módulos pre-configurados
    - Listo para clonar y compartir
 
-4. **Cuenta de GitHub del facilitador** lista para mostrar cómo editar README
-
-5. **Test de Gmail HTML**: envíate un email desde tu escenario y verifica que llega con formato (no como texto plano)
+4. **Test de Gmail HTML**: envíate un email desde tu escenario y verifica que llega con formato (no como texto plano)
 
 ---
 
@@ -105,14 +102,12 @@ Muestra tu agente completo. El impacto es ver el flujo de punta a punta:
 3. Click en enviar
 4. Muestra en Make History cómo pasa por los 5 módulos
 5. Abre tu correo → muestra el email HTML que llegó
-6. Abre tu repo en GitHub → muestra el README con los SystemPrompts
-
 **Script clave:**
 ```
 "Escribí esto en 30 segundos. Me llegó un email profesional.
 Mismo patrón que C05-C06. Pero ahora hay 2 IAs:
 una que analiza mi caos, otra que genera el email.
-Y mi proyecto está publicado en GitHub. Esto es lo que van a construir."
+Y esto va a estar público en Vercel. Esto es lo que van a construir."
 ```
 
 ---
@@ -177,34 +172,18 @@ Los estudiantes eligen escenario y revisan/personalizan SystemPrompts:
 #### Conectar + smoke test (2 min)
 - Webhook URL en form → deploy → enviar 1 mensaje → verificar email + Sheets
 
-#### Deploy: v0 → Vercel → GitHub (5 min)
-- Deploy ya lo hicieron en v0
-- Desde Vercel → Connect to GitHub → repo auto-creado
-- Si tienen problemas de auth con GitHub → que autoricen la app de Vercel en GitHub settings
-
-> **Checkpoint ~min 50:** "¿Quién tiene form en Vercel, repo en GitHub y email funcionando?"
+> **Checkpoint ~min 50:** "¿Quién tiene form en Vercel y email funcionando?"
 
 ---
 
-### BLOQUE 5: Lab Parte 3 — Documentar (10 min)
-
-#### Editar README en GitHub web (5 min)
-- Desde github.com → abrir repo → editar README.md → ícono de lápiz
-- Copiar estructura del lab (nombre, arquitectura, SystemPrompts, ejemplo)
-- Commit desde el navegador
-
-**Momento WOW:** Cuando ven su repo con README profesional documentando sus SystemPrompts.
-```
-"Miren su repo. Eso es open-source.
-Cualquiera puede ver cómo funciona tu agente.
-Los SystemPrompts son la propiedad intelectual de tu proyecto."
-```
+### BLOQUE 5: Lab Parte 3 — Verificar (5 min)
 
 #### Test final + verificar (5 min)
 - 2 mensajes desde URL de Vercel → verificar emails + Sheets
-- Checklist: email HTML + Sheets 2 registros + repo con README + URL funcional
+- Checklist: email HTML + Sheets 2 registros + URL funcional
+- Recordar: **copiar sus 2 SystemPrompts** y tenerlos accesibles (para C08)
 
-> **Checkpoint ~min 60 del lab:** "¿Quién tiene repo con README + agente funcionando?"
+> **Checkpoint ~min 55 del lab:** "¿Quién tiene agente funcionando + SystemPrompts guardados?"
 
 ---
 
@@ -216,18 +195,19 @@ Los SystemPrompts son la propiedad intelectual de tu proyecto."
 
 #### Preview C08 (~3 min)
 ```
-"Próxima clase presentan ESTE agente en vivo.
-Alguien del público abre tu URL de Vercel y envía un mensaje.
-Todos ven el email llegar en tiempo real.
-5 minutos. Problema → Agente → Demo → Aprendizaje."
+"Próxima clase hacemos 3 cosas grandes:
+1. Publican su agente en GitHub — su primer proyecto open-source
+2. Crean un post de LinkedIn con imagen generada por IA
+3. Pitches de 3 minutos — problema + post + demo rápida"
 ```
 
 **Tarea para la próxima clase:**
-1. Pulir los SystemPrompts — probar con 3+ mensajes variados
-2. Verificar que la URL de Vercel funciona (no solo localhost)
-3. Ensayar presentación de 5 min
-4. Tener cuenta de LinkedIn abierta
-5. Opcional: agregar más ejemplos al README del repo
+1. **Crear cuenta en GitHub** si no tienes (github.com — es gratis)
+2. **SystemPrompts copiados** — tener OR#1 y OR#2 accesibles
+3. Verificar que la URL de Vercel funciona públicamente
+4. Tener cuenta de **LinkedIn** abierta
+5. Tener cuenta de **Gemini** (gemini.google.com)
+6. Pulir SystemPrompts — probar con 3+ mensajes variados
 
 ---
 
@@ -239,8 +219,6 @@ Todos ven el email llegar en tiempo real.
 | "OR#1 devuelve texto, no JSON" | SystemPrompt no es claro | Agregar al prompt: "Responde SOLO con el JSON, sin texto adicional ni markdown" |
 | "OR#2 no recibe nada" | Mapping incorrecto | Verificar que OR#2 lee `{{choices[0].message.content}}` del módulo OR#1 |
 | "El email llega como texto plano" | Gmail no está en modo HTML | En el módulo Gmail → marcar opción "HTML" en el campo de contenido |
-| "GitHub me pide autenticar" | Primera vez usando GitHub | Ayudar con OAuth flow — crear cuenta si es necesario |
-| "Vercel no conecta a GitHub" | Permisos de la app | Settings de GitHub → Applications → autorizar Vercel |
 | "El JSON viene con backticks" | OR#1 envuelve en markdown | Agregar al SystemPrompt: "No uses markdown. Solo JSON puro" |
 | "El email es genérico/malo" | SystemPrompt de OR#2 poco específico | Iterar el prompt: más instrucciones de formato, tono, secciones |
 
@@ -251,11 +229,11 @@ Todos ven el email llegar en tiempo real.
 | Minuto | Checkpoint | Cómo validar |
 |--------|------------|--------------|
 | ~4 | PD votada | Discusión sobre análisis vs clasificación completada |
-| ~10 | Demo completada | Estudiantes vieron el flujo completo + repo en GitHub |
+| ~10 | Demo completada | Estudiantes vieron el flujo completo |
 | ~20 | SystemPrompts listos (Lab P1) | "¿Quién tiene 2 SystemPrompts?" |
 | ~35 | Make con OR#1 funcionando | "¿Quién tiene JSON válido saliendo de OR#1?" |
-| ~50 | Agente completo + GitHub | "¿Quién tiene email + Sheets + repo?" |
-| ~60 | README documentado + test final | "¿Quién tiene README con SystemPrompts + 2 mensajes probados?" |
+| ~50 | Agente completo en Vercel | "¿Quién tiene email + Sheets funcionando?" |
+| ~55 | Test final + SystemPrompts guardados | "¿Quién tiene 2 mensajes probados + SystemPrompts copiados?" |
 
 ---
 
@@ -266,11 +244,6 @@ Todos ven el email llegar en tiempo real.
 - Que comparen outputs entre escenarios diferentes
 - Que ayuden a compañeros atascados con la configuración de Make
 
-### Si alguien está intimidado por GitHub:
-- "Solo vas a editar un archivo de texto en una página web. No necesitas saber programar."
-- Mostrar en tu pantalla cómo se edita un README en GitHub web
-- Si realmente no pueden: que documenten SystemPrompts en un Google Doc como backup
-
 ### Si OR#1 produce JSON inválido consistentemente:
 - Agregar al SystemPrompt: "IMPORTANTE: No incluyas ```json ni backticks. Solo el JSON puro."
 - Reducir temperature a 0.1 temporalmente
@@ -279,8 +252,8 @@ Todos ven el email llegar en tiempo real.
 ### Manejo de tiempo:
 - **Parte 1** (diseñar, 10 min): Rápido si eligen escenario predefinido. Si a los 5 min no eligieron, intervén.
 - **Parte 2** (construir, 40 min): Donde más se atoran es en OR#1 (JSON). Tener backup de Make listo.
-- **Parte 3** (documentar, 10 min): Lo más sencillo. Si van cortos de tiempo, priorizar al menos el README.
-- **Buffer real:** 15 min entre los 85 de instrucción y los 100 min de clase.
+- **Parte 3** (verificar, 5 min): Lo más sencillo. Asegurar que copien SystemPrompts para C08.
+- **Buffer real:** Los ~10 min liberados de Parte 3 son buffer extra para Parte 2 (Make).
 
 ---
 
@@ -289,15 +262,16 @@ Todos ven el email llegar en tiempo real.
 Al cerrar, planta la semilla:
 
 ```
-"Próxima clase presentan ESTE agente en vivo.
-Alguien del público abre tu URL de Vercel y envía un mensaje.
-Todos ven el email llegar en tiempo real.
-5 minutos. Problema → Agente → Demo → Aprendizaje."
+"Próxima clase hacemos 3 cosas grandes:
+1. Publican su agente en GitHub — su primer proyecto open-source
+2. Crean un post de LinkedIn con imagen generada por IA
+3. Pitches de 3 minutos — problema + post + demo rápida"
 ```
 
 **Tarea para la próxima clase:**
-1. Pulir SystemPrompts — probar con 3+ mensajes variados
-2. Verificar que URL de Vercel funciona públicamente
-3. Ensayar presentación de 5 min: Problema → Agente → Demo → Aprendizaje
-4. Tener cuenta de LinkedIn abierta
-5. Opcional: agregar más ejemplos e imágenes al README del repo
+1. **Crear cuenta en GitHub** si no tienes (github.com — es gratis)
+2. **SystemPrompts copiados** — tener OR#1 y OR#2 accesibles
+3. Verificar que URL de Vercel funciona públicamente
+4. Tener cuenta de **LinkedIn** abierta
+5. Tener cuenta de **Gemini** (gemini.google.com)
+6. Pulir SystemPrompts — probar con 3+ mensajes variados

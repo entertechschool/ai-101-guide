@@ -6,7 +6,7 @@
 
 En las Clases 05 y 06 construiste un agente que **clasifica** mensajes: la IA leía un input, asignaba una categoría (URGENTE/CONSULTA/VENTA) y un Router enviaba emails etiquetados. Hoy das el siguiente paso: **un agente que genera contenido profesional.**
 
-La diferencia clave: en vez de 1 IA que clasifica, encadenas **2 IAs**. La primera ANALIZA tu input desordenado y extrae estructura (JSON). La segunda GENERA un email HTML profesional a partir de esa estructura. Escribes garabatos → recibes un email profesional en tu correo. Y al final, publicas tu proyecto en GitHub: tu primer repositorio open-source con los SystemPrompts documentados.
+La diferencia clave: en vez de 1 IA que clasifica, encadenas **2 IAs**. La primera ANALIZA tu input desordenado y extrae estructura (JSON). La segunda GENERA un email HTML profesional a partir de esa estructura. Escribes garabatos → recibes un email profesional en tu correo. Al final, tienes un agente deployado en Vercel que cualquiera puede usar.
 
 ---
 
@@ -18,7 +18,7 @@ La diferencia clave: en vez de 1 IA que clasifica, encadenas **2 IAs**. La prime
 | Output: categoría (URGENTE) | Output: email profesional completo |
 | Router decide la ruta | Pipeline transforma los datos |
 | Caso de tutorial (PetShop) | TU caso real (3 escenarios o propio) |
-| Entrega en Google Doc | Entrega en GitHub + Vercel (portfolio real) |
+| Entrega en Google Doc | Deploy público en Vercel (portfolio real) |
 
 > "De clasificar a generar. De tutorial a proyecto publicado."
 
@@ -55,7 +55,7 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 1. **Diseñar tu caso** — Elegir escenario (o proponer el tuyo) + personalizar SystemPrompts con Claude
 2. **Construir tu agente** — Form v0 + Make con 5 módulos (Webhook → OR#1 → Sheets → OR#2 → Gmail)
-3. **Documentar y publicar** — Deploy en Vercel + repo en GitHub con README profesional
+3. **Verificar** — Deploy en Vercel + 2 mensajes de prueba end-to-end
 
 ---
 
@@ -74,7 +74,7 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 1. Diseñar un caso de agente generativo con 2 SystemPrompts encadenados (analizar + generar)
 2. Construir un pipeline de 5 módulos en Make con 2 llamadas a OpenRouter
-3. Publicar tu primer proyecto en GitHub con documentación profesional de SystemPrompts
+3. Deployar tu agente en Vercel como URL pública funcional
 
 ---
 
@@ -83,9 +83,8 @@ Google Sheets      OpenRouter #2 — GENERAR
 ### Obligatorio
 
 1. **Elegir tu escenario** — Revisa la tabla de 3 escenarios y decide cuál te interesa (o prepara tu caso propio)
-2. **Cuenta de GitHub** — Crear en github.com si no tienes una (es gratis)
-3. **API key de OpenRouter** funcionando (la misma de C05-C06)
-4. **Claude abierto** — lo usarás como socio pensante para personalizar SystemPrompts (callback C03)
+2. **API key de OpenRouter** funcionando (la misma de C05-C06)
+3. **Claude abierto** — lo usarás como socio pensante para personalizar SystemPrompts (callback C03)
 
 ### Reflexiona antes de clase
 
@@ -98,9 +97,7 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 - **Encadenamiento de IAs**: Usar el output de una IA como input de otra — la primera analiza, la segunda genera
 - **Pipeline**: Secuencia de pasos donde cada módulo transforma los datos para el siguiente
-- **Repositorio (repo)**: Carpeta en GitHub que contiene el código de tu proyecto + documentación
 - **Deploy**: Publicar tu proyecto en internet para que cualquiera pueda acceder
-- **Open-source**: Código público que otros pueden ver, estudiar y aprender de él
 
 ---
 
@@ -109,5 +106,16 @@ Google Sheets      OpenRouter #2 — GENERAR
 - [ ] 💻 Laptop con Make abierto (crear nuevo escenario)
 - [ ] 🧠 Claude abierto (socio pensante para SystemPrompts)
 - [ ] 🔑 API key de OpenRouter (la misma de C05-C06)
-- [ ] 🐙 Cuenta de GitHub creada
 - [ ] 📧 Gmail configurado en Make (para recibir los emails generados)
+
+---
+
+## Preview C08: Demo Day + GitHub + LinkedIn
+
+> **Tarea para la próxima clase:**
+> 1. Crear cuenta en **GitHub** si no tienes (github.com — es gratis)
+> 2. Tener tus **2 SystemPrompts** (OR#1 + OR#2) copiados y accesibles
+> 3. Verificar que tu **URL de Vercel** funciona públicamente
+> 4. Tener cuenta de **LinkedIn** abierta
+> 5. Tener cuenta de **Gemini** (gemini.google.com)
+> 6. Pulir SystemPrompts — probar con 3+ mensajes variados

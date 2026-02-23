@@ -1,7 +1,7 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # Clase 08: Demo Day + El Futuro
-## Presentar, publicar y planificar
+## Preparar, presentar y publicar
 
 *AI 101 - Entertech School*
 
@@ -17,10 +17,10 @@
 | C04 | Proyecto integrador M1 | Integración |
 | C05 | Cerebro del agente | IA trabaja por ti |
 | C06 | Agente inteligente completo | Branching + logging |
-| C07 | Agente para TU caso real | Transferencia |
-| **C08** | **Presentas + publicas + planificas** | **Compartir** |
+| C07 | Agente generativo para TU caso | Transferencia |
+| **C08** | **GitHub + LinkedIn + Pitch** | **Compartir** |
 
-> De "la IA es un Google mejorado" a **"tengo un agente que funciona para mi trabajo"**.
+> De "la IA es un Google mejorado" a **"tengo un proyecto open-source publicado"**.
 
 ---
 
@@ -30,9 +30,9 @@
 
 **A)** Una lista de todas las herramientas que usaste
 
-**B)** Una historia emocional sobre tu proceso
+**B)** Un repo en GitHub con el código y los SystemPrompts documentados
 
-**C)** Métricas reales + demo de un agente funcionando
+**C)** Métricas reales + demo de un agente funcionando + repo público
 
 **D)** Un texto bien redactado generado con IA
 
@@ -45,11 +45,11 @@
 **Respuesta correcta: C**
 
 - **A:** ❌ Listar herramientas no demuestra competencia — cualquiera puede hacer eso
-- **B:** ⚠️ Las historias conectan, pero sin evidencia son solo anécdotas
-- **C:** ✅ Un agente funcionando + métricas reales > cualquier narrativa
+- **B:** ⚠️ GitHub es clave, pero sin métricas ni demo es solo código
+- **C:** ✅ Agente funcionando + métricas + repo público = evidencia completa
 - **D:** ❌ Si el texto lo generó IA, ¿dónde está TU competencia?
 
-> **Hoy demuestran con evidencia. No con palabras.**
+> **Hoy construyen la evidencia completa: repo + post + pitch.**
 
 ---
 
@@ -57,7 +57,7 @@
 
 ### 8 preguntas — 15 minutos
 
-- Cubre conceptos de C05 a C08
+- Cubre conceptos de C05 a C07
 - No afecta calificación
 - **Es un espejo, no un examen**
 
@@ -65,27 +65,68 @@
 
 ---
 
-## Formato de Presentación
+## 🐙 GitHub: Tu Primer Proyecto Open-Source
 
-### 5 minutos por persona — DEMO EN VIVO
+### Vercel → GitHub → README
+
+```
+1. Abre vercel.com → Settings → Git
+2. "Connect to GitHub" → autoriza
+3. Vercel crea repo automáticamente
+4. Editas README en GitHub web
+5. Documentas tus SystemPrompts
+```
+
+### ¿Por qué importa?
+
+- **URL pública:** cualquiera puede usar tu agente
+- **Repo en GitHub:** tu primer proyecto open-source
+- **README con SystemPrompts:** documenta el "cerebro" de tu agente
+- **Portfolio real:** lo muestras en LinkedIn hoy mismo
+
+> "No es tarea. Es tu primer proyecto publicado."
+
+---
+
+## ✍️ LinkedIn: Post + Imagen con IA
+
+### Draft con Claude:
+
+```
+Hook (1 línea que capture atención)
+Qué construí (2-3 líneas)
+URLs: Vercel + GitHub
+Resultado: métrica real
+Takeaway: 1 línea de aprendizaje
+```
+
+### Imagen con Gemini:
+
+Logos de tu stack (en `assets/`) + prompt descriptivo → imagen de portada profesional
+
+### Peer review:
+
+Intercambia con un compañero → feedback específico → ajusta
+
+---
+
+## 🎤 Formato de Pitch
+
+### 3 minutos por persona
 
 ```
 ┌─────────────────────────────────────────────┐
-│  1. MI PROBLEMA (30 seg)                     │
-│     "En mi trabajo, X me costaba Y"          │
+│  1. PROBLEMA + POST (2 min)                  │
+│     Proyecta tu post de LinkedIn             │
+│     Explica el problema que resuelve         │
 ├─────────────────────────────────────────────┤
-│  2. MI AGENTE (2 min)                        │
-│     Mostrar Make + explicar categorías       │
-├─────────────────────────────────────────────┤
-│  3. DEMO EN VIVO (1.5 min)                   │
+│  2. DEMO RÁPIDA (1 min)                      │
 │     Alguien del público envía un mensaje     │
-│     → clasificación en tiempo real           │
-├─────────────────────────────────────────────┤
-│  4. LO QUE APRENDÍ (1 min)                  │
-│     1 error + cómo lo corregí                │
-│     1 limitación honesta                     │
+│     → todos ven el resultado                 │
 └─────────────────────────────────────────────┘
 ```
+
+> 💡 Tu post de LinkedIn ES tu presentación. No necesitas slides extra.
 
 ---
 
@@ -95,10 +136,24 @@
 
 1. **Problema primero** — Si no entiendo qué resuelve, no me importa cómo funciona
 2. **Demo > explicación** — Mostrar el agente funcionando vale más que explicar módulos
-3. **Métricas > anécdotas** — "Clasifiqué 45 mensajes" > "Me siento más productivo"
+3. **Métricas > anécdotas** — "Procesé 10 notas de reunión" > "Me siento más productivo"
 4. **Honestidad > perfección** — Mostrar un error que corregiste impresiona más que fingir que todo funcionó
 
-> 💡 Si tu agente falla en vivo: **muestra Make History con un run exitoso.** Errores en demo son normales — cómo los manejas demuestra competencia.
+> 💡 Si tu agente falla en vivo: **muestra Make History con un run exitoso.** Errores en demo son normales.
+
+---
+
+## Lab Time
+
+### 5 bloques — 150 min total
+
+| Bloque | Tiempo | Qué haces |
+|--------|--------|-----------|
+| **Apertura** | ~30 min | PD + Test M2 + Retrospectiva C01→C07 |
+| **1. GitHub** | 25 min | Conectar Vercel → GitHub + README con SystemPrompts |
+| **2. LinkedIn** | 30 min | Draft con Claude + imagen con Gemini + peer review |
+| **3. Pitches** | 30 min | Pitch 3 min c/u + "3...2...1...PUBLICAR!" |
+| **4. Cierre** | 30 min | Roadmap 30 días + anti-hype + cierre emocional |
 
 ---
 
@@ -114,61 +169,14 @@
 
 ---
 
-## Lab: Test + Pulir + Peer Review
-
-### Parte 0: Test (15 min)
-- Google Forms, individual
-
-### Parte 1: Pulir + Peer Review (15 min)
-- 2 mensajes más para verificar
-- Intercambiar forms con un compañero
-- Feedback en 1 oración
-
----
-
-## Lab: Presentaciones
-
-### Formato: 5 min + 2 min feedback
-
-**Feedback de pares:**
-- 1 fortaleza: "Me convenció cuando..."
-- 1 sugerencia: "Sería más fuerte si..."
-
-**Criterios:**
-| | Pregunta |
-|---|----------|
-| Problema claro | ¿Se entiende qué resuelve? |
-| Agente funciona | ¿Clasificó en vivo? |
-| Categorías reales | ¿Caso genuino? |
-| Aprendizaje honesto | ¿Documentó limitaciones? |
-
----
-
-## LinkedIn: "3... 2... 1... PUBLICAR!"
-
-### Template:
-
-```
-[HOOK: 1 línea que capture atención]
-[QUÉ CONSTRUÍ: 2-3 líneas]
-[RESULTADO: métrica real]
-[TAKEAWAY: 1 línea de aprendizaje]
-```
-
-### Momento accountability:
-
-> Todos publican juntos. En vivo. Ahora.
-
----
-
 ## Roadmap 30 Días
 
 ### Template con Claude:
 
 | Semana | Foco |
 |--------|------|
-| **1** | Mejorar precisión del agente actual |
-| **2** | Expandir categorías o casos edge |
+| **1** | Mejorar calidad del agente actual |
+| **2** | Expandir a más casos o inputs |
 | **3** | Aplicar patrón a otro proceso |
 | **4** | Medir impacto real + documentar |
 
@@ -200,6 +208,7 @@ AI 301: Escala con IA (10 sem)         ← Producto profesional
 
 ### Hoy:
 > Tienen un agente que funciona para SU trabajo.
+> Un proyecto open-source en GitHub.
 > Evidencia publicada en LinkedIn.
 > Un plan para seguir creciendo.
 

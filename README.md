@@ -83,14 +83,15 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 |---|-------|-----------|------------|
 | 5 | [Tu Primer Agente IA](curriculum/class-05/) | Agente vs automatización, Form v0 → Webhook → OpenRouter, construir cerebro del agente | Form v0 + agente en Make (parcial) |
 | 6 | [Tu Agente Inteligente](curriculum/class-06/) | Completar agente (Gmail + Router + Sheets), branching condicional, battle de agentes | Agente completo + Google Sheets log |
-| 7 | [Mi Agente Real](curriculum/class-07/) | Agente generativo desde 0 (2 IAs encadenadas), 3 escenarios, deploy en Vercel + GitHub | Agente en Vercel + repo GitHub con SystemPrompts |
-| 8 | [Demo Day + El Futuro](curriculum/class-08/) | Presentar agente en vivo, publicar en LinkedIn, plan 30 días, test M2 | Presentación live + LinkedIn + plan desarrollo |
+| 7 | [Mi Agente Real](curriculum/class-07/) | Agente generativo desde 0 (2 IAs encadenadas), 3 escenarios, deploy en Vercel | Agente en Vercel (2 IAs encadenadas) |
+| 8 | [Demo Day + El Futuro](curriculum/class-08/) | GitHub open-source, LinkedIn + imagen con Gemini, pitches 3 min, plan 30 días, test M2 | Repo GitHub + LinkedIn post + presentación |
 
 ### Salida del Módulo 2
 
 - ✅ 1 agente IA completo con branching y logging (Make)
 - ✅ 1 agente generativo para tu caso real (2 IAs encadenadas + deploy público)
-- ✅ **LinkedIn post publicado** con caso de éxito (métricas reales)
+- ✅ **Repo GitHub** con SystemPrompts documentados (primer proyecto open-source)
+- ✅ **LinkedIn post publicado** con caso de éxito + imagen generada + URLs
 - ✅ Plan de 30 días con 3 próximos quick-wins identificados
 
 ---
@@ -109,14 +110,15 @@ Proyecto construido clase a clase durante 4 semanas.
 | 4 | Proyecto integrador M1 (research + sistema + Gem) |
 | 5 | Form v0 + agente parcial (cerebro) |
 | 6 | 1 agente inteligente con Router + Sheets |
-| 7 | Agente real funcionando para tu caso de trabajo |
-| 8 | Presentación live + LinkedIn post + plan 30 días |
+| 7 | Agente real funcionando para tu caso de trabajo (Vercel) |
+| 8 | Repo GitHub + LinkedIn post con imagen + presentación + plan 30 días |
 
 ### Entregables Finales
 
-- Agente real funcionando para tu caso de trabajo
-- Caso de éxito publicado en LinkedIn
-- Presentación live de 5 minutos (demo en vivo)
+- Agente real funcionando para tu caso de trabajo (URL pública en Vercel)
+- Repo GitHub con SystemPrompts documentados (proyecto open-source)
+- Caso de éxito publicado en LinkedIn con imagen generada por IA
+- Pitch de 3 minutos con demo en vivo
 - Plan de desarrollo personal de 30 días
 
 ---
@@ -130,6 +132,7 @@ Proyecto construido clase a clase durante 4 semanas.
 | **Gemini** | Deep Research, Gems personalizados | Clase 4 |
 | **Make/n8n** | Agentes y automatización | Clase 5 |
 | **Google Sheets** | Logging de agente (en Make) | Clase 6 |
+| **GitHub** | Repositorio open-source, documentación de SystemPrompts | Clase 8 |
 | **LinkedIn** | Publicación de caso de éxito | Clase 8 |
 
 ---

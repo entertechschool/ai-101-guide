@@ -48,8 +48,6 @@ El facilitador muestra su agente EN VIVO:
 4. Muestra en Make cómo pasa por 5 módulos
 5. Abre su correo → email profesional con formato HTML
 
-Y después: muestra su **repo en GitHub** con los SystemPrompts documentados.
-
 > "Esto es lo que van a construir hoy. Desde cero."
 
 ---
@@ -126,28 +124,6 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 ---
 
-## 🚀 Tu primer proyecto open-source
-
-### v0 → Vercel → GitHub
-
-```
-1. Creas form en v0          → Tienes código
-2. Deploy en Vercel           → Tienes URL pública
-3. Connect to GitHub          → Tienes repositorio
-4. Editas README en GitHub    → Documentas tus SystemPrompts
-```
-
-### ¿Por qué importa?
-
-- **URL pública:** cualquiera puede usar tu agente
-- **Repo en GitHub:** tu primer proyecto open-source
-- **README con SystemPrompts:** documenta el "cerebro" de tu agente
-- **Portfolio real:** lo muestras en C08 y LinkedIn
-
-> "No es tarea. Es tu primer proyecto publicado."
-
----
-
 ## Lab Time
 
 ### Mi Agente Real — 60 min
@@ -155,8 +131,8 @@ Google Sheets      OpenRouter #2 — GENERAR
 | Parte | Tiempo | Qué haces |
 |-------|--------|-----------|
 | **1. Diseñar** | 10 min | Elegir escenario + revisar/personalizar SystemPrompts con Claude |
-| **2. Construir** | 40 min | Form v0 + Make (5 módulos) + deploy Vercel + GitHub |
-| **3. Documentar** | 10 min | README con SystemPrompts + test final + verificar |
+| **2. Construir** | 45 min | Form v0 + Make (5 módulos) + deploy Vercel |
+| **3. Verificar** | 5 min | 2 mensajes de prueba + verificar email + Sheets |
 
 > 💡 Tu experiencia de C02 + C03 + C05 + C06 = todo lo que necesitas.
 
@@ -172,10 +148,8 @@ Google Sheets      OpenRouter #2 — GENERAR
 - [ ] Form v0 creado y deployado en Vercel
 - [ ] Make: 5 módulos conectados (Webhook → OR#1 → Sheets → OR#2 → Gmail)
 - [ ] Email llega con formato HTML
-- [ ] Repo en GitHub creado
 
-### Parte 3 — Documentar:
-- [ ] README del repo con SystemPrompts documentados
+### Parte 3 — Verificar:
 - [ ] 2 mensajes enviados desde URL de Vercel
 - [ ] Sheets con al menos 2 registros
 
@@ -185,16 +159,18 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 ### Tu entregable:
 1. URL de Vercel (form público)
-2. URL de GitHub (repo con README + SystemPrompts)
-3. Screenshot de Make (5 módulos)
-4. Screenshot de Sheets (2+ registros)
-5. Screenshot del email recibido
+2. Screenshot de Make (5 módulos)
+3. Screenshot de Sheets (2+ registros)
+4. Screenshot del email recibido
+5. SystemPrompts copiados (OR#1 + OR#2)
 
-### Próxima clase: Demo Day
+### Próxima clase: Demo Day + GitHub + LinkedIn
 
-> **Presentas TU agente EN VIVO.**
-> Alguien del público abre tu URL de Vercel y envía un mensaje.
-> Todos ven el email llegar en tiempo real.
+> **Publicas tu primer proyecto open-source.**
+> Conectas Vercel → GitHub, documentas SystemPrompts.
+> Pitches de 3 min + post en LinkedIn con imagen generada.
+
+**Tarea:** Crear cuenta GitHub + tener SystemPrompts accesibles + cuenta Gemini
 
 ---
 
@@ -203,8 +179,8 @@ Google Sheets      OpenRouter #2 — GENERAR
 ### Hoy aprendiste:
 - A encadenar 2 IAs: una que analiza, otra que genera
 - Que el mismo input puede producir outputs muy diferentes según el SystemPrompt
-- A publicar tu primer proyecto en GitHub con documentación profesional
+- A deployar un agente público en Vercel que cualquiera puede usar
 - Que el "cerebro" del agente son los SystemPrompts — y documentarlos es tan importante como construirlos
 
 ### La pregunta:
-> "Tienes una URL pública, un repo en GitHub, y un agente que transforma caos en contenido profesional. ¿Qué otro proceso de tu trabajo podrías automatizar con este mismo patrón?"
+> "Tienes una URL pública y un agente que transforma caos en contenido profesional. ¿Qué otro proceso de tu trabajo podrías automatizar con este mismo patrón?"

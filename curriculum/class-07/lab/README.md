@@ -40,7 +40,6 @@ Google Sheets      OpenRouter #2 — GENERAR
 | ✅ | Requisito |
 |----|-----------|
 | | Escenario elegido (ver siguiente sección) |
-| | Cuenta de GitHub (crear en github.com si no tienes) |
 | | API key de OpenRouter funcionando (la misma de C05-C06) |
 | | Claude abierto para personalizar SystemPrompts |
 
@@ -227,84 +226,39 @@ Verifica que el form envía los datos como JSON al hacer submit (revisa el bloqu
 4. Envía 1 mensaje de prueba desde el form
 5. Verifica: email llega a tu correo + fila aparece en Sheets
 
-### 2.8 Deploy: v0 → Vercel → GitHub (5 min)
-
-1. En v0, click **"Deploy"** → tu form ya está en una URL de Vercel
-2. Desde la UI de Vercel (vercel.com), busca tu proyecto
-3. Click **"Connect to GitHub"** → autoriza → Vercel crea un repo automáticamente
-4. Verifica: tienes un repositorio en GitHub con el código de tu form
-
-> 💡 **No necesitas terminal ni CLI.** Todo se hace desde la interfaz web de v0/Vercel/GitHub.
-
-> ✅ **Checkpoint Parte 2:** Form live en Vercel + repo en GitHub + email llega + Sheets registra
+> ✅ **Checkpoint Parte 2:** Form live en Vercel + email llega + Sheets registra
 
 ---
 
-## Parte 3: Documentar (10 min)
+## Parte 3: Verificar (5 min)
 
-### 3.1 Editar README del repo en GitHub web (5 min)
-
-Desde github.com, abre tu repo → click en el archivo `README.md` → click el ícono de lápiz (editar).
-
-Reemplaza el contenido con esta estructura:
-
-```markdown
-# [Nombre de tu proyecto]
-
-## Qué hace
-[1-2 oraciones describiendo qué problema resuelve tu agente]
-
-## Arquitectura
-Form (Vercel) → Webhook (Make) → OpenRouter #1 (analizar) → Sheets (log) → OpenRouter #2 (generar) → Gmail
-
-## SystemPrompt #1 — Analizar
-[Pega tu SystemPrompt completo de OR#1]
-
-## SystemPrompt #2 — Generar
-[Pega tu SystemPrompt completo de OR#2]
-
-## Ejemplo
-**Input:** [Un ejemplo real de lo que escribes en el form]
-**Output:** [Resumen de lo que llega al email]
-
-## Herramientas
-- v0 + Vercel (form + hosting)
-- Make (orquestación)
-- OpenRouter + Gemini Flash (IA)
-- Google Sheets (logging)
-- Gmail (envío)
-```
-
-Commit desde el navegador (botón "Commit changes").
-
-### 3.2 Enviar 2 mensajes finales desde URL de Vercel (3 min)
+### 3.1 Enviar 2 mensajes desde URL de Vercel (3 min)
 
 1. Abre tu URL de Vercel (la URL pública de tu form)
 2. Envía 2 mensajes diferentes — usa casos reales de tu trabajo
 3. Verifica que ambos emails llegan y Sheets registra ambos
 
-### 3.3 Verificar todo end-to-end (2 min)
+### 3.2 Verificar todo end-to-end (2 min)
 
 | ✅ | Verificación |
 |----|-------------|
 | | Email llega con formato HTML profesional |
 | | Google Sheets tiene al menos 2 registros |
-| | Repo en GitHub tiene README con SystemPrompts |
 | | URL de Vercel funciona públicamente |
 
-> ✅ **Checkpoint Parte 3:** Repo con README profesional + agente funcionando end-to-end
+> ✅ **Checkpoint Parte 3:** Agente funcionando end-to-end con 2 mensajes probados
 
 ---
 
 ## Entregable
 
 1. **URL de Vercel** — form funcionando públicamente
-2. **URL de GitHub** — repo con README que documenta SystemPrompts (OR#1 + OR#2)
-3. **Screenshot de Make** — escenario con 5 módulos visibles
-4. **Screenshot de Google Sheets** — con al menos 2 registros
-5. **Screenshot del email recibido** — output generado por el agente
+2. **Screenshot de Make** — escenario con 5 módulos visibles
+3. **Screenshot de Google Sheets** — con al menos 2 registros
+4. **Screenshot del email recibido** — output generado por el agente
+5. **SystemPrompts copiados** — OR#1 + OR#2 accesibles (para usar en C08)
 
-**Formato:** Links directos (Vercel + GitHub) + screenshots en Google Doc o directamente en el repo
+**Formato:** Link directo (Vercel) + screenshots en Google Doc
 
 ---
 

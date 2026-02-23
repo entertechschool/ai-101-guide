@@ -4,7 +4,7 @@
 
 ## Resumen
 
-Culminación de 4 semanas. Esta clase tiene 3 actos: **PRESENTAR, PUBLICAR, PLANIFICAR.** Tu agente de C07 es la estrella — lo demuestras en vivo, no con slides. Alguien del público abre tu URL de Vercel, envía un mensaje y todos ven el email profesional generado en tiempo real.
+Culminación de 4 semanas. Esta clase tiene 3 actos: **PREPARAR, PRESENTAR, PUBLICAR.** Primero completas tu portfolio: conectas Vercel con GitHub para crear tu primer proyecto open-source y documentas tus SystemPrompts en un README profesional. Luego preparas un post de LinkedIn con Claude + una imagen de portada generada con Gemini. Y al final, pitches de 3 minutos donde presentas tu post + demo rápida en vivo.
 
 Construir es la mitad. Comunicar lo que construiste es la otra mitad. Hoy cierras el ciclo: evidencia real de competencia IA, publicada profesionalmente, con un plan para seguir creciendo.
 
@@ -23,7 +23,7 @@ Construir es la mitad. Comunicar lo que construiste es la otra mitad. Hoy cierra
 | C05 | Construiste el cerebro de un agente | IA trabaja por ti |
 | C06 | Completaste un agente inteligente | Branching + logging |
 | C07 | Construiste agente generativo para TU caso | Aplicación real |
-| **C08** | **Presentas, publicas y planificas** | **Compartir** |
+| **C08** | **GitHub + LinkedIn + Pitch** | **Compartir** |
 
 > "Construir es la mitad. Comunicar lo que construiste es la otra mitad."
 
@@ -43,17 +43,19 @@ AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
 
 ## ¿Qué haremos en clase?
 
-1. **Test + Pulir agente** — Test diagnóstico M2 (no afecta calificación) + últimos ajustes con peer review
-2. **Presentar agente EN VIVO** (5 min c/u) — Alguien del público envía mensaje a tu agente
-3. **Publicar en LinkedIn + Plan 30 días** — Accountability grupal + 3 quick-wins con Claude
+1. **Test + Retrospectiva** — Test diagnóstico M2 + recorrido emocional C01→C07
+2. **GitHub** — Conectar Vercel → GitHub + README con SystemPrompts = primer proyecto open-source
+3. **LinkedIn + Imagen** — Draft de post con Claude + imagen de portada con Gemini + peer review
+4. **Pitches + Publicar** — Pitch 3 min (problema + post + demo rápida) + "3...2...1...PUBLICAR!"
+5. **Cierre** — Roadmap 30 días con Claude + anti-hype + cierre emocional
 
 ---
 
 ## Objetivos de aprendizaje
 
-1. Presentar tu agente profesionalmente con demo en vivo
-2. Publicar tu caso en LinkedIn con métrica real
-3. Crear un plan de desarrollo de 30 días con 3 quick-wins concretos
+1. Publicar tu primer proyecto open-source en GitHub con SystemPrompts documentados
+2. Crear y publicar un post de LinkedIn profesional con imagen generada por IA
+3. Presentar tu caso en un pitch de 3 minutos con demo en vivo
 
 ---
 
@@ -62,32 +64,34 @@ AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
 ### Obligatorio
 
 1. **Agente de C07 FUNCIONANDO** — URL de Vercel activa + escenario Make encendido + email llegando
-2. **5 mensajes de prueba listos** para que el público los envíe desde tu formulario (URL de Vercel)
-3. **Cuenta de LinkedIn** abierta y lista para publicar
-4. **Ensayar presentación de 5 min:**
-   - Problema (30 seg) → Agente (2 min) → Demo (1.5 min) → Aprendizaje (1 min)
+2. **Cuenta de GitHub** creada (github.com — es gratis)
+3. **SystemPrompts copiados** — OR#1 y OR#2 accesibles (en un doc, nota o clipboard)
+4. **Cuenta de LinkedIn** abierta y lista para publicar
+5. **Cuenta de Gemini** (gemini.google.com)
 
 ### Reflexiona antes de clase
 
 - ¿Cuál fue tu antes/después más impactante del curso?
 - ¿Qué limitación encontraste que te hizo aprender más?
-- ¿Qué 3 cosas harías diferente si empezaras de nuevo?
+- Si alguien te pide detalles sobre tu agente en LinkedIn, ¿qué lo haría creíble?
 
 ---
 
 ## Glosario de nuevos términos
 
-- **Demo Day**: Sesión de presentaciones donde cada estudiante muestra su agente funcionando en vivo
-- **Feedback de pares**: Evaluación entre compañeros — 1 fortaleza + 1 sugerencia
-- **Quick-win**: Acción específica de alto impacto y baja dificultad para ejecutar esta semana
-- **Roadmap**: Plan con hitos claros para los próximos 30 días
-- **Accountability**: Compromiso público que te motiva a cumplir (publicar juntos en LinkedIn)
+- **Open-source**: Código público que otros pueden ver, estudiar y aprender de él
+- **Repositorio (repo)**: Carpeta en GitHub que contiene el código de tu proyecto + documentación
+- **README**: Archivo que documenta qué hace tu proyecto, cómo funciona y qué herramientas usa
+- **Pitch**: Presentación breve y enfocada — problema + solución + evidencia
+- **NanoBanana**: Estilo de generación de imágenes en Gemini para crear portadas profesionales
 
 ---
 
 ## Herramientas necesarias
 
 - [ ] 💻 Laptop con Make abierto (agente C07 funcionando)
+- [ ] 🐙 Cuenta de GitHub creada
+- [ ] 📝 SystemPrompts (OR#1 + OR#2) copiados
 - [ ] 📱 LinkedIn abierta y lista para publicar
-- [ ] 📝 5 mensajes de prueba para tu agente
-- [ ] 🧠 Presentación ensayada (5 min)
+- [ ] 🎨 Gemini abierto (para generar imagen de portada)
+- [ ] 🧠 Claude abierto (para draft de LinkedIn post)
