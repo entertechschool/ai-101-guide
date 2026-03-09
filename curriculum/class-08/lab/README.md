@@ -244,6 +244,18 @@ Dame 3 quick-wins que pueda hacer ESTA SEMANA.
 
 ---
 
+## Criterios de Evaluación
+
+| Criterio | Peso | Qué se evalúa |
+|----------|------|---------------|
+| **Repo GitHub** | 20% | ¿Es público, tiene README con SystemPrompts documentados y URL de demo? |
+| **Post LinkedIn** | 20% | ¿Tiene hook, descripción, URLs, métrica real y aprendizaje honesto? |
+| **Pitch** | 20% | ¿Explicó problema + demo en 3 min? ¿El agente funcionó en vivo? |
+| **Imagen generada** | 20% | ¿Usó Gemini para crear imagen de portada? ¿Iteró al menos 1 vez? |
+| **Plan 30 días** | 20% | ¿Tiene roadmap semanal + 3 quick-wins concretos? |
+
+---
+
 ## Bonus (opcional)
 
 - Agrega un badge de "Built with AI" al README de GitHub
