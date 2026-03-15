@@ -1,4 +1,4 @@
-# Rúbrica de Evaluación - Lab 04: Proyecto Integrador M1
+# Rúbrica de Evaluación - Lab 04: Investigación y análisis asistidos por IA
 
 **Puntaje Total:** 100 puntos
 **Distribución:** 5 criterios (pesos según importancia)

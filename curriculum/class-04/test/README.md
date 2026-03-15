@@ -1,4 +1,4 @@
-# Test Módulo 1: Fundamentos + Primeros Superpoderes
+# Test Módulo 1: Fundamentos y Primeras Aplicaciones
 
 **Duración:** 15 min | **Preguntas:** 8 | **Formato:** Opción múltiple
 
@@ -10,10 +10,10 @@
 
 Este test verifica tu comprensión de los conceptos de las Clases 01 a 04:
 
-- **Clase 01:** Mindset IA, diferencia entre prompts y sistemas, niveles de dominio
+- **Clase 01:** Panorama actual de la IA, comparación Claude vs ChatGPT, niveles de dominio
 - **Clase 02:** Framework RICE, técnica Few-shot, limitaciones de la IA
-- **Clase 03:** IA como socio pensante, Claude Projects, brainstorming guiado
-- **Clase 04:** Integración de habilidades, research con fuentes, Gems de Gemini
+- **Clase 03:** Producción de contenido profesional, Claude Projects, criterio editorial
+- **Clase 04:** Investigación y análisis asistidos por IA, Perplexity, Gems de Gemini
 
 ---
 

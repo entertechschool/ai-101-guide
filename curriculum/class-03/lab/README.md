@@ -1,125 +1,47 @@
-# Lab 03: Mi Sistema Clarificador de Ideas
+# Lab 03: Producción de contenido profesional con IA
 
-Construirás un Claude Project que funciona como tu "socio pensante" — un sistema que te hace preguntas para extraer y estructurar tu conocimiento. Al terminar, tendrás un framework documentado que captura algo que sabías pero nunca habías formalizado.
+Configurarás un Claude Project como tu "socio pensante", extraerás un framework de tu expertise, y lo aplicarás para producir una pieza de contenido profesional real. El resultado será contenido TUYO — tu conocimiento estructurado, no texto genérico de IA.
 
-> ⏱️ **Tiempo total:** 70 minutos
+> ⏱️ **Tiempo total:** 60 minutos
 
-### 🎯 Objetivo
+### 🎯 Objetivos
 
-Crear un Claude Project con instrucciones de clarificador de ideas, y usarlo para extraer UN framework o proceso de tu propia expertise.
-
----
-
-## El Cambio de Paradigma
-
-| Clases 01-02 | Clase 03 |
-|--------------|----------|
-| Tú escribes prompt → IA responde | IA pregunta → Tú respondes |
-| Output = contenido genérico de IA | Output = TU conocimiento estructurado |
-| Prompt único | Sistema reusable (Project) |
+1. Configurar un Claude Project con instrucciones de socio pensante
+2. Extraer un framework personal a través de brainstorming guiado
+3. Producir 1 pieza de contenido profesional aplicando criterio editorial
 
 ---
 
-## Antes de Empezar
+## 🔑 Conceptos Clave
 
-| Requisito | Verificación |
-|-----------|--------------|
-| Claude abierto | Cuenta activa con acceso a Projects |
-| Perplexity abierto | Para mini-research |
-| Conocimiento identificado | Algo que sabes y quieres documentar |
-| Google Doc | Para capturar tu framework final |
+- **Socio pensante** — La IA pregunta para extraer tu conocimiento, no para generar contenido
+- **Claude Project** — Espacio con instrucciones persistentes que definen comportamiento
+- **Criterio editorial** — Evaluar y refinar contenido generado con IA antes de usarlo
+
+---
+
+## ⚙️ Setup Inicial
+
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Claude abierto | Cuenta activa con acceso a Projects |
+| ☐ | Conocimiento identificado | Algo que sabes y quieres documentar |
+| ☐ | Idea de contenido | Qué pieza profesional quieres producir |
+| ☐ | Google Doc | Para capturar framework y contenido final |
 
 **Nota:** Claude Projects está disponible en todas las cuentas (gratuitas y Pro).
 
 ---
 
-## Parte 1: Identifica Tu Conocimiento Oculto (10 min)
+## Parte 1: Configura Tu Claude Project (15 min)
 
-Antes de configurar el sistema, necesitas elegir QUÉ vas a clarificar.
+### 1.1 Crear el Project y configurar instrucciones
 
-### 1.1 Ejemplos de conocimiento clarificable
-
-| Tipo | Ejemplo | Output esperado |
-|------|---------|-----------------|
-| **Proceso de evaluación** | "Cómo evalúo si un candidato es bueno" | Guía de entrevista con 5-7 criterios |
-| **Criterios de decisión** | "Cómo priorizo qué proyectos hacer" | Matriz de priorización |
-| **Proceso operativo** | "Cómo hago onboarding de clientes" | Checklist de 10-15 pasos |
-| **Evaluación de riesgo** | "Cómo detecto si un proveedor va a fallar" | Lista de red flags y green flags |
-| **Metodología propia** | "Cómo escribo propuestas que ganan" | Template con secciones clave |
-
-### 1.2 Elige TU tema
-
-Escribe en tu Google Doc:
-
-```
-CONOCIMIENTO A CLARIFICAR:
-_________________________________
-
-¿Por qué lo elegí?
-- Lo hago bien: ___
-- Me lo preguntan frecuentemente: ___
-- Nunca lo he documentado formalmente: ___
-```
-
-### 1.3 Verifica que es clarificable
-
-Tu tema debe cumplir:
-- [ ] Es algo que TÚ sabes (no que quieres aprender)
-- [ ] Tiene pasos o criterios (aunque no los tengas escritos)
-- [ ] Alguien más podría beneficiarse de saberlo
-
-✅ **Checkpoint:** Tienes UN tema específico para clarificar.
-
----
-
-## Parte 1.5: Mini-Research con Perplexity (10 min)
-
-Antes de configurar tu clarificador, investiga contexto sobre tu tema.
-
-### 1.5.1 Abre Perplexity
-
-1. Ve a [perplexity.ai](https://perplexity.ai)
-2. Inicia sesión con tu cuenta
-
-### 1.5.2 Investiga mejores prácticas
-
-Busca: "mejores prácticas [TU TEMA] [TU INDUSTRIA]"
-
-**Ejemplo:** "mejores prácticas evaluación de proveedores software"
-
-### 1.5.3 Guarda 2-3 insights
-
-En tu Google Doc, anota:
-
-```
-MINI-RESEARCH:
-- Insight 1: ___
-- Insight 2: ___
-- Fuente: [URL]
-```
-
-> 💡 Este mini-research te dará contexto para responder mejor
-> las preguntas del clarificador.
-
-✅ **Checkpoint:** Tienes 2-3 insights documentados.
-
----
-
-## Parte 2: Configura Tu Claude Project (15 min)
-
-Ahora crearás el sistema clarificador como un Claude Project.
-
-### 2.1 Crear el Project
-
-1. Ve a [claude.ai](https://claude.ai)
+1. Ve a [claude.ai](https://claude.ai){:target="_blank"}
 2. En el sidebar izquierdo, haz clic en **"Projects"**
 3. Clic en **"+ Create Project"**
-4. Nombre: `Mi Clarificador de Ideas`
-5. Descripción: `Sistema para extraer y estructurar mi conocimiento`
-
-### 2.2 Configurar las instrucciones del Project
-
-En la sección **"Custom Instructions"** del Project, pega esto:
+4. Nombre: `Mi Socio Pensante`
+5. En **"Custom Instructions"**, pega estas instrucciones:
 
 ```
 Eres mi socio pensante — un experto en extraer y estructurar conocimiento tácito.
@@ -141,165 +63,136 @@ CÓMO DEBES TRABAJAR:
 - Muéstrame el borrador y pregunta qué falta
 - Itera basándote en mis correcciones
 
-3. FASE DE VALIDACIÓN (al final)
-- Presenta el framework completo
-- Pregunta: "¿Esto captura lo que realmente haces?"
-- Ajusta según mi feedback
+3. FASE DE PRODUCCIÓN (cuando el framework esté validado)
+- Usa el framework para producir contenido profesional
+- Mantén MI voz y estilo, no uses lenguaje genérico
+- Presenta borradores para que aplique mi criterio editorial
 
-REGLAS IMPORTANTES:
+REGLAS:
 - Nunca asumas que sabes las respuestas — PREGUNTA
 - Si digo "depende", pregunta: "¿De qué depende específicamente?"
-- Busca los criterios ocultos detrás de mis "intuiciones"
 - El resultado debe ser algo que yo pueda usar y compartir
-
-FORMATO DE OUTPUT FINAL:
-Al terminar, entrega un documento estructurado con:
-- Título descriptivo
-- Contexto/cuándo usar esto
-- Pasos, criterios o framework principal
-- Notas o excepciones importantes
 ```
 
-### 2.3 Guardar el Project
+### 1.2 Verifica que funciona
 
-Haz clic en **"Save"** o **"Create Project"**.
+Abre una conversación en tu Project y escribe: "¿Cómo vas a ayudarme hoy?"
+La IA debería explicar las 3 fases, NO empezar a generar contenido.
 
-✅ **Checkpoint:** Tienes un Claude Project configurado con instrucciones de clarificador.
+✅ **Checkpoint:** Tu Claude Project está configurado y responde según las instrucciones.
 
 ---
 
-## Parte 3: Extrae Tu Framework (25 min)
+## Parte 2: Extrae Tu Framework Personal (20 min)
 
-Ahora viene la magia. Vas a conversar con tu socio pensante.
+### 2.1 Elige qué documentar
 
-### 3.1 Inicia la conversación
+| Tipo | Ejemplo | Output esperado |
+|------|---------|-----------------|
+| **Proceso de evaluación** | "Cómo evalúo candidatos" | Guía con 5-7 criterios |
+| **Criterios de decisión** | "Cómo priorizo proyectos" | Matriz de priorización |
+| **Metodología propia** | "Cómo escribo propuestas ganadoras" | Template con secciones clave |
+| **Proceso operativo** | "Cómo hago onboarding de clientes" | Checklist de pasos |
 
-Abre una nueva conversación dentro de tu Project y escribe:
+### 2.2 Inicia el brainstorming guiado
+
+En tu Project, escribe:
 
 ```
 Quiero documentar mi proceso de [TU TEMA].
-
 Es algo que hago bien pero nunca he formalizado.
 Ayúdame a extraer los pasos/criterios que realmente uso.
 ```
 
-### 3.2 Responde las preguntas con honestidad
+Responde las preguntas con honestidad. Si dices "depende", la IA te pedirá que especifiques.
 
-La IA te hará preguntas como:
-- "¿Cuál es el primer paso que haces cuando...?"
-- "¿Qué señales buscas para saber si...?"
-- "¿Cuándo decides que algo es suficiente vs insuficiente?"
-- "¿Qué errores has visto que otros cometen?"
-
-**Tips para responder:**
-- Sé específico, no genérico
-- Si dices "depende", explica de qué
-- Menciona ejemplos reales (anonimizados si es necesario)
-- Si algo "lo sientes", intenta describir qué observas
-
-### 3.3 Guía la estructuración
+### 2.3 Valida tu framework
 
 Cuando la IA proponga una estructura, evalúa:
-- ¿Captura lo que realmente hago?
+- ¿Captura lo que REALMENTE hago, no una versión idealizada?
 - ¿Falta algo importante?
-- ¿Hay algo que sobra o confunde?
-
-Dile directamente:
-- "Falta el paso de..."
-- "Esto no lo hago así, más bien..."
-- "Agregaría una excepción para cuando..."
-
-### 3.4 Valida el framework final
-
-Cuando tengas el borrador completo, pregúntate:
 - ¿Podría alguien más seguir esto y obtener resultados similares?
-- ¿Me sentiría cómodo compartiendo esto con mi equipo?
-- ¿Captura mi forma real de trabajar, no una versión idealizada?
 
-✅ **Checkpoint:** Tienes un framework documentado basado en TU expertise.
+Copia el framework validado a tu Google Doc.
 
----
-
-## Parte 4: Reflexión y Documentación (10 min)
-
-### 4.1 Copia tu framework al Google Doc
-
-Toma el output final de Claude y pégalo en tu Google Doc.
-
-### 4.2 Agrega reflexión personal
-
-Debajo del framework, escribe:
-
-```
-REFLEXIÓN:
-
-1. ¿Qué descubrí que no sabía que sabía?
-___
-
-2. ¿Qué paso o criterio me sorprendió al verbalizarlo?
-___
-
-3. ¿Cómo podría usar este framework en mi trabajo?
-___
-
-4. ¿A quién podría compartirle esto?
-___
-```
-
-### 4.3 Compara con el patrón anterior
-
-Piensa en la diferencia:
-- Clase 02: Tú le dijiste a la IA qué hacer → Output de la IA
-- Clase 03: La IA te preguntó → Output TUYO estructurado
-
-¿Cuál se siente más valioso? ¿Por qué?
-
-✅ **Checkpoint:** Tienes reflexión documentada.
+✅ **Checkpoint:** Tienes un framework documentado basado en TU expertise real.
 
 ---
 
-## 📝 Entregable
+## Parte 3: Produce Contenido Profesional (25 min)
+
+### 3.1 Elige tu pieza de contenido
+
+Usando tu framework como base, elige UNA pieza de contenido profesional para producir:
+
+| Tipo de contenido | Ejemplo |
+|-------------------|---------|
+| **Email estratégico** | Propuesta a cliente usando tu framework de evaluación |
+| **Post profesional** | LinkedIn post sobre tu metodología |
+| **Reporte/memo** | Resumen ejecutivo aplicando tu criterio |
+| **Guía interna** | Documento de onboarding basado en tu checklist |
+| **Presentación** | Outline de presentación con tu expertise estructurada |
+
+### 3.2 Produce el contenido con IA
+
+En tu Project, escribe:
+
+```
+Usando el framework que acabamos de crear, ayúdame a producir
+[TIPO DE CONTENIDO] sobre [TEMA].
+
+Usa MI voz y estilo — nada genérico. Quiero que suene como
+algo que yo escribiría, basado en lo que te compartí.
+```
+
+### 3.3 Aplica criterio editorial
+
+Revisa el borrador con ojo crítico:
+
+```
+CRITERIO EDITORIAL:
+- [ ] ¿Suena como algo que YO escribiría?
+- [ ] ¿Usa mi expertise real, no frases genéricas?
+- [ ] ¿Tiene la profundidad correcta para mi audiencia?
+- [ ] ¿Lo publicaría/enviaría tal como está?
+- [ ] ¿Qué cambiaría antes de usarlo?
+```
+
+Pide ajustes directamente: "Hazlo más directo", "Quita la introducción genérica", "Agrega el punto sobre [X] que mencioné antes".
+
+### 3.4 Refina hasta que esté listo
+
+Itera hasta que tengas una pieza que pasaría tu propia barra de calidad. Cópiala a tu Google Doc.
+
+✅ **Checkpoint:** Tienes 1 pieza de contenido profesional producida con tu framework y refinada con criterio editorial.
+
+---
+
+## 📝 Entrega
 
 **Google Doc con 3 secciones:**
 
 ### 1. Claude Project configurado
 - Screenshot del Project con las instrucciones visibles
-- O el texto de las instrucciones si usaste prompt largo
+- O el texto de las instrucciones custom
 
-### 2. Framework extraído
-- Tu conocimiento documentado
-- Debe tener estructura clara (pasos, criterios, checklist, etc.)
+### 2. Framework personal extraído
+- Tu conocimiento documentado con estructura clara
 - Debe ser algo que puedas compartir y usar
 
-### 3. Reflexión
-- ¿Qué descubriste que no sabías que sabías?
-- ¿Cómo cambia tu visión de usar IA?
+### 3. Pieza de contenido profesional
+- 1 pieza producida usando tu framework
+- Con nota de qué ajustes editoriales aplicaste
 
 **Entrega:** Link público del Google Doc.
 
-> 📌 **Importante:** Guarda bien este framework — lo usarás como base para tu Proyecto Integrador en la próxima clase.
+> 📌 **Importante:** Guarda bien tu Claude Project y framework — los usarás como base para el Proyecto Integrador en la próxima clase.
 
 ---
 
 ## Checklist Final
 
-- [ ] ¿Configuré el Claude Project (o prompt de sistema)?
-- [ ] ¿Tuve una conversación de exploración real con la IA?
+- [ ] ¿Configuré el Claude Project con instrucciones de socio pensante?
 - [ ] ¿Mi framework captura conocimiento MÍO, no genérico?
-- [ ] ¿Podría alguien más usar este framework?
-- [ ] ¿Documenté mi reflexión sobre el proceso?
-
----
-
-## 🚀 Bonus: Segundo Framework (Opcional)
-
-Si terminaste antes, intenta clarificar un segundo tema:
-
-1. Elige algo diferente de tu primer framework
-2. Usa el mismo Project (el sistema ya está configurado)
-3. Compara: ¿Fue más fácil la segunda vez?
-
-**Ideas para segundo framework:**
-- Si el primero fue "cómo evaluar", prueba "cómo decidir"
-- Si el primero fue operativo, prueba algo estratégico
-- Si el primero fue individual, prueba algo de equipo
+- [ ] ¿Produje 1 pieza de contenido profesional con mi framework?
+- [ ] ¿Apliqué criterio editorial al resultado?

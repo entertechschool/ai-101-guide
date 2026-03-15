@@ -1,10 +1,10 @@
-# Guía del Facilitador - Clase 04: Proyecto Integrador M1
+# Guía del Facilitador - Clase 04: Investigación y análisis asistidos por IA
 
 > Tiempo de lectura: 10 minutos | Prepárate antes de clase
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
 - **Proyecto integrador**: Entregable que combina múltiples habilidades para resolver un problema real.
 - **Research con IA**: Uso de Perplexity/Gemini para investigación con fuentes verificables.
@@ -14,7 +14,7 @@
 
 ---
 
-## Analogías Útiles
+## 🔗 Analogías Útiles
 
 **Proyecto integrador como examen práctico de manejo:**
 Aprendiste a frenar, acelerar, estacionar por separado. El examen es manejar en tráfico real donde todo se usa junto.
@@ -27,13 +27,11 @@ Es como tener un colega que conoce TU contexto y no necesitas explicarle todo ca
 
 ---
 
-## Contexto Pedagógico
+## 📚 Contexto Pedagógico
 
 ### Por qué un proyecto integrador
 
-Las Clases 01-03 enseñaron habilidades aisladas. Eso es necesario pero insuficiente. El valor real viene de integrar:
-- Cuando un problema real requiere research + clarificación + sistema
-- Cuando el output no es "ejercicio de clase" sino algo que usarás mañana
+Las Clases 01-03 enseñaron habilidades progresivas: panorama IA (01), instrucciones efectivas (02), producción de contenido con socio pensante (03). El valor real viene de integrar todo cuando un problema real requiere research + clarificación + sistema, y el output no es "ejercicio de clase" sino algo que usarás mañana.
 
 ### El riesgo a evitar
 
@@ -41,123 +39,83 @@ Algunos estudiantes inventarán problemas para el ejercicio. El resultado será 
 
 ### Por qué Gems de Gemini
 
-Introducimos Gemini para:
-- Diversificar herramientas (no solo Claude)
-- Mostrar que las habilidades son transferibles
-- Gems son fáciles y dan sensación de "producto propio"
-- Se integran con Google Workspace
+Introducimos Gemini para diversificar herramientas (no solo Claude), mostrar que las habilidades son transferibles, y porque Gems son fáciles, dan sensación de "producto propio" y se integran con Google Workspace.
 
 ---
 
-## Ejemplos de Proyectos Viables
+## 💡 Ejemplos de Proyectos Viables
 
 | Rol | Problema | Research | Clarificación | Sistema |
 |-----|----------|----------|---------------|---------|
 | **Marketing** | "Posts inconsistentes" | Tendencias de contenido | Qué hace que MIS posts funcionen | Gem de redacción + template |
-| **Ventas** | "Propuestas sin estructura" | Mejores prácticas de propuestas | Mi criterio de propuestas ganadoras | Template RICE + checklist |
 | **PM** | "Priorizamos sin criterio" | Frameworks de priorización | Cómo realmente decidimos | Matriz de decisión + Gem |
-| **HR** | "Onboarding desorganizado" | Mejores prácticas de onboarding | Nuestro proceso actual | Checklist + Project |
 | **Consultor** | "Research toma mucho tiempo" | Herramientas de research | Mi flujo actual de research | Sistema de research + Gem |
 
-### Proyectos que NO funcionan
-
-- "Quiero aprender a programar" (no es problema, es aspiración)
-- "La economía está difícil" (no tiene solución con IA)
-- "Mi jefe es malo" (no es solucionable con herramientas)
+**Proyectos que NO funcionan:** "Quiero aprender a programar" (aspiración, no problema), "La economía está difícil" (no tiene solución con IA), "Mi jefe es malo" (no es solucionable con herramientas).
 
 ---
 
-## Momentos Clave de la Clase
+## 🎯 Momentos Clave de la Clase
 
 ### Pregunta Detonadora
 
-**Respuesta correcta:** C - Integraremos múltiples habilidades en UNA solución real
-
-**Por qué las otras NO:**
-| Opción | Por qué NO |
-|--------|-----------|
-| A | Más herramientas es medio, no fin. |
-| B | La evaluación es consecuencia, no objetivo. |
-| D | El tiempo es recurso, no diferenciador. |
+**Respuesta correcta:** C - Integraremos múltiples habilidades en UNA solución real. Las otras fallan porque: A (más herramientas es medio, no fin), B (la evaluación es consecuencia, no objetivo), D (el tiempo es recurso, no diferenciador).
 
 **Script post-votación:**
 ```
-Facilitador: "¿Quién votó B, que es calificable? ¿Por qué?"
-[Escuchar respuestas]
-Facilitador: "La rúbrica existe, pero el VALOR está en la integración.
-Las Clases 01-03 fueron habilidades sueltas. Hoy las juntamos
-para resolver algo real. Eso es lo que importa."
+Facilitador: "¿Quién votó B, que es calificable? La rúbrica existe,
+pero el VALOR está en la integración. Las Clases 01-03 fueron
+habilidades sueltas. Hoy las juntamos para resolver algo real."
 ```
-
----
 
 ### Demo Principal
 
-**Preparación:** Ten un proyecto propio que mostrar. Sugerencia: "Mis propuestas no tienen estructura consistente" o algo de tu experiencia.
-
-**Qué mostrar:**
-1. El problema real (30 seg)
-2. El research que hiciste (1 min)
-3. Cómo clarificaste tu enfoque (1 min)
-4. El sistema que creaste (Gem + Claude) (2 min)
-5. El resultado medible (30 seg)
+**Preparación:** Ten un proyecto propio. Mostrar en orden: problema real (30s), research (1 min), clarificación del enfoque (1 min), sistema Gem + Claude (2 min), resultado medible (30s).
 
 **Script sugerido:**
 ```
 Facilitador: "Mi problema era [X]. Me costaba [impacto].
-Primero investigué [mostrar Perplexity/Gemini].
-Luego clarifiqué mi enfoque con el socio pensante...
-Creé este Gem [mostrar] y este sistema en Claude [mostrar].
-Resultado: de [antes] a [después]. ¿Preguntas?"
+Investigué [mostrar Perplexity/Gemini], clarifiqué mi enfoque
+con el socio pensante, creé este Gem [mostrar] y este sistema
+en Claude [mostrar]. Resultado: de [antes] a [después]."
 ```
 
-**Si algo sale mal:**
-Si el Gem o sistema no funciona en vivo:
-"Esto pasa — por eso probamos antes de documentar. El proceso de ajuste es parte del proyecto."
-
----
+**Si algo sale mal:** "Esto pasa — por eso probamos antes de documentar. El proceso de ajuste es parte del proyecto."
 
 ### Introducción a Gems
 
-**Script sugerido:**
 ```
 Facilitador: "Gems son asistentes personalizados en Gemini.
 Piénsenlo como un colega que ya conoce su contexto.
 Le dan instrucciones UNA vez, y cada conversación empieza ahí.
-
-¿Por qué Gemini y no solo Claude?
-1. Diversificamos herramientas
-2. Se integra con Google Workspace
-3. Las habilidades son transferibles
-
-Todos van a crear un Gem como parte del proyecto."
+¿Por qué Gemini? Diversificamos herramientas, se integra con
+Google Workspace, y las habilidades son transferibles."
 ```
-
----
 
 ### Transición al Lab
 
-**Script sugerido:**
 ```
-Facilitador: "Tienen 75 minutos para crear un proyecto completo.
-
+Facilitador: "Tienen 90 minutos para crear un proyecto completo.
 El valor no está en 'terminar' sino en resolver algo REAL.
-Si su problema es artificial, el proyecto será superficial.
-
-Partes:
-1. Definir problema real con 'antes' (10 min)
-2. Research con fuentes (15 min)
-3. Clarificar enfoque (15 min)
-4. Crear sistema: Gem + Claude (20 min)
-5. Documentar 'después' (10 min)
-
-Al final, deben poder decir: 'Esto lo usaré mañana.'
-¿Preguntas antes de empezar?"
+Partes: problema+antes (10 min), research (15 min),
+clarificación (15 min), sistema Gem+Claude (20 min),
+documentar después (10 min).
+Al final, deben poder decir: 'Esto lo usaré mañana.'"
 ```
 
 ---
 
-## Errores Esperados de Estudiantes
+## 🎭 Dinámicas de Clase
+
+**El pitch del elevador** (5 min, post definición de problema):
+En parejas, cada estudiante explica su problema en 30 segundos. El compañero responde: "¿Eso lo vas a usar mañana?" Si la respuesta es dudosa, el problema necesita ajuste.
+
+**Antes/después en vivo** (5 min, pre-cierre):
+2-3 voluntarios comparten su métrica antes/después en una frase. Ejemplo: "Mis propuestas tomaban 3 horas, ahora 45 minutos." El grupo aplaude cada una.
+
+---
+
+## ⚠️ Errores Esperados de Estudiantes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
@@ -169,7 +127,30 @@ Al final, deben poder decir: 'Esto lo usaré mañana.'
 
 ---
 
-## Preguntas Frecuentes
+## ✅ Señales de Comprensión
+
+- **ENTIENDE cuando:** Puede explicar cómo su proyecto integra research + clarificación + sistema. Identifica métricas reales de antes/después. Adapta templates a su contexto específico.
+- **NECESITA AYUDA cuando:** El problema es vago o genérico. No tiene métricas antes/después. Copia ejemplos sin adaptar a su realidad profesional.
+
+## 🔀 Diferenciación
+
+- **Avanzados:** Sugiere integraciones adicionales (Gem + Claude Project + automatización). Asigna rol de mentor de pares durante el lab.
+- **Con dificultades:** Simplifica a 1 sola herramienta (solo Gem o solo Claude). Empareja con estudiante avanzado. Reduce scope a 1 problema muy concreto.
+
+---
+
+## ⚠️ Anti-Hype
+
+```
+Facilitador: "Las herramientas NO resuelven solas. El research puede
+tener datos desactualizados, los Gems pueden dar respuestas genéricas
+si no los personalizas. El valor está en CÓMO INTEGRAN las piezas,
+no en cuántas herramientas usan."
+```
+
+---
+
+## ❓ Preguntas Frecuentes
 
 ### "¿Gems está disponible para todos?"
 Gems está en la versión estándar de Gemini. Si alguien tiene problemas de acceso, pueden crear el "sistema" como prompt largo que copian al inicio de cada conversación.
@@ -180,42 +161,37 @@ El proyecto requiere ambos: Gem de Gemini + sistema en Claude. La diversificaci�
 ### "¿Qué pasa si mi problema no tiene métricas claras?"
 Todo problema tiene alguna métrica: tiempo, esfuerzo, frecuencia, satisfacción. Si no puedes medirlo, quizás no es un problema claro.
 
-### "¿Puedo usar mi framework de Clase 03 como parte del proyecto?"
-Sí. El framework de Clase 03 puede ser input para la clarificación de Clase 04. De hecho, es una excelente integración.
+### "¿Puedo usar mi framework y Claude Project de Clase 03?"
+Absolutamente. Son inputs directos para la clarificación de Clase 04. De hecho, es una excelente integración.
 
 ---
 
-## Checkpoints de Validación
+## 🎯 Checkpoints de Validación
 
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~10 | Intro completada | Pregunta detonadora votada |
-| ~25 | Demo terminada | Preguntas sobre el proceso |
-| ~35 | Problema definido | "¿Quién tiene problema + antes documentado?" |
-| ~50 | Research hecho | "¿Quién tiene 3+ fuentes?" |
-| ~65 | Enfoque clarificado | "¿Quién tiene estructura de solución?" |
-| ~95 | Sistema creado | "¿Quién tiene Gem + Claude funcionando?" |
-| ~110 | Proyecto documentado | "¿Quién tiene antes/después?" |
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| ~10 | Intro completada | Pregunta detonadora votada | Revisar si la pregunta fue clara |
+| ~25 | Demo terminada | Preguntas sobre el proceso | Mostrar ejemplo alternativo |
+| ~35 | Problema definido | "¿Quién tiene problema + antes?" | Usar dinámica de pitch en parejas |
+| ~50 | Research hecho | "¿Quién tiene 3+ fuentes?" | Reducir a 2 fuentes mínimas |
+| ~65 | Enfoque clarificado | "¿Quién tiene estructura?" | Dar template pre-llenado |
+| ~95 | Sistema creado | "¿Quién tiene Gem + Claude?" | Simplificar a solo Gem |
+| ~110 | Proyecto documentado | "¿Quién tiene antes/después?" | Dar 5 min extra de buffer |
 
 ---
 
-## Manejo del Tiempo
+## 🧑‍🏫 Tips de Facilitación
 
-### Si van atrasados:
-- Reducir research a 2 fuentes
-- Simplificar sistema a solo Gem
-- Dar 5 minutos extra de buffer
+**Si alguien no tiene problema real:** "¿Qué te preguntaron esta semana en el trabajo?" / "¿Qué tarea repetiste más de una vez?"
 
-### Si terminan antes:
-- Pueden mejorar su sistema
-- Preparar pitch de 2 minutos
-- Ayudar a compañeros
+**Si hay frustración con Gems:** "Las instrucciones son como entrenar a un nuevo colega. ¿Qué le dirías?" Mostrar ejemplo simple que funcione.
+
+**Si van atrasados:** Reducir research a 2 fuentes, simplificar sistema a solo Gem, dar 5 min de buffer.
+**Si terminan antes:** Mejorar sistema, preparar pitch de 2 min, ayudar a compañeros.
 
 ---
 
 ## Sección de Evaluación
-
-### Cómo usar la rúbrica
 
 | Criterio | Peso | Qué buscar |
 |----------|------|------------|
@@ -225,42 +201,74 @@ Sí. El framework de Clase 03 puede ser input para la clarificación de Clase 04
 | **Sistema** | 25% | ¿Gem funciona? ¿Claude sistema funciona? ¿Son reusables? |
 | **Documentación** | 15% | ¿Tiene las 5 secciones? ¿Hay antes/después? |
 
-### Escala sugerida:
-- **90-100:** Proyecto excepcional, usable inmediatamente
-- **80-89:** Proyecto sólido, con ajustes menores
-- **70-79:** Proyecto aceptable, necesita desarrollo
-- **<70:** Proyecto incompleto o artificial
+**Escala:** 90+: excepcional, 80+: sólido, 70+: aceptable, <70: incompleto
 
 ---
 
-## Tips de Facilitación
+## 📊 Test Diagnóstico del Módulo
 
-### Si alguien no tiene problema real:
-- "¿Qué te preguntaron esta semana en el trabajo?"
-- "¿Qué tarea repetiste más de una vez?"
-- "¿Qué harías diferente si tuvieras más tiempo?"
+| Actividad | Tiempo | Formato |
+|-----------|--------|---------|
+| Test en Canvas | 15 min | Individual, libro cerrado |
+| Revisión en vivo | 15 min | Grupal, facilitador guía |
 
-### Si hay frustración con Gems:
-- "Las instrucciones son como entrenar a un nuevo colega. ¿Qué le dirías?"
-- Mostrar ejemplo simple que funcione
+**Script antes del test:**
+```
+Facilitador: "Tienen 15 minutos. Es individual y a libro cerrado.
+No es calificado — es para saber qué entendieron bien y qué
+necesitamos reforzar. Contesten con lo que recuerden."
+```
 
-### Si el tiempo es insuficiente:
-- "El proyecto se puede completar en tarea asíncrona."
-- "Lo importante es el progreso, no la perfección hoy."
+**Tips:** Proyectar timer visible. Ambiente silencioso. No responder preguntas de contenido durante el test.
+
+**Revisión:** Mostrar estadísticas del quiz. Dedicar tiempo a preguntas con <60% de acierto. Celebrar las de >90%.
 
 ---
 
-## Conexión con Módulo 2
+## 🎤 Presentaciones de Cierre
 
-Al cerrar, planta la semilla:
+**Script antes de presentaciones:**
+```
+Facilitador: "Este es SU momento. Han trabajado 4 clases para
+llegar aquí. No busco perfección — busco que muestren
+cómo resolvieron algo real con lo que aprendieron."
+```
 
-> "Este proyecto es su primera pieza de portfolio. En el Módulo 2, van a:
-> - Clase 05: Crear agentes IA que actúan por ustedes
-> - Clase 06: Configurar su segundo cerebro con IA
-> - Clase 07: Convertir este proyecto en caso de éxito publicable
-> - Clase 08: Presentar todo en Demo Day
->
-> Lo que hicieron hoy es la base de lo que mostrarán al final del curso."
+**Durante:** Ambiente positivo, 1 pregunta por presentador. Si alguien no terminó: "Está bien no haber terminado al 100%. ¿Qué parte quieres mostrar?"
 
-**Tarea para mencionar:**
-Google Doc completo con las 5 secciones. Incluir Gem configurado (screenshot) + sistema Claude. Antes/después con métricas.
+**Cierre del módulo:**
+```
+Facilitador: "Hace 4 clases no sabían qué era un sistema reusable.
+Hoy tienen un proyecto integrador con research, clarificación
+y herramientas personalizadas. Eso es progreso REAL."
+```
+
+---
+
+## 🔗 Conexiones del Curriculum
+
+### Esta clase construye sobre
+
+| Clase | Concepto | Cómo se conecta |
+|-------|----------|-----------------|
+| 01 | Sistema reusable | Base para crear Gem y sistema Claude del proyecto |
+| 02 | RICE + Few-shot | Técnicas aplicadas al research y clarificación |
+| 03 | Socio pensante + Producción | Framework personal como input para la clarificación del proyecto |
+
+### Conexión con Módulo 2
+
+> "Este proyecto es su primera pieza de portfolio. En el Módulo 2:
+> Clase 05 (vibe coding), Clase 06 (asistente IA), Clase 07 (agente avanzado),
+> Clase 08 (Demo Day). Lo que hicieron hoy es la base de lo que mostrarán al final."
+
+**Tarea para mencionar:** Google Doc completo con las 5 secciones. Incluir Gem configurado (screenshot) + sistema Claude. Antes/después con métricas.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+Después de cada sesión, responde estas preguntas en tus notas:
+- ¿Qué funcionó bien hoy?
+- ¿Qué ajustaría para la próxima vez?
+- ¿Qué estudiantes necesitan seguimiento en Módulo 2?
+- ¿Los proyectos fueron genuinos o artificiales?

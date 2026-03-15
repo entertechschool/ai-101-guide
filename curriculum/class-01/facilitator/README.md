@@ -1,10 +1,10 @@
-# Guía del Facilitador - Clase 01: El Nuevo Juego
+# Guía del Facilitador - Clase 01: Panorama actual de la IA
 
 > Tiempo de lectura: 8 minutos | Prepárate antes de clase
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
 - **LLM**: Modelo entrenado con texto masivo que predice y genera lenguaje.
 - **Prompt**: Instrucción a la IA — mientras más contexto, mejor resultado.
@@ -14,7 +14,7 @@
 
 ---
 
-## Analogías Útiles
+## 🔗 Analogías Útiles
 
 **IA como amplificador de audio:**
 Un micrófono amplifica tu voz, pero si cantas desafinado, amplifica eso también. La IA amplifica tu expertise, no la reemplaza.
@@ -27,7 +27,7 @@ Suena seguro y convincente, pero está rellenando huecos. Siempre verificar dato
 
 ---
 
-## Contexto Actual
+## 📚 Contexto Actual
 
 ### Adopción de IA: La brecha se acelera
 
@@ -35,11 +35,11 @@ La adopción de IA en el trabajo saltó 13% en el último año. El 45% de trabaj
 
 > **Para mencionar en clase:** "Quienes usan IA bien ahorran casi 1 hora diaria. En un año, son 250 horas — más de 6 semanas de trabajo."
 
-**Fuentes:** [Gallup Workplace AI](https://www.gallup.com/workplace/701195/frequent-workplace-continued-rise.aspx), [AI Workplace Statistics 2026](https://www.companionlink.com/blog/2026/01/ai-in-the-workplace-statistics-2026-adoption-trends-and-future-outlook/)
+**Fuentes:** [Gallup Workplace AI](https://www.gallup.com/workplace/701195/frequent-workplace-continued-rise.aspx){:target="_blank"}, [AI Workplace Statistics 2026](https://www.companionlink.com/blog/2026/01/ai-in-the-workplace-statistics-2026-adoption-trends-and-future-outlook/){:target="_blank"}
 
 ---
 
-## Momentos Clave de la Clase
+## 🎯 Momentos Clave de la Clase
 
 ### Pregunta Detonadora
 
@@ -66,14 +66,14 @@ Facilitador: "Interesante. La respuesta es C porque la diferencia no es la herra
 ### Demo Principal
 
 **Qué mostrar:**
-Email de disculpa a cliente VIP — primero con prompt casual, luego con sistema (ROL + CONTEXTO + INSTRUCCIÓN).
+Email de disculpa a cliente VIP — primero con prompt casual, luego con sistema. **Hacerlo en Claude Y ChatGPT** para que el grupo vea diferencias.
 
 **Script sugerido:**
 ```
-Facilitador: "Tengo que escribir un email de disculpa a un cliente VIP enojado. Normalmente me toma una hora entre pensar el tono, redactar, revisar..."
-[Prompt casual: "Escribe un email de disculpa a un cliente"]
-Facilitador: "¿Enviarían esto? ¿Por qué no?"
-[Prompt con sistema completo]
+Facilitador: "Tengo que escribir un email de disculpa a un cliente VIP enojado. Voy a probar en Claude y ChatGPT..."
+[Prompt casual en ambos: "Escribe un email de disculpa a un cliente"]
+Facilitador: "¿Ven diferencias? ¿Enviarían alguno de los dos?"
+[Prompt con sistema completo en Claude]
 Facilitador: "¿Qué cambió? El sistema le dio contexto para no adivinar."
 ```
 
@@ -93,7 +93,42 @@ Facilitador: "El primer paso es verificar que funciona. Levanten la mano cuando 
 
 ---
 
-## Errores Comunes
+## 🎭 Dinámicas de Clase
+
+### "¿Quién usa IA?"
+
+```
+Facilitador: "Levanten la mano quienes han usado ChatGPT o Claude."
+[Esperar manos — suelen ser 60-80%]
+Facilitador: "OK, ahora la pregunta real: ¿para qué lo usaron?"
+[Dejar que 3-4 compartan. Anotar respuestas en pizarra/chat]
+Facilitador: "Hoy van a pasar de 'probar' a 'dominar'."
+```
+
+### "El Prompt Battle"
+
+```
+Facilitador: "Necesito 2 voluntarios. Ambos van a escribir un email de disculpa."
+[Voluntario A usa prompt casual, Voluntario B recibe un sistema armado]
+Facilitador: "Clase, voten: ¿cuál enviarían a un cliente VIP?"
+[Revelar que la diferencia fue el sistema, no el talento]
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+Sistemas de ejemplo por industria para adaptar la demo al grupo:
+
+| Industria | Tarea | Sistema (ROL + CONTEXTO + INSTRUCCIÓN) |
+|-----------|-------|----------------------------------------|
+| Marketing | Revisar copy de campaña | "Eres editor de marketing digital. Tu cliente vende [producto]. Revisa este copy y sugiere mejoras de engagement." |
+| Ventas | Email de seguimiento | "Eres vendedor B2B con 10 años de experiencia. El prospect mostró interés en [producto]. Escribe email de follow-up." |
+| HR | Feedback de entrevista | "Eres recruiter senior. Evalúa estas notas de entrevista y genera feedback estructurado." |
+
+---
+
+## ⚠️ Errores Comunes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
@@ -104,10 +139,32 @@ Facilitador: "El primer paso es verificar que funciona. Levanten la mano cuando 
 
 ---
 
-## Preguntas Frecuentes
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:**
+- Distingue un prompt casual de un sistema con ROL + CONTEXTO + INSTRUCCIÓN
+- Puede explicar los 3 niveles (Usuario → Operador → Constructor) con sus palabras
+- Identifica cuándo un resultado de IA es genérico por falta de contexto
+
+**NECESITA AYUDA cuando:**
+- Copia prompts sin modificar para su contexto
+- No puede explicar qué hace su sistema ni por qué funciona
+- Usa la IA sin dar contexto y acepta cualquier resultado
+
+---
+
+## 🔀 Diferenciación
+
+**Estudiantes avanzados:** Crear sistema para una 2da tarea distinta, asignar rol de mentor de pares durante el lab, preguntas de extensión como "¿Cómo adaptarías tu sistema para un equipo de 5 personas?"
+
+**Estudiantes con dificultades:** Hacer pair con estudiante avanzado, enfocarse en 1 sola tarea del lab (no 3), checkpoint intermedio extra a los 15 minutos de lab.
+
+---
+
+## ❓ Preguntas Frecuentes
 
 ### "¿Claude o ChatGPT?"
-Ambos son excelentes. Claude tiende a ser más preciso en tareas largas. Las habilidades que aprenden aquí funcionan en ambos.
+Ambos son excelentes. Claude tiende a ser más preciso en tareas largas y seguir instrucciones complejas. ChatGPT tiene buena integración con browsing y plugins. Las técnicas que aprenden aquí funcionan en ambos — por eso comparan en el lab.
 
 ### "¿La IA va a reemplazar mi trabajo?"
 La IA no reemplaza profesionales, pero profesionales que usan IA reemplazan a los que no. Este curso es sobre estar del lado correcto.
@@ -117,20 +174,20 @@ Claude tiene políticas de no entrenar con datos de usuarios. Para trabajo sensi
 
 ---
 
-## Checkpoints de Validación
+## 🎯 Checkpoints de Validación
 
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~10 | Intro completada | Pregunta detonadora votada |
-| ~30 | Demo terminada | Al menos 2 comentarios sobre la diferencia |
-| ~60 | Setup listo | Manos arriba: "¿Quién tiene Claude funcionando?" |
-| ~90 | Parte 1-2 del lab | Pasear, verificar que tienen sistema escrito |
-| ~120 | Lab completado | Screenshots capturados |
-| ~150 | Cierre | Al menos 3 compartieron resultados |
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| ~10 | Intro completada | Pregunta detonadora votada | Lanzar pregunta directa a 2 estudiantes |
+| ~25 | Demo terminada | Comparación Claude vs ChatGPT comentada | Repetir demo con ejemplo más simple |
+| ~40 | Setup listo | "¿Quién tiene Claude y ChatGPT funcionando?" | Pair con vecino que ya tiene acceso |
+| ~70 | Parte 1-2 del lab | Pasear, verificar que tienen sistema escrito | Dar sistema de ejemplo para que modifiquen |
+| ~100 | Lab completado | Screenshots capturados + 3 tareas identificadas | Reducir a 1 tarea bien hecha |
+| ~120 | Cierre | Al menos 3 compartieron resultados | Facilitador comparte su propio resultado |
 
 ---
 
-## Tips de Facilitación
+## 🧑‍🏫 Tips de Facilitación
 
 ### Si el grupo está callado:
 - Preguntas específicas: "María, ¿en tu trabajo qué tarea te toma más tiempo?"
@@ -145,11 +202,30 @@ Claude tiene políticas de no entrenar con datos de usuarios. Para trabajo sensi
 
 ---
 
-## Conexión con la Próxima Clase
+## 🔗 Conexiones del Curriculum
+
+### Esta clase construye sobre
+
+| Clase | Concepto | Cómo se conecta |
+|-------|----------|-----------------|
+| Pre-work | Cuentas creadas en Claude/ChatGPT | Permite empezar la demo sin perder tiempo en setup |
+
+### Conexión con la Próxima Clase
 
 Al cerrar, planta la semilla:
 
 > "La próxima clase vamos a evolucionar de sistemas básicos a prompts profesionales con el framework RICE. Lo que aprendieron hoy de ROL + CONTEXTO + INSTRUCCIÓN es la base."
 
 **Tarea para mencionar:**
-Screenshot del resultado más impresionante + prompt final + reflexión de 3-5 oraciones.
+Comparación Claude vs ChatGPT + sistema reusable + 3 tareas con potencial IA.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+Después de cada sesión, tómate 5 minutos para responder:
+
+1. **¿Qué funcionó bien?** — Identifica momentos de alto engagement para replicar.
+2. **¿Qué ajustaría?** — Timing, ejemplos, o dinámicas que no fluyeron.
+3. **¿Qué estudiantes necesitan seguimiento?** — Los que se quedaron callados o mostraron frustración.
+4. **¿El concepto de sistema quedó claro?** — Si más de 2 estudiantes confunden prompt con sistema, reforzar en Clase 02.

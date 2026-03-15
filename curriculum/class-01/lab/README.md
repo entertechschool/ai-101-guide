@@ -1,31 +1,31 @@
-# Lab 01: Mi Primer "Wow Moment" con IA
+# Lab 01: Panorama actual de la IA — Mi primer "Wow Moment"
 
-En este primer lab de AI 101, experimentarás de primera mano el poder de la IA aplicada a tu trabajo real. No se trata de aprender teoría, sino de obtener un resultado útil que puedas usar mañana mismo. Al terminar, tendrás evidencia concreta de lo que la IA puede hacer por ti.
+En este primer lab experimentarás el poder de la IA aplicada a tu trabajo real. Usarás Claude como herramienta principal y compararás con ChatGPT para entender sus diferencias. Al terminar, tendrás un registro de tu primera interacción y 3 tareas con potencial IA identificadas.
 
-> ⏱️ **Tiempo total:** 60 minutos
+> ⏱️ **Tiempo total:** 65 minutos
 
 ### 🎯 Objetivo
 
-Resolver una tarea real de tu trabajo usando Claude, documentando el proceso y el resultado para tu portfolio personal.
+Resolver una tarea real usando Claude, comparar con ChatGPT, e identificar 3 oportunidades de IA en tu trabajo.
 
 ### 🔑 Conceptos Clave
 
 - **Prompt**: La instrucción que le das a la IA
 - **Contexto**: Información adicional que mejora la respuesta
 - **Iteración**: Refinar el resultado con follow-ups
-- **Output**: El resultado útil que obtienes
+- **Sistema**: ROL + CONTEXTO + INSTRUCCIÓN que resuelve categorías de tareas
 
 ---
 
-## Parte 1: Verificación y Primera Interacción (10 min)
+## Parte 1: Verificación y Comparación Claude vs ChatGPT (15 min)
 
-#### 1.1. Verificar acceso a Claude
-- Abre [claude.ai](https://claude.ai){:target="_blank"} en tu navegador
-- Confirma que puedes ver la interfaz de chat
+#### 1.1. Verificar acceso
+- Abre [claude.ai](https://claude.ai){:target="_blank"} y [chatgpt.com](https://chatgpt.com){:target="_blank"} en dos tabs
+- Confirma que puedes ver ambas interfaces
 - Si tienes problemas, levanta la mano para troubleshooting
 
-#### 1.2. Tu primera interacción guiada
-Copia y pega este prompt exactamente:
+#### 1.2. La misma tarea en ambos
+Copia y pega este prompt exactamente **en Claude y en ChatGPT**:
 
 ```
 Actúa como un experto en productividad.
@@ -33,10 +33,13 @@ En 3 bullet points, explícame por qué la IA puede multiplicar
 mi productividad profesional.
 ```
 
-#### 1.3. Observa y reflexiona
-- ¿Cuánto tardó en responder?
-- ¿La respuesta es útil?
-- ¿Qué harías diferente en el prompt?
+#### 1.3. Compara los resultados
+Anota en tu Google Doc:
+- ¿Qué herramienta respondió más rápido?
+- ¿Cuál fue más concreta y útil?
+- ¿Notas diferencias de estilo o profundidad?
+
+✅ **Checkpoint:** Tienes ambas respuestas documentadas y una primera impresión de las diferencias.
 
 ---
 
@@ -177,14 +180,11 @@ Responde mentalmente (o escríbelo):
 
 ## 📝 Entregable
 
-**Para la tarea de esta clase, deberás entregar:**
+**Registro de primera interacción + reflexión:**
 
-1. **Screenshot(s)** de tu resultado más impresionante
-2. **Prompt final** que usaste (el que mejor funcionó)
-3. **Reflexión breve** (3-5 oraciones):
-   - ¿Qué lograste?
-   - ¿Cuánto tiempo ahorraste?
-   - ¿Qué te llevas de esta experiencia?
+1. **Comparación Claude vs ChatGPT** — Screenshot de ambas respuestas al mismo prompt y tu observación
+2. **Sistema reusable** — Tu prompt de sistema (ROL + CONTEXTO + INSTRUCCIÓN) con un resultado real
+3. **3 tareas con potencial IA** — Lista de 3 tareas de tu trabajo donde la IA podría multiplicar tu productividad, con una breve justificación de cada una
 
-**Formato:** Documento de Google con los 3 elementos, compartir públicamente y pegar el link como entrega de esta tarea.
+**Formato:** Google Doc con los 3 elementos, compartir públicamente y pegar el link como entrega.
 

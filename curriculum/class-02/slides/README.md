@@ -1,39 +1,27 @@
 <!-- .slide: data-background="#0A192F" -->
 
-# Clase 02: El Arte del Prompt
+# Clase 02: Diseño de instrucciones efectivas
 ## De resultados mediocres a extraordinarios
 
-*AI 101 - Entertech School*
+*AI 101 — EnterTech School*
 
 ---
 
-## 🔗 Transición: Clase 01 → Clase 02
+## 🔗 TRANSICIÓN: Clase 01 → Clase 02
 
-### La clase pasada:
+### Clase anterior:
 - Construiste tu primer SISTEMA con Claude
 - Fórmula: `ROL + CONTEXTO + INSTRUCCIÓN`
 
 ### Hoy:
-- Evolucionamos a **RICE** (Rol, Instrucción, Contexto, Ejemplo)
+- Evolucionamos a **RICE** (+ Ejemplo)
 - El Ejemplo es el upgrade que transforma resultados
 
 > "La IA no me da buenos resultados" — ¿Seguro que el problema es la IA?
 
 ---
 
-## ¿Por Qué Esto Importa?
-
-### El problema:
-El 95% escribe prompts como mensajes de texto: vagos, sin estructura
-
-### La oportunidad:
-Un prompt bien diseñado produce resultados que usas **tal cual**
-
-> **Realidad:** La iteración es inevitable. Pero un buen prompt reduce de 10 iteraciones a 2.
-
----
-
-## 🧠 Pregunta Detonadora
+## 🧠 QUIZ PRE-LAB
 
 ### ¿Cuál elemento de un prompt hace MÁS diferencia en la calidad del resultado?
 
@@ -45,30 +33,22 @@ Un prompt bien diseñado produce resultados que usas **tal cual**
 
 **D)** Las palabras que usas al inicio
 
-> 🕐 30 segundos para pensar → levanten la mano
+*Toma 2-3 respuestas antes de continuar*
 
 ---
 
 ## 🎬 Demo: Triage de Mensajes — 3 Niveles
 
-### El Caso: PetShop Express
-Recibes 5 mensajes de clientes. ¿Cuál atender primero?
+### El Caso: PetShop Express — 5 mensajes, ¿cuál atender primero?
 
-### Nivel 1: Prompt Casual
-```
-Clasifica estos mensajes de clientes.
-```
+**Nivel 1 — Casual:**
+> "Clasifica estos mensajes de clientes."
 
-### Nivel 2: Con Rol
-```
-Eres agente de soporte senior...
-Clasifica estos mensajes.
-```
+**Nivel 2 — Con Rol:**
+> "Eres agente de soporte senior... Clasifica."
 
-### Nivel 3: RICE Completo
-Con Rol + Formato de tabla + **Ejemplos de clasificación**
-
-> 🎬 **Demo en vivo** - Veremos cómo evoluciona el resultado
+**Nivel 3 — RICE Completo:**
+> Rol + Formato tabla + **Ejemplos de clasificación**
 
 ---
 
@@ -88,22 +68,20 @@ Con Rol + Formato de tabla + **Ejemplos de clasificación**
 
 ---
 
-## 🎯 COMPROBACIÓN-RESPUESTA
+## 🎯 COMPROBACIÓN — Respuesta
 
 **Respuesta correcta: B**
 
-### Análisis:
-
-- **A:** ❌ Más palabras sin dirección clara no mejoran el resultado
-- **B:** ✅ Los ejemplos enseñan el CRITERIO — la IA VE cómo quieres que clasifique
-- **C:** ❌ El rol ayuda, pero sin ejemplos el output sigue siendo inconsistente
-- **D:** ❌ El formato ayuda a organizar, pero los ejemplos son los que calibran
+- **A:** ❌ Más palabras sin dirección no mejoran el resultado
+- **B:** ✅ Los ejemplos enseñan el CRITERIO — la IA VE cómo clasificar
+- **C:** ❌ El rol ayuda, pero sin ejemplos el output es inconsistente
+- **D:** ❌ El formato organiza, pero los ejemplos calibran
 
 > **Regla memorable:** Mostrar > Describir. Un ejemplo vale más que mil instrucciones.
 
 ---
 
-## Concepto Clave: Framework RICE
+## 📐 Concepto Clave: Framework RICE
 
 | Letra | Pregunta | Tip |
 |-------|----------|-----|
@@ -112,123 +90,96 @@ Con Rol + Formato de tabla + **Ejemplos de clasificación**
 | **C** | ¿Qué necesita saber? | Todo lo que evite que adivine |
 | **E** | ¿Cómo debe verse el resultado? | **Mostrar > Describir** |
 
-### Anti-patrón:
-❌ "Sé breve pero detallado" — Instrucciones contradictorias
+> Evolución: `SISTEMA` (Clase 01) → `RICE` (Clase 02) — se agrega el Ejemplo.
 
 ---
 
-## Técnica Clave: Few-shot
+## 🔑 Few-shot + ⚠️ Limitaciones
 
-### ¿Qué es?
-Incluir 2-3 ejemplos de input → output para enseñar el patrón
+### Few-shot: incluir 2-3 ejemplos input → output
 
-### ¿Cuándo usar?
-- Clasificación (como triage)
-- Formato específico
-- Criterio subjetivo que necesita calibrarse
+Usar cuando: clasificación, formato específico, criterio subjetivo <!-- .element: class="fragment" -->
 
-### Ejemplo en acción:
-```
-Mensaje: "Producto llegó roto, es regalo de cumpleaños"
-| 🔴 Alta | Envío | Reenvío express + cupón | 2h |
+### 3 errores comunes de la IA en triage:
 
-Mensaje: "¿Tienen descuento por volumen?"
-| 🟢 Baja | Venta | Responder política | 24h |
-```
+1. **Prioriza por TONO, no por necesidad real** <!-- .element: class="fragment" -->
+2. **Categorías ambiguas** (¿venta o soporte?) <!-- .element: class="fragment" -->
+3. **Se cree lo que dice el cliente** ("no es urgente" pero tiene deadline) <!-- .element: class="fragment" -->
+
+> La IA clasifica, TÚ validas. El juicio humano no es opcional.
 
 ---
 
-## ⚠️ Las Limitaciones (Anti-Hype)
+## 🔬 Lab Time: Mi Sistema de Triage
 
-### 3 errores comunes que la IA comete en triage:
-
-**1. Prioridad por lo que DICE vs lo que NECESITA**
-> "No es urgente" pero tiene deadline real
-
-**2. Categorías ambiguas**
-> ¿Es consulta de venta o soporte de producto?
-
-**3. Urgencia por tono vs urgencia real**
-> Cliente enojado ≠ siempre mayor prioridad
-
-### La lección:
-La IA clasifica, pero TÚ validas. El juicio humano no es opcional.
-
----
-
-## Lab Time
-
-### Mi Sistema de Triage con IA
-
-**Objetivo:** Construir un prompt de triage que evoluciona en 4 fases
+**Objetivo:** Prompt de triage que evoluciona en 5 partes
 
 **Tiempo:** 70 min
 
-**Fases:**
-1. El Caos (sin técnicas) — 10 min
-2. +Rol — 15 min
-3. +Formato — 15 min
-4. +Few-shot — 15 min
-5. Análisis crítico — 10 min
-
-> 💡 Tip: Documenta cada versión para ver la evolución
+| Parte | Técnica | Tiempo |
+|-------|---------|--------|
+| 1 | El Caos (sin técnicas) | 10 min |
+| 2 | +Rol | 15 min |
+| 3 | +Formato | 15 min |
+| 4 | +Few-shot | 15 min |
+| 5 | Análisis Crítico | 10 min |
 
 ---
 
-## ✅ Checkpoint: Parte 1-2
+## ✅ CHECKPOINT: Parte 1-2
 
-### Verifica:
-- [ ] Prompt básico ejecutado (caos documentado)
-- [ ] Prompt con rol ejecutado
+### Debes ver en pantalla:
+- [ ] Clasificación caótica (Parte 1) documentada
+- [ ] Clasificación con rol (Parte 2) documentada
 - [ ] Comparación anotada en Google Doc
 
-**Pregunta:** ¿El rol mejoró el CRITERIO o el FORMATO?
+**¿El rol mejoró el CRITERIO o el FORMATO?**
+
+**Problemas comunes:**
+- Resultado casi igual → Verificar que el rol sea específico, no genérico
 
 ---
 
-## ✅ Checkpoint: Parte 3-4
+## ✅ CHECKPOINT: Parte 3-5
 
-### Verifica:
-- [ ] Prompt con formato de tabla
-- [ ] Prompt con ejemplos (few-shot)
-- [ ] 5 mensajes clasificados en tabla final
+### Debes ver en pantalla:
+- [ ] Tabla con 5 mensajes clasificados (Parte 3-4)
+- [ ] Prompt con ejemplos few-shot ejecutado
+- [ ] 1 error de la IA identificado y documentado (Parte 5)
 
-**Pregunta:** ¿Los ejemplos calibraron mejor las prioridades?
+**¿Los ejemplos calibraron mejor las prioridades?**
 
----
-
-## ✅ Checkpoint: Parte 5
-
-### Verifica:
-- [ ] Identificaste al menos 1 error de clasificación
-- [ ] Anotaste por qué ocurrió
-- [ ] Propusiste cómo corregirlo
-
-**Pregunta para compartir:** ¿Qué error encontraste?
+**Problemas comunes:**
+- IA no mantiene formato → Revisar que los ejemplos usen exactamente la tabla
 
 ---
 
-## 💡 Reflexión
+## 💡 REFLEXIÓN
 
 ### Hoy aprendiste:
-- Framework RICE completo
-- El poder de los ejemplos (Few-shot)
-- Progresión iterativa: Rol → Formato → Ejemplos
-- **Limitaciones reales de la IA**
 
-### Pregunta para pensar:
-¿Qué tareas de tu trabajo podrías convertir en sistemas de triage con IA?
+- RICE = ROL + INSTRUCCIÓN + CONTEXTO + **EJEMPLO**
+- Few-shot: mostrar ejemplos > describir reglas
+- Progresión iterativa: Caos → Rol → Formato → Ejemplos
+- La IA clasifica, pero TÚ validas
+
+### Preguntas de cierre:
+
+1. ¿Por qué "mostrar" es más poderoso que "describir"?
+2. ¿Qué tarea de tu trabajo convertirías en sistema de triage?
+3. ¿Qué limitación de la IA te sorprendió más?
 
 ---
 
-## 📝 Entrega + Preview
+## 📝 Entrega
 
-### Tu entregable:
-1. **Evolución del prompt** (4 versiones documentadas)
-2. **Tabla de clasificación** (5 mensajes con tu prompt final)
-3. **Reflexión crítica** (1 error encontrado + cómo corregirlo)
+### Biblioteca personal: mínimo 3 prompts
+
+1. **Prompt de triage** — RICE + Few-shot + tabla clasificada
+2. **Prompt para TU trabajo** — RICE aplicado a tarea real
+3. **Reflexión crítica** — 1 error encontrado + corrección propuesta
 
 **Formato:** Google Doc con link público
 
-### Próxima clase: Tu Copiloto de Contenido
-De prompts individuales a flujos de trabajo completos → contenido profesional publicable
+### Próxima clase: Producción de contenido profesional con IA
+De prompts individuales a **Claude Projects** + frameworks personales

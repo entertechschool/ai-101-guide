@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompting — Framework RICE + Few-shot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      margin: 0 auto;
+      background: #060913;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+    pre {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+    }
+
+    section { padding: 2.5rem 3rem; }
+
+    .hero {
+      text-align: center;
+      padding: 3.5rem 3rem 2.5rem;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(217, 70, 239, 0.15);
+      color: #d946ef;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: #94a3b8;
+    }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .card .desc {
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .accent-purple { border-left: 3px solid #d946ef; }
+    .accent-green  { border-left: 3px solid #4ade80; }
+    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-orange { border-left: 3px solid #fb923c; }
+
+    /* ── RICE grid ── */
+    .rice-grid {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+      gap: 0;
+      margin-top: 0.75rem;
+    }
+    .rice-grid .letter {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 0;
+    }
+    .rice-grid .question,
+    .rice-grid .tip {
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .rice-grid .question { color: #e2e8f0; }
+    .rice-grid .tip { color: #94a3b8; }
+
+    /* ── Evolution arrow ── */
+    .evolution {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .evolution .step {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .evolution .arrow {
+      color: #d946ef;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .glossary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .glossary .term {
+      flex: 1 1 200px;
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .glossary .term strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .glossary .term span {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 3rem 3rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Módulo 1 · Clase 02</div>
+    <h1>Prompting — Framework RICE + Few-shot</h1>
+    <p class="subtitle">De resultados mediocres a outputs que usas tal cual</p>
+  </section>
+
+  <!-- BLOQUES DE CONTENIDO -->
+  <section>
+
+    <!-- BLOQUE 1: Framework RICE -->
+    <div class="card accent-purple">
+      <h3>Framework RICE</h3>
+      <p class="desc">Cuatro componentes que eliminan la ambigüedad de cualquier prompt.</p>
+      <div class="rice-grid">
+        <div class="letter" style="color: #d946ef;">R</div>
+        <div class="question"><strong>Rol</strong> — ¿Quién debe ser la IA?</div>
+        <div class="tip">Específico > "experto"</div>
+
+        <div class="letter" style="color: #4ade80;">I</div>
+        <div class="question"><strong>Instrucción</strong> — ¿Qué debe hacer exactamente?</div>
+        <div class="tip">Verbo de acción claro</div>
+
+        <div class="letter" style="color: #93c5fd;">C</div>
+        <div class="question"><strong>Contexto</strong> — ¿Qué necesita saber?</div>
+        <div class="tip">Todo lo que evite que adivine</div>
+
+        <div class="letter" style="color: #fb923c;">E</div>
+        <div class="question"><strong>Ejemplo</strong> — ¿Cómo debe verse el resultado?</div>
+        <div class="tip">Mostrar > Describir</div>
+      </div>
+      <div class="evolution">
+        <div class="step">Clase 01<br><span style="color: #94a3b8;">ROL + CONTEXTO + TAREA + FORMATO</span></div>
+        <div class="arrow">→</div>
+        <div class="step" style="border-color: #d946ef;">Clase 02<br><span style="color: #d946ef;">RICE (+ Ejemplo)</span></div>
+      </div>
+    </div>
+
+    <!-- BLOQUE 2: Few-shot -->
+    <div class="card accent-green">
+      <h3>Few-shot: enseñar con ejemplos</h3>
+      <p class="desc">Incluir 2-3 ejemplos de input → output para que la IA entienda el patrón deseado.</p>
+      <pre><code>## Ejemplos de clasificación:
+
+Mensaje: "Mi pedido no llegó y ya pasaron 5 días"
+→ Prioridad: ALTA | Categoría: Logística | Acción: Escalar
+
+Mensaje: "¿Tienen el producto en color azul?"
+→ Prioridad: BAJA | Categoría: Consulta | Acción: Responder
+
+## Ahora clasifica estos 5 mensajes nuevos:</code></pre>
+      <p style="color: #4ade80; font-size: 0.9rem; margin-top: 0.75rem;">Un ejemplo vale más que mil instrucciones.</p>
+    </div>
+
+    <!-- BLOQUE 3: Progresión iterativa -->
+    <div class="card accent-blue">
+      <h3>Progresión iterativa: 4 niveles de calidad</h3>
+      <p class="desc">El mismo prompt evoluciona agregando una técnica a la vez.</p>
+      <pre><code>Nivel 1 · Casual
+  "Clasifica estos mensajes"         → Caos
+
+Nivel 2 · + Rol
+  "Eres agente de soporte senior..." → Mejor tono
+
+Nivel 3 · + Formato
+  "...en tabla con prioridad/acción" → Estructura
+
+Nivel 4 · + Few-shot (RICE completo)
+  "...como en estos ejemplos:"       → Resultado usable</code></pre>
+    </div>
+
+    <!-- BLOQUE 4: Limitaciones -->
+    <div class="card accent-orange">
+      <h3>Limitaciones: la IA clasifica, TÚ validas</h3>
+      <p class="desc">Tres errores comunes de la IA en tareas de clasificación y triage.</p>
+      <pre><code>⚠️  Prioriza por TONO, no por necesidad real
+    → "URGENTE!!!" sube aunque no sea crítico
+
+⚠️  Categorías ambiguas
+    → ¿Es venta o soporte? La IA elige una
+
+⚠️  Se cree lo que dice el cliente
+    → "No es urgente" pero tiene deadline mañana</code></pre>
+      <p style="color: #fb923c; font-size: 0.9rem; margin-top: 0.75rem;">El juicio humano no es opcional. La IA es tu co-piloto, no tu piloto.</p>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section>
+    <div class="glossary">
+      <div class="term">
+        <strong>RICE</strong>
+        <span>Rol, Instrucción, Contexto, Ejemplo — framework de prompting profesional</span>
+      </div>
+      <div class="term">
+        <strong>Few-shot</strong>
+        <span>Incluir ejemplos de input/output para enseñar el patrón deseado</span>
+      </div>
+      <div class="term">
+        <strong>Zero-shot</strong>
+        <span>Prompt sin ejemplos, confiando solo en las instrucciones</span>
+      </div>
+      <div class="term">
+        <strong>Triage</strong>
+        <span>Clasificar y priorizar elementos según urgencia e importancia</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    AI 101 — IA para Profesionales · EnterTechSchool · Clase 02
+  </section>
+
+  <!-- ════════ EXPORT PNG ════════ -->
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
+    Exportar a PNG
+  </button>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('export-btn');
+    var originalText = btn.textContent;
+
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      btn.textContent = 'Exportando...';
+
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function(){
+        btn.style.display = 'none';
+        document.fonts.ready.then(function(){
+          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
+            var link = document.createElement('a');
+            var title = document.title
+              .toLowerCase()
+              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-|-$/g, '');
+            link.download = 'clase-02-' + title + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }).catch(function(){
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = 'Error — Intenta de nuevo';
+            setTimeout(function(){ btn.textContent = originalText; }, 2000);
+          });
+        });
+      };
+      script.onerror = function(){
+        btn.disabled = false;
+        btn.textContent = 'Error — Intenta de nuevo';
+        setTimeout(function(){ btn.textContent = originalText; }, 2000);
+      };
+      document.head.appendChild(script);
+    });
+  })();
+  </script>
+
+</body>
+</html>

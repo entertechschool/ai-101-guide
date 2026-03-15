@@ -1,44 +1,29 @@
 <!-- .slide: data-background="#0A192F" -->
 
-# Clase 03: Tu Socio Pensante
+# Clase 03: Producción de contenido profesional con IA
 ## De "la IA me ayuda" a "la IA extrae MI conocimiento"
 
-*AI 101 - Entertech School*
+*AI 101 — EnterTech School*
 
 ---
 
-## 🔗 Transición: Clases 01-02 → Clase 03
+## 🔗 TRANSICIÓN: Clase 02 → Clase 03
 
-### Lo que aprendiste:
-- Clase 01: Crear sistemas reusables (ROL + CONTEXTO + INSTRUCCIÓN)
-- Clase 02: RICE + Few-shot para mejores outputs
-
-### El patrón hasta ahora:
-```
-Tú → [Instrucción] → IA → [Output genérico]
-```
+### Clase anterior:
+- RICE + Few-shot para mejores outputs
+- Patrón: `Tú → [Instrucción] → IA → [Output]`
 
 ### Hoy invertimos el flujo:
 ```
-IA → [Pregunta] → Tú → [Respuesta] → IA → [TU conocimiento estructurado]
+Antes:  Tú → instrucción → IA → output genérico
+Ahora:  IA → pregunta → Tú → respuesta → IA → TU conocimiento
 ```
 
----
-
-## El Problema Real
-
-### Tienes conocimiento valioso que:
-
-- Vive solo en tu cabeza
-- Repites cada vez que alguien pregunta
-- "Depende de cada caso" (pero tiene patrones)
-- Se pierde si cambias de rol o empresa
-
-> ¿Cuántas veces has explicado lo mismo a diferentes personas?
+> El output más valioso no viene de la IA — viene de TI.
 
 ---
 
-## 🧠 Pregunta Detonadora
+## 🧠 QUIZ PRE-LAB
 
 ### ¿Cuál es la diferencia más importante entre las Clases 01-02 y lo que haremos hoy?
 
@@ -50,22 +35,7 @@ IA → [Pregunta] → Tú → [Respuesta] → IA → [TU conocimiento estructura
 
 **D)** Trabajaremos con documentos en vez de texto
 
-> 🕐 30 segundos para pensar → levanten la mano
-
----
-
-## 🎯 COMPROBACIÓN-RESPUESTA
-
-**Respuesta correcta: B**
-
-### Análisis:
-
-- **A:** ❌ Claude Projects es la herramienta, no el cambio fundamental
-- **B:** ✅ El output es TU expertise estructurada, no texto genérico
-- **C:** ❌ La longitud no define la calidad del resultado
-- **D:** ❌ El formato es secundario al cambio de paradigma
-
-> **La diferencia real:** La IA pregunta para extraer TU conocimiento, no genera contenido nuevo.
+*Toma 2-3 respuestas antes de continuar*
 
 ---
 
@@ -102,11 +72,9 @@ La IA me preguntará hasta que quede claro:
 
 ---
 
-## 🎯 COMPROBACIÓN-RESPUESTA
+## 🎯 COMPROBACIÓN — Respuesta
 
 **Respuesta correcta: B**
-
-### Análisis:
 
 - **A:** ❌ Claude no sabe más que yo sobre MI contexto específico
 - **B:** ✅ Las preguntas forzaron a verbalizar lo que hago intuitivamente
@@ -117,41 +85,20 @@ La IA me preguntará hasta que quede claro:
 
 ---
 
-## Concepto Clave: Brainstorming Guiado
+## 📐 Concepto Clave: Brainstorming Guiado
 
 ### ¿Qué es?
 La IA hace preguntas sistemáticas para extraer conocimiento que tienes pero no has documentado.
 
-### El proceso:
-
 | Fase | Qué hace la IA | Qué haces tú |
 |------|---------------|--------------|
-| **Exploración** | Pregunta "¿cómo?", "¿por qué?", "¿cuándo?" | Respondes con ejemplos reales |
+| **Exploración** | Pregunta "¿cómo?", "¿por qué?" | Respondes con ejemplos reales |
 | **Estructuración** | Propone framework | Corriges y agregas |
 | **Validación** | Presenta resultado final | Verificas autenticidad |
 
 ---
 
-## Nueva Herramienta: Perplexity
-
-### ¿Qué es?
-
-Motor de búsqueda con IA que cita fuentes verificables.
-
-### ¿Para qué lo usamos hoy?
-
-Mini-research para contextualizar tu tema antes de clarificar.
-
-### La diferencia:
-
-- **Google:** "Esto encontré"
-- **Perplexity:** "Esto dicen las fuentes (aquí están)"
-
-> Usarás Perplexity de nuevo en el Proyecto Integrador (Clase 04)
-
----
-
-## Herramienta: Claude Projects
+## 🔧 Herramienta: Claude Projects
 
 ### ¿Qué es un Project?
 
@@ -162,35 +109,16 @@ Un espacio en Claude con:
 
 ### ¿Por qué lo usamos?
 
-El "sistema clarificador" debe comportarse igual siempre:
-- Hacer preguntas antes de estructurar
+El "socio pensante" debe comportarse igual siempre:
+- Preguntar antes de estructurar
 - Esperar respuestas antes de continuar
 - Nunca asumir que sabe las respuestas
 
 ---
 
-## El System Prompt del Clarificador
-
-```
-Eres mi socio pensante — experto en extraer conocimiento tácito.
-
-FASES:
-1. EXPLORACIÓN: Haz preguntas una a la vez
-2. ESTRUCTURACIÓN: Propón framework y ajusta
-3. VALIDACIÓN: Confirma que captura lo que hago
-
-REGLAS:
-- Nunca asumas — PREGUNTA
-- Si digo "depende", pregunta: "¿De qué?"
-- Busca criterios ocultos detrás de "intuiciones"
-- El output es MÍO, no genérico
-```
-
----
-
 ## ⚠️ Las Limitaciones (Anti-Hype)
 
-### 3 trampas comunes en clarificación de ideas:
+### 3 trampas comunes:
 
 **1. Conocimiento inventado**
 > La IA puede "completar" gaps con contenido genérico
@@ -199,75 +127,56 @@ REGLAS:
 > No todo conocimiento cabe en un framework de 5 pasos
 
 **3. Validación sesgada**
-> Tiendes a aceptar lo que suena bien, aunque no sea exacto
+> Aceptar lo que suena bien, aunque no sea exacto
 
-### La lección:
-El framework final debe pasar la prueba: "¿Esto es lo que REALMENTE hago?"
-
----
-
-## Lab Time
-
-### Mi Sistema Clarificador de Ideas
-
-**Objetivo:** Mini-research + configurar Claude Project + extraer UN framework de tu expertise
-
-**Tiempo:** 70 min
-
-**Partes:**
-1. Identificar tu conocimiento oculto — 10 min
-1.5. Mini-research con Perplexity — 10 min
-2. Configurar Claude Project — 15 min
-3. Extraer tu framework — 25 min
-4. Reflexión y documentación — 10 min
-
-> 💡 Tip: Sé honesto en las respuestas. El valor está en capturar lo que REALMENTE haces.
+### Criterio editorial:
+El framework debe pasar la prueba: "¿Esto es lo que REALMENTE hago?"
 
 ---
 
-## ✅ Checkpoint: Parte 1-2
+## 🔬 Lab Time
 
-### Verifica:
-- [ ] Tengo UN tema específico para clarificar
-- [ ] Mi Claude Project está creado
-- [ ] Las instrucciones de clarificador están configuradas
+### Producción de contenido profesional con IA
 
-**Pregunta:** ¿Qué conocimiento elegiste documentar?
+**Objetivo:** Claude Project + framework personal + 1 pieza de contenido profesional
 
----
+**Tiempo:** 60 min
 
-## ✅ Checkpoint: Parte 3
-
-### Verifica:
-- [ ] Tuve conversación de exploración (5-8 preguntas)
-- [ ] La IA propuso una estructura
-- [ ] Corregí y validé el framework
-
-**Pregunta:** ¿Qué criterio oculto descubriste?
+| Parte | Qué harás | Tiempo |
+|-------|-----------|--------|
+| 1 | Configurar Claude Project como socio pensante | 15 min |
+| 2 | Extraer framework personal vía brainstorming guiado | 20 min |
+| 3 | Producir 1 pieza de contenido profesional + criterio editorial | 25 min |
 
 ---
 
-## ✅ Checkpoint: Parte 4
+## ✅ CHECKPOINTs
 
-### Verifica:
-- [ ] Framework copiado a Google Doc
-- [ ] Reflexión escrita
-- [ ] Comparación con patrón anterior
+### Parte 1-2:
+- [ ] Claude Project creado con instrucciones de socio pensante
+- [ ] Conversación de exploración (5-8 preguntas)
+- [ ] Framework personal propuesto y validado
 
-**Pregunta para compartir:** ¿Qué descubriste que no sabías que sabías?
+### Parte 3:
+- [ ] Pieza de contenido profesional producida con tu framework
+- [ ] Revisión con criterio editorial aplicada
+
+**¿La pieza final suena a TI o suena a IA genérica?**
 
 ---
 
-## 💡 Reflexión
+## 💡 REFLEXIÓN
 
 ### Hoy aprendiste:
 - IA como socio pensante (no solo ejecutor)
 - Claude Projects con instrucciones persistentes
-- Brainstorming guiado para extraer conocimiento
-- **El output más valioso es el que ya tenías en la cabeza**
+- Brainstorming guiado: exploración → estructura → validación
+- **Criterio editorial:** evaluar y refinar contenido producido con IA
 
-### Pregunta para pensar:
-¿Qué otro conocimiento tuyo debería documentar con este sistema?
+### Preguntas de cierre:
+1. ¿Qué descubriste que no sabías que sabías?
+2. ¿Tu pieza final suena a ti o a la IA?
+3. ¿Qué otro conocimiento documentarías con este sistema?
 
 ---
 
@@ -275,10 +184,10 @@ El framework final debe pasar la prueba: "¿Esto es lo que REALMENTE hago?"
 
 ### Tu entregable:
 1. **Claude Project configurado** (screenshot o instrucciones)
-2. **Framework extraído** (tu conocimiento estructurado)
-3. **Reflexión** (qué descubriste)
+2. **Framework personal extraído** (tu conocimiento estructurado)
+3. **1 pieza de contenido profesional** (producida y refinada con criterio editorial)
 
 **Formato:** Google Doc con link público
 
-### Próxima clase: Proyecto Integrador M1
-Aplicarás todo lo aprendido (sistema + prompting + clarificación + research) en un proyecto real calificable.
+### Próxima clase: Investigación y análisis asistidos por IA
+Incorporarás **Perplexity** y **Gemini** para investigar con fuentes verificables y analizar información.

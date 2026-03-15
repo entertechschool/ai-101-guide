@@ -1,4 +1,4 @@
-# Plan del Módulo 1: Fundamentos + Primeros Superpoderes
+# Plan del Módulo 1: Fundamentos y Primeras Aplicaciones
 
 > Este documento define la arquitectura del módulo. Aprobar antes de crear clases.
 
@@ -7,9 +7,10 @@
 | Aspecto | Detalle |
 |---------|---------|
 | **Módulo** | 1 |
-| **Título** | Fundamentos + Primeros Superpoderes |
+| **Título** | Fundamentos y Primeras Aplicaciones |
 | **Tema Central** | Dominar las bases de IA para multiplicar productividad |
 | **Clases** | 1 a 4 |
+| **Duración por clase** | 2.5h síncronas |
 | **Pre-requisitos** | Ninguno técnico. Solo disposición a experimentar |
 
 ---
@@ -39,36 +40,36 @@ Al terminar M1, el estudiante tiene artifacts concretos que ya están generando 
 
 | Clase | Enfoque | Pieza del Portfolio al Finalizar |
 |-------|---------|----------------------------------|
-| 1 | Mindset + Setup | Screenshot de "wow moment" + reflexión escrita |
-| 2 | Prompting | 3 prompts maestros documentados (con resultados) |
-| 3 | Contenido | 1 pieza de contenido profesional publicable |
-| 4 | Research | Research doc con fuentes + asistente configurado |
+| 1 | Panorama + Setup | Registro de primera interacción + reflexión: 3 tareas con potencial IA |
+| 2 | Instrucciones efectivas | Biblioteca de 3+ prompts documentados y probados |
+| 3 | Contenido profesional | Claude Project + framework personal + 1 pieza de contenido profesional |
+| 4 | Research + integración | Proyecto integrador: research con fuentes + sistema reusable + Gem configurado |
 
 ### Entregables del Módulo
 
 Al finalizar M1, el estudiante tiene:
 - ✅ Biblioteca personal de 5+ prompts documentados
-- ✅ 1 pieza de contenido publicada/usada en trabajo real
-- ✅ 1 research completo con fuentes verificables
-- ✅ Gem y/o Space configurado para su industria
+- ✅ 1 Claude Project + framework de conocimiento personal
+- ✅ 1 pieza de contenido profesional producida con tu framework
+- ✅ 1 proyecto integrador con research verificable + Gem configurado
 
 ---
 
 ## Arquitectura de Clases
 
-### Clase 1: El Nuevo Juego
+### Clase 1: Panorama actual de la IA
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Concepto Principal** | Mindset: qué puede y NO puede la IA (anti-hype) |
-| **Objetivo del Lab** | Experimentar primer "wow moment" con Claude |
-| **Herramientas** | Claude (cuenta gratuita suficiente) |
-| **Entregable** | Screenshot de resultado impresionante + reflexión |
+| **Concepto Principal** | Qué puede y NO puede la IA (anti-hype), comparación Claude vs ChatGPT |
+| **Objetivo del Lab** | Experimentar primer "wow moment" y comparar herramientas |
+| **Herramientas** | Claude (eje principal), ChatGPT (comparación) |
+| **Entregable** | Registro de primera interacción + reflexión: 3 tareas con potencial IA |
 
 **Checkpoints del Lab:**
-1. Claude configurado y funcionando (primera conversación exitosa)
+1. Claude configurado y funcionando + ChatGPT abierto para comparación
 2. Tarea de trabajo real completada con IA (antes tomaba 30+ min)
-3. Screenshot capturado + reflexión escrita sobre la experiencia
+3. Registro de interacción + reflexión: 3 tareas con potencial IA identificadas
 
 **Glosario de la Clase:**
 
@@ -82,18 +83,18 @@ Al finalizar M1, el estudiante tiene:
 
 **Dependencias:**
 - **Requiere:** Nada
-- **Habilita:** Clase 2 asume que el estudiante tiene Claude funcionando y entiende sus limitaciones
+- **Habilita:** Clase 2 asume que el estudiante tiene Claude funcionando, conoce ChatGPT como referencia, y entiende limitaciones
 
 ---
 
-### Clase 2: El Arte del Prompt
+### Clase 2: Diseño de instrucciones efectivas
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Concepto Principal** | Técnicas de prompting para resultados profesionales |
+| **Concepto Principal** | Anatomía de instrucción efectiva (RICE), iteración, Chain of Thought, Few-Shot |
 | **Objetivo del Lab** | Crear biblioteca de prompts maestros para su trabajo |
 | **Herramientas** | Claude |
-| **Entregable** | 3 prompts maestros documentados con resultados |
+| **Entregable** | Biblioteca personal: mínimo 3 prompts documentados y probados |
 
 **Checkpoints del Lab:**
 1. Prompt 1 creado usando framework RICE (con resultado capturado)
@@ -116,43 +117,43 @@ Al finalizar M1, el estudiante tiene:
 
 ---
 
-### Clase 3: Tu Copiloto de Contenido
+### Clase 3: Producción de contenido profesional con IA
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Concepto Principal** | Escribir con IA: editing vs generación |
-| **Objetivo del Lab** | Transformar pieza de trabajo real en contenido profesional |
-| **Herramientas** | Claude, Google Docs |
-| **Entregable** | 1 pieza de contenido profesional publicable |
+| **Concepto Principal** | IA como socio pensante que extrae TU conocimiento, Claude Projects, frameworks personales, criterio editorial |
+| **Objetivo del Lab** | Crear Claude Project + framework personal + producir contenido profesional |
+| **Herramientas** | Claude (Projects) |
+| **Entregable** | Claude Project + framework personal + 1 pieza de contenido profesional |
 
 **Checkpoints del Lab:**
-1. Pieza de contenido identificada y primer draft con IA generado
-2. Contenido editado y refinado (voz personal + calidad profesional)
-3. Versión final lista para publicar/usar en trabajo
+1. Claude Project creado y configurado con instrucciones personales
+2. Framework personal extraído con brainstorming guiado
+3. 1 pieza de contenido profesional producida aplicando criterio editorial
 
 **Glosario de la Clase:**
 
 | Término | Definición breve |
 |---------|------------------|
-| Editing mode | Usar IA para mejorar texto existente |
-| Generation mode | Usar IA para crear texto desde cero |
-| Voice/Tone | Estilo personal de escritura que debe preservarse |
-| Iteration | Proceso de refinar output con múltiples prompts |
+| Claude Projects | Espacio de trabajo con instrucciones persistentes y archivos de contexto |
+| Socio pensante | Paradigma invertido: la IA pregunta, tú estructuras tu conocimiento |
+| Framework personal | Estructura propia extraída de tu expertise profesional |
+| Criterio editorial | Capacidad de evaluar y refinar contenido producido con IA |
 
 **Dependencias:**
 - **Requiere:** Clase 2 (sabe escribir prompts efectivos)
-- **Habilita:** Clase 4 aplica skills de contenido a research
+- **Habilita:** Clase 4 aplica Claude Project y framework a research e integración
 
 ---
 
-### Clase 4 (Cierre de Módulo): Research con IA
+### Clase 4 (Cierre de Módulo): Investigación y análisis asistidos por IA
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Concepto Principal** | Gemini Gems + Perplexity Spaces para research profesional |
-| **Objetivo del Lab** | Configurar asistentes de research + completar investigación |
-| **Herramientas** | Gemini, Perplexity, Google Docs |
-| **Entregable** | Research doc profesional + asistente configurado |
+| **Concepto Principal** | Perplexity (fuentes verificables), Gemini Deep Research + Gems, integración M1 |
+| **Objetivo del Lab** | Configurar asistentes de research + completar proyecto integrador |
+| **Herramientas** | Perplexity, Gemini, Claude, Google Docs |
+| **Entregable** | Proyecto integrador: research con fuentes + sistema reusable + Gem configurado |
 | **Test Diagnóstico** | 8 preguntas (15 min) - no afecta calificación |
 
 **Checkpoints del Lab:**
@@ -188,8 +189,8 @@ El M1 establece las bases que M2 escala:
 | Skills individuales | Portfolio integrado |
 
 **Semillas plantadas en M1 para M2:**
-- Clase 3 menciona "workflows de contenido" → Clase 5 automatiza
-- Clase 4 configura asistentes → Clase 6 los personaliza más
+- Clase 3 crea Claude Project y framework → Clase 5 automatiza workflows
+- Clase 4 configura Gem de Gemini → Clase 6 personaliza agentes
 - Entregables de M1 → Clase 7 los convierte en caso de éxito
 
 ---

@@ -1,44 +1,16 @@
-# Clase 01: El Nuevo Juego
-
-Presentación reveal.js para la primera clase de AI 101.
-
----
-
 <!-- .slide: data-background="#0A192F" -->
 
-# Clase 01: El Nuevo Juego
+# Clase 01: Panorama actual de la IA aplicada al trabajo
+
 ## Tu entrada al mundo de la IA profesional
 
-*AI 101 - Entertech School*
+*AI 101 — IA para Profesionales · EnterTech School*
+
+> "El 95% usa IA como Google. El 5% la usa como superpoder."
 
 ---
 
-## 🔗 Bienvenida
-
-### Primera clase de AI 101
-
-Hoy descubrirás:
-- Qué puede **realmente** hacer la IA en 2025
-- Qué sigue siendo ciencia ficción
-- Por qué el 5% tiene ventaja sobre el 95%
-
-> "En 6 meses, dominar IA será expectativa mínima en muchos roles"
-
----
-
-## ¿Por Qué Esto Importa?
-
-### El problema:
-> "El 95% de profesionales usa IA como si fuera Google"
-
-### La oportunidad:
-El 5% la usa como un **superpoder** — y la brecha se agranda cada mes
-
-> **Realidad:** La IA no reemplaza tu juicio profesional. Amplifica lo que ya sabes.
-
----
-
-## 🧠 Pregunta Detonadora
+## 🧠 QUIZ PRE-LAB
 
 ### ¿Qué diferencia al 5% que domina IA del 95% que no?
 
@@ -50,23 +22,21 @@ El 5% la usa como un **superpoder** — y la brecha se agranda cada mes
 
 **D)** Pasan más horas al día usando IA
 
-> 🕐 30 segundos para pensar → levanten la mano
+*30 segundos para pensar → levanten la mano*
 
 ---
 
 ## 🎬 Demo: Email de Disculpa a Cliente VIP
 
-### Antes (sin IA):
-- Brainstorm del tono (10 min)
-- Redacción inicial (20 min)
-- Revisión y ajustes (15 min)
-- Edición final (10 min)
-- **Total: ~1 hora**
+### Sin IA: ~1 hora
 
-### Después (con IA):
-**~3 minutos** con el enfoque correcto
+Brainstorm + redacción + revisión + edición
 
-> 🎬 **Demo en vivo** - Veremos la diferencia entre un prompt casual y un sistema
+### Con IA: ~3 minutos
+
+Con el enfoque correcto
+
+> 🎬 **Demo en vivo** — Prompt casual vs sistema estructurado
 
 ---
 
@@ -76,42 +46,36 @@ El 5% la usa como un **superpoder** — y la brecha se agranda cada mes
 
 **A)** Era más largo y tenía más palabras
 
-**B)** Usaba palabras mágicas como "experto" y "profesional"
+**B)** Usaba palabras mágicas como "experto"
 
 **C)** Incluía contexto específico y rol definido
 
 **D)** Se ejecutó en una versión más nueva de Claude
 
-> 🕐 30 segundos para pensar → levanten la mano
+*30 segundos → levanten la mano*
 
 ---
 
-## 🎯 COMPROBACIÓN-RESPUESTA
+## 🎯 COMPROBACIÓN — Respuesta
 
 **Respuesta correcta: C**
 
-### Análisis:
+- **A:** ❌ Longitud ≠ calidad
+- **B:** ❌ "Palabras mágicas" no funcionan sin contexto real
+- **C:** ✅ Contexto elimina ambigüedad, rol guía el tono
+- **D:** ❌ Misma versión, diferente prompt
 
-- **A:** ❌ Longitud ≠ calidad. Muchos prompts largos fallan por ser vagos
-- **B:** ❌ Las "palabras mágicas" no funcionan sin contexto real
-- **C:** ✅ El contexto específico elimina ambigüedad y el rol guía el tono
-- **D:** ❌ La versión de Claude no cambió — solo cambió el prompt
-
-> **Regla memorable:** Prompt genérico = resultado genérico. Contexto específico = resultado específico.
+> **Clave:** Prompt genérico = resultado genérico. Contexto específico = resultado específico.
 
 ---
 
-## Concepto Clave: Prompt vs Sistema
+## 💡 Concepto Clave: Prompt vs SISTEMA
 
-### Prompt:
-> "Ayúdame con este email"
-
-→ Resuelve UNA tarea
-
-### Sistema:
-> "Eres mi revisor. Mi contexto es X. Cuando te pase algo, haz Y."
-
-→ Resuelve TODAS las tareas similares
+| | Prompt | Sistema |
+|---|--------|---------|
+| Resuelve | UNA tarea | TODAS las similares |
+| Ejemplo | "Ayúdame con este email" | "Eres mi revisor. Mi contexto es X." |
+| Reusable | No | Sí |
 
 ```
 SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
@@ -119,89 +83,90 @@ SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
 
 ---
 
-## Lab Time
+## ✅ CHECKPOINT Parte 1: Verificación y Comparación (15 min)
 
-### Tu Primer "Wow Moment"
+### Debes ver en pantalla:
 
-**Objetivo:** Resolver una tarea real de tu trabajo con Claude
+- Claude y ChatGPT abiertos con respuestas al mismo prompt
+- Diferencias documentadas en tu Google Doc
 
-**Tiempo:** 60 min
+**Problemas comunes:**
 
-**Partes:**
-1. Verificación y primera interacción (~10 min)
-2. Tu tarea real con sistema (~40 min)
-3. Captura y reflexión (~10 min)
-
-> 💡 Tip: Trae tu tarea preparada — sin ella, el lab pierde valor
+- No carga Claude → limpiar caché o probar incógnito
+- No tiene cuenta → crear con email personal
 
 ---
 
-## ✅ Checkpoint: Parte 1
+## ✅ CHECKPOINT Parte 2: Tu Tarea Real (40 min)
 
-### Verifica:
-- [ ] Claude abierto y funcionando
-- [ ] Primera interacción completada
-- [ ] Observaste cómo responde
+### Debes ver en pantalla:
 
-**Preguntas:**
-- ¿Todos tienen Claude funcionando?
-- ¿Alguien tuvo problemas de acceso?
+- Tu sistema de revisor con ROL + CONTEXTO + INSTRUCCIÓN
+- Al menos 2 iteraciones sobre tu tarea real
 
----
+**Problemas comunes:**
 
-## ✅ Checkpoint: Parte 2
-
-### Verifica:
-- [ ] Creaste tu sistema de revisor
-- [ ] Probaste con tu tarea real
-- [ ] Iteraste al menos 2 veces
-
-**Preguntas:**
-- ¿Quién obtuvo un resultado que usaría mañana?
-- ¿Qué hizo más diferencia: el rol o el contexto?
+- Respuesta genérica → agregar más contexto de tu industria/rol
+- No sabe qué tarea usar → elegir de la tabla del lab
 
 ---
 
-## ✅ Checkpoint: Parte 3
+## ✅ CHECKPOINT Parte 3: Captura y Reflexión (10 min)
 
-### Verifica:
-- [ ] Screenshot capturado
-- [ ] Prompt final guardado
-- [ ] Reflexión escrita
+### Debes ver en pantalla:
 
----
+- Screenshot con prompt + resultado final
+- 3 tareas con potencial IA identificadas
 
-## 💡 Reflexión
+**Problemas comunes:**
 
-### Hoy aprendiste:
-- La diferencia entre el 5% y el 95%
-- Qué puede y qué NO puede la IA
-- La fórmula: SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
-
-### Pregunta para pensar:
-¿Qué tarea repetitiva de tu semana podrías convertir en un sistema?
+- No sabe qué tareas elegir → pensar en lo repetitivo de su semana
 
 ---
 
-## 🔗 Preview: Clase 02
+## 💡 REFLEXIÓN
+
+| Antes de hoy | Después de hoy |
+|-------|---------|
+| IA = Google mejorado | IA = asistente con contexto |
+| Prompts sueltos | SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN |
+| Una sola herramienta | Claude vs ChatGPT según la tarea |
+
+> **Regla memorable:** "La IA no reemplaza tu juicio. Amplifica lo que ya sabes."
+
+---
+
+## 🔗 TRANSICIÓN: Preview Clase 02
 
 ### Hoy lograste:
+
 - Tu primer "wow moment" con IA
-- Un sistema reusable (el revisor)
+- Un SISTEMA reusable (ROL + CONTEXTO + INSTRUCCIÓN)
+- Comparar Claude vs ChatGPT en la misma tarea
 
-### La próxima clase:
-- **El Arte del Prompt** — Framework RICE completo
-- Técnicas avanzadas: Chain of Thought, Few-shot
+### Próxima clase: Diseño de instrucciones efectivas
 
-> **Tarea:** Screenshot + prompt final + reflexión de 3-5 oraciones
+- Framework **RICE** (Rol, Instrucción, Contexto, Ejemplo)
+- Técnica **Few-shot** para enseñar patrones a la IA
+
+---
+
+## ❓ Preguntas de Cierre
+
+1. ¿Qué tarea repetitiva de tu semana podrías convertir en un sistema?
+
+2. ¿Cuándo elegirías Claude sobre ChatGPT (o viceversa)?
+
+3. ¿Qué información de contexto mejoró más tus resultados hoy?
 
 ---
 
 ## 📝 Entrega
 
-- Screenshot de tu resultado más impresionante
-- Prompt final que funcionó mejor
-- Tu sistema base (el revisor u otro)
-- Reflexión breve (3-5 oraciones)
+1. **Comparación Claude vs ChatGPT** — Screenshot de ambas respuestas + observación
+2. **Sistema reusable** — Prompt (ROL + CONTEXTO + INSTRUCCIÓN) con resultado real
+3. **3 tareas con potencial IA** — De tu trabajo, con justificación breve
 
-### Próxima clase: El Arte del Prompt
+**Formato:** Google Doc con los 3 elementos
+
+### Próxima clase: Diseño de instrucciones efectivas

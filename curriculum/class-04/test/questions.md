@@ -4,7 +4,7 @@
 
 ---
 
-## Preguntas 1-2 (Clase 01: El Nuevo Juego)
+## Preguntas 1-2 (Clase 01: Panorama actual de la IA)
 
 ### Pregunta 1
 
@@ -30,7 +30,7 @@ Según los niveles de dominio de IA presentados, ¿en qué nivel estará un egre
 
 ---
 
-## Preguntas 3-4 (Clase 02: El Arte del Prompt)
+## Preguntas 3-4 (Clase 02: Diseño de instrucciones efectivas)
 
 ### Pregunta 3
 
@@ -56,25 +56,25 @@ En el framework RICE, ¿qué representa la letra "E" y por qué es tan poderosa?
 
 ---
 
-## Preguntas 5-6 (Clase 03: Tu Socio Pensante)
+## Preguntas 5-6 (Clase 03: Producción de contenido profesional con IA)
 
 ### Pregunta 5
 
-¿Cuál es el cambio de paradigma entre las Clases 01-02 y la Clase 03?
+¿Cuál es el cambio de paradigma de la Clase 03 respecto a las clases anteriores?
 
 - A) En Clase 03 se usan prompts más largos y detallados
-- B) En Clases 01-02 tú instruyes y la IA ejecuta; en Clase 03 la IA pregunta para extraer TU conocimiento
+- B) La IA pasa de ejecutar instrucciones a preguntar para extraer TU conocimiento y producir contenido con criterio editorial
 - C) En Clase 03 se trabaja con documentos en vez de conversaciones
-- D) En Clases 01-02 se usa Claude y en Clase 03 se usa Perplexity
+- D) En las clases anteriores se usa Claude y en Clase 03 se usa otra herramienta
 
 > Respuesta: B
 
 ### Pregunta 6
 
-¿Qué es un Claude Project y cuál es su ventaja principal?
+¿Qué es un Claude Project y cómo se relaciona con la producción de contenido profesional?
 
 - A) Una conversación más larga con más contexto disponible
-- B) Un espacio con instrucciones persistentes que definen cómo debe comportarse la IA siempre
+- B) Un espacio con instrucciones persistentes donde creas un framework personal para producir contenido con tu expertise
 - C) Una forma de compartir prompts con otros usuarios de Claude
 - D) Un tipo de suscripción premium de Claude
 
@@ -82,7 +82,7 @@ En el framework RICE, ¿qué representa la letra "E" y por qué es tan poderosa?
 
 ---
 
-## Pregunta 7 (Clase 04: Proyecto Integrador)
+## Pregunta 7 (Clase 04: Investigación y análisis asistidos por IA)
 
 ### Pregunta 7
 

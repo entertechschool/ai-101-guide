@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido Profesional — IA como socio pensante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      margin: 0 auto;
+      background: #060913;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+    pre {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+    }
+
+    section { padding: 2.5rem 3rem; }
+
+    .hero {
+      text-align: center;
+      padding: 3.5rem 3rem 2.5rem;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(217, 70, 239, 0.15);
+      color: #d946ef;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: #94a3b8;
+    }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .card .desc {
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .accent-purple { border-left: 3px solid #d946ef; }
+    .accent-green  { border-left: 3px solid #4ade80; }
+    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-orange { border-left: 3px solid #fb923c; }
+
+    /* ── Flow diagram ── */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .flow .node {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    .flow .arrow {
+      color: #d946ef;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Phase table ── */
+    .phase-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+    }
+    .phase-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .phase-table td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .glossary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .glossary .term {
+      flex: 1 1 200px;
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .glossary .term strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .glossary .term span {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 3rem 3rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Módulo 1 · Clase 03</div>
+    <h1>Contenido Profesional — IA como socio pensante</h1>
+    <p class="subtitle">La IA pregunta, tú respondes, tu conocimiento queda estructurado</p>
+  </section>
+
+  <!-- BLOQUES DE CONTENIDO -->
+  <section>
+
+    <!-- BLOQUE 1: Inversión del flujo -->
+    <div class="card accent-purple">
+      <h3>El flujo se invierte</h3>
+      <p class="desc">En Clases 01-02 tú instruías a la IA. Ahora la IA te hace preguntas para extraer TU conocimiento.</p>
+      <div class="flow">
+        <div class="node" style="border-color: #94a3b8;">Antes<br><span style="color: #94a3b8; font-size: 0.8rem;">Tú → instrucción → IA → output genérico</span></div>
+        <div class="arrow">→</div>
+        <div class="node" style="border-color: #d946ef;">Ahora<br><span style="color: #d946ef; font-size: 0.8rem;">IA → pregunta → Tú → respuesta → TU conocimiento</span></div>
+      </div>
+      <p style="color: #d946ef; font-size: 0.9rem; margin-top: 1rem;">El output más valioso no viene de la IA — viene de TI.</p>
+    </div>
+
+    <!-- BLOQUE 2: Brainstorming Guiado -->
+    <div class="card accent-green">
+      <h3>Brainstorming Guiado: 3 fases</h3>
+      <p class="desc">La IA hace preguntas sistemáticas para extraer conocimiento que tienes pero no has documentado.</p>
+      <table class="phase-table">
+        <tr>
+          <th>Fase</th>
+          <th>La IA hace</th>
+          <th>Tú haces</th>
+        </tr>
+        <tr>
+          <td style="color: #4ade80;">Exploración</td>
+          <td>Pregunta "¿cómo?", "¿por qué?"</td>
+          <td>Respondes con ejemplos reales</td>
+        </tr>
+        <tr>
+          <td style="color: #4ade80;">Estructuración</td>
+          <td>Propone un framework</td>
+          <td>Corriges y agregas</td>
+        </tr>
+        <tr>
+          <td style="color: #4ade80;">Validación</td>
+          <td>Presenta resultado final</td>
+          <td>Verificas autenticidad</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- BLOQUE 3: Claude Projects -->
+    <div class="card accent-blue">
+      <h3>Claude Projects: tu espacio persistente</h3>
+      <p class="desc">Un Project recuerda tu contexto y estilo entre conversaciones. Tu socio pensante siempre listo.</p>
+      <pre><code>Claude Project = 3 componentes
+
+1. Instrucciones persistentes (system prompt)
+   → "Eres mi socio pensante. Pregunta antes
+      de estructurar. Nunca asumas respuestas."
+
+2. Archivos de contexto (opcional)
+   → Tu framework, datos de referencia
+
+3. Historial de conversaciones
+   → Continuidad entre sesiones</code></pre>
+    </div>
+
+    <!-- BLOQUE 4: Criterio Editorial -->
+    <div class="card accent-orange">
+      <h3>Criterio editorial: la prueba final</h3>
+      <p class="desc">Saber qué aceptar, qué corregir y qué descartar del contenido generado con IA.</p>
+      <pre><code>3 trampas comunes al producir contenido con IA:
+
+⚠️  Conocimiento inventado
+    → La IA "completa" gaps con contenido genérico
+
+⚠️  Sobre-estructuración
+    → No todo cabe en un framework de 5 pasos
+
+⚠️  Validación sesgada
+    → Aceptar lo que suena bien aunque no sea exacto</code></pre>
+      <p style="color: #fb923c; font-size: 0.9rem; margin-top: 0.75rem;">Prueba: "¿Esto es lo que REALMENTE hago, o suena bonito pero es genérico?"</p>
+    </div>
+
+  </section>
+
+  <!-- GLOSARIO -->
+  <section>
+    <div class="glossary">
+      <div class="term">
+        <strong>Claude Project</strong>
+        <span>Espacio en Claude con instrucciones persistentes y archivos de contexto</span>
+      </div>
+      <div class="term">
+        <strong>Socio pensante</strong>
+        <span>La IA pregunta para extraer tu conocimiento, en vez de generar contenido</span>
+      </div>
+      <div class="term">
+        <strong>Framework personal</strong>
+        <span>Tu expertise estructurada en formato reutilizable y transferible</span>
+      </div>
+      <div class="term">
+        <strong>Criterio editorial</strong>
+        <span>Evaluar y decidir qué contenido generado con IA tiene calidad profesional</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    AI 101 — IA para Profesionales · EnterTechSchool · Clase 03
+  </section>
+
+  <!-- ════════ EXPORT PNG ════════ -->
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
+    Exportar a PNG
+  </button>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('export-btn');
+    var originalText = btn.textContent;
+
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      btn.textContent = 'Exportando...';
+
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function(){
+        btn.style.display = 'none';
+        document.fonts.ready.then(function(){
+          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
+            var link = document.createElement('a');
+            var title = document.title
+              .toLowerCase()
+              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-|-$/g, '');
+            link.download = 'clase-03-' + title + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }).catch(function(){
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = 'Error — Intenta de nuevo';
+            setTimeout(function(){ btn.textContent = originalText; }, 2000);
+          });
+        });
+      };
+      script.onerror = function(){
+        btn.disabled = false;
+        btn.textContent = 'Error — Intenta de nuevo';
+        setTimeout(function(){ btn.textContent = originalText; }, 2000);
+      };
+      document.head.appendChild(script);
+    });
+  })();
+  </script>
+
+</body>
+</html>

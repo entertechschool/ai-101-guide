@@ -1,12 +1,8 @@
-# Lab 02: Mi Sistema de Triage con IA
+# Lab 02: Mi Sistema de Triage — Diseño de instrucciones efectivas
 
-Construirás un sistema de triage de mensajes de clientes que evoluciona en 4 fases. Cada fase agrega UNA técnica, y verás cómo mejora el resultado. Al terminar, tendrás un prompt maestro que combina Rol + Formato + Few-shot.
+Construirás un sistema de triage que evoluciona en 4 fases. Cada fase agrega UNA técnica y verás cómo mejora el resultado.
 
-> ⏱️ **Tiempo total:** 70 minutos
-
-### 🎯 Objetivo
-
-Crear un prompt de triage que clasifica mensajes de clientes con prioridad, categoría y acción siguiente — y entender POR QUÉ cada técnica mejora el resultado.
+> ⏱️ **Tiempo total:** 65 minutos
 
 ---
 
@@ -17,41 +13,16 @@ Trabajas en **PetShop Express**, una tienda online de productos para mascotas. R
 ### Los 5 Mensajes para Clasificar
 
 ```
-MENSAJE 1:
-"Hola, pedí comida especial para mi perro hace 5 días y no ha llegado.
-Mi perro tiene problemas renales y SOLO puede comer esta marca. Ya se
-me está acabando la que tengo. ¿Pueden decirme qué pasó con mi pedido?
-Número de orden: #45892"
+MENSAJE 1: "Hola, pedí comida especial para mi perro hace 5 días y no ha llegado. Mi perro tiene problemas renales y SOLO puede comer esta marca. Ya se me está acabando. Orden: #45892"
 
-MENSAJE 2:
-"Vi en su Instagram un rascador para gatos que se ve muy bonito.
-¿Todavía lo tienen? ¿Cuánto cuesta? Mi gato destruyó el anterior jaja"
+MENSAJE 2: "Vi en su Instagram un rascador para gatos que se ve muy bonito. ¿Todavía lo tienen? ¿Cuánto cuesta? Mi gato destruyó el anterior jaja"
 
-MENSAJE 3:
-"PÉSIMO SERVICIO. Me llegó el producto equivocado y nadie me contesta.
-Llevo 3 días esperando respuesta. Quiero mi reembolso YA o voy a poner
-queja en redes sociales."
+MENSAJE 3: "PÉSIMO SERVICIO. Me llegó el producto equivocado y nadie me contesta. Llevo 3 días esperando. Quiero mi reembolso YA o voy a poner queja en redes."
 
-MENSAJE 4:
-"Buenas tardes. Necesito que corrijan mi factura porque pusieron mal
-el RFC de mi empresa. No es urgente, pero sí necesito tenerla antes
-del viernes para cerrar mes. Gracias."
+MENSAJE 4: "Necesito que corrijan mi factura porque pusieron mal el RFC de mi empresa. No es urgente, pero sí necesito tenerla antes del viernes para cerrar mes."
 
-MENSAJE 5:
-"Compré unas vitaminas para mi perro y no le funcionaron. Sigue igual
-de decaído. No sé si pedir reembolso, cambio por otra marca, o si
-ustedes me pueden recomendar algo mejor."
+MENSAJE 5: "Compré unas vitaminas para mi perro y no le funcionaron. Sigue igual de decaído. No sé si pedir reembolso, cambio por otra marca, o si me pueden recomendar algo."
 ```
-
----
-
-## Antes de Empezar
-
-| Requisito | Verificación |
-|-----------|--------------|
-| Claude abierto | Tab lista para prompts |
-| Los 5 mensajes | Copiados arriba ☝️ |
-| Google Doc | Para documentar tu evolución |
 
 ---
 
@@ -69,16 +40,9 @@ Clasifica estos mensajes de clientes:
 [PEGA LOS 5 MENSAJES]
 ```
 
-### 1.2 Observa el resultado
+### 1.2 Observa y documenta
 
-Anota en tu Google Doc:
-- ¿El formato es consistente entre mensajes?
-- ¿Las categorías son claras o ambiguas?
-- ¿Sabrías qué hacer con cada mensaje basándote en la clasificación?
-
-### 1.3 El problema
-
-Sin estructura, cada mensaje se clasifica diferente. No hay formato estándar. Las prioridades son subjetivas.
+Anota en tu Google Doc: ¿El formato es consistente? ¿Las categorías son claras? ¿Sabrías qué hacer con cada mensaje?
 
 ✅ **Checkpoint:** Tienes tu primera clasificación caótica documentada.
 
@@ -102,13 +66,7 @@ Clasifica estos mensajes de clientes:
 
 ### 2.2 Compara con Parte 1
 
-- ¿Mejoró la consistencia?
-- ¿Las prioridades tienen más sentido?
-- ¿Sigue habiendo problemas de formato?
-
-### 2.3 El avance y la limitación
-
-El rol mejora el CRITERIO de clasificación, pero el formato sigue siendo inconsistente. La IA "sabe más" pero no presenta la info de forma útil.
+¿Mejoró la consistencia? ¿Las prioridades tienen más sentido? El rol mejora el CRITERIO pero el formato sigue inconsistente.
 
 ✅ **Checkpoint:** Segunda clasificación con rol, comparación documentada.
 
@@ -143,13 +101,7 @@ Mensajes a clasificar:
 
 ### 3.2 Compara con Parte 2
 
-- ¿Ahora puedes comparar mensajes fácilmente?
-- ¿Los campos son útiles para tomar decisión?
-- ¿Hay consistencia en el formato?
-
-### 3.3 El avance
-
-El formato estructurado hace la clasificación ACCIONABLE. Ya no es texto libre — es una tabla que puedes usar para asignar trabajo.
+¿Puedes comparar mensajes fácilmente? El formato estructurado hace la clasificación ACCIONABLE.
 
 ✅ **Checkpoint:** Tercera clasificación en tabla, campos consistentes.
 
@@ -194,13 +146,7 @@ alimento para mi refugio"
 
 ### 4.2 Compara con Parte 3
 
-- ¿Los ejemplos "calibraron" mejor la prioridad?
-- ¿Las acciones siguientes son más específicas?
-- ¿El formato se mantuvo exactamente igual?
-
-### 4.3 El avance final
-
-Los ejemplos enseñan el CRITERIO específico. La IA ahora entiende no solo el formato, sino el RAZONAMIENTO detrás de cada clasificación.
+¿Los ejemplos "calibraron" mejor las prioridades? Los ejemplos enseñan el CRITERIO — la IA entiende el RAZONAMIENTO, no solo el formato.
 
 ✅ **Checkpoint:** Clasificación final con las 3 técnicas combinadas.
 
@@ -210,29 +156,15 @@ Los ejemplos enseñan el CRITERIO específico. La IA ahora entiende no solo el f
 
 La IA no es perfecta. Vamos a encontrar sus errores.
 
-### 5.1 Compara tus clasificaciones
+### 5.1 Encuentra UN error
 
-Abre tu Google Doc con las 4 versiones. Enfócate en la **Versión 4** (Few-shot) y responde:
+Enfócate en tu Versión 4 (Few-shot). Busca un mensaje donde la IA se equivocó:
 
-| Mensaje | ¿Qué prioridad le dio la IA? | ¿Estás de acuerdo? | ¿Por qué sí/no? |
-|---------|------------------------------|--------------------| ----------------|
-| 1 (perro con dieta especial) | | | |
-| 3 (cliente enojado) | | | |
-| 4 (factura "no urgente") | | | |
+- **Mensaje 1 vs 3:** ¿Priorizó la urgencia REAL (salud del animal) o el TONO (mayúsculas, amenaza)?
+- **Mensaje 4:** Dice "no es urgente" pero tiene deadline real. ¿La IA lo detectó?
+- **Mensaje 5:** ¿La categoría elegida es la más útil para actuar?
 
-### 5.2 Encuentra UN error
-
-Busca un mensaje donde la IA se equivocó. Pistas de errores comunes:
-
-- **Mensaje 1 vs 3:** El mensaje 1 tiene urgencia REAL (salud del animal). El mensaje 3 tiene tono urgente (mayúsculas, amenaza). ¿Cuál priorizó la IA? ¿Es correcto?
-
-- **Mensaje 4:** Dice "no es urgente" pero tiene deadline real (viernes). ¿La IA detectó el deadline o se quedó con "no urgente"?
-
-- **Mensaje 5:** ¿Qué categoría le dio? Podría ser Producto, Queja, o Venta. ¿La categoría que eligió es la más útil?
-
-### 5.3 Documenta el error
-
-En tu Google Doc, escribe:
+### 5.2 Documenta el error
 
 ```
 ERROR ENCONTRADO:
@@ -240,15 +172,6 @@ ERROR ENCONTRADO:
 - Qué hizo la IA: ___
 - Qué debería haber hecho: ___
 - Cómo ajustaría el prompt: ___
-```
-
-**Ejemplo de respuesta:**
-```
-ERROR ENCONTRADO:
-- Mensaje #: 4
-- Qué hizo la IA: Lo clasificó como 🟢 Baja porque dice "no urgente"
-- Qué debería haber hecho: 🟡 Media porque tiene deadline del viernes
-- Cómo ajustaría el prompt: Agregar regla "Detectar deadlines aunque el cliente diga 'no urgente'"
 ```
 
 ✅ **Checkpoint:** Tienes 1 error documentado con propuesta de corrección.
@@ -257,46 +180,21 @@ ERROR ENCONTRADO:
 
 ## 📝 Entregable
 
-**Google Doc con 3 secciones:**
+**Google Doc con 3 prompts documentados (link público):**
 
-### 1. Evolución del Prompt
-Muestra las 4 versiones y cómo mejoró cada una:
-- Versión 1: Sin técnicas
-- Versión 2: +Rol
-- Versión 3: +Formato
-- Versión 4: +Few-shot (tu prompt maestro final)
-
-### 2. Tabla de Clasificación Final
-La tabla con los 5 mensajes clasificados usando tu prompt completo.
-
-### 3. Reflexión Crítica
-```
-ERROR ENCONTRADO:
-- Mensaje #: ___
-- Qué hizo la IA: ___
-- Qué debería haber hecho: ___
-- Cómo ajustaría el prompt: ___
-```
-
-**Entrega:** Link público del Google Doc.
+1. **Prompt de triage** — RICE + Few-shot + tabla clasificada
+2. **Prompt para TU trabajo** — RICE aplicado a tarea real con resultado
+3. **Reflexión crítica** — 1 error encontrado + corrección propuesta
 
 ---
 
 ## Checklist Final
 
-- [ ] ¿Documenté las 4 versiones del prompt?
-- [ ] ¿Mi tabla tiene los 5 mensajes clasificados?
+- [ ] ¿Documenté el prompt de triage con RICE + Few-shot?
+- [ ] ¿Creé un segundo prompt aplicado a MI trabajo?
 - [ ] ¿Identifiqué al menos 1 error/limitación de la IA?
-- [ ] ¿Expliqué cómo corregiría ese error?
 
 ---
 
-## 🚀 Bonus: Tus Mensajes Reales (Opcional)
-
-Si tienes acceso a mensajes reales de clientes de tu trabajo:
-
-1. Anonimiza los datos (nombres, números de cuenta)
-2. Usa tu prompt maestro para clasificar 5 mensajes reales
-3. Compara: ¿Funcionó igual de bien? ¿Qué ajustes necesita?
-
-**Tip:** Los prompts que funcionan con casos mockup a veces fallan con datos reales. Eso es normal — es parte del proceso de refinamiento.
+## Bonus: Tus Mensajes Reales (Opcional)
+Si tienes mensajes reales de clientes: anonimiza datos, usa tu prompt maestro, y compara. Los prompts que funcionan con mockups a veces fallan con datos reales — ajustar es parte del proceso.

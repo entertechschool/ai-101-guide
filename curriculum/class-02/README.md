@@ -1,6 +1,6 @@
 > 📦 **Módulo 1:** Clase 2 de 4
 
-# Clase 02: El Arte del Prompt
+# Clase 02: Diseño de instrucciones efectivas
 
 ## Resumen
 

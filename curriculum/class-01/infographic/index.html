@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA Profesional — Tu primer sistema reusable</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Canvas ── */
+    body {
+      width: 1080px;
+      margin: 0 auto;
+      background: #060913;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+    pre {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+    }
+
+    /* ── Sections ── */
+    section { padding: 2.5rem 3rem; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 3.5rem 3rem 2.5rem;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(217, 70, 239, 0.15);
+      color: #d946ef;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: #94a3b8;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .card .desc {
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Accent borders ── */
+    .accent-purple { border-left: 3px solid #d946ef; }
+    .accent-green  { border-left: 3px solid #4ade80; }
+    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-orange { border-left: 3px solid #fb923c; }
+
+    /* ── Comparison table ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+    }
+    .comparison-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .comparison-table td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    /* ── Glossary ── */
+    .glossary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .glossary .term {
+      flex: 1 1 200px;
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .glossary .term strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .glossary .term span {
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 2rem 3rem 3rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Módulo 1 · Clase 01</div>
+    <h1>IA Profesional — Tu primer sistema reusable</h1>
+    <p class="subtitle">De "Google mejorado" a asistente con contexto que resuelve tareas reales</p>
+  </section>
+
+  <!-- BLOQUE 1: Prompt vs Sistema -->
+  <section>
+    <div class="card accent-purple">
+      <h3>Prompt vs Sistema</h3>
+      <p class="desc">Un prompt resuelve UNA tarea. Un sistema resuelve TODAS las similares.</p>
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>Prompt</th>
+          <th>Sistema</th>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Resuelve</td>
+          <td>Una tarea</td>
+          <td style="color: #4ade80;">Todas las similares</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Ejemplo</td>
+          <td>"Ayúdame con este email"</td>
+          <td style="color: #4ade80;">"Eres mi revisor. Mi contexto es X."</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Reusable</td>
+          <td>No</td>
+          <td style="color: #4ade80;">Sí</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- BLOQUE 2: Fórmula del Sistema -->
+    <div class="card accent-green">
+      <h3>La fórmula: ROL + CONTEXTO + INSTRUCCIÓN</h3>
+      <p class="desc">Tres componentes que transforman cualquier prompt genérico en un sistema reusable.</p>
+      <pre><code>SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
+
+Eres mi revisor de comunicaciones profesionales.
+
+Mi contexto:
+- Rol: Gerente de marketing en empresa de software
+- Audiencia: Clientes enterprise B2B
+
+Tu trabajo: Cuando te pase un borrador, dame feedback
+directo sobre claridad, tono y qué falta.</code></pre>
+    </div>
+
+    <!-- BLOQUE 3: Claude vs ChatGPT -->
+    <div class="card accent-blue">
+      <h3>Claude vs ChatGPT: herramientas distintas</h3>
+      <p class="desc">No todas las IAs son iguales. Conocer sus fortalezas te da ventaja competitiva.</p>
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th style="color: #93c5fd;">Claude</th>
+          <th style="color: #fb923c;">ChatGPT</th>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Fortaleza</td>
+          <td>Tareas largas, instrucciones complejas</td>
+          <td>Browsing, plugins, integración</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Mejor para</td>
+          <td>Sistemas reusables, análisis</td>
+          <td>Búsqueda, tareas interactivas</td>
+        </tr>
+      </table>
+      <p style="color: #64748b; font-size: 0.85rem; margin-top: 0.75rem;">Las técnicas de este curso funcionan en ambas. Por eso comparamos.</p>
+    </div>
+
+    <!-- BLOQUE 4: 3 Niveles de Dominio -->
+    <div class="card accent-orange">
+      <h3>Los 3 niveles de dominio de IA</h3>
+      <p class="desc">El 95% de profesionales se queda en el nivel 1. Este curso te lleva al nivel 2.</p>
+      <pre><code>Nivel 1 · Usuario (95%)
+  → "Escríbeme un email" → resultado genérico
+
+Nivel 2 · Operador ← META AI 101
+  → Sistemas reusables, frameworks, contexto
+
+Nivel 3 · Constructor (AI 201/301)
+  → Crea soluciones, agentes, productos</code></pre>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section>
+    <div class="glossary">
+      <div class="term">
+        <strong>LLM</strong>
+        <span>Modelo de IA entrenado con texto masivo que entiende y genera lenguaje natural</span>
+      </div>
+      <div class="term">
+        <strong>Prompt</strong>
+        <span>La instrucción que le das a la IA para obtener una respuesta</span>
+      </div>
+      <div class="term">
+        <strong>Alucinación</strong>
+        <span>Cuando la IA genera información convincente pero incorrecta</span>
+      </div>
+      <div class="term">
+        <strong>Contexto</strong>
+        <span>Información adicional que le das a la IA para que entienda tu situación</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    AI 101 — IA para Profesionales · EnterTechSchool · Clase 01
+  </section>
+
+  <!-- ════════ EXPORT PNG ════════ -->
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
+    Exportar a PNG
+  </button>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('export-btn');
+    var originalText = btn.textContent;
+
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      btn.textContent = 'Exportando...';
+
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function(){
+        btn.style.display = 'none';
+        document.fonts.ready.then(function(){
+          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
+            var link = document.createElement('a');
+            var title = document.title
+              .toLowerCase()
+              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-|-$/g, '');
+            link.download = 'clase-01-' + title + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }).catch(function(){
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = 'Error — Intenta de nuevo';
+            setTimeout(function(){ btn.textContent = originalText; }, 2000);
+          });
+        });
+      };
+      script.onerror = function(){
+        btn.disabled = false;
+        btn.textContent = 'Error — Intenta de nuevo';
+        setTimeout(function(){ btn.textContent = originalText; }, 2000);
+      };
+      document.head.appendChild(script);
+    });
+  })();
+  </script>
+
+</body>
+</html>

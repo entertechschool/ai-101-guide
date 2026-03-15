@@ -1,10 +1,10 @@
-# Guía del Facilitador - Clase 02: El Arte del Prompt
+# Guía del Facilitador - Clase 02: Diseño de instrucciones efectivas
 
 > Tiempo de lectura: 8 minutos | Prepárate antes de clase
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
 - **RICE**: Framework de prompts — Rol, Instrucción, Contexto, Ejemplo.
 - **Ejemplo**: Muestra de output deseado que elimina ambigüedad (mostrar > describir).
@@ -14,7 +14,7 @@
 
 ---
 
-## Analogías Útiles
+## 🔗 Analogías Útiles
 
 **RICE como receta de cocina:**
 Ingredientes (contexto), instrucciones (qué hacer), foto del plato terminado (ejemplo). Sin la foto, el chef interpreta.
@@ -30,7 +30,7 @@ Un niño aprende mejor viendo ejemplos que escuchando explicaciones. La IA tambi
 
 ---
 
-## Contexto Actual
+## 📚 Contexto Actual
 
 ### Por qué triage y no email genérico
 
@@ -50,7 +50,7 @@ Elegimos productos para mascotas porque:
 
 ---
 
-## Los 5 Mensajes y Por Qué Cada Uno
+## 💡 Los 5 Mensajes y Por Qué Cada Uno
 
 | # | Mensaje | Por qué lo incluimos |
 |---|---------|----------------------|
@@ -70,7 +70,7 @@ Elegimos productos para mascotas porque:
 
 ---
 
-## Momentos Clave de la Clase
+## 🎯 Momentos Clave de la Clase
 
 ### Pregunta Detonadora
 
@@ -133,7 +133,15 @@ Parte 5: Encuentren los errores — porque SÍ habrá errores."
 
 ---
 
-## Errores Esperados de Estudiantes
+## 🎭 Dinámicas de Clase
+
+**"Triage a mano"** — Antes de mostrar la IA, da 2 minutos para que clasifiquen los 5 mensajes manualmente. Compara resultados con la IA. Script: *"Anoten su orden de prioridad. Ahora veamos qué dice la IA. ¿Dónde difieren? ¿Quién tiene razón?"*
+
+**"El mensaje trampa"** — Después de Nivel 3, pregunta: *"¿Cuál es el mensaje más peligroso de clasificar mal?"* Facilita debate entre mensaje 1 (urgencia médica real con tono calmado) vs mensaje 4 (deadline oculto). No hay respuesta única — el objetivo es razonamiento crítico.
+
+---
+
+## ⚠️ Errores Esperados de Estudiantes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
@@ -144,7 +152,23 @@ Parte 5: Encuentren los errores — porque SÍ habrá errores."
 
 ---
 
-## Preguntas Frecuentes
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:** explica por qué los ejemplos mejoran más que el rol solo, identifica al menos un error de clasificación de la IA, itera su prompt metódicamente (no al azar).
+
+**NECESITA AYUDA cuando:** solo documenta la versión final sin comparar, confía ciegamente en la clasificación de la IA, confunde longitud del prompt con calidad.
+
+---
+
+## 🔀 Diferenciación
+
+**Avanzados:** agregar un mensaje 6 ambiguo de su invención, crear matriz RICE para su propia industria, mentorear a compañeros que necesitan apoyo.
+
+**Con dificultades:** enfocarse solo en 3 mensajes primero, trabajar en par con estudiante avanzado, recibir prompt pre-construido de Nivel 2 como punto de partida.
+
+---
+
+## ❓ Preguntas Frecuentes
 
 ### "¿Siempre tengo que usar RICE completo?"
 No para todo. Tareas simples no lo necesitan. Pero cuando algo no funciona, RICE es tu checklist de diagnóstico.
@@ -160,21 +184,21 @@ Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son unive
 
 ---
 
-## Checkpoints de Validación
+## 🎯 Checkpoints de Validación
 
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~10 | Recap + hook | Pregunta sobre uso de sistema semana pasada |
-| ~25 | Demo 3 niveles | Comentarios sobre diferencia del ejemplo |
-| ~35 | Parte 1-2 completada | "¿Quién tiene las 2 primeras versiones?" |
-| ~55 | Parte 3 completada | "¿Quién tiene tabla con formato?" |
-| ~75 | Parte 4 completada | "¿Quién tiene los 5 mensajes clasificados?" |
-| ~90 | Análisis crítico | "¿Quién comparó mensaje 1 vs 3? ¿Cuál priorizó la IA?" |
-| ~100 | Cierre | Entregable claro, preview clase 03 |
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| ~10 | Recap + hook | Pregunta sobre uso de sistema semana pasada | Hacer recap rápido de RICE en pizarra |
+| ~25 | Demo 3 niveles | Comentarios sobre diferencia del ejemplo | Repetir Nivel 1 vs 3 lado a lado |
+| ~35 | Parte 1-2 completada | "¿Quién tiene las 2 primeras versiones?" | Compartir pantalla y hacer juntos |
+| ~55 | Parte 3 completada | "¿Quién tiene tabla con formato?" | Dar template de tabla como referencia |
+| ~75 | Parte 4 completada | "¿Quién tiene los 5 mensajes clasificados?" | Reducir a 3 mensajes, completar resto después |
+| ~90 | Análisis crítico | "¿Quién comparó mensaje 1 vs 3? ¿Cuál priorizó la IA?" | Guiar con pregunta directa sobre msg 1 |
+| ~100 | Cierre | Entregable claro, preview clase 03 | Dar 5 min extra, simplificar entregable |
 
 ---
 
-## Sección Anti-Hype: Cómo Manejarla
+## ⚠️ Sección Anti-Hype: Cómo Manejarla
 
 Esta clase tiene una sección explícita de limitaciones. Es intencional.
 
@@ -197,7 +221,7 @@ que cualquiera de los dos solos."
 
 ---
 
-## Tips de Facilitación
+## 🧑‍🏫 Tips de Facilitación
 
 ### Si el grupo está callado:
 - En el análisis crítico, nombrar a alguien: "María, ¿qué error encontraste en mensaje 1?"
@@ -211,13 +235,31 @@ que cualquiera de los dos solos."
 
 ---
 
-## Conexión con la Próxima Clase
+## 🔗 Conexiones del Curriculum
+
+### Esta clase construye sobre
+
+| Clase | Concepto | Cómo se conecta |
+|-------|----------|-----------------|
+| 01 | Sistema reusable (ROL + CONTEXTO + INSTRUCCIÓN) | RICE expande el framework con Ejemplo como componente clave |
+
+### Conexión con la Próxima Clase
 
 Al cerrar, planta la semilla:
 
-> "Hoy construyeron UN prompt maestro para clasificar mensajes.
-> La próxima clase vamos a encadenar múltiples prompts para crear
-> contenido profesional publicable — de idea a pieza final."
+> "Hoy construyeron su biblioteca de prompts maestros.
+> La próxima clase vamos a usar Claude Projects y frameworks personales para producir contenido profesional — de tu expertise a una pieza publicable."
 
 **Tarea para mencionar:**
-Google Doc con: 4 versiones del prompt, tabla de 5 mensajes, reflexión crítica con 1 error.
+Biblioteca personal de 3+ prompts documentados y probados en Google Doc.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+Después de cada sesión, responde brevemente:
+
+1. ¿El concepto de Few-shot quedó claro o necesita más ejemplos la próxima vez?
+2. ¿Los estudiantes encontraron errores de la IA por cuenta propia?
+3. ¿Qué ajustaría del timing o las dinámicas?
+4. ¿Qué estudiantes necesitan seguimiento individual para la clase 03?

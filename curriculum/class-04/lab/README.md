@@ -1,4 +1,4 @@
-# Lab 04: Mi Proyecto Integrador M1
+# Lab 04: Investigación y análisis asistidos por IA
 
 Este es el proyecto de cierre del Módulo 1. Integrarás todo lo aprendido — sistema (Clase 01), prompting (Clase 02), clarificación (Clase 03), más research — para resolver un problema real de tu trabajo. El resultado es calificable y será parte de tu portfolio.
 
@@ -16,7 +16,7 @@ Crear un proyecto completo que resuelve un problema real usando múltiples habil
 |----------|-----------|----------------|
 | 01 | Sistemas reusables | Tu solución será un sistema, no un prompt único |
 | 02 | RICE + Few-shot | Aplicarás estructura y ejemplos en tu prompt |
-| 03 | Clarificación + Perplexity | Estructurarás tu enfoque + research con fuentes |
+| 03 | Socio pensante + contenido | Aplicarás tu framework personal + criterio editorial |
 | **Nuevo** | Deep Research | Investigación profunda con Gemini |
 | **Nuevo** | Gems | Crearás un asistente especializado |
 
@@ -86,18 +86,18 @@ Ahora investigas contexto externo que enriquezca tu solución.
 
 | Herramienta | Cuándo usarla |
 |-------------|---------------|
-| **Perplexity** (ya conoces de Clase 03) | Preguntas específicas, necesitas fuentes rápidas |
+| **Perplexity** | Preguntas específicas, necesitas fuentes rápidas |
 | **Gemini Deep Research** | Investigación profunda, múltiples ángulos |
 
 ### 2.2 Conduce el research
 
 **En Perplexity:**
-1. Ve a [perplexity.ai](https://perplexity.ai)
+1. Ve a [perplexity.ai](https://perplexity.ai){:target="_blank"}
 2. Haz 2-3 búsquedas relacionadas con tu problema
 3. Guarda las fuentes relevantes
 
 **En Gemini (Deep Research):**
-1. Ve a [gemini.google.com](https://gemini.google.com)
+1. Ve a [gemini.google.com](https://gemini.google.com){:target="_blank"}
 2. Activa "Deep Research" si está disponible
 3. Pide investigación sobre tu tema
 
@@ -135,7 +135,7 @@ ___
 
 Usas técnicas de Clase 03 para estructurar tu solución.
 
-### 3.1 Abre tu Claude Project clarificador
+### 3.1 Abre tu Claude Project de socio pensante
 
 (El que configuraste en Clase 03, o crea uno nuevo)
 
@@ -200,7 +200,7 @@ Ahora construyes la solución reusable.
 
 Todos deben crear un Gem como parte del proyecto:
 
-1. Ve a [gemini.google.com](https://gemini.google.com)
+1. Ve a [gemini.google.com](https://gemini.google.com){:target="_blank"}
 2. En el menú lateral, busca **"Gems"** o **"Gem manager"**
 3. Clic en **"New Gem"** o **"Create"**
 4. Configura:
