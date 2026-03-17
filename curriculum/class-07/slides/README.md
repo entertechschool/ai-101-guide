@@ -52,6 +52,35 @@ El facilitador muestra su agente EN VIVO:
 
 ---
 
+## 🎯 COMPROBACIÓN
+
+### ¿Por qué usar 2 IAs encadenadas en vez de 1 sola que haga todo?
+
+**A)** 2 IAs son más rápidas que 1
+
+**B)** Cada IA se especializa en 1 tarea = mejor calidad en ambas
+
+**C)** OpenRouter requiere 2 módulos por escenario
+
+**D)** Es más barato usar 2 modelos pequeños que 1 grande
+
+> 🕐 30 segundos → levanten la mano
+
+---
+
+## 🎯 COMPROBACIÓN — Respuesta
+
+**Respuesta correcta: B**
+
+- **A:** ❌ No es cuestión de velocidad — el pipeline puede ser más lento
+- **B:** ✅ Especialización: OR#1 solo analiza, OR#2 solo genera. Cada uno tiene instrucciones enfocadas
+- **C:** ❌ OpenRouter no tiene esa limitación técnica
+- **D:** ❌ El costo no es el factor — es la calidad del output
+
+> **Clave:** Un analista que también redacta hace ambas cosas regular. Dos especialistas hacen cada cosa bien.
+
+---
+
 ## De clasificar a GENERAR
 
 ### La evolución C05-C06 → C07

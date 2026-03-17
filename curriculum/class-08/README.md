@@ -87,6 +87,13 @@ AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
 
 ---
 
+## Recursos Adicionales
+
+- [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart){:target="_blank"} - Guía de inicio en GitHub
+- [LinkedIn Post Best Practices](https://www.linkedin.com/help/linkedin/answer/a519782){:target="_blank"} - Tips para publicar
+
+---
+
 ## Herramientas necesarias
 
 - [ ] 💻 Laptop con Make abierto (agente C07 funcionando)

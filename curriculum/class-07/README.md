@@ -101,6 +101,13 @@ Google Sheets      OpenRouter #2 — GENERAR
 
 ---
 
+## Recursos Adicionales
+
+- [OpenRouter Models](https://openrouter.ai/models){:target="_blank"} - Modelos disponibles y precios
+- [Vercel Deployments](https://vercel.com/docs/deployments){:target="_blank"} - Documentación de deploy
+
+---
+
 ## Herramientas necesarias
 
 - [ ] 💻 Laptop con Make abierto (crear nuevo escenario)

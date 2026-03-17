@@ -68,7 +68,7 @@ Elige la opción que mejor represente tu marca.
 
 ### 2.2 Prompt + wireframe a v0 (refuerzo Few-shot C02)
 
-Abre [v0.dev](https://v0.dev) y escribe un prompt. Adjunta tu wireframe como ejemplo visual:
+Abre [v0.dev](https://v0.dev){:target="_blank"} y escribe un prompt. Adjunta tu wireframe como ejemplo visual:
 
 ```
 Crea un formulario de contacto para PetShop Express con:
@@ -103,7 +103,6 @@ Agrega un bloque de debug debajo del formulario que:
 > 💡 Si v0 no funciona, el facilitador compartirá un formulario pre-armado.
 
 ✅ **Checkpoint:** Formulario deployado con URL pública y bloque debug visible.
-
 ---
 
 ## Parte 3: Construir el Agente en Make (35 min)
@@ -127,7 +126,7 @@ Este paso es nuevo y crítico. En el módulo OpenRouter de Make:
 5. Haz clic en **Save** → espera el checkmark verde ✅
 6. Si ves error, verifica que la key no tenga espacios al inicio o final
 
-> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models) si no lo encuentras.
+> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models){:target="_blank"} si no lo encuentras.
 
 > ⚠️ Si tu key no funciona, pide la key de backup al facilitador.
 
@@ -197,7 +196,5 @@ Actualiza tu formulario v0 para que envíe datos a la URL del webhook de Make. U
 1. **Mi Formulario** — URL del form v0 deployado + screenshot (con bloque debug visible)
 2. **Mi Agente (cerebro)** — Screenshot del flujo en Make (2 módulos) + SystemPrompt completo
 3. **Primer Test** — Screenshot de Make History mostrando clasificación de al menos 2 mensajes
-
-**Entrega:** Link público del Google Doc.
 
 📌 **Próxima clase** completamos el agente: Gmail + Router + Google Sheets + battle de agentes.

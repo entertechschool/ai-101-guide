@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentes IA — De prompts a decisiones automáticas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      margin: 0 auto;
+      background: #060913;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+    pre {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+    }
+
+    section { padding: 2.5rem 3rem; }
+
+    .hero {
+      text-align: center;
+      padding: 3.5rem 3rem 2.5rem;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(217, 70, 239, 0.15);
+      color: #d946ef;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-size: 1.15rem;
+      color: #94a3b8;
+    }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .card .desc { color: #94a3b8; margin-bottom: 1rem; }
+
+    .accent-purple { border-left: 3px solid #d946ef; }
+    .accent-green  { border-left: 3px solid #4ade80; }
+    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-orange { border-left: 3px solid #fb923c; }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+    }
+    .comparison-table th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .comparison-table td {
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .glossary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .glossary .term {
+      flex: 1 1 200px;
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .glossary .term strong { display: block; margin-bottom: 0.25rem; }
+    .glossary .term span { color: #94a3b8; font-size: 0.9rem; }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 3rem 3rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Módulo 2 · Clase 05</div>
+    <h1>Agentes IA — De prompts a decisiones automáticas</h1>
+    <p class="subtitle">Tu primer agente: recibe, piensa y clasifica sin que hagas nada</p>
+  </section>
+
+  <!-- BLOQUES DE CONTENIDO -->
+  <section>
+
+    <!-- BLOQUE 1: Automatización vs Agente -->
+    <div class="card accent-purple">
+      <h3>Automatización vs Agente IA</h3>
+      <p class="desc">La diferencia fundamental: reglas fijas vs decisión inteligente.</p>
+      <table class="comparison-table">
+        <tr>
+          <th></th>
+          <th>Automatización</th>
+          <th style="color: #d946ef;">Agente IA</th>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Lógica</td>
+          <td>IF/THEN fijo</td>
+          <td style="color: #d946ef;">La IA DECIDE el THEN</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Ejemplo</td>
+          <td>"Presione 1 para soporte"</td>
+          <td style="color: #d946ef;">Lee el mensaje y decide a quién</td>
+        </tr>
+        <tr>
+          <td style="color: #94a3b8;">Adaptable</td>
+          <td>No — cambiar reglas</td>
+          <td style="color: #d946ef;">Sí — mejorar el prompt</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- BLOQUE 2: Arquitectura -->
+    <div class="card accent-green">
+      <h3>Arquitectura: Form → Webhook → IA</h3>
+      <p class="desc">3 componentes que convierten un formulario en un agente que piensa.</p>
+      <pre><code>┌──────────────────┐     ┌──────────┐     ┌──────────────┐
+│ FORMULARIO + DBG │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │
+│ (v0 + Vercel)    │     │ (Make)   │     │ (OpenRouter)  │
+└──────────────────┘     └──────────┘     └──────────────┘
+
+Formulario  → ¿De dónde vienen los datos?
+Webhook     → ¿Qué activa el flujo?
+IA Decide   → ¿Qué criterio usa? (SystemPrompt)</code></pre>
+    </div>
+
+    <!-- BLOQUE 3: SystemPrompt vs UserPrompt -->
+    <div class="card accent-blue">
+      <h3>SystemPrompt vs UserPrompt</h3>
+      <p class="desc">El SystemPrompt es el "manual del empleado". El UserPrompt es cada tarea que recibe.</p>
+      <pre><code>SystemPrompt (permanente):
+  "Eres un agente de triage. Clasifica mensajes
+   en: URGENTE, CONSULTA, VENTA. Regla: deadline
+   < 48h → siempre URGENTE."
+
+UserPrompt (cambia por mensaje):
+  "Nombre: María | Email: m@empresa.com
+   Mensaje: Mi pedido no llegó y es para mañana"
+
+→ Resultado: URGENTE (deadline implícito)</code></pre>
+    </div>
+
+    <!-- BLOQUE 4: La fórmula real -->
+    <div class="card accent-orange">
+      <h3>La fórmula: supervisión no es opcional</h3>
+      <p class="desc">Un agente amplifica tu criterio — no lo reemplaza.</p>
+      <pre><code>Agente útil =
+  Buen SystemPrompt
+  + Buena supervisión
+  + Mejora continua
+
+⚠️ Basura entra → basura sale (a escala)
+⚠️ La IA no tiene sentido común
+⚠️ Automatizar un mal proceso = errores más rápidos</code></pre>
+    </div>
+
+  </section>
+
+  <!-- GLOSARIO -->
+  <section>
+    <div class="glossary">
+      <div class="term">
+        <strong>Webhook</strong>
+        <span>URL que recibe datos y activa un flujo automático en Make</span>
+      </div>
+      <div class="term">
+        <strong>OpenRouter</strong>
+        <span>Puerta de acceso a múltiples modelos de IA vía API</span>
+      </div>
+      <div class="term">
+        <strong>SystemPrompt</strong>
+        <span>Instrucciones permanentes que definen el ROL del agente</span>
+      </div>
+      <div class="term">
+        <strong>v0</strong>
+        <span>Herramienta de vibe coding que genera formularios con IA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    AI 101 — IA para Profesionales · EnterTechSchool · Clase 05
+  </section>
+
+  <!-- ════════ EXPORT PNG ════════ -->
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
+    Exportar a PNG
+  </button>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('export-btn');
+    var originalText = btn.textContent;
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      btn.textContent = 'Exportando...';
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function(){
+        btn.style.display = 'none';
+        document.fonts.ready.then(function(){
+          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
+            var link = document.createElement('a');
+            var title = document.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            link.download = 'clase-05-' + title + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }).catch(function(){ btn.style.display = ''; btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); });
+        });
+      };
+      script.onerror = function(){ btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); };
+      document.head.appendChild(script);
+    });
+  })();
+  </script>
+
+</body>
+</html>

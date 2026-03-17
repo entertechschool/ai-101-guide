@@ -68,6 +68,35 @@ Tu primer agente end-to-end: Form → Decide → Actúa.
 
 ---
 
+## 🎯 COMPROBACIÓN
+
+### ¿Qué convirtió al agente de C05 en un agente "completo"?
+
+**A)** Cambiar el modelo de IA por uno más potente
+
+**B)** Agregar más mensajes de prueba
+
+**C)** Conectar Gmail para que el agente ACTÚE sobre su decisión
+
+**D)** Mejorar el SystemPrompt con más reglas
+
+> 🕐 30 segundos → levanten la mano
+
+---
+
+## 🎯 COMPROBACIÓN — Respuesta
+
+**Respuesta correcta: C**
+
+- **A:** ❌ Mismo modelo (Grok), la potencia no cambió
+- **B:** ❌ Más datos no cambian la arquitectura
+- **C:** ✅ Sin acción, la clasificación se queda en Make History — con Gmail, el agente ACTÚA
+- **D:** ❌ El SystemPrompt ya funcionaba — lo que faltaba era la acción
+
+> **Clave:** Decidir sin actuar = clasificar en el vacío. El agente necesita manos, no solo cerebro.
+
+---
+
 ## Concepto Clave: Flujo Lineal vs Branching
 
 ```

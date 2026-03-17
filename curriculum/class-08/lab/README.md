@@ -99,69 +99,15 @@ Commit desde el navegador (botón "Commit changes").
 
 ### 2.1 Draft del post con Claude (10 min)
 
-Abre Claude y usa este prompt:
+Abre Claude con un prompt que incluya: problema que resuelves, herramientas usadas, URL de Vercel, URL de GitHub, métrica real, limitación honesta. Pide formato: Hook (1 línea) + Qué construí + URLs + Resultado + Takeaway. Tono profesional sin hype.
 
-```
-Ayúdame a escribir un post de LinkedIn sobre mi primer proyecto
-open-source con IA. Datos:
-- Problema: [qué me costaba en mi trabajo]
-- Solución: agente IA con 2 cerebros encadenados (analiza + genera)
-- Herramientas: Make + OpenRouter + Gemini Flash + Gmail + Sheets
-- URL del agente: [tu URL de Vercel]
-- Repo con SystemPrompts: [tu URL de GitHub]
-- Métrica: [resultado real — ej: "procesé 10 notas de reunión"]
-- Limitación honesta: [qué no hace bien tu agente]
-
-Formato: Hook (1 línea) + Qué construí (2-3 líneas) + URLs + Resultado + Takeaway
-Tono: profesional pero accesible. Sin hype.
-```
-
-Itera al menos 1 vez. El post debe tener:
-- Hook que capture atención (1 línea)
-- Descripción de lo que construiste (2-3 líneas)
-- URLs: Vercel + GitHub
-- Métrica real
-- Aprendizaje honesto
+Itera al menos 1 vez. El post debe tener hook, descripción, URLs (Vercel + GitHub), métrica real y aprendizaje honesto.
 
 ### 2.2 Imagen de portada con Gemini (10 min)
 
-1. Toma un **screenshot** de este grid de logos (tu stack tecnológico):
-
-<style>
-.stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:520px;padding:24px;background:#0A192F;border-radius:12px;margin:16px 0}
-.stack-grid .logo-card{background:#1A2744;border:1px solid #2D3F5E;border-radius:10px;padding:14px 8px;text-align:center}
-.stack-grid .logo-card img{width:40px;height:40px;margin-bottom:6px}
-.stack-grid .logo-card span{display:block;color:#94A3B8;font-size:0.75rem;font-family:sans-serif}
-</style>
-
-<div class="stack-grid">
-  <div class="logo-card"><img src="assets/claude.svg" alt="Claude"><span>Claude</span></div>
-  <div class="logo-card"><img src="assets/gemini.svg" alt="Gemini"><span>Gemini</span></div>
-  <div class="logo-card"><img src="assets/github.svg" alt="GitHub"><span>GitHub</span></div>
-  <div class="logo-card"><img src="assets/make.svg" alt="Make"><span>Make</span></div>
-  <div class="logo-card"><img src="assets/openrouter.svg" alt="OpenRouter"><span>OpenRouter</span></div>
-  <div class="logo-card"><img src="assets/v0.svg" alt="v0"><span>v0</span></div>
-  <div class="logo-card"><img src="assets/drive.svg" alt="Drive"><span>Drive</span></div>
-  <div class="logo-card"><img src="assets/gmail.svg" alt="Gmail"><span>Gmail</span></div>
-</div>
-
-2. Abre **Gemini** → sube el screenshot + usa este prompt:
-
-```
-Genera una imagen con los logos de la imagen adjunta.
-Estilo: íconos 3D tipo app icons con volumen y sombras suaves,
-colocados sobre una base de vidrio transparente con efecto glassmorphism,
-en perspectiva isométrica. Líneas sutiles de conexión tipo network
-entre los íconos, con el ícono central más grande y prominente. El ícono central debe ser "Claude".
-Atmósfera futurista, limpia y profesional. Calidad 8k, renderizado en Octane, estilo visual de interfaz de usuario de última generación (Next-gen UI). Sin texto adicional, solo el impacto visual de las marcas integradas en un ecosistema digital colaborativo.
-Fondo oscuro con degradado azul-púrpura.
-Formato horizontal, ideal para banner de LinkedIn.
-Todos los logos deben verse bien desde la perspectiva de un observador que está en la esquina inferior derecha.
-```
-
-3. Descarga la imagen generada
-
-> 💡 **Tip:** Si la primera imagen no convence, itera: "más contraste entre íconos", "fondo más oscuro", "líneas de conexión más visibles".
+1. Toma un **screenshot** del grid de logos de tu stack (en `assets/`: Claude, Gemini, GitHub, Make, OpenRouter, v0, Drive, Gmail)
+2. Abre **Gemini** → sube el screenshot + pide: "Genera una imagen con estos logos en estilo 3D glassmorphism isométrico, fondo oscuro azul-púrpura, formato horizontal para banner de LinkedIn"
+3. Descarga la imagen. Si no convence, itera: "más contraste", "fondo más oscuro"
 
 ### 2.3 Peer review en parejas (10 min)
 
@@ -209,21 +155,7 @@ Todos los logos deben verse bien desde la perspectiva de un observador que está
 
 ### 4.1 Plan con Claude (10 min)
 
-Abre Claude y usa este prompt:
-
-```
-Construí un agente generativo que [describe tu caso] usando
-Make + OpenRouter (2 IAs encadenadas) + Gmail + Google Sheets.
-Publiqué el proyecto en GitHub y LinkedIn.
-
-Ayúdame a crear un plan de 30 días:
-- Semana 1: Mejorar calidad del agente actual (SystemPrompts + casos edge)
-- Semana 2: Expandir a más casos o inputs diferentes
-- Semana 3: Aplicar el patrón a otro proceso de mi trabajo
-- Semana 4: Medir impacto real y documentar resultados
-
-Dame 3 quick-wins que pueda hacer ESTA SEMANA.
-```
+Pide a Claude un plan de 30 días para tu agente: Semana 1 (mejorar calidad), Semana 2 (expandir casos), Semana 3 (aplicar a otro proceso), Semana 4 (medir impacto). Incluye 3 quick-wins para esta semana.
 
 ### 4.2 Compartir quick-wins (5 min)
 

@@ -23,7 +23,7 @@
 
 ---
 
-## 🧠 Pregunta Detonadora 1
+## 🧠 Pregunta Detonadora
 
 ### ¿Cuál es la diferencia entre automatización y un agente IA?
 
@@ -39,7 +39,7 @@
 
 ---
 
-## 🧠 Pregunta Detonadora 1 — Respuesta
+## 🧠 Pregunta Detonadora — Respuesta
 
 **Respuesta correcta: B**
 
@@ -49,36 +49,6 @@
 - **D:** ❌ La diferencia es fundamental: reglas fijas vs decisión inteligente
 
 > **Regla memorable:** Automatización = IF/THEN fijo. Agente = IA DECIDE el THEN.
-
----
-
-## 🧠 Pregunta Detonadora 2
-
-### Imagina que recibes 100 mensajes al día.
-### Con tu prompt manual de C02, ¿cuánto te toma clasificarlos?
-
-**A)** Lo mismo que con un agente — la IA siempre tarda igual
-
-**B)** El agente los clasifica en minutos, yo tardaría horas
-
-**C)** El agente clasifica rápido, pero necesito revisar cada uno
-
-**D)** B y C — clasifica rápido pero necesita supervisión
-
-> 🕐 30 segundos → levanten la mano
-
----
-
-## 🧠 Pregunta Detonadora 2 — Respuesta
-
-**Respuesta correcta: D**
-
-- **A:** ❌ Con prompt manual TÚ eres el cuello de botella (copiar, pegar, leer, actuar)
-- **B:** ⚠️ Cierto a medias — sí es más rápido, pero...
-- **C:** ⚠️ Cierto a medias — necesita supervisión, pero no cada uno
-- **D:** ✅ El agente escala la velocidad, pero la supervisión no es opcional
-
-> **Escala + supervisión.** Un agente no reemplaza tu criterio — lo multiplica.
 
 ---
 
@@ -98,6 +68,35 @@
 - ¿La acción sugerida tiene sentido?
 
 > 🎬 **Demo en vivo** — Form v0 + Make + Grok vía OpenRouter
+
+---
+
+## 🎯 COMPROBACIÓN
+
+### ¿Por qué el agente clasificó diferente cada mensaje si usó el mismo modelo?
+
+**A)** Cada mensaje activó un modelo diferente en OpenRouter
+
+**B)** El SystemPrompt define los criterios — el modelo los aplica a cada input
+
+**C)** Make decidió la clasificación, no el modelo de IA
+
+**D)** Los mensajes más largos reciben mejor clasificación
+
+> 🕐 30 segundos → levanten la mano
+
+---
+
+## 🎯 COMPROBACIÓN — Respuesta
+
+**Respuesta correcta: B**
+
+- **A:** ❌ Mismo modelo (Grok) para todos los mensajes
+- **B:** ✅ El SystemPrompt es el cerebro — define categorías y reglas que el modelo aplica
+- **C:** ❌ Make orquesta, OpenRouter decide
+- **D:** ❌ La longitud no determina la clasificación
+
+> **Clave:** Cambias el SystemPrompt, cambias las decisiones. El modelo es el músculo, el prompt es el cerebro.
 
 ---
 

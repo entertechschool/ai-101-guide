@@ -147,6 +147,13 @@ Al finalizar esta clase, serás capaz de:
 
 ---
 
+## Recursos Adicionales
+
+- [Make Academy](https://academy.make.com/){:target="_blank"} - Tutoriales oficiales de Make
+- [OpenRouter Docs](https://openrouter.ai/docs){:target="_blank"} - Documentación de la API
+
+---
+
 ## Herramientas necesarias
 
 - [ ] 💻 Laptop con Make y OpenRouter abiertos

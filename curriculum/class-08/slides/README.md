@@ -65,6 +65,35 @@
 
 ---
 
+## 🎯 COMPROBACIÓN
+
+### ¿Qué hace que un proyecto de IA sea CREÍBLE para alguien externo?
+
+**A)** Un post largo y bien escrito en LinkedIn
+
+**B)** Capturas de pantalla de todas las herramientas
+
+**C)** URL funcional + repo con SystemPrompts + métrica real
+
+**D)** Certificado de haber completado un curso de IA
+
+> 🕐 30 segundos → levanten la mano
+
+---
+
+## 🎯 COMPROBACIÓN — Respuesta
+
+**Respuesta correcta: C**
+
+- **A:** ❌ Palabras sin evidencia no demuestran competencia
+- **B:** ❌ Screenshots son estáticos — cualquiera puede tomarlos
+- **C:** ✅ Evidencia verificable: el agente funciona, el código es público, el resultado es medible
+- **D:** ❌ Un certificado dice que asististe, no que sabes hacer
+
+> **Clave:** Portfolio > CV. Evidencia > narrativa. Hoy construyen esa evidencia.
+
+---
+
 ## 🐙 GitHub: Tu Primer Proyecto Open-Source
 
 ### Vercel → GitHub → README
@@ -110,7 +139,7 @@ Intercambia con un compañero → feedback específico → ajusta
 
 ---
 
-## 🎤 Formato de Pitch
+## 🎤 Formato de Pitch + Tips
 
 ### 3 minutos por persona
 
@@ -126,12 +155,6 @@ Intercambia con un compañero → feedback específico → ajusta
 └─────────────────────────────────────────────┘
 ```
 
-> 💡 Tu post de LinkedIn ES tu presentación. No necesitas slides extra.
-
----
-
-## Tips para Presentar
-
 ### 4 reglas:
 
 1. **Problema primero** — Si no entiendo qué resuelve, no me importa cómo funciona
@@ -139,7 +162,7 @@ Intercambia con un compañero → feedback específico → ajusta
 3. **Métricas > anécdotas** — "Procesé 10 notas de reunión" > "Me siento más productivo"
 4. **Honestidad > perfección** — Mostrar un error que corregiste impresiona más que fingir que todo funcionó
 
-> 💡 Si tu agente falla en vivo: **muestra Make History con un run exitoso.** Errores en demo son normales.
+> 💡 Si tu agente falla en vivo: **muestra Make History con un run exitoso.**
 
 ---
 
@@ -169,9 +192,7 @@ Intercambia con un compañero → feedback específico → ajusta
 
 ---
 
-## Roadmap 30 Días
-
-### Template con Claude:
+## Roadmap 30 Días + Pathway
 
 | Semana | Foco |
 |--------|------|
@@ -185,16 +206,11 @@ Intercambia con un compañero → feedback específico → ajusta
 2. ___
 3. ___
 
----
-
-## Pathway Entertech
-
+### Pathway Entertech:
 ```
-AI 101: Desbloquea tu poder (4 sem)    ← Completaste esto
-         ↓
-AI 201: Construye con IA (8 sem)       ← Crear soluciones
-         ↓
-AI 301: Escala con IA (10 sem)         ← Producto profesional
+AI 101 (4 sem) ← Completaste esto
+  ↓  AI 201 (8 sem) ← Crear soluciones
+       ↓  AI 301 (10 sem) ← Producto profesional
 ```
 
 > "El mejor indicador de éxito: ¿sigues usando lo que aprendiste 30 días después?"

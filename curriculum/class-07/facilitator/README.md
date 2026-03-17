@@ -85,30 +85,13 @@ Estudiantes atascados en la configuración técnica de OR#1 (JSON malformado, he
 
 **Respuesta correcta: C** — Depende de CÓMO le pidas que las procese
 
-**Script post-votación:**
-```
-"La IA puede procesar cualquier cosa desordenada.
-Pero sin instrucciones claras, produce algo genérico.
-La magia está en el SystemPrompt: qué analizar, qué generar, en qué formato.
-Hoy construyen un agente con 2 cerebros: uno analiza, otro genera."
-```
+**Post-votación:** "La IA procesa cualquier cosa desordenada. Pero sin instrucciones claras, produce algo genérico. Hoy construyen un agente con 2 cerebros: uno analiza, otro genera."
 
 #### Demo: Tu Agente EN VIVO (~6 min)
 
-Muestra tu agente completo. El impacto es ver el flujo de punta a punta:
+Flujo: Abre tu form (URL Vercel) → escribe algo desordenado en vivo → envía → muestra Make History (5 módulos) → abre tu correo con el email HTML.
 
-1. Abre tu formulario (URL de Vercel) — "Este es mi form público, cualquiera puede usarlo"
-2. Escribe algo desordenado en el textarea — en vivo, sin preparar
-3. Click en enviar
-4. Muestra en Make History cómo pasa por los 5 módulos
-5. Abre tu correo → muestra el email HTML que llegó
-**Script clave:**
-```
-"Escribí esto en 30 segundos. Me llegó un email profesional.
-Mismo patrón que C05-C06. Pero ahora hay 2 IAs:
-una que analiza mi caos, otra que genera el email.
-Y esto va a estar público en Vercel. Esto es lo que van a construir."
-```
+**Mensaje clave:** "Escribí esto en 30 segundos. Me llegó un email profesional. 2 IAs: una analiza mi caos, otra genera el email. Esto es lo que van a construir."
 
 ---
 
@@ -126,12 +109,8 @@ Y esto va a estar público en Vercel. Esto es lo que van a construir."
 - Respuesta: "Especialización. Cada IA tiene un solo trabajo = mejor calidad."
 
 #### Anti-Hype (~3 min)
-```
-"Tu agente va a generar emails mediocres al principio.
-El JSON de OR#1 puede venir malformado.
-Gmail puede mostrar HTML como texto plano.
-Eso es normal. Lo importante es que sepan diagnosticar y mejorar."
-```
+
+**Mensaje clave:** "Tu agente va a generar emails mediocres al principio. JSON malformado, HTML como texto plano — es normal. Lo importante es saber diagnosticar y mejorar."
 
 ---
 
@@ -194,20 +173,10 @@ Los estudiantes eligen escenario y revisan/personalizan SystemPrompts:
 - "¿Qué escenario eligieron? ¿Alguien hizo caso propio?"
 
 #### Preview C08 (~3 min)
-```
-"Próxima clase hacemos 3 cosas grandes:
-1. Publican su agente en GitHub — su primer proyecto open-source
-2. Crean un post de LinkedIn con imagen generada por IA
-3. Pitches de 3 minutos — problema + post + demo rápida"
-```
 
-**Tarea para la próxima clase:**
-1. **Crear cuenta en GitHub** si no tienes (github.com — es gratis)
-2. **SystemPrompts copiados** — tener OR#1 y OR#2 accesibles
-3. Verificar que la URL de Vercel funciona públicamente
-4. Tener cuenta de **LinkedIn** abierta
-5. Tener cuenta de **Gemini** (gemini.google.com)
-6. Pulir SystemPrompts — probar con 3+ mensajes variados
+"Próxima clase: GitHub (open-source) + LinkedIn (post con imagen IA) + Pitches (3 min c/u)."
+
+**Tarea:** Cuenta GitHub + SystemPrompts copiados + URL Vercel funcional + cuenta LinkedIn + cuenta Gemini + pulir prompts (3+ mensajes).
 
 ---
 
@@ -237,41 +206,83 @@ Los estudiantes eligen escenario y revisan/personalizan SystemPrompts:
 
 ---
 
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:**
+- Explica por qué separar en 2 IAs mejora la calidad (especialización)
+- Puede diagnosticar si un problema está en OR#1 (JSON malo) o en OR#2 (email genérico)
+- Entiende que los SystemPrompts son la pieza intelectual del proyecto
+
+**NECESITA AYUDA cuando:**
+- No distingue qué hace OR#1 vs OR#2
+- Copia SystemPrompts sin entender qué modificar para su caso
+- Se atasca en la configuración técnica de Make sin pedir ayuda
+
+---
+
+## 🔀 Diferenciación
+
+**Estudiantes avanzados:** Que prueben con inputs extremos (muy corto, otro idioma), que agreguen un campo extra al form, que comparen outputs entre escenarios.
+
+**Estudiantes con dificultades:** Que usen escenario predefinido sin modificar, que copien SystemPrompts del Apéndice tal cual, checkpoint intermedio a los 20 min.
+
+---
+
+## 🎭 Dinámicas de Clase
+
+### "Antes y después"
+```
+Facilitador: [Lee input desordenado en voz alta]
+"¿Qué harían con esto si les llega por email? ¿Cuánto tardarían?"
+[Después de la demo] "El agente lo hizo en segundos. Ese es el delta."
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+### SystemPrompt OR#1 genérico (para caso propio):
+```
+Analiza el siguiente input del usuario. Extrae:
+1. Tema principal
+2. Puntos clave (máximo 5)
+3. Tono detectado
+4. Acción sugerida
+
+Responde SOLO con JSON, sin markdown ni backticks.
+```
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### "¿Por qué no usar Claude en vez de Grok?"
+Claude es más potente pero requiere API de pago. Grok Free permite experimentar sin costo. Las técnicas funcionan igual.
+
+### "¿Puedo usar mi agente de C06 como base?"
+No recomendado. C07 usa arquitectura diferente (2 IAs encadenadas vs Router). Mejor crear escenario nuevo.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+1. **¿La demo convenció?** — Si no hubo reacciones, puede que el input fue poco impactante.
+2. **¿Los escenarios predefinidos eliminaron la parálisis?** — Si más del 30% eligió caso propio, bien.
+3. **¿OR#1 produjo JSON válido?** — Si muchos tuvieron problemas, ajustar el SystemPrompt de ejemplo.
+4. **¿Todos tienen SystemPrompts guardados para C08?** — Crítico para la próxima clase.
+
+---
+
 ## Tips de Facilitación
 
-### Si el grupo avanza rápido:
-- Que prueben con inputs extremos: texto muy corto, muy largo, en otro idioma
-- Que comparen outputs entre escenarios diferentes
-- Que ayuden a compañeros atascados con la configuración de Make
-
-### Si OR#1 produce JSON inválido consistentemente:
-- Agregar al SystemPrompt: "IMPORTANTE: No incluyas ```json ni backticks. Solo el JSON puro."
-- Reducir temperature a 0.1 temporalmente
-- Probar con un input más simple primero
-
-### Manejo de tiempo:
-- **Parte 1** (diseñar, 10 min): Rápido si eligen escenario predefinido. Si a los 5 min no eligieron, intervén.
-- **Parte 2** (construir, 40 min): Donde más se atoran es en OR#1 (JSON). Tener backup de Make listo.
-- **Parte 3** (verificar, 5 min): Lo más sencillo. Asegurar que copien SystemPrompts para C08.
-- **Buffer real:** Los ~10 min liberados de Parte 3 son buffer extra para Parte 2 (Make).
+- **Grupo rápido:** Que prueben inputs extremos, comparen escenarios, ayuden a compañeros
+- **JSON inválido:** Agregar "No uses markdown ni backticks. Solo JSON puro." + reducir temperature a 0.1
+- **Tiempo:** P1 diseñar (10 min) rápido con escenarios. P2 construir (40 min) es donde se atoran (OR#1). P3 verificar (5 min) + copiar SystemPrompts para C08
 
 ---
 
 ## Conexión con la Próxima Clase
 
-Al cerrar, planta la semilla:
+"Próxima clase: GitHub (open-source) + LinkedIn (post con imagen IA) + Pitches (3 min c/u)."
 
-```
-"Próxima clase hacemos 3 cosas grandes:
-1. Publican su agente en GitHub — su primer proyecto open-source
-2. Crean un post de LinkedIn con imagen generada por IA
-3. Pitches de 3 minutos — problema + post + demo rápida"
-```
-
-**Tarea para la próxima clase:**
-1. **Crear cuenta en GitHub** si no tienes (github.com — es gratis)
-2. **SystemPrompts copiados** — tener OR#1 y OR#2 accesibles
-3. Verificar que URL de Vercel funciona públicamente
-4. Tener cuenta de **LinkedIn** abierta
-5. Tener cuenta de **Gemini** (gemini.google.com)
-6. Pulir SystemPrompts — probar con 3+ mensajes variados
+**Tarea:** Cuenta GitHub + SystemPrompts copiados + URL Vercel funcional + cuenta LinkedIn + cuenta Gemini.

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Day — GitHub, LinkedIn y tu primer proyecto open-source</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1080px;
+      margin: 0 auto;
+      background: #060913;
+      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
+    pre {
+      background: #161b22;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+    }
+
+    section { padding: 2.5rem 3rem; }
+
+    .hero { text-align: center; padding: 3.5rem 3rem 2.5rem; }
+    .hero .badge {
+      display: inline-block;
+      background: rgba(217, 70, 239, 0.15);
+      color: #d946ef;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .hero h1 { font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1.15rem; color: #94a3b8; }
+
+    .card {
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .card .desc { color: #94a3b8; margin-bottom: 1rem; }
+
+    .accent-purple { border-left: 3px solid #d946ef; }
+    .accent-green  { border-left: 3px solid #4ade80; }
+    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-orange { border-left: 3px solid #fb923c; }
+
+    .journey-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+    }
+    .journey-table th {
+      text-align: left;
+      padding: 0.4rem 0.75rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .journey-table td {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.85rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .glossary { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .glossary .term {
+      flex: 1 1 200px;
+      background: #0d1117;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .glossary .term strong { display: block; margin-bottom: 0.25rem; }
+    .glossary .term span { color: #94a3b8; font-size: 0.9rem; }
+
+    .footer { text-align: center; padding: 2rem 3rem 3rem; color: #64748b; font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="badge">Módulo 2 · Clase 08</div>
+    <h1>Demo Day — GitHub, LinkedIn y tu primer proyecto open-source</h1>
+    <p class="subtitle">Del 95% al 5%: evidencia verificable de tu competencia en IA</p>
+  </section>
+
+  <!-- BLOQUES DE CONTENIDO -->
+  <section>
+
+    <!-- BLOQUE 1: Tu recorrido -->
+    <div class="card accent-purple">
+      <h3>Tu recorrido: C01 → C08</h3>
+      <p class="desc">De "la IA es un Google mejorado" a "tengo un proyecto open-source publicado".</p>
+      <table class="journey-table">
+        <tr><th>Clase</th><th>Qué lograste</th><th>Evolución</th></tr>
+        <tr><td>C01</td><td>Descubriste qué puede la IA</td><td style="color: #94a3b8;">Mindset</td></tr>
+        <tr><td>C02</td><td>Dominaste prompts (RICE + Few-shot)</td><td style="color: #94a3b8;">Tú → IA</td></tr>
+        <tr><td>C03</td><td>IA como socio pensante</td><td style="color: #94a3b8;">IA ↔ Tú</td></tr>
+        <tr><td>C04</td><td>Proyecto integrador M1</td><td style="color: #94a3b8;">Integración</td></tr>
+        <tr><td>C05</td><td>Cerebro del agente</td><td style="color: #d946ef;">IA trabaja por ti</td></tr>
+        <tr><td>C06</td><td>Agente inteligente completo</td><td style="color: #d946ef;">Branching + logging</td></tr>
+        <tr><td>C07</td><td>Agente generativo para TU caso</td><td style="color: #d946ef;">Transferencia</td></tr>
+        <tr><td style="color: #4ade80;"><strong>C08</strong></td><td><strong>GitHub + LinkedIn + Pitch</strong></td><td style="color: #4ade80;"><strong>Compartir</strong></td></tr>
+      </table>
+    </div>
+
+    <!-- BLOQUE 2: La evidencia -->
+    <div class="card accent-green">
+      <h3>Portfolio > CV: evidencia verificable</h3>
+      <p class="desc">Lo que te hace creíble no es lo que dices — es lo que puedes demostrar.</p>
+      <pre><code>Tu evidencia completa:
+
+🌐 URL de Vercel  → agente funcionando públicamente
+🐙 Repo en GitHub → SystemPrompts documentados (open-source)
+📊 Métricas reales → antes/después medible
+✍️ Post LinkedIn  → caso publicado con imagen + URLs
+
+Certificado dice: "asististe"
+Portfolio dice:   "sabes hacer"</code></pre>
+    </div>
+
+    <!-- BLOQUE 3: Pitch -->
+    <div class="card accent-blue">
+      <h3>Pitch de 3 minutos: problema + post + demo</h3>
+      <p class="desc">Tu post de LinkedIn ES tu presentación. No necesitas slides extra.</p>
+      <pre><code>┌─────────────────────────────────────────────┐
+│  1. PROBLEMA + POST (2 min)                  │
+│     Proyecta tu post de LinkedIn             │
+│     Explica el problema que resuelve         │
+├─────────────────────────────────────────────┤
+│  2. DEMO RÁPIDA (1 min)                      │
+│     Alguien del público envía un mensaje     │
+│     → todos ven el resultado                 │
+└─────────────────────────────────────────────┘
+
+4 reglas:
+  Problema primero · Demo > explicación
+  Métricas > anécdotas · Honestidad > perfección</code></pre>
+    </div>
+
+    <!-- BLOQUE 4: Plan 30 días -->
+    <div class="card accent-orange">
+      <h3>Roadmap 30 días: el curso termina, tu desarrollo no</h3>
+      <p class="desc">No 30 metas. 3 acciones concretas esta semana.</p>
+      <pre><code>Semana 1 → Mejorar calidad del agente actual
+Semana 2 → Expandir a más casos o inputs
+Semana 3 → Aplicar patrón a otro proceso
+Semana 4 → Medir impacto real + documentar
+
+Pathway Entertech:
+  AI 101 ← Completaste esto
+    ↓
+  AI 201 → Construir con IA (8 semanas)
+    ↓
+  AI 301 → Escalar con IA (10 semanas)</code></pre>
+    </div>
+
+  </section>
+
+  <!-- GLOSARIO -->
+  <section>
+    <div class="glossary">
+      <div class="term">
+        <strong>Open-source</strong>
+        <span>Código público que otros pueden ver, estudiar y aprender de él</span>
+      </div>
+      <div class="term">
+        <strong>Demo Day</strong>
+        <span>Sesión de pitches: cada estudiante presenta su caso en 3 minutos</span>
+      </div>
+      <div class="term">
+        <strong>Pitch</strong>
+        <span>Presentación breve: problema + solución + evidencia</span>
+      </div>
+      <div class="term">
+        <strong>Accountability</strong>
+        <span>Compromiso público que motiva a cumplir — publicar juntos en LinkedIn</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="footer">
+    AI 101 — IA para Profesionales · EnterTechSchool · Clase 08
+  </section>
+
+  <!-- ════════ EXPORT PNG ════════ -->
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
+    Exportar a PNG
+  </button>
+
+  <script>
+  (function(){
+    var btn = document.getElementById('export-btn');
+    var originalText = btn.textContent;
+    btn.addEventListener('click', function(){
+      btn.disabled = true;
+      btn.textContent = 'Exportando...';
+      var script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+      script.onload = function(){
+        btn.style.display = 'none';
+        document.fonts.ready.then(function(){
+          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
+            var link = document.createElement('a');
+            var title = document.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+            link.download = 'clase-08-' + title + '.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            btn.style.display = '';
+            btn.disabled = false;
+            btn.textContent = originalText;
+          }).catch(function(){ btn.style.display = ''; btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); });
+        });
+      };
+      script.onerror = function(){ btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); };
+      document.head.appendChild(script);
+    });
+  })();
+  </script>
+
+</body>
+</html>

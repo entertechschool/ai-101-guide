@@ -64,60 +64,17 @@ Estudiantes atascados en autenticación de GitHub (primera vez). Tener protocolo
 
 #### Pregunta Detonadora (~3 min)
 
-**Respuesta correcta: C** — Métricas reales + demo funcionando + repo público
-
-**Script post-votación:**
-```
-"Cualquiera puede decir 'uso IA'. La diferencia está en DEMOSTRAR.
-Un agente que funciona + métricas + un repo en GitHub con tus SystemPrompts
-es más poderoso que cualquier narrativa.
-Hoy construyen la evidencia completa."
-```
+**Respuesta correcta: C** — Métricas reales + demo funcionando + repo público. Mensaje clave: "Cualquiera puede decir 'uso IA'. La diferencia está en DEMOSTRAR."
 
 #### Test Diagnóstico M2 (~15 min)
 
-**Script para introducir:**
-```
-"Antes de empezar, un test rápido.
-8 preguntas, 15 minutos. No afecta calificación.
-Es un espejo — les muestra qué conceptos dominan
-y cuáles necesitan más práctica."
-```
-
-| # | Clase | Tema | Respuesta |
-|---|-------|------|-----------|
-| 1 | C05 | Diferencia automatización vs agente | B — IA decide, no solo ejecuta reglas |
-| 2 | C05 | Qué define calidad del agente | C — SystemPrompt con categorías y reglas claras |
-| 3 | C06 | Qué es Router en Make | B — Divide flujo en rutas condicionales |
-| 4 | C06 | Para qué logging (Sheets) | C — Auditar decisiones y mejorar con datos |
-| 5 | C07 | Al transferir a tu caso, qué cambia | B — SystemPrompt + categorías + reglas + form |
-| 6 | C07 | Agente clasifica todo igual, qué arreglar | A — Reglas del SystemPrompt |
-| 7 | Integración | Agente profesional completo necesita | D — Cerebro + acciones + logging + supervisión |
-| 8 | Auto | Confianza para integrar IA | Sin respuesta correcta |
-
-Ver `test/questions.md` para preguntas completas con opciones y justificaciones.
+8 preguntas, 15 minutos. No afecta calificación — es un espejo de comprensión. Respuestas: 1-B, 2-C, 3-B, 4-C, 5-B, 6-A, 7-D, 8-sin correcta. Ver `test/questions.md` para preguntas completas.
 
 #### Retrospectiva C01→C07 (~12 min)
 
-**Script:**
-```
-"Hace 4 semanas pensaban que la IA era Google mejorado.
-Vamos a recorrer lo que pasó."
-```
-
-Recorrido guiado (2 min por módulo):
-
-**Módulo 1 (C01-C04):**
-- "C01: descubrieron que la IA no es magia — necesita instrucciones claras"
-- "C02: aprendieron RICE y Few-shot — el prompt pasó de genérico a profesional"
-- "C03: Claude dejó de ser asistente y se volvió socio pensante"
-- "C04: integraron todo en un proyecto real con Gemini y Perplexity"
-
-**Módulo 2 (C05-C07):**
-- "C05: construyeron el cerebro de un agente — SystemPrompt + categorías"
-- "C06: el agente tomó decisiones solo — Router + Sheets"
-- "C07: diseñaron su PROPIO agente con 2 IAs encadenadas"
-- "Hoy: lo publican como proyecto open-source"
+Recorrido rápido (2 min por módulo). Usa las slides como apoyo visual:
+- **M1:** Instrucciones claras (C01) → RICE + Few-shot (C02) → Socio pensante (C03) → Proyecto integrador (C04)
+- **M2:** Cerebro del agente (C05) → Router + Sheets (C06) → Agente propio con 2 IAs (C07) → Hoy: open-source
 
 **Pregunta al grupo:** "¿Cuál fue el momento donde más se frustraron? ¿Y cuál fue el momento WOW?"
 
@@ -128,48 +85,19 @@ Recorrido guiado (2 min por módulo):
 ### BLOQUE 2: GitHub — Mi Primer Proyecto Open-Source (~30 min)
 
 #### Intro facilitador (~2 min)
-
-Muestra TU repo como ejemplo:
-```
-"Este es mi repo. Tiene el código del form, el README con mis SystemPrompts,
-y la URL de demo. Cualquiera puede ver cómo funciona mi agente.
-Esto es lo que van a crear en los próximos 25 minutos."
-```
+Muestra TU repo como ejemplo — código del form, README con SystemPrompts, URL de demo.
 
 #### Conectar Vercel → GitHub (~7 min)
+Guía: vercel.com → Settings → Git → Connect to GitHub → autorizar. Vercel crea el repo automáticamente.
 
-1. Guía paso a paso: vercel.com → Settings → Git → Connect to GitHub → autorizar
-2. Vercel crea el repo automáticamente
-
-**Errores comunes:**
-| Señal | Qué está pasando | Qué hacer |
-|-------|------------------|-----------|
-| "GitHub me pide autenticar" | Primera vez usando GitHub | Ayudar con OAuth flow — crear cuenta si es necesario |
-| "Vercel no conecta" | Permisos de la app | Settings de GitHub → Applications → autorizar Vercel |
-| "No veo mi proyecto en Vercel" | Login incorrecto | Verificar que usan la misma cuenta de Vercel que en C07 |
+Errores comunes: auth de GitHub (ayudar con OAuth), permisos (Settings → Applications → autorizar Vercel), login incorrecto (verificar misma cuenta de C07).
 
 #### README completo en GitHub web (~13 min)
-
-- Desde github.com → abrir repo → editar README.md → ícono de lápiz
-- Copiar estructura del lab (nombre, arquitectura, SystemPrompts, ejemplo, URL)
-- **Asegurar que peguen ambos SystemPrompts completos** — es la pieza intelectual del proyecto
-- Commit desde el navegador
-
-**Momento WOW:**
-```
-"Miren su repo. Eso es open-source.
-Cualquiera puede ver cómo funciona tu agente.
-Los SystemPrompts son la propiedad intelectual de tu proyecto."
-```
-
-#### Verificar repo público (~5 min)
-
-- Verificar que el repo es público (si es privado → Settings → Change Visibility)
-- Verificar que el README se renderiza correctamente
+- github.com → repo → editar README.md → estructura del lab → **pegar ambos SystemPrompts** → commit
+- Verificar repo público (Settings → Change Visibility si es privado)
 
 #### Buffer técnico (~3 min)
-
-Tiempo extra para problemas de auth/cuenta. Si nadie lo necesita, avanzar.
+Para problemas de auth/cuenta. Si nadie lo necesita, avanzar.
 
 > **Checkpoint ~min 60:** "¿Quién tiene repo público con README?" — Manos arriba.
 
@@ -178,33 +106,15 @@ Tiempo extra para problemas de auth/cuenta. Si nadie lo necesita, avanzar.
 ### BLOQUE 3: Preparar LinkedIn + Imagen (~30 min)
 
 #### Draft con Claude (~10 min)
-
 - Template del lab: problema + solución + URLs + métrica + takeaway
-- Iterar al menos 1 vez con Claude
 - **Clave:** que incluyan AMBAS URLs (Vercel + GitHub)
 
-**Script:**
-```
-"El post tiene 5 partes: hook, qué construiste, las URLs,
-un resultado real y un aprendizaje honesto.
-Claude les ayuda con el texto, pero la métrica y la honestidad son suyas."
-```
-
 #### Imagen con Gemini (~10 min)
-
-- Logos disponibles en `class-08/lab/assets/`: 8 SVGs del stack
-- Los estudiantes descargan 3-4 logos relevantes
-- Suben a Gemini + prompt descriptivo → imagen de portada
-
-**Si la generación de imagen no funciona bien:**
-- Alternativa: usar Canva con los logos como fallback
-- O simplemente publicar sin imagen — el contenido es lo que importa
+- Logos en `class-08/lab/assets/` (8 SVGs). Descargan 3-4 → suben a Gemini → imagen portada
+- Fallback: Canva con logos, o publicar sin imagen
 
 #### Peer review en parejas (~10 min)
-
-- Intercambiar posts
-- Feedback específico: hook, métrica, URLs, tono
-- Ajustar con feedback
+- Intercambiar posts → feedback: hook, métrica, URLs, tono → ajustar
 
 > **Checkpoint ~min 90:** "¿Quién tiene post listo + imagen?" — Manos arriba.
 
@@ -214,62 +124,15 @@ Claude les ayuda con el texto, pero la métrica y la honestidad son suyas."
 
 #### Pitches — 3 min c/u (~25 min)
 
-**Script para iniciar:**
-```
-"Hoy no presentan slides. Proyectan su post de LinkedIn.
-Explican el problema. Muestran el agente.
-3 minutos. Vamos."
-```
+Protocolo por pitch: post LinkedIn (2 min) → demo rápida (1 min) → feedback grupal (30 seg). Ver lab para protocolo detallado.
 
-**Protocolo por pitch:**
-1. Presentador proyecta su post de LinkedIn (2 min)
-   - Explica el problema que resuelve
-   - Muestra URLs (Vercel + GitHub)
-2. Demo rápida (1 min)
-   - Alguien del público envía mensaje al form
-   - Todos ven el email llegar
-3. Feedback rápido del grupo (~30 seg)
-   - "Lo más fuerte de tu pitch fue..."
+**Control de tiempo:** Timer visible + tarjeta "30 seg" + cortar con amabilidad. Grupos 9+: demo opcional. Grupos 13+: 2 min sin demo individual.
 
-**Manejo de tiempo para pitches:**
-
-| Tamaño grupo | Por persona | Total estimado | Ajuste |
-|--------------|-------------|----------------|--------|
-| 6-8 personas | 3 min + 30 seg = ~3.5 min | 21-28 min | Formato estándar |
-| 9-12 personas | 2 min + 30 seg = ~2.5 min | 23-30 min | Demo opcional |
-| 13+ personas | 2 min pitch only | 26+ min | Sin demo individual, 2-3 demos grupales |
-
-**Si el agente falla en vivo:**
-```
-"Eso pasa. La demo en vivo es impredecible.
-¿Tienes un run exitoso en Make History? Muéstralo.
-Lo importante: sabes diagnosticar qué pasó."
-```
-
-**Herramientas de control de tiempo:**
-- Timer visible para todos
-- Tarjeta "30 segundos" cuando queda poco
-- Cortar con amabilidad: "Gracias, pasemos al siguiente"
+**Si el agente falla en vivo:** "¿Tienes un run exitoso en Make History? Muéstralo. Sabes diagnosticar qué pasó."
 
 #### "3... 2... 1... PUBLICAR!" (~5 min)
 
-**Script:**
-```
-"¿Todos tienen su post listo? ¿Imagen de portada?
-¿LinkedIn abierta?
-Lo publicamos juntos. En 3... 2... 1... ¡PUBLICAR!"
-[Pausa — dejar que publiquen]
-"Screenshot. Ese post tiene un agente FUNCIONANDO
-y un repo en GitHub detrás. Eso es más de lo que puede
-mostrar el 99% de la gente."
-```
-
-**Si alguien duda:**
-```
-"Tu post tiene evidencia real: un agente que funciona,
-un repo con SystemPrompts, y una métrica de tu trabajo.
-No es hype. Es evidencia. Publícalo."
-```
+Todos publican juntos. El momento grupal reduce la barrera. Si alguien duda: "Tu post tiene evidencia real — un agente funcionando y un repo. Publícalo."
 
 > **Checkpoint ~min 120:** "¿Quién publicó?" — Screenshot grupal.
 
@@ -278,53 +141,15 @@ No es hype. Es evidencia. Publícalo."
 ### BLOQUE 5: Cierre del Curso (~30 min)
 
 #### Roadmap 30 días con Claude (~15 min)
-
-- Template del lab: plan por semana + 3 quick-wins
-- Cada persona comparte su quick-win #1 (1 oración)
-- Facilitador anota en pantalla los más creativos
-
-**Script:**
-```
-"El curso termina hoy. Tu desarrollo no.
-Claude les va a ayudar a crear un plan concreto.
-No 30 metas. 3 acciones ESTA SEMANA."
-```
+- Template del lab: plan por semana + 3 quick-wins. Cada persona comparte quick-win #1 (1 oración)
 
 #### Anti-Hype + Pathway (~5 min)
+4 verdades: (1) 4 semanas = inicio, no final. (2) Herramientas cambian, pensamiento crítico no. (3) LinkedIn no te hace experto, la práctica sí. (4) Tu agente necesita supervisión.
 
-**Script:**
-```
-"4 verdades antes de cerrar:
-1. 4 semanas = inicio, no final.
-2. Las herramientas van a cambiar. El pensamiento crítico con IA no.
-3. Publicar en LinkedIn no te hace experto. La práctica continua sí.
-4. Tu agente necesita supervisión. Ninguna IA reemplaza el criterio humano."
-```
-
-**Pathway:**
-- AI 201 — Construir con IA (para quienes quieren crear soluciones)
-- AI 301 — Escalar con IA (para quienes quieren producto/startup)
+**Pathway:** AI 201 (Construir con IA) → AI 301 (Escalar con IA)
 
 #### Cierre emocional (~10 min)
-
-**Script sugerido:**
-```
-"Hace 4 semanas, muchos pensaban que la IA era un Google mejorado.
-Hoy tienen un agente que funciona para SU trabajo.
-Un proyecto open-source en GitHub.
-Evidencia publicada en LinkedIn.
-Un plan para seguir.
-
-Pasaron del 95% al 5%.
-
-Las herramientas van a cambiar — Make puede ser reemplazado,
-nuevos modelos van a aparecer cada mes.
-Pero lo que aprendieron — pensar críticamente con IA,
-diseñar sistemas, iterar con datos, comunicar resultados —
-eso no caduca.
-
-Gracias por estas 4 semanas."
-```
+Mensaje central: "Pasaron del 95% al 5%. Herramientas van a cambiar. Pensar críticamente con IA, diseñar sistemas, iterar con datos — eso no caduca."
 
 > **Checkpoint ~min 150:** Cierre emocional completado. Momento de celebración.
 
@@ -332,17 +157,13 @@ Gracias por estas 4 semanas."
 
 ## Errores Esperados
 
-| Señal | Qué está pasando | Qué hacer |
-|-------|------------------|-----------|
-| "GitHub me pide autenticar" | Primera vez usando GitHub | Ayudar con OAuth flow |
-| "Vercel no conecta a GitHub" | Permisos de la app | Settings → Applications → autorizar Vercel |
-| "No sé qué poner en el README" | Parálisis de página en blanco | "Copia la estructura del lab. Solo llena los espacios" |
-| "Gemini no genera buena imagen" | Prompt poco específico | Ajustar prompt o usar Canva como fallback |
-| Sin métricas reales | No midió antes/después | "¿Cuánto te tomaba ANTES? ¿Y AHORA con el agente?" |
-| Miedo a publicar en LinkedIn | Síndrome del impostor | "Tu post tiene repo + agente. Más que el 99%" |
-| Pitch muy largo | Se extiende en explicaciones | Timer estricto + tarjeta "30 segundos" |
-| No terminó agente C07 | No preparó | "Muestra agente PetShop de C06. Explica qué SERÍA tu caso" |
-| No quiere presentar | Ansiedad | "Puedes solo mostrar tu post y hacer la demo" |
+| Señal | Qué hacer |
+|-------|-----------|
+| GitHub auth falla | Ayudar con OAuth flow. Buffer técnico de 3 min |
+| "No sé qué poner en el README" | "Copia la estructura del lab. Solo llena los espacios" |
+| Sin métricas reales | "¿Cuánto te tomaba ANTES? ¿Y AHORA con el agente?" |
+| Miedo a publicar en LinkedIn | "Tu post tiene repo + agente. Más que el 99%" |
+| No terminó agente C07 | "Muestra PetShop de C06. Explica qué SERÍA tu caso" |
 
 ---
 
@@ -358,6 +179,79 @@ Gracias por estas 4 semanas."
 | ~120 | Pitches + LinkedIn publicado | "¿Quién publicó? Screenshot!" |
 | ~135 | Roadmap creado | "¿Quién tiene 3 quick-wins?" |
 | ~150 | Cierre emocional | Momento de celebración grupal |
+
+---
+
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:**
+- Puede explicar por qué su repo + URL + métrica es más valioso que un certificado
+- Su pitch se enfoca en el problema que resuelve, no en las herramientas que usó
+
+**NECESITA AYUDA cuando:**
+- Su post de LinkedIn es solo descripción de herramientas sin resultado concreto
+- No puede articular qué problema resuelve su agente en 1 oración
+
+---
+
+## 🔀 Diferenciación
+
+**Estudiantes avanzados:** Que ayuden a compañeros con GitHub auth, que agreguen sección "Aprendizajes" al README, que comenten posts de LinkedIn de sus compañeros.
+
+**Estudiantes con dificultades:** Que documenten SystemPrompts en Google Doc si GitHub no funciona, que usen el agente PetShop de C06 como base para el pitch.
+
+---
+
+## 🎭 Dinámicas de Clase
+
+### "El Elevator Pitch"
+```
+Facilitador: "En 30 segundos: ¿qué problema resuelve tu agente?"
+[Cada persona responde en 1 oración. Si tarda más de 30 seg, cortar]
+"Si no puedes decirlo en 30 segundos, tu pitch de 3 min no va a funcionar."
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+### Template README para GitHub:
+```
+# [Nombre del Agente]
+[1 línea: qué hace]
+
+## Arquitectura
+Form → Webhook → OR#1 (analiza) → Sheets → OR#2 (genera) → Gmail
+
+## SystemPrompts
+### OR#1 — Analizar
+[pegar SystemPrompt]
+
+### OR#2 — Generar
+[pegar SystemPrompt]
+
+## Demo
+[URL de Vercel]
+```
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### "¿Tengo que publicar en LinkedIn?"
+No es obligatorio, pero el momento grupal reduce la barrera. Puedes publicar después si prefieres.
+
+### "¿Mi repo tiene que ser público?"
+Para este ejercicio sí — es la pieza de portfolio. No contiene datos sensibles (solo SystemPrompts y código de form).
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+1. **¿El cierre emocional aterrizó?** — Si el grupo estaba distraído, puede que fue muy largo.
+2. **¿Cuántos publicaron en LinkedIn?** — Meta: >70% del grupo.
+3. **¿Los pitches fueron de calidad?** — Si la mayoría describió herramientas en vez de problemas, reforzar para futuros cohorts.
+4. **¿El curso logró el cambio de mindset "del 95% al 5%"?** — Revisar test M2 para evidencia.
 
 ---
 

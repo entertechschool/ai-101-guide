@@ -102,6 +102,13 @@ C06: El agente PIENSA + ACTÚA + DECIDE DIFERENTE + REGISTRA
 
 ---
 
+## Recursos Adicionales
+
+- [Make Router Module](https://www.make.com/en/help/modules/router){:target="_blank"} - Documentación oficial del Router
+- [Google Sheets en Make](https://www.make.com/en/help/app/google-sheets){:target="_blank"} - Integración con Google Sheets
+
+---
+
 ## Herramientas necesarias
 
 - [ ] 💻 Laptop con Make abierto (escenario de C05)

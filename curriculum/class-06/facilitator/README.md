@@ -195,6 +195,69 @@ Tú tienes que mirar los datos y decidir qué mejorar."
 
 ---
 
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:**
+- Explica por qué el Router necesita Filters exactos (no "inteligentes")
+- Puede diagnosticar un Filter que no matchea (case-sensitivity, formato)
+- Entiende que Google Sheets es para auditar, no para que el agente "aprenda"
+
+**NECESITA AYUDA cuando:**
+- Espera que el Router "entienda" el mensaje — confunde Router con IA
+- No puede conectar por qué el logging importa ("ya sé que clasifica bien")
+- Sus Filters son demasiado amplios o demasiado estrictos
+
+---
+
+## 🔀 Diferenciación
+
+**Estudiantes avanzados:** Que agreguen una 4ta ruta al Router, que creen Filters más sofisticados (ej: urgente + deadline), que analicen patrones en su Google Sheets.
+
+**Estudiantes con dificultades:** Empezar con solo 2 rutas (URGENTE vs TODO LO DEMÁS), verificar que Gmail funcione antes de agregar Router.
+
+---
+
+## 🎭 Dinámicas de Clase
+
+### "¿A qué puerta va?"
+```
+Facilitador: [Lee mensaje] "¿Puerta roja (URGENTE), azul (CONSULTA) o verde (VENTA)?"
+[Estudiantes votan con la mano. Luego envían al agente]
+"¿El agente coincidió con ustedes? Si no, ¿por qué?"
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+### Filters para el Router:
+| Ruta | Filter (en Make) | Emoji sugerido |
+|------|-----------------|---------------|
+| URGENTE | `output` contains `URGENTE` | 🔴 |
+| CONSULTA | `output` contains `CONSULTA` | 🔵 |
+| VENTA | `output` contains `VENTA` | 🟢 |
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### "¿Por qué no usar un solo email para todo?"
+Porque la acción pierde valor. Si un cliente urgente recibe el mismo email que una consulta, ¿para qué clasificamos?
+
+### "¿Google Sheets puede analizar automáticamente?"
+Sheets registra. Analizar es tu trabajo (por ahora). En cursos avanzados se pueden conectar dashboards.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+1. **¿El WOW moment de Gmail funcionó?** — Es el momento más importante de la clase.
+2. **¿El battle generó aprendizaje?** — Si todos tuvieron el mismo resultado, el battle no sirvió.
+3. **¿Los Filters causaron frustración?** — Si sí, considerar un paso más guiado en el lab.
+4. **¿Quiénes no terminaron?** — Identificar para que lleguen a C07 con el agente completo.
+
+---
+
 ## Tips de Facilitación
 
 ### Si el grupo tiene fricción con Gmail:

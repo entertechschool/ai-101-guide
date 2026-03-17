@@ -110,7 +110,7 @@ Este paso causó confusión en clase. Guía paso a paso:
 | "Invalid API key" | Key expirada o mal copiada | Generar nueva key en openrouter.ai |
 | Checkmark no aparece | Conexión lenta | Esperar 10 seg, si no → reintentar |
 
-> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models) antes de clase.
+> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models){:target="_blank"} antes de clase.
 
 > ⚠️ Ten tu key de backup lista. Si más de 2 estudiantes tienen problemas, compártela.
 
@@ -139,52 +139,19 @@ Agrega un bloque de debug debajo del formulario que:
 
 ## Momentos Clave de la Clase
 
-### Pregunta Detonadora 1 (~5 min)
+### Pregunta Detonadora (~5 min)
 
 **Respuesta correcta:** B — Un agente usa IA para tomar decisiones
 
-**Script post-votación:**
-```
-Facilitador: "¿Quién votó D, que no hay diferencia? Buen debate.
-La diferencia es esta: si tu regla de email dice 'todo a soporte',
-eso es automatización. Si una IA LEE el email y DECIDE si va a
-soporte, ventas o se responde con FAQ, eso es un agente.
-La IA introduce DECISIÓN en el flujo."
-```
-
-### Pregunta Detonadora 2 (~3 min)
-
-**Respuesta correcta:** D — Clasifica rápido pero necesita supervisión
-
-**Script post-votación:**
-```
-Facilitador: "D es la respuesta correcta. Sí, el agente es mucho
-más rápido. Pero ¿confiarían en un empleado nuevo sin supervisar?
-El agente es igual — rápido pero necesita que verifiques.
-La buena noticia: verificar 100 clasificaciones hechas es mucho
-más rápido que hacer 100 clasificaciones desde cero."
-```
+**Post-votación:** Enfatizar la diferencia clave: automatización = reglas fijas (IF/THEN), agente = IA DECIDE. "Si una IA LEE el email y DECIDE a dónde va, eso es un agente."
 
 ---
 
 ### Demo Principal: Agente en Vivo (~10 min)
 
-**Preparación:** Ten tu formulario v0 abierto y el escenario de Make activo.
+**Preparación:** Formulario v0 abierto + escenario de Make activo.
 
-**Script sugerido:**
-```
-Facilitador: "Voy a enviar 3 mensajes desde este formulario. Observen."
-[Abre el formulario v0 en pantalla, llena y envía mensaje 1]
-Facilitador: "Miren el bloque debug — dice éxito. Ahora vamos a Make..."
-[Muestra Make History — clasificación como URGENTE]
-Facilitador: "El agente clasificó correctamente. Veamos otro..."
-[Envía mensaje 2 desde el formulario]
-Facilitador: "Este lo clasificó como VENTA. Mismo flujo, decisión diferente."
-[Envía mensaje 3]
-Facilitador: "¿Qué creen que hizo con este? ¿URGENTE por el tono?"
-[Muestra resultado en Make History]
-Facilitador: "¿Recuerdan C02? El tono agresivo no siempre es urgencia real."
-```
+**Flujo:** Enviar 3 mensajes desde el form. Mostrar debug (éxito) + Make History (clasificación). Preguntar antes de revelar el tercero: "¿Qué creen que hizo con este?". Callback a C02: "El tono agresivo no siempre es urgencia real."
 
 **Si algo sale mal:** Grok tarda → "modelos free son lentos". Clasifica mal → "¿Qué cambiarían en el SystemPrompt?". Make falla → screenshots de backup.
 
@@ -225,15 +192,83 @@ Facilitador: "¿Recuerdan C02? El tono agresivo no siempre es urgencia real."
 
 ## Sección Anti-Hype: Cómo Manejarla
 
-**Script para introducir limitaciones:**
+**Mensaje clave:** "Su agente se va a equivocar. Garantizado. En C02 la IA confundía tono con urgencia. Su agente hará lo mismo — a menos que mejoren el SystemPrompt. La diferencia: con un agente, el error se repite automáticamente."
+
+---
+
+## ✅ Señales de Comprensión
+
+**ENTIENDE cuando:**
+- Explica la diferencia entre automatización (IF/THEN fijo) y agente (IA decide) con sus palabras
+- Identifica que el SystemPrompt es lo que define la calidad de la decisión del agente
+- Puede diagnosticar por qué una clasificación salió mal ("le falta contexto al prompt")
+
+**NECESITA AYUDA cuando:**
+- Copia el SystemPrompt sin modificar las categorías para su contexto
+- No puede explicar qué hace el UserPrompt vs el SystemPrompt
+- Asume que el agente "piensa" — no entiende que solo sigue reglas del prompt
+
+---
+
+## 🔀 Diferenciación
+
+**Estudiantes avanzados:** Que personalicen categorías a su trabajo real, que agreguen una categoría extra (ej: SPAM), que experimenten con diferentes temperaturas en OpenRouter.
+
+**Estudiantes con dificultades:** Que usen el template tal cual sin personalizar, emparejar con alguien avanzado, checkpoint intermedio extra a los 30 min del lab.
+
+---
+
+## 🎭 Dinámicas de Clase
+
+### "Automatización o Agente"
 ```
-Facilitador: "Antes de probar, una advertencia:
-Su agente se va a equivocar. Garantizado.
-Si recuerdan C02, la IA confundía tono agresivo con urgencia real.
-Su agente va a hacer lo mismo — a menos que su SystemPrompt lo corrija.
-La diferencia: en C02 el error era uno. Con un agente,
-el error se repite automáticamente en cada mensaje."
+Facilitador: "Voy a describir procesos. Levanten la mano si es AUTOMATIZACIÓN o AGENTE."
+- "Un email llega y se reenvía a soporte" → Automatización
+- "Un email llega, se lee y se decide a quién enviar" → Agente
+- "Cada lunes se genera un reporte" → Automatización
+- "Se analiza un texto y se decide qué hacer" → Agente
 ```
+
+### "Predice la clasificación"
+```
+Facilitador: [Lee un mensaje de cliente en voz alta]
+"¿Cómo clasificaría el agente esto? ¿URGENTE, CONSULTA o VENTA?"
+[Tomar 2-3 predicciones antes de enviar al agente]
+"Veamos si el agente coincide con ustedes..."
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+### SystemPrompt adaptado por industria:
+| Industria | Categorías | Regla clave |
+|-----------|-----------|-------------|
+| E-commerce | URGENTE, CONSULTA, VENTA, DEVOLUCIÓN | Deadline < 48h → URGENTE |
+| Servicios | URGENTE, COTIZACIÓN, SOPORTE, FEEDBACK | Impacto económico → URGENTE |
+| Educación | URGENTE, ACADÉMICO, ADMINISTRATIVO, TÉCNICO | Plazo de entrega → URGENTE |
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### "¿Puedo usar otro modelo que no sea Grok?"
+Sí. OpenRouter tiene muchos modelos. Grok Free es para practicar sin costo. Las técnicas de SystemPrompt funcionan igual en cualquier modelo.
+
+### "¿Esto funciona con más de 100 mensajes?"
+Sí, pero el plan free de Make tiene límite de 1,000 operaciones/mes. Para producción real necesitarías un plan de pago.
+
+### "¿Qué pasa si mi agente clasifica mal?"
+Mejoras el SystemPrompt. Agrega reglas más específicas, ejemplos de clasificación, o condiciones edge-case. Es iterativo.
+
+---
+
+## 🪞 Reflexión Post-Clase
+
+1. **¿El concepto agente vs automatización quedó claro?** — Si más de 2 confunden, reforzar en C06.
+2. **¿La configuración de API Key fue fluida?** — Ajustar protocolo si hubo fricción.
+3. **¿Quiénes se intimidaron con lo técnico?** — Identificar para seguimiento en C06.
+4. **¿El bloque debug en v0 funcionó como se esperaba?** — Documentar si hay que ajustar el prompt.
 
 ---
 

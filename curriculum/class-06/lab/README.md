@@ -156,7 +156,6 @@ Revisa tu Google Sheets y completa la tabla:
 > 💡 **La lección:** el prompt define la calidad, no el modelo. Todos usan Grok, pero los resultados son diferentes.
 
 ✅ **Checkpoint:** 5 mensajes enviados, resultados comparados, votación completada.
-
 ---
 
 ## Parte 4: Análisis + Entregable (15 min)
@@ -198,4 +197,4 @@ FALLA DEL AGENTE:
 6. **Mi Data Log** — Screenshot de Google Sheets con registros
 7. **Análisis Crítico** — 1 falla documentada + reflexión
 
-**Entrega:** Link público del Google Doc.
+**Entrega:** Link público del Google Doc
