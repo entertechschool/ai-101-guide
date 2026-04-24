@@ -1,128 +1,86 @@
-> 📦 **Módulo 2:** Clase 3 de 4
+> **Módulo 2:** Clase 3 de 4
 
-# Clase 07: Mi Agente Real
+# Clase 07: Tu proyecto propio
 
 ## Resumen
 
-En las Clases 05 y 06 construiste un agente que **clasifica** mensajes: la IA leía un input, asignaba una categoría (URGENTE/CONSULTA/VENTA) y un Router enviaba emails etiquetados. Hoy das el siguiente paso: **un agente que genera contenido profesional.**
+Hoy el sistema deja de ser el de Roberto y se convierte en el tuyo. Esta es la clase de **transferencia**: la arquitectura que construiste durante 6 sesiones se queda, pero le cambias el cerebro. Duplicas el Sheet y renombras columnas con tu caso, adaptas la plantilla de Slides a tu marca (logo, colores, tipografía), duplicas los dos flujos de Make y reemplazas los prompts de Gemini con los tuyos propios.
 
-La diferencia clave: en vez de 1 IA que clasifica, encadenas **2 IAs**. La primera ANALIZA tu input desordenado y extrae estructura (JSON). La segunda GENERA un email HTML profesional a partir de esa estructura. Escribes garabatos → recibes un email profesional en tu correo. Al final, tienes un agente deployado en Vercel que cualquiera puede usar.
+Esta es la única sesión con **acompañamiento 1 a 1** del instructor. La diferencia con una clase magistral es intencional — cada estudiante tiene un caso distinto, y lo que funciona para ventas de Roberto no siempre aplica para marketing, consultoría, academia o pacientes. Al terminar, vas a salir con un sistema funcionando con **datos reales** de tu trabajo, listo para presentar en Demo Day.
 
 ---
 
 ## ¿Por qué te sirve?
 
-| C05-C06: Clasificar | C07: Generar |
-|---------------------|-------------|
-| 1 IA que pone etiquetas | 2 IAs encadenadas que crean contenido |
-| Output: categoría (URGENTE) | Output: email profesional completo |
-| Router decide la ruta | Pipeline transforma los datos |
-| Caso de tutorial (PetShop) | TU caso real (3 escenarios o propio) |
-| Entrega en Google Doc | Deploy público en Vercel (portfolio real) |
-
-> "De clasificar a generar. De tutorial a proyecto publicado."
+- **Un sistema propio aunque imperfecto vale más que un tutorial perfecto.** Porque lo entiendes, lo puedes mantener, y sobre todo: lo usas.
+- **La habilidad de transferir patrones es la más valiosa del curso.** Hoy aplicarás a tu caso, pero el método sirve para cualquier automatización futura.
+- **Los 5 puntos de personalización que definiste en Clase 6 son tu plan de trabajo de hoy.** No vas a improvisar — vas a ejecutar.
 
 ---
 
-## Insight: "2 cerebros son mejor que 1"
+## 🎯 ¿Qué haremos en clase?
 
-```
-Arquitectura C07:
-
-Form v0 (textarea + campo extra + email)
-    │
-    ▼
-Webhook (Make)
-    │
-    ▼
-OpenRouter #1 — ANALIZAR
-(input crudo → JSON estructurado)
-    │
-    ├──────────────────┐
-    ▼                  ▼
-Google Sheets      OpenRouter #2 — GENERAR
-(registra log)     (JSON → email HTML profesional)
-                       │
-                       ▼
-                   Gmail → email al usuario
-```
-
-**¿Por qué 2 IAs?** Especialización. OR#1 solo analiza (extrae estructura del caos). OR#2 solo genera (produce contenido profesional). Cada una hace un trabajo = mejor calidad que pedirle todo a una sola.
+1. **Revisaremos tu plan de personalización** - Confirmarás los 5 puntos críticos y ajustarás si hace falta.
+2. **Construirás tu Sheet personalizado** - Duplicarás el modelo y lo adaptarás con tus datos reales.
+3. **Adaptarás Slides con tu marca + duplicarás flujos** - Logo, colores, tipografía propia + 2 escenarios adaptados.
+4. **Validarás end-to-end con datos reales** - Enviarás 3 correos de prueba reales y verás el sistema funcionando para TI.
 
 ---
 
-## ¿Qué haremos en clase?
+## Objetivos de Aprendizaje
 
-1. **Diseñar tu caso** — Elegir escenario (o proponer el tuyo) + personalizar SystemPrompts con Claude
-2. **Construir tu agente** — Form v0 + Make con 5 módulos (Webhook → OR#1 → Sheets → OR#2 → Gmail)
-3. **Verificar** — Deploy en Vercel + 2 mensajes de prueba end-to-end
+Al finalizar esta clase, podrás:
 
----
-
-## Los 3 escenarios
-
-| # | Escenario | Escribes... | Recibes... |
-|---|-----------|-------------|------------|
-| 1 | Clarificador de Ideas | Idea desordenada | Brief profesional con fortalezas, gaps y próximos pasos |
-| 2 | Procesador de Notas de Reunión | Garabatos y abreviaturas | Acta ejecutiva con tabla de tareas y decisiones |
-| 3 | Generador de Feedback Profesional | Feedback crudo/emocional | Guía SBI con reformulaciones y tips de entrega |
-| 4 | Tu propio caso | Tu input real | Tu output profesional (diseñado con plantilla guiada) |
+1. **Adaptar** la estructura del Sheet modelo a las columnas específicas de tu caso profesional.
+2. **Personalizar** la plantilla de Slides aplicando los elementos de marca (logo, colores, tipografía).
+3. **Reescribir** los prompts de Gemini con el contexto específico de tu industria y caso.
+4. **Validar** el sistema propio funcionando end-to-end con datos reales de tu trabajo.
 
 ---
 
-## Objetivos de aprendizaje
+## ✅ Preparación para la Clase
 
-1. Diseñar un caso de agente generativo con 2 SystemPrompts encadenados (analizar + generar)
-2. Construir un pipeline de 5 módulos en Make con 2 llamadas a OpenRouter
-3. Deployar tu agente en Vercel como URL pública funcional
+### De clases anteriores
+
+- Plan de personalización con 5 puntos críticos (Clase 6)
+- Sistema modelo optimizado con mejores prácticas (Clase 6)
+- Brief original actualizado con preview del proyecto
+
+### Reflexión previa
+
+Antes de llegar a clase, reflexiona sobre:
+
+- ¿Qué elementos de marca tienes listos (logo, paleta, tipografía) y cuáles tendrás que improvisar hoy?
+- ¿Qué datos reales vas a usar? Si no tienes, ¿puedes inventar simulados realistas?
+
+### Herramientas
+
+- [ ] **Los 5 puntos de personalización** de Clase 6 — son tu roadmap hoy
+- [ ] **Elementos de marca** — logo PNG, paleta hex, tipografía preferida
+- [ ] **Datos reales** — 3-5 registros verídicos de tu trabajo (o simulados realistas)
+- [ ] **Sistema modelo funcionando** — por si necesitas comparar/copiar configuración
+
+### Lectura sugerida
+
+- [Ver apéndice de escenarios](scenarios.md) - Plantillas y ejemplos de SystemPrompts por industria.
+- [Make: Export/Import de Blueprints](https://www.make.com/en/help/scenarios/exporting-importing-a-blueprint){:target="_blank"} - Cómo duplicar escenarios completos.
 
 ---
 
-## Preparación para la clase
+## Glosario
 
-### Obligatorio
-
-1. **Elegir tu escenario** — Revisa la tabla de 3 escenarios y decide cuál te interesa (o prepara tu caso propio)
-2. **API key de OpenRouter** funcionando (la misma de C05-C06)
-3. **Claude abierto** — lo usarás como socio pensante para personalizar SystemPrompts (callback C03)
-
-### Reflexiona antes de clase
-
-- ¿Qué información desordenada recibes regularmente que te gustaría que se transformara automáticamente en algo profesional?
-- ¿Notas de reunión? ¿Ideas sueltas? ¿Feedback que no sabes cómo dar?
-
----
-
-## Glosario de nuevos términos
-
-- **Encadenamiento de IAs**: Usar el output de una IA como input de otra — la primera analiza, la segunda genera
-- **Pipeline**: Secuencia de pasos donde cada módulo transforma los datos para el siguiente
-- **Deploy**: Publicar tu proyecto en internet para que cualquiera pueda acceder
+| Término | Definición |
+|---------|------------|
+| **Transferencia** | Aplicar un patrón aprendido (caso Roberto) a un contexto nuevo (tu trabajo). |
+| **Clonación de escenario** | Duplicar un escenario completo en Make con un click (Export/Import blueprint). |
+| **Personalización** | Adaptar datos, marca, métricas y prompts al caso específico del estudiante. |
+| **Datos reales** | Información verídica de tu trabajo, no simulada. |
+| **Debug en Make** | Aislar un problema usando "Run this module only" sobre módulos específicos. |
+| **Elementos de marca** | Logo, paleta hex, tipografías que dan identidad visual al reporte. |
 
 ---
 
 ## Recursos Adicionales
 
-- [OpenRouter Models](https://openrouter.ai/models){:target="_blank"} - Modelos disponibles y precios
-- [Vercel Deployments](https://vercel.com/docs/deployments){:target="_blank"} - Documentación de deploy
-
----
-
-## Herramientas necesarias
-
-- [ ] 💻 Laptop con Make abierto (crear nuevo escenario)
-- [ ] 🧠 Claude abierto (socio pensante para SystemPrompts)
-- [ ] 🔑 API key de OpenRouter (la misma de C05-C06)
-- [ ] 📧 Gmail configurado en Make (para recibir los emails generados)
-
----
-
-## Preview C08: Demo Day + GitHub + LinkedIn
-
-> **Tarea para la próxima clase:**
-> 1. Crear cuenta en **GitHub** si no tienes (github.com — es gratis)
-> 2. Tener tus **2 SystemPrompts** (OR#1 + OR#2) copiados y accesibles
-> 3. Verificar que tu **URL de Vercel** funciona públicamente
-> 4. Tener cuenta de **LinkedIn** abierta
-> 5. Tener cuenta de **Gemini** (gemini.google.com)
-> 6. Pulir SystemPrompts — probar con 3+ mensajes variados
+- [Apéndice: Escenarios y SystemPrompts por industria](scenarios.md) - Plantillas listas para adaptar.
+- [Make: Debug de escenarios](https://www.make.com/en/help/scenarios/debugging-a-scenario){:target="_blank"} - Guía de troubleshooting.

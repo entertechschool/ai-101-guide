@@ -1,3 +1,3 @@
-# Image Prompts — Clase 07: Mi Agente Real
+# Image Prompts — Clase 07: Tu proyecto propio
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (diagramas de arquitectura, tablas de escenarios y bloques de código).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con los 5 puntos de personalización y diagrama de transferencia).

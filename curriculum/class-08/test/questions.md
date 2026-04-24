@@ -1,119 +1,141 @@
 # Test Módulo 2 - Questions
 
-**8 preguntas diagnósticas**
+**8 preguntas diagnósticas** | **Duración:** 15 min | **No afecta calificación**
 
 ---
 
-## Preguntas 1-2 (Clase 05: Tu Primer Agente IA)
+## Pregunta 1 (Clase 05 — Gemini API)
 
-### Pregunta 1
+¿Dónde va la API key de Gemini en una llamada HTTP desde Make?
 
-¿Cuál es la diferencia principal entre una automatización y un agente IA?
+A. En los headers como `Authorization: Bearer YOUR_KEY`
+B. En el body JSON como `"api_key": "YOUR_KEY"`
+C. Al final de la URL como `?key=YOUR_KEY`
+D. En una variable de entorno separada
 
-- A) Un agente es más rápido que una automatización
-- B) Un agente usa IA para tomar decisiones, no solo seguir reglas fijas
-- C) Un agente puede conectar más herramientas que una automatización
-- D) No hay diferencia real, son sinónimos
-
-> Respuesta: B
-> Justificación: La diferencia fundamental es que una automatización ejecuta reglas fijas (IF/THEN), mientras que un agente usa IA para DECIDIR. El agente analiza el contexto y toma decisiones variables — no sigue un camino predeterminado.
-
-### Pregunta 2
-
-¿Qué define la calidad de las decisiones de un agente IA?
-
-- A) El modelo de IA que uses (Grok, GPT, Claude)
-- B) La cantidad de módulos en Make
-- C) El SystemPrompt con categorías y reglas claras
-- D) La velocidad de respuesta del webhook
-
-> Respuesta: C
-> Justificación: El battle de C06 lo demostró: mismo modelo (Grok), mismos mensajes, resultados diferentes. La variable fue el SystemPrompt. Categorías claras + reglas específicas + formato de salida = decisiones de calidad.
+> **Respuesta:** C. Gemini API usa el formato `?key=YOUR_KEY` al final de la URL del endpoint.
 
 ---
 
-## Preguntas 3-4 (Clase 06: Tu Agente Inteligente)
+## Pregunta 2 (Clase 05 — JSON)
 
-### Pregunta 3
+El módulo Parse JSON de Make falla con error "Invalid JSON". ¿Cuál es la causa MÁS probable?
 
-¿Qué es un Router en Make y para qué sirve?
+A. La API key de Gemini caducó
+B. Gemini respondió con texto introductorio antes del JSON (ej: "Aquí está tu respuesta:")
+C. El prompt era demasiado largo
+D. La cuota diaria de 1,500 requests se agotó
 
-- A) Un módulo que acelera el procesamiento del flujo
-- B) Un módulo que divide el flujo en rutas condicionales según Filters
-- C) Un módulo que conecta Make con APIs externas
-- D) Un módulo que registra datos en Google Sheets
-
-> Respuesta: B
-> Justificación: El Router evalúa condiciones (Filters) y dirige el flujo por rutas diferentes. Ejemplo: si la categoría es URGENTE → ruta 1, si es CONSULTA → ruta 2. Sin Router, todos los mensajes reciben la misma acción.
-
-### Pregunta 4
-
-¿Para qué sirve el logging con Google Sheets en un agente profesional?
-
-- A) Para que el agente sea más rápido
-- B) Para reemplazar el email como canal de notificación
-- C) Para auditar las decisiones del agente y mejorar con datos reales
-- D) Para compartir resultados automáticamente con el equipo
-
-> Respuesta: C
-> Justificación: Sin registro, no puedes saber si el agente clasifica bien o mal. Google Sheets como bitácora permite: ver todas las decisiones, identificar patrones de error, y mejorar el SystemPrompt con evidencia — no con intuición.
+> **Respuesta:** B. Parse JSON es literal — si hay cualquier texto que no sea JSON puro al inicio, falla. Solución: agregar al prompt "responde SOLO JSON, sin markdown ni texto adicional".
 
 ---
 
-## Preguntas 5-6 (Clase 07: Mi Agente Real)
+## Pregunta 3 (Clase 06 — Prompt engineering)
 
-### Pregunta 5
+De estas 3 técnicas, ¿cuál aporta MÁS a reducir inconsistencia en la salida de Gemini?
 
-Al transferir el agente de PetShop a tu caso real, ¿qué CAMBIA y qué se queda?
+A. Chain of thought ("piensa paso a paso")
+B. Persona explícita ("eres analista senior")
+C. Few-shot (incluir 2 ejemplos de output deseado)
+D. Aumentar longitud del prompt general
 
-- A) Cambia todo — hay que construir desde cero
-- B) Cambian el SystemPrompt, categorías, reglas y formulario. Se queda la arquitectura (Webhook → OpenRouter → Router → Gmail → Sheets)
-- C) Solo cambia el nombre del escenario en Make
-- D) Cambia la herramienta — se necesita otra plataforma diferente a Make
-
-> Respuesta: B
-> Justificación: La transferencia consiste en mantener la arquitectura probada y cambiar el "cerebro": SystemPrompt (nuevas reglas), categorías (nuevos Filters), formulario (nuevos campos) y emails (nuevos asuntos). La estructura de Make se clona y adapta.
-
-### Pregunta 6
-
-Tu agente clasifica todos los mensajes con la misma categoría. ¿Qué arreglas primero?
-
-- A) Las reglas del SystemPrompt — probablemente no son suficientemente específicas
-- B) El modelo de IA — necesitas uno más potente
-- C) El Router — los Filters deben estar mal configurados
-- D) El formulario — los campos no envían suficiente información
-
-> Respuesta: A
-> Justificación: Si el agente clasifica todo igual, el problema casi siempre está en el SystemPrompt: reglas vagas, categorías sin diferenciadores claros, o falta de ejemplos. El modelo y el Router solo ejecutan lo que el SystemPrompt define.
+> **Respuesta:** C. Few-shot es la técnica más efectiva para consistencia — muestra a la IA exactamente qué tipo de output querés.
 
 ---
 
-## Pregunta 7 (Integración M2)
+## Pregunta 4 (Clase 06 — Mejores prácticas)
 
-### Pregunta 7
+Configuraste un error handler en modo "Resume" en el módulo HTTP a Gemini. ¿Qué pasa si ese módulo falla una vez?
 
-Un agente IA profesional completo necesita:
+A. El escenario completo se detiene y se envía alerta
+B. El módulo se reintenta infinitamente hasta funcionar
+C. El escenario continúa con los módulos siguientes; el error handler ejecuta en paralelo
+D. Solo se envía la alerta, no se genera el reporte esa semana
 
-- A) Solo un buen modelo de IA y un SystemPrompt
-- B) Formulario bonito + muchos módulos en Make
-- C) Aprobación del equipo de TI para implementar
-- D) Cerebro (SystemPrompt con reglas) + acciones diferenciadas (Router + Gmail) + logging (Sheets) + supervisión humana
-
-> Respuesta: D
-> Justificación: Un agente profesional tiene 4 componentes: (1) cerebro que decide bien (SystemPrompt), (2) acciones diferentes por categoría (Router + Gmail), (3) registro para auditar y mejorar (Sheets), y (4) supervisión — porque ningún agente reemplaza el criterio humano.
+> **Respuesta:** C. "Resume" permite continuar después del error. El error handler envía la alerta, y el flujo sigue con los módulos posteriores.
 
 ---
 
-## Pregunta 8 (Autoevaluación)
+## Pregunta 5 (Clase 07 — Transferencia)
 
-### Pregunta 8
+Duplicás un escenario de Make vía Export/Import Blueprint. Después de importar, ¿qué debe reconfigurarse ANTES de activar el escenario v2?
 
-Después de completar el Módulo 2, ¿qué tan preparado/a te sientes para integrar un agente IA en tu trabajo real?
+A. Solo las conexiones a Sheet/Slides (apuntan a recursos nuevos)
+B. Solo los SystemPrompts (para adaptar a tu caso)
+C. Las conexiones Y los SystemPrompts
+D. Nada — el blueprint preserva todo automáticamente
 
-- A) Muy preparado/a — podría construir y adaptar agentes para diferentes procesos
-- B) Bastante preparado/a — puedo hacerlo con algo de referencia al material del curso
-- C) Algo inseguro/a — necesitaría más práctica antes de implementarlo en mi trabajo
-- D) Muy inseguro/a — no sabría por dónde empezar sin guía paso a paso
+> **Respuesta:** C. El blueprint preserva la estructura, pero los recursos apuntan a los originales y hay que redireccionarlos. Además, el SystemPrompt del HTTP menciona el caso original.
 
-> Sin respuesta correcta — todas las opciones son válidas para diagnóstico
-> Justificación: Esta pregunta mide la autopercepción del estudiante. Cualquier respuesta es valiosa como dato para el facilitador y para el propio estudiante.
+---
+
+## Pregunta 6 (Clase 07 — Personalización)
+
+Los 5 puntos críticos de personalización al transferir el sistema al caso propio son:
+
+A. Datos + Sheet + Slides + Prompts + Destinatarios/frecuencia
+B. Marca + Colores + Tipografía + Logo + Paleta
+C. Gmail + Drive + Calendar + Meet + Chat
+D. Semana 1 + Semana 2 + Semana 3 + Semana 4 + Ajustes
+
+> **Respuesta:** A. Los 5 puntos son los elementos que cambian según el caso.
+
+---
+
+## Pregunta 7 (Clase 08 — ROI)
+
+Un estudiante ahorra 5 horas/semana con su sistema. Su tarifa efectiva es S/ 40/hora. ¿Cuál es su ROI ANUAL?
+
+A. S/ 200
+B. S/ 800
+C. S/ 9,600
+D. S/ 19,200
+
+> **Respuesta:** C. Fórmula: 5 h/sem × S/ 40/h × 4 sem = S/ 800/mes. S/ 800 × 12 = S/ 9,600/año.
+
+---
+
+## Pregunta 8 (Integración M1+M2)
+
+Un estudiante completó las 8 sesiones. Su sistema está activo con:
+- Escenario 1 Instant (Gmail → Gemini → Sheet)
+- Escenario 2 Scheduled (Sheet → Gemini → Slides → PDF → Gmail + Historico)
+
+¿Cuántas operaciones de Make consume APROXIMADAMENTE por cada reporte semanal generado?
+
+A. 5 operaciones
+B. 15 operaciones
+C. 30 operaciones
+D. 100 operaciones
+
+> **Respuesta:** C. El Escenario 2 típico con IA: Scheduled (1) + Search Rows (1) + HTTP Gemini (1) + Parse JSON (1) + Create Template (1) + 10-15 Replace Text (10-15) + Export PDF (1) + Send Email (1) + Add row Historico (1) + Upload Backup (1) = ~28-30 ops.
+
+---
+
+## Clave de Respuestas Rápida
+
+| # | Respuesta | Tema |
+|---|-----------|------|
+| 1 | C | API key en URL |
+| 2 | B | Parse JSON falla por texto extra |
+| 3 | C | Few-shot reduce inconsistencia |
+| 4 | C | Error handler Resume |
+| 5 | C | Reconfiguración tras clonar |
+| 6 | A | 5 puntos de personalización |
+| 7 | C | Cálculo de ROI anual |
+| 8 | C | Operaciones por reporte |
+
+---
+
+## Análisis para el instructor
+
+Si hay <60% de acierto en:
+
+- **Pregunta 1:** muchos estudiantes tienen mala configuración — sospechar sistemas que no funcionan en Demo Day
+- **Pregunta 2:** sistemas con Parse JSON failing; recomendar revisión de prompts post-curso
+- **Pregunta 3:** grupo no internalizó few-shot; recomendar práctica en plan 30 días
+- **Pregunta 4:** mejores prácticas no aplicadas; riesgo de sistemas que fallan silenciosamente
+- **Pregunta 5:** algunos no entienden la clonación; revisar sus sistemas v2 antes de demos
+- **Pregunta 6:** plan de personalización fue superficial; candidatos a mentoría post-curso
+- **Pregunta 7:** problema de matemáticas básicas; validar cálculos de ROI uno por uno
+- **Pregunta 8:** no entienden consumo de ops; riesgo de agotar plan free pronto

@@ -1,200 +1,254 @@
-# Lab 05: Mi Agente de Triage
+# Lab 05: Gemini API + 2 flujos completos
 
-En Clase 02 clasificaste mensajes manualmente. Hoy construyes el **cerebro** de un agente: un formulario con v0 que envía datos a Make, donde la IA clasifica con OpenRouter. El agente piensa — en C06 le daremos manos.
+## 🎯 Objetivos
 
-> ⏱️ **Tiempo:** 90 minutos
-
-### 🎯 Objetivo
-
-Crear la primera mitad de un agente: formulario v0 con bloque debug → Webhook Make → OpenRouter (clasificación IA).
-
-## Arquitectura
-
-```
-[Formulario v0 + Debug] → [Webhook Make] → [OpenRouter/Grok]
-```
-
-| Componente | Qué hace | Herramienta |
-|------------|----------|-------------|
-| **Formulario** | Captura el mensaje del cliente | v0 (form + bloque debug) |
-| **Webhook** | Recibe datos y activa el flujo | Make |
-| **Decisión** | Clasifica con IA (SystemPrompt + UserPrompt) | Grok Free vía OpenRouter |
-
-> 💡 En C06 agregaremos Gmail, Router y Google Sheets para completar el agente.
-
-## Antes de Empezar
-
-| Requisito | Verificación |
-|-----------|--------------|
-| Cuenta de Make | Dashboard accesible |
-| API Key de OpenRouter | Generada y copiada |
-| Prompt de triage de C02 | En tu Google Doc |
-| Wireframe o ejemplo de form | Screenshot o imagen lista |
-| Google Doc nuevo | Para documentar tu agente |
+1. Obtener API key de Gemini gratis y configurar el módulo HTTP en Make.
+2. Agregar IA al flujo instantáneo: correo informal → Gemini extrae JSON → Sheet con datos estructurados.
+3. Activar el flujo semanal scheduled con Gemini generando insights (marcadores tipo 3) + alimentando Historico.
 
 ---
 
-## Parte 1: Concepto (15 min)
+## 🔑 Conceptos Clave
 
-**Pregunta detonadora 1:** ¿Cuál es la diferencia entre una automatización y un agente IA?
-
-**Pregunta detonadora 2:** Imagina que recibes 100 mensajes al día. Con tu prompt manual de C02, ¿cuánto te toma clasificarlos?
-
-El facilitador envía 3 mensajes desde un formulario. Observa cómo cada uno recibe una clasificación diferente en Make History.
-
-```
-Automatización: IF mensaje → THEN reenviar a soporte (siempre igual)
-Agente:         IF mensaje → IA LEE → DECIDE categoría → acción diferente
-```
-
-✅ **Checkpoint:** Entiendes la diferencia entre automatización y agente.
+- **Gemini API** — servicio gratuito (1,500 req/día) para llamar a Gemini desde cualquier programa.
+- **Módulo HTTP en Make** — módulo genérico que hace llamadas POST con URL, headers y body JSON.
+- **Prompt JSON estructurado** — pedir a Gemini que responda en formato `{clave: valor}` para mapear directo a marcadores.
 
 ---
 
-## Parte 2: Crear tu Formulario con v0 (30 min)
+## ⚙️ Setup Inicial
 
-### 2.1 Scaffolding con Gemini (refuerzo C03)
+Esta sesión integra todo lo construido en M1 + la API de Gemini. Verifica:
 
-No sabes qué pedirle a v0? Usa Gemini como socio pensante — pídele que te ayude a estructurar el prompt antes de ir a v0:
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | API key de Gemini activa | Copiada de [aistudio.google.com/apikey](https://aistudio.google.com/apikey){:target="_blank"} |
+| ☐ | Escenario 1 de Make (Gmail→Sheet) | Activo de la Clase 4 |
+| ☐ | Escenario 2 de Make (Sheet→Slides→PDF) | Run once funcionó en Clase 4 |
+| ☐ | Tabla de parámetros con marcadores tipo IA | De la Clase 3 |
 
-```
-Necesito crear un formulario de contacto para [mi negocio].
-Ayúdame a definir: qué campos necesito, qué estilo visual
-es apropiado, y cómo debería verse el layout.
-Dame 3 opciones con justificación para cada una.
-```
-
-Elige la opción que mejor represente tu marca.
-
-### 2.2 Prompt + wireframe a v0 (refuerzo Few-shot C02)
-
-Abre [v0.dev](https://v0.dev){:target="_blank"} y escribe un prompt. Adjunta tu wireframe como ejemplo visual:
-
-```
-Crea un formulario de contacto para PetShop Express con:
-- Campo: Nombre del cliente
-- Campo: Email
-- Campo: Mensaje (textarea)
-- Botón de enviar
-- Diseño limpio y profesional
-[Adjunta tu wireframe como ejemplo de estilo]
-```
-
-### 2.3 Bloque debug
-
-Pide a v0 que agregue un panel de debug al formulario:
-
-```
-Agrega un bloque de debug debajo del formulario que:
-- Muestre la respuesta del servidor después de enviar
-- Muestre un indicador de estado (enviando/éxito/error)
-- Incluya un botón de "Reintentar" si falla la conexión
-- Solo sea visible después del primer envío
-```
-
-> 💡 El bloque debug te permite ver si tu form se conectó bien al webhook sin abrir Make.
-
-### 2.4 Deploy + copiar URL
-
-1. Haz clic en **Deploy** para publicarlo
-2. Copia la URL de tu formulario
-3. Guárdala — la conectarás al webhook de Make
-
-> 💡 Si v0 no funciona, el facilitador compartirá un formulario pre-armado.
-
-✅ **Checkpoint:** Formulario deployado con URL pública y bloque debug visible.
----
-
-## Parte 3: Construir el Agente en Make (35 min)
-
-### 3.1 Clona el template
-
-El facilitador comparte el link del template. Clónalo a tu cuenta. Tiene 2 módulos: `[Webhook] → [OpenRouter]`
-
-### 3.2 Configura el Webhook
-
-Copia la URL del webhook. Tu formulario v0 enviará datos a esta URL.
-
-### 3.3 Configura OpenRouter — API Key
-
-Este paso es nuevo y crítico. En el módulo OpenRouter de Make:
-
-1. Haz clic en el módulo OpenRouter → **Create a connection**
-2. Nombre de la conexión: "Mi OpenRouter"
-3. Pega tu API Key de OpenRouter (la que generaste antes de clase)
-4. Selecciona el modelo: **grok-3-mini-beta:free**
-5. Haz clic en **Save** → espera el checkmark verde ✅
-6. Si ves error, verifica que la key no tenga espacios al inicio o final
-
-> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models){:target="_blank"} si no lo encuentras.
-
-> ⚠️ Si tu key no funciona, pide la key de backup al facilitador.
-
-### 3.4 Personaliza el SystemPrompt
-
-En el módulo OpenRouter, edita el **SystemPrompt** — el ROL y REGLAS de tu agente:
-
-```
-Eres un agente de triage automático para PetShop Express.
-Clasifica cada mensaje en UNA categoría.
-
-CATEGORÍAS:
-- URGENTE: Salud animal, deadline real, impacto financiero
-- CONSULTA: Preguntas sobre productos, disponibilidad
-- VENTA: Interés en compra, cotizaciones, pedidos corporativos
-
-REGLAS:
-- Tono agresivo NO es urgencia. Urgencia = impacto real
-- "No urgente" + deadline esta semana → URGENTE
-- Ambigüedad → CONSULTA
-
-Formato de respuesta:
-CATEGORÍA: [URGENTE|CONSULTA|VENTA]
-RESUMEN: [1 línea]
-ACCIÓN: [qué hacer]
-```
-
-### 3.5 Personaliza el UserPrompt
-
-El UserPrompt mapea los datos del formulario:
-
-```
-Nuevo mensaje de: {{nombre}}
-Email: {{email}}
-Mensaje: {{mensaje}}
-```
-
-Verifica que los campos coincidan con tu formulario v0.
-
-### 3.6 Conecta tu form al webhook
-
-Actualiza tu formulario v0 para que envíe datos a la URL del webhook de Make. Usa el bloque debug para verificar que la conexión funciona.
-
-✅ **Checkpoint:** Template clonado, API key conectada (checkmark verde), SystemPrompt personalizado, form conectado.
+> ⚠️ Sin API key no se puede hacer el lab. Obténla primero si no la tienes.
 
 ---
 
-## Parte 4: Primer Test — Ver al Agente Pensar (10 min)
+## Actividad 1: Obtén API key y haz tu primera llamada (45 min)
 
-1. Activa tu escenario en Make (switch **ON**)
-2. Envía 1 mensaje desde TU formulario
-3. Ve a **Make History** → revisa el output de OpenRouter
-4. ¿La clasificación fue correcta? ¿El formato es el que pediste?
-5. Envía 1-2 mensajes más con categorías diferentes
-6. Toma screenshot de Make execution mostrando la clasificación
+### 1.1 Obtén tu API key
 
-> 💡 Usa el bloque debug de tu form para ver si el envío fue exitoso antes de revisar Make.
+1. Ve a [aistudio.google.com/apikey](https://aistudio.google.com/apikey){:target="_blank"}
+2. Click "Create API key" → elige proyecto default
+3. **Copia la key** — se ve algo como `AIzaSyA...` (larga)
 
-✅ **Checkpoint:** Al menos 2 mensajes clasificados visibles en Make History.
+> ⚠️ Nunca compartas tu API key públicamente (repos, capturas, chats). Es como una contraseña.
+
+### 1.2 Prueba en Google AI Studio
+
+Antes de meterla en Make, prueba tu prompt en el playground:
+
+1. Ve a [aistudio.google.com](https://aistudio.google.com/){:target="_blank"}
+2. Nuevo chat → elige modelo `gemini-2.0-flash` (gratis y rápido)
+3. Pega este prompt de prueba:
+
+```
+Eres un asistente que extrae datos de correos de ventas.
+Te voy a dar un correo informal y debes devolver JSON con estos campos:
+{ "fecha": "YYYY-MM-DD", "vendedor": "nombre", "cliente": "nombre",
+  "producto": "nombre", "monto": numero, "tipo": "Nuevo" | "Recurrente",
+  "descripcion": "resumen en 1 línea" }
+
+CORREO:
+"Hola, hoy Juan cerró a Industrias López por 3500 soles en consultoría mensual,
+es cliente recurrente desde enero. - sent from iPhone"
+```
+
+4. Verifica que Gemini responde con JSON válido.
+
+### 1.3 Agrega módulo HTTP en Make
+
+Vuelve al **Escenario 1** en Make (Gmail → Sheet de la Clase 4):
+
+1. Después del módulo Gmail, **+ Add a module → HTTP → Make a request**
+2. Configuración:
+   - **URL:** `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=TU_API_KEY_AQUI`
+   - **Method:** `POST`
+   - **Headers:** `Content-Type: application/json`
+   - **Body type:** Raw → JSON
+   - **Request content:**
+
+```json
+{
+  "contents": [{
+    "parts": [{
+      "text": "Extrae datos del siguiente correo y responde SOLO en JSON con los campos fecha, vendedor, cliente, producto, monto, tipo, descripcion:\n\n{{1.text}}"
+    }]
+  }]
+}
+```
+
+> 💡 `{{1.text}}` es el cuerpo del correo del módulo Gmail anterior.
+
+### 1.4 Parsea la respuesta y mapea al Sheet
+
+1. Agrega módulo **JSON → Parse JSON** después del HTTP
+   - **Data structure:** Generate from sample → pega una respuesta típica de Gemini
+2. Modifica el módulo **Google Sheets → Add a row** final:
+   - Fecha → `{{parse.fecha}}`
+   - Vendedor → `{{parse.vendedor}}`
+   - Cliente → `{{parse.cliente}}`
+   - Producto → `{{parse.producto}}`
+   - Monto → `{{parse.monto}}`
+   - Tipo → `{{parse.tipo}}`
+   - Descripción → `{{parse.descripcion}}`
+
+### 1.5 Prueba con 3 correos informales distintos
+
+Envía 3 correos con formatos diferentes (formales, informales, con typos). Verifica que el Sheet recibe filas bien estructuradas.
+
+✅ **Checkpoint:** Los 3 correos generan 3 filas completas y bien estructuradas en el Sheet, sin importar el formato del correo.
 
 ---
 
-## 📝 Entregable (Parcial — se completa en C06)
+## Actividad 2: Genera insights para marcadores tipo IA (40 min)
 
-**Google Doc con 3 secciones:**
+### 2.1 Agrega HTTP al escenario 2
 
-1. **Mi Formulario** — URL del form v0 deployado + screenshot (con bloque debug visible)
-2. **Mi Agente (cerebro)** — Screenshot del flujo en Make (2 módulos) + SystemPrompt completo
-3. **Primer Test** — Screenshot de Make History mostrando clasificación de al menos 2 mensajes
+Vuelve al **Escenario 2** (Sheet→Slides→PDF). Antes de los módulos Replace Text, agrega un módulo **HTTP → Make a request**:
 
-📌 **Próxima clase** completamos el agente: Gmail + Router + Google Sheets + battle de agentes.
+- **URL:** mismo endpoint de Gemini
+- **Method:** POST
+- **Body JSON:** pide a Gemini que devuelva los marcadores tipo 3 en un solo JSON
+
+### 2.2 Prompt para generar insights
+
+```json
+{
+  "contents": [{
+    "parts": [{
+      "text": "Eres un analista de ventas. Analiza los datos de esta semana y devuelve SOLO JSON con estos campos:\n{\n  \"resumen_ejecutivo\": \"...\",\n  \"hallazgo_1\": \"...\",\n  \"hallazgo_2\": \"...\",\n  \"hallazgo_3\": \"...\",\n  \"riesgo_1\": \"...\",\n  \"riesgo_2\": \"...\",\n  \"oportunidad_1\": \"...\",\n  \"accion_1\": \"...\",\n  \"accion_2\": \"...\"\n}\n\nDATOS SEMANA:\n{{datos_formateados_del_sheet}}\n\nMETA SEMANAL: {{config.meta}}\nSEMANA ANTERIOR: {{historico.ventas_anterior}}"
+    }]
+  }]
+}
+```
+
+### 2.3 Parse + mapea a cada marcador
+
+1. Módulo **Parse JSON** después del HTTP
+2. En cada **Replace Text** de marcadores tipo 3:
+   - `{{resumen_ejecutivo}}` → `{{parse.resumen_ejecutivo}}`
+   - `{{hallazgo_1}}` → `{{parse.hallazgo_1}}`
+   - ... (todos los marcadores tipo 3)
+
+### 2.4 Run once y verifica
+
+Ejecuta el escenario manualmente. El PDF debe llegar ahora con los marcadores tipo 3 llenos con insights reales (no `{{hallazgo_1}}` literal).
+
+✅ **Checkpoint:** El PDF del correo tiene los marcadores tipo IA llenos con texto coherente y específico a tus datos de la semana.
+
+---
+
+## Actividad 3: Activa el flujo semanal scheduled + Historico (30 min)
+
+### 3.1 Cambia el trigger a Scheduled
+
+En el Escenario 2:
+
+1. Click en el módulo trigger (primero) → **Scheduled**
+2. Configuración:
+   - **Interval:** Weekly
+   - **Day:** Friday
+   - **Time:** 16:00
+
+### 3.2 Agrega Add a row al Historico al cierre del flujo
+
+Después del módulo Send Email, agrega **Google Sheets → Add a row**:
+
+- **Spreadsheet:** tu Sheet
+- **Sheet:** `Historico`
+- **Values:**
+  - Semana → `{{formatDate(now; "DD-MM")}}` o similar
+  - Ventas_Total → valor calculado
+  - Clientes_Nuevos → valor calculado
+  - Ticket_Promedio → valor calculado
+  - Meta_Cumplida_Pct → valor calculado
+
+### 3.3 Activa el scheduled
+
+Toggle "On" del escenario 2. Ahora correrá automáticamente cada viernes 4pm.
+
+### 3.4 Activa también el escenario instantáneo
+
+Verifica que el Escenario 1 (Gmail → Gemini → Sheet) también esté activo.
+
+### 3.5 Run once de prueba completa
+
+Ejecuta manualmente el escenario 2 para validar que:
+- Genera el PDF con insights
+- Lo envía por correo
+- Agrega una fila al Historico
+
+✅ **Checkpoint:** Sistema modelo completo activo: Escenario 1 instantáneo + Escenario 2 scheduled + Historico alimentándose solo.
+
+---
+
+## 📁 Estructura Final del Proyecto
+
+```
+Make.com/
+├── Escenario 1: Gmail → Gemini → Sheet (Instant, activo)
+└── Escenario 2: Sheet → Gemini → Slides → PDF → Gmail + Historico (Scheduled viernes 4pm, activo)
+
+Google AI Studio/
+└── API Key activa (plan free: 1,500 req/día)
+
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc
+    ├── Tabla-de-Parámetros.doc (actualizada con prompts JSON)
+    ├── sistema-reporte.xlsx
+    ├── Reporte-Plantilla.slides
+    └── Backups/ (si completaste desafío de C04)
+```
+
+---
+
+## Reflexión
+
+Antes de terminar, responde brevemente:
+
+1. **¿Qué te sorprendió más: la rapidez de Gemini API o la facilidad de mapear JSON a marcadores?**
+2. **¿Qué insight de Gemini te pareció "plano" (útil en C06 cuando optimicemos prompts)?**
+3. **¿Cuántas operaciones de Make consume ahora tu Escenario 2 completo?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Prueba el modelo `gemini-2.0-flash-thinking-exp`
+Cambia el modelo en la URL. Este modelo "piensa" antes de responder — compara calidad de insights vs el modelo rápido.
+
+### 🟡 Prompt con few-shot
+Agrega 2 ejemplos de input/output deseado dentro del prompt JSON. Observa mejora de calidad (preview de C06).
+
+### 🔴 Guarda el prompt como variable
+En Make, usa "Tools → Set multiple variables" al inicio del escenario para definir el prompt como variable. Facilita actualización sin entrar a cada HTTP.
+
+---
+
+## 📝 Entrega
+
+### Checklist
+
+- [ ] API key de Gemini configurada y funcionando
+- [ ] Escenario 1 activo: procesa correos informales con Gemini y alimenta Sheet bien estructurado
+- [ ] Escenario 2 activo: scheduled viernes 4pm, genera PDF con insights tipo IA llenos
+- [ ] Historico se alimenta automáticamente al final del flujo semanal
+
+### Entregable
+
+📸 **Screenshots** mostrando:
+- Escenario 1 con módulos: Gmail → HTTP (Gemini) → Parse JSON → Sheets Add Row
+- Escenario 2 con módulos: Scheduled → Search Rows → HTTP (Gemini) → Parse JSON → Replace Text (múltiples) → Export PDF → Send Email → Add row Historico
+- PDF llegando al correo con al menos 3 marcadores tipo IA visibles con texto coherente
+- Tu cuenta de Google visible en al menos 2 de los screenshots
+
+> ⚠️ El entregable debe mostrar tu cuenta para verificar autoría.

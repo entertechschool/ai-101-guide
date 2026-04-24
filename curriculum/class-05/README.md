@@ -1,163 +1,87 @@
-> 📦 **Módulo 2:** Clase 1 de 4
+> **Módulo 2:** Clase 1 de 4
 
-# Clase 05: Tu Primer Agente IA
+# Clase 05: Gemini API + 2 flujos completos
 
 ## Resumen
 
-En el Módulo 1 aprendiste a comunicarte con la IA y a usarla como herramienta manual. En esta clase das el salto: la IA deja de ser algo que usas y se convierte en algo que **trabaja por ti**. Construirás el cerebro de un agente de triage — un formulario con v0 que envía datos a Make, donde la IA clasifica con OpenRouter. Es la evolución directa de lo que hiciste en Clase 02: el mismo triage, pero ahora el agente piensa solo.
+Esta es la **clase bisagra** del curso. Hasta ahora construiste el sistema sin IA — piezas conectadas con Make que mueven datos. Hoy la IA entra al flujo. Vas a conectar **Gemini API** directamente a los escenarios de Make, y los marcadores tipo 3 (`{{hallazgo_1}}`, `{{resumen_ejecutivo}}`) que estaban vacíos empezarán a llenarse con insights contextuales generados en segundos.
 
-La diferencia entre automatización y agente es una sola palabra: **decisión**. Una automatización sigue reglas fijas ("si llega email, reenviar a soporte"). Un agente usa IA para decidir ("si llega mensaje, IA lee el contenido, decide si es urgente/consulta/venta"). Hoy construyes el cerebro. En Clase 06 le darás manos (Gmail), inteligencia (Router) y memoria (Google Sheets).
-
-```
-┌──────────────────┐     ┌──────────┐     ┌──────────────┐
-│ FORMULARIO + DBG │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │
-│ (v0.app)         │     │ (Make)   │     │ (OpenRouter)  │
-└──────────────────┘     └──────────┘     └──────────────┘
-```
+Al terminar, el sistema modelo está completo: un flujo instantáneo que convierte correos informales en filas estructuradas del Sheet, y un flujo scheduled semanal que lee todo, genera insights con Gemini, llena la plantilla, exporta PDF y lo manda por correo. Todo activo 24/7, consumiendo el plan gratuito de Gemini (1,500 requests/día — más que suficiente).
 
 ---
 
 ## ¿Por qué te sirve?
 
-### El problema real
-
-Ya sabes crear prompts poderosos. Pero los ejecutas manualmente:
-- Abres Claude, pegas el mensaje, lees la respuesta, tomas acción
-- Repites esto 10, 20, 50 veces al día
-- Tu expertise en prompting no escala si depende de TU tiempo
-
-### Lo que cambia con esta clase
-
-| Sin agente | Con agente |
-|------------|-----------|
-| Clasificas mensajes uno por uno | El agente clasifica 24/7 sin que estés |
-| Tú decides la prioridad cada vez | La IA decide con TU criterio (tu prompt) |
-| Tu tiempo = cuello de botella | Tu tiempo = supervisión y mejora |
-| Escalas si trabajas más horas | Escalas mejorando el prompt |
-
-### La evolución desde Clase 02
-
-```
-C02: Tú + Claude → Triage manual (pegas mensajes, lees resultado)
-         ↓ AHORA ↓
-C05: Form + Make + Grok → Triage automático (la IA clasifica SOLA)
-```
-
-> 💡 **El prompt de C02 se convierte en el "cerebro" de tu agente.**
+- **La API gratuita de Gemini da 1,500 requests por día.** Para un reporte semanal con ~15 llamadas, eso son meses de uso sin costo.
+- **Un correo informal se convierte en datos estructurados en 5 segundos.** Adiós a pedirle formatos rígidos a tu equipo — Gemini extrae lo importante sin importar cómo lo escribieron.
+- **El mismo JSON llena 10 marcadores del Slides con una sola llamada a Gemini.** Eficiencia de operaciones de Make + coherencia del output.
 
 ---
 
-## 💡 El Insight Central
+## 🎯 ¿Qué haremos en clase?
 
-**Agente = Automatización que DECIDE**
-
-```
-Automatización tradicional:
-   IF email llega → THEN reenviar a soporte (siempre igual)
-
-Agente IA:
-   IF mensaje llega → IA LEE → DECIDE categoría → acción diferente
-   ├── Urgente    → Alerta inmediata
-   ├── Consulta   → Respuesta estándar
-   └── Venta      → Registro de lead
-```
-
-El agente tiene 3 componentes (hoy construimos los 3):
-1. **Entrada:** De dónde vienen los datos (formulario v0 con bloque debug)
-2. **Trigger:** Qué lo activa (webhook en Make)
-3. **Decisión:** IA que lee y clasifica (Grok vía OpenRouter — SystemPrompt + UserPrompt)
-
-> 📌 En C06 agregamos el 4to componente: **Acción** (Gmail + Router + Google Sheets).
+1. **Exploraremos qué es una API y cómo funciona HTTP/JSON** - Descubrirás el lenguaje que Make usa para hablar con Gemini.
+2. **Configurarás tu API key de Gemini** - Obtendrás credenciales gratuitas y las conectarás al módulo HTTP de Make.
+3. **Agregarás IA al flujo instantáneo** - Gemini convertirá correos informales en filas bien estructuradas del Sheet.
+4. **Activarás el flujo scheduled semanal** - Gemini generará los insights tipo 3 y alimentará el Historico automáticamente.
 
 ---
 
-## ¿Qué haremos en clase?
+## Objetivos de Aprendizaje
 
-1. **Entenderás la diferencia** — Automatización vs agente (reglas fijas vs decisión IA) con demo en vivo
-2. **Crearás tu formulario con IA** — Scaffolding con Gemini + v0 para generar un form con bloque debug (refuerzo C02-C03)
-3. **Construirás el cerebro del agente en Make** — Webhook → OpenRouter (API Key + SystemPrompt + UserPrompt)
-4. **Verás al agente pensar** — Enviar mensajes desde TU form y ver clasificación en Make History
+Al finalizar esta clase, podrás:
 
-## 🎯 Objetivos de aprendizaje
-
-Al finalizar esta clase, serás capaz de:
-
-1. **Distinguir entre automatización y agente IA** — Cuándo usar reglas fijas vs decisión con IA
-2. **Construir el cerebro de un agente en Make** — Formulario + webhook + decisión IA
-3. **Identificar cuándo un agente necesita supervisión humana** — Límites de la autonomía
+1. **Explicar** qué son API, HTTP POST y JSON con analogías propias.
+2. **Obtener** una API key de Gemini gratuita y configurarla en el módulo HTTP de Make.
+3. **Construir** un prompt JSON que Gemini responde con datos estructurados para marcadores tipo 3.
+4. **Activar** los dos escenarios del sistema modelo (instantáneo + scheduled) y verificar ciclo completo end-to-end.
 
 ---
 
-## 📌 Preparación para la clase
+## ✅ Preparación para la Clase
 
-> **Antes de llegar a clase, prepárate:**
+### De clases anteriores
 
-### ✅ Tareas previas (OBLIGATORIAS)
+- Los 2 escenarios de Make del Módulo 1 funcionando (Clase 4)
+- Sheet con 3 pestañas recibiendo filas vía Instant Trigger
+- Plantilla de Slides con marcadores tipo 3 nombrados (vacíos, se llenarán hoy)
+- Tabla de parámetros actualizada
 
-1. **Crear cuenta en Make** ⚠️ REQUERIDO
-   - Ir a [make.com](https://make.com){:target="_blank"}
-   - Crear cuenta gratuita (el plan free incluye 1,000 operaciones/mes)
-   - Verificar que puedes acceder al dashboard
-   - *No necesitas crear ningún escenario aún*
+### Reflexión previa
 
-2. **Crear cuenta en OpenRouter** ⚠️ REQUERIDO
-   - Ir a [openrouter.ai](https://openrouter.ai){:target="_blank"}
-   - Crear cuenta gratuita
-   - Ir a "Keys" y generar una API key
-   - Guardar tu API key en lugar seguro (la usarás en clase)
-   - *Usaremos Grok Free, que no tiene costo*
+Antes de llegar a clase, reflexiona sobre:
 
-3. **Tener tu prompt de triage de Clase 02 a la mano**
-   - El prompt RICE + Few-shot que construiste para PetShop Express
-   - Será la base del "cerebro" de tu agente
-   - Si no lo tienes, revisa tu Google Doc de C02
+- Cuando lees un correo informal de un vendedor, ¿qué datos "extraes" mentalmente? Eso es lo que Gemini va a hacer.
+- De los marcadores tipo 3 de tu plantilla, ¿cuál te da más curiosidad ver generado por IA?
 
-4. **Tener un wireframe o ejemplo visual de formulario de contacto**
-   - Busca un formulario que te guste (puede ser screenshot de una web)
-   - Lo usarás como ejemplo para que v0 genere tu form (Few-shot visual, como en C02)
-   - Si no tienes uno, el facilitador compartirá un wireframe base
+### Herramientas
 
-### 🧠 Reflexiona sobre esto
+- [ ] **API Key de Gemini** - Obtenerla en [Google AI Studio](https://aistudio.google.com/apikey){:target="_blank"} antes de la clase (gratis, usa tu cuenta de Google)
+- [ ] **Cuenta de Make** con los 2 escenarios de Clase 4
+- [ ] **3-5 correos de prueba** con texto informal (como los que reciben tus vendedores/clientes/colaboradores)
 
-- ¿Qué tareas repites diariamente que siguen un patrón de clasificar + actuar?
-- ¿Cuántos mensajes/emails clasificas manualmente por semana?
+### Lectura sugerida
 
-### 📚 Recursos opcionales
-
-- [Make: Getting Started](https://www.make.com/en/help/tutorials){:target="_blank"}
-- [OpenRouter Docs](https://openrouter.ai/docs){:target="_blank"}
-- [v0.dev](https://v0.dev){:target="_blank"} — Generador de interfaces con IA
+- [Documentación de Gemini API](https://ai.google.dev/gemini-api/docs){:target="_blank"} - Referencia oficial.
+- [Módulo HTTP en Make](https://www.make.com/en/help/tools/http){:target="_blank"} - Cómo hacer llamadas API genéricas.
 
 ---
 
-## Glosario de nuevos términos
+## Glosario
 
-- **Agente IA**: Flujo automatizado que usa inteligencia artificial para tomar decisiones, no solo seguir reglas fijas
-- **Make**: Plataforma visual de automatización no-code (antes conocida como Integromat)
-- **Trigger**: Evento que inicia un flujo automatizado (llegada de datos, webhook, horario programado)
-- **OpenRouter**: Plataforma que da acceso a múltiples modelos de IA a través de una sola API
-- **Grok**: Modelo de IA creado por xAI, disponible gratis a través de OpenRouter
-- **Webhook**: URL única que recibe datos automáticamente cuando ocurre un evento externo
-- **API Key**: Contraseña que identifica tu cuenta al usar una API
-- **v0**: Herramienta de Vercel que genera interfaces web (formularios, páginas) a partir de un prompt
-- **Bloque debug**: Panel en el formulario que muestra la respuesta del servidor y permite reintentar
-- **Gemini**: IA de Google que usaremos como scaffolding para el prompt de v0 (ya la conoces de C04)
-- **SystemPrompt**: Instrucciones permanentes que definen el ROL y REGLAS del agente (lo que el agente "es")
-- **UserPrompt**: Los datos específicos de cada mensaje que el agente debe procesar (lo que el agente "recibe")
+| Término | Definición |
+|---------|------------|
+| **API** | *Application Programming Interface* — forma en que un programa habla con otro. Analogía: mozo en restaurante. |
+| **API Key** | Contraseña única que te identifica ante Gemini API. **Nunca la compartas**. |
+| **HTTP POST** | Método de envío de datos a una API (como enviar un formulario). |
+| **JSON** | Formato de datos `{clave: valor}` que APIs entienden universalmente. |
+| **Módulo HTTP en Make** | Módulo genérico para llamar cualquier API con URL, headers y body. |
+| **Rate limit** | Límite de llamadas por día/minuto. Gemini free: 1,500 requests/día, 15/min. |
+| **SystemPrompt** | Instrucciones base que definen el comportamiento de Gemini en cada llamada. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Make Academy](https://academy.make.com/){:target="_blank"} - Tutoriales oficiales de Make
-- [OpenRouter Docs](https://openrouter.ai/docs){:target="_blank"} - Documentación de la API
-
----
-
-## Herramientas necesarias
-
-- [ ] 💻 Laptop con Make y OpenRouter abiertos
-- [ ] 🔑 API key de OpenRouter generada y guardada
-- [ ] 📝 Prompt de triage de Clase 02 (Google Doc)
-- [ ] 🖼️ Wireframe o ejemplo de formulario de contacto
-- [ ] 🧠 Idea de cómo adaptarías el triage a TU trabajo
+- [Google AI Studio Playground](https://aistudio.google.com/){:target="_blank"} - Experimenta con prompts antes de llevarlos a Make.
+- [Límites del plan gratuito](https://ai.google.dev/pricing){:target="_blank"} - Detalle de rate limits y cuotas.

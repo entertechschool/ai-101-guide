@@ -1,221 +1,153 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 05: Tu Primer Agente IA
-## De ejecutar prompts a delegar decisiones
-
-*AI 101 - Entertech School*
+# Clase 05: Gemini API + 2 flujos completos
+## La IA entra al sistema — clase bisagra del curso
 
 ---
 
-## 🔗 Transición: M1 → M2
+## TRANSICIÓN: Módulo 1 → Módulo 2
 
-### En el Módulo 1:
-- Construiste sistemas, prompts y frameworks
-- Aprendiste a comunicarte con la IA
-- **Tú operabas la IA manualmente**
+### Módulo 1 (Clases 1-4):
+- Gem + brief + Sheet + Slides + 2 flujos en Make
+- Sistema end-to-end **sin IA** en el flujo
+- Marcadores tipo IA nombrados pero **vacíos**
 
-### En el Módulo 2:
-- La IA trabaja **POR ti** (hoy)
-- La IA se vuelve **inteligente** (Clase 06)
-- Demuestras lo que lograste (Clase 07-08)
+### Hoy (bisagra al Módulo 2):
+- Gemini API entra al flujo vía módulo HTTP
+- Los marcadores tipo 3 dejan de estar vacíos
+- Los dos escenarios quedan activos 24/7
 
-> "M1 fue aprender a conducir. M2 es poner el piloto automático."
-
----
-
-## 🧠 Pregunta Detonadora
-
-### ¿Cuál es la diferencia entre automatización y un agente IA?
-
-**A)** Un agente es más rápido que una automatización
-
-**B)** Un agente usa IA para tomar decisiones, no solo seguir reglas
-
-**C)** Un agente puede conectar más herramientas
-
-**D)** No hay diferencia, son lo mismo
-
-> 🕐 30 segundos para pensar → levanten la mano
+> "Hasta hoy movías datos. Desde hoy, el sistema piensa."
 
 ---
 
-## 🧠 Pregunta Detonadora — Respuesta
+## QUIZ PRE-LAB
 
-**Respuesta correcta: B**
+### Pregunta:
 
-- **A:** ❌ La velocidad no es la diferencia — ambos pueden ser rápidos
-- **B:** ✅ El agente DECIDE. La automatización solo ejecuta reglas fijas
-- **C:** ❌ Ambos pueden conectar múltiples herramientas
-- **D:** ❌ La diferencia es fundamental: reglas fijas vs decisión inteligente
+Cuando leés un correo informal de un vendedor ("Hola, hoy Juan cerró con Industrias López por 3500 soles..."), ¿qué "datos" extraes mentalmente sin pensarlo?
 
-> **Regla memorable:** Automatización = IF/THEN fijo. Agente = IA DECIDE el THEN.
+*Toma 2-3 respuestas. Eso es exactamente lo que Gemini hará hoy.*
 
 ---
 
-## 🎬 Demo: Agente de Triage en Vivo
+## COMPROBACIÓN
 
-### El facilitador envía 3 mensajes desde un formulario:
+### Pregunta (después de la demo):
 
-**Mensaje 1:** "Mi pedido no ha llegado y es regalo de cumpleaños para mañana"
+Viste el primer test de la API. ¿Qué pasa si Gemini responde un texto que NO es JSON válido (ej: agrega un párrafo introductorio)?
 
-**Mensaje 2:** "¿Tienen descuento por volumen para compra corporativa?"
-
-**Mensaje 3:** "QUIERO MI REEMBOLSO. Llevo 5 días esperando."
-
-### Observen en Make History:
-- ¿Cada mensaje recibió una clasificación diferente?
-- ¿La categoría fue correcta?
-- ¿La acción sugerida tiene sentido?
-
-> 🎬 **Demo en vivo** — Form v0 + Make + Grok vía OpenRouter
+A. Parse JSON lanza error y el flujo se detiene
+B. Parse JSON salta el texto intro y procesa solo el JSON
+C. Make convierte automáticamente cualquier respuesta a JSON
+D. Gemini nunca responde nada que no sea JSON válido
 
 ---
 
-## 🎯 COMPROBACIÓN
+## COMPROBACIÓN - Respuesta
 
-### ¿Por qué el agente clasificó diferente cada mensaje si usó el mismo modelo?
+**Respuesta correcta:** A
 
-**A)** Cada mensaje activó un modelo diferente en OpenRouter
+**Análisis de opciones:**
+- **A:** Correcto. Parse JSON espera un JSON puro; si recibe "Claro, aquí está: {...}" da error. Solución: prompt más estricto ("responde SOLO JSON, sin texto adicional").
+- **B:** Falso. Parse JSON no es inteligente — falla si hay ruido.
+- **C:** Falso. Make no "arregla" respuestas.
+- **D:** Falso. Gemini a veces agrega prosa; por eso hay que ser explícito en el prompt.
 
-**B)** El SystemPrompt define los criterios — el modelo los aplica a cada input
-
-**C)** Make decidió la clasificación, no el modelo de IA
-
-**D)** Los mensajes más largos reciben mejor clasificación
-
-> 🕐 30 segundos → levanten la mano
+> **Clave:** La palabra mágica del prompt es "SOLO JSON, sin texto adicional."
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## CHECKPOINT Actividad 1: Gemini extrae datos de correos
 
-**Respuesta correcta: B**
+### Verificar:
+Cada estudiante envía 3 correos informales y muestra el Sheet.
 
-- **A:** ❌ Mismo modelo (Grok) para todos los mensajes
-- **B:** ✅ El SystemPrompt es el cerebro — define categorías y reglas que el modelo aplica
-- **C:** ❌ Make orquesta, OpenRouter decide
-- **D:** ❌ La longitud no determina la clasificación
+**¿Qué debe verse?**
+- 3 filas nuevas con todos los campos llenos
+- Datos coherentes aunque los correos tengan formatos distintos
+- Columna Descripción con resumen en 1 línea generado por Gemini
 
-> **Clave:** Cambias el SystemPrompt, cambias las decisiones. El modelo es el músculo, el prompt es el cerebro.
-
----
-
-## Concepto Clave: Arquitectura del Agente
-
-```
-┌──────────────────┐     ┌──────────┐     ┌──────────────┐
-│ FORMULARIO + DBG │ ──→ │ WEBHOOK  │ ──→ │  IA DECIDE   │
-│ (v0.app)         │     │ (Make)   │     │ (OpenRouter)  │
-└──────────────────┘     └──────────┘     └──────────────┘
-```
-
-| Componente | Pregunta clave | Ejemplo |
-|------------|---------------|---------|
-| **Formulario** | ¿De dónde vienen los datos? | v0 form + bloque debug |
-| **Webhook** | ¿Qué activa el flujo? | URL de Make |
-| **Decisión** | ¿Qué criterio usa? | SystemPrompt + UserPrompt |
-
-### Hoy construimos el cerebro. En C06 le damos manos.
+**Problemas comunes:**
+- Parse JSON falla → prompt no fue estricto, agregar "responde SOLO en JSON"
+- Campos vacíos → el correo no menciona ese dato; Gemini dejó null (OK)
+- API key no funciona → verificar que se copió sin espacios, proyecto activo en AI Studio
 
 ---
 
-## Las Herramientas de Hoy
+## CHECKPOINT Actividad 2: Marcadores tipo IA llenos
 
-| Herramienta | Rol | Costo |
-|-------------|-----|-------|
-| **v0** | Generar formulario con IA + bloque debug | Free (con cuenta) |
-| **Make** | Plataforma de automatización visual | Free (1,000 ops/mes) |
-| **OpenRouter** | Puerta a múltiples modelos de IA | Free (con Grok) |
-| **Grok** | Modelo de IA que toma la decisión | Free vía OpenRouter |
-| **Gemini** | Scaffolding del prompt de v0 (ya conocida) | Free |
+### Verificar:
+Cada estudiante corre Run once del Escenario 2 y muestra el PDF.
 
-### ¿Por qué no Claude directamente?
-- Claude es más poderoso pero requiere cuenta de pago para API
-- Grok Free te permite experimentar sin costo
-- **Si dominas el prompt, dominas cualquier modelo**
+**¿Qué debe verse?**
+- Al menos 3 marcadores tipo IA con texto coherente (no `{{hallazgo_1}}` literal)
+- Texto específico a los datos del Sheet (menciona nombres, números)
+- Formato PDF intacto (no desbordamiento por textos largos de Gemini)
 
----
-
-## ⚠️ Las Limitaciones (Anti-Hype)
-
-### 4 verdades sobre agentes IA:
-
-**1. Basura entra, basura sale**
-> Un agente con mal SystemPrompt comete errores... automáticamente y a escala
-
-**2. La IA no tiene sentido común**
-> "No es urgente" + deadline del viernes = la IA puede ignorar el deadline
-
-**3. Supervisión no es opcional**
-> Un agente de triage NO reemplaza a un humano. Prioriza el trabajo del humano
-
-**4. Automatizar un mal proceso = errores más rápidos**
-> Si tu triage manual es malo, el agente automático será malo... más rápido
-
-### La fórmula real:
-**Agente útil = Buen SystemPrompt + Buena supervisión + Mejora continua**
+**Problemas comunes:**
+- Marcadores siguen literales → Replace Text no está mapeado al Parse JSON correcto
+- Textos demasiado largos → agregar al prompt "máximo 25 palabras por campo"
+- Gemini devuelve español con errores → agregar al prompt "responde en español latinoamericano"
 
 ---
 
-## Lab Time
+## CHECKPOINT Actividad 3: Scheduled + Historico activos
 
-### Mi Agente de Triage
+### Verificar:
+Ambos escenarios con toggle "On".
 
-**Objetivo:** Crear el cerebro del agente: Form v0 → Webhook Make → OpenRouter/Grok
+**¿Qué debe verse?**
+- Escenario 1: Instant trigger activo, icono verde
+- Escenario 2: Scheduled viernes 4pm, próxima ejecución visible
+- Historico con fila nueva después del Run once
 
-**Tiempo:** 90 min
-
-**Partes:**
-1. Concepto — Agente vs automatización + preguntas detonadoras (15 min)
-2. Crear formulario con v0 — Scaffolding Gemini + Few-shot + Debug (30 min)
-3. Construir agente en Make — API Key + SystemPrompt + UserPrompt (35 min)
-4. Primer test — Ver al agente pensar en Make History (10 min)
-
-> 💡 Tip: Tu prompt de C02 es tu punto de partida para el SystemPrompt
+**Problemas comunes:**
+- Scheduled no se activa → revisar zona horaria del escenario
+- Historico no recibe fila → módulo Add a row al final no está conectado al flujo principal
 
 ---
 
-## ✅ Checkpoints
+## REFLEXIÓN: Consumo de operaciones con IA
 
-### Parte 1-2:
-- [ ] Entiendes la diferencia entre automatización y agente
-- [ ] Formulario creado en v0 con bloque debug y deployado
-- [ ] URL del formulario copiada
+| Escenario | Ops sin IA | Ops con IA | Mensuales (plan free) |
+|-----------|-----------|-----------|----------------------|
+| Captura correos (por correo) | 2 | 4 | ~240 correos/mes |
+| Reporte semanal | 12 | 18 | ~55 reportes/mes |
 
-### Parte 3:
-- [ ] Template clonado en Make (2 módulos: Webhook → OpenRouter)
-- [ ] API Key de OpenRouter conectada (checkmark verde)
-- [ ] SystemPrompt + UserPrompt personalizados
-
-### Parte 4:
-- [ ] Al menos 2 mensajes enviados desde tu formulario
-- [ ] Clasificaciones visibles en Make History
-- [ ] Screenshot tomado para el entregable
+> **Regla memorable:** "Agregar IA cuesta 2-6 ops extra — mínimo comparado con el valor que agrega."
 
 ---
 
-## 💡 Reflexión
+## TRANSICIÓN: Preview Clase 06
 
-### Hoy aprendiste:
-- La diferencia entre automatización y agente IA
-- Cómo crear un formulario profesional con v0 + bloque debug
-- Cómo construir el cerebro de un agente en Make + OpenRouter
-- Que SystemPrompt + UserPrompt definen la calidad de la decisión
-- Que los agentes necesitan supervisión continua
+### Hoy lograste:
+- API key de Gemini configurada
+- 2 escenarios activos con IA
+- Marcadores tipo 3 llenos automáticamente
+- Sistema modelo completo 24/7
 
-### La pregunta clave:
-¿Qué proceso de TU trabajo podría ser un agente como el que construiste hoy?
+### Próxima clase:
+- Optimizar prompts con chain-of-thought, few-shot, persona
+- Comparar insights "planos" vs "potentes"
+- Aplicar 4 mejores prácticas del sistema
+- Definir plan de personalización para TU caso
 
 ---
 
-## 📝 Entrega + Preview
+## Preguntas de Cierre
 
-### Tu entregable (parcial — se completa en C06):
-1. **Mi Formulario** — URL del form v0 + screenshot con bloque debug
-2. **Mi Agente (cerebro)** — Screenshot Make (2 módulos) + SystemPrompt
-3. **Primer Test** — Screenshot de Make History con clasificación
+1. De los insights que Gemini generó, ¿cuál te pareció más útil? ¿Cuál más plano?
 
-**Formato:** Google Doc con link público
+2. Si comparás el reporte de hoy con cómo lo armabas a mano antes del curso, ¿qué tiempo calcularías que ahorras por reporte?
 
-### Próxima clase: Tu Agente Inteligente
-Completamos el agente con Gmail + Router + Google Sheets. Y battle: ¿quién clasifica mejor?
+3. ¿Qué marcador tipo IA crees que se beneficiará más de un prompt optimizado en Clase 6?
+
+---
+
+## Entrega
+
+- Screenshots de ambos escenarios activos con módulos visibles
+- PDF con marcadores tipo IA llenos
+- Historico con fila nueva del test
+
+### Próxima clase: Integración total + mejores prácticas

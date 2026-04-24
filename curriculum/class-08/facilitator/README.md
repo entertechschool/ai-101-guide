@@ -1,286 +1,263 @@
-# Guía del Facilitador - Clase 08: Demo Day + El Futuro
+# Guía del Facilitador - Clase 08: Demo Day + ROI + Plan 30 días
 
 > Tiempo de lectura: 12 minutos | Prepárate antes de clase
+>
+> ⚠️ **Clase con formato especial:** Test (15 min) + Demos en vivo (60 min) + ROI (40 min) + Plan 30 días (30 min). Tu rol: facilitar, no enseñar.
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
-- **Open-source**: Código público que otros pueden ver, estudiar y aprender de él. Los estudiantes publican su primer repo con SystemPrompts documentados.
-- **Demo Day**: Sesión de pitches donde cada estudiante presenta su caso en 3 minutos. No es examen — es celebración con evidencia.
-- **Accountability**: Compromiso público que motiva a cumplir. Publicar juntos en LinkedIn.
-- **NanoBanana**: Estilo de generación de imágenes en Gemini para crear portadas profesionales con logos del stack.
-
----
-
-## Analogías Útiles
-
-**GitHub = tu portafolio de arquitecto:**
-No solo muestras el edificio (Vercel), también los planos (SystemPrompts). Eso es lo que te diferencia.
-
-**LinkedIn post + repo = tarjeta de presentación con evidencia:**
-No es publicar por publicar. Es un agente funcionando + código documentado + métricas reales.
-
-**Plan 30 días = programa de entrenamiento:**
-No es lista de deseos de Año Nuevo. Son 3 acciones concretas esta semana.
+- **PSDR**: Problema + Solución + Demo + Resultado (estructura de 5 min).
+- **Demo en vivo**: sistema corriendo con datos reales, no capturas.
+- **ROI**: horas ahorradas × tarifa × 4 × 12 = ahorro anual.
+- **Tarifa efectiva**: salario mensual ÷ horas trabajadas mensuales (para quienes no saben su tarifa).
+- **Principio 80/20 (Pareto)**: 20% de tareas concentran 80% del tiempo.
+- **Compromiso público**: anunciar al grupo aumenta cumplimiento al 65%.
 
 ---
 
-## Contexto Pedagógico
+## 🔗 Analogías Útiles
 
-Esta es la clase más emocional del curso y la más densa en entregables. Tu rol es **facilitador de confianza + director de tiempo**, no evaluador. Los estudiantes hacen 3 cosas grandes hoy: GitHub, LinkedIn y pitch. Cada bloque tiene su propio checkpoint — no dejes que se alarguen.
+**Demo en vivo <> cocinar en vivo vs mostrar fotos del plato:**
+Mostrar fotos de un plato delicioso genera curiosidad. Cocinarlo en vivo genera asombro. Ver el correo llegar y el Sheet actualizarse en 5 segundos es la cocina en vivo de tu sistema.
 
-### ¿Por qué GitHub se movió a C08?
+**ROI en soles <> convertir tu trabajo invisible en visible:**
+"Ahorro 6 horas a la semana" es abstracto — nadie puede dimensionarlo. "Ahorro S/ 28,800 al año con un sistema que me tomó 20 horas construir" es concreto — cualquier jefe lo entiende.
 
-En C07, el tiempo de construcción del agente (Make + 5 módulos) no dejaba espacio para GitHub. Moviendo GitHub a C08 se logra:
-1. Más tiempo en C07 para construir sin prisa
-2. En C08, GitHub se conecta naturalmente con LinkedIn (repo = evidencia del post)
-3. El flujo Vercel → GitHub es técnicamente simple (5-7 min) pero el README necesita cuidado
-
-### Riesgo principal
-
-Estudiantes atascados en autenticación de GitHub (primera vez). Tener protocolo claro y buffer de 3 min.
+**Plan 30 días <> plan de entrenamiento post maratón:**
+Terminaste la maratón (el curso). Sin plan de qué hacer después, los músculos se atrofian. Con plan de 3 carreras más programadas, mantenés el hábito y ganás capacidad.
 
 ---
 
-## Preparación ANTES de Clase
+## 📚 Contexto Histórico / Contexto Actual
 
-### Crítico
+### El principio Pareto y la automatización
 
-1. **Test M2 en Google Forms** — 8 preguntas listas (ver sección Test)
-2. **Tu propio repo en GitHub** con README profesional — lo muestras como ejemplo
-3. **Tu propio LinkedIn post** publicado como ejemplo — muéstralo antes de pedir que publiquen
-4. **Timer estricto** para pitches (3 min presentación + 30 seg feedback)
-5. **Logos SVG verificados** — `curriculum/class-08/lab/assets/` tiene 8 SVGs
-6. **Gemini probado** — genera una imagen de ejemplo con los logos para mostrar
-7. **Info AI 201/301** para compartir al final
-8. **Celebración lista** — aplausos, certificados si hay, cierre digno
+Vilfredo Pareto (economista italiano, 1896) observó que el 80% de la riqueza de Italia pertenecía al 20% de la población. Desde entonces se validó la regla en productividad: 80% del valor sale del 20% del trabajo. En automatización: el 20% de tus tareas repetitivas que más tiempo quitan son las que dan ROI al automatizarlas.
 
----
+> **Para contar en clase:** "Pareto en 1896 descubrió que el 80% de los resultados viene del 20% de las causas. En 2026, ustedes lo aplican para elegir qué automatizar primero."
 
-## Estructura de la Clase — 5 Bloques (~150 min)
+### El compromiso público: estudio de seguimiento
 
-### BLOQUE 1: Apertura + Test (~30 min)
+Un estudio de Dominican University (2015) mostró que estudiantes que escribían sus metas y las compartían públicamente cumplían 65% vs 23% de quienes no. El compromiso público no es ceremonia — tiene base científica.
 
-#### Pregunta Detonadora (~3 min)
+> **Para contar en clase:** "Decirlo en voz alta frente al grupo triplica la probabilidad de cumplirlo. Por eso no es opcional."
 
-**Respuesta correcta: C** — Métricas reales + demo funcionando + repo público. Mensaje clave: "Cualquiera puede decir 'uso IA'. La diferencia está en DEMOSTRAR."
-
-#### Test Diagnóstico M2 (~15 min)
-
-8 preguntas, 15 minutos. No afecta calificación — es un espejo de comprensión. Respuestas: 1-B, 2-C, 3-B, 4-C, 5-B, 6-A, 7-D, 8-sin correcta. Ver `test/questions.md` para preguntas completas.
-
-#### Retrospectiva C01→C07 (~12 min)
-
-Recorrido rápido (2 min por módulo). Usa las slides como apoyo visual:
-- **M1:** Instrucciones claras (C01) → RICE + Few-shot (C02) → Socio pensante (C03) → Proyecto integrador (C04)
-- **M2:** Cerebro del agente (C05) → Router + Sheets (C06) → Agente propio con 2 IAs (C07) → Hoy: open-source
-
-**Pregunta al grupo:** "¿Cuál fue el momento donde más se frustraron? ¿Y cuál fue el momento WOW?"
-
-> **Checkpoint ~min 30:** Retrospectiva completada, energía del grupo alta
+**Fuentes:** [Principio de Pareto](https://en.wikipedia.org/wiki/Pareto_principle){:target="_blank"}, [Dominican University goal-setting study](https://www.dominican.edu/academics/lae/undergraduate-programs/psych/faculty/assets-gail-matthews/researchsummary2.pdf){:target="_blank"}
 
 ---
 
-### BLOQUE 2: GitHub — Mi Primer Proyecto Open-Source (~30 min)
+## 🎯 Momentos Clave de la Clase
 
-#### Intro facilitador (~2 min)
-Muestra TU repo como ejemplo — código del form, README con SystemPrompts, URL de demo.
+### Apertura (sin Quiz Pre-Lab — es clase de cierre)
 
-#### Conectar Vercel → GitHub (~7 min)
-Guía: vercel.com → Settings → Git → Connect to GitHub → autorizar. Vercel crea el repo automáticamente.
+```
+Facilitador: "Esta es la última clase. No voy a enseñar nada nuevo —
+vamos a mostrar lo que construyeron, cuantificarlo y proyectarlo.
+Tres momentos: test (15 min), demos en vivo (5 min por persona),
+ROI y plan 30 días. Al final, están en el 5% de profesionales que
+automatiza su trabajo con IA."
+```
 
-Errores comunes: auth de GitHub (ayudar con OAuth), permisos (Settings → Applications → autorizar Vercel), login incorrecto (verificar misma cuenta de C07).
+### Demo propio del facilitador
 
-#### README completo en GitHub web (~13 min)
-- github.com → repo → editar README.md → estructura del lab → **pegar ambos SystemPrompts** → commit
-- Verificar repo público (Settings → Change Visibility si es privado)
+**Qué mostrar:** el instructor arranca con su propia demo del caso Roberto siguiendo PSDR.
 
-#### Buffer técnico (~3 min)
-Para problemas de auth/cuenta. Si nadie lo necesita, avanzar.
+```
+Facilitador: "Voy a empezar con mi demo para que vean el formato."
+[P - 1 min]: "Antes, Roberto perdía 4 horas cada viernes consolidando reportes manuales..."
+[S - 1 min]: "Construimos un sistema con Gemini + Make + Workspace..."
+[D - 2 min]: [Envía correo real, muestra Sheet actualizándose, PDF llegando]
+[R - 1 min]: "Roberto ahorra 4 h/sem × S/ 100 × 4 × 12 = S/ 19,200/año."
+```
 
-> **Checkpoint ~min 60:** "¿Quién tiene repo público con README?" — Manos arriba.
+**Plan B (si tu sistema falla):** mostrar grabación de una ejecución previa.
 
----
+### Transición a las demos
 
-### BLOQUE 3: Preparar LinkedIn + Imagen (~30 min)
-
-#### Draft con Claude (~10 min)
-- Template del lab: problema + solución + URLs + métrica + takeaway
-- **Clave:** que incluyan AMBAS URLs (Vercel + GitHub)
-
-#### Imagen con Gemini (~10 min)
-- Logos en `class-08/lab/assets/` (8 SVGs). Descargan 3-4 → suben a Gemini → imagen portada
-- Fallback: Canva con logos, o publicar sin imagen
-
-#### Peer review en parejas (~10 min)
-- Intercambiar posts → feedback: hook, métrica, URLs, tono → ajustar
-
-> **Checkpoint ~min 90:** "¿Quién tiene post listo + imagen?" — Manos arriba.
-
----
-
-### BLOQUE 4: Pitches + Publicar (~30 min)
-
-#### Pitches — 3 min c/u (~25 min)
-
-Protocolo por pitch: post LinkedIn (2 min) → demo rápida (1 min) → feedback grupal (30 seg). Ver lab para protocolo detallado.
-
-**Control de tiempo:** Timer visible + tarjeta "30 seg" + cortar con amabilidad. Grupos 9+: demo opcional. Grupos 13+: 2 min sin demo individual.
-
-**Si el agente falla en vivo:** "¿Tienes un run exitoso en Make History? Muéstralo. Sabes diagnosticar qué pasó."
-
-#### "3... 2... 1... PUBLICAR!" (~5 min)
-
-Todos publican juntos. El momento grupal reduce la barrera. Si alguien duda: "Tu post tiene evidencia real — un agente funcionando y un repo. Publícalo."
-
-> **Checkpoint ~min 120:** "¿Quién publicó?" — Screenshot grupal.
-
----
-
-### BLOQUE 5: Cierre del Curso (~30 min)
-
-#### Roadmap 30 días con Claude (~15 min)
-- Template del lab: plan por semana + 3 quick-wins. Cada persona comparte quick-win #1 (1 oración)
-
-#### Anti-Hype + Pathway (~5 min)
-4 verdades: (1) 4 semanas = inicio, no final. (2) Herramientas cambian, pensamiento crítico no. (3) LinkedIn no te hace experto, la práctica sí. (4) Tu agente necesita supervisión.
-
-**Pathway:** AI 201 (Construir con IA) → AI 301 (Escalar con IA)
-
-#### Cierre emocional (~10 min)
-Mensaje central: "Pasaron del 95% al 5%. Herramientas van a cambiar. Pensar críticamente con IA, diseñar sistemas, iterar con datos — eso no caduca."
-
-> **Checkpoint ~min 150:** Cierre emocional completado. Momento de celebración.
-
----
-
-## Errores Esperados
-
-| Señal | Qué hacer |
-|-------|-----------|
-| GitHub auth falla | Ayudar con OAuth flow. Buffer técnico de 3 min |
-| "No sé qué poner en el README" | "Copia la estructura del lab. Solo llena los espacios" |
-| Sin métricas reales | "¿Cuánto te tomaba ANTES? ¿Y AHORA con el agente?" |
-| Miedo a publicar en LinkedIn | "Tu post tiene repo + agente. Más que el 99%" |
-| No terminó agente C07 | "Muestra PetShop de C06. Explica qué SERÍA tu caso" |
-
----
-
-## Checkpoints de Validación
-
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~3 | PD votada | Discusión sobre credibilidad completada |
-| ~18 | Test M2 completado | Todos enviaron respuestas en Forms |
-| ~30 | Retrospectiva completada | Energía del grupo alta |
-| ~60 | Repo público + README | "¿Quién tiene repo con SystemPrompts?" |
-| ~90 | Post LinkedIn + imagen | "¿Quién tiene post listo?" |
-| ~120 | Pitches + LinkedIn publicado | "¿Quién publicó? Screenshot!" |
-| ~135 | Roadmap creado | "¿Quién tiene 3 quick-wins?" |
-| ~150 | Cierre emocional | Momento de celebración grupal |
-
----
-
-## ✅ Señales de Comprensión
-
-**ENTIENDE cuando:**
-- Puede explicar por qué su repo + URL + métrica es más valioso que un certificado
-- Su pitch se enfoca en el problema que resuelve, no en las herramientas que usó
-
-**NECESITA AYUDA cuando:**
-- Su post de LinkedIn es solo descripción de herramientas sin resultado concreto
-- No puede articular qué problema resuelve su agente en 1 oración
-
----
-
-## 🔀 Diferenciación
-
-**Estudiantes avanzados:** Que ayuden a compañeros con GitHub auth, que agreguen sección "Aprendizajes" al README, que comenten posts de LinkedIn de sus compañeros.
-
-**Estudiantes con dificultades:** Que documenten SystemPrompts en Google Doc si GitHub no funciona, que usen el agente PetShop de C06 como base para el pitch.
+```
+Facilitador: "OK, cierren el test. Ahora viene la parte más emocionante del curso.
+¿Voluntario para empezar? Si no, sorteo.
+Recordatorio: 5 min exactos, PSDR, demo en vivo obligatoria.
+Los compañeros llenan rúbrica mientras escuchan."
+```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### "El Elevator Pitch"
+### Dinámica 1: "Voluntario primero"
+
+Los voluntarios suelen ser los más seguros — ellos establecen la vara. Los más nerviosos se relajan al ver que es posible.
+
+### Dinámica 2: "Aplauso obligatorio"
+
+Después de cada demo, aplauso genuino de 5-10 segundos. No es ritual — es oxígeno para el siguiente.
+
+### Dinámica 3: "El ROI más alto"
+
+Pedí que cada uno diga su número anual en voz alta. Anotá en pizarra:
+
 ```
-Facilitador: "En 30 segundos: ¿qué problema resuelve tu agente?"
-[Cada persona responde en 1 oración. Si tarda más de 30 seg, cortar]
-"Si no puedes decirlo en 30 segundos, tu pitch de 3 min no va a funcionar."
+Facilitador: "Cada uno: ahorro anual en soles. Corto, sin explicación."
+[Ronda]
+Facilitador: "Miguel tiene el más alto — S/ 45,000. Miguel, 30 seg:
+¿qué hiciste distinto?"
 ```
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### Template README para GitHub:
+### Ejemplo 1: Cálculo de tarifa efectiva
+
+**Cuándo usarlo:** si un estudiante asalariado dice "no tengo tarifa por hora".
+
 ```
-# [Nombre del Agente]
-[1 línea: qué hace]
+Tarifa efectiva = salario mensual neto ÷ horas trabajadas en el mes
 
-## Arquitectura
-Form → Webhook → OR#1 (analiza) → Sheets → OR#2 (genera) → Gmail
+Ejemplo:
+- Salario: S/ 4,000/mes
+- Horas/mes: 160 (8h × 20 días)
+- Tarifa efectiva: S/ 25/hora
 
-## SystemPrompts
-### OR#1 — Analizar
-[pegar SystemPrompt]
-
-### OR#2 — Generar
-[pegar SystemPrompt]
-
-## Demo
-[URL de Vercel]
+Si ahorrás 6 horas/semana:
+  6 × S/ 25 × 4 × 12 = S/ 7,200/año
 ```
+
+### Ejemplo 2: Plan 30 días bien hecho
+
+**Cuándo usarlo:** cuando alguien tiene plan vago.
+
+```
+Malo: "Voy a automatizar más cosas de mi trabajo"
+Bien: "Semana 1: construir agente que responde consultas frecuentes
+       usando Gem + templates guardados. Datos: correo de consultas
+       del último mes. Herramientas: Gemini + Gmail + Sheets."
+```
+
+---
+
+## ⚠️ Errores Comunes
+
+| Señal | Qué está pasando | Qué hacer |
+|-------|------------------|-----------|
+| "Mi demo no funciona ahora" | Internet lento / Gemini API down | Ofrecer mostrar grabación previa + continuar con Resultado |
+| "Mi sistema sí funciona pero es feo" | Perfeccionismo vs pragmatismo | Recordar que Demo Day evalúa funcionalidad, no diseño |
+| "No sé mi tarifa" | Asalariado sin tarifa declarada | Fórmula: salario ÷ horas mensuales |
+| "Mi ROI suena muy alto/bajo" | Cálculo mal o horas exageradas | Pedir desglose: horas/semana × tarifa × 4 × 12 |
+| "Plan 30 días son cosas vagas" | No aplicó 80/20 | Forzar: ¿cuál es la ÚNICA tarea que si automatizás te cambia la semana? |
+
+---
+
+## ✅ Señales de Comprensión
+
+### El estudiante ENTIENDE cuando:
+- Su ROI es específico, no redondeado al alza
+- Su plan 30 días tiene tareas diferentes a las del curso (no solo "repetir el sistema")
+- Su demo tiene el correo real saliendo en vivo, no capturas
+
+### El estudiante NECESITA AYUDA cuando:
+- Presenta solo slides sin demo en vivo
+- Su ROI es "bastante tiempo" en vez de un número
+- Su plan 30 días es "seguir mejorando" sin tareas concretas
+
+---
+
+## 🎯 Checkpoints de Validación
+
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| 15 | Test completado | Todos terminaron y cerraron | Dar 2 min extra a quien lo necesite |
+| 20 | Orden de demos establecido | Lista visible de quién presenta cuándo | Sortear si no hay voluntarios |
+| 75 | Todas las demos terminadas | 1 por estudiante, rúbricas llenas | Cortar con cronómetro firme |
+| 115 | ROI calculado | Cada uno con número mensual y anual | Ayudar con fórmula a quienes se atascan |
+| 145 | Plan 30 días con 3 agentes | 3 agentes específicos por estudiante | Forzar especificidad |
+| 150 | Compromiso público + foto grupal | Cada uno compartió en voz alta | Celebración |
+
+---
+
+## 🧑‍🏫 Tips de Facilitación
+
+### Manejo del tiempo en demos (crítico):
+- Cronómetro visible en pantalla
+- A los 4:30 min: "1 minuto restante"
+- A los 5:00 min: cortar suavemente ("Gracias — siguiente por favor")
+
+### Si una demo falla técnicamente:
+- Respirar hondo público: "Puede pasar. ¿Tenés capturas de la última ejecución?"
+- Ofrecer saltar al Resultado con confianza
+
+### Si hay preguntas fuera de alcance:
+> "Excelente pregunta. Perfecta para tu plan 30 días o para AI 201."
+
+---
+
+## 🔀 Diferenciación
+
+### Para estudiantes avanzados:
+- Pedirles que sean los primeros en presentar — establecen la vara.
+- Logro 🟢 (post en LinkedIn) o 🔴 (plantear proyecto para AI 201).
+
+### Para estudiantes con dificultades:
+- Si la demo no funciona, priorizar Resultado y Plan 30 días.
+- Oferta de 1:1 post-curso para ayudarles a lanzar el primero de sus 3 agentes.
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### "¿Tengo que publicar en LinkedIn?"
-No es obligatorio, pero el momento grupal reduce la barrera. Puedes publicar después si prefieres.
+### P: ¿Qué pasa si mi sistema deja de funcionar después del curso?
+**R:** Lo más común: operaciones de Make agotadas. Solución: subir a plan $9/mes o recortar frecuencias. Segunda causa: API key de Gemini revocada (regenerar en AI Studio).
 
-### "¿Mi repo tiene que ser público?"
-Para este ejercicio sí — es la pieza de portfolio. No contiene datos sensibles (solo SystemPrompts y código de form).
+### P: ¿Puedo cambiar mi plan 30 días después?
+**R:** Sí, el plan es vivo. Cada semana podés ajustar según lo que aprendés. Lo importante es que sigas construyendo.
 
----
-
-## 🪞 Reflexión Post-Clase
-
-1. **¿El cierre emocional aterrizó?** — Si el grupo estaba distraído, puede que fue muy largo.
-2. **¿Cuántos publicaron en LinkedIn?** — Meta: >70% del grupo.
-3. **¿Los pitches fueron de calidad?** — Si la mayoría describió herramientas en vez de problemas, reforzar para futuros cohorts.
-4. **¿El curso logró el cambio de mindset "del 95% al 5%"?** — Revisar test M2 para evidencia.
+### P: ¿AI 201 empieza cuándo?
+**R:** Consultar con Enter Tech School. Quienes completan AI 101 tienen prioridad y descuento.
 
 ---
 
-## Tips de Facilitación
+## 📊 Revisión del Test Diagnóstico
 
-### Para GitHub:
-- "Solo vas a editar un archivo de texto en una página web. No necesitas saber programar."
-- Mostrar en tu pantalla cómo se edita un README en GitHub web
-- Si realmente no pueden: que documenten SystemPrompts en un Google Doc como backup
-- Los ~3 min de buffer técnico son para problemas de auth — no los uses para otra cosa
+Al final de la clase (10 min):
 
-### Para LinkedIn + Imagen:
-- Mostrar TU propio post primero como ejemplo
-- La imagen de Gemini es un bonus — si no sale bien, publicar sin imagen está bien
-- Publicar JUNTOS reduce la ansiedad individual
-- No forzar — si alguien prefiere publicar después, está bien. Pero el momento grupal es poderoso
+Abrir estadísticas del test en Canvas. Compartir en pantalla (sin nombres):
 
-### Para los pitches:
-- Timer estricto es no-negociable. Sin timer, los pitches se extienden
-- Iniciar con alguien confiado para establecer el tono
-- El post de LinkedIn ES la presentación — no necesitan slides extra
-- Aplaudir genuinamente después de cada pitch
+- **Preguntas con >90% acierto:** celebrar
+- **Preguntas con 60-90%:** "retomar en tu plan 30 días"
+- **Preguntas con <60%:** mencionar qué concepto revisar
 
-### Para el cierre:
-- No apures el cierre emocional. Son 10 minutos que importan
-- Menciona algo específico de cada estudiante si es grupo pequeño
-- Comparte info de AI 201/301 como siguiente paso natural
+No hacer examen de nuevo — es diagnóstico, no evaluación.
 
-```
-"El mejor indicador de que AI 101 funcionó:
-¿siguen usando lo que aprendieron 30 días después?"
-```
+---
+
+## 🔗 Conexiones del Curriculum
+
+### Esta clase cierra:
+
+| Clase | Concepto | Cómo se cierra |
+|-------|----------|----------------|
+| 01 | Brief del proyecto | Se presenta el sistema que materializó el brief |
+| 02-04 | Piezas del M1 | Integradas y funcionando en demo |
+| 05-07 | Integración M2 | Culminan en la demo en vivo |
+
+### Conexión con el futuro
+
+> "Terminaron el 5% de profesionales que automatiza con IA. Pero el sistema que construyeron solo es el primer agente. En 30 días, con el plan que escribieron hoy, van a tener 3 más. En 90 días, 6. Y en un año, son operadores de sistemas con IA, no solo usuarios."
+
+---
+
+## 🪞 Reflexión Post-Curso
+
+### Preguntas para el facilitador:
+- ¿Cuántos estudiantes hicieron demo en vivo (no capturas)?
+- ¿El ROI promedio del grupo es creíble?
+- ¿Los planes 30 días tienen especificidad suficiente?
+- ¿Qué casos son candidatos para Historia de Éxito?
+
+### Para la cohorte siguiente:
+- Casos que encajaron mejor con el modelo Roberto
+- Casos que requirieron más adaptación (ajustar scenarios.md de C7)
+- Errores técnicos frecuentes (ajustar troubleshooting)

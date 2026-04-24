@@ -1,233 +1,175 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 08: Demo Day + El Futuro
-## Preparar, presentar y publicar
-
-*AI 101 - Entertech School*
+# Clase 08: Demo Day + ROI + Plan 30 días
+## Presentás, cuantificás y proyectás
 
 ---
 
-## 🔗 Tu Recorrido: C01 → C08
+## TRANSICIÓN: Clase 07 → Clase 08
 
-| Clase | Qué lograste | Evolución |
-|-------|-------------|-----------|
-| C01 | Descubriste qué puede la IA | Mindset |
-| C02 | Dominaste prompts (RICE + Few-shot) | Tú → IA |
-| C03 | IA como socio pensante | IA ↔ Tú |
-| C04 | Proyecto integrador M1 | Integración |
-| C05 | Cerebro del agente | IA trabaja por ti |
-| C06 | Agente inteligente completo | Branching + logging |
-| C07 | Agente generativo para TU caso | Transferencia |
-| **C08** | **GitHub + LinkedIn + Pitch** | **Compartir** |
+### Clase anterior:
+- Sistema propio funcionando con datos reales
+- 2 escenarios v2 con tu marca y tu caso
+- Validación end-to-end exitosa
 
-> De "la IA es un Google mejorado" a **"tengo un proyecto open-source publicado"**.
+### Hoy — último día del curso:
+- Demo en vivo ante el grupo (5 min)
+- ROI calculado en soles
+- Plan 30 días con 3 próximos agentes
 
----
-
-## 🧠 Pregunta Detonadora
-
-### Publicas tu caso en LinkedIn. Alguien pide detalles. ¿Qué lo hace CREÍBLE?
-
-**A)** Una lista de todas las herramientas que usaste
-
-**B)** Un repo en GitHub con el código y los SystemPrompts documentados
-
-**C)** Métricas reales + demo de un agente funcionando + repo público
-
-**D)** Un texto bien redactado generado con IA
-
-> 🕐 30 segundos → levanten la mano
+> "Lo que construiste merece presentarse. Lo que ahorrás merece cuantificarse."
 
 ---
 
-## 🧠 Pregunta Detonadora — Respuesta
+## TEST M2 (15 min)
 
-**Respuesta correcta: C**
+### Antes de las demos:
 
-- **A:** ❌ Listar herramientas no demuestra competencia — cualquiera puede hacer eso
-- **B:** ⚠️ GitHub es clave, pero sin métricas ni demo es solo código
-- **C:** ✅ Agente funcionando + métricas + repo público = evidencia completa
-- **D:** ❌ Si el texto lo generó IA, ¿dónde está TU competencia?
+Completá el test diagnóstico del Módulo 2 (8 preguntas, 15 min).
 
-> **Hoy construyen la evidencia completa: repo + post + pitch.**
+**Recordatorio:** es individual, a libro cerrado, NO afecta calificación.
 
----
-
-## 📝 Test Diagnóstico M2
-
-### 8 preguntas — 15 minutos
-
-- Cubre conceptos de C05 a C07
-- No afecta calificación
-- **Es un espejo, no un examen**
-
-> El facilitador comparte el link de Google Forms.
+Es feedback para el instructor y autoevaluación tuya.
 
 ---
 
-## 🎯 COMPROBACIÓN
+## ESTRUCTURA PSDR — 5 minutos exactos
 
-### ¿Qué hace que un proyecto de IA sea CREÍBLE para alguien externo?
+### Cada demo sigue esta estructura:
 
-**A)** Un post largo y bien escrito en LinkedIn
+| Bloque | Tiempo | Qué mostrar |
+|--------|--------|-------------|
+| **P — Problema** | 1 min | Tarea manual + cuánto tiempo perdías |
+| **S — Solución** | 1 min | Arquitectura general (1 imagen) |
+| **D — Demo en vivo** | 2 min | Correo real → sistema → PDF |
+| **R — Resultado** | 1 min | Horas ahorradas + ROI en soles |
 
-**B)** Capturas de pantalla de todas las herramientas
-
-**C)** URL funcional + repo con SystemPrompts + métrica real
-
-**D)** Certificado de haber completado un curso de IA
-
-> 🕐 30 segundos → levanten la mano
-
----
-
-## 🎯 COMPROBACIÓN — Respuesta
-
-**Respuesta correcta: C**
-
-- **A:** ❌ Palabras sin evidencia no demuestran competencia
-- **B:** ❌ Screenshots son estáticos — cualquiera puede tomarlos
-- **C:** ✅ Evidencia verificable: el agente funciona, el código es público, el resultado es medible
-- **D:** ❌ Un certificado dice que asististe, no que sabes hacer
-
-> **Clave:** Portfolio > CV. Evidencia > narrativa. Hoy construyen esa evidencia.
+> **Crítico:** la demo es EN VIVO. No slides de capturas. No videos pregrabados.
 
 ---
 
-## 🐙 GitHub: Tu Primer Proyecto Open-Source
+## CHECKPOINT 1: Demos (60 min total)
 
-### Vercel → GitHub → README
+### Orden: voluntario primero, luego sorteo
+
+- 5 min por persona (cronómetro visible)
+- 1 min de preguntas entre presentaciones
+- Rúbrica de pares se llena mientras presenta cada uno
+
+**Si la demo falla:**
+- No es penalización — puede pasar
+- Ofrecer mostrar capturas de la última ejecución exitosa
+- Continuar con Resultado y seguir adelante
+
+---
+
+## CÁLCULO DE ROI
+
+### La fórmula simple:
 
 ```
-1. Abre vercel.com → Settings → Git
-2. "Connect to GitHub" → autoriza
-3. Vercel crea repo automáticamente
-4. Editas README en GitHub web
-5. Documentas tus SystemPrompts
+Horas ahorradas/semana × Tarifa por hora × 4 = Ahorro MENSUAL
+Ahorro mensual × 12 = Ahorro ANUAL
 ```
 
-### ¿Por qué importa?
+### Ejemplo caso Roberto:
 
-- **URL pública:** cualquiera puede usar tu agente
-- **Repo en GitHub:** tu primer proyecto open-source
-- **README con SystemPrompts:** documenta el "cerebro" de tu agente
-- **Portfolio real:** lo muestras en LinkedIn hoy mismo
+- 6 horas/semana × S/ 100/hora × 4 = **S/ 2,400/mes**
+- S/ 2,400 × 12 = **S/ 28,800/año**
 
-> "No es tarea. Es tu primer proyecto publicado."
+> **Regla:** sé conservador en horas ahorradas. Un ROI realista es más creíble que uno inflado.
 
 ---
 
-## ✍️ LinkedIn: Post + Imagen con IA
+## CHECKPOINT 2: Calculá TU ROI (40 min)
 
-### Draft con Claude:
+### Cada estudiante documenta:
 
-```
-Hook (1 línea que capture atención)
-Qué construí (2-3 líneas)
-URLs: Vercel + GitHub
-Resultado: métrica real
-Takeaway: 1 línea de aprendizaje
-```
+1. Horas ahorradas/semana (conservador)
+2. Tu tarifa por hora (o salario ÷ horas mensuales)
+3. Ahorro mensual y anual
+4. Frase de 1 línea para comunicar en LinkedIn/trabajo
 
-### Imagen con Gemini:
+### Comparación grupal:
 
-Logos de tu stack (en `assets/`) + prompt descriptivo → imagen de portada profesional
-
-### Peer review:
-
-Intercambia con un compañero → feedback específico → ajusta
+- ¿Quién tiene el ROI más alto?
+- ¿Qué decisión fue clave en ese caso?
+- ¿Qué podemos replicar?
 
 ---
 
-## 🎤 Formato de Pitch + Tips
+## PLAN 30 DÍAS CON PRINCIPIO 80/20
 
-### 3 minutos por persona
+### Los 3 pasos:
 
-```
-┌─────────────────────────────────────────────┐
-│  1. PROBLEMA + POST (2 min)                  │
-│     Proyecta tu post de LinkedIn             │
-│     Explica el problema que resuelve         │
-├─────────────────────────────────────────────┤
-│  2. DEMO RÁPIDA (1 min)                      │
-│     Alguien del público envía un mensaje     │
-│     → todos ven el resultado                 │
-└─────────────────────────────────────────────┘
-```
-
-### 4 reglas:
-
-1. **Problema primero** — Si no entiendo qué resuelve, no me importa cómo funciona
-2. **Demo > explicación** — Mostrar el agente funcionando vale más que explicar módulos
-3. **Métricas > anécdotas** — "Procesé 10 notas de reunión" > "Me siento más productivo"
-4. **Honestidad > perfección** — Mostrar un error que corregiste impresiona más que fingir que todo funcionó
-
-> 💡 Si tu agente falla en vivo: **muestra Make History con un run exitoso.**
+1. **Listá 10 tareas repetitivas** de tu trabajo
+2. **Marcá las 3 que concentran 80% del tiempo** (Pareto)
+3. **Diseñá 1 agente por cada una**: qué / datos / herramientas / semana
 
 ---
 
-## Lab Time
+## CHECKPOINT 3: Plan 30 días (30 min)
 
-### 5 bloques — 150 min total
+### Tabla de los 3 agentes:
 
-| Bloque | Tiempo | Qué haces |
-|--------|--------|-----------|
-| **Apertura** | ~30 min | PD + Test M2 + Retrospectiva C01→C07 |
-| **1. GitHub** | 25 min | Conectar Vercel → GitHub + README con SystemPrompts |
-| **2. LinkedIn** | 30 min | Draft con Claude + imagen con Gemini + peer review |
-| **3. Pitches** | 30 min | Pitch 3 min c/u + "3...2...1...PUBLICAR!" |
-| **4. Cierre** | 30 min | Roadmap 30 días + anti-hype + cierre emocional |
+| Agente | Qué automatiza | Datos | Herramientas | Semana |
+|--------|----------------|-------|--------------|--------|
+| Agente 1 | [tarea #1 del 80/20] | [input] | Gemini + Make + ... | Semana 1 |
+| Agente 2 | [tarea #2] | [input] | [...] | Semana 2 |
+| Agente 3 | [tarea #3] | [input] | [...] | Semana 3 |
+| Ajustes | Medición de ROI agregado | — | — | Semana 4 |
 
----
+### Compromiso público:
 
-## ⚠️ Anti-Hype: 4 Verdades de Cierre
-
-**1.** 4 semanas = inicio, no final. El plan de 30 días consolida el cambio.
-
-**2.** Las herramientas van a cambiar. El pensamiento crítico con IA no.
-
-**3.** Publicar en LinkedIn no te hace experto. La práctica continua sí.
-
-**4.** Tu agente necesita supervisión. Ninguna IA reemplaza el criterio humano.
+Cada estudiante comparte su plan en voz alta ante el grupo.
 
 ---
 
-## Roadmap 30 Días + Pathway
+## REFLEXIÓN: Del 95% al 5%
 
-| Semana | Foco |
-|--------|------|
-| **1** | Mejorar calidad del agente actual |
-| **2** | Expandir a más casos o inputs |
-| **3** | Aplicar patrón a otro proceso |
-| **4** | Medir impacto real + documentar |
+| Antes del curso | Hoy |
+|-----------------|-----|
+| 95% de profesionales NO automatiza con IA | Vos estás en el 5% que SÍ lo hace |
+| IA es "cosa de tech" | IA es una herramienta de todos |
+| "No sé por dónde empezar" | "Tengo plan de 3 agentes más" |
+| Tiempo invisible perdido en tareas manuales | Tiempo cuantificado y ahorrado |
 
-### 3 quick-wins ESTA SEMANA:
-1. ___
-2. ___
-3. ___
-
-### Pathway Entertech:
-```
-AI 101 (4 sem) ← Completaste esto
-  ↓  AI 201 (8 sem) ← Crear soluciones
-       ↓  AI 301 (10 sem) ← Producto profesional
-```
-
-> "El mejor indicador de éxito: ¿sigues usando lo que aprendiste 30 días después?"
+> **Regla memorable:** "El cambio no es el curso. El cambio son los 30 días después."
 
 ---
 
-## Cierre: Del 95% al 5%
+## PATHWAY: Qué sigue después
 
-### Hace 4 semanas:
-> "Muchos pensaban que la IA era un Google mejorado."
+### Opciones para continuar:
 
-### Hoy:
-> Tienen un agente que funciona para SU trabajo.
-> Un proyecto open-source en GitHub.
-> Evidencia publicada en LinkedIn.
-> Un plan para seguir creciendo.
+- **AI 201 — Construye con IA** (8 semanas, 80h)
+  - Soluciones no-code más complejas
+  - Producto/herramienta funcional
 
-### Pasaron del 95% al 5%.
+- **AI 301 — Escala con IA** (10 semanas, 100h)
+  - Integración técnica
+  - Proyecto profesional o startup
 
-> **Gracias por estas 4 semanas. Ahora el desarrollo es suyo.**
+- **Comunidad post-curso**
+  - Sesiones mensuales de refuerzo
+  - Compartir casos y ROIs reales
+
+---
+
+## Preguntas de Cierre
+
+1. ¿Qué habilidad del curso vas a aplicar PRIMERO esta semana?
+
+2. ¿Qué cambiaría en tu vida profesional si ahorraras 10 horas semanales?
+
+3. ¿Qué vas a compartir con tu equipo/jefe sobre lo que aprendiste?
+
+---
+
+## Entrega Final del Curso
+
+- Grabación del demo de 5 min
+- ROI-Calculado.doc con fórmula y frase
+- Plan-30-Dias.doc con 3 agentes
+- Rúbricas llenas de ≥3 compañeros
+
+### ¡Felicitaciones! Completaste AI 101.

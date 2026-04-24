@@ -3,215 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agente Inteligente — Branching, acción y registro</title>
+  <title>Integración total y mejores prácticas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      width: 1080px;
-      margin: 0 auto;
-      background: #060913;
-      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
-      color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-
+    html { font-size: 19.2px; }
+    body { width: 1080px; margin: 0 auto; background: #060913; background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%); color: #e2e8f0; font-family: 'Inter', sans-serif; line-height: 1.6; }
     h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
     code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
-    pre {
-      background: #161b22;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      overflow-x: auto;
-    }
-
+    pre { background: #161b22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1rem 1.25rem; overflow-x: auto; color: #e2e8f0; }
     section { padding: 2.5rem 3rem; }
-
     .hero { text-align: center; padding: 3.5rem 3rem 2.5rem; }
-    .hero .badge {
-      display: inline-block;
-      background: rgba(217, 70, 239, 0.15);
-      color: #d946ef;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
+    .hero .badge { display: inline-block; background: rgba(147, 197, 253, 0.15); color: #93c5fd; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
     .hero h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
     .hero .subtitle { font-size: 1.15rem; color: #94a3b8; }
-
-    .card {
-      background: #0d1117;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
+    .card { background: #0d1117; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
     .card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
     .card .desc { color: #94a3b8; margin-bottom: 1rem; }
-
     .accent-purple { border-left: 3px solid #d946ef; }
-    .accent-green  { border-left: 3px solid #4ade80; }
-    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-green { border-left: 3px solid #4ade80; }
+    .accent-blue { border-left: 3px solid #93c5fd; }
     .accent-orange { border-left: 3px solid #fb923c; }
-
     .glossary { display: flex; flex-wrap: wrap; gap: 1rem; }
-    .glossary .term {
-      flex: 1 1 200px;
-      background: #0d1117;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 1rem;
-    }
+    .glossary .term { flex: 1 1 200px; background: #0d1117; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1rem; }
     .glossary .term strong { display: block; margin-bottom: 0.25rem; }
     .glossary .term span { color: #94a3b8; font-size: 0.9rem; }
-
     .footer { text-align: center; padding: 2rem 3rem 3rem; color: #64748b; font-size: 0.85rem; }
+    table.compare { width: 100%; border-collapse: collapse; color: #e2e8f0; font-size: 0.95em; }
+    table.compare th, table.compare td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    table.compare th { color: #94a3b8; font-weight: 500; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="badge">Módulo 2 · Clase 06</div>
-    <h1>Agente Inteligente — Branching, acción y registro</h1>
-    <p class="subtitle">El agente decide, actúa diferente según la decisión y registra todo</p>
+    <h1>Integración total y mejores prácticas</h1>
+    <p class="subtitle">De sistema demo a sistema de producción</p>
   </section>
 
-  <!-- BLOQUES DE CONTENIDO -->
   <section>
-
-    <!-- BLOQUE 1: Lineal vs Branching -->
     <div class="card accent-purple">
-      <h3>Flujo lineal vs Branching</h3>
-      <p class="desc">De "todos reciben lo mismo" a "cada categoría tiene su propia acción".</p>
-      <pre><code>LINEAL (C05):
-  Webhook → OpenRouter → Gmail
-  (todos los mensajes → mismo email)
-
-BRANCHING (C06):
-  Webhook → OpenRouter → Router
-    ├─ 🔴 URGENTE  → Gmail rojo
-    ├─ 🔵 CONSULTA → Gmail normal
-    └─ 🟢 VENTA    → Gmail verde + Sheets</code></pre>
+      <h3>Las 3 técnicas de prompt optimizado</h3>
+      <p class="desc">Aplicadas juntas, transforman insights planos en accionables.</p>
+<pre><code>1. PERSONA     →  "Eres analista senior con 10 años..."
+2. FEW-SHOT    →  "Ejemplo de buen output: [ejemplo concreto]"
+3. CHAIN OF    →  "Piensa paso a paso:
+   THOUGHT        1. Identifica fenómenos notables
+                  2. Encuentra datos específicos
+                  3. Formula acciones concretas"</code></pre>
     </div>
 
-    <!-- BLOQUE 2: Router + Filters -->
-    <div class="card accent-green">
-      <h3>Router y Filters: el agente que decide rutas</h3>
-      <p class="desc">El Router divide el flujo. Cada Filter es una condición que activa una ruta.</p>
-      <pre><code>Router = divide el flujo en rutas
-Filter = condición de cada ruta
-
-Ejemplo de Filter en Make:
-  Ruta 1: output contains "URGENTE"  → 🔴
-  Ruta 2: output contains "CONSULTA" → 🔵
-  Ruta 3: output contains "VENTA"    → 🟢
-
-⚠️ "contains" es case-sensitive
-   "URGENTE" ≠ "Urgente" ≠ "urgente"</code></pre>
-    </div>
-
-    <!-- BLOQUE 3: Logging -->
     <div class="card accent-blue">
-      <h3>Google Sheets: la memoria del agente</h3>
-      <p class="desc">Sin registro, no puedes auditar ni mejorar. El logging convierte un agente en algo profesional.</p>
-      <pre><code>Sin logging:
-  "Mi agente clasifica bien" → ¿Cómo lo sabes?
-  "Se equivocó" → ¿Cuántas veces? ¿En qué?
-
-Con logging (Google Sheets):
-  Timestamp | Nombre | Email | Mensaje | Categoría | Acción
-  ─────────────────────────────────────────────────────────
-  Cada decisión queda registrada
-  → Auditar, filtrar, analizar tendencias
-  → Base para mejorar el SystemPrompt con datos</code></pre>
+      <h3>Plano vs Potente: el storytelling de datos</h3>
+      <p class="desc">La diferencia de 15 minutos de optimización.</p>
+      <table class="compare">
+        <tr><th>Nivel</th><th>Ejemplo</th></tr>
+        <tr><td>Plano</td><td>"Las ventas fueron S/ 21,700"</td></tr>
+        <tr><td>Mediocre</td><td>"S/ 21,700 (108% de meta)"</td></tr>
+        <tr><td>Potente</td><td>"S/ 21,700 (108% de meta, +12% vs anterior), impulsado por 2 renovaciones de Juan. Acción: replicar su estrategia."</td></tr>
+      </table>
     </div>
 
-    <!-- BLOQUE 4: La lección del Battle -->
+    <div class="card accent-green">
+      <h3>Las 4 mejores prácticas</h3>
+      <p class="desc">Lo que separa un demo de una semana de un sistema de 2 años.</p>
+<pre><code>1. Nombre con fecha dinámica
+   Reporte_{{formatDate(now; "YYYY-MM-DD")}}.pdf
+
+2. Carpeta Backups en Drive
+   Módulo Google Drive → Upload → Backups/
+
+3. Error handler con alerta
+   Click derecho → Add error handler → Resume
+   → Gmail Send Email al instructor
+
+4. Pestaña Logs en Sheet
+   Columns: Fecha, Hora, Escenario, Estado, Duracion</code></pre>
+    </div>
+
     <div class="card accent-orange">
-      <h3>Mismo modelo, mismos mensajes, resultados diferentes</h3>
-      <p class="desc">La diferencia nunca es la herramienta — siempre es el SystemPrompt.</p>
-      <pre><code>Battle: 5 mensajes idénticos → todos los agentes
+      <h3>Los 5 puntos de personalización (preview C7)</h3>
+      <p class="desc">El puente entre el caso Roberto y TU caso real.</p>
+<pre><code>1. Datos de entrada      (qué recolectas)
+2. Estructura del Sheet  (columnas propias)
+3. Plantilla de Slides   (tu marca)
+4. Prompts de Gemini     (tu contexto)
+5. Destinatarios         (tu frecuencia)
 
-Agente A: 3/5 correctos  (SystemPrompt genérico)
-Agente B: 5/5 correctos  (SystemPrompt con reglas)
-
-Mismo Grok. Mismos mensajes.
-La diferencia: las REGLAS en el SystemPrompt.
-
-Fórmula del agente inteligente:
-  Buen SystemPrompt + Filters exactos + Supervisión</code></pre>
+Cada uno escrito como:
+  "Caso Roberto → TU caso"
+  (ejemplos específicos, no genéricos)</code></pre>
     </div>
-
   </section>
 
-  <!-- GLOSARIO -->
   <section>
     <div class="glossary">
-      <div class="term">
-        <strong>Router</strong>
-        <span>Módulo de Make que divide el flujo en múltiples rutas condicionales</span>
-      </div>
-      <div class="term">
-        <strong>Filter</strong>
-        <span>Condición que activa una ruta del Router (ej: "contains URGENTE")</span>
-      </div>
-      <div class="term">
-        <strong>Logging</strong>
-        <span>Registrar cada decisión del agente en Google Sheets para auditoría</span>
-      </div>
-      <div class="term">
-        <strong>Branching</strong>
-        <span>Flujo que se divide en caminos según condiciones — no todos van al mismo destino</span>
-      </div>
+      <div class="term"><strong>Chain of thought</strong><span>"Piensa paso a paso"</span></div>
+      <div class="term"><strong>Few-shot</strong><span>Ejemplos en el prompt</span></div>
+      <div class="term"><strong>Error handler</strong><span>Reacción a fallas</span></div>
+      <div class="term"><strong>Storytelling</strong><span>Datos + causa + acción</span></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <section class="footer">
-    AI 101 — IA para Profesionales · EnterTechSchool · Clase 06
+    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 06
   </section>
 
-  <!-- ════════ EXPORT PNG ════════ -->
-  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
-    Exportar a PNG
-  </button>
-
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>
   <script>
-  (function(){
-    var btn = document.getElementById('export-btn');
-    var originalText = btn.textContent;
-    btn.addEventListener('click', function(){
-      btn.disabled = true;
-      btn.textContent = 'Exportando...';
-      var script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-      script.onload = function(){
-        btn.style.display = 'none';
-        document.fonts.ready.then(function(){
-          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
-            var link = document.createElement('a');
-            var title = document.title.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-            link.download = 'clase-06-' + title + '.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-            btn.style.display = '';
-            btn.disabled = false;
-            btn.textContent = originalText;
-          }).catch(function(){ btn.style.display = ''; btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); });
-        });
-      };
-      script.onerror = function(){ btn.disabled = false; btn.textContent = 'Error — Intenta de nuevo'; setTimeout(function(){ btn.textContent = originalText; }, 2000); };
-      document.head.appendChild(script);
-    });
-  })();
+  (function(){ var btn = document.getElementById('export-btn'); var originalText = btn.textContent; btn.addEventListener('click', function(){ btn.disabled = true; btn.textContent = 'Exportando...'; var script = document.createElement('script'); script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'; script.onload = function(){ btn.style.display = 'none'; html2canvas(document.body, { backgroundColor: '#060913', scale: 2, useCORS: true, logging: false }).then(function(canvas){ var link = document.createElement('a'); link.download = 'infografia-clase-06.png'; link.href = canvas.toDataURL('image/png'); link.click(); btn.style.display = ''; btn.disabled = false; btn.textContent = originalText; }); }; document.head.appendChild(script); }); })();
   </script>
 
 </body>

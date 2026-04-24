@@ -1,288 +1,269 @@
-# Guía del Facilitador - Clase 07: Mi Agente Real
+# Guía del Facilitador - Clase 07: Tu proyecto propio
 
 > Tiempo de lectura: 10 minutos | Prepárate antes de clase
+>
+> ⚠️ **Clase con acompañamiento 1 a 1.** Preparate para circular y dar soporte individual — no es una clase magistral.
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
-- **Encadenamiento de IAs**: Usar el output de una IA como input de otra. OR#1 analiza (extrae estructura), OR#2 genera (produce contenido). Es la evolución de C05-C06 donde solo clasificaban.
-- **Transferencia**: Aplicar los patrones aprendidos (form, webhook, Make, OpenRouter) a un caso nuevo — pero con arquitectura diferente (2 IAs en vez de Router).
-- **Deploy público**: El estudiante publica su primer proyecto con URL funcional (Vercel). No es tarea — es portfolio real.
-- **SystemPrompts como documentación**: Los SystemPrompts SON el "cerebro" del agente. Guardarlos y documentarlos es la pieza intelectual del proyecto (se publican en GitHub en C08).
-
----
-
-## Analogías Útiles
-
-**OR#1 es el analista, OR#2 es el redactor:**
-Imagina una empresa donde alguien lee el email del cliente y llena un formulario estructurado (OR#1). Luego otro redacta la respuesta profesional basándose en ese formulario (OR#2). Mismo flujo, automatizado.
-
-**v0 → Vercel = escribir → publicar:**
-Creas el form (escribir) y lo publicas en internet (publicar). En C08 completan el ciclo con GitHub (archivar + documentar).
-
-**Los 3 escenarios = menú con plato sugerido:**
-Es más fácil elegir del menú que inventar un plato. Los escenarios dan opciones concretas para quienes se paralizan con "elige tu caso".
+- **Transferencia**: aplicar el patrón aprendido (caso Roberto) a un contexto nuevo (caso real del estudiante).
+- **Clonación de escenario**: duplicar un flujo completo en Make vía Export/Import Blueprint.
+- **Personalización**: adaptar datos, marca, métricas y prompts al caso específico.
+- **Debug en Make**: aislar problemas con "Run this module only" sobre módulos frágiles.
 
 ---
 
-## Contexto Pedagógico
+## 🔗 Analogías Útiles
 
-### ¿Por qué 2 IAs encadenadas?
+**Transferencia <> aprender a cocinar un plato nuevo con técnicas que ya dominás:**
+Si aprendiste a hacer risotto, sabés que el arroz se tuesta, se añade caldo caliente gradualmente, se revuelve. Esas técnicas sirven para un risotto de champiñones, mariscos o trufa. El patrón se queda; los ingredientes cambian. En el sistema es igual: la arquitectura se queda, el caso cambia.
 
-C05-C06 demostraron que los estudiantes pueden conectar 1 IA con un Router para clasificar. C07 demuestra que pueden **encadenar 2 IAs** donde la primera prepara el input para la segunda. Esto es un patrón fundamental en automatización con IA: pipelines donde cada paso transforma los datos para el siguiente.
-
-### ¿Por qué deploy público?
-
-Tener una URL funcional que cualquiera puede usar es más poderoso que un screenshot en un Google Doc. El agente deployado ES el portfolio. GitHub y la documentación open-source se completan en C08, donde hay más tiempo para hacerlo bien.
-
-### ¿Por qué escenarios predefinidos?
-
-El diseño anterior pedía "elige tu caso" y el 30-40% se paralizaba. Los 3 escenarios eliminan la parálisis de página en blanco sin quitar la posibilidad de caso propio (opción 4). El escenario predefinido ya trae SystemPrompts listos — el estudiante solo personaliza.
-
-### Riesgo principal
-
-Estudiantes atascados en la configuración técnica de OR#1 (JSON malformado, headers incorrectos). Tener un escenario de Make pre-construido listo para compartir como backup.
-
-### Callbacks pedagógicos
-
-| Clase | Técnica | Cómo se aplica en C07 |
-|-------|---------|----------------------|
-| C02 | RICE + Few-shot | Estructura de los SystemPrompts |
-| C03 | Socio pensante | Claude personaliza SystemPrompts |
-| C05 | Form v0 + webhook | Mismo patrón, nuevo form |
-| C06 | OpenRouter + Make | Ahora con 2 OpenRouter encadenados |
+**Clonar escenario <> moldear galletas con un cortador:**
+El cortador (blueprint) es el mismo. El ingrediente (masa = tu caso) cambia. Lo que sale tiene la forma del cortador pero el sabor de tu ingrediente. Duplicar un escenario preserva la forma; los datos son tu sabor.
 
 ---
 
-## Preparación ANTES de Clase
+## 📚 Contexto Histórico / Contexto Actual
 
-### Crítico — Sin esto la clase no funciona
+### El mito del "sistema universal" vs la realidad de la personalización
 
-1. **Tu propio agente funcionando** (escenario diferente al de los estudiantes)
-   - Probado end-to-end: form → webhook → OR#1 → Sheets → OR#2 → Gmail
-   - Muéstralo como demo en vivo. Debe funcionar sin fallas
-   - Prepara 2 inputs de prueba para la demo
+En 2020-2022, muchas herramientas no-code prometían "plantillas universales que sirven para cualquier negocio". La realidad mostró que esos sistemas terminaban usándose por 1-2 meses y se abandonaban. Los que perduran son los **adaptados al caso específico**. Hoy la mejor práctica es: aprender el patrón → adaptarlo. Exactamente lo que hace esta clase.
 
-2. **3 escenarios probados** con Gemini Flash en OpenRouter
-   - Verifica que los SystemPrompts del Apéndice producen JSON válido (OR#1)
-   - Verifica que OR#2 genera HTML legible en Gmail
-   - Ten los SystemPrompts listos para copiar/pegar si alguien necesita ayuda
+> **Para contar en clase:** "Las plantillas 'universales' fallan porque cada trabajo tiene matices. Un sistema adaptado a TU caso sobrevive porque vos lo entendés y lo podés mantener."
 
-3. **Escenario de backup en Make** para estudiantes atascados
-   - Make con los 5 módulos pre-configurados
-   - Listo para clonar y compartir
-
-4. **Test de Gmail HTML**: envíate un email desde tu escenario y verifica que llega con formato (no como texto plano)
+**Fuentes:** [Make: Blueprints](https://www.make.com/en/help/scenarios/exporting-importing-a-blueprint){:target="_blank"}
 
 ---
 
-## Estructura de la Clase (~85 min instrucción / ~100 min con buffer)
+## 🎯 Momentos Clave de la Clase
 
-### BLOQUE 1: Apertura (10 min)
+### Pregunta Detonadora (Quiz Pre-Lab)
 
-#### Pregunta Detonadora (~4 min)
+**Pregunta:** "Si tuvieras que escribir el SystemPrompt de TU caso en este momento, ¿qué palabra clave incluirías que NO está en el de Roberto?"
 
-**Respuesta correcta: C** — Depende de CÓMO le pidas que las procese
+**Respuesta esperada:** varía por estudiante — tu industria, tu métrica clave, tu vocabulario.
 
-**Post-votación:** "La IA procesa cualquier cosa desordenada. Pero sin instrucciones claras, produce algo genérico. Hoy construyen un agente con 2 cerebros: uno analiza, otro genera."
+**Script post-respuestas:**
+```
+Facilitador: "Exacto — esas palabras son el 'cerebro' que le vamos a cambiar al sistema hoy.
+La arquitectura se queda igual, pero todo lo que diga 'ventas', 'vendedor', 'monto'
+va a pasar a decir algo que tenga sentido en TU trabajo."
+```
 
-#### Demo: Tu Agente EN VIVO (~6 min)
+### Demo Principal
 
-Flujo: Abre tu form (URL Vercel) → escribe algo desordenado en vivo → envía → muestra Make History (5 módulos) → abre tu correo con el email HTML.
+**Qué mostrar:** Export Blueprint + Import Blueprint de un escenario, y cómo reconectar los módulos al Sheet nuevo.
 
-**Mensaje clave:** "Escribí esto en 30 segundos. Me llegó un email profesional. 2 IAs: una analiza mi caos, otra genera el email. Esto es lo que van a construir."
+**Script sugerido:**
+```
+Facilitador: "Voy a duplicar mi Escenario 1 en 30 segundos."
+[Menú (...) → Export Blueprint → download]
+[+ Create scenario → Import Blueprint → upload]
+Facilitador: "Tengo el mismo escenario. PERO apunta al Sheet viejo."
+[Click en Search Rows → elegir Sheet v2]
+[Click en Add a row → elegir Sheet v2 → pestaña CampanasSemanaActual]
+Facilitador: "Ahora es el cerebro de MI caso. Esto es lo que van a hacer hoy."
+```
 
----
+**Plan B:** tener un video pregrabado de 2 min del proceso Export/Import.
 
-### BLOQUE 2: Contexto + Arquitectura (10 min)
+### Transición al Lab
 
-#### De clasificar a generar (~4 min)
-- Slide "La evolución C05-C06 → C07"
-- Enfatizar: antes la IA ponía una etiqueta (URGENTE), ahora CREA contenido
-- "En C06 la IA decidía. En C07 la IA produce."
+**Momento crítico:** algunos estudiantes no tienen datos reales y se paralizan.
 
-#### Nueva arquitectura (~3 min)
-- Slide con diagrama de 5 módulos
-- Explicar: "OR#1 es el analista — lee el caos y extrae estructura en JSON. OR#2 es el redactor — toma la estructura y escribe un email profesional."
-- Preguntar: "¿Por qué separar en 2? ¿No puede hacer todo en 1?"
-- Respuesta: "Especialización. Cada IA tiene un solo trabajo = mejor calidad."
-
-#### Anti-Hype (~3 min)
-
-**Mensaje clave:** "Tu agente va a generar emails mediocres al principio. JSON malformado, HTML como texto plano — es normal. Lo importante es saber diagnosticar y mejorar."
-
----
-
-### BLOQUE 3: Lab Parte 1 — Diseñar (10 min)
-
-Los estudiantes eligen escenario y revisan/personalizan SystemPrompts:
-
-- **[0-3 min]** Elegir escenario de la tabla (1, 2, 3 o propio)
-- **[3-10 min]** Revisar los SystemPrompts del Apéndice + personalizar con Claude
-
-**Intervención a los 5 min:** Si alguien no ha elegido escenario:
-- "¿Tienes reuniones? Escenario 2. ¿Das feedback? Escenario 3. ¿Tienes ideas? Escenario 1."
-- Si nada funciona → Escenario 2 (Notas de Reunión) es el más universal
-
-> **Checkpoint ~min 10:** "¿Quién tiene sus 2 SystemPrompts listos?" — Manos arriba.
-
----
-
-### BLOQUE 4: Lab Parte 2 — Construir (40 min)
-
-#### Form v0 (8 min)
-- Nuevo form, no reusar el de PetShop — este tiene campos diferentes
-- Verificar que envía JSON al webhook
-
-#### Make: 5 módulos (25 min)
-- **Webhook** (~5 min): Crear nuevo escenario + webhook + test
-- **OpenRouter #1** (~7 min): HTTP module + headers + SystemPrompt #1 + temperature 0.3
-- **Google Sheets** (~5 min): Crear hoja + mapear columnas del JSON
-- **OpenRouter #2** (~5 min): Mismo HTTP module + SystemPrompt #2 + temperature 0.7
-- **Gmail** (~3 min): Enviar con output de OR#2 como HTML
-
-**Errores frecuentes en este bloque:**
-- OR#1 devuelve texto en vez de JSON → revisar SystemPrompt, agregar "Responde SOLO con JSON"
-- OR#2 no recibe el JSON de OR#1 → verificar mapping: `{{choices[0].message.content}}`
-- Gmail muestra HTML como texto → marcar opción "HTML" en el módulo Gmail
-- Headers de OpenRouter incorrectos → verificar `Bearer` antes del API key
-
-#### Conectar + smoke test (2 min)
-- Webhook URL en form → deploy → enviar 1 mensaje → verificar email + Sheets
-
-> **Checkpoint ~min 50:** "¿Quién tiene form en Vercel y email funcionando?"
-
----
-
-### BLOQUE 5: Lab Parte 3 — Verificar (5 min)
-
-#### Test final + verificar (5 min)
-- 2 mensajes desde URL de Vercel → verificar emails + Sheets
-- Checklist: email HTML + Sheets 2 registros + URL funcional
-- Recordar: **copiar sus 2 SystemPrompts** y tenerlos accesibles (para C08)
-
-> **Checkpoint ~min 55 del lab:** "¿Quién tiene agente funcionando + SystemPrompts guardados?"
-
----
-
-### BLOQUE 6: Cierre (5 min)
-
-#### Reflexión rápida (~2 min)
-- "¿Quién recibió un email que realmente usaría en su trabajo?"
-- "¿Qué escenario eligieron? ¿Alguien hizo caso propio?"
-
-#### Preview C08 (~3 min)
-
-"Próxima clase: GitHub (open-source) + LinkedIn (post con imagen IA) + Pitches (3 min c/u)."
-
-**Tarea:** Cuenta GitHub + SystemPrompts copiados + URL Vercel funcional + cuenta LinkedIn + cuenta Gemini + pulir prompts (3+ mensajes).
-
----
-
-## Errores Esperados de Estudiantes
-
-| Señal | Qué está pasando | Qué hacer |
-|-------|------------------|-----------|
-| "No sé qué escenario elegir" | Parálisis de elección | "¿Tienes reuniones? Escenario 2. Es el más universal" |
-| "OR#1 devuelve texto, no JSON" | SystemPrompt no es claro | Agregar al prompt: "Responde SOLO con el JSON, sin texto adicional ni markdown" |
-| "OR#2 no recibe nada" | Mapping incorrecto | Verificar que OR#2 lee `{{choices[0].message.content}}` del módulo OR#1 |
-| "El email llega como texto plano" | Gmail no está en modo HTML | En el módulo Gmail → marcar opción "HTML" en el campo de contenido |
-| "El JSON viene con backticks" | OR#1 envuelve en markdown | Agregar al SystemPrompt: "No uses markdown. Solo JSON puro" |
-| "El email es genérico/malo" | SystemPrompt de OR#2 poco específico | Iterar el prompt: más instrucciones de formato, tono, secciones |
-
----
-
-## Checkpoints de Validación
-
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~4 | PD votada | Discusión sobre análisis vs clasificación completada |
-| ~10 | Demo completada | Estudiantes vieron el flujo completo |
-| ~20 | SystemPrompts listos (Lab P1) | "¿Quién tiene 2 SystemPrompts?" |
-| ~35 | Make con OR#1 funcionando | "¿Quién tiene JSON válido saliendo de OR#1?" |
-| ~50 | Agente completo en Vercel | "¿Quién tiene email + Sheets funcionando?" |
-| ~55 | Test final + SystemPrompts guardados | "¿Quién tiene 2 mensajes probados + SystemPrompts copiados?" |
-
----
-
-## ✅ Señales de Comprensión
-
-**ENTIENDE cuando:**
-- Explica por qué separar en 2 IAs mejora la calidad (especialización)
-- Puede diagnosticar si un problema está en OR#1 (JSON malo) o en OR#2 (email genérico)
-- Entiende que los SystemPrompts son la pieza intelectual del proyecto
-
-**NECESITA AYUDA cuando:**
-- No distingue qué hace OR#1 vs OR#2
-- Copia SystemPrompts sin entender qué modificar para su caso
-- Se atasca en la configuración técnica de Make sin pedir ayuda
-
----
-
-## 🔀 Diferenciación
-
-**Estudiantes avanzados:** Que prueben con inputs extremos (muy corto, otro idioma), que agreguen un campo extra al form, que comparen outputs entre escenarios.
-
-**Estudiantes con dificultades:** Que usen escenario predefinido sin modificar, que copien SystemPrompts del Apéndice tal cual, checkpoint intermedio a los 20 min.
+**Script sugerido:**
+```
+Facilitador: "Si no tienen datos reales de su trabajo en este momento, inventen simulados
+REALISTAS. Nombres de clientes reales pueden ser reemplazados por 'Cliente A', 'Cliente B',
+pero las métricas y fechas deben ser plausibles. El objetivo es VALIDAR el sistema,
+no tener datos perfectos."
+```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### "Antes y después"
+### Dinámica 1: "Tu prompt en voz alta"
+
+Contexto: durante la Actividad 2, cuando algún estudiante está atascado con el SystemPrompt.
+
+Pedís que 2-3 estudiantes lean sus SystemPrompts adaptados:
+
 ```
-Facilitador: [Lee input desordenado en voz alta]
-"¿Qué harían con esto si les llega por email? ¿Cuánto tardarían?"
-[Después de la demo] "El agente lo hizo en segundos. Ese es el delta."
+Facilitador: "Leé los 3 primeros bloques de tu prompt: Persona, Contexto, Reglas."
+[Estudiante lee]
+Facilitador: "¿Qué del caso Roberto sigue ahí sin adaptar?"
+(Típicamente: una referencia a "ventas" o "vendedores" que quedó olvidada)
+```
+
+### Dinámica 2: "El 1 a 1 compartido"
+
+Contexto: cuando resolvés un problema de un estudiante en vivo.
+
+Pedís permiso al estudiante para proyectar su pantalla y resolver juntos:
+
+```
+Facilitador: "María, ¿puedo proyectar tu pantalla? Creo que otros tienen el mismo problema."
+[Proyecta]
+Facilitador: "Miren — el Search Rows apunta al Sheet modelo, no al v2.
+Esa es la reconexión que mencionamos en la demo. Quien tenga el mismo síntoma, esta es la fix."
 ```
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### SystemPrompt OR#1 genérico (para caso propio):
-```
-Analiza el siguiente input del usuario. Extrae:
-1. Tema principal
-2. Puntos clave (máximo 5)
-3. Tono detectado
-4. Acción sugerida
+### Ejemplo 1: Troubleshooting rápido de "Replace Text no reemplaza"
 
-Responde SOLO con JSON, sin markdown ni backticks.
+**Cuándo usarlo:** problema frecuente en Actividad 2/3.
+
 ```
+1. Abrí la plantilla Slides v2 en otra pestaña
+2. Buscá el marcador exacto (Ctrl+F "{{ventas_total}}")
+3. Si cambiaste a "{{alcance_total}}" en Slides pero Make todavía dice "{{ventas_total}}",
+   reemplazá en el Replace Text del Make
+4. Regla: el texto debe ser IDÉNTICO en ambos lados, letra por letra
+```
+
+### Ejemplo 2: Diagnóstico "mi Sheet v2 no recibe filas"
+
+**Cuándo usarlo:** Actividad 3, al probar correos reales.
+
+```
+Checklist:
+□ ¿El Escenario 1 v2 está ACTIVO (toggle On)?
+□ ¿El filtro de asunto captura tu correo? (enviá uno con exacto el asunto del filtro)
+□ ¿El módulo Add a row apunta al Sheet v2 y a la pestaña correcta?
+□ ¿Las columnas del mapping coinciden con las de la pestaña v2?
+
+Si falla: Run History del escenario muestra qué módulo falló y por qué.
+```
+
+---
+
+## ⚠️ Errores Comunes
+
+| Señal | Qué está pasando | Qué hacer |
+|-------|------------------|-----------|
+| "Duplicación fallida en Make" | Blueprint con referencias a recursos privados | Export manual con "Include connections" desmarcado |
+| "Gemini sigue dando insights de Roberto" | SystemPrompt no actualizado en el HTTP v2 | Abrir módulo HTTP → editar el body JSON del prompt |
+| "No tengo logo/paleta" | Estudiante no preparó elementos de marca | Usar texto simple con la tipografía del Sheet; Canva tiene paletas gratuitas rápidas |
+| "Datos simulados no me convencen" | Estudiante quiere datos reales pero no tiene | Priorizar: ver el sistema funcionar > perfección; usará datos reales en su trabajo después |
+| "Escenario v2 tiene el mismo nombre que el modelo" | Confusión al activar | Renombrar con "v2" o el nombre de su caso |
+| "Rangos nombrados no funcionan" | Renombró la pestaña pero el rango apunta al nombre viejo | Datos → Rangos con nombre → editar o recrear |
+
+---
+
+## ✅ Señales de Comprensión
+
+### El estudiante ENTIENDE cuando:
+- Su Sheet v2 tiene pestañas y columnas de SU caso (no Roberto disfrazado)
+- Su SystemPrompt menciona su industria específica, no "ventas"
+- Puede explicar por qué la arquitectura se queda y el contenido cambia
+
+### El estudiante NECESITA AYUDA cuando:
+- Duplicó archivos pero no los adaptó (mismo contenido de Roberto)
+- No sabe qué datos reales usar (parálisis de perfeccionismo)
+- Su PDF v2 sale igual al PDF del caso Roberto
+
+---
+
+## 🎯 Checkpoints de Validación
+
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| 10 | Apertura | Plan de personalización revisado en voz alta | Ajustar puntos vagos antes de arrancar |
+| 15 | Demo Export/Import terminada | Quiz de COMPROBACIÓN correcto | Repetir demo si hay confusión |
+| 65 | Actividad 1 | Sheet v2 con pestañas y datos reales | 1 a 1 con rezagados 5 min |
+| 120 | Actividad 2 | Slides v2 con marca + 2 escenarios v2 apuntando a v2 | Checklist: Search Rows, Replace Text, Add a row |
+| 140 | Actividad 3 | PDF del reporte v2 con datos reales | Si falla, debug "Run this module only" |
+| 150 | Cierre | Sistema funcionando end-to-end para SU caso | — |
+
+---
+
+## 🧑‍🏫 Tips de Facilitación
+
+### Clase con acompañamiento 1 a 1:
+- Circular constantemente, no quedarse frente a la pantalla
+- Llevar un "score" mental: quién terminó Actividad 1, quién está atascado en Actividad 2
+- Priorizar 1:1 con quienes tienen casos muy distintos a Roberto
+
+### Si el grupo está callado:
+- Típico en clase de construcción — no hay que forzar discusión
+- Señal de concentración, no de confusión
+
+### Si alguien domina la conversación:
+- Probablemente está avanzado — convertilo en mentor de pares
+- "¿Podrías ayudar a Juan 5 min? Él tiene un caso parecido al tuyo."
+
+### Si la mayoría termina antes:
+- Logro 🟡 (versión móvil) o 🔴 (indicador de salud).
+- Tiempo extra para pulir diseño visual.
+
+### Si la mayoría se atrasa:
+- Priorizar Actividad 1 (Sheet) y Actividad 3 (validación end-to-end).
+- Actividad 2 puede completarse post-clase (menos crítico para Demo Day).
+
+### Si hay preguntas fuera de alcance:
+> "Guardá esa — es perfecta para explorar en tu plan 30 días de Clase 8."
+
+---
+
+## 🔀 Diferenciación
+
+### Para estudiantes avanzados:
+- Logros 🟡 y 🔴 rápido → mentor de pares.
+- Proponer que agreguen un segundo formulario de entrada (ej: WhatsApp Business, Google Forms).
+
+### Para estudiantes con dificultades:
+- Ofrecer Blueprint pre-hecho del escenario ajustado a su caso (si conocés la industria).
+- Sentarse 10-15 min con ellos en la Actividad 2 para reconfigurar escenarios juntos.
+- Alternativa: que usen el caso Roberto literal y lo presenten como "ejemplo del curso" en Demo Day (menos ideal pero funcional).
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### "¿Por qué no usar Claude en vez de Grok?"
-Claude es más potente pero requiere API de pago. Grok Free permite experimentar sin costo. Las técnicas funcionan igual.
+### P: ¿Tengo que adaptar TODOS los marcadores, o puedo dejar algunos iguales?
+**R:** Los crudos y calculados SÍ adaptar (vienen del Sheet, así que sus nombres deberían reflejar tus columnas). Los tipo IA pueden quedar iguales (`hallazgo_1`, `riesgo_1`) — el contenido se adapta vía SystemPrompt.
 
-### "¿Puedo usar mi agente de C06 como base?"
-No recomendado. C07 usa arquitectura diferente (2 IAs encadenadas vs Router). Mejor crear escenario nuevo.
+### P: ¿Qué pasa si mi reporte no es semanal?
+**R:** Cambiá el trigger del Escenario 2 a tu frecuencia real: diario, quincenal, mensual. Make soporta cualquier intervalo estándar.
+
+### P: ¿Puedo tener más de una plantilla de Slides?
+**R:** Sí, pero duplicá el Escenario 2 para cada una. Cada escenario apunta a una plantilla específica.
+
+### P: ¿Y si mi caso no encaja en ninguno del `scenarios.md`?
+**R:** Usá la sección "Plantilla para TU caso" al final. Los bloques son genéricos para adaptar.
+
+---
+
+## 🔗 Conexiones del Curriculum
+
+### Esta clase construye sobre:
+
+| Clase | Concepto | Cómo se conecta |
+|-------|----------|-----------------|
+| Todo el M1 | Piezas modelo | Hoy se copian y adaptan |
+| 05 | Gemini API | Los prompts se re-personalizan |
+| 06 | Prompts optimizados + personalización | El roadmap se ejecuta |
+
+### Conexión con la Próxima Clase
+
+Al cerrar, planta la semilla:
+
+> "La próxima clase es Demo Day. 5 minutos por estudiante con demo en vivo de TU sistema funcionando. Calculás tu ROI en horas ahorradas × tarifa y armás un plan 30 días con 3 próximos agentes. Lleguen con su sistema pulido y 3 correos de prueba reales para disparar en vivo."
+
+**Pre-work / Tarea implícita:** practicar la demo frente al espejo/cámara. Cronometrá los 5 minutos. Los nervios se reducen 70% con 2 ensayos.
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
-1. **¿La demo convenció?** — Si no hubo reacciones, puede que el input fue poco impactante.
-2. **¿Los escenarios predefinidos eliminaron la parálisis?** — Si más del 30% eligió caso propio, bien.
-3. **¿OR#1 produjo JSON válido?** — Si muchos tuvieron problemas, ajustar el SystemPrompt de ejemplo.
-4. **¿Todos tienen SystemPrompts guardados para C08?** — Crítico para la próxima clase.
-
----
-
-## Tips de Facilitación
-
-- **Grupo rápido:** Que prueben inputs extremos, comparen escenarios, ayuden a compañeros
-- **JSON inválido:** Agregar "No uses markdown ni backticks. Solo JSON puro." + reducir temperature a 0.1
-- **Tiempo:** P1 diseñar (10 min) rápido con escenarios. P2 construir (40 min) es donde se atoran (OR#1). P3 verificar (5 min) + copiar SystemPrompts para C08
-
----
-
-## Conexión con la Próxima Clase
-
-"Próxima clase: GitHub (open-source) + LinkedIn (post con imagen IA) + Pitches (3 min c/u)."
-
-**Tarea:** Cuenta GitHub + SystemPrompts copiados + URL Vercel funcional + cuenta LinkedIn + cuenta Gemini.
+### Preguntas para el facilitador:
+- ¿Cuántos estudiantes terminaron con sistema propio funcionando end-to-end?
+- ¿Quiénes tuvieron casos muy distintos al modelo? (seguimiento antes de Demo Day)
+- ¿Hay estudiantes sin datos reales? (sugerir alternativas creativas antes de C8)
+- ¿Quiénes necesitan mentoría extra antes de presentar? (oferta 1:1 opcional)

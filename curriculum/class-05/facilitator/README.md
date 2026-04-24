@@ -1,289 +1,300 @@
-# Guía del Facilitador - Clase 05: Tu Primer Agente IA
+# Guía del Facilitador - Clase 05: Gemini API + 2 flujos completos
 
 > Tiempo de lectura: 10 minutos | Prepárate antes de clase
 
 ---
 
-## Conceptos Clave
+## 🔑 Conceptos Clave
 
-- **Agente IA**: Automatización que usa IA para DECIDIR, no solo ejecutar reglas fijas.
-- **Form → Webhook → OpenRouter**: La arquitectura del cerebro del agente (hoy).
-- **SystemPrompt**: Define el ROL y REGLAS del agente (lo que "es"). Permanente.
-- **UserPrompt**: Mapea los datos de cada mensaje (lo que "recibe"). Cambia por mensaje.
-- **Bloque debug**: Panel en v0 que muestra respuesta del servidor + botón reintentar.
-- **Scaffolding con Gemini**: Usar Gemini para estructurar el prompt antes de ir a v0.
-- **Supervisión**: Un agente no reemplaza al humano — prioriza su trabajo.
-
----
-
-## Analogías Útiles
-
-**Agente como recepcionista inteligente:**
-Un recepcionista no reenvía todos los mensajes al mismo lugar. Lee, decide quién debe atenderlo, y lo direcciona. Hoy construimos al recepcionista que LEE — en C06 le damos las puertas a donde enviar.
-
-**Automatización vs agente:**
-Automatización = contestador automático ("Presione 1 para soporte, 2 para ventas"). Agente = recepcionista que LEE tu mensaje y decide a quién derivarte.
-
-**SystemPrompt como manual del empleado:**
-Si contratas a alguien y no le das instrucciones claras, tomará malas decisiones. El SystemPrompt ES el manual de tu agente.
-
-**Errores del agente como errores de un junior:**
-Un empleado nuevo se equivoca. No lo despides — le das mejor contexto. Con el agente igual: errores = oportunidad de mejorar el SystemPrompt.
+- **API**: forma en que un programa habla con otro; Gemini API permite que Make llame a Gemini.
+- **API Key**: credencial única; es una contraseña — no se comparte nunca.
+- **HTTP POST**: método para enviar datos; Make lo hace con el módulo HTTP Make a Request.
+- **JSON**: formato `{clave: valor}` que APIs entienden.
+- **Módulo HTTP**: módulo genérico de Make para llamar cualquier API.
+- **Rate limit**: 1,500 req/día, 15/min en plan gratuito de Gemini — suficiente para el curso.
 
 ---
 
-## Contexto Actual
+## 🔗 Analogías Útiles
 
-### Por qué triage como caso base
+**API <> mozo del restaurante:**
+Tu flujo (Make) es el comensal que pide "un plato con datos estructurados". El mozo (API) toma el pedido, lo lleva a la cocina (Gemini), y trae el plato de vuelta. Nunca entrás a la cocina directamente — siempre pasa por el mozo.
 
-La conexión C02 → C05 es intencional y potente:
-- En C02, los estudiantes ya clasificaron estos mismos mensajes manualmente
-- Entienden los criterios, los errores esperados y las limitaciones
-- Ver su trabajo manual convertido en agente automático es un "momento wow" genuino
+**API Key <> tu tarjeta de cliente:**
+Cada vez que hacés un pedido, el mozo anota cuántas veces viniste hoy. Si superás tu cuota (1,500 req/día), te dice "mañana volvés". Por eso nunca compartís tu tarjeta: alguien más consumiría tu cuota.
 
-### Por qué esta arquitectura
-
-| Decisión | Razón |
-|----------|-------|
-| Form en v0 (no curl/JSON manual) | Origen de datos tangible, refuerza M1 |
-| Make (no Zapier) | Más visual, plan free generoso, módulo OpenRouter nativo |
-| OpenRouter nativo (no HTTP genérico) | SystemPrompt + UserPrompt separados, sin JSON manual |
-| Gemini como scaffolding | Ya la conocen de C04, refuerza socio pensante de C03 |
-| Template pre-armado (2 módulos) | Reduce fricción técnica, foco en personalización |
-| Sin Gmail en C05 | Menos complejidad, foco en el cerebro. Gmail se agrega en C06 |
-
-### Descubrimientos de clase real
-
-1. **v0 + debug fue WOW**: Gemini como scaffolding + bloque debug en v0 = gran descubrimiento
-2. **Tiempo justo**: Solo alcanza para Webhook + OpenRouter. Gmail se mueve a C06
-3. **API Key necesita paso explícito**: Ver sección dedicada más abajo
+**JSON <> formulario bien llenado:**
+Si le pedís al mozo "decile al cocinero lo que quiero" sin estructura, el mozo improvisa. Si le das un formulario `{plato: "arroz", punto: "medio"}`, el cocinero sabe exactamente qué hacer. JSON es ese formulario.
 
 ---
 
-## Preparación ANTES de Clase (Crítico)
+## 📚 Contexto Histórico / Contexto Actual
 
-### Lo que DEBES tener listo:
+### Gemini API: la bajada a pymes del acceso a IA
 
-1. **Formulario de backup en v0**
-   - Crea y despliega un formulario de PetShop Express funcional con bloque debug
-   - Tenlo listo como plan B si algún estudiante no puede crear el suyo
+OpenAI abrió acceso a GPT-3 por API en 2020 pero con costos prohibitivos para PYMEs. En 2023-2024, Google respondió con Gemini API y un plan gratuito sustancial (1,500 req/día) sin requerir tarjeta. Resultado: automatizaciones con IA dejaron de ser exclusivas de empresas con presupuesto tech.
 
-2. **Template de Make funcionando**
-   - Crea el escenario con 2 módulos: Webhook → OpenRouter
-   - Configura OpenRouter con SystemPrompt + UserPrompt separados
-   - Pruébalo enviando datos desde el form → ver clasificación en History
-   - Genera el link de clonación para estudiantes
+> **Para contar en clase:** "Lo que en 2022 costaba $500/mes por automatización con IA, hoy corre gratis con Gemini API. La democratización es real — ustedes la están aprovechando en esta clase."
 
-3. **Wireframe base**
-   - Prepara un wireframe simple de formulario de contacto
-   - Los estudiantes lo usarán como ejemplo para v0 (Few-shot)
+### Por qué JSON se volvió el idioma universal de APIs
 
-4. **API Key de OpenRouter de respaldo**
-   - Ten una key propia como backup
-   - Grok Free tiene límites — verifica que funcione antes de clase
+JSON (JavaScript Object Notation) se estandarizó en 2009 y desplazó a XML por ser más ligero y legible. Hoy, el 95% de APIs modernas usan JSON como formato principal. Para no-code, implica que aprender a leer JSON una vez te abre 1,500+ integraciones de Make.
 
-5. **Demo ejecutada y verificada**
-   - Corre la demo completa: enviar desde form → ver clasificación en Make History
-   - Guarda screenshots de backup de cada paso
+> **Para contar en clase:** "Aprender JSON es como aprender el alfabeto de la automatización. Una vez que lo leés, el 95% de APIs se abren para vos."
+
+**Fuentes:** [Gemini API docs](https://ai.google.dev/gemini-api/docs){:target="_blank"}, [JSON oficial](https://www.json.org/){:target="_blank"}
 
 ---
 
-## Cómo Configurar OpenRouter API Key en Make
+## 🎯 Momentos Clave de la Clase
 
-Este paso causó confusión en clase. Guía paso a paso:
+### Pregunta Detonadora (Quiz Pre-Lab)
 
-### Pasos:
-1. En Make, haz clic en el módulo OpenRouter
-2. Haz clic en **Create a connection**
-3. Nombre: "Mi OpenRouter" (o el nombre que quieran)
-4. Pega la API Key de OpenRouter
-5. Selecciona modelo: **grok-3-mini-beta:free**
-6. Clic en **Save** → espera checkmark verde ✅
+**Pregunta:** "Cuando leés un correo informal de un vendedor, ¿qué 'datos' extraes mentalmente sin pensarlo?"
 
-### Troubleshooting:
+**Respuesta esperada:** Fecha, nombres, monto, tipo de producto/servicio, contexto.
 
-| Error | Causa probable | Solución |
-|-------|---------------|----------|
-| "Connection failed" | Key con espacios al inicio/final | Copiar key de nuevo, sin espacios |
-| "Model not found" | Nombre del modelo incorrecto | Seleccionar exacto: grok-3-mini-beta:free |
-| "Rate limit exceeded" | Key agotada o muchos intentos | Usar key de backup del facilitador |
-| "Invalid API key" | Key expirada o mal copiada | Generar nueva key en openrouter.ai |
-| Checkmark no aparece | Conexión lenta | Esperar 10 seg, si no → reintentar |
-
-> 💡 El nombre exacto del modelo puede cambiar — verifica en [openrouter.ai/models](https://openrouter.ai/models){:target="_blank"} antes de clase.
-
-> ⚠️ Ten tu key de backup lista. Si más de 2 estudiantes tienen problemas, compártela.
-
----
-
-## Guía para el Bloque Debug en v0
-
-### Qué pedir a v0:
-
-Después de generar el formulario base, agregar un prompt adicional:
-
+**Script post-respuestas:**
 ```
-Agrega un bloque de debug debajo del formulario que:
-- Muestre la respuesta del servidor después de enviar
-- Muestre un indicador de estado (enviando/éxito/error)
-- Incluya un botón de "Reintentar" si falla la conexión
-- Solo sea visible después del primer envío
+Facilitador: "Exacto — ustedes extraen esos datos en medio segundo sin pensar.
+Hoy enseñamos a Gemini a hacer lo mismo. El truco está en describirle qué datos extraer."
 ```
 
-### Cómo funciona:
-- Al enviar: panel con HTTP status (200 = verde, error = rojo + reintentar)
-- Ahorra tiempo: el estudiante no necesita abrir Make para saber si el envío funcionó
-- Si v0 no genera buen debug → compartir formulario de backup que ya lo incluya
+### Demo Principal
 
----
+**Qué mostrar:** en Google AI Studio, un correo informal → prompt con JSON schema → respuesta JSON de Gemini → cómo ese JSON mapea a las columnas del Sheet.
 
-## Momentos Clave de la Clase
+**Script sugerido:**
+```
+Facilitador: "Este es un correo real que reciben en una empresa."
+[Muestra correo: "Hola, hoy Juan cerró a Industrias López por 3500..."]
+Facilitador: "Sin IA, alguien tiene que leerlo y escribirlo en el Sheet manualmente."
+[Muestra prompt + respuesta JSON en AI Studio]
+Facilitador: "Con este prompt, Gemini lo hace en 3 segundos. Hoy conectamos eso a Make."
+```
 
-### Pregunta Detonadora (~5 min)
+**Plan B (si AI Studio no carga):** tener capturas del prompt y la respuesta JSON como fallback.
 
-**Respuesta correcta:** B — Un agente usa IA para tomar decisiones
+### Transición al Lab
 
-**Post-votación:** Enfatizar la diferencia clave: automatización = reglas fijas (IF/THEN), agente = IA DECIDE. "Si una IA LEE el email y DECIDE a dónde va, eso es un agente."
+**Momento crítico:** configurar la API key en Make. Si lo hacen mal, todo falla en cadena.
 
----
-
-### Demo Principal: Agente en Vivo (~10 min)
-
-**Preparación:** Formulario v0 abierto + escenario de Make activo.
-
-**Flujo:** Enviar 3 mensajes desde el form. Mostrar debug (éxito) + Make History (clasificación). Preguntar antes de revelar el tercero: "¿Qué creen que hizo con este?". Callback a C02: "El tono agresivo no siempre es urgencia real."
-
-**Si algo sale mal:** Grok tarda → "modelos free son lentos". Clasifica mal → "¿Qué cambiarían en el SystemPrompt?". Make falla → screenshots de backup.
-
----
-
-## Errores Esperados de Estudiantes
-
-| Señal | Qué está pasando | Qué hacer |
-|-------|------------------|-----------|
-| "No puedo crear la API key" | Confusión con OpenRouter | Ver sección "Cómo Configurar OpenRouter API Key" |
-| "v0 no genera lo que quiero" | Prompt sin wireframe | "Adjunta tu wireframe — Few-shot visual" |
-| "v0 no me deja hacer deploy" | Cuenta limitada o error | Compartir formulario de backup |
-| "No sé qué pedir para el debug" | No entiende el concepto | Compartir el prompt exacto de la guía |
-| "Make no me deja clonar" | Problema de cuenta | Verificar cuenta free activa |
-| "El agente no responde" | Webhook no activo o form no conectado | Verificar escenario ON + URL correcta |
-| "Siempre clasifica todo igual" | SystemPrompt genérico | "¿Tiene categorías específicas?" |
-| "Esto es muy técnico para mí" | Intimidación ante APIs | "Lo técnico está en el template. Tu trabajo es el PROMPT" |
-
----
-
-## Checkpoints de Validación
-
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~5 | Pregunta detonadora 1 | Manos levantadas, participación |
-| ~8 | Pregunta detonadora 2 | Discusión sobre escala + supervisión |
-| ~18 | Demo completa | "¿Vieron la clasificación en Make History?" |
-| ~48 | Formulario v0 + debug deployado | "¿Quién tiene su form con debug funcionando?" |
-| ~58 | Template clonado | "¿Quién tiene los 2 módulos en Make?" |
-| ~68 | API Key conectada | "¿Quién tiene el checkmark verde?" ⚠️ |
-| ~83 | SystemPrompt + UserPrompt | "¿Quién ya personalizó ambos prompts?" |
-| ~88 | Form conectado al webhook | "¿Quién tiene todo conectado?" |
-| ~95 | Primer test exitoso | "¿Quién ve clasificación en Make History?" |
-
-> ⚠️ El checkpoint de API Key (~min 68) es el más crítico. Si alguien no lo pasa, usa la key de backup inmediatamente. No pierdas tiempo troubleshooting individual.
-
----
-
-## Sección Anti-Hype: Cómo Manejarla
-
-**Mensaje clave:** "Su agente se va a equivocar. Garantizado. En C02 la IA confundía tono con urgencia. Su agente hará lo mismo — a menos que mejoren el SystemPrompt. La diferencia: con un agente, el error se repite automáticamente."
-
----
-
-## ✅ Señales de Comprensión
-
-**ENTIENDE cuando:**
-- Explica la diferencia entre automatización (IF/THEN fijo) y agente (IA decide) con sus palabras
-- Identifica que el SystemPrompt es lo que define la calidad de la decisión del agente
-- Puede diagnosticar por qué una clasificación salió mal ("le falta contexto al prompt")
-
-**NECESITA AYUDA cuando:**
-- Copia el SystemPrompt sin modificar las categorías para su contexto
-- No puede explicar qué hace el UserPrompt vs el SystemPrompt
-- Asume que el agente "piensa" — no entiende que solo sigue reglas del prompt
-
----
-
-## 🔀 Diferenciación
-
-**Estudiantes avanzados:** Que personalicen categorías a su trabajo real, que agreguen una categoría extra (ej: SPAM), que experimenten con diferentes temperaturas en OpenRouter.
-
-**Estudiantes con dificultades:** Que usen el template tal cual sin personalizar, emparejar con alguien avanzado, checkpoint intermedio extra a los 30 min del lab.
+**Script sugerido:**
+```
+Facilitador: "La API key va al final de la URL, después de '?key='.
+Ejemplo: https://...generateContent?key=TU_KEY_AQUI
+NUNCA en el body, NUNCA en los headers. Solo al final de la URL."
+```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### "Automatización o Agente"
+### Dinámica 1: "Caza el JSON en la respuesta"
+
+Contexto: cuando Parse JSON falla por primera vez.
+
+Proyectás una respuesta de Gemini mal formateada (con texto introductorio):
+
 ```
-Facilitador: "Voy a describir procesos. Levanten la mano si es AUTOMATIZACIÓN o AGENTE."
-- "Un email llega y se reenvía a soporte" → Automatización
-- "Un email llega, se lee y se decide a quién enviar" → Agente
-- "Cada lunes se genera un reporte" → Automatización
-- "Se analiza un texto y se decide qué hacer" → Agente
+"Claro, aquí está el JSON que solicitaste:
+{ "fecha": "2026-04-19", ...}"
 ```
 
-### "Predice la clasificación"
 ```
-Facilitador: [Lee un mensaje de cliente en voz alta]
-"¿Cómo clasificaría el agente esto? ¿URGENTE, CONSULTA o VENTA?"
-[Tomar 2-3 predicciones antes de enviar al agente]
-"Veamos si el agente coincide con ustedes..."
+Facilitador: "¿Qué hay de más que hace fallar a Parse JSON?"
+(Respuesta: el texto antes del {)
+Facilitador: "¿Cómo lo arreglamos sin cambiar el módulo?"
+(Respuesta: modificar el prompt: 'responde SOLO el JSON, sin texto adicional')
+```
+
+### Dinámica 2: "El prompt que inventa datos"
+
+Contexto: durante la Actividad 1, si alguien ve que Gemini "alucinó" un dato.
+
+```
+Facilitador: "¿Alguien tuvo un caso donde Gemini inventó un dato?"
+[Si hay ejemplo]
+Facilitador: "Miren — el correo no decía la fecha, pero Gemini puso una.
+¿Por qué? Porque el campo fecha es obligatorio en el schema.
+Cómo prevenir: agregar al prompt 'si un campo no está en el correo, déjalo como null'."
 ```
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### SystemPrompt adaptado por industria:
-| Industria | Categorías | Regla clave |
-|-----------|-----------|-------------|
-| E-commerce | URGENTE, CONSULTA, VENTA, DEVOLUCIÓN | Deadline < 48h → URGENTE |
-| Servicios | URGENTE, COTIZACIÓN, SOPORTE, FEEDBACK | Impacto económico → URGENTE |
-| Educación | URGENTE, ACADÉMICO, ADMINISTRATIVO, TÉCNICO | Plazo de entrega → URGENTE |
+### Ejemplo 1: Prompt estricto para extracción (caso genérico)
+
+**Cuándo usarlo:** si un estudiante tiene problemas con Parse JSON fallando.
+
+```
+Eres un asistente que extrae datos de correos. Responde SOLO JSON válido,
+sin texto introductorio, sin markdown, sin explicaciones.
+
+Si un campo no está en el correo, usa null.
+Si hay ambigüedad, prefiere null a inventar.
+
+Campos requeridos:
+{ "fecha": "YYYY-MM-DD" | null,
+  "monto": number | null,
+  ... }
+
+CORREO:
+[cuerpo del correo aquí]
+```
+
+**Tip:** el párrafo "Si un campo no está en el correo, usa null" reduce 90% de alucinaciones.
+
+### Ejemplo 2: Prompt para insights semanales (caso Roberto)
+
+**Cuándo usarlo:** Actividad 2, para el Escenario 2.
+
+```
+Eres un analista de ventas senior. Analiza los datos de esta semana y devuelve
+SOLO JSON válido con exactamente estos campos:
+
+{ "resumen_ejecutivo": "párrafo de 2-3 oraciones",
+  "hallazgo_1": "observación específica con números",
+  "hallazgo_2": "...",
+  "hallazgo_3": "...",
+  "riesgo_1": "algo que preocupa",
+  "riesgo_2": "...",
+  "oportunidad_1": "algo a aprovechar",
+  "accion_1": "próximo paso concreto",
+  "accion_2": "..." }
+
+REGLAS:
+- Cada hallazgo debe comparar contra meta o semana anterior
+- Siempre incluye números específicos
+- Explica causa probable cuando la haya
+- Responde en español latinoamericano
+
+DATOS SEMANA:
+[datos del Sheet aquí]
+
+META SEMANAL: [de Config]
+SEMANA ANTERIOR: [de Historico]
+```
+
+**Tip:** este prompt se mejora mucho en Clase 6 con few-shot; hoy es la versión base.
+
+---
+
+## ⚠️ Errores Comunes
+
+| Señal | Qué está pasando | Qué hacer |
+|-------|------------------|-----------|
+| "401 Unauthorized" | API key incorrecta o mal ubicada | Copiar key limpia de AI Studio, ponerla al final de URL con `?key=` |
+| "Parse JSON failed" | Gemini respondió con texto extra | Agregar al prompt "responde SOLO JSON, sin markdown" |
+| "429 Rate limit" | Superaste 15 req/min o 1,500/día | Esperar 1 min; si es límite diario, esperar al siguiente día |
+| "Marcadores tipo IA siguen literales" | Replace Text mapea al campo equivocado del Parse JSON | Verificar nombres exactos (`{{parse.hallazgo_1}}` no `{{parse.hallazgos[0]}}`) |
+| "PDF desbordado" | Texto de Gemini muy largo | Agregar al prompt "máximo 25 palabras por campo" |
+| "Gemini responde en inglés" | No especificaste idioma | Agregar al prompt "responde en español latinoamericano" |
+
+---
+
+## ✅ Señales de Comprensión
+
+### El estudiante ENTIENDE cuando:
+- Explica con sus palabras por qué el prompt debe decir "SOLO JSON"
+- Distingue entre modificar el prompt vs agregar módulos Make para resolver un problema
+- Predice qué marcador de su plantilla se va a beneficiar más de optimización de prompt en C06
+
+### El estudiante NECESITA AYUDA cuando:
+- Copia-pega el prompt sin adaptar a su caso
+- No sabe dónde copiar la API key en el módulo HTTP
+- No entiende por qué Parse JSON está separado del HTTP
+
+---
+
+## 🎯 Checkpoints de Validación
+
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| 10 | Apertura terminada | Todos con API key abierta en otra pestaña | Si no tienen, dar 2 min para obtenerla |
+| 30 | Teoría terminada | Primera llamada exitosa en AI Studio | Demo pregrabada si el playground se cae |
+| 75 | Actividad 1 | Gemini procesa 3 correos y Sheet recibe filas estructuradas | Revisar prompt estricto + mapping de Parse JSON |
+| 120 | Actividad 2 | PDF con marcadores tipo IA llenos | Si falla, simplificar prompt: pedir solo 3 marcadores en vez de 9 |
+| 150 | Actividad 3 | Escenario 2 con scheduled activo + Historico recibiendo fila | — |
+
+---
+
+## 🧑‍🏫 Tips de Facilitación
+
+### Si el grupo está callado:
+- Pedir que 2-3 estudiantes compartan pantalla con su AI Studio y muestren respuestas JSON reales.
+- Retomar la columna Descripción de Clase 2: "Este es el momento en que esa columna cobra sentido."
+
+### Si alguien domina la conversación:
+- Pedirle que explique al grupo cómo resolvió un problema específico (mentoría cruzada).
+
+### Si la mayoría termina antes:
+- Logro 🟡 (few-shot en el prompt) — preview de C06.
+- Logro 🔴 (prompt como variable de Make).
+
+### Si la mayoría se atrasa:
+- Reducir objetivo a Escenario 1 funcionando solamente; Escenario 2 queda como tarea.
+- Priorizar que al menos tengan 3 marcadores tipo IA llenos (no los 9).
+
+### Si hay preguntas fuera de alcance:
+> "Buena pregunta. Prompt engineering avanzado lo vemos la próxima clase."
+
+---
+
+## 🔀 Diferenciación
+
+### Para estudiantes avanzados:
+- Logro 🔴 (prompt como variable) + ayudar compañeros rezagados con Parse JSON.
+- Proponer experimentar con modelo `gemini-2.0-flash-thinking-exp` y comparar.
+
+### Para estudiantes con dificultades:
+- Ofrecer el prompt completo pre-probado como template.
+- Sentarse con ellos 5-10 min durante Actividad 1 para configurar el primer HTTP + Parse JSON juntos.
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### "¿Puedo usar otro modelo que no sea Grok?"
-Sí. OpenRouter tiene muchos modelos. Grok Free es para practicar sin costo. Las técnicas de SystemPrompt funcionan igual en cualquier modelo.
+### P: ¿La API key funciona en todos los modelos de Gemini?
+**R:** Sí, misma key sirve para gemini-2.0-flash, flash-thinking, pro, etc. Cada modelo tiene rate limits y costos distintos, pero en plan free la key es única.
 
-### "¿Esto funciona con más de 100 mensajes?"
-Sí, pero el plan free de Make tiene límite de 1,000 operaciones/mes. Para producción real necesitarías un plan de pago.
+### P: ¿Qué pasa si supero los 1,500 req/día?
+**R:** El siguiente request da error 429. Reseteo a las 00:00 PT. Para el curso no vas a llegar ni al 10% de ese límite.
 
-### "¿Qué pasa si mi agente clasifica mal?"
-Mejoras el SystemPrompt. Agrega reglas más específicas, ejemplos de clasificación, o condiciones edge-case. Es iterativo.
+### P: ¿Puedo usar esta key en otros proyectos?
+**R:** Sí, pero cada llamada consume de la misma cuota diaria. Recomiendo una key por proyecto para aislar consumo.
+
+### P: ¿Qué pasa si Gemini responde algo que no es JSON?
+**R:** Parse JSON fallará y el flujo se detiene en ese módulo. Solución: ser más estricto en el prompt ("SOLO JSON, sin markdown, sin texto adicional").
+
+---
+
+## 🔗 Conexiones del Curriculum
+
+### Esta clase construye sobre:
+
+| Clase | Concepto | Cómo se conecta |
+|-------|----------|-----------------|
+| 01 | Prompt profesional | Hoy los prompts tienen formato JSON structured |
+| 02 | Columna Descripción | Ahora cobra sentido: es el input principal para Gemini |
+| 03 | Marcadores tipo 3 | Hoy se llenan por primera vez |
+| 04 | Escenarios Make | Hoy se les agrega HTTP + Parse JSON |
+
+### Conexión con la Próxima Clase
+
+Al cerrar, planta la semilla:
+
+> "La próxima clase optimizamos los prompts que configuraron hoy. Van a ver cómo el mismo prompt, reescrito con chain-of-thought y few-shot, transforma insights 'planos' en insights 'potentes'. También aplicamos 4 mejores prácticas del sistema (nombres con fecha, backups, alertas, logs). Y definimos el plan de personalización para su caso real de Clase 7."
+
+**Pre-work / Tarea implícita:** anotar 2-3 insights que Gemini generó hoy y que sintieron "planos". En Clase 6 los van a mejorar con optimización de prompts.
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
-1. **¿El concepto agente vs automatización quedó claro?** — Si más de 2 confunden, reforzar en C06.
-2. **¿La configuración de API Key fue fluida?** — Ajustar protocolo si hubo fricción.
-3. **¿Quiénes se intimidaron con lo técnico?** — Identificar para seguimiento en C06.
-4. **¿El bloque debug en v0 funcionó como se esperaba?** — Documentar si hay que ajustar el prompt.
-
----
-
-## Tips de Facilitación
-
-- **Fricción técnica:** Prioriza backup (form + template + API key). Si v0 falla, comparte tu form pre-armado
-- **Grupo rápido:** Que personalicen categorías a su trabajo real
-- **Intimidados:** "Lo técnico ya está en el template. Tu trabajo es el PROMPT." Emparejar con alguien que va bien
-
----
-
-## Conexión con la Próxima Clase
-
-> "Hoy construimos el cerebro — recibe, piensa y clasifica.
-> Próxima clase: manos (Gmail), inteligencia (Router), memoria (Sheets).
-> Y battle: ¿quién tiene el mejor agente?"
-
-**Tarea:** Google Doc con URL form v0 (debug), screenshot Make (2 módulos), SystemPrompt, screenshot Make History.
+### Preguntas para el facilitador:
+- ¿Cuántos estudiantes tienen los 2 escenarios activos al cerrar?
+- ¿Hubo casos donde Parse JSON falla consistentemente? (problema de prompt a resolver en C06)
+- ¿Los insights generados son coherentes con los datos del Sheet? (predicción de satisfacción en Demo Day)
+- ¿Alguno se quedó sin API key funcionando? (seguimiento 1 a 1 antes de C06)

@@ -1,196 +1,283 @@
-# Lab 08: Mi Proyecto Open-Source
+# Lab 08: Demo Day + ROI + Plan 30 días
 
-## Objetivo
+> ⚠️ **Lab Calificado** - Este lab cierra el curso. Incluye presentación en vivo, cálculo de ROI y plan 30 días. Ver rúbrica abajo.
 
-Publicar tu agente como proyecto open-source en GitHub, crear un post de LinkedIn con imagen generada por IA, presentar tu caso en un pitch de 3 minutos y crear un plan de desarrollo para los próximos 30 días.
+## 🎯 Objetivos del Curso
 
-> ⏱️ **Tiempo estimado:** 100 minutos (sin contar test ni retrospectiva previa)
+Este lab integra todo lo aprendido en el curso:
 
----
-
-## Antes de empezar
-
-| ✅ | Requisito |
-|----|-----------|
-| | Agente C07 funcionando (URL Vercel activa + Make encendido) |
-| | Cuenta de GitHub creada |
-| | SystemPrompts (OR#1 + OR#2) copiados y accesibles |
-| | Cuenta de LinkedIn abierta |
-| | Cuenta de Gemini abierta |
-
-### Test Diagnóstico M2 (15 min, pre-lab)
-
-- 8 preguntas de opción múltiple
-- No afecta calificación — **"es un espejo, no un examen"**
-- El facilitador comparte el link (Google Forms)
-- Individual, sin consultar materiales
-
-> ✅ **Checkpoint:** Test completado
+1. Presentar tu sistema funcionando en vivo ante el grupo con estructura PSDR (5 min).
+2. Calcular tu ROI personal en soles y comunicarlo con claridad.
+3. Definir un plan 30 días con 3 próximas automatizaciones priorizadas por 80/20.
 
 ---
 
-## Parte 1: GitHub — Mi Primer Proyecto Open-Source (25 min)
+## 🔑 Conceptos Clave
 
-### 1.1 Conectar Vercel → GitHub (7 min)
+- **Estructura PSDR** — Problema (1 min) + Solución (1 min) + Demo (2 min) + Resultado (1 min).
+- **ROI en soles** — horas ahorradas × tarifa × 4 semanas = ahorro mensual.
+- **Plan 80/20** — el 20% de tus tareas que concentra el 80% del tiempo.
 
-1. Abre **vercel.com** → busca tu proyecto (el form de C07)
-2. Ve a **Settings** → **Git**
-3. Click **"Connect to GitHub"** → autoriza tu cuenta de GitHub
-4. Vercel crea un repositorio automáticamente con el código de tu form
-5. Verifica: abre github.com → deberías ver un nuevo repo
+---
 
-> 💡 **No necesitas terminal ni CLI.** Todo se hace desde la interfaz web de Vercel/GitHub.
+## ⚙️ Setup Inicial
 
-> ⚠️ **Si GitHub pide autorizar:** Es normal la primera vez. Acepta los permisos de la app de Vercel.
+Este es el lab de cierre. Verifica:
 
-### 1.2 Editar README en GitHub web (13 min)
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Sistema propio de Clase 7 funcionando | Los 2 escenarios v2 activos con datos reales |
+| ☐ | 3 correos de prueba reales | Preparados para disparar en vivo durante la demo |
+| ☐ | Tarifa por hora definida | Calculá: salario mensual ÷ horas trabajadas mensuales |
+| ☐ | Google Doc "Plan 30 días" | Creado vacío, listo para llenar |
 
-Desde github.com, abre tu repo → click en el archivo `README.md` → click el ícono de lápiz (editar).
+> 💡 **Orden del día:** Test (15 min) → Demos en vivo (60 min) → ROI (40 min) → Plan 30 días (30 min) → Cierre.
 
-Reemplaza el contenido con esta estructura:
+---
 
-```markdown
-# [Nombre de tu proyecto]
+## Actividad 0: Test Diagnóstico del Módulo 2 (15 min)
 
-## Qué hace
-[1-2 oraciones describiendo qué problema resuelve tu agente]
+Antes de empezar las demos, completá el test del Módulo 2 (8 preguntas, opción múltiple).
 
-## Arquitectura
-Form (Vercel) → Webhook (Make) → OpenRouter #1 (analizar) → Sheets (log) → OpenRouter #2 (generar) → Gmail
+> **No afecta tu calificación.** Es diagnóstico para el instructor y para tu autoevaluación.
 
-## SystemPrompt #1 — Analizar
-[Pega tu SystemPrompt completo de OR#1]
+Ver `test/README.md` y `test/questions.md` para el test.
 
-## SystemPrompt #2 — Generar
-[Pega tu SystemPrompt completo de OR#2]
+---
 
-## Ejemplo
-**Input:** [Un ejemplo real de lo que escribes en el form]
-**Output:** [Resumen de lo que llega al email]
+## Actividad 1: Demo en vivo de tu sistema (60 min total — 5 min por persona)
 
-## Herramientas
-- v0 + Vercel (form + hosting)
-- Make (orquestación)
-- OpenRouter + Gemini Flash (IA)
-- Google Sheets (logging)
-- Gmail (envío)
+### 1.1 Estructura PSDR — 5 minutos exactos
 
-## Demo
-[URL de tu form en Vercel]
+**P — Problema (1 min):**
+
+```
+"Antes del curso, yo [<!-- tarea recurrente -->] me tomaba
+[<!-- X horas por semana/mes -->] porque [<!-- causa del dolor -->]."
 ```
 
-Commit desde el navegador (botón "Commit changes").
+Ejemplos:
+- "Cada viernes pasaba 4 horas consolidando reportes de mis 3 vendedores que llegaban por WhatsApp, correo y llamadas."
+- "Cada fin de mes pasaba 6 horas armando el reporte de campañas para mis clientes de marketing, un cliente a la vez."
 
-### 1.3 Verificar repo público (5 min)
+**S — Solución (1 min):**
 
-| ✅ | Verificación |
-|----|-------------|
-| | Repo visible en github.com |
-| | README tiene SystemPrompts documentados |
-| | URL de demo (Vercel) incluida en el README |
+```
+"Construí un sistema automatizado que [<!-- qué hace -->]."
+```
 
-> ⚠️ **Si el repo es privado:** Settings → Danger Zone → Change Visibility → Public
+Mostrar brevemente:
+- Flujo general en una imagen o en Make sin entrar al detalle técnico
+- Qué herramientas usa (Gemini + Make + Google Workspace — todo gratis)
 
-> ✅ **Checkpoint Parte 1:** Repo público en GitHub con README profesional
+**D — Demo en vivo (2 min):**
 
----
+Este es el corazón de la presentación. No slides, mostrás el sistema funcionando:
 
-## Parte 2: LinkedIn + Imagen (30 min)
+1. Envías un correo real (o varios) al sistema en pantalla compartida
+2. Muestras cómo el Sheet se actualiza en segundos (Instant Trigger)
+3. Ejecutas manualmente (Run once) el escenario semanal
+4. Muestras el PDF llegando a tu correo con marcadores tipo IA llenos
 
-### 2.1 Draft del post con Claude (10 min)
+**R — Resultado (1 min):**
 
-Abre Claude con un prompt que incluya: problema que resuelves, herramientas usadas, URL de Vercel, URL de GitHub, métrica real, limitación honesta. Pide formato: Hook (1 línea) + Qué construí + URLs + Resultado + Takeaway. Tono profesional sin hype.
+```
+"Hoy esto me toma [<!-- X min -->] en vez de [<!-- Y horas -->].
+Ahorro [<!-- Z horas -->] a la semana.
+Con mi tarifa de [<!-- $ -->] por hora, eso son [<!-- $mes -->] al mes,
+o [<!-- $año -->] al año."
+```
 
-Itera al menos 1 vez. El post debe tener hook, descripción, URLs (Vercel + GitHub), métrica real y aprendizaje honesto.
+### 1.2 Rúbrica de pares
 
-### 2.2 Imagen de portada con Gemini (10 min)
+Mientras cada estudiante presenta, el grupo llena la rúbrica:
 
-1. Toma un **screenshot** del grid de logos de tu stack (en `assets/`: Claude, Gemini, GitHub, Make, OpenRouter, v0, Drive, Gmail)
-2. Abre **Gemini** → sube el screenshot + pide: "Genera una imagen con estos logos en estilo 3D glassmorphism isométrico, fondo oscuro azul-púrpura, formato horizontal para banner de LinkedIn"
-3. Descarga la imagen. Si no convence, itera: "más contraste", "fondo más oscuro"
+| Criterio | 1-5 |
+|----------|-----|
+| Problema claro y cuantificado | __ |
+| Demo funcional (se vio la magia) | __ |
+| Comunicación clara y en tiempo | __ |
+| ROI medible en soles | __ |
 
-### 2.3 Peer review en parejas (10 min)
+Total por presentación: 4 criterios × 5 pts = 20 puntos máximos por evaluador.
 
-1. Intercambia tu draft de LinkedIn con un compañero
-2. Cada persona da feedback específico:
-   - "El hook funciona / no funciona porque..."
-   - "Agregaría / quitaría..."
-   - "La métrica es clara / necesita más contexto"
-3. Ajusta tu post con el feedback recibido
+### 1.3 Preguntas y aplausos
 
-> ✅ **Checkpoint Parte 2:** Post de LinkedIn listo + imagen de portada generada
+- 1 minuto entre presentaciones para preguntas constructivas
+- Aplauso genuino al final de cada demo
+- Si la demo falla, no penalizar — el valor está en el sistema, no en la suerte del momento
 
----
-
-## Parte 3: Pitches + Publicar (30 min)
-
-### 3.1 Pitches — 3 minutos cada uno (~25 min)
-
-**Formato por persona:**
-
-| Bloque | Tiempo | Qué haces |
-|--------|--------|-----------|
-| **Problema + Post** | 2 min | Proyecta tu post de LinkedIn, explica el problema que resuelve tu agente |
-| **Demo rápida** | 1 min | Alguien del público envía un mensaje a tu form → ven el resultado |
-
-**Tips:**
-- Proyecta tu post de LinkedIn en pantalla — ES tu presentación
-- No expliques cada módulo de Make — enfócate en el problema y el resultado
-- La demo es rápida: alguien envía → todos ven el email llegar
-
-> ⚠️ **Si tu demo falla en vivo:** Muestra Make History con un run exitoso anterior (máx 30 seg extra).
-
-### 3.2 "3... 2... 1... PUBLICAR!" (5 min)
-
-1. Agrega la imagen de portada a tu post de LinkedIn
-2. El facilitador cuenta: **"3... 2... 1... ¡PUBLICAR!"**
-3. Todos publican al mismo tiempo
-4. Screenshot del post publicado
-
-> ✅ **Checkpoint Parte 3:** Post de LinkedIn publicado con imagen + URLs
+✅ **Checkpoint:** Presentaste en 5 minutos con demo en vivo funcional y recibiste feedback del grupo.
 
 ---
 
-## Parte 4: Roadmap 30 Días (15 min)
+## Actividad 2: Calcula tu ROI (40 min)
 
-### 4.1 Plan con Claude (10 min)
+### 2.1 Fórmula
 
-Pide a Claude un plan de 30 días para tu agente: Semana 1 (mejorar calidad), Semana 2 (expandir casos), Semana 3 (aplicar a otro proceso), Semana 4 (medir impacto). Incluye 3 quick-wins para esta semana.
+```
+Horas ahorradas/semana × Tarifa por hora × 4 semanas = Ahorro MENSUAL
+Ahorro mensual × 12 = Ahorro ANUAL
+```
 
-### 4.2 Compartir quick-wins (5 min)
+### 2.2 Ejemplo (caso Roberto)
 
-- Cada persona comparte su quick-win #1 con el grupo (1 oración)
-- El facilitador anota en pantalla los más creativos
+```
+6 horas/semana ahorradas × S/ 100/hora × 4 semanas = S/ 2,400/mes
+S/ 2,400/mes × 12 = S/ 28,800/año
+```
 
-> ✅ **Checkpoint Parte 4:** Plan de 30 días + 3 quick-wins concretos
+### 2.3 Calcula TU ROI
+
+En tu Google Doc:
+
+| Concepto | Valor |
+|----------|-------|
+| Horas ahorradas/semana (conservador) | [<!-- X -->] |
+| Tarifa por hora | S/ [<!-- Y -->] |
+| Ahorro mensual | S/ [<!-- X × Y × 4 -->] |
+| Ahorro anual | S/ [<!-- mensual × 12 -->] |
+| Impacto cualitativo | [<!-- lo que antes no podías hacer y ahora sí -->] |
+
+> 💡 **Regla conservadora:** si dudás entre 6 o 8 horas ahorradas, usá 6. Los ROI conservadores son más creíbles.
+
+### 2.4 Comparación grupal
+
+Cada estudiante comparte su número en voz alta. Identifiquen:
+
+- **El ROI más alto del grupo:** ¿qué decisión fue clave en ese caso?
+- **El ROI más sorprendente:** ¿quién esperaba menos y ahorra más?
+- **Aprendizajes replicables:** ¿qué podemos copiar de los casos ganadores?
+
+### 2.5 Prepara tu ROI para comunicar
+
+Escribí una frase de 1 línea lista para usar en LinkedIn, con tu jefe o en entrevistas:
+
+```
+"Construí un sistema automatizado que me ahorra [<!-- X -->] horas al mes,
+equivalente a S/ [<!-- Y -->] al año, usando IA gratuita."
+```
+
+✅ **Checkpoint:** Tenés tu número de ROI mensual y anual documentado + 1 frase lista para comunicar.
 
 ---
 
-## Entregable final
+## Actividad 3: Plan 30 días con 3 próximos agentes (30 min)
 
-1. **URL de GitHub** — repo público con README que documenta SystemPrompts
-2. **LinkedIn post publicado** — con imagen de portada + URLs (Vercel + GitHub)
-3. **Plan 30 días** — con 3 quick-wins para esta semana
+### 3.1 Lista 10 tareas repetitivas de tu trabajo
 
-**Formato:** Links directos (GitHub + LinkedIn) + screenshot del post publicado
+En tu Google Doc "Plan 30 días":
+
+```
+1. [<!-- Tarea repetitiva 1 -->]
+2. [<!-- Tarea 2 -->]
+...
+10. [<!-- Tarea 10 -->]
+```
+
+### 3.2 Aplica 80/20
+
+Identifica las 3 tareas que concentran el 80% del tiempo (la regla de Pareto). Marcálas con ⭐.
+
+### 3.3 Diseña 3 agentes para esas tareas
+
+Por cada una de las 3 prioritarias:
+
+| Agente | Qué automatiza | Datos que necesita | Herramientas | Semana de construcción |
+|--------|----------------|--------------------|--------------|------------------------|
+| Agente 1 | [<!-- -->] | [<!-- -->] | Gemini + Make + [<!-- -->] | Semana 1 |
+| Agente 2 | [<!-- -->] | [<!-- -->] | [<!-- -->] | Semana 2 |
+| Agente 3 | [<!-- -->] | [<!-- -->] | [<!-- -->] | Semana 3 |
+
+### 3.4 Compromiso público
+
+En voz alta, cada estudiante comparte su plan con el grupo:
+
+```
+"En los próximos 30 días voy a construir:
+Semana 1: [Agente 1]
+Semana 2: [Agente 2]
+Semana 3: [Agente 3]
+Semana 4: ajustes y medición de ROI agregado."
+```
+
+Este compromiso público aumenta la probabilidad de cumplimiento del 20% al 65% (según estudios de accountability).
+
+✅ **Checkpoint:** Plan 30 días escrito con 3 agentes específicos, calendario semanal y compromiso público compartido.
 
 ---
 
-## Criterios de Evaluación
+## 📁 Estructura Final del Proyecto
 
-| Criterio | Peso | Qué se evalúa |
-|----------|------|---------------|
-| **Repo GitHub** | 20% | ¿Es público, tiene README con SystemPrompts documentados y URL de demo? |
-| **Post LinkedIn** | 20% | ¿Tiene hook, descripción, URLs, métrica real y aprendizaje honesto? |
-| **Pitch** | 20% | ¿Explicó problema + demo en 3 min? ¿El agente funcionó en vivo? |
-| **Imagen generada** | 20% | ¿Usó Gemini para crear imagen de portada? ¿Iteró al menos 1 vez? |
-| **Plan 30 días** | 20% | ¿Tiene roadmap semanal + 3 quick-wins concretos? |
+```
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc
+    ├── Tabla-de-Parámetros.doc
+    ├── Sistema-[tu-proyecto]-v2.xlsx
+    ├── Reporte-[tu-proyecto]-v2.slides
+    ├── ROI-Calculado.doc          ← NUEVO
+    ├── Plan-30-Dias.doc            ← NUEVO
+    └── Backups/
+
+Make.com/
+├── Escenario 1 v2 (activo)
+└── Escenario 2 v2 (scheduled con tu frecuencia)
+```
 
 ---
 
-## Bonus (opcional)
+## Reflexión Final del Curso
 
-- Agrega un badge de "Built with AI" al README de GitHub
-- Comenta en el post de LinkedIn de al menos 2 compañeros
-- Envía tu repo al facilitador para incluirlo en un showcase del curso
-- Mejora la imagen de portada con iteraciones en Gemini
+Responde con detalle en tu documento:
+
+1. **¿Qué habilidad del curso vas a usar PRIMERO esta semana en tu trabajo?**
+2. **¿Qué cambiaría tu vida profesional si llegaras a ahorrar 10 horas semanales?**
+3. **¿Qué te sorprendió más del curso: las herramientas, los prompts, el concepto de sistema, o algo más?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Publica tu caso en LinkedIn
+Escribí un post corto con: el problema, la solución (1 imagen del flujo), el ROI. Taggear a Enter Tech School y compañeros de curso.
+
+### 🟡 Ofrece construir el sistema a otro colega
+El mejor test del aprendizaje es enseñar. Proponé a 1 colega de tu trabajo construir un sistema similar con tu ayuda. Es tu primer "cliente" interno.
+
+### 🔴 Plantea tu proyecto a AI 201
+El siguiente curso (AI 201 — Construye con IA) extiende estos patrones a soluciones más complejas. Si tu plan 30 días incluye algo ambicioso, ese curso te lo resuelve.
+
+---
+
+## Rúbrica de Evaluación
+
+| Criterio | Excelente (20) | Bueno (15) | Satisfactorio (10) | Bajo (5) |
+|----------|---------------|------------|-------------------|----------|
+| **Demo en vivo funcional** | Sistema corrió sin fallas, correo real disparó actualización visible | Funcionó con 1 intento adicional | Mostró sistema pero no en vivo (solo slides) | Sistema no funcionó |
+| **Estructura PSDR** | 4 bloques claros, dentro de 5 min | PSDR con algún bloque corto o largo | Faltó 1 de los 4 bloques | No usó estructura |
+| **ROI calculado y comunicado** | Número específico, fórmula clara, frase lista para comunicar | ROI calculado pero frase genérica | ROI aproximado sin fórmula | Sin cálculo de ROI |
+| **Plan 30 días con 3 agentes** | 3 agentes específicos con calendario y herramientas | 3 agentes identificados sin detalle de ejecución | 1-2 agentes con plan vago | Sin plan |
+| **Rúbricas de pares completadas** | Evaluó a todos los compañeros con comentarios constructivos | Evaluó a la mayoría | Evaluó parcialmente | No evaluó |
+
+**Total: 100 puntos** (5 criterios × 20 pts)
+
+| Nota | Rango |
+|------|-------|
+| A | 90-100 |
+| B | 80-89 |
+| C | 70-79 |
+| F | < 70 |
+
+---
+
+## 📝 Entrega
+
+📦 **Entregable:**
+
+1. **Grabación del demo** (screen recording de los 5 min o link a la grabación del curso)
+2. **Google Doc "ROI-Calculado"** con fórmula, números y frase de comunicación
+3. **Google Doc "Plan-30-Dias"** con 3 agentes, calendario y compromiso
+4. **Rúbricas llenas** de al menos 3 compañeros del grupo
+
+Link compartido a la carpeta "Proyecto de Instrucción" completa.

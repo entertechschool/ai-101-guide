@@ -1,200 +1,264 @@
-# Lab 06: Mi Agente Inteligente
+# Lab 06: Integración total y mejores prácticas
 
-En C05 construiste el cerebro. Hoy le das manos (Gmail), inteligencia (Router) y memoria (Google Sheets). Al final, compites: ¿quién tiene el mejor agente de triage?
+## 🎯 Objetivos
 
-> ⏱️ **Tiempo:** 95 minutos
-
-### 🎯 Objetivo
-
-Completar el agente de C05 con Gmail, expandirlo con Router (3 rutas) y Google Sheets (logging), y competir en un battle de clasificación.
-
-## Arquitectura Final
-
-```
-                                    ┌─ 🔴 URGENTE → Gmail rojo → Sheets
-Form → Webhook → OpenRouter → Router├─ 🔵 CONSULTA → Gmail normal → Sheets
-                                    └─ 🟢 VENTA → Gmail verde → Sheets
-```
-
-## Antes de Empezar
-
-| Requisito | Verificación |
-|-----------|--------------|
-| Escenario de C05 en Make | Webhook → OpenRouter funcionando |
-| URL de tu formulario v0 | Accesible y conectado al webhook |
-| Google Sheets nueva | Vacía, lista para configurar |
-| SystemPrompt de C05 | En tu Google Doc |
+1. Optimizar al menos 3 prompts aplicando persona + few-shot + chain-of-thought, documentando antes/después.
+2. Aplicar las 4 mejores prácticas del sistema: nombre con fecha, carpeta Backups, error handler, pestaña Logs.
+3. Definir 5 puntos críticos de personalización para Clase 7 y actualizar tabla de parámetros para tu caso real.
 
 ---
 
-## Parte 1: Completa tu Agente — El Momento WOW (20 min)
+## 🔑 Conceptos Clave
 
-### 1.1 Abre tu escenario de C05
-
-En Make, abre tu escenario: `Webhook → OpenRouter`. Verifica que funcione enviando 1 mensaje de prueba.
-
-> Si no lo tienes, el facilitador te dará acceso a un template actualizado.
-
-### 1.2 Agrega módulo Gmail
-
-Haz clic en el **+** después de OpenRouter y agrega el módulo **Gmail > Send an Email**:
-
-1. **Conectar cuenta Gmail:**
-   1. En el módulo Gmail → Click **"Add a connection"**
-   2. Selecciona tu cuenta de Google
-   3. Click **"Allow"** en cada pantalla de permisos (pueden ser 2-3 pantallas)
-   4. Verifica el ✅ verde en la conexión
-   5. Si Google bloquea → prueba en ventana incógnito o con otro navegador
-2. **Para:** Tu email personal
-3. **Asunto:** `[{{CATEGORÍA}}] Nuevo mensaje de {{nombre}}`
-4. **Cuerpo:** La clasificación completa de OpenRouter (mapea el output)
-
-### 1.3 Activa y prueba
-
-1. Activa el escenario (switch **ON**)
-2. Envía 2 mensajes desde TU formulario v0
-3. Revisa tu Gmail — deberías tener 2 emails con clasificación
-
-### WOW moment
-
-> Tu agente recibió un mensaje, lo clasificó y te avisó por email. Sin que hicieras nada.
-
-✅ **Checkpoint:** 2 emails recibidos en Gmail con clasificación del agente.
+- **Prompt engineering avanzado** — 3 técnicas: persona, few-shot, chain-of-thought.
+- **Storytelling de datos** — contexto + causa + acción convierten cifras en historias.
+- **Sistema de producción** — tiene backups, alertas y logs; no solo "funciona en demo".
 
 ---
 
-## Parte 2: Agente Inteligente — Router + Google Sheets (35 min)
+## ⚙️ Setup Inicial
 
-### 2.1 Concepto: flujo lineal vs branching (5 min)
+Verifica que tu sistema modelo esté activo:
 
-El facilitador explica la diferencia:
-
-```
-Lineal:    Webhook → OpenRouter → Gmail (siempre el mismo email)
-Branching: Webhook → OpenRouter → Router → [URGENTE → Gmail rojo]
-                                           [CONSULTA → Gmail normal]
-                                           [VENTA → Gmail verde]
-```
-
-### 2.2 Agregar Router (10 min)
-
-1. En Make, haz clic derecho en la conexión entre OpenRouter y Gmail
-2. Selecciona **Add a Router**
-3. Crea 3 rutas con **Filters**:
-   - **Ruta 1 — URGENTE**: Filter → output contains "URGENTE"
-   - **Ruta 2 — CONSULTA**: Filter → output contains "CONSULTA"
-   - **Ruta 3 — VENTA**: Filter → output contains "VENTA"
-4. Cada ruta conecta a un módulo Gmail con asunto diferente:
-   - 🔴 `[URGENTE] Nuevo mensaje de {{nombre}}`
-   - 🔵 `[CONSULTA] Nuevo mensaje de {{nombre}}`
-   - 🟢 `[VENTA] Nuevo mensaje de {{nombre}}`
-
-> 💡 Si te sobra un Gmail del paso anterior, reúsalo para una de las rutas.
-
-### 2.3 Agregar Google Sheets — Logging (15 min)
-
-1. Agrega módulo **Google Sheets > Add a Row** a una o más rutas
-2. Conecta tu cuenta de Google cuando lo pida
-3. Selecciona tu hoja de Google Sheets
-4. Mapea las columnas:
-
-| Columna | Dato |
-|---------|------|
-| A - Timestamp | `{{now}}` |
-| B - Nombre | `{{nombre}}` |
-| C - Email | `{{email}}` |
-| D - Mensaje | `{{mensaje}}` |
-| E - Categoría | Categoría del output de OpenRouter |
-| F - Acción | Acción sugerida del output |
-
-> 💡 Puedes conectar Sheets a todas las rutas o solo a la que quieras monitorear.
-
-### 2.4 Test completo (5 min)
-
-Envía 3 mensajes desde tu formulario (1 urgente, 1 consulta, 1 venta):
-
-- [ ] ¿Cada email tiene el emoji correcto en el asunto?
-- [ ] ¿Google Sheets registró los 3 mensajes?
-- [ ] ¿El Router ejecutó rutas diferentes?
-
-Toma screenshot del Router con las 3 rutas ejecutadas.
-
-✅ **Checkpoint:** Router con 3 rutas funcionando + Google Sheets registrando.
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Escenario 1 activo con Gemini | De Clase 5 |
+| ☐ | Escenario 2 scheduled viernes con Gemini | De Clase 5 |
+| ☐ | Screenshots de insights de ayer | Para comparar antes/después hoy |
+| ☐ | Brief original de Clase 1 | Para revisitar al definir personalización |
 
 ---
 
-## Parte 3: Battle — ¿Quién Clasifica Mejor? (25 min)
+## Actividad 1: Optimiza prompts para storytelling (45 min)
 
-### Las reglas
+### 1.1 Analiza la diferencia entre insight plano y potente
 
-Todos envían los **MISMOS 5 mensajes** de PetShop Express desde su formulario:
+Compará estos 3 ejemplos:
 
-1. "Mi perro necesita dieta especial y el pedido lleva 3 días de retraso"
-2. "¿Tienen rascadores para gatos grandes? Busco uno resistente"
-3. "QUIERO MI REEMBOLSO. Llevo 5 días esperando respuesta"
-4. "Tengo una factura pendiente, no es urgente pero vence el viernes"
-5. "Las vitaminas que compré no le hicieron efecto a mi gato"
+| Tipo | Insight |
+|------|---------|
+| **Plano** | "Las ventas de la semana fueron S/ 21,700." |
+| **Mediocre** | "Las ventas fueron S/ 21,700, un 108% de la meta semanal." |
+| **Potente** | "Las ventas generaron S/ 21,700 (108% de meta, +12% vs semana anterior), impulsadas por 2 renovaciones grandes de consultoría de Juan. Acción: replicar su estrategia con el resto del equipo." |
 
-### Comparación
+Identifica qué hace potente al tercero:
+- Números concretos ✅
+- Comparación (vs meta y vs anterior) ✅
+- Explicación de causa ✅
+- Acción sugerida ✅
 
-Revisa tu Google Sheets y completa la tabla:
+### 1.2 Reescribe 3 prompts con optimización
 
-| # | Mensaje (resumen) | Tu clasificación | ¿Correcta? |
-|---|-------------------|-----------------|------------|
-| 1 | Perro dieta especial | | |
-| 2 | Rascador para gatos | | |
-| 3 | Cliente enojado reembolso | | |
-| 4 | Factura "no urgente" | | |
-| 5 | Vitaminas no funcionaron | | |
+Toma el prompt de insights de Clase 5 y reescríbelo con las 3 técnicas:
 
-### Votación
-
-- ¿Quién acertó más clasificaciones?
-- ¿Qué SystemPrompt tuvo mejor resultado?
-- Votan el mejor SystemPrompt del grupo
-
-> 💡 **La lección:** el prompt define la calidad, no el modelo. Todos usan Grok, pero los resultados son diferentes.
-
-✅ **Checkpoint:** 5 mensajes enviados, resultados comparados, votación completada.
----
-
-## Parte 4: Análisis + Entregable (15 min)
-
-### Documenta en Google Doc
-
-Agrega estas secciones a tu Google Doc de C05:
-
-**4. Resultados Battle** — Tabla con 5 mensajes y clasificación + puntuación
-
-**5. Mi Agente Completo** — Screenshot del escenario completo en Make (5 módulos: Webhook → OpenRouter → Router → Gmail×3 + Sheets)
-
-**6. Mi Data Log** — Screenshot de Google Sheets con registros
-
-**7. Análisis Crítico:**
+**Prompt v1 (el de ayer):**
 
 ```
-FALLA DEL AGENTE:
-- Mensaje #: ___
-- Qué hizo: ___
-- Qué debería haber hecho: ___
-- Causa probable: ___
-- Cómo mejoraría el SystemPrompt: ___
+Eres un analista de ventas. Analiza los datos de esta semana y devuelve JSON con:
+{resumen, hallazgo_1, hallazgo_2, hallazgo_3, riesgo_1, oportunidad_1, accion_1}
+DATOS: {datos_semana}
 ```
 
-**Reflexión:** ¿Qué proceso de TU trabajo sería un agente como este?
+**Prompt v2 (optimizado):**
+
+```
+Eres un analista de ventas senior con 10 años de experiencia en consultoría.
+Tu estilo es directo, basado en datos y siempre accionable.
+
+CONTEXTO DEL NEGOCIO:
+- Meta semanal: {{meta}}
+- Ticket objetivo: {{ticket_objetivo}}
+- Semana anterior: {{ventas_anterior}}
+
+REGLAS DEL ANÁLISIS:
+1. Cada hallazgo DEBE comparar contra meta o semana anterior
+2. Cada hallazgo DEBE incluir números específicos
+3. Cada hallazgo DEBE explicar la causa probable basándote en las descripciones
+4. Cada acción DEBE ser ejecutable en la próxima semana (no vaga)
+
+EJEMPLO de buen hallazgo (few-shot):
+"Juan generó 45% de las ventas semanales (+22% vs su promedio),
+impulsado por 2 renovaciones grandes de consultoría de larga data.
+Acción: programar 1:1 con Juan para documentar qué hizo distinto y replicarlo."
+
+DATOS SEMANA:
+{{datos_formateados}}
+
+INSTRUCCIONES:
+Piensa paso a paso antes de responder:
+1. Primero identifica los 3 fenómenos más notables de la semana
+2. Luego para cada uno encuentra el dato más específico
+3. Finalmente formula la acción concreta
+
+Responde SOLO JSON (sin markdown, sin texto adicional):
+{ "resumen_ejecutivo": "2-3 oraciones",
+  "hallazgo_1": "como el ejemplo",
+  "hallazgo_2": "...",
+  "hallazgo_3": "...",
+  "riesgo_1": "...",
+  "oportunidad_1": "...",
+  "accion_1": "...",
+  "accion_2": "..." }
+```
+
+### 1.3 Ejecuta y compara antes/después
+
+1. Reemplaza el prompt en el módulo HTTP del Escenario 2
+2. Run once
+3. Toma screenshot del PDF nuevo
+4. Compará con el PDF de Clase 5
+
+Documenta en tu tabla de parámetros:
+
+| Marcador | Antes (C05) | Después (C06) |
+|----------|-------------|---------------|
+| hallazgo_1 | "Juan vendió bien" | "Juan generó 45% de ventas (+22% vs promedio)..." |
+
+✅ **Checkpoint:** Al menos 3 marcadores tipo IA muestran diferencia notable antes/después. Diferencia documentada en la tabla de parámetros.
 
 ---
 
-## 📝 Entregable Completo (C05 + C06)
+## Actividad 2: Aplica las 4 mejores prácticas (40 min)
 
-**Google Doc con 7 secciones:**
+### 2.1 Nombre de archivo con fecha dinámica
 
-1. **Mi Formulario** — URL del form v0 + screenshot (con bloque debug)
-2. **Mi Agente (cerebro)** — SystemPrompt + UserPrompt completos
-3. **Primer Test (C05)** — Screenshot de Make History
-4. **Resultados Battle** — Tabla 5 mensajes + clasificación + puntuación
-5. **Mi Agente Completo** — Screenshot Make (5+ módulos) con Router
-6. **Mi Data Log** — Screenshot de Google Sheets con registros
-7. **Análisis Crítico** — 1 falla documentada + reflexión
+En el módulo **Export as PDF** del Escenario 2, edita el nombre del archivo:
 
-**Entrega:** Link público del Google Doc
+```
+Reporte_{{formatDate(now; "YYYY-MM-DD")}}.pdf
+```
+
+Resultado: `Reporte_2026-04-19.pdf`. Los PDFs quedan ordenados cronológicamente.
+
+### 2.2 Carpeta Backups en Drive
+
+1. Crea carpeta `Backups` dentro de "Proyecto de Instrucción"
+2. Después del Export as PDF, agrega módulo **Google Drive → Upload a file**
+   - **Folder:** Backups
+   - **File:** el PDF del módulo anterior
+   - **File name:** mismo nombre con fecha
+
+### 2.3 Error handler con alerta
+
+1. Click derecho en el módulo más frágil (HTTP a Gemini) → **Add error handler → Resume**
+2. En el handler, agrega **Gmail → Send an Email**:
+   - **Subject:** `❌ Error en flujo del reporte — {{now}}`
+   - **Content:** `El módulo [nombre] falló. Revisar Make History en el escenario [link].`
+   - **To:** tu correo
+
+### 2.4 Pestaña Logs en Sheet
+
+1. En tu Sheet, crea nueva pestaña `Logs` con columnas: `Fecha`, `Hora`, `Escenario`, `Estado`, `Duracion`, `Error`
+2. Al inicio del Escenario 2, agrega **Tools → Set variable** → `inicio = now`
+3. Al final del Escenario 2 (después de Historico), agrega **Google Sheets → Add a row**:
+   - Pestaña: `Logs`
+   - Valores: fecha, hora, "Reporte Semanal", "OK", `now - inicio`, null
+
+En el error handler del 2.3, agrega también Add a row en Logs con Estado = "Error".
+
+✅ **Checkpoint:** Tu sistema tiene: nombre con fecha, backup en Drive, error handler con alerta, pestaña Logs alimentándose.
+
+---
+
+## Actividad 3: Define tu plan de personalización (30 min)
+
+### 3.1 Revisa tu brief original de Clase 1
+
+Abre el brief que escribiste en la Clase 1. Léelo otra vez con el sistema modelo en mente.
+
+### 3.2 Identifica los 5 puntos críticos
+
+Para cada uno, especifica qué cambiarás en Clase 7:
+
+| # | Punto | Caso Roberto | TU caso |
+|---|-------|--------------|---------|
+| 1 | Datos de entrada | Correos de ventas | [<!-- tus correos, forms, chats -->] |
+| 2 | Estructura del Sheet | Columnas de ventas | [<!-- tus columnas propias -->] |
+| 3 | Plantilla de Slides | Marca genérica | [<!-- tu logo, colores, tipografía -->] |
+| 4 | Prompts de Gemini | Caso ventas | [<!-- tu contexto profesional -->] |
+| 5 | Destinatarios y frecuencia | Gerente, semanal | [<!-- tu destinatario, tu frecuencia -->] |
+
+### 3.3 Actualiza tabla de parámetros para tu caso
+
+Duplica la sección "Marcadores" de la tabla de parámetros. Crea una versión "Tu Caso" donde adaptas nombres:
+
+| Marcador genérico | Tu versión |
+|-------------------|------------|
+| `{{ventas_total}}` | `{{horas_facturadas}}` (para consultores) |
+| `{{clientes_nuevos}}` | `{{leads_calificados}}` (para marketing) |
+
+### 3.4 Preview del proyecto de Clase 7
+
+Escribe en 2-3 líneas en tu brief actualizado:
+
+```
+En Clase 7 voy a adaptar el sistema para:
+- [Describí tu caso con más detalle que en C1]
+- [Qué va a ser lo más difícil de personalizar]
+- [Qué datos reales vas a usar]
+```
+
+✅ **Checkpoint:** Plan de personalización con 5 puntos concretos, tabla de parámetros actualizada y preview del proyecto escrito.
+
+---
+
+## 📁 Estructura Final del Proyecto
+
+```
+Make.com/
+├── Escenario 1: Gmail → Gemini → Sheet (Instant, activo con prompt optimizado)
+└── Escenario 2: Sheet → Gemini → Slides → PDF → Gmail + Backup + Historico + Log
+    └── Error handler con alerta por correo
+
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc (actualizado con preview de Clase 7)
+    ├── Tabla-de-Parámetros.doc (con secciones: Antes/Después + Plan Personalización)
+    ├── sistema-reporte.xlsx (con pestaña Logs nueva)
+    ├── Reporte-Plantilla.slides
+    └── Backups/ (PDFs de cada corrida)
+```
+
+---
+
+## Reflexión
+
+Antes de terminar, responde brevemente:
+
+1. **¿Cuál de las 3 técnicas de prompt engineering (persona, few-shot, chain-of-thought) sentiste que cambió más la calidad?**
+2. **¿Cuál de las 4 mejores prácticas vas a extender a otros sistemas de tu trabajo?**
+3. **¿Cuál de los 5 puntos de personalización va a ser el más difícil en Clase 7?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Agrega un segundo prompt para el flujo instantáneo
+El prompt de extracción de correos también puede mejorarse con few-shot. Agrega 2 ejemplos de correo → JSON esperado.
+
+### 🟡 Dashboard de Logs
+Crea un gráfico en la pestaña Logs que muestre éxitos/errores por semana. Útil para ver salud del sistema.
+
+### 🔴 Prueba el modelo gemini-2.0-flash-thinking
+Cambia el modelo en el HTTP. Este modelo "piensa" más antes de responder — compara calidad con el flash estándar.
+
+---
+
+## 📝 Entrega
+
+### Checklist
+
+- [ ] 3 prompts optimizados con antes/después documentado en tabla de parámetros
+- [ ] 4 mejores prácticas aplicadas y verificadas
+- [ ] Plan de personalización con 5 puntos críticos
+- [ ] Tabla de parámetros actualizada con "Tu versión" de marcadores
+
+### Entregable
+
+📸 **Screenshots** mostrando:
+- Dos PDFs lado a lado: versión Clase 5 (prompt plano) vs versión Clase 6 (prompt optimizado)
+- Pestaña `Logs` del Sheet con al menos 2 entradas
+- Error handler configurado en el Escenario 2
+- Sección "Plan de Personalización" de la tabla de parámetros
+
+> ⚠️ Los screenshots deben mostrar tu cuenta de Google visible.

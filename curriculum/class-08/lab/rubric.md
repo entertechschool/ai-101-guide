@@ -1,131 +1,137 @@
-# Rúbrica de Evaluación - Lab 08: Mi Proyecto Open-Source
+# Rúbrica - Lab Módulo 2: Demo Day + ROI + Plan 30 días
 
-**Puntaje Total:** 100 puntos
-**Distribución:** 5 criterios × 20 puntos = 100
+> 📋 **Documento interno para evaluadores**
+
+## Información General
+
+| Aspecto | Detalle |
+|---------|---------|
+| **Proyecto** | Demo Day + ROI + Plan 30 días (cierre del curso) |
+| **Módulo** | 2 - Integración y Proyecto |
+| **Clase** | 8 - Demo Day |
+| **Puntaje Total** | 100 puntos |
 
 ---
 
-## 1. Repo GitHub (20 pts)
+## Criterios de Evaluación
 
-**Evalúa:** Repositorio público con documentación profesional del agente.
+### 1. Demo en vivo funcional (20 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| Excelente | 20 | Repo público. README con SystemPrompts completos (OR#1 + OR#2), arquitectura, ejemplo real y URL de demo funcional. |
-| Bueno | 15 | Repo público. README tiene SystemPrompts pero falta ejemplo o URL de demo. |
-| Satisfactorio | 10 | Repo público pero README incompleto. Solo 1 SystemPrompt o sin estructura clara. |
-| Bajo | 5 | Repo privado o sin README. SystemPrompts no documentados. |
+| **Excelente** | 20 | Sistema corrió sin fallas, correo real disparó actualización visible en el Sheet, PDF llegó con insights de Gemini |
+| **Bueno** | 15 | Funcionó con 1 intento adicional (filtro, reconexión) |
+| **Satisfactorio** | 10 | Mostró sistema pero solo con slides/capturas, no en vivo |
+| **Bajo** | 5 | Sistema preparado pero no funcionó en el momento |
+| **No entregado** | 0 | Sin demo |
+
+**Aspectos evaluados:**
+- Correo real enviado en pantalla compartida
+- Sheet actualizándose en <10 segundos (Instant Trigger)
+- PDF generado visible en bandeja
+- Marcadores tipo IA llenos con texto coherente
 
 ---
 
-## 2. Post LinkedIn (20 pts)
-
-**Evalúa:** Post publicado con estructura profesional, URLs y honestidad.
+### 2. Estructura PSDR (20 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| Excelente | 20 | Post publicado con hook, descripción clara, URLs (Vercel + GitHub), métrica real y aprendizaje honesto. Iteró con feedback de peer review. |
-| Bueno | 15 | Post publicado con la mayoría de elementos. Falta métrica o aprendizaje honesto. |
-| Satisfactorio | 10 | Post publicado pero genérico. Sin URLs o sin métrica real. |
-| Bajo | 5 | Post no publicado o copy-paste sin personalización. |
+| **Excelente** | 20 | 4 bloques claros (Problema/Solución/Demo/Resultado), dentro de 5 min exactos |
+| **Bueno** | 15 | PSDR completo pero con algún bloque corto (<30s) o largo (>90s) |
+| **Satisfactorio** | 10 | Faltó 1 de los 4 bloques (ej: no comunicó ROI) |
+| **Bajo** | 5 | Faltaron 2+ bloques o fuera de tiempo grave |
+| **No entregado** | 0 | No siguió la estructura |
+
+**Aspectos evaluados:**
+- Problema cuantificado (X horas, Y tareas)
+- Solución explicada sin jerga técnica
+- Demo en vivo (no solo capturas)
+- Resultado con números (ROI comunicado)
 
 ---
 
-## 3. Pitch (20 pts)
-
-**Evalúa:** Presentación de 3 minutos con demo en vivo del agente.
+### 3. ROI calculado y comunicado (20 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| Excelente | 20 | Explicó problema + solución en 2 min. Demo en vivo funcionó. Dentro del tiempo. Claro y enfocado en resultado. |
-| Bueno | 15 | Presentación clara pero demo falló parcialmente. Mostró Make History como respaldo. |
-| Satisfactorio | 10 | Presentación desorganizada o excedió el tiempo. Sin demo o demo no funcionó. |
-| Bajo | 5 | No presentó o presentación sin estructura. Sin intento de demo. |
+| **Excelente** | 20 | Número específico mensual + anual, fórmula clara, frase lista para LinkedIn/jefe |
+| **Bueno** | 15 | ROI calculado con fórmula pero frase de comunicación genérica |
+| **Satisfactorio** | 10 | ROI aproximado sin fórmula visible |
+| **Bajo** | 5 | Mencionó "ahorro tiempo" sin cuantificar |
+| **No entregado** | 0 | Sin cálculo de ROI |
+
+**Aspectos evaluados:**
+- Horas ahorradas (conservador)
+- Tarifa por hora definida
+- Ahorro mensual y anual calculado
+- Frase de comunicación de 1 línea lista
 
 ---
 
-## 4. Imagen Generada (20 pts)
-
-**Evalúa:** Uso de Gemini para crear imagen de portada con iteración.
+### 4. Plan 30 días con 3 próximos agentes (20 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| Excelente | 20 | Imagen generada con Gemini. Iteró al menos 1 vez para mejorar. Resultado profesional usado como portada del post. |
-| Bueno | 15 | Imagen generada con Gemini. Sin iteración pero resultado aceptable. Usada en el post. |
-| Satisfactorio | 10 | Imagen generada pero no usada en el post. O calidad muy baja sin intento de mejora. |
-| Bajo | 5 | Sin imagen generada. Usó imagen stock o no incluyó portada. |
+| **Excelente** | 20 | 3 agentes específicos con qué automatizan, datos, herramientas y semana de construcción |
+| **Bueno** | 15 | 3 agentes identificados pero sin detalle de ejecución |
+| **Satisfactorio** | 10 | 1-2 agentes con plan vago |
+| **Bajo** | 5 | Lista de 10 tareas sin priorización |
+| **No entregado** | 0 | Sin plan |
+
+**Aspectos evaluados:**
+- 10 tareas repetitivas identificadas
+- 3 marcadas con 80/20 (las que más tiempo quitan)
+- Por cada agente: qué/datos/herramientas/semana
+- Compromiso público compartido con el grupo
 
 ---
 
-## 5. Plan 30 Días (20 pts)
-
-**Evalúa:** Roadmap semanal con quick-wins concretos y accionables.
+### 5. Rúbricas de pares completadas (20 puntos)
 
 | Nivel | Puntos | Descripción |
 |-------|--------|-------------|
-| Excelente | 20 | Plan con 4 semanas diferenciadas. 3 quick-wins concretos y accionables. Compartió quick-win #1 con el grupo. |
-| Bueno | 15 | Plan presente pero semanas poco diferenciadas. Quick-wins genéricos. |
-| Satisfactorio | 10 | Plan vago sin estructura semanal. Menos de 3 quick-wins. |
-| Bajo | 5 | Sin plan o plan copy-paste sin personalización. Sin quick-wins. |
+| **Excelente** | 20 | Evaluó a TODOS los compañeros con los 4 criterios + comentarios constructivos |
+| **Bueno** | 15 | Evaluó al ≥80% del grupo con criterios (sin comentarios extensos) |
+| **Satisfactorio** | 10 | Evaluó al 50-70% del grupo |
+| **Bajo** | 5 | Evaluó a <50% |
+| **No entregado** | 0 | No evaluó a nadie |
 
 ---
 
-## Resumen de Puntajes
+## Escala de Calificación
 
-| Criterio | Excelente | Bueno | Satisfactorio | Bajo | Max |
-|----------|-----------|-------|---------------|------|-----|
-| Repo GitHub | 20 | 15 | 10 | 5 | 20 |
-| Post LinkedIn | 20 | 15 | 10 | 5 | 20 |
-| Pitch | 20 | 15 | 10 | 5 | 20 |
-| Imagen Generada | 20 | 15 | 10 | 5 | 20 |
-| Plan 30 Días | 20 | 15 | 10 | 5 | 20 |
-| **TOTAL** | **100** | **75** | **50** | **25** | **100** |
-
----
-
-## Escala de Calificaciones
-
-| Rango | Calificación | Descripción |
-|-------|--------------|-------------|
-| 90-100 | A | Excelente - Proyecto publicado y presentable |
-| 80-89 | B | Bueno - Proyecto sólido con ajustes menores |
+| Rango | Nota | Descripción |
+|-------|------|-------------|
+| 90-100 | A | Excelente - Demo funcional + ROI cuantificado + Plan accionable |
+| 80-89 | B | Bueno - Cumplió todos los criterios con áreas menores |
 | 70-79 | C | Satisfactorio - Cumple requisitos mínimos |
-| < 70 | F | Necesita Mejora - Entregables incompletos |
+| < 70 | F | Necesita mejora - Seguimiento post-curso recomendado |
 
 ---
 
 ## Checklist de Entrega
 
-### Entregable 1: Repo GitHub
-- [ ] Repo público y accesible
-- [ ] README con SystemPrompts (OR#1 + OR#2)
-- [ ] Arquitectura documentada
-- [ ] URL de demo (Vercel) incluida
-- [ ] Ejemplo de input/output real
-
-### Entregable 2: Post LinkedIn
-- [ ] Post publicado (no borrador)
-- [ ] Hook de 1 línea
-- [ ] Descripción del agente (2-3 líneas)
-- [ ] URLs: Vercel + GitHub
-- [ ] Métrica real + aprendizaje honesto
-- [ ] Imagen de portada generada con IA
-
-### Entregable 3: Pitch
-- [ ] Presentación de máx 3 minutos
-- [ ] Explicó problema + solución
-- [ ] Demo en vivo (o Make History como respaldo)
-
-### Entregable 4: Plan 30 Días
-- [ ] Roadmap con 4 semanas
-- [ ] 3 quick-wins concretos
-- [ ] Compartió quick-win #1 con el grupo
+- [ ] Grabación del demo (screen recording de 5 min o link a la grabación del curso)
+- [ ] Google Doc "ROI-Calculado" con fórmula, números mensuales y anuales
+- [ ] Google Doc "Plan-30-Dias" con 3 agentes y calendario semanal
+- [ ] Rúbricas llenas de al menos 3 compañeros
 
 ---
 
-## Entregables Requeridos
+## Notas para el Evaluador
 
-1. **URL de GitHub** — repo público con README profesional
-2. **URL de LinkedIn** — post publicado con imagen de portada
-3. **Screenshot** — del post publicado
-4. **Plan 30 días** — con 3 quick-wins para esta semana
+1. **Si la demo falla por causa externa** (internet, Make down), NO penalizar. Evaluar el sistema tal como estaba preparado.
+2. **Priorizar ROI honesto sobre ROI inflado.** Un ROI conservador de S/ 1,200/mes vale más que uno exagerado de S/ 10,000/mes.
+3. **El compromiso público es señal de intención**, no de cumplimiento. Evaluar claridad y especificidad del plan.
+4. **Las rúbricas de pares tienen peso igual al demo propio.** Calificar bien a compañeros es parte del trabajo.
+
+---
+
+## Ejemplo de Retroalimentación
+
+### Retroalimentación Positiva
+> "Excelente Demo Day. Tu presentación siguió PSDR al minuto, la demo en vivo funcionó a la primera con el correo que enviaste desde tu cuenta personal, y el ROI de S/ 18,000/año es realista y comunicable. El plan 30 días con 3 agentes (cotizador automático, seguimiento post-venta, reporte mensual a clientes) está bien priorizado. Listo para AI 201."
+
+### Áreas de Mejora
+> "El sistema funciona bien pero la demo se sintió apurada — usaste 3 minutos en explicar arquitectura y solo 1 minuto en mostrarla funcionando. Para presentaciones futuras a jefes o clientes, invertí la proporción: 1 min arquitectura, 2 min demo en vivo."

@@ -1,104 +1,92 @@
-> 📦 **Módulo 2:** Clase 4 de 4 — Cierre del Curso
+> **Módulo 2:** Clase 4 de 4 — Demo Day y Cierre del Curso
 
-# Clase 08: Demo Day + El Futuro
+# Clase 08: Demo Day + ROI + Plan 30 días
 
 ## Resumen
 
-Culminación de 4 semanas. Esta clase tiene 3 actos: **PREPARAR, PRESENTAR, PUBLICAR.** Primero completas tu portfolio: conectas Vercel con GitHub para crear tu primer proyecto open-source y documentas tus SystemPrompts en un README profesional. Luego preparas un post de LinkedIn con Claude + una imagen de portada generada con Gemini. Y al final, pitches de 3 minutos donde presentas tu post + demo rápida en vivo.
+Esta es la última clase. Traes tu sistema funcionando con datos reales y lo presentas ante el grupo en 5 minutos usando la estructura **PSDR** (Problema → Solución → Demo en vivo → Resultado). La demo en vivo es obligatoria — no se trata de mostrar slides bonitas, se trata de enviar un correo real y que el sistema actualice el Sheet en pantalla para que todos vean la automatización funcionando.
 
-Construir es la mitad. Comunicar lo que construiste es la otra mitad. Hoy cierras el ciclo: evidencia real de competencia IA, publicada profesionalmente, con un plan para seguir creciendo.
+Después cada uno calcula su **ROI** en soles: horas ahorradas × tarifa × 4 semanas = ahorro mensual, × 12 = anual. Esto convierte el sistema de "proyecto de curso" en "argumento para vender servicios" o "caso para pedir un aumento". Cierras con un plan de 30 días donde priorizás las 3 próximas automatizaciones usando principio 80/20 y te comprometes públicamente con el grupo.
 
 ---
 
 ## ¿Por qué te sirve?
 
-### Tu recorrido C01 → C08
-
-| Clase | Qué lograste | Patrón |
-|-------|-------------|--------|
-| C01 | Descubriste qué puede (y no puede) la IA | Mindset |
-| C02 | Dominaste prompts con RICE + Few-shot | Tú → IA |
-| C03 | Usaste IA como socio pensante | IA ↔ Tú |
-| C04 | Integraste múltiples herramientas | Proyecto |
-| C05 | Construiste el cerebro de un agente | IA trabaja por ti |
-| C06 | Completaste un agente inteligente | Branching + logging |
-| C07 | Construiste agente generativo para TU caso | Aplicación real |
-| **C08** | **GitHub + LinkedIn + Pitch** | **Compartir** |
-
-> "Construir es la mitad. Comunicar lo que construiste es la otra mitad."
+- **Un demo en vivo impacta 10x más que 20 slides explicativas.** Las personas no olvidan ver un sistema hacer magia en segundos.
+- **El ROI en soles convierte tu trabajo invisible en argumento visible.** "Ahorro 6 horas a la semana" es abstracto. "Ahorro S/ 28,800 al año" entra en cualquier conversación con tu jefe o cliente.
+- **Un compromiso público con plan 30 días reduce la probabilidad de abandono al 20%.** Sin plan, 90% de estudiantes abandonan sus sistemas en 1 mes.
 
 ---
 
-## Insight: "El curso termina. Tu desarrollo no."
+## 🎯 ¿Qué haremos en clase?
 
-```
-AI 101 (4 semanas)         Plan 30 días          AI 201          AI 301
-┌────────────────┐    ┌─────────────────┐    ┌──────────┐    ┌──────────┐
-│ Super-usuario  │ →  │ 3 quick-wins    │ →  │Construir │ →  │ Escalar  │
-│ de IA          │    │ esta semana     │    │ con IA   │    │ con IA   │
-└────────────────┘    └─────────────────┘    └──────────┘    └──────────┘
-```
+1. **Empezarás con el test diagnóstico del Módulo 2** - 15 min de preguntas sobre todo lo aprendido en M2.
+2. **Presentarás tu demo en vivo (5 min)** - Estructura PSDR con correo real disparando tu sistema.
+3. **Calcularás tu ROI personal** - Horas ahorradas × tarifa × 4 × 12 = tu argumento en números.
+4. **Definirás tu plan 30 días con 3 agentes** - Las 3 próximas automatizaciones priorizadas con principio 80/20.
 
 ---
 
-## ¿Qué haremos en clase?
+## Objetivos de Aprendizaje
 
-1. **Test + Retrospectiva** — Test diagnóstico M2 + recorrido emocional C01→C07
-2. **GitHub** — Conectar Vercel → GitHub + README con SystemPrompts = primer proyecto open-source
-3. **LinkedIn + Imagen** — Draft de post con Claude + imagen de portada con Gemini + peer review
-4. **Pitches + Publicar** — Pitch 3 min (problema + post + demo rápida) + "3...2...1...PUBLICAR!"
-5. **Cierre** — Roadmap 30 días con Claude + anti-hype + cierre emocional
+Al finalizar esta clase, podrás:
 
----
-
-## Objetivos de aprendizaje
-
-1. Publicar tu primer proyecto open-source en GitHub con SystemPrompts documentados
-2. Crear y publicar un post de LinkedIn profesional con imagen generada por IA
-3. Presentar tu caso en un pitch de 3 minutos con demo en vivo
+1. **Estructurar** una presentación ejecutiva de 5 minutos usando el formato PSDR.
+2. **Ejecutar** una demo en vivo con datos reales ante una audiencia.
+3. **Calcular** el ROI de un sistema automatizado en unidades monetarias y temporales.
+4. **Priorizar** 3 próximas automatizaciones aplicando el principio 80/20 a tus tareas repetitivas.
 
 ---
 
-## Preparación para la clase
+## ✅ Preparación para la Clase
 
-### Obligatorio
+### De clases anteriores
 
-1. **Agente de C07 FUNCIONANDO** — URL de Vercel activa + escenario Make encendido + email llegando
-2. **Cuenta de GitHub** creada (github.com — es gratis)
-3. **SystemPrompts copiados** — OR#1 y OR#2 accesibles (en un doc, nota o clipboard)
-4. **Cuenta de LinkedIn** abierta y lista para publicar
-5. **Cuenta de Gemini** (gemini.google.com)
+- Tu sistema propio de Clase 7 funcionando con datos reales
+- 2 escenarios v2 activos (flujo instantáneo + semanal scheduled)
+- Plantilla de Slides con tu marca
+- Tabla de parámetros actualizada
 
-### Reflexiona antes de clase
+### Reflexión previa
 
-- ¿Cuál fue tu antes/después más impactante del curso?
-- ¿Qué limitación encontraste que te hizo aprender más?
-- Si alguien te pide detalles sobre tu agente en LinkedIn, ¿qué lo haría creíble?
+Antes de llegar a clase, reflexiona sobre:
+
+- ¿Cuál es el momento más impactante que puedes mostrar en 2 minutos?
+- ¿Cuál es tu tarifa por hora (o salario ÷ horas trabajadas al mes) para calcular ROI?
+
+### Herramientas
+
+- [ ] **Sistema propio funcionando** — con 3 correos de prueba reales listos para disparar en vivo
+- [ ] **Calculadora** — para el cálculo de ROI (apps de celular o Google)
+- [ ] **Cronómetro visible** — para cumplir los 5 minutos
+- [ ] **Google Doc "Plan 30 días"** — crearlo vacío antes de clase
+
+### Lectura sugerida
+
+- [Storytelling en presentaciones ejecutivas](https://hbr.org/2014/07/how-to-give-a-killer-presentation){:target="_blank"} - Harvard Business Review clásico.
+- [Principio 80/20 (Pareto)](https://en.wikipedia.org/wiki/Pareto_principle){:target="_blank"} - Concepto aplicado al plan 30 días.
 
 ---
 
-## Glosario de nuevos términos
+## Glosario
 
-- **Open-source**: Código público que otros pueden ver, estudiar y aprender de él
-- **Repositorio (repo)**: Carpeta en GitHub que contiene el código de tu proyecto + documentación
-- **README**: Archivo que documenta qué hace tu proyecto, cómo funciona y qué herramientas usa
-- **Pitch**: Presentación breve y enfocada — problema + solución + evidencia
-- **NanoBanana**: Estilo de generación de imágenes en Gemini para crear portadas profesionales
+| Término | Definición |
+|---------|------------|
+| **PSDR** | Problema + Solución + Demo + Resultado — estructura de 5 minutos. |
+| **Demo en vivo** | Mostrar el sistema funcionando con datos reales, no solo hablar de él. |
+| **ROI** | *Return on Investment* — horas ahorradas × tarifa = ahorro monetario. |
+| **Tarifa efectiva** | Tu valor por hora real (salario mensual ÷ horas trabajadas mensuales). |
+| **Principio 80/20** | El 20% de tareas concentra el 80% del tiempo — identificar esas 3 tareas. |
+| **Quick-win** | Automatización de alto impacto y baja dificultad para implementar rápido. |
+| **Compromiso público** | Anunciar el plan al grupo — aumenta probabilidad de cumplirlo. |
 
 ---
 
 ## Recursos Adicionales
 
-- [GitHub Quickstart](https://docs.github.com/en/get-started/quickstart){:target="_blank"} - Guía de inicio en GitHub
-- [LinkedIn Post Best Practices](https://www.linkedin.com/help/linkedin/answer/a519782){:target="_blank"} - Tips para publicar
+- [Plantilla de cálculo de ROI](https://docs.google.com/spreadsheets/){:target="_blank"} - Puedes hacer una rápida en Google Sheets en clase.
+- [AI 201 — Construye con IA](https://entertechschool.com/){:target="_blank"} - Siguiente paso en la ruta AI Solutions.
 
 ---
 
-## Herramientas necesarias
-
-- [ ] 💻 Laptop con Make abierto (agente C07 funcionando)
-- [ ] 🐙 Cuenta de GitHub creada
-- [ ] 📝 SystemPrompts (OR#1 + OR#2) copiados
-- [ ] 📱 LinkedIn abierta y lista para publicar
-- [ ] 🎨 Gemini abierto (para generar imagen de portada)
-- [ ] 🧠 Claude abierto (para draft de LinkedIn post)
+> ⚠️ **Lab Calificado** - Este lab integra Demo Day + ROI + Plan 30 días. Ver rúbrica en `lab/README.md`.

@@ -1,216 +1,155 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 06: Tu Agente Inteligente
-## De flujo lineal a agente que decide, actúa y registra
-
-*AI 101 - Entertech School*
+# Clase 06: Integración total y mejores prácticas
+## De sistema demo a sistema de producción
 
 ---
 
-## 🔗 Transición: C05 → C06
+## TRANSICIÓN: Clase 05 → Clase 06
 
-### En Clase 05:
-- Construiste el **cerebro** del agente
-- Form → Webhook → OpenRouter (clasifica)
-- Veías el resultado en Make History
+### Clase anterior:
+- Gemini API integrada en los 2 flujos
+- Marcadores tipo IA llenándose automáticamente
+- Sistema modelo activo 24/7
 
-### Hoy en Clase 06:
-- Le damos **manos** (Gmail)
-- Le damos **inteligencia** (Router — rutas diferentes)
-- Le damos **memoria** (Google Sheets — registra todo)
+### Hoy:
+- Prompts pasan de "planos" a "potentes" (10x calidad)
+- Sistema pasa de demo a producción (backups, alertas, logs)
+- Preparamos la transición a TU caso real
 
-> "El cerebro ya piensa. Hoy le damos cuerpo."
-
----
-
-## 🧠 Pregunta Detonadora
-
-### Tu agente clasifica todo. Pero ¿qué pasa si URGENTE y CONSULTA reciben el MISMO email?
-
-**A)** No importa, lo importante es que clasifique
-
-**B)** El agente debería enviar emails diferentes según la categoría
-
-**C)** Solo necesito saber la categoría, el email es secundario
-
-**D)** Debería enviar email diferente Y registrar la decisión
-
-> 🕐 30 segundos → levanten la mano
+> "El sistema de ayer funcionaba. El sistema de hoy dura."
 
 ---
 
-## 🧠 Pregunta Detonadora — Respuesta
+## QUIZ PRE-LAB
 
-**Respuesta correcta: D**
+### Pregunta:
 
-- **A:** ❌ Si todo recibe el mismo email, ¿para qué clasificar?
-- **B:** ⚠️ Cierto pero incompleto — emails diferentes es solo la mitad
-- **C:** ❌ Sin acción, la clasificación no sirve de nada
-- **D:** ✅ Acción diferenciada + registro = agente inteligente completo
+De los insights que Gemini generó ayer, ¿cuáles sentiste que eran útiles y cuáles tibios? ¿Qué les faltaba a los tibios?
 
-> **Hoy:** Rutas diferentes (Router) + registro de decisiones (Google Sheets)
+*Toma 2-3 respuestas. Pista: números concretos, comparación, causa, acción.*
 
 ---
 
-## 🎬 Demo: Completar el Agente
+## COMPROBACIÓN
 
-### El facilitador agrega Gmail al escenario de C05:
+### Pregunta (después de la demo):
 
-1. Envía un mensaje desde el formulario
-2. El agente clasifica con OpenRouter
-3. **Gmail envía un email con la clasificación**
+Acabas de ver el mismo dato generado por 2 prompts distintos. ¿Qué 3 cosas tiene el insight "potente" que NO tiene el "plano"?
 
-### El momento WOW:
-
-> "El agente recibió, pensó y te avisó. Sin que hicieras nada."
-
-Tu primer agente end-to-end: Form → Decide → Actúa.
+A. Emojis, colores, negritas
+B. Números, comparación contra algo, causa probable
+C. Más palabras en general
+D. Referencias bibliográficas
 
 ---
 
-## 🎯 COMPROBACIÓN
+## COMPROBACIÓN - Respuesta
 
-### ¿Qué convirtió al agente de C05 en un agente "completo"?
+**Respuesta correcta:** B
 
-**A)** Cambiar el modelo de IA por uno más potente
+**Análisis de opciones:**
+- **A:** Forma, no fondo. Un insight potente sin formato sigue siendo potente.
+- **B:** Correcto. Los 3 pilares del storytelling de datos: números, contexto, causa.
+- **C:** Al revés — un insight potente puede ser más corto (más denso).
+- **D:** No es reporte académico; es ejecutivo.
 
-**B)** Agregar más mensajes de prueba
-
-**C)** Conectar Gmail para que el agente ACTÚE sobre su decisión
-
-**D)** Mejorar el SystemPrompt con más reglas
-
-> 🕐 30 segundos → levanten la mano
+> **Clave:** Potente = datos + comparación + causa + acción. Si falta alguno, está tibio.
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## CHECKPOINT Actividad 1: Prompts optimizados con antes/después
 
-**Respuesta correcta: C**
+### Verificar:
+Cada estudiante muestra 2 PDFs (C05 vs C06).
 
-- **A:** ❌ Mismo modelo (Grok), la potencia no cambió
-- **B:** ❌ Más datos no cambian la arquitectura
-- **C:** ✅ Sin acción, la clasificación se queda en Make History — con Gmail, el agente ACTÚA
-- **D:** ❌ El SystemPrompt ya funcionaba — lo que faltaba era la acción
+**¿Qué debe verse?**
+- Insights de C06 con números específicos (no "las ventas fueron bien")
+- Al menos 1 comparación (vs meta o vs anterior) por hallazgo
+- Acciones ejecutables (no "mejorar ventas" sino "programar 1:1 con Juan")
 
-> **Clave:** Decidir sin actuar = clasificar en el vacío. El agente necesita manos, no solo cerebro.
-
----
-
-## Concepto Clave: Flujo Lineal vs Branching
-
-```
-LINEAL (C05):
-  Webhook → OpenRouter → Gmail
-  (todos los mensajes → mismo email)
-
-BRANCHING (C06):
-  Webhook → OpenRouter → Router ─┬─ 🔴 URGENTE → Gmail rojo
-                                  ├─ 🔵 CONSULTA → Gmail normal
-                                  └─ 🟢 VENTA → Gmail verde + Sheets
-```
-
-| Concepto | Qué es | Para qué |
-|----------|--------|----------|
-| **Router** | Divide el flujo en rutas | Acciones diferentes por categoría |
-| **Filter** | Condición de cada ruta | "Si output contiene URGENTE → ruta 1" |
-| **Logging** | Registrar en Sheets | Auditar decisiones del agente |
+**Problemas comunes:**
+- Prompt v2 copiado literal sin adaptar al caso → personalizar el contexto
+- Gemini sigue dando insights planos → verificar que el few-shot (ejemplo) está incluido
 
 ---
 
-## ¿Por qué registrar decisiones?
+## CHECKPOINT Actividad 2: 4 mejores prácticas activas
 
-### Google Sheets como bitácora del agente
+### Verificar:
+Sistema con las 4 aplicadas.
 
-**Sin logging:**
-- "Mi agente clasifica bien" → ¿Cómo lo sabes?
-- "El agente se equivocó" → ¿Cuántas veces? ¿En qué?
+**¿Qué debe verse?**
+- Nombre de PDF con fecha (ej: `Reporte_2026-04-19.pdf`)
+- Carpeta Backups con al menos 1 PDF
+- Error handler visible en el módulo HTTP
+- Pestaña `Logs` con columnas correctas
 
-**Con logging:**
-- Cada decisión queda registrada con timestamp
-- Puedes auditar, filtrar, analizar tendencias
-- Base para mejorar el SystemPrompt con datos reales
-
-> **Logging no es opcional** — es lo que convierte un agente en algo profesional.
-
----
-
-## Las Herramientas de Hoy
-
-| Herramienta | Rol | Nueva? |
-|-------------|-----|--------|
-| **Gmail (en Make)** | Enviar emails con clasificación | Módulo nativo Make |
-| **Router (en Make)** | Crear rutas condicionales | Módulo nativo Make |
-| **Google Sheets (en Make)** | Registrar decisiones | ✅ Nueva |
-| **Make** | Plataforma de automatización | Ya conocida (C05) |
-| **OpenRouter** | IA que clasifica | Ya conocida (C05) |
-
-### 1 herramienta nueva (Google Sheets en Make), el resto es expansión de C05.
+**Problemas comunes:**
+- `formatDate` con sintaxis incorrecta → copiar exacto: `{{formatDate(now; "YYYY-MM-DD")}}`
+- Error handler no se activa → debe estar en modo "Resume" no "Rollback"
+- Logs no recibe fila → conectar el Add a row al flujo principal al final
 
 ---
 
-## ⚠️ Las Limitaciones (Anti-Hype)
+## CHECKPOINT Actividad 3: Plan personalización con 5 puntos
 
-### Router no es magia:
+### Verificar:
+Tabla de parámetros con nueva sección "Plan C7".
 
-**1. Basura en Filters = rutas equivocadas**
-> Si tu Filter dice "contains URGENTE" pero tu SystemPrompt produce "Urgente", no matchea
+**¿Qué debe verse?**
+- 5 puntos identificados con "Caso Roberto → TU caso"
+- Versión "Tu caso" de marcadores clave
+- Preview del proyecto de C7 en 2-3 líneas
 
-**2. Google Sheets no es un dashboard automático**
-> Registra datos, pero analizarlos sigue siendo tu trabajo
-
-**3. El Router es tan bueno como el SystemPrompt**
-> Si el SystemPrompt produce categorías inconsistentes, el Router no puede arreglarlo
-
-**4. Más módulos = más puntos de falla**
-> Cada conexión nueva es una oportunidad para que algo se rompa
-
-### La fórmula:
-**Agente inteligente = Buen SystemPrompt + Filters exactos + Supervisión**
+**Problemas comunes:**
+- Los 5 puntos son iguales a Roberto → el estudiante no terminó de traducir a su caso
+- "Mi caso es igual" → probablemente no lo pensó; pedir ejemplo específico
 
 ---
 
-## Lab Time
+## REFLEXIÓN: Demo vs Producción
 
-### Mi Agente Inteligente
+| Aspecto | Sistema Demo | Sistema de Producción |
+|---------|--------------|----------------------|
+| **Dura** | 1 semana | Años |
+| **Falla silenciosamente** | Sí | No (alertas) |
+| **Recupera datos** | No | Sí (backups) |
+| **Se audita** | Imposible | Fácil (logs) |
+| **Tiempo de setup** | 0 min | +30 min (lo de hoy) |
 
-**Objetivo:** Completar agente con Gmail + expandir con Router + Sheets + Battle
-
-**Tiempo:** 95 min
-
-**Partes:**
-1. Completa tu agente — Gmail = momento WOW (20 min)
-2. Agente inteligente — Router + Google Sheets (35 min)
-3. Battle — ¿Quién clasifica mejor? (25 min)
-4. Análisis + entregable (15 min)
-
-> 💡 Tip: Asegúrate de que tu SystemPrompt produce categorías EXACTAS (URGENTE, CONSULTA, VENTA) para que los Filters funcionen.
+> **Regla memorable:** "Una hora invertida en mejores prácticas ahorra un mes de debug futuro."
 
 ---
 
-## ⚔️ Battle Time
+## TRANSICIÓN: Preview Clase 07
 
-### Reglas:
-- Todos envían los **MISMOS 5 mensajes** de PetShop Express
-- Comparan resultados en Google Sheets
-- ¿Quién acertó más clasificaciones?
-- Votan el **mejor SystemPrompt** del grupo
+### Hoy lograste:
+- Prompts optimizados con persona + few-shot + CoT
+- Sistema de producción con 4 mejores prácticas
+- Plan de personalización con 5 puntos
 
-### La lección:
-> Mismo modelo (Grok), mismos mensajes. La diferencia está en el **SystemPrompt**.
+### Próxima clase:
+- Acompañamiento 1 a 1 del instructor
+- Construyes TU sistema con TUS datos reales
+- El caso Roberto se queda atrás — ahora es tu trabajo
 
 ---
 
-## 📝 Entrega + Preview
+## Preguntas de Cierre
 
-### Tu entregable completo (C05 + C06):
-1. **Mi Formulario** — URL form v0 + screenshot con debug
-2. **Mi Agente Completo** — Screenshot Make (5+ módulos) + SystemPrompt + UserPrompt
-3. **Resultados Battle** — Tabla 5 mensajes + clasificación + puntuación
-4. **Mi Data Log** — Screenshot de Google Sheets con registros
-5. **Análisis** — 1 falla documentada + reflexión
+1. ¿Cuál de los 5 puntos de personalización te entusiasma más?
 
-**Formato:** Google Doc con link público
+2. Si en 3 meses alguien más en tu equipo tuviera que entender tu sistema, ¿qué le dirías que lea primero?
 
-### Próxima clase: Mi Agente Real
-Tomas el patrón de PetShop y construyes un agente para TU caso real de trabajo.
+3. De las 4 mejores prácticas, ¿cuál vas a implementar YA en otros sistemas de tu trabajo?
+
+---
+
+## Entrega
+
+- 2 PDFs lado a lado (antes/después del prompt)
+- Screenshot de Logs con ejecuciones
+- Error handler configurado
+- Plan personalización en tabla de parámetros
+
+### Próxima clase: Tu proyecto propio (acompañamiento 1 a 1)
