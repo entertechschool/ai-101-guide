@@ -1,8 +1,8 @@
-# AI 101 — IA para Profesionales
+# AI 101 — IA estratégica para Profesionales
 
-> En 4 semanas te convertirás en un profesional que incorpora herramientas de IA en su trabajo cotidiano, con un portafolio de aplicaciones reales y un asistente de IA personalizado.
+> En 4 semanas construirás un sistema automatizado que recolecta datos reales de tu trabajo y genera reportes ejecutivos con insights de IA — todo con herramientas 100% gratuitas.
 
-Guía completa del curso AI 101: super-usuarios de IA para profesionales.
+Guía completa del curso AI 101: de profesional a operador de sistemas con IA.
 
 ---
 
@@ -10,13 +10,33 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Total de clases** | 8 sesiones |
-| **Duración por clase** | 2.5h síncronas + 2h asíncronas |
-| **Estructura** | 2 módulos (4 clases c/u) |
-| **Duración total** | 36 horas en 4 semanas |
-| **Modalidad** | Online en vivo (cohort-based) |
-| **Práctica** | 80% de cada clase |
-| **Prerequisitos** | Navegación web y correo electrónico. No se requiere programación ni experiencia en IA. |
+| **Total de sesiones** | 8 sesiones sincrónicas |
+| **Duración por sesión** | 2.5h en vivo |
+| **Carga total** | 20 horas académicas (4 semanas × 2 sesiones) |
+| **Estructura** | 2 módulos × 4 sesiones |
+| **Modalidad** | 100% online en vivo (cohort-based) |
+| **Práctica** | 80% de cada sesión es laboratorio |
+| **Prerequisitos** | Navegación web, correo, Google Drive. **Sin programación**. Sin experiencia previa en IA. |
+
+---
+
+## El caso guía: Roberto
+
+Todo el curso gira alrededor de un caso real. **Roberto** es gerente de una pequeña empresa con 3-4 vendedores:
+
+**Dolor actual:**
+- Cada vendedor reporta a su manera (WhatsApp, llamadas, correos dispersos)
+- Pierde horas cada viernes consolidando datos manualmente
+- Arma el reporte ejecutivo a mano
+- No tiene visibilidad en tiempo real del desempeño del equipo
+
+**Solución que construyes durante el curso:**
+- Los vendedores envían correos informales → el sistema registra todo automáticamente
+- Cada viernes 4pm llega el reporte ejecutivo listo al correo del gerente
+- Los insights los genera Gemini con el contexto del negocio
+- Roberto recupera 4-8 horas semanales
+
+En el **Módulo 1** construyes el sistema piezas por pieza usando el caso Roberto. En el **Módulo 2** lo integras con IA, lo optimizas, y luego lo **adaptas a tu propio caso de trabajo** para presentarlo en Demo Day.
 
 ---
 
@@ -27,15 +47,12 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 │                       AI 101 (4 semanas)                         │
 ├────────────────────────────────┬─────────────────────────────────┤
 │   MÓDULO 1 (Semanas 1-2)       │    MÓDULO 2 (Semanas 3-4)       │
-│   Fundamentos y Primeras       │    Aplicaciones Avanzadas       │
-│       Aplicaciones             │     y Portfolio Profesional     │
+│   Piezas del sistema           │    Integración y proyecto       │
 ├────────────────────────────────┼─────────────────────────────────┤
-│ 1. Panorama actual de la IA    │ 5. Construcción de apps con IA  │
-│ 2. Instrucciones efectivas     │ 6. Asistente IA personalizado   │
-│ 3. Contenido profesional con   │ 7. Asistente avanzado aplicado  │
-│    asistencia de IA            │    al trabajo                   │
-│ 4. Investigación y análisis    │ 8. Demo Day + desarrollo        │
-│    asistidos por IA            │    continuo                     │
+│ 1. Prompts y Gems              │ 5. Gemini API + 2 flujos        │
+│ 2. Google Sheets con IA        │ 6. Integración total            │
+│ 3. Google Slides con IA        │ 7. Tu proyecto propio           │
+│ 4. Make básico (sin IA)        │ 8. Demo Day + ROI + plan 30d    │
 └────────────────────────────────┴─────────────────────────────────┘
 ```
 
@@ -43,81 +60,86 @@ Guía completa del curso AI 101: super-usuarios de IA para profesionales.
 
 ## Resultados de Aprendizaje
 
-Al completar este programa, el participante será capaz de:
+Al completar el programa, el participante podrá:
 
-1. **Distinguir herramientas de IA** y seleccionar la adecuada según el tipo de tarea, comprendiendo capacidades y limitaciones reales.
-2. **Construir instrucciones efectivas** aplicando marcos estructurados (RICE), técnicas de iteración y estrategias de contexto.
-3. **Producir contenido profesional con asistencia de IA**, manteniendo criterio editorial propio, a partir de espacios de trabajo personalizados.
-4. **Configurar herramientas de investigación asistida por IA** para obtener información verificable y relevante.
-5. **Construir aplicaciones funcionales sin programar** usando herramientas de construcción asistida por IA (vibe coding).
-6. **Diseñar y activar un agente de IA** aplicado a una tarea real de su entorno laboral.
-7. **Documentar y comunicar su competencia en IA** mediante un portafolio de resultados con métricas reales.
+1. **Diseñar prompts efectivos** aplicando la estructura Rol + Contexto + Tarea + Formato + Restricciones, y configurar Gems personalizados en Gemini.
+2. **Estructurar datos para automatización** diseñando Google Sheets con 3 pestañas (operación, configuración, histórico) y rangos nombrados.
+3. **Diseñar plantillas de reportes** en Google Slides con marcadores variables clasificados por tipo (crudo, calculado, generado por IA).
+4. **Construir flujos automáticos en Make** usando Instant Trigger de Gmail, sin escribir código.
+5. **Integrar Gemini API** en Make para extraer datos estructurados desde texto libre y generar insights contextuales.
+6. **Optimizar prompts y aplicar mejores prácticas** de sistemas automatizados (storytelling, nombres con fecha, respaldos, logs, alertas).
+7. **Aplicar el sistema a un caso real** de su trabajo, adaptando datos, marca y prompts.
+8. **Presentar el sistema calculando ROI** en horas ahorradas y proyectar un plan de 30 días con próximas automatizaciones.
 
 ---
 
-## Módulo 1: Fundamentos y Primeras Aplicaciones
+## Módulo 1: Piezas del Sistema (Sesiones 1-4)
+
+El estudiante aprende una pieza por sesión y acumula un inventario de artefactos que integrará en el Módulo 2.
 
 | # | Clase | Contenido | Entregable |
 |---|-------|-----------|------------|
-| 1 | [Panorama actual de la IA aplicada al trabajo](curriculum/class-01/) | Qué puede y NO puede la IA (anti-hype), comparación Claude vs ChatGPT vs Gemini, 3 niveles de dominio, setup Claude como eje | Registro de primera interacción + reflexión: 3 tareas con potencial IA |
-| 2 | [Diseño de instrucciones efectivas](curriculum/class-02/) | Anatomía de instrucción efectiva (RICE), iteración por turnos, Chain of Thought, Few-Shot, prompt battle | Biblioteca personal: mínimo 3 prompts documentados y probados |
-| 3 | [Producción de contenido profesional con IA](curriculum/class-03/) | IA como socio pensante que extrae TU conocimiento, Claude Projects, frameworks personales, aplicar framework a contenido real, criterio editorial | Claude Project + framework personal + 1 pieza de contenido profesional |
-| 4 | [Investigación y análisis asistidos por IA](curriculum/class-04/) | Perplexity (fuentes verificables), Gemini Deep Research + Gems, integración de habilidades M1 en proyecto calificable | Proyecto integrador: research con fuentes + sistema reusable + Gem configurado |
+| 1 | [Prompts y Gems](curriculum/class-01/) | Cómo funciona la IA, tokens y alucinaciones, anatomía del prompt profesional, creación de Gems con archivos | Brief del proyecto de instrucción (1 párrafo) + Gem personalizado funcionando + 3 prompts probados |
+| 2 | [Google Sheets con IA](curriculum/class-02/) | Por qué la IA necesita estructura, arquitectura de 3 pestañas (operación + config + histórico), rangos nombrados | Sheet con 3 pestañas + 15 filas de ejemplo + tabla de parámetros |
+| 3 | [Google Slides con IA](curriculum/class-03/) | Anatomía del reporte ejecutivo (6 secciones), 3 tipos de marcadores (crudo/calculado/IA), paleta y jerarquía | Plantilla de Slides + tabla de ~18-20 marcadores clasificados |
+| 4 | [Make básico (sin IA)](curriculum/class-04/) | Conceptos de Make (escenario, módulo, operación, trigger), Instant vs Scheduled, Replace Text en Slides | 2 escenarios de Make funcionando: Gmail→Sheet (instant) + Sheet→Slides→PDF→Gmail (manual) |
 
 ### Salida del Módulo 1
 
-- ✅ Biblioteca personal de 5+ prompts documentados
-- ✅ 1 Claude Project + framework de conocimiento personal
-- ✅ 1 pieza de contenido profesional producida con tu framework
-- ✅ 1 proyecto integrador con research verificable + Gem configurado
+- Brief del proyecto de instrucción validado
+- Gem personalizado como asistente del curso
+- Google Sheet con 3 pestañas y rangos nombrados
+- Plantilla de Slides con marcadores documentados
+- 2 flujos de Make funcionando sin IA
+- Tabla de parámetros actualizada (documento vivo del curso)
 
 ---
 
-## Módulo 2: Aplicaciones Avanzadas y Portfolio Profesional
+## Módulo 2: Integración y Proyecto (Sesiones 5-8)
+
+El estudiante integra las piezas con IA, optimiza el sistema, lo adapta a su caso real y lo presenta.
 
 | # | Clase | Contenido | Entregable |
 |---|-------|-----------|------------|
-| 5 | [Construcción de apps con asistencia de IA](curriculum/class-05/) | Vibe coding: describir y la IA construye, scaffolding con Gemini/Claude, construir app en v0, deploy en Vercel, conectar a Make vía webhook | App en Vercel (URL pública) + conexión form → Make |
-| 6 | [Configuración de asistente IA personalizado](curriculum/class-06/) | De app a agente: Webhook → OpenRouter → Gmail, SystemPrompt como cerebro, el agente recibe, clasifica y notifica por email | Agente funcionando: form envía → IA clasifica → email llega |
-| 7 | [Asistente avanzado aplicado al trabajo](curriculum/class-07/) | Agente generativo para caso real, 2 IAs encadenadas (una analiza, otra genera), 3 escenarios, deploy en Vercel | Agente generativo en internet con URL pública |
-| 8 | [Demo Day y desarrollo continuo](curriculum/class-08/) | Presentaciones 5 min con demo, feedback con rúbrica de pares, preview AI 201/301, plan 30 días | Presentación + plan 30 días. Async: GitHub repo + LinkedIn post |
+| 5 | [Gemini API + 2 flujos](curriculum/class-05/) | API, HTTP, JSON, API key gratis (1,500 req/día), extracción de datos desde correos informales, generación de insights | Sistema modelo completo: flujo instantáneo activo + flujo semanal scheduled con IA |
+| 6 | [Integración total](curriculum/class-06/) | Prompt engineering avanzado (chain of thought, few-shot, persona), storytelling de datos, mejores prácticas (nombres con fecha, respaldos, alertas, logs) | Prompts optimizados (antes/después) + sistema con 4 mejores prácticas + plan de personalización (5 puntos) |
+| 7 | [Tu proyecto propio](curriculum/class-07/) | Los 5 puntos críticos de personalización, acompañamiento 1 a 1, debug de flujos en Make | Sistema propio funcionando con datos reales (Sheet + Slides con marca + 2 flujos adaptados) |
+| 8 | [Demo Day + ROI](curriculum/class-08/) | Estructura PSDR (Problema-Solución-Demo-Resultado), cálculo de ROI, plan 30 días con 3 próximos agentes | Demo grabado + ROI calculado (mensual y anual) + plan 30 días + rúbricas de pares |
 
 ### Salida del Módulo 2
 
-- ✅ 1 app construida con vibe coding (URL pública en Vercel)
-- ✅ 1 agente IA: form → clasificación → email (Make)
-- ✅ 1 agente generativo deployado para tu caso real (URL pública en Vercel)
-- ✅ **Repo GitHub** con SystemPrompts documentados (primer proyecto open-source)
-- ✅ **LinkedIn post publicado** con caso de éxito + imagen generada
-- ✅ Plan de 30 días con 3 próximos quick-wins identificados
+- Sistema automatizado funcionando para un caso real del estudiante
+- Prompts optimizados con storytelling (antes/después documentado)
+- ROI calculado en soles con proyección mensual y anual
+- Plan 30 días con 3 automatizaciones priorizadas (80/20)
+- Demo en vivo presentado ante pares con feedback de rúbrica
 
 ---
 
-## Proyecto del Curso: Portfolio Profesional IA
+## El Proyecto de Instrucción (hilo conductor)
 
-Proyecto construido clase a clase durante 4 semanas.
+Cada estudiante define en la Sesión 1 un **proyecto de instrucción**: un reporte real de su trabajo que quiere automatizar. Ese proyecto acompaña las 8 sesiones — cada sesión produce un artefacto que se integra al sistema final.
 
-### Componentes
+### Evolución clase a clase
 
-| Clase | Pieza del Portfolio |
-|-------|---------------------|
-| 1 | Registro de primera interacción + reflexión |
-| 2 | Biblioteca de prompts documentados |
-| 3 | Claude Project + framework + pieza de contenido profesional |
-| 4 | Proyecto integrador M1 (research + sistema + Gem) |
-| 5 | App construida con vibe coding (URL en Vercel) |
-| 6 | Agente IA: form → clasificación → email |
-| 7 | Agente real funcionando para tu caso de trabajo (URL pública) |
-| 8 | Presentación + plan 30 días. Async: GitHub repo + LinkedIn post |
+| Clase | Pieza del Sistema |
+|-------|-------------------|
+| 1 | Brief del proyecto + Gem asistente |
+| 2 | Google Sheet con 3 pestañas estructurado |
+| 3 | Plantilla de Slides con ~18-20 marcadores documentados |
+| 4 | 2 flujos de Make funcionando sin IA |
+| 5 | Sistema modelo con Gemini API integrada (flujo instantáneo + semanal) |
+| 6 | Prompts optimizados + mejores prácticas + plan de personalización |
+| 7 | Sistema propio adaptado al caso real del estudiante |
+| 8 | Demo en vivo + cálculo de ROI + plan 30 días |
 
 ### Entregables Finales
 
-- Agente real funcionando para tu caso de trabajo (URL pública en Vercel)
-- App construida con vibe coding (URL pública en Vercel)
-- Repo GitHub con SystemPrompts documentados (proyecto open-source)
-- Caso de éxito publicado en LinkedIn con imagen generada por IA
-- Pitch de 5 minutos con demo en vivo
-- Plan de desarrollo personal de 30 días
+- Sistema de automatización funcionando con datos reales de tu trabajo
+- Reporte ejecutivo en PDF llegando automáticamente a tu correo
+- Cálculo de ROI documentado (horas ahorradas × tarifa)
+- Plan de 30 días con 3 próximos agentes a construir
+- Presentación grabada para compartir en LinkedIn o con tu equipo
 
 ---
 
@@ -127,30 +149,27 @@ Proyecto construido clase a clase durante 4 semanas.
 |------------|----------|------|
 | Entregables de sesión (8) | Completado y presentado en plazo | 40% |
 | Participación en labs en vivo | Asistencia activa ≥ 75% de sesiones | 20% |
-| Proyecto integrador M1 (Clase 4) | Proyecto completo con research + sistema | 15% |
-| Agente avanzado deployado (Clase 7) | Agente funcionando con URL pública | 10% |
-| Demo Day (Clase 8) | Presentación estructurada de 5 minutos | 15% |
+| Lab calificado M1 (Clase 4) | 2 flujos de Make funcionando end-to-end | 15% |
+| Sistema propio (Clase 7) | Sistema adaptado funcionando con datos reales | 10% |
+| Demo Day (Clase 8) | Demo en vivo de 5 minutos + ROI + plan 30 días | 15% |
 
 **Aprobación:** Puntaje mínimo 70/100. Asistencia mínima: 6 de 8 sesiones.
 
 ---
 
-## Herramientas del Curso
+## Stack de Herramientas — 100% gratuito
 
-| Herramienta | Propósito | Clase |
-|-------------|-----------|-------|
-| **Claude** | Asistente IA principal, Projects, frameworks | 1-3 |
-| **ChatGPT** | Comparación de herramientas | 1 |
-| **Gemini** | Deep Research, Gems personalizados | 4 |
-| **Perplexity** | Research con fuentes verificables | 4 |
-| **v0** | Vibe coding: construir apps sin programar | 5 |
-| **Make** | Agentes y automatización visual | 5-6 |
-| **OpenRouter** | Acceso a modelos IA vía API | 6-7 |
-| **Vercel** | Deploy de apps y agentes | 5, 7 |
-| **GitHub** | Repositorio open-source, SystemPrompts | 8 (async) |
-| **LinkedIn** | Publicación de caso de éxito | 8 (async) |
+Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de crédito**.
 
-Todas las herramientas cuentan con versión gratuita suficiente para completar el programa.
+| Herramienta | Plan | Uso en el programa | Clase |
+|-------------|------|--------------------|-------|
+| **Gemini** | Free | Chat base, diseño de prompts, asistente del curso | 1-8 |
+| **Gemini Gems** | Free | Asistentes personalizados con contexto fijo | 1-8 |
+| **Gemini API** | Free (1,500 req/día) | Extracción de datos y generación de insights en Make | 5-8 |
+| **Make** | Free (1,000 ops/mes) | Plataforma de automatización visual sin código | 4-8 |
+| **Google Sheets** | Free | Fuente de datos estructurados (3 pestañas) | 2-8 |
+| **Google Slides** | Free | Plantilla del reporte ejecutivo con marcadores | 3-8 |
+| **Gmail** | Free | Entrada de datos (Instant Trigger) y entrega del PDF | 4-8 |
 
 ---
 
@@ -163,23 +182,28 @@ curriculum/class-XX/
 │   └── README.md       # Guía de taller paso a paso
 ├── slides/
 │   └── README.md       # Presentación reveal.js
-└── facilitator/
-    └── README.md       # Guía pedagógica para instructor
+├── facilitator/
+│   └── README.md       # Guía pedagógica para instructor
+└── infographic/
+    ├── index.html      # Infografía post-clase (WhatsApp/LinkedIn)
+    └── image-prompts.md
 ```
+
+Las clases 4 y 8 incluyen además `lab/rubric.md` (rúbrica de evaluación) y `test/` (test diagnóstico del módulo).
 
 ---
 
 ## Ruta AI Solutions
 
 ```
-AI 101: IA para Profesionales (4 semanas / 36h)  ← Estás aquí
-   → Super-usuario de IA
-   → Portfolio personal + agente deployado
+AI 101: IA estratégica para Profesionales (4 semanas / 20h)  ← Estás aquí
+   → Sistema automatizado de reportes
+   → Gemini + Make + Google Workspace
 
          ↓
 
 AI 201: Construye con IA (8 semanas / 80h)
-   → Crear soluciones no-code
+   → Crear soluciones no-code más amplias
    → Producto/herramienta funcional
 
          ↓
@@ -196,35 +220,35 @@ AI 301: Escala con IA (10 semanas / 100h)
 ```
 ai-101-guide/
 ├── README.md                  # ← Fuente de verdad (este archivo)
-├── CLAUDE.md                  # Convenciones de desarrollo
-├── catalog.md                 # Sílabo académico / catálogo B2C
-├── context/
-│   └── propuesta_02.md        # Propuesta comercial original
+├── AGENTS.md                  # Instrucciones para agentes AI
+├── CLAUDE.md                  # Convenciones de Claude Code
 ├── curriculum/
 │   ├── module-1/              # Plan del Módulo 1
-│   ├── class-01/              # Panorama actual de la IA
-│   ├── class-02/              # Instrucciones efectivas
-│   ├── class-03/              # Contenido profesional con IA
-│   ├── class-04/              # Investigación y análisis con IA
-│   ├── class-05/              # Construcción de apps con IA
-│   ├── class-06/              # Asistente IA personalizado
-│   ├── class-07/              # Asistente avanzado aplicado
-│   ├── class-08/              # Demo Day
-│   └── module-2/              # Plan del Módulo 2
-└── resources/
-    ├── prompts/               # Biblioteca de prompts
-    └── templates/             # Templates listos para usar
+│   ├── class-01/              # Prompts y Gems
+│   ├── class-02/              # Google Sheets con IA
+│   ├── class-03/              # Google Slides con IA
+│   ├── class-04/              # Make básico (sin IA)
+│   ├── module-2/              # Plan del Módulo 2
+│   ├── class-05/              # Gemini API + 2 flujos
+│   ├── class-06/              # Integración total
+│   ├── class-07/              # Tu proyecto propio
+│   └── class-08/              # Demo Day + ROI
+├── resources/
+│   ├── prompts/               # Biblioteca de prompts de referencia
+│   └── templates/             # Plantillas (Gem, Sheet, Slides, Blueprints Make)
+└── dev/
+    └── nuevo_silabus_walter/  # Material fuente del instructor (sílabo + PPTs)
 ```
 
 ---
 
 ## Para Facilitadores
 
-- Ver [CLAUDE.md](CLAUDE.md) para convenciones de desarrollo
-- Cada clase tiene su carpeta con: README, lab/, slides/, facilitator/
+- Ver [AGENTS.md](AGENTS.md) para convenciones del repositorio y pipeline de generación
+- Cada clase tiene su carpeta con: `README`, `lab/`, `slides/`, `facilitator/`, `infographic/`
 - 80% práctica en cada clase, sin grabaciones como recurso principal
-- Catálogo público usa lenguaje académico ("asistente"), internamente son agentes
+- El proyecto de instrucción es el hilo conductor — todo entregable se reusa en la siguiente sesión
 
 ---
 
-*Enter Tech School — Formando profesionales del futuro*
+*Enter Tech School — Formando profesionales que automatizan su trabajo con IA*

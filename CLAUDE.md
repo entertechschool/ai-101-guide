@@ -41,10 +41,12 @@ Los 10 skills vienen de [shared-skills](https://github.com/entertechschool/share
 
 ## Progreso del Curso
 
+Versión actual: **v2-2026** (rama `v2-2026`). Basada en el sílabo de Walter: sistema automatizado de reportes con Gemini + Make + Google Workspace, caso guía Roberto.
+
 | Módulo | Estado | Proyecto |
 |--------|--------|----------|
-| M1 (1-4) | Completo | Portfolio Profesional IA (Fundamentos) |
-| M2 (5-8) | Completo | Portfolio Profesional IA (Aplicaciones) |
+| M1 (1-4) | Completo | Piezas del Sistema (Prompts+Gems, Sheets, Slides, Make sin IA) |
+| M2 (5-8) | Completo | Integración y Proyecto (Gemini API, Optimización, Tu caso real, Demo Day) |
 
 ---
 
