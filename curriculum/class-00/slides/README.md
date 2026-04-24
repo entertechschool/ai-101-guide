@@ -2,6 +2,7 @@
 
 # AI 101
 
+## IA estratégica para Profesionales
 ## - Bienvenido a Enter Tech School
 ## - Orientación del Curso
 
@@ -9,14 +10,14 @@
 
 ### ¿Qué esperar de ETS?
 
-> - Un camino claro desde 0 hasta super-usuario de IA en 4 semanas.
+> - Un camino claro desde 0 hasta operador de sistemas con IA en 4 semanas.
 > - Acompañamiento personalizado y comunidad activa.
-> - Contenido curricular de vanguardia.
+> - Contenido curricular de vanguardia con herramientas 100% gratuitas.
 > - Retroalimentación real y oportuna.
 
 ### ¿Qué esperamos de ti?
 
-> - Compromiso de 5 horas semanales (3h clase + 2h práctica).
+> - Compromiso de ~5 horas semanales (2.5h clase + 2h práctica).
 > - Preparación previa a cada clase.
 > - **Participación activa en clase**.
 > - Respeto y honestidad total.
@@ -25,16 +26,39 @@
 
 <!-- .slide: data-background="#1a1a2e" -->
 
-## ¿Cómo aprende un alumno en ETS?
+## El caso guía: Roberto
 
-> Construyendo progresivamente, acumulando piezas de portfolio clase a clase.
+> Todo el curso gira alrededor de un caso único:
 
-| Módulo | Resultado |
-|--------|-----------|
-| 1 | **Fundamentos + Primeros Superpoderes** - Prompts maestros, contenido, research |
-| 2 | **Superpoderes Aplicados + Portfolio** - Agentes, segundo cerebro, caso de éxito |
+**Roberto** es gerente de una pequeña empresa con 3-4 vendedores.
 
-> Al final: Portfolio completo + Caso de éxito publicado
+| Dolor | Solución que construiremos |
+|-------|----------------------------|
+| Vendedores reportan por WhatsApp, correo, llamadas | Correo informal → sistema registra automáticamente |
+| 4 horas cada viernes consolidando | Reporte automático cada viernes 4pm |
+| Sin visibilidad en tiempo real | Insights generados por IA con contexto |
+| Reportes armados a mano | PDF listo para enviar al gerente |
+
+> En Módulo 1 construís el sistema para Roberto. En Módulo 2, lo adaptás a TU caso real.
+
+---
+
+<!-- .slide: data-background="#1a1a2e" -->
+
+## Tu proyecto de instrucción
+
+> El hilo conductor de tu aprendizaje.
+
+Cada estudiante define en la Clase 1:
+
+- **Qué reporte** de su trabajo querés automatizar
+- **Quién lo recibe** (jefe, cliente, equipo)
+- **Qué datos** incluye
+- **Cuánto tiempo** te ahorraría
+
+Cada sesión produce un artefacto que se integra al sistema final — tu proyecto de instrucción.
+
+> Al cerrar la Sesión 8, presentás TU sistema funcionando + cálculo de ROI.
 
 ---
 
@@ -43,15 +67,17 @@
 ## Estructura del Curso
 
 ```
-8 clases = 2 módulos × 4 clases
+8 sesiones = 2 módulos × 4 sesiones
 ```
 
-- Cada clase: **3 horas en vivo**
-- Formato: 20% teoría + 80% práctica
-- Aprenderás **haciendo**
+- Cada sesión: **2.5 horas en vivo**
+- Formato: 20% teoría + 80% práctica (laboratorios)
+- Frecuencia: 2 sesiones/semana durante 4 semanas
 
-> Antes de clase: Te preparas. \
-> Después de clase: Completas y entregas el laboratorio.
+| Módulo | Contenido |
+|--------|-----------|
+| 1 | **Piezas del Sistema** — Prompts+Gems, Sheets, Slides, Make sin IA |
+| 2 | **Integración y Proyecto** — Gemini API, Optimización, Tu caso real, Demo Day |
 
 ---
 
@@ -59,34 +85,33 @@
 
 ## Sistema de Evaluación
 
-> Nota del módulo:
+| Componente | Peso | Observación |
+|------------|------|-------------|
+| Entregables de sesión (8) | 40% | Completado y presentado en plazo |
+| Participación en labs en vivo | 20% | Asistencia activa ≥75% |
+| Lab calificado M1 (Clase 4) | 15% | 2 flujos Make end-to-end |
+| Sistema propio (Clase 7) | 10% | Adaptado a tu caso real |
+| Demo Day (Clase 8) | 15% | Presentación 5 min + ROI + plan 30 días |
 
-| Concepto | Peso | Observación |
-|----------|------|-------------|
-| Asistencia | 0.1 | 3 faltas seguidas = Retiro |
-| Entregables | 0.2 | Labs de cada clase |
-| Participación | 0.3 | El instructor evalúa |
-| Proyecto de módulo | 0.4 | Rúbrica 0-100 |
-
-> Nota Final = Promedio de los 2 módulos \
-> **Nota final mínima aprobatoria >= 70/100**
+> **Aprobación:** ≥70/100 + asistencia ≥6/8 sesiones
 
 ---
 
 <!-- .slide: data-background="#0f3460" -->
 
-## Herramientas que Usaremos
+## Stack 100% gratuito — Sin tarjeta
 
-| Herramienta | Para qué |
-|-------------|----------|
-| Claude | Asistente IA principal |
-| Perplexity | Deep Research con fuentes |
-| Gemini | Research extenso, Gems |
-| Make/n8n | Agentes y automatización |
-| NotebookLM | Segundo cerebro con IA |
-| Notion | Portfolio y documentación |
+| Herramienta | Uso |
+|-------------|-----|
+| **Gemini** | Chat base, diseño de prompts, asistente del curso |
+| **Gemini Gems** | Asistentes personalizados con contexto fijo |
+| **Gemini API** | Extracción + insights (1,500 req/día free) |
+| **Make** | Automatización visual (1,000 ops/mes free) |
+| **Google Sheets** | Fuente de datos con 3 pestañas |
+| **Google Slides** | Plantilla del reporte con marcadores |
+| **Gmail** | Entrada (Instant Trigger) y entrega (PDF) |
 
-Todo es **gratuito** o tiene plan gratis
+> Todo funciona con plan gratuito. Sin pagos, sin tarjeta.
 
 ---
 
@@ -95,21 +120,21 @@ Todo es **gratuito** o tiene plan gratis
 ## El Pathway Entertech
 
 ```
-AI 101: Desbloquea tu poder (4 semanas)  ← Estás aquí
-   → Super-usuario de IA
-   → Portfolio personal
+AI 101: IA estratégica para Profesionales (4 sem / 20h)  ← Estás aquí
+   → Sistema automatizado de reportes
+   → Gemini + Make + Google Workspace
 
          ↓
 
 AI 201: Construye con IA (8 semanas)
-   → Soluciones no-code
+   → Soluciones no-code más amplias
    → Producto funcional
 
          ↓
 
 AI 301: Escala con IA (10 semanas)
    → Integración técnica
-   → Proyecto profesional
+   → Proyecto profesional/startup
 ```
 
 ---
@@ -118,7 +143,10 @@ AI 301: Escala con IA (10 semanas)
 
 ## ¡Empezamos!
 
-> "El 95% de profesionales usa IA como si fuera Google.
-> El 5% la usa como un **superpoder**.
-> En 4 semanas, estarás en ese 5%."
+> "El 95% de profesionales NO automatiza con IA.
+> El 5% construye sistemas que trabajan por ellos.
+> En 4 semanas, vas a estar en ese 5%."
 
+Próxima sesión: **Clase 01 — Prompts y Gems**
+
+Preparate con tu cuenta de Gemini lista.
