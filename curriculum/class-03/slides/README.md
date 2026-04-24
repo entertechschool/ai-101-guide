@@ -1,193 +1,151 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 03: Producción de contenido profesional con IA
-## De "la IA me ayuda" a "la IA extrae MI conocimiento"
-
-*AI 101 — EnterTech School*
+# Clase 03: Google Slides con IA
+## Diseña la plantilla del reporte con marcadores
 
 ---
 
-## 🔗 TRANSICIÓN: Clase 02 → Clase 03
+## TRANSICIÓN: Clase 02 → Clase 03
 
 ### Clase anterior:
-- RICE + Few-shot para mejores outputs
-- Patrón: `Tú → [Instrucción] → IA → [Output]`
+- Sheet con 3 pestañas y 15 filas de ejemplo
+- 3 rangos nombrados listos para Make
+- Tabla de parámetros iniciada
 
-### Hoy invertimos el flujo:
-```
-Antes:  Tú → instrucción → IA → output genérico
-Ahora:  IA → pregunta → Tú → respuesta → IA → TU conocimiento
-```
+### Hoy:
+- Plantilla visual del reporte con marcadores
+- 18-20 marcadores nombrados y clasificados por tipo
+- Tabla de parámetros crece con la información clave del sistema
 
-> El output más valioso no viene de la IA — viene de TI.
-
----
-
-## 🧠 QUIZ PRE-LAB
-
-### ¿Cuál es la diferencia más importante entre las Clases 01-02 y lo que haremos hoy?
-
-**A)** Usaremos Claude Projects en vez de conversaciones simples
-
-**B)** El output será conocimiento MÍO, no contenido genérico de IA
-
-**C)** Los prompts serán más largos y detallados
-
-**D)** Trabajaremos con documentos en vez de texto
-
-*Toma 2-3 respuestas antes de continuar*
+> "Un reporte ejecutivo bien diseñado es 80% plantilla fija y 20% datos variables."
 
 ---
 
-## 🎬 Demo: De Idea Vaga a Framework
+## QUIZ PRE-LAB
 
-### El caso: "Cómo evalúo propuestas de proveedores"
+### Pregunta:
 
-**Estado actual:**
-> "Mira, depende del proyecto... reviso varias cosas... es más intuición con experiencia..."
+Si tuvieras que dividir tu reporte actual en "partes que cambian siempre" vs "partes que siempre son iguales", ¿cuáles serían las partes que cambian?
 
-**Lo que haremos:**
-La IA me preguntará hasta que quede claro:
-- ¿Qué criterios realmente uso?
-- ¿Cuáles son deal-breakers?
-- ¿Qué red flags ignoro a mi propio riesgo?
-
-> 🎬 **Demo en vivo** — Veremos la conversación de extracción
+*Toma 2-3 respuestas antes de continuar.*
 
 ---
 
-## 🎯 COMPROBACIÓN
+## COMPROBACIÓN
 
-### ¿Qué hizo que el framework final fuera valioso?
+### Pregunta (después de la demo):
 
-**A)** Claude tiene mejor conocimiento sobre evaluación de proveedores
+Acabas de ver la clasificación de marcadores en 3 tipos (crudo, calculado, IA). ¿Por qué importa distinguirlos HOY si todavía no los llenamos automáticamente?
 
-**B)** Las preguntas de Claude extrajeron criterios que YO ya tenía
-
-**C)** El formato estructurado es más fácil de leer
-
-**D)** Claude agregó mejores prácticas de la industria
-
-> 🕐 30 segundos para pensar → levanten la mano
+A. Porque es una convención académica estándar
+B. Porque los tipos definen qué herramienta llenará cada uno (Sheet/Make/Gemini)
+C. Porque así se ven más organizados en Slides
+D. Porque los marcadores tipo IA necesitan colores distintos
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## COMPROBACIÓN - Respuesta
 
-**Respuesta correcta: B**
+**Respuesta correcta:** B
 
-- **A:** ❌ Claude no sabe más que yo sobre MI contexto específico
-- **B:** ✅ Las preguntas forzaron a verbalizar lo que hago intuitivamente
-- **C:** ❌ El formato ayuda, pero el valor está en el contenido
-- **D:** ❌ Si agregas "mejores prácticas" genéricas, pierde autenticidad
+**Análisis de opciones:**
+- **A:** No es solo convención. Sin tipo, no sabés dónde configurar cada marcador.
+- **B:** Correcto. En la Clase 4, Make lee marcadores crudos del Sheet. En Clase 5, las HTTP requests de Gemini llenan los tipo IA. Cada tipo = configuración distinta.
+- **C:** La visibilidad en Slides es la misma para los 3 tipos.
+- **D:** No hay diferencia visual necesaria; sí hay diferencia operativa.
 
-> **El insight:** La IA es un espejo inteligente que refleja tu expertise de forma estructurada.
-
----
-
-## 📐 Concepto Clave: Brainstorming Guiado
-
-### ¿Qué es?
-La IA hace preguntas sistemáticas para extraer conocimiento que tienes pero no has documentado.
-
-| Fase | Qué hace la IA | Qué haces tú |
-|------|---------------|--------------|
-| **Exploración** | Pregunta "¿cómo?", "¿por qué?" | Respondes con ejemplos reales |
-| **Estructuración** | Propone framework | Corriges y agregas |
-| **Validación** | Presenta resultado final | Verificas autenticidad |
+> **Clave:** Clasificar marcadores hoy evita confusión operativa en las clases 4 y 5.
 
 ---
 
-## 🔧 Herramienta: Claude Projects
+## CHECKPOINT Actividad 1: 6 slides con diseño inicial
 
-### ¿Qué es un Project?
+### Verificar:
+Cada estudiante muestra su plantilla con 6 slides.
 
-Un espacio en Claude con:
-- **Instrucciones persistentes** (system prompt)
-- **Archivos de contexto** (opcional)
-- **Historial** de conversaciones
+**¿Qué debe verse?**
+- 6 slides distintas con títulos descriptivos (no "Slide 1", "Slide 2")
+- Paleta consistente (2-3 colores)
+- Tipografías legibles y consistentes
 
-### ¿Por qué lo usamos?
-
-El "socio pensante" debe comportarse igual siempre:
-- Preguntar antes de estructurar
-- Esperar respuestas antes de continuar
-- Nunca asumir que sabe las respuestas
+**Problemas comunes:**
+- Títulos genéricos → recordar que las 6 secciones tienen nombres específicos
+- Diseño muy denso → aplicar "1 slide = 1 idea"
 
 ---
 
-## ⚠️ Las Limitaciones (Anti-Hype)
+## CHECKPOINT Actividad 2: ~18-20 marcadores clasificados
 
-### 3 trampas comunes:
+### Verificar:
+Tabla de parámetros en Google Doc con sección de marcadores.
 
-**1. Conocimiento inventado**
-> La IA puede "completar" gaps con contenido genérico
+**¿Qué debe verse?**
+- Al menos 18 filas de marcadores
+- Cada fila tiene tipo (crudo/calculado/IA) y origen
+- Nombres en snake_case (no espacios ni mayúsculas)
 
-**2. Sobre-estructuración**
-> No todo conocimiento cabe en un framework de 5 pasos
-
-**3. Validación sesgada**
-> Aceptar lo que suena bien, aunque no sea exacto
-
-### Criterio editorial:
-El framework debe pasar la prueba: "¿Esto es lo que REALMENTE hago?"
+**Problemas comunes:**
+- Solo 5-6 marcadores → revisar slide por slide qué más cambia
+- Tipo IA confundido con crudo → crudo viene de una celda; IA se genera a partir de muchas celdas
 
 ---
 
-## 🔬 Lab Time
+## CHECKPOINT Actividad 3: Plantilla con marcadores + prueba
 
-### Producción de contenido profesional con IA
+### Verificar:
+Cada slide tiene marcadores insertados.
 
-**Objetivo:** Claude Project + framework personal + 1 pieza de contenido profesional
+**¿Qué debe verse?**
+- Marcadores `{{...}}` visibles en cada slide
+- Gráfico vinculado al Sheet presente
+- Al menos 1 slide con prueba manual (datos reales reemplazando 3-4 marcadores)
 
-**Tiempo:** 60 min
-
-| Parte | Qué harás | Tiempo |
-|-------|-----------|--------|
-| 1 | Configurar Claude Project como socio pensante | 15 min |
-| 2 | Extraer framework personal vía brainstorming guiado | 20 min |
-| 3 | Producir 1 pieza de contenido profesional + criterio editorial | 25 min |
-
----
-
-## ✅ CHECKPOINTs
-
-### Parte 1-2:
-- [ ] Claude Project creado con instrucciones de socio pensante
-- [ ] Conversación de exploración (5-8 preguntas)
-- [ ] Framework personal propuesto y validado
-
-### Parte 3:
-- [ ] Pieza de contenido profesional producida con tu framework
-- [ ] Revisión con criterio editorial aplicada
-
-**¿La pieza final suena a TI o suena a IA genérica?**
+**Problemas comunes:**
+- Marcadores con espacios (`{{ventas total}}`) → Replace Text es sensible, usar snake_case
+- Gráfico insertado como imagen estática → debe ser "Desde Hojas de cálculo"
 
 ---
 
-## 💡 REFLEXIÓN
+## REFLEXIÓN: Los 3 tipos de marcadores
 
-### Hoy aprendiste:
-- IA como socio pensante (no solo ejecutor)
-- Claude Projects con instrucciones persistentes
-- Brainstorming guiado: exploración → estructura → validación
-- **Criterio editorial:** evaluar y refinar contenido producido con IA
+| Tipo | Viene de | Ejemplo | Configuración en Make |
+|------|----------|---------|------------------------|
+| **Crudo** | Sheet (celda) | `{{ventas_total}}` | Search Rows → variable |
+| **Calculado** | Make (fórmula) | `{{variacion_pct}}` | Módulo Math |
+| **IA** | Gemini (prompt) | `{{hallazgo_1}}` | HTTP module + prompt |
 
-### Preguntas de cierre:
-1. ¿Qué descubriste que no sabías que sabías?
-2. ¿Tu pieza final suena a ti o a la IA?
-3. ¿Qué otro conocimiento documentarías con este sistema?
+> **Regla memorable:** "El nombre del marcador es para el lector. El tipo es para el sistema."
 
 ---
 
-## 📝 Entrega + Preview
+## TRANSICIÓN: Preview Clase 04
 
-### Tu entregable:
-1. **Claude Project configurado** (screenshot o instrucciones)
-2. **Framework personal extraído** (tu conocimiento estructurado)
-3. **1 pieza de contenido profesional** (producida y refinada con criterio editorial)
+### Hoy lograste:
+- Plantilla de Slides con 6 secciones
+- 18-20 marcadores clasificados y documentados
+- Gráfico vinculado al Sheet
 
-**Formato:** Google Doc con link público
+### Próxima clase:
+- Construir 2 flujos en Make (todavía sin IA)
+- Gmail → Sheet en tiempo real
+- Sheet → Slides → PDF → Gmail
+- Los marcadores crudos y calculados empezarán a llenarse solos
 
-### Próxima clase: Investigación y análisis asistidos por IA
-Incorporarás **Perplexity** y **Gemini** para investigar con fuentes verificables y analizar información.
+---
+
+## Preguntas de Cierre
+
+1. ¿Qué slide de tu plantilla crees que va a impactar más a tu lector? ¿Por qué?
+
+2. De tus marcadores tipo IA, ¿cuál crees que Gemini va a ser mejor generando? ¿Cuál peor?
+
+3. Si tuvieras que explicarle en 1 frase a un colega para qué es la tabla de parámetros, ¿qué dirías?
+
+---
+
+## Entrega
+
+- Plantilla con 6 slides y marcadores insertados
+- Tabla de parámetros con 18-20 marcadores clasificados
+- Prueba manual en al menos 1 slide
+
+### Próxima clase: Make básico (sin IA)

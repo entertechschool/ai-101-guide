@@ -1,198 +1,220 @@
-# Lab 03: Producción de contenido profesional con IA
+# Lab 03: Google Slides con IA
 
-Configurarás un Claude Project como tu "socio pensante", extraerás un framework de tu expertise, y lo aplicarás para producir una pieza de contenido profesional real. El resultado será contenido TUYO — tu conocimiento estructurado, no texto genérico de IA.
+## 🎯 Objetivos
 
-> ⏱️ **Tiempo total:** 60 minutos
-
-### 🎯 Objetivos
-
-1. Configurar un Claude Project con instrucciones de socio pensante
-2. Extraer un framework personal a través de brainstorming guiado
-3. Producir 1 pieza de contenido profesional aplicando criterio editorial
+1. Diseñar una plantilla de Google Slides con 6 secciones del reporte ejecutivo usando tu Gem.
+2. Nombrar y clasificar ~18-20 marcadores variables en la tabla de parámetros (tipo crudo/calculado/IA).
+3. Insertar los marcadores en la plantilla y validar visualmente con una prueba manual.
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Socio pensante** — La IA pregunta para extraer tu conocimiento, no para generar contenido
-- **Claude Project** — Espacio con instrucciones persistentes que definen comportamiento
-- **Criterio editorial** — Evaluar y refinar contenido generado con IA antes de usarlo
+- **Anatomía del reporte ejecutivo** — 6 secciones: Portada, Resumen, Hallazgos, Visualización, Riesgos/Oportunidades, Próximos pasos.
+- **3 tipos de marcadores** — Crudo (del Sheet), Calculado (de Make), Generado por IA (de Gemini).
+- **Convención snake_case** — nombres descriptivos, sin espacios, agrupados por sección (`portada_titulo`, `resumen_ventas`).
 
 ---
 
 ## ⚙️ Setup Inicial
 
+Esta sesión usa los artefactos de las clases anteriores. Verifica:
+
 | ✓ | Requisito | Verificación |
 |---|-----------|--------------|
-| ☐ | Claude abierto | Cuenta activa con acceso a Projects |
-| ☐ | Conocimiento identificado | Algo que sabes y quieres documentar |
-| ☐ | Idea de contenido | Qué pieza profesional quieres producir |
-| ☐ | Google Doc | Para capturar framework y contenido final |
+| ☐ | Sheet con 3 pestañas y datos | Puedes abrir `VentasSemanaActual` y ver las 15 filas |
+| ☐ | Tabla de parámetros (Google Doc) | Tiene secciones de columnas y rangos registradas |
+| ☐ | Gem del curso funcionando | Responde mencionando tu brief |
 
-**Nota:** Claude Projects está disponible en todas las cuentas (gratuitas y Pro).
-
----
-
-## Parte 1: Configura Tu Claude Project (15 min)
-
-### 1.1 Crear el Project y configurar instrucciones
-
-1. Ve a [claude.ai](https://claude.ai){:target="_blank"}
-2. En el sidebar izquierdo, haz clic en **"Projects"**
-3. Clic en **"+ Create Project"**
-4. Nombre: `Mi Socio Pensante`
-5. En **"Custom Instructions"**, pega estas instrucciones:
-
-```
-Eres mi socio pensante — un experto en extraer y estructurar conocimiento tácito.
-
-TU OBJETIVO:
-Ayudarme a documentar algo que sé hacer pero nunca he formalizado.
-El output final será MÍO — mi expertise estructurada, no contenido genérico.
-
-CÓMO DEBES TRABAJAR:
-
-1. FASE DE EXPLORACIÓN (primeras 5-8 preguntas)
-- Haz UNA pregunta a la vez
-- Espera mi respuesta antes de continuar
-- Busca los patrones detrás de mis respuestas
-- Pregunta "¿por qué?" cuando detectes decisiones implícitas
-
-2. FASE DE ESTRUCTURACIÓN (cuando tengas suficiente info)
-- Propón una estructura (lista, matriz, checklist, framework)
-- Muéstrame el borrador y pregunta qué falta
-- Itera basándote en mis correcciones
-
-3. FASE DE PRODUCCIÓN (cuando el framework esté validado)
-- Usa el framework para producir contenido profesional
-- Mantén MI voz y estilo, no uses lenguaje genérico
-- Presenta borradores para que aplique mi criterio editorial
-
-REGLAS:
-- Nunca asumas que sabes las respuestas — PREGUNTA
-- Si digo "depende", pregunta: "¿De qué depende específicamente?"
-- El resultado debe ser algo que yo pueda usar y compartir
-```
-
-### 1.2 Verifica que funciona
-
-Abre una conversación en tu Project y escribe: "¿Cómo vas a ayudarme hoy?"
-La IA debería explicar las 3 fases, NO empezar a generar contenido.
-
-✅ **Checkpoint:** Tu Claude Project está configurado y responde según las instrucciones.
+> ⚠️ Si no completaste el Sheet de la Clase 2, completa primero las 3 pestañas antes de continuar.
 
 ---
 
-## Parte 2: Extrae Tu Framework Personal (20 min)
+## Actividad 1: Diseña las 6 secciones del reporte (30 min)
 
-### 2.1 Elige qué documentar
+### 1.1 Pide al Gem la estructura
 
-| Tipo | Ejemplo | Output esperado |
-|------|---------|-----------------|
-| **Proceso de evaluación** | "Cómo evalúo candidatos" | Guía con 5-7 criterios |
-| **Criterios de decisión** | "Cómo priorizo proyectos" | Matriz de priorización |
-| **Metodología propia** | "Cómo escribo propuestas ganadoras" | Template con secciones clave |
-| **Proceso operativo** | "Cómo hago onboarding de clientes" | Checklist de pasos |
-
-### 2.2 Inicia el brainstorming guiado
-
-En tu Project, escribe:
+Envía a tu Gem:
 
 ```
-Quiero documentar mi proceso de [TU TEMA].
-Es algo que hago bien pero nunca he formalizado.
-Ayúdame a extraer los pasos/criterios que realmente uso.
+Según mi brief, dame las 6 secciones de mi reporte ejecutivo.
+Para cada sección, dame: nombre, 1 línea de propósito, y qué
+información debería mostrar. Usa como referencia la anatomía
+clásica: portada, resumen, hallazgos, visualización, riesgos/oportunidades,
+próximos pasos.
 ```
 
-Responde las preguntas con honestidad. Si dices "depende", la IA te pedirá que especifiques.
+### 1.2 Crea la plantilla en Slides
 
-### 2.3 Valida tu framework
+Nombre del archivo:
 
-Cuando la IA proponga una estructura, evalúa:
-- ¿Captura lo que REALMENTE hago, no una versión idealizada?
-- ¿Falta algo importante?
-- ¿Podría alguien más seguir esto y obtener resultados similares?
+```
+Reporte [<!-- tu proyecto -->] — Plantilla
+```
 
-Copia el framework validado a tu Google Doc.
+Crea 6 slides con estos títulos (ajusta a tu caso):
 
-✅ **Checkpoint:** Tienes un framework documentado basado en TU expertise real.
+1. **Portada** — contexto, fecha, marca
+2. **Resumen ejecutivo** — KPIs principales + narrativa
+3. **Hallazgos** — 3 insights clave
+4. **Visualización** — gráfico del período
+5. **Riesgos y oportunidades** — qué cuidar, qué aprovechar
+6. **Próximos pasos** — acciones concretas
+
+### 1.3 Aplica paleta y tipografía
+
+Pide al Gem:
+
+```
+Según mi industria y tipo de reporte, sugiere 2-3 colores
+(paleta hex) y 2 tipografías de Google Fonts que transmitan
+[<!-- ejecutivo, moderno, cercano, sobrio -->].
+```
+
+Aplica los colores al fondo/títulos y las tipografías al cuerpo.
+
+✅ **Checkpoint:** Tu plantilla tiene 6 slides con títulos específicos a tu reporte y un estilo visual consistente.
 
 ---
 
-## Parte 3: Produce Contenido Profesional (25 min)
+## Actividad 2: Nombra todos los marcadores (45 min)
 
-### 3.1 Elige tu pieza de contenido
+### 2.1 Identifica qué es variable
 
-Usando tu framework como base, elige UNA pieza de contenido profesional para producir:
+Slide por slide, subraya mentalmente qué texto cambia cada vez que corres el reporte. Esos son los marcadores.
 
-| Tipo de contenido | Ejemplo |
-|-------------------|---------|
-| **Email estratégico** | Propuesta a cliente usando tu framework de evaluación |
-| **Post profesional** | LinkedIn post sobre tu metodología |
-| **Reporte/memo** | Resumen ejecutivo aplicando tu criterio |
-| **Guía interna** | Documento de onboarding basado en tu checklist |
-| **Presentación** | Outline de presentación con tu expertise estructurada |
+### 2.2 Nombra cada marcador en snake_case
 
-### 3.2 Produce el contenido con IA
+Reglas:
+- Todo minúsculas
+- Palabras separadas por guion bajo
+- Descriptivo, no abreviado (`ventas_total_semana`, no `vts`)
+- Agrupado por sección como prefijo (`portada_titulo`, `resumen_ventas`)
 
-En tu Project, escribe:
+### 2.3 Clasifica por tipo en la tabla de parámetros
+
+Agrega sección nueva a tu tabla de parámetros:
+
+| Marcador | Tipo | Origen | Ejemplo |
+|----------|------|--------|---------|
+| `{{semana}}` | Calculado | Make (fechas) | "13-19 abril" |
+| `{{ventas_total}}` | Crudo | Sheet | "21,700" |
+| `{{variacion_pct}}` | Calculado | Make | "+12%" |
+| `{{clientes_nuevos}}` | Crudo | Sheet | "8" |
+| `{{meta_cumplida_pct}}` | Calculado | Make | "108%" |
+| `{{resumen_ejecutivo}}` | IA | Gemini | Párrafo |
+| `{{hallazgo_1}}` | IA | Gemini | Texto |
+| `{{hallazgo_2}}` | IA | Gemini | Texto |
+| `{{hallazgo_3}}` | IA | Gemini | Texto |
+| `{{riesgo_1}}` | IA | Gemini | Texto |
+| `{{riesgo_2}}` | IA | Gemini | Texto |
+| `{{oportunidad_1}}` | IA | Gemini | Texto |
+| `{{grafico_ventas}}` | Crudo | Sheet (imagen) | — |
+| `{{accion_1}}` | IA | Gemini | Texto |
+| `{{accion_2}}` | IA | Gemini | Texto |
+| `{{fecha_reporte}}` | Calculado | Make | "19-04-2026" |
+| `{{proximo_reporte}}` | Calculado | Make | "26-04-2026" |
+| ... | ... | ... | ... |
+
+**Meta:** ~18-20 marcadores clasificados.
+
+### 2.4 Adapta a tu caso
+
+Si tu caso no son ventas, cambia los nombres pero mantén la estructura. Ejemplos:
+
+- Marketing: `{{alcance_total}}`, `{{engagement_promedio}}`, `{{campana_destacada}}`
+- Consultoría: `{{horas_facturadas}}`, `{{proyectos_activos}}`, `{{cliente_mes}}`
+
+✅ **Checkpoint:** Tu tabla de parámetros tiene entre 18-20 filas de marcadores, cada una con tipo y origen claros.
+
+---
+
+## Actividad 3: Inserta marcadores y prueba manual (25 min)
+
+### 3.1 Reemplaza textos por marcadores en cada slide
+
+En cada slide, reemplaza los textos placeholder por `{{marcadores}}` correspondientes.
+
+Ejemplo de la slide de Resumen ejecutivo:
 
 ```
-Usando el framework que acabamos de crear, ayúdame a producir
-[TIPO DE CONTENIDO] sobre [TEMA].
-
-Usa MI voz y estilo — nada genérico. Quiero que suene como
-algo que yo escribiría, basado en lo que te compartí.
+Esta semana generamos {{ventas_total}} soles,
+un {{variacion_pct}} vs la semana anterior.
+{{resumen_ejecutivo}}
 ```
 
-### 3.3 Aplica criterio editorial
+### 3.2 Inserta el gráfico vinculado
 
-Revisa el borrador con ojo crítico:
+**Insertar → Gráfico → Desde Hojas de cálculo** → selecciona tu Sheet → pestaña `VentasSemanaActual` → elige el gráfico que quieres mostrar.
+
+> 💡 El gráfico se actualiza automáticamente cuando cambian los datos del Sheet.
+
+### 3.3 Prueba manual
+
+Elige 3-4 marcadores y reemplázalos a mano con datos reales para verificar que el diseño aguanta:
+
+- `{{ventas_total}}` → `21,700`
+- `{{clientes_nuevos}}` → `8`
+- `{{hallazgo_1}}` → `Juan cerró 2 renovaciones grandes...`
+
+### 3.4 Ajusta diseño
+
+Si el texto queda cortado o desbordado, ajusta tamaños y espaciados. Cuando pongas los datos reales en Clase 4, no habrá tiempo de rediseñar.
+
+✅ **Checkpoint:** Tu plantilla tiene todos los marcadores visibles, un gráfico vinculado al Sheet y la prueba manual muestra un diseño estable.
+
+---
+
+## 📁 Estructura Final del Proyecto
 
 ```
-CRITERIO EDITORIAL:
-- [ ] ¿Suena como algo que YO escribiría?
-- [ ] ¿Usa mi expertise real, no frases genéricas?
-- [ ] ¿Tiene la profundidad correcta para mi audiencia?
-- [ ] ¿Lo publicaría/enviaría tal como está?
-- [ ] ¿Qué cambiaría antes de usarlo?
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc
+    ├── Tabla-de-Parámetros.doc  (crece con marcadores)
+    ├── sistema-reporte.xlsx     (Sheet con 3 pestañas)
+    └── Reporte-Plantilla.slides ← NUEVO (6 slides + marcadores)
 ```
 
-Pide ajustes directamente: "Hazlo más directo", "Quita la introducción genérica", "Agrega el punto sobre [X] que mencioné antes".
+---
 
-### 3.4 Refina hasta que esté listo
+## Reflexión
 
-Itera hasta que tengas una pieza que pasaría tu propia barra de calidad. Cópiala a tu Google Doc.
+Antes de terminar, responde brevemente:
 
-✅ **Checkpoint:** Tienes 1 pieza de contenido profesional producida con tu framework y refinada con criterio editorial.
+1. **¿Qué marcador de tu plantilla crees que será el más difícil de llenar automáticamente?**
+2. **¿Por qué conviene que los marcadores tipo IA (`hallazgo_1`, `riesgo_2`) estén nombrados aunque hoy estén vacíos?**
+3. **¿Qué sección del reporte te parece la más valiosa para tu lector final?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Duplica la plantilla antes de la próxima clase
+Crea una copia llamada `Reporte-SemanaReal` y prueba llenar a mano TODOS los marcadores con datos reales de una semana pasada. Te prepara para Clase 4 cuando Make lo haga solo.
+
+### 🟡 Agrega una slide de "Apéndice"
+Slide 7 con una tabla de apéndice para detalles (top clientes, desglose por vendedor). Define 3-4 marcadores adicionales.
+
+### 🔴 Diseña versión móvil
+Una segunda plantilla formato vertical (para compartir por WhatsApp) con los 3 KPIs principales. Preview del reto de Clase 6 (optimización para canal).
 
 ---
 
 ## 📝 Entrega
 
-**Google Doc con 3 secciones:**
+### Checklist
 
-### 1. Claude Project configurado
-- Screenshot del Project con las instrucciones visibles
-- O el texto de las instrucciones custom
+- [ ] Plantilla de Google Slides con 6 slides diseñadas
+- [ ] Tabla de parámetros con 18-20 marcadores clasificados
+- [ ] Prueba manual exitosa (al menos 1 slide con datos reales)
+- [ ] Gráfico vinculado al Sheet insertado
 
-### 2. Framework personal extraído
-- Tu conocimiento documentado con estructura clara
-- Debe ser algo que puedas compartir y usar
+### Entregable
 
-### 3. Pieza de contenido profesional
-- 1 pieza producida usando tu framework
-- Con nota de qué ajustes editoriales aplicaste
+📸 **Screenshot** de la slide 2 (Resumen ejecutivo) de tu plantilla, donde se vean:
+- Los marcadores `{{...}}` visibles en su posición
+- El título de la plantilla en la barra superior
+- Tu correo de Google visible en la esquina
 
-**Entrega:** Link público del Google Doc.
-
-> 📌 **Importante:** Guarda bien tu Claude Project y framework — los usarás como base para el Proyecto Integrador en la próxima clase.
-
----
-
-## Checklist Final
-
-- [ ] ¿Configuré el Claude Project con instrucciones de socio pensante?
-- [ ] ¿Mi framework captura conocimiento MÍO, no genérico?
-- [ ] ¿Produje 1 pieza de contenido profesional con mi framework?
-- [ ] ¿Apliqué criterio editorial al resultado?
+> ⚠️ El entregable debe mostrar tu cuenta de Google para verificar que es tu plantilla.

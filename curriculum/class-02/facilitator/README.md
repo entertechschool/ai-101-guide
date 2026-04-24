@@ -1,4 +1,4 @@
-# Guía del Facilitador - Clase 02: Diseño de instrucciones efectivas
+# Guía del Facilitador - Clase 02: Google Sheets con IA
 
 > Tiempo de lectura: 8 minutos | Prepárate antes de clase
 
@@ -6,181 +6,171 @@
 
 ## 🔑 Conceptos Clave
 
-- **RICE**: Framework de prompts — Rol, Instrucción, Contexto, Ejemplo.
-- **Ejemplo**: Muestra de output deseado que elimina ambigüedad (mostrar > describir).
-- **Few-shot**: Enseñar con 2-3 ejemplos de input → output.
-- **Triage**: Clasificar y priorizar mensajes según urgencia e impacto.
-- **Iteración progresiva**: Agregar técnicas una a una para ver el impacto.
+- **Datos estructurados**: información en tabla con columnas consistentes; lo contrario es texto libre en WhatsApp/correo.
+- **Pestaña operativa**: donde llegan los datos del día a día; crece constantemente.
+- **Pestaña de configuración**: parámetros del negocio que cambian raro (meta, equipo).
+- **Pestaña histórica**: memoria semanal para comparar; crece una fila por período.
+- **Rango nombrado**: apodo para un rango que sobrevive a cambios de layout; Make los usa en lugar de `A1:G50`.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**RICE como receta de cocina:**
-Ingredientes (contexto), instrucciones (qué hacer), foto del plato terminado (ejemplo). Sin la foto, el chef interpreta.
+**3 pestañas <> cocina profesional:**
+Operativa = mesa de trabajo (pasa de todo). Config = recetario (casi no se toca). Histórico = libro de servicios dados (consulta eventual). Si mezclás las 3 en la misma mesa, nada funciona.
 
-**Ejemplo vs descripción:**
-"Dame una tabla de clasificación" vs "Dame una tabla como esta: [ejemplo]". El segundo elimina 90% de ambigüedad.
+**Rango nombrado <> contacto del teléfono:**
+`A1:G50` es como marcar el número entero cada vez. `RangoVentas` es como "Mamá" — si cambia de número, actualizás un contacto y todo sigue funcionando.
 
-**Triage como urgencias de hospital:**
-No atiendes por orden de llegada — priorizas por gravedad. La IA puede ayudar a clasificar, pero el juicio final es humano.
-
-**Few-shot como enseñar por imitación:**
-Un niño aprende mejor viendo ejemplos que escuchando explicaciones. La IA también.
+**Columna Descripción <> nota al pie de cada dato:**
+El vendedor puso "S/ 2,800". La Descripción cuenta el "por qué" (renovación grande, cliente nuevo). En la Clase 5, Gemini usa esa Descripción para generar insights de verdad — sin ella, el reporte dice cifras pero no historias.
 
 ---
 
-## 📚 Contexto Actual
+## 📚 Contexto Histórico / Contexto Actual
 
-### Por qué triage y no email genérico
+### Google Sheets: por qué es la capa de datos ideal para no-code
 
-El ejercicio anterior (email de seguimiento) era abstracto y difícil de comparar entre estudiantes. El triage de mensajes:
-- Es universal (todos han recibido mensajes de clientes o equivalentes)
-- Tiene output verificable (tabla con campos fijos)
-- Permite comparación objetiva entre iteraciones
-- Introduce las limitaciones de forma natural
+Sheets nació en 2006 como respuesta a Excel en la nube. En 2020-2024 se volvió la capa de datos favorita del no-code: Zapier, Make, Airtable y cientos de herramientas integran con Sheets porque el 90% de pymes ya lo usan. Para AI 101, tiene la ventaja de que no requiere aprender bases de datos — el estudiante ya sabe usarlo.
 
-### El caso PetShop Express
+> **Para contar en clase:** "Aprendiste Google Sheets para hacer tablas. Hoy aprendes a diseñarlo para que otras herramientas lo lean sin quebrarse."
 
-Elegimos productos para mascotas porque:
-- Producto simple y universal
-- Genera variedad natural de mensajes (urgencia médica, quejas, consultas)
-- No requiere conocimiento técnico específico
-- Los mensajes mockup cubren casos límite interesantes
+### Rangos nombrados: por qué importan en automatización
 
----
+En 2022-2023, Make (y Zapier) popularizaron leer Sheets por rango nombrado en lugar de coordenadas. El efecto: un Sheet con 10 años de historial sigue funcionando con el mismo flujo. Sin rangos nombrados, cada cambio de columna rompe el sistema.
 
-## 💡 Los 5 Mensajes y Por Qué Cada Uno
+> **Para contar en clase:** "Si tu Sheet crece 5 años y tu sistema no usa rangos nombrados, vas a romper todo cada vez que quieras agregar una métrica."
 
-| # | Mensaje | Por qué lo incluimos |
-|---|---------|----------------------|
-| 1 | Pedido retrasado + perro con dieta especial | Urgencia REAL (médica) pero tono calmado |
-| 2 | Consulta de producto visto en IG | Categoría ambigua: ¿venta o soporte? |
-| 3 | Cliente enojado pidiendo reembolso | Tono urgente pero ¿es la mayor prioridad? |
-| 4 | Corrección de factura "no urgente" | Dice "no urgente" pero tiene deadline real |
-| 5 | Vitaminas que "no funcionaron" | Múltiples categorías posibles |
-
-### Errores esperados de la IA
-
-**Mensaje 1 vs 3:** La IA puede priorizar el mensaje 3 por el tono agresivo, cuando el mensaje 1 tiene urgencia real (salud del animal).
-
-**Mensaje 4:** La IA puede respetar "no urgente" ignorando el deadline del viernes.
-
-**Mensaje 2 y 5:** Categorías ambiguas que la IA asignará de forma inconsistente.
+**Fuentes:** [Google Sheets: Rangos con nombre](https://support.google.com/docs/answer/63175){:target="_blank"}, [Make University: Google Sheets best practices](https://academy.make.com/){:target="_blank"}
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora
+### Pregunta Detonadora (Quiz Pre-Lab)
 
-**Respuesta correcta:** C - Los ejemplos de output deseado
+**Pregunta:** "¿Por qué separar parámetros del negocio (meta, equipo) en una pestaña distinta a los datos operativos? ¿Qué problema se evita?"
 
-**Por qué las otras NO:**
-| Opción | Por qué NO |
-|--------|-----------|
-| A | El rol ayuda con criterio, pero sin ejemplo el formato es inconsistente. |
-| B | Más palabras sin dirección clara no mejoran nada. Calidad > cantidad. |
-| D | Las primeras palabras importan poco si falta el ejemplo concreto. |
+**Respuesta esperada:** Evita tener que editar la misma columna en 50 filas cuando cambia la meta; centraliza decisiones.
 
-**Script post-votación:**
+**Script post-respuestas:**
 ```
-Facilitador: "¿Quién votó A, que es el rol? ¿Por qué?"
-[Escuchar respuestas]
-Facilitador: "El rol SÍ ayuda — lo veremos en el lab. Pero la respuesta es C.
-Los ejemplos calibran el criterio Y el formato. Mostrar > describir."
+Facilitador: "Exacto. Si tu meta semanal está escrita en 50 filas, cambiarla es una tortura.
+Si vive en una sola celda de Config, cambia una vez y todo se recalcula. Eso es diseño para automatización."
 ```
 
----
+### Demo Principal
 
-### Demo Principal: Triage en 3 Niveles
-
-**Preparación:** Ten los 5 mensajes de PetShop Express listos. Ejecuta los 3 niveles ANTES de clase para tener los resultados.
-
-**Qué mostrar:**
-1. Nivel 1 (casual): Resultado caótico, formatos diferentes
-2. Nivel 2 (con rol): Mejor criterio, formato aún inconsistente
-3. Nivel 3 (RICE completo): Tabla consistente con prioridades calibradas
+**Qué mostrar:** el Sheet del caso Roberto en vivo — primero mal diseñado (1 pestaña todo junto), luego rediseñado con las 3 pestañas y un rango nombrado.
 
 **Script sugerido:**
 ```
-Facilitador: "Tengo 5 mensajes de clientes. ¿Cuál atiendo primero?"
-[Nivel 1]
-Facilitador: "Miren el resultado. ¿Pueden comparar fácilmente? ¿Saben qué hacer?"
-[Nivel 2]
-Facilitador: "Mejor criterio. Pero ¿el formato es consistente?"
-[Nivel 3]
-Facilitador: "Ahora sí. Tabla, emojis de prioridad, acción siguiente clara.
-¿Qué cambió? Los EJEMPLOS le mostraron exactamente cómo clasificar."
+Facilitador: "Aquí tengo el Sheet como lo haría alguien sin este curso: todo en una sola pestaña."
+[Muestra Sheet con columnas mezcladas: ventas + meta + historial todo junto]
+Facilitador: "¿Qué problema ven? Si quiero cambiar la meta, tengo que editar 200 filas."
+[Abre versión con 3 pestañas]
+Facilitador: "Ahora la meta vive en Config, celda B2. Un cambio, todo se recalcula."
 ```
 
-**Si algo sale mal:**
-Si el Nivel 3 tiene errores visibles: "Perfecto — miren este error. [Señalar]. La IA clasificó [X] como [Y] cuando debería ser [Z]. Esto es NORMAL. Por eso el análisis crítico es parte del lab."
-
----
+**Plan B (si Sheets se cae o no conecta):** tener screenshots de ambas versiones listos en una slide.
 
 ### Transición al Lab
 
+**Momento crítico:** los estudiantes se bloquean si su brief no encaja 100% con el caso Roberto (no tienen "ventas" sino "clases" o "pacientes").
+
 **Script sugerido:**
 ```
-Facilitador: "Ahora ustedes van a construir esto paso a paso.
-Parte 1: Sin técnicas — vean el caos.
-Parte 2: Agregan rol — vean qué mejora.
-Parte 3: Agregan formato — vean la consistencia.
-Parte 4: Agregan ejemplos — vean la calibración.
-Parte 5: Encuentren los errores — porque SÍ habrá errores."
+Facilitador: "Si su caso no son ventas, no pasa nada. Reemplacen:
+VentasSemanaActual → CampanasSemanaActual, o CohortesSemana, o PacientesSemana.
+El patrón es [Entidad]SemanaActual. Las columnas serán distintas a las mías, eso lo resuelve su Gem."
 ```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-**"Triage a mano"** — Antes de mostrar la IA, da 2 minutos para que clasifiquen los 5 mensajes manualmente. Compara resultados con la IA. Script: *"Anoten su orden de prioridad. Ahora veamos qué dice la IA. ¿Dónde difieren? ¿Quién tiene razón?"*
+### Dinámica 1: "Revisión cruzada de 2 minutos"
 
-**"El mensaje trampa"** — Después de Nivel 3, pregunta: *"¿Cuál es el mensaje más peligroso de clasificar mal?"* Facilita debate entre mensaje 1 (urgencia médica real con tono calmado) vs mensaje 4 (deadline oculto). No hay respuesta única — el objetivo es razonamiento crítico.
+Contexto: después de Actividad 1, antes de Config.
+
+Cada estudiante le muestra al vecino las 7 columnas de su pestaña operativa. El vecino le pregunta "¿por qué esa columna?". Si el estudiante no sabe responder, la columna probablemente no sirve.
+
+```
+Facilitador: "Roten con el vecino. 1 minuto cada uno.
+Pregunta única: '¿Para qué usa el reporte esa columna?'
+Si no sabe responder, vuelven a Gemini y refinan."
+```
+
+### Dinámica 2: "¿Config o Operativa?"
+
+Contexto: durante la teoría, para consolidar la diferencia.
+
+Lanzás datos al aire y el grupo grita "Config" u "Operativa":
+
+```
+Facilitador: "Nombre del vendedor Juan" → Config
+Facilitador: "Venta de S/ 1,500 del martes" → Operativa
+Facilitador: "Meta del mes" → Config
+Facilitador: "Cliente nuevo que compró" → Operativa
+Facilitador: "Tipo de producto Premium" → Depende (si es catálogo fijo, Config)
+```
 
 ---
 
-## ⚠️ Errores Esperados de Estudiantes
+## 💡 Ejemplos Listos para Usar
+
+### Ejemplo 1: Prompt para columnas operativas (caso genérico)
+
+**Cuándo usarlo:** si un estudiante dice "mi Gem no entiende qué columnas necesito".
+
+```
+Según mi brief, necesito la pestaña operativa donde se registrarán
+los datos del día a día de mi reporte. Dame una tabla con columnas
+mínimas, tipo de dato, y justifica por qué cada una. Incluye una
+columna "Descripción" para contexto en texto libre.
+```
+
+**Tip:** la columna Descripción es crítica. Es la que Gemini usa en la Clase 5 para generar insights — sin ella, el reporte de Clase 7 saldrá plano.
+
+### Ejemplo 2: Prompt para generar filas de ejemplo realistas
+
+**Cuándo usarlo:** cuando al estudiante le da pereza escribir 15 filas a mano.
+
+```
+Genera 15 filas de datos de ejemplo realistas para la pestaña
+VentasSemanaActual con las columnas [lista columnas]. Varía fechas
+en los últimos 7 días, usa nombres de vendedores reales, montos
+realistas para [industria], y descripciones diversas.
+Formato: TSV (separado por tabulaciones).
+```
+
+**Tip:** TSV es mejor que CSV porque pega directo en Sheets sin importar comas en los textos.
+
+---
+
+## ⚠️ Errores Comunes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "Mi prompt es muy largo" | Confunde longitud con calidad | "¿Tienes ejemplos? Eso importa más que las palabras" |
-| Solo documenta versión final | No comparó la evolución | "Vuelve a correr las 4 versiones y compara" |
-| No encuentra errores | Confía ciegamente en la IA | "Usa la tabla de Parte 5: compara mensaje 1 vs 3, revisa si detectó el deadline del mensaje 4" |
-| Categorías inventadas | No siguió las restricciones | "Las categorías son fijas: Envío, Producto, Facturación, Venta, Queja" |
+| "Mi Sheet tiene una sola pestaña con todo" | No separó operativa/config/histórico | Mostrar demo del Sheet de Roberto mal y bien diseñado |
+| "Las columnas son genéricas (Col1, Col2)" | El Gem no tiene suficiente contexto del brief | Pedir que revisen que el brief esté cargado en las instrucciones del Gem |
+| "No entiendo qué va en Historico" | Confunde con operativa | Historico tiene 1 fila por semana (resumen); operativa tiene 1 fila por transacción |
+| "Mi rango nombrado apunta a `A1:G50`" | Usó coordenadas fijas | Reemplazar con `A:G` (columna completa sin límite de fila) |
+| "No aparece la opción Rangos con nombre" | Google cambió el menú | Está en **Datos → Rangos con nombre** o busca "nombre" en el menú de búsqueda |
 
 ---
 
 ## ✅ Señales de Comprensión
 
-**ENTIENDE cuando:** explica por qué los ejemplos mejoran más que el rol solo, identifica al menos un error de clasificación de la IA, itera su prompt metódicamente (no al azar).
+### El estudiante ENTIENDE cuando:
+- Puede explicar por qué Config y Operativa son pestañas distintas con un ejemplo de su trabajo
+- Nombra sus rangos con palabras descriptivas (`RangoVentas`, no `Rango1`)
+- Adapta el patrón del caso Roberto a su caso sin copiar literal
 
-**NECESITA AYUDA cuando:** solo documenta la versión final sin comparar, confía ciegamente en la clasificación de la IA, confunde longitud del prompt con calidad.
-
----
-
-## 🔀 Diferenciación
-
-**Avanzados:** agregar un mensaje 6 ambiguo de su invención, crear matriz RICE para su propia industria, mentorear a compañeros que necesitan apoyo.
-
-**Con dificultades:** enfocarse solo en 3 mensajes primero, trabajar en par con estudiante avanzado, recibir prompt pre-construido de Nivel 2 como punto de partida.
-
----
-
-## ❓ Preguntas Frecuentes
-
-### "¿Siempre tengo que usar RICE completo?"
-No para todo. Tareas simples no lo necesitan. Pero cuando algo no funciona, RICE es tu checklist de diagnóstico.
-
-### "¿Cuántos ejemplos en Few-shot?"
-2-3 suelen ser suficientes. Más de 5 puede confundir a la IA.
-
-### "¿Por qué la IA se equivoca en las prioridades?"
-Porque no tiene contexto completo. El mensaje 4 dice "no urgente" — la IA lo cree. Tú sabes que hay deadline. Ese juicio es humano.
-
-### "¿Esto funciona en ChatGPT?"
-Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son universales.
+### El estudiante NECESITA AYUDA cuando:
+- Tiene todos los datos en una sola pestaña
+- Los nombres de columnas son genéricos ("Dato", "Info", "Campo")
+- No sabe qué métrica guardar en Historico
 
 ---
 
@@ -188,78 +178,87 @@ Sí. RICE y estas técnicas funcionan en cualquier LLM. Los principios son unive
 
 | Minuto | Checkpoint | Cómo validar | Si no cumple |
 |--------|------------|--------------|--------------|
-| ~10 | Recap + hook | Pregunta sobre uso de sistema semana pasada | Hacer recap rápido de RICE en pizarra |
-| ~25 | Demo 3 niveles | Comentarios sobre diferencia del ejemplo | Repetir Nivel 1 vs 3 lado a lado |
-| ~35 | Parte 1-2 completada | "¿Quién tiene las 2 primeras versiones?" | Compartir pantalla y hacer juntos |
-| ~55 | Parte 3 completada | "¿Quién tiene tabla con formato?" | Dar template de tabla como referencia |
-| ~75 | Parte 4 completada | "¿Quién tiene los 5 mensajes clasificados?" | Reducir a 3 mensajes, completar resto después |
-| ~90 | Análisis crítico | "¿Quién comparó mensaje 1 vs 3? ¿Cuál priorizó la IA?" | Guiar con pregunta directa sobre msg 1 |
-| ~100 | Cierre | Entregable claro, preview clase 03 | Dar 5 min extra, simplificar entregable |
-
----
-
-## ⚠️ Sección Anti-Hype: Cómo Manejarla
-
-Esta clase tiene una sección explícita de limitaciones. Es intencional.
-
-**Script para introducir limitaciones:**
-```
-Facilitador: "La IA NO es perfecta. Vamos a ver 3 errores comunes.
-Esto no es para asustarlos — es para que sepan cuándo confiar y cuándo verificar."
-```
-
-**Los 3 errores a destacar:**
-1. **Prioridad por tono vs realidad:** Mensaje 3 suena urgente pero mensaje 1 tiene urgencia médica real
-2. **Respetar lo que el cliente DICE:** Mensaje 4 dice "no urgente" pero tiene deadline
-3. **Categorías ambiguas:** Mensaje 5 puede ser Producto, Queja, o Venta
-
-**Script para cerrar:**
-```
-Facilitador: "La IA clasifica. Tú validas. Esa combinación es más poderosa
-que cualquiera de los dos solos."
-```
+| 10 | Apertura terminada | 3 preguntas respondidas en chat | Avanzar con la respuesta del que sí haya respondido |
+| 25 | Teoría terminada | Quiz Pre-Lab respondido | Tomar 1-2 respuestas y seguir |
+| 65 | Actividad 1 | Pestaña operativa con 15 filas generadas por Gemini | Si no salen filas, ofrecer TSV pre-hecho del caso Roberto |
+| 90 | Actividad 2 | Pestaña Config con 4+ parámetros reales | Si tienen dudas, escribir los 4 parámetros en conjunto |
+| 125 | Actividad 3 | 3 rangos nombrados visibles | Pedir captura del menú Datos → Rangos con nombre |
+| 150 | Cierre | Tabla de parámetros con columnas/rangos/config registrados | Revisar que Doc existe |
 
 ---
 
 ## 🧑‍🏫 Tips de Facilitación
 
 ### Si el grupo está callado:
-- En el análisis crítico, nombrar a alguien: "María, ¿qué error encontraste en mensaje 1?"
-- Compartir tu propio error primero: "Yo vi que la IA priorizó mensaje 3 sobre mensaje 1. ¿A ustedes les pasó?"
+- Preguntar por casos específicos: "¿Quién no tiene ventas como métrica? ¿Tú qué mides?"
+- Compartir el Sheet del caso Roberto en pantalla compartida para que copien estructura.
 
 ### Si alguien domina la conversación:
-- "Guardemos las técnicas avanzadas. ¿Alguien más encontró un error diferente?"
+- "Excelente caso — guardémoslo para la Clase 7 donde adaptás tu sistema propio."
 
-### Si hay frustración con errores de la IA:
-- "Exacto. Por eso el análisis crítico es parte del entregable. No es bug — es feature."
+### Si la mayoría termina antes:
+- Logro 🟢 (validación de datos) o 🟡 (gráfico dinámico).
+
+### Si la mayoría se atrasa:
+- Reducir a 10 filas de ejemplo en vez de 15.
+- Omitir pestaña Historico y dejar solo placeholder vacío con las columnas; la llenan en la Clase 4.
+
+### Si hay preguntas fuera de alcance:
+> "Buena pregunta. Eso lo vemos en Clase 4 cuando Make lee el Sheet."
+
+---
+
+## 🔀 Diferenciación
+
+### Para estudiantes avanzados:
+- Logro 🔴: diseñar fórmulas que preparen el llenado automático del Historico (preview de Clase 5).
+- Pedir que agreguen validación de datos a la columna Tipo.
+
+### Para estudiantes con dificultades:
+- Usar el Sheet del caso Roberto como plantilla (ofrecer link al Sheet modelo).
+- Sentarse con ellos 5 min durante Actividad 3 para configurar los 3 rangos juntos.
+
+---
+
+## ❓ Preguntas Frecuentes
+
+### P: ¿Por qué usar Google Sheets y no Excel?
+**R:** Porque Make y Gemini tienen integración nativa con Google (sin configuración extra). Si ya trabajan en Excel, pueden seguir — pero el flujo del curso asume Google.
+
+### P: ¿Mi Sheet puede ser privado o tiene que ser compartido?
+**R:** Privado. Make pide permisos de tu cuenta de Google para leerlo, pero nadie más lo ve.
+
+### P: ¿Cuántas columnas máximo en la pestaña operativa?
+**R:** Idealmente 8-10. Más de 15 es señal de que mezclaste operativa con histórico o config.
+
+### P: ¿Cuándo llenamos Historico de verdad?
+**R:** Clase 5 (con IA) lo llena automáticamente cada vez que corre el flujo semanal.
 
 ---
 
 ## 🔗 Conexiones del Curriculum
 
-### Esta clase construye sobre
+### Esta clase construye sobre:
 
 | Clase | Concepto | Cómo se conecta |
 |-------|----------|-----------------|
-| 01 | Sistema reusable (ROL + CONTEXTO + INSTRUCCIÓN) | RICE expande el framework con Ejemplo como componente clave |
+| 01 | Gem asistente | Ahora es copiloto de diseño: le pedís estructura, no solo texto |
+| 01 | Brief del proyecto | Las columnas del Sheet responden al brief |
 
 ### Conexión con la Próxima Clase
 
 Al cerrar, planta la semilla:
 
-> "Hoy construyeron su biblioteca de prompts maestros.
-> La próxima clase vamos a usar Claude Projects y frameworks personales para producir contenido profesional — de tu expertise a una pieza publicable."
+> "La próxima clase diseñamos la plantilla de Slides del reporte. Los marcadores que vamos a nombrar (`{{ventas_total}}`, `{{clientes_nuevos}}`) se van a conectar a las columnas de este Sheet. Lo que hicieron hoy es la base de los datos que Slides va a mostrar."
 
-**Tarea para mencionar:**
-Biblioteca personal de 3+ prompts documentados y probados en Google Doc.
+**Pre-work / Tarea implícita:** llenar las 15 filas de ejemplo con datos más cercanos a su realidad (si las generadas por Gemini son muy genéricas).
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
-Después de cada sesión, responde brevemente:
-
-1. ¿El concepto de Few-shot quedó claro o necesita más ejemplos la próxima vez?
-2. ¿Los estudiantes encontraron errores de la IA por cuenta propia?
-3. ¿Qué ajustaría del timing o las dinámicas?
-4. ¿Qué estudiantes necesitan seguimiento individual para la clase 03?
+### Preguntas para el facilitador:
+- ¿Cuántos estudiantes lograron las 3 pestañas + 3 rangos nombrados?
+- ¿Quiénes tenían casos muy distintos al Roberto? (candidatos a preview personalizado en Clase 7)
+- ¿Algún estudiante no tiene datos históricos reales? (seguimiento para que inventen datos simulados antes de Clase 4)
+- ¿La tabla de parámetros quedó iniciada en todos?

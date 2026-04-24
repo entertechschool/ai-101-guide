@@ -1,29 +1,29 @@
-> **Módulo 1:** Clase 4 de 4
+> **Módulo 1:** Clase 4 de 4 — Lab Calificado
 
-# Clase 04: Investigación y análisis asistidos por IA
+# Clase 04: Make básico (sin IA)
 
 ## Resumen
 
-Esta es la clase de cierre del Módulo 1. Aplicarás TODO lo que dominaste en las primeras 3 clases para resolver un problema real de tu trabajo. Aprenderás a investigar con fuentes verificables usando Perplexity y Gemini Deep Research, configurarás un Gem personalizado, y crearás un proyecto integrador calificable que demuestra tus habilidades como super-usuario de IA.
+Hoy ves por primera vez el sistema funcionando end-to-end. Vas a construir dos escenarios en Make que conectan las piezas que armaste en las clases anteriores: el Sheet (Clase 2) y la plantilla de Slides (Clase 3). Todavía sin IA — solo Gmail, Sheets, Slides y exportación a PDF.
+
+El primer escenario captura correos entrantes y registra filas automáticamente en tu pestaña operativa usando un **Instant Trigger** (reacción en 2-5 segundos). El segundo escenario toma los datos del Sheet, duplica la plantilla de Slides, reemplaza los marcadores crudos y calculados, exporta PDF y lo envía por correo. Este es el **lab calificado** del Módulo 1 — tu evaluación integradora.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Research con IA cambia las reglas** — Perplexity y Gemini Deep Research citan fuentes verificables, no solo "lo que la IA sabe"
-- **Gems de Gemini** te dan un asistente que ya conoce tu contexto — no repites explicaciones cada vez
-- **Integrar habilidades > usarlas por separado** — un proyecto que combina sistema + prompting + socio pensante + research tiene valor real
-- **Evidencia concreta** — al terminar tendrás una pieza de portfolio con antes/después medible
+- **Make ejecuta ~10 operaciones por cada reporte completo.** En el plan gratuito (1,000 ops/mes) caben 100+ reportes sin pagar nada. Para la mayoría de profesionales, es gratis de verdad.
+- **Un Instant Trigger de Gmail reacciona en segundos, no minutos.** La diferencia con Scheduled (cada 15 min) es el "efecto WOW" cuando tu audiencia ve el sistema actualizarse en vivo.
+- **Aprender Make abre la puerta a 1,500+ integraciones.** Slack, Notion, HubSpot, WhatsApp Business — todo conectable. Lo que construyes hoy es solo la primera automatización de muchas.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Definirás tu problema** — Algo real de tu trabajo que quieras mejorar
-2. **Investigarás contexto** — Research con Perplexity o Gemini Deep Research
-3. **Clarificarás tu enfoque** — Usando tu framework de Clase 03
-4. **Crearás un sistema + Gem** — Solución reusable con Claude y Gemini
-5. **Documentarás todo** — Proyecto completo con antes/después
+1. **Exploraremos los conceptos de Make** - Descubrirás escenarios, módulos, operaciones, conexiones y la diferencia Instant vs Scheduled.
+2. **Construirás el escenario Gmail → Sheet** - Configurarás un Instant Trigger con filtro y agregarás filas automáticamente.
+3. **Conectarás Sheet → Slides → PDF → Gmail** - Segundo escenario que genera el reporte completo y lo envía a tu correo.
+4. **Completarás el Desafío post-clase** - Nombre de PDF con fecha dinámica y error handler básico.
 
 ---
 
@@ -31,10 +31,10 @@ Esta es la clase de cierre del Módulo 1. Aplicarás TODO lo que dominaste en la
 
 Al finalizar esta clase, podrás:
 
-1. **Conducir research con IA** usando Perplexity o Gemini con fuentes verificables
-2. **Crear un Gem de Gemini** especializado en tu área profesional
-3. **Integrar múltiples habilidades de IA** para resolver un problema complejo
-4. **Producir un proyecto documentado** que demuestra valor medible
+1. **Explicar** los conceptos base de Make (escenario, módulo, operación, trigger, conexión) y la diferencia Instant vs Scheduled.
+2. **Construir** un flujo Gmail → Sheet con Instant Trigger y filtro de asunto.
+3. **Construir** un flujo Sheet → Slides → PDF → Gmail reemplazando ≥5 marcadores crudos y calculados.
+4. **Agregar** mejoras básicas (nombre de archivo con fecha, error handler) como preparación para el Módulo 2.
 
 ---
 
@@ -42,27 +42,27 @@ Al finalizar esta clase, podrás:
 
 ### De clases anteriores
 
-- Tu Claude Project y framework personal de Clase 03
-- Tu biblioteca de prompts de Clase 02
+- Sheet con 3 pestañas y rangos nombrados (Clase 2)
+- Plantilla de Slides con ~18-20 marcadores documentados (Clase 3)
+- Tabla de parámetros actualizada
 
 ### Reflexión previa
 
 Antes de llegar a clase, reflexiona sobre:
 
-- ¿Qué problema de tu trabajo te gustaría resolver con IA?
-- ¿Qué información externa necesitarías para resolverlo mejor?
+- Si tu sistema estuviera funcionando hoy, ¿qué haría la diferencia más grande en tu trabajo semanal?
+- ¿Qué correo sueles recibir con información que podría ir directamente a un Sheet si fuera automático?
 
 ### Herramientas
 
-- [ ] **Gemini** — Crear cuenta en [gemini.google.com](https://gemini.google.com){:target="_blank"} (explorar "Gems")
-- [ ] **Perplexity** — Crear cuenta en [perplexity.ai](https://perplexity.ai){:target="_blank"}
-- [ ] **Claude** — Cuenta activa con tu Project de Clase 03
-- [ ] **Google Doc** — Para documentar tu proyecto
+- [ ] **Cuenta de Make** - [make.com](https://make.com/){:target="_blank"} — crear cuenta gratuita antes de la clase
+- [ ] **Sheet de Clase 2 y plantilla de Clase 3** - Listas y accesibles
+- [ ] **Correo de prueba** - Puedes enviarte correos a ti mismo para probar el Instant Trigger
 
 ### Lectura sugerida
 
-- [Gemini Gems](https://support.google.com/gemini/answer/14695627){:target="_blank"} - Documentación oficial
-- [Perplexity Guides](https://www.perplexity.ai/hub){:target="_blank"} - Guías de uso
+- [Make: Primer escenario](https://www.make.com/en/help/tools/create-your-first-scenario){:target="_blank"} - Tutorial oficial corto.
+- [Make vs Zapier](https://www.make.com/en/help/tools/make-vs-zapier){:target="_blank"} - Comparación útil si ya usabas Zapier.
 
 ---
 
@@ -70,13 +70,22 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **Perplexity** | Motor de búsqueda con IA que cita fuentes verificables |
-| **Gemini Deep Research** | Investigación profunda con múltiples fuentes y síntesis |
-| **Gem** | Asistente personalizado en Gemini con instrucciones específicas |
-| **Proyecto integrador** | Entregable que combina múltiples habilidades para resolver un problema real |
+| **Escenario** | El flujo completo que construyes en Make (equivalente a "workflow" o "Zap"). |
+| **Módulo** | Cada paso del flujo (leer Gmail, escribir en Sheet, exportar PDF). |
+| **Operación** | Cada vez que un módulo ejecuta. Cuenta para el límite de 1,000/mes. |
+| **Conexión** | Autenticación entre Make y tus cuentas (Gmail, Sheets). |
+| **Trigger** | Módulo que inicia el flujo. |
+| **Instant Trigger** | Se activa en 2-5 segundos cuando algo pasa. |
+| **Scheduled Trigger** | Corre cada X tiempo (cada 15 min, diario, semanal). |
+| **Replace Text** | Operación de Slides que busca `{{marcador}}` y lo sustituye. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Google Deep Research](https://blog.google/products/gemini/google-gemini-deep-research/){:target="_blank"} - Anuncio oficial
+- [Plan gratuito de Make](https://www.make.com/en/pricing){:target="_blank"} - Verifica límites y qué incluye.
+- [Gmail Watch Emails en modo Instant](https://www.make.com/en/help/app/gmail){:target="_blank"} - Documentación del módulo que usarás.
+
+---
+
+> ⚠️ **Lab Calificado** - Este lab es la evaluación integradora del Módulo 1. Ver rúbrica en `lab/README.md`.

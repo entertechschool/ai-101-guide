@@ -1,4 +1,4 @@
-# Guía del Facilitador - Clase 04: Investigación y análisis asistidos por IA
+# Guía del Facilitador - Clase 04: Make básico (sin IA)
 
 > Tiempo de lectura: 10 minutos | Prepárate antes de clase
 
@@ -6,163 +6,183 @@
 
 ## 🔑 Conceptos Clave
 
-- **Proyecto integrador**: Entregable que combina múltiples habilidades para resolver un problema real.
-- **Research con IA**: Uso de Perplexity/Gemini para investigación con fuentes verificables.
-- **Gem de Gemini**: Asistente personalizado con instrucciones específicas.
-- **Rúbrica**: Criterios de evaluación con pesos claros.
-- **Antes/después**: Métricas que demuestran impacto real.
+- **Escenario**: el flujo completo en Make (equivalente a "Zap").
+- **Módulo**: cada paso del escenario (leer Gmail, escribir en Sheet, etc.).
+- **Operación**: cada vez que un módulo ejecuta. Cuenta para el límite de 1,000/mes.
+- **Conexión**: autenticación entre Make y tus apps (Gmail, Sheets).
+- **Instant Trigger**: activación en 2-5 seg vía webhook/push; efecto "en vivo".
+- **Scheduled Trigger**: revisión cada X tiempo; mejor para reportes periódicos.
+- **Replace Text**: operación de Slides que reemplaza `{{marcador}}` por un valor.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**Proyecto integrador como examen práctico de manejo:**
-Aprendiste a frenar, acelerar, estacionar por separado. El examen es manejar en tráfico real donde todo se usa junto.
+**Escenario <> receta de cocina:**
+Cada módulo es un paso de la receta ("leer Gmail", "escribir en Sheet"). El orden importa — no podés "exportar PDF" antes de "reemplazar marcadores". Make es el cocinero que sigue la receta cada vez que se activa el trigger.
 
-**Research como ingredientes de receta:**
-No cocinas solo con lo que tienes en casa — a veces necesitas ir al mercado. El research trae ingredientes que no tenías.
+**Instant vs Scheduled <> campanilla vs reloj:**
+Instant = campanilla en el mostrador (suena cuando alguien llega). Scheduled = alarma del reloj (suena a la hora programada aunque no haya nadie). La campanilla es mejor para atención al cliente; la alarma es mejor para tareas periódicas.
 
-**Gem como asistente personalizado:**
-Es como tener un colega que conoce TU contexto y no necesitas explicarle todo cada vez.
-
----
-
-## 📚 Contexto Pedagógico
-
-### Por qué un proyecto integrador
-
-Las Clases 01-03 enseñaron habilidades progresivas: panorama IA (01), instrucciones efectivas (02), producción de contenido con socio pensante (03). El valor real viene de integrar todo cuando un problema real requiere research + clarificación + sistema, y el output no es "ejercicio de clase" sino algo que usarás mañana.
-
-### El riesgo a evitar
-
-Algunos estudiantes inventarán problemas para el ejercicio. El resultado será superficial. Enfatiza que el valor está en resolver algo REAL que les importa.
-
-### Por qué Gems de Gemini
-
-Introducimos Gemini para diversificar herramientas (no solo Claude), mostrar que las habilidades son transferibles, y porque Gems son fáciles, dan sensación de "producto propio" y se integran con Google Workspace.
+**Operaciones <> stamps en una tarjeta de café:**
+Tenés 1,000 stamps al mes. Cada "taza" (ejecución de módulo) consume un stamp. Flujos frecuentes consumen rápido; flujos semanales duran meses. Monitorear stamps = monitorear consumo de Make.
 
 ---
 
-## 💡 Ejemplos de Proyectos Viables
+## 📚 Contexto Histórico / Contexto Actual
 
-| Rol | Problema | Research | Clarificación | Sistema |
-|-----|----------|----------|---------------|---------|
-| **Marketing** | "Posts inconsistentes" | Tendencias de contenido | Qué hace que MIS posts funcionen | Gem de redacción + template |
-| **PM** | "Priorizamos sin criterio" | Frameworks de priorización | Cómo realmente decidimos | Matriz de decisión + Gem |
-| **Consultor** | "Research toma mucho tiempo" | Herramientas de research | Mi flujo actual de research | Sistema de research + Gem |
+### Make (antes Integromat): de nicho técnico a estándar no-code
 
-**Proyectos que NO funcionan:** "Quiero aprender a programar" (aspiración, no problema), "La economía está difícil" (no tiene solución con IA), "Mi jefe es malo" (no es solucionable con herramientas).
+Integromat nació en 2016 en República Checa como competencia directa de Zapier, con diferenciador clave: interfaz visual con nodos conectados (como Figma para automatización). En 2022 cambió el nombre a Make después de ser adquirida por Celonis. Hoy (2025) tiene 250K+ usuarios activos, 1,500+ integraciones, y un plan gratuito muy generoso (1,000 ops/mes) que lo volvió favorito de no-code creators.
+
+> **Para contar en clase:** "Lo que las empresas pagan $500-$5,000/mes con Zapier Enterprise, ustedes lo hacen con 1,000 ops gratis mensuales. Para un reporte semanal (~10 ops), eso son 100+ reportes al mes. Alcanza."
+
+### Instant Trigger: por qué cambió el juego
+
+Antes de los Instant Triggers (2020-2021), todo flujo se activaba cada 5-15 min. Eso no es "tiempo real" — es "casi tiempo real". Cuando Make implementó webhooks directos de Gmail y Google Forms, el efecto visible fue que la automatización pasó de "útil" a "mágica" para la audiencia no técnica.
+
+> **Para contar en clase:** "La diferencia entre reaccionar en 15 minutos y reaccionar en 5 segundos no es técnica — es percepción. Lo que percibe tu jefe o cliente como 'magia' es lo que vende automatización."
+
+**Fuentes:** [Make: About](https://www.make.com/en/about){:target="_blank"}, [Make: Pricing](https://www.make.com/en/pricing){:target="_blank"}
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora
+### Pregunta Detonadora (Quiz Pre-Lab)
 
-**Respuesta correcta:** C - Integraremos múltiples habilidades en UNA solución real. Las otras fallan porque: A (más herramientas es medio, no fin), B (la evaluación es consecuencia, no objetivo), D (el tiempo es recurso, no diferenciador).
+**Pregunta:** "Si pudieras automatizar solo UNA tarea de tu trabajo esta semana, ¿cuál sería y por qué?"
 
-**Script post-votación:**
+**Respuesta esperada:** varía por estudiante. Tu trabajo es anotar mentalmente los casos — en Clase 7 cada uno aplicará el sistema a SU caso, y las respuestas de hoy son material valioso para esa transferencia.
+
+**Script post-respuestas:**
 ```
-Facilitador: "¿Quién votó B, que es calificable? La rúbrica existe,
-pero el VALOR está en la integración. Las Clases 01-03 fueron
-habilidades sueltas. Hoy las juntamos para resolver algo real."
+Facilitador: "Guardá esa respuesta. En 3 clases vas a adaptar el sistema
+que construimos hoy a exactamente ESE caso que acabás de mencionar.
+Hoy construimos el modelo; en Clase 7 vos lo hacés tuyo."
 ```
 
 ### Demo Principal
 
-**Preparación:** Ten un proyecto propio. Mostrar en orden: problema real (30s), research (1 min), clarificación del enfoque (1 min), sistema Gem + Claude (2 min), resultado medible (30s).
+**Qué mostrar:** el Instant Trigger funcionando en vivo. Enviás un correo a tu propia cuenta con el asunto filtro, y en menos de 10 segundos el Sheet se actualiza en pantalla compartida.
 
 **Script sugerido:**
 ```
-Facilitador: "Mi problema era [X]. Me costaba [impacto].
-Investigué [mostrar Perplexity/Gemini], clarifiqué mi enfoque
-con el socio pensante, creé este Gem [mostrar] y este sistema
-en Claude [mostrar]. Resultado: de [antes] a [después]."
+Facilitador: "Miren mi Sheet — tiene X filas ahora."
+[Envía correo desde otra cuenta]
+Facilitador: "Acabo de enviar un correo. Esperen..."
+[5-8 segundos después, aparece la fila nueva]
+Facilitador: "Ese es el efecto WOW. Esto es lo que vamos a construir hoy."
 ```
 
-**Si algo sale mal:** "Esto pasa — por eso probamos antes de documentar. El proceso de ajuste es parte del proyecto."
-
-### Introducción a Gems
-
-```
-Facilitador: "Gems son asistentes personalizados en Gemini.
-Piénsenlo como un colega que ya conoce su contexto.
-Le dan instrucciones UNA vez, y cada conversación empieza ahí.
-¿Por qué Gemini? Diversificamos herramientas, se integra con
-Google Workspace, y las habilidades son transferibles."
-```
+**Plan B (si Instant no dispara):** tener un video de 20 segundos pregrabado del efecto.
 
 ### Transición al Lab
 
+**Momento crítico:** el setup de Make (cuenta + conexiones con Gmail y Sheets) puede tomar 10 min por estudiante. Es crítico que la cuenta esté creada antes de la clase.
+
+**Script sugerido:**
 ```
-Facilitador: "Tienen 90 minutos para crear un proyecto completo.
-El valor no está en 'terminar' sino en resolver algo REAL.
-Partes: problema+antes (10 min), research (15 min),
-clarificación (15 min), sistema Gem+Claude (20 min),
-documentar después (10 min).
-Al final, deben poder decir: 'Esto lo usaré mañana.'"
+Facilitador: "Levanten la mano si YA tienen cuenta de Make creada."
+[Contar manos]
+Facilitador: "Los que no, tómense 2 minutos ahora.
+Los demás, conecten Gmail y Google Sheets (Settings → Connections)."
 ```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-**El pitch del elevador** (5 min, post definición de problema):
-En parejas, cada estudiante explica su problema en 30 segundos. El compañero responde: "¿Eso lo vas a usar mañana?" Si la respuesta es dudosa, el problema necesita ajuste.
+### Dinámica 1: "La cadena de módulos"
 
-**Antes/después en vivo** (5 min, pre-cierre):
-2-3 voluntarios comparten su métrica antes/después en una frase. Ejemplo: "Mis propuestas tomaban 3 horas, ahora 45 minutos." El grupo aplaude cada una.
+Contexto: durante la teoría, para consolidar el concepto de escenario.
+
+Pedís al grupo armar el escenario 2 en voz alta, en orden:
+
+```
+Facilitador: "¿Cuál es el trigger del escenario 2? (Manual/Run once por ahora)
+[Toma respuesta]
+Facilitador: "¿Qué sigue? Necesitamos los datos del Sheet..."
+[Respuesta: Search Rows]
+Facilitador: "¿Y después?"
+[Continúan hasta: Create from Template → Replace Text (varios) → Export PDF → Send Email]
+```
+
+### Dinámica 2: "Cazadores de operaciones"
+
+Contexto: en medio del lab, si surge tema de consumo de Make.
+
+Cada estudiante cuenta cuántas operaciones consume su escenario 2 por reporte generado:
+
+```
+Facilitador: "Cuenten los módulos de su escenario 2.
+Cada Replace Text = 1 op. Cada módulo = 1 op.
+¿Cuántas ops por reporte?"
+[Respuestas: 10-15 típicamente]
+Facilitador: "Con 1,000 ops/mes, ¿cuántos reportes pueden correr?"
+[80-100 reportes mensuales]
+Facilitador: "Más que suficiente. Ahora agreguen 18 marcadores tipo IA en Clase 5..."
+[Nuevo cálculo: 28-33 ops → ~30 reportes mensuales]
+```
 
 ---
 
-## ⚠️ Errores Esperados de Estudiantes
+## 💡 Ejemplos Listos para Usar
+
+### Ejemplo 1: Formato de fecha en Make
+
+**Cuándo usarlo:** cuando un estudiante pregunta cómo formatear fechas para el marcador `{{semana}}`.
+
+```
+formatDate(now; "DD/MM/YYYY")        → 19/04/2026
+formatDate(now; "dddd, DD MMMM")     → lunes, 19 abril
+formatDate(parseDate(fecha; "..."); "YYYY-MM-DD")  → conversión entre formatos
+```
+
+**Tip:** Make usa el estándar [moment.js](https://momentjs.com/docs/#/displaying/format/) para formatos.
+
+### Ejemplo 2: Cálculo de variación porcentual
+
+**Cuándo usarlo:** marcador `{{variacion_pct}}`.
+
+```
+Módulo Math → Set multiple variables
+  ventas_actual = {{sheet_module.ventas_total}}
+  ventas_anterior = {{historico_module.ventas_semana_pasada}}
+  variacion = (ventas_actual - ventas_anterior) / ventas_anterior * 100
+
+En Replace Text:
+  {{round(variacion; 1)}}%
+```
+
+**Tip:** siempre redondear con `round(valor; decimales)` antes de pasarlo a Replace Text.
+
+---
+
+## ⚠️ Errores Comunes
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| Problema vago | "Quiero ser más productivo" | "¿Qué tarea específica te toma tiempo?" |
-| Research sin criterio | Copia todo lo que encuentra | "¿Cuál de esas fuentes aplica a TU caso?" |
-| Gem sin personalización | Copia template sin ajustar | "¿Esto refleja TU contexto y TU trabajo?" |
-| No prueba el sistema | Lo documenta sin usarlo | "Ejecuta una prueba real antes de documentar" |
-| Sin métricas | "Mejoró" sin números | "¿Cuánto tiempo tomaba antes? ¿Y ahora?" |
+| "No me conecta Gmail" | 2FA activado sin App Password | Generar [App Password](https://myaccount.google.com/apppasswords){:target="_blank"} o usar cuenta personal |
+| "Instant Trigger no dispara" | Falta activar el webhook / no subscribió | Click "Run once" en el trigger primero para activarlo |
+| "Replace Text no reemplaza" | Texto exacto no coincide (espacio o mayúscula) | Copiar/pegar el marcador desde la plantilla de Slides |
+| "Export PDF da error" | Plantilla sin permiso de edición de Make | Verificar que la cuenta conectada tiene edit access |
+| "Consumo operaciones muy alto" | Escenario no tiene filtro → captura todo | Agregar filtro específico en el trigger |
+| "Correo llega sin adjunto" | Módulo Send Email no recibió output del Export PDF | Verificar mapping del campo Attachments |
 
 ---
 
 ## ✅ Señales de Comprensión
 
-- **ENTIENDE cuando:** Puede explicar cómo su proyecto integra research + clarificación + sistema. Identifica métricas reales de antes/después. Adapta templates a su contexto específico.
-- **NECESITA AYUDA cuando:** El problema es vago o genérico. No tiene métricas antes/después. Copia ejemplos sin adaptar a su realidad profesional.
+### El estudiante ENTIENDE cuando:
+- Distingue trigger de módulo regular sin dudar
+- Predice cuántas operaciones consume su escenario
+- Sabe por qué eligió Instant vs Scheduled para cada caso
 
-## 🔀 Diferenciación
-
-- **Avanzados:** Sugiere integraciones adicionales (Gem + Claude Project + automatización). Asigna rol de mentor de pares durante el lab.
-- **Con dificultades:** Simplifica a 1 sola herramienta (solo Gem o solo Claude). Empareja con estudiante avanzado. Reduce scope a 1 problema muy concreto.
-
----
-
-## ⚠️ Anti-Hype
-
-```
-Facilitador: "Las herramientas NO resuelven solas. El research puede
-tener datos desactualizados, los Gems pueden dar respuestas genéricas
-si no los personalizas. El valor está en CÓMO INTEGRAN las piezas,
-no en cuántas herramientas usan."
-```
-
----
-
-## ❓ Preguntas Frecuentes
-
-### "¿Gems está disponible para todos?"
-Gems está en la versión estándar de Gemini. Si alguien tiene problemas de acceso, pueden crear el "sistema" como prompt largo que copian al inicio de cada conversación.
-
-### "¿Puedo usar solo Claude sin Gemini?"
-El proyecto requiere ambos: Gem de Gemini + sistema en Claude. La diversificación de herramientas es intencional.
-
-### "¿Qué pasa si mi problema no tiene métricas claras?"
-Todo problema tiene alguna métrica: tiempo, esfuerzo, frecuencia, satisfacción. Si no puedes medirlo, quizás no es un problema claro.
-
-### "¿Puedo usar mi framework y Claude Project de Clase 03?"
-Absolutamente. Son inputs directos para la clarificación de Clase 04. De hecho, es una excelente integración.
+### El estudiante NECESITA AYUDA cuando:
+- Corre Run once cada vez que hace un cambio (en vez de activar el trigger)
+- Se confunde entre "Sheet Search" y "Sheet Add" (lectura vs escritura)
+- No usa módulos Date/Math para calculados (pone valores hardcoded)
 
 ---
 
@@ -170,105 +190,111 @@ Absolutamente. Son inputs directos para la clarificación de Clase 04. De hecho,
 
 | Minuto | Checkpoint | Cómo validar | Si no cumple |
 |--------|------------|--------------|--------------|
-| ~10 | Intro completada | Pregunta detonadora votada | Revisar si la pregunta fue clara |
-| ~25 | Demo terminada | Preguntas sobre el proceso | Mostrar ejemplo alternativo |
-| ~35 | Problema definido | "¿Quién tiene problema + antes?" | Usar dinámica de pitch en parejas |
-| ~50 | Research hecho | "¿Quién tiene 3+ fuentes?" | Reducir a 2 fuentes mínimas |
-| ~65 | Enfoque clarificado | "¿Quién tiene estructura?" | Dar template pre-llenado |
-| ~95 | Sistema creado | "¿Quién tiene Gem + Claude?" | Simplificar a solo Gem |
-| ~110 | Proyecto documentado | "¿Quién tiene antes/después?" | Dar 5 min extra de buffer |
+| 10 | Apertura + demo del Instant Trigger | Todos vieron el efecto WOW | Mostrar video pregrabado si Instant falla |
+| 30 | Teoría terminada | Quiz Pre-Lab respondido | Tomar 1-2 respuestas y seguir |
+| 70 | Actividad 1 | Instant Trigger activo + 3 filas en Sheet | Revisar filtro y reconexión Gmail |
+| 105 | Actividad 2 | Escenario 2 con Run once exitoso + 5 marcadores | Si no llegan, ofrecer ayuda 1 a 1 |
+| 130 | Actividad 3 | Correo con PDF en bandeja | Si falla, revisar módulo Send Email |
+| 150 | Cierre | Compromiso de completar desafío + entrega | — |
 
 ---
 
 ## 🧑‍🏫 Tips de Facilitación
 
-**Si alguien no tiene problema real:** "¿Qué te preguntaron esta semana en el trabajo?" / "¿Qué tarea repetiste más de una vez?"
+### Si el grupo está callado:
+- Pedir que 2 estudiantes compartan pantalla simultáneamente durante la Actividad 1.
+- Preguntar por el caso específico de alguien ("¿A quién le llegaron sus filas?").
 
-**Si hay frustración con Gems:** "Las instrucciones son como entrenar a un nuevo colega. ¿Qué le dirías?" Mostrar ejemplo simple que funcione.
+### Si alguien domina la conversación:
+- Pedirle que comparta screenshot de su flujo completo como referencia para el grupo.
 
-**Si van atrasados:** Reducir research a 2 fuentes, simplificar sistema a solo Gem, dar 5 min de buffer.
-**Si terminan antes:** Mejorar sistema, preparar pitch de 2 min, ayudar a compañeros.
+### Si la mayoría termina antes:
+- Logro 🟢 (pestaña Logs) o 🔴 (preparar scheduled trigger).
 
----
+### Si la mayoría se atrasa:
+- Recortar a Escenario 1 completo + Escenario 2 hasta Replace Text (sin PDF ni Gmail). El resto se completa post-clase.
+- Posponer Actividad 3 (Export + Send Email) al desafío post-clase.
 
-## Sección de Evaluación
-
-| Criterio | Peso | Qué buscar |
-|----------|------|------------|
-| **Problema real** | 20% | ¿Es genuino? ¿Tiene impacto medible? ¿Lo usará mañana? |
-| **Research** | 20% | ¿Hay fuentes verificables? ¿Son relevantes al problema? |
-| **Clarificación** | 20% | ¿Usó técnicas de Clase 03? ¿El enfoque está estructurado? |
-| **Sistema** | 25% | ¿Gem funciona? ¿Claude sistema funciona? ¿Son reusables? |
-| **Documentación** | 15% | ¿Tiene las 5 secciones? ¿Hay antes/después? |
-
-**Escala:** 90+: excepcional, 80+: sólido, 70+: aceptable, <70: incompleto
+### Si hay preguntas fuera de alcance:
+> "Excelente pregunta. Gemini API en Make lo vemos la próxima clase."
 
 ---
 
-## 📊 Test Diagnóstico del Módulo
+## 🔀 Diferenciación
 
-| Actividad | Tiempo | Formato |
-|-----------|--------|---------|
-| Test en Canvas | 15 min | Individual, libro cerrado |
-| Revisión en vivo | 15 min | Grupal, facilitador guía |
+### Para estudiantes avanzados:
+- Logro 🔴 (preparar scheduled trigger) + ayudar a compañeros rezagados.
+- Pedirles que calculen operaciones totales que consumirá el sistema en Clase 5 cuando agreguemos IA.
 
-**Script antes del test:**
-```
-Facilitador: "Tienen 15 minutos. Es individual y a libro cerrado.
-No es calificado — es para saber qué entendieron bien y qué
-necesitamos reforzar. Contesten con lo que recuerden."
-```
-
-**Tips:** Proyectar timer visible. Ambiente silencioso. No responder preguntas de contenido durante el test.
-
-**Revisión:** Mostrar estadísticas del quiz. Dedicar tiempo a preguntas con <60% de acierto. Celebrar las de >90%.
+### Para estudiantes con dificultades:
+- Usar el "Blueprint" del escenario de Roberto como template (importar → ajustar).
+- Sentarse 5-10 min durante Actividad 2 para configurar el primer Replace Text juntos; los siguientes los hacen solos.
 
 ---
 
-## 🎤 Presentaciones de Cierre
+## ❓ Preguntas Frecuentes
 
-**Script antes de presentaciones:**
-```
-Facilitador: "Este es SU momento. Han trabajado 4 clases para
-llegar aquí. No busco perfección — busco que muestren
-cómo resolvieron algo real con lo que aprendieron."
-```
+### P: ¿Qué pasa si excedo las 1,000 operaciones del plan gratuito?
+**R:** El escenario deja de correr hasta el siguiente mes. Puedes reducir frecuencia de Scheduled o pagar $9/mes para 10,000 ops. Para AI 101 el plan gratuito es suficiente.
 
-**Durante:** Ambiente positivo, 1 pregunta por presentador. Si alguien no terminó: "Está bien no haber terminado al 100%. ¿Qué parte quieres mostrar?"
+### P: ¿Por qué necesito filtro de asunto en Gmail si ya estoy filtrando?
+**R:** Sin filtro, el trigger procesa CADA correo que llega. Agotás las operaciones en 1-2 días.
 
-**Cierre del módulo:**
-```
-Facilitador: "Hace 4 clases no sabían qué era un sistema reusable.
-Hoy tienen un proyecto integrador con research, clarificación
-y herramientas personalizadas. Eso es progreso REAL."
-```
+### P: ¿Qué hago si mi Instant Trigger no dispara?
+**R:** 1) Click "Run once" en el trigger para activarlo, 2) Verificá que el filtro no sea demasiado restrictivo, 3) Revisá la sección History del escenario.
+
+### P: ¿Puedo usar otra plataforma en vez de Make (Zapier, n8n)?
+**R:** El concepto es el mismo pero el Lab asume Make. Si ya tenés otra, el patrón funciona igual — pero los screenshots de la entrega no coincidirán.
 
 ---
 
 ## 🔗 Conexiones del Curriculum
 
-### Esta clase construye sobre
+### Esta clase construye sobre:
 
 | Clase | Concepto | Cómo se conecta |
 |-------|----------|-----------------|
-| 01 | Sistema reusable | Base para crear Gem y sistema Claude del proyecto |
-| 02 | RICE + Few-shot | Técnicas aplicadas al research y clarificación |
-| 03 | Socio pensante + Producción | Framework personal como input para la clarificación del proyecto |
+| 01 | Gem y brief | Sin brief, no sabrías qué filtro de Gmail ponerle al trigger |
+| 02 | Sheet con 3 pestañas | Los 2 escenarios leen/escriben en VentasSemanaActual |
+| 03 | Marcadores clasificados | Los Replace Text usan los nombres de la tabla de parámetros |
 
-### Conexión con Módulo 2
+### Conexión con la Próxima Clase
 
-> "Este proyecto es su primera pieza de portfolio. En el Módulo 2:
-> Clase 05 (vibe coding), Clase 06 (asistente IA), Clase 07 (agente avanzado),
-> Clase 08 (Demo Day). Lo que hicieron hoy es la base de lo que mostrarán al final."
+Al cerrar, planta la semilla:
 
-**Tarea para mencionar:** Google Doc completo con las 5 secciones. Incluir Gem configurado (screenshot) + sistema Claude. Antes/después con métricas.
+> "La próxima clase es la bisagra del curso. Todo lo que hicimos hasta hoy era construir el escenario sin IA. En Clase 5 agregamos Gemini API en dos puntos: el primer escenario procesará correos informales y extraerá datos estructurados (adiós al filtro rígido de asunto), y el segundo escenario generará los insights tipo IA de la tabla de parámetros. El sistema cobrará inteligencia."
+
+**Pre-work / Tarea implícita:** crear API key de Gemini gratis en [Google AI Studio](https://aistudio.google.com/){:target="_blank"} antes de la próxima clase. Sin la API key no se puede hacer el lab.
+
+---
+
+## 📊 Test Diagnóstico del Módulo
+
+### Logística (15 min en clase)
+
+| Actividad | Tiempo | Qué hacer |
+|-----------|--------|-----------|
+| Test diagnóstico | 15 min | Proyectar countdown, ambiente silencioso |
+
+### Durante el test
+
+> "Tienen 15 minutos. Es individual y a libro cerrado. Recuerden: esto NO afecta su calificación — es para que nosotros sepamos qué temas necesitan más práctica antes del Módulo 2."
+
+**Tips:**
+- Proyectar timer en pantalla.
+- Circular sin presionar.
+- No responder preguntas sobre contenido durante el test.
+
+### Revisión de resultados
+
+Las preguntas y clave están en `test/questions.md`. Revisar en la siguiente clase (al inicio) solo las preguntas con <60% de acierto.
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
-Después de cada sesión, responde estas preguntas en tus notas:
-- ¿Qué funcionó bien hoy?
-- ¿Qué ajustaría para la próxima vez?
-- ¿Qué estudiantes necesitan seguimiento en Módulo 2?
-- ¿Los proyectos fueron genuinos o artificiales?
+### Preguntas para el facilitador:
+- ¿Cuántos estudiantes completaron los 2 escenarios end-to-end en clase?
+- ¿Quiénes siguen sin entender la diferencia Instant vs Scheduled? (seguimiento en Clase 5)
+- ¿Hubo casos donde el PDF llegó pero con diseño roto? (candidatos para refinar plantilla en Clase 7)
+- ¿Ya todos tienen API key de Gemini para Clase 5?

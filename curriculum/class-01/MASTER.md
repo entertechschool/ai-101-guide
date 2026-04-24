@@ -1,40 +1,15 @@
-# Clase 01: El Nuevo Juego
+# Clase 01 — MASTER (deprecado v2-2026)
 
-## Objetivos
-- Distinguir capacidades reales de IA vs. hype
-- Identificar los 3 niveles: Usuario → Operador → Constructor
-- Usar Claude para resolver una tarea real
-- Reconocer oportunidades donde IA multiplica productividad
-
-## Conceptos
-- **LLM:** Modelo de lenguaje, base de la IA en 2025
-- **Prompt:** Instrucción a la IA, clave para buenos resultados
-- **Alucinación:** Invención de información, limitación crítica a conocer
-
-## Analogías
-- IA como amplificador → Micrófono
-- Prompt vago → Pedir "comida" en restaurante
-
-## Demo (20 min)
-**Caso:** Email de disculpa a cliente VIP enojado
-**Contraste:** ~1 hora manual → ~2 minutos con IA
-
-## Ejercicios
-
-### Lab 1: Primera interacción (10 min)
-**Tema:** Prompt guiado idéntico para todos
-**Caso:** Pedir 3 razones de productividad con IA
-
-### Lab 2: Tu tarea real (35 min)
-**Tema:** Aplicación individual a trabajo real
-**Caso:** Elegir entre redacción, análisis o creación
-
-### Lab 3: Captura (15 min)
-**Tema:** Documentar y preparar showcase
-**Caso:** Screenshot + pitch de 30 segundos
-
-## Entregable
-Screenshot + prompt final + reflexión (3-5 oraciones)
-
-## Frase de cierre
-"Esta semana, cada vez que enfrenten una tarea repetitiva, pregúntense: ¿podría usar IA para esto?"
+> ⚠️ **Archivo deprecado.** Este MASTER.md correspondía a la versión anterior del curso (enfoque super-usuario de IA con Claude + ChatGPT).
+>
+> El contenido actualizado de la clase vive en:
+>
+> - [`README.md`](README.md) — syllabus del estudiante
+> - [`lab/README.md`](lab/README.md) — laboratorio
+> - [`slides/README.md`](slides/README.md) — presentación
+> - [`facilitator/README.md`](facilitator/README.md) — guía del facilitador
+> - [`infographic/index.html`](infographic/index.html) — infografía post-clase
+>
+> Consultá `AGENTS.md` y el [`MODULE-PLAN.md` del Módulo 1](../module-1/MODULE-PLAN.md) para la arquitectura actual del curso.
+>
+> El contenido histórico está preservado en el git log de la rama `main`.

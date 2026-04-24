@@ -1,173 +1,156 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 04: Investigación y análisis asistidos por IA
-## Todo junto: Research + Clarificación + Sistema
-
-*AI 101 — EnterTech School*
+# Clase 04: Make básico (sin IA)
+## Tus primeros 2 flujos — el sistema cobra vida
 
 ---
 
-## 🔗 TRANSICIÓN: Módulo 1 completo
+## TRANSICIÓN: Clase 03 → Clase 04
 
-### Lo que dominaste:
+### Clase anterior:
+- Plantilla de Slides con 6 secciones
+- 18-20 marcadores nombrados y clasificados
+- Tabla de parámetros completa
 
-| Clase | Habilidad | Patrón |
-|-------|-----------|--------|
-| 01 | Sistemas reusables | Tú → IA |
-| 02 | RICE + Few-shot | Tú → IA (mejor) |
-| 03 | Socio pensante + contenido | IA ↔ Tú |
+### Hoy:
+- Conectás Gmail + Sheet + Slides en Make
+- Primer "efecto WOW": correo → Sheet en 5 segundos
+- Reporte PDF en tu correo con marcadores reales (sin IA aún)
 
-### Hoy: todo junto para resolver algo REAL
-
-> "Saber técnicas es útil. Integrarlas es poder."
+> "Make es la herramienta que hace que las piezas dejen de ser artefactos y se vuelvan sistema."
 
 ---
 
-## 🧠 QUIZ PRE-LAB
+## QUIZ PRE-LAB
 
 ### Pregunta:
 
-Cuando investigas un tema con Google o ChatGPT, ¿cómo verificas que la información es correcta?
+Si pudieras automatizar solo UNA tarea de tu trabajo esta semana, ¿cuál sería y por qué?
 
-*Toma 2-3 respuestas antes de continuar*
-
----
-
-## 🔍 COMPROBACIÓN
-
-### Pregunta:
-
-¿Cuál es la diferencia clave entre buscar en Google/ChatGPT y usar Perplexity/Deep Research?
-
-**A)** Perplexity es más rápido que Google
-
-**B)** Google/ChatGPT dicen "esto es lo que sé"; Perplexity/Deep Research dicen "esto dicen las fuentes"
-
-**C)** Deep Research solo funciona con temas técnicos
-
-**D)** La diferencia es el precio, no la funcionalidad
+*Toma 2-3 respuestas antes de continuar. Anotalo — es material para el proyecto de Clase 7.*
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## COMPROBACIÓN
 
-**Respuesta correcta: B**
+### Pregunta (después de la demo):
 
-- **A:** La velocidad no es el diferenciador fundamental
-- **B:** Research con fuentes verificables cambia la confiabilidad del resultado
-- **C:** Deep Research funciona con cualquier tema profesional
-- **D:** El modelo de fuentes citadas es un cambio de paradigma, no de precio
+Acabas de ver un correo activando el Sheet en 5 segundos vía Instant Trigger. ¿Por qué NO serviría Scheduled (cada 15 min) para este caso?
 
-> **Clave:** "Esto dicen las fuentes" > "Esto es lo que sé"
+A. Porque Scheduled consume más operaciones de Make
+B. Porque 15 min es demasiado para efecto WOW en vivo
+C. Porque Scheduled no puede leer Gmail
+D. A y B son ciertas
 
 ---
 
-## ✅ CHECKPOINT Parte 1: Define tu problema
+## COMPROBACIÓN - Respuesta
 
-### ¿Qué debe verse?
+**Respuesta correcta:** B (y parcialmente A)
 
-- Problema real de TU trabajo descrito
-- "Antes" documentado con métricas
-- Meta clara y medible
+**Análisis de opciones:**
+- **A:** Parcialmente cierto — Scheduled cada 15 min = 96 ops/día solo por esperar. Instant solo consume cuando hay correo.
+- **B:** Correcto principal. Si el jefe envía el correo y el Sheet se actualiza 15 min después, no hay "magia" visible.
+- **C:** Falso. Scheduled también puede leer Gmail, solo que revisa cada X tiempo en vez de reaccionar.
+- **D:** B es la razón principal. A es consecuencia.
+
+> **Clave:** Instant = reacción en segundos. Scheduled = revisión periódica. Elegí según si necesitás "en vivo" o "eventualmente".
+
+---
+
+## CHECKPOINT Actividad 1: Gmail → Sheet funcionando
+
+### Verificar:
+Cada estudiante envía un correo y muestra el Sheet actualizarse.
+
+**¿Qué debe verse?**
+- Toggle "On" del escenario visible
+- Filtro de asunto configurado
+- Fila nueva en el Sheet con timestamp dentro de 10 segundos del envío
 
 **Problemas comunes:**
-- Problema vago → Usa: "¿Cuántas veces al mes ocurre?"
-- Problema inventado → ¿Lo usarías mañana en tu trabajo?
+- Sin filtro de asunto → captura TODOS los correos (agotan operaciones rápido)
+- Filtro con tilde/caracteres especiales → simplificar a palabras simples
+- Cuenta de Gmail con 2FA sin App Password → reconectar con credenciales alternativas
 
 ---
 
-## ✅ CHECKPOINT Parte 2: Research con fuentes
+## CHECKPOINT Actividad 2: Sheet → Slides → PDF
 
-### ¿Qué debe verse?
+### Verificar:
+Corren Run once y muestran la plantilla duplicada con valores reales.
 
-- 3+ fuentes consultadas con URLs
-- Insights relevantes identificados
-- Herramienta elegida (Perplexity o Deep Research)
+**¿Qué debe verse?**
+- Al menos 5 marcadores reemplazados con datos del Sheet
+- Al menos 1 marcador calculado (con módulo Date o Math)
+- PDF generado en Drive
 
 **Problemas comunes:**
-- Solo 1 fuente → Busca desde otro ángulo
-- Fuentes irrelevantes → Refina la pregunta a tu industria
+- Marcador no se reemplaza → verificar que el texto exacto coincide (mayúsculas, espacios)
+- Gráfico no aparece → en Slides debe ser "vinculado al Sheet", no imagen estática
+- Replace Text se salta filas → mapear output del módulo anterior correctamente
 
 ---
 
-## ✅ CHECKPOINT Parte 3: Clarificación
+## CHECKPOINT Actividad 3: Correo con PDF llegando
 
-### ¿Qué debe verse?
+### Verificar:
+Bandeja de entrada con correo del sistema.
 
-- Conversación de clarificación en Claude
-- Enfoque estructurado con pasos
-- Criterios de éxito definidos
+**¿Qué debe verse?**
+- Correo con asunto descriptivo (no "Re: ...")
+- PDF adjunto con marcadores reemplazados
+- Diseño de la plantilla respetado (sin marcadores sueltos)
 
 **Problemas comunes:**
-- IA no pregunta → Agrega: "Hazme preguntas antes de proponer"
-- Enfoque genérico → Incluye tu research como contexto
+- PDF adjunto vacío o corrupto → revisar operación "Export as PDF"
+- Correo no llega → verificar que el campo "To" tiene un correo válido y no el webhook
+- Marcadores tipo IA muestran `{{hallazgo_1}}` literal → normal, los llenamos en Clase 5
 
 ---
 
-## ✅ CHECKPOINT Parte 4: Sistema + Gem
+## REFLEXIÓN: Instant vs Scheduled
 
-### ¿Qué debe verse?
+| Aspecto | Instant Trigger | Scheduled Trigger |
+|---------|-----------------|-------------------|
+| **Latencia** | 2-5 segundos | 15 min - 1 día |
+| **Consumo ops** | Solo cuando hay evento | Cada corrida, aunque esté vacío |
+| **Cuándo usar** | Reacción en vivo | Consolidación periódica |
+| **Ejemplo** | Correo → Sheet | Reporte semanal |
 
-- Gem de Gemini configurado y probado
-- Sistema adicional en Claude funcionando
-- Prueba con caso real ejecutada
-
-**Problemas comunes:**
-- Gem responde genérico → Agrega restricciones específicas
-- No sabes qué sistema crear → Empieza por lo que más repites
-
----
-
-## ✅ CHECKPOINT Parte 5: Documentación
-
-### ¿Qué debe verse?
-
-- Google Doc con las 5 secciones completas
-- Comparación antes/después con métricas
-- Reflexión sobre el proceso
-
-**Problemas comunes:**
-- Sin métricas → Estima tiempo, frecuencia o esfuerzo
-- Reflexión vacía → "¿Qué harías diferente si empezaras de nuevo?"
+> **Regla memorable:** "Instant es para reaccionar. Scheduled es para agendar."
 
 ---
 
-## 💡 REFLEXIÓN: Tu recorrido M1
+## TRANSICIÓN: Preview Clase 05
 
-| Clase | Aprendiste | Hoy lo usaste para |
-|-------|------------|---------------------|
-| 01 | Crear sistemas | Tu solución reusable |
-| 02 | RICE + Few-shot | Estructura de tu prompt |
-| 03 | Socio pensante | Clarificar tu enfoque |
-| 04 | Research + integración | Resolver algo REAL |
+### Hoy lograste:
+- 2 escenarios de Make funcionando
+- Instant Trigger con efecto WOW
+- Sistema end-to-end sin IA (todavía)
+- Lab calificado del M1 completo
 
-> **De técnicas sueltas a una solución completa. Eso es integración.**
-
----
-
-## ❓ Preguntas de Cierre
-
-1. ¿Cómo cambió tu forma de ver la IA desde Clase 01 hasta hoy?
-
-2. ¿En qué otro problema de tu trabajo aplicarías este mismo flujo?
-
-3. ¿Qué te gustaría que la IA hiciera POR ti, sin que tengas que estar presente?
+### Próxima clase:
+- Primera vez conectás Gemini API en Make
+- Los marcadores tipo IA dejan de estar vacíos
+- Los correos informales se convierten en JSON estructurado
+- Fin de Fase 1 → inicio de Fase 2
 
 ---
 
-## 📦 Entrega + Preview M2
+## Preguntas de Cierre
 
-### Tu entregable:
+1. ¿Qué te sorprendió más hoy: la velocidad del Instant Trigger o que funcionó sin IA?
 
-Google Doc con 5 secciones completas:
-1. Problema + "antes"
-2. Research con fuentes citadas
-3. Enfoque estructurado
-4. Gem + sistema Claude con prueba real
-5. Resultados + reflexión con métricas
+2. ¿Qué marcador tipo IA te da más curiosidad ver llenarse automáticamente en la Clase 5?
 
-**Formato:** Link público del Google Doc
+3. Si mañana tu flujo actual dejara de funcionar, ¿cuál sería la primera cosa que revisarías?
 
-### Próximo módulo: Superpoderes Aplicados
+---
 
-La IA deja de ser herramienta → se convierte en agente que trabaja POR ti.
+## Entrega
+
+- Screenshots del Escenario 1, Sheet con filas, Escenario 2, correo con PDF
+- Link compartido a carpeta "Proyecto de Instrucción"
+- Tabla de parámetros actualizada con sección Make
+
+### Próxima clase: Gemini API + 2 flujos

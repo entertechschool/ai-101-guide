@@ -1,4 +1,4 @@
-# Guía del Facilitador - Clase 03: Producción de contenido profesional con IA
+# Guía del Facilitador - Clase 03: Google Slides con IA
 
 > Tiempo de lectura: 8 minutos | Prepárate antes de clase
 
@@ -6,153 +6,144 @@
 
 ## 🔑 Conceptos Clave
 
-- **Socio pensante**: IA que pregunta para extraer conocimiento, no que genera contenido genérico.
-- **Brainstorming guiado**: Proceso de preguntas sistemáticas para documentar expertise tácito.
-- **Claude Project**: Espacio con instrucciones persistentes para comportamiento consistente.
-- **Criterio editorial**: Capacidad de evaluar, refinar y aprobar contenido generado con IA.
-- **Conocimiento tácito**: Saber que vive en tu cabeza pero nunca has formalizado.
+- **Plantilla con marcadores**: estructura fija con huecos nombrados que Make llenará automáticamente.
+- **Marcador crudo (tipo 1)**: sale directo de una celda del Sheet; Make hace Search + Replace Text.
+- **Marcador calculado (tipo 2)**: Make calcula con fórmula/módulo (Date, Math); luego Replace Text.
+- **Marcador generado por IA (tipo 3)**: Gemini lo produce en Clase 5; hoy queda nombrado y vacío.
+- **snake_case**: convención (`ventas_total_semana`) que Replace Text soporta sin problemas.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**IA como coach de negocios:**
-Un buen coach no te dice qué hacer — te hace preguntas que te obligan a pensar. "¿Por qué haces eso?", "¿Qué pasaría si...?", "¿Cuál es el verdadero criterio?" Eso es exactamente lo que hace un Claude Project bien configurado.
+**Plantilla con marcadores <> formulario legal en papel:**
+Los contratos tienen huecos marcados donde escribís el nombre del cliente, la fecha, el monto. El contrato es la plantilla; los huecos son los marcadores. Make es la mano que llena los huecos.
 
-**Documentar expertise como destilar alcohol:**
-Tienes mucho "líquido" (experiencia). El proceso de clarificación extrae lo esencial y lo concentra en algo potente y transferible. El framework es el destilado.
+**3 tipos de marcadores <> 3 fuentes de información en un noticiero:**
+Crudo = dato en la pantalla del productor (cotización, hora). Calculado = estadística derivada (variación vs ayer). IA = comentario del analista (explica el movimiento). Cada uno tiene origen distinto pero van en el mismo noticiero.
 
-**Framework como receta familiar:**
-Tu abuela cocina "a ojo", pero si le preguntas con método, puedes documentar la receta. La IA hace las preguntas correctas para sacar esa receta. Después, con esa receta puedes cocinar un plato real — esa es la pieza de contenido profesional.
-
----
-
-## 📚 Contexto Pedagógico
-
-### Por qué esta clase es diferente
-
-Las Clases 01-02 establecieron un patrón: tú escribes instrucciones, la IA produce output. Ese patrón es útil pero limitado — el output es genérico, basado en el entrenamiento de la IA.
-
-Esta clase invierte el flujo en dos movimientos. Primero, la IA pregunta para extraer TU conocimiento y convertirlo en un framework personal. Segundo, usas ese framework como base para producir una pieza de contenido profesional real — con criterio editorial tuyo.
-
-El resultado no es "contenido de IA" sino conocimiento del estudiante estructurado y aplicado. Esto aumenta el valor percibido ("esto es MÍO"), introduce interactividad real (multi-turno), y demuestra que la IA puede ayudar tanto a pensar como a producir.
-
-### El riesgo a evitar
-
-Algunos estudiantes tratarán de "hacer trampa" diciendo "documéntame cómo evaluar proveedores" sin dar input. El resultado será genérico y sin valor. Enfatiza que el valor está en SUS respuestas, no en las preguntas de la IA. En la Parte 3, el riesgo es aceptar el primer borrador sin aplicar criterio editorial — reforzar que ellos son el editor final.
+**Tabla de parámetros <> manual de referencia del sistema:**
+Si mañana alguien más del equipo tiene que modificar el sistema, no necesita leer tu Make — lee la tabla de parámetros y sabe qué marcador existe, de dónde viene y qué contiene.
 
 ---
 
-## Ejemplos de Conocimiento Clarificable
+## 📚 Contexto Histórico / Contexto Actual
 
-| Rol | Tema | Output esperado |
-|-----|------|-----------------|
-| **Gerente de proyecto** | "Cómo priorizo tareas del sprint" | Matriz de priorización con 4 criterios |
-| **Vendedor** | "Cómo detecto si un lead va a comprar" | Checklist de señales de cierre |
-| **Diseñador** | "Cómo decido si un diseño está listo" | Lista de verificación de calidad |
-| **HR** | "Cómo evalúo fit cultural en entrevistas" | Guía de preguntas + red flags |
-| **Consultor** | "Cómo escribo propuestas ganadoras" | Template con secciones críticas |
+### Reportes con marcadores: por qué es el patrón estándar
 
-### Temas que NO funcionan bien
+En las agencias de reportería y en herramientas como Looker Studio, PowerPoint con plugins, Canva, se usa el mismo patrón hace 15 años: una plantilla fija + datos que se reemplazan. Make con Google Slides trajo ese patrón a no-code en 2021-2022, y hoy es la forma más simple de generar PDFs reportables automáticamente.
 
-- Conocimiento que no tienen (quieren aprenderlo, no documentarlo)
-- Procesos demasiado simples (no hay nada que extraer)
-- Conocimiento 100% intuitivo sin patrones verbalizables
+> **Para contar en clase:** "Lo que hacen las grandes agencias con software de $500/mes, ustedes lo hacen gratis con Google Slides + Make."
+
+### La columna Descripción del Sheet: la mina de oro de los insights
+
+En la Clase 2 los estudiantes agregaron una columna "Descripción" en `VentasSemanaActual`. Parece trivial, pero es donde Gemini hace su magia en la Clase 5: lee todas las descripciones de la semana y genera los marcadores tipo IA (hallazgos, riesgos, oportunidades). Sin Descripción, los hallazgos son tibios.
+
+> **Para contar en clase:** "La diferencia entre un reporte que dice cifras y uno que cuenta historias está en esa columnita que agregamos la clase pasada."
+
+**Fuentes:** [Make: Google Slides módulos](https://www.make.com/en/integrations/google-slides){:target="_blank"}, [Google Workspace: Docs + Slides templates](https://support.google.com/a/answer/6283553){:target="_blank"}
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora
+### Pregunta Detonadora (Quiz Pre-Lab)
 
-**Respuesta correcta:** B - El output será conocimiento MÍO, no contenido genérico de IA
+**Pregunta:** "Si tuvieras que dividir tu reporte actual en 'partes que cambian siempre' vs 'partes que siempre son iguales', ¿cuáles serían las partes que cambian?"
 
-**Por qué las otras NO:**
-| Opción | Por qué NO |
-|--------|-----------|
-| A | Claude Projects es la herramienta, no el cambio fundamental. |
-| C | Longitud de prompts no define valor. Calidad > cantidad. |
-| D | El formato es secundario al cambio de paradigma. |
+**Respuesta esperada:** La fecha, los números, los nombres de clientes, las conclusiones del período.
 
-**Script post-votación:**
+**Script post-respuestas:**
 ```
-Facilitador: "¿Quién votó A, Claude Projects? ¿Por qué?"
-[Escuchar respuestas]
-Facilitador: "Projects es útil, pero no es el cambio real.
-La diferencia es que hoy el output no será 'contenido de IA' —
-será TU conocimiento, estructurado. La IA pregunta, tú respondes.
-Y después, usarás ese conocimiento para producir algo real."
+Facilitador: "Exacto — lo que acaban de decir son los marcadores variables.
+Las partes que no cambian forman la plantilla. Hoy diseñamos ambas por separado."
 ```
-
----
 
 ### Demo Principal
 
-**Preparación:** Ten un tema personal para clarificar en vivo. Sugerencia: "Cómo decido si un proyecto vale mi tiempo" o algo de tu propia experiencia. Prepara el flujo completo: extracción de framework Y producción de contenido.
-
-**Qué mostrar (dos fases):**
-1. Estado inicial: "Depende del proyecto... miro varias cosas..."
-2. Proceso de preguntas de la IA (mostrar 3-4 preguntas)
-3. Framework resultante (5-7 criterios documentados)
-4. Aplicación: usar el framework para producir un contenido profesional (ej. un post de LinkedIn, una guía para el equipo, un checklist para clientes)
-5. Criterio editorial: mostrar cómo evalúas y refinas el borrador
+**Qué mostrar:** la plantilla del caso Roberto con marcadores `{{...}}` visibles + demo rápida en Slides de cómo Replace Text reemplaza un marcador.
 
 **Script sugerido:**
 ```
-Facilitador: "Tengo conocimiento sobre [tema] pero nunca lo he documentado.
-Miren cómo la IA me hace preguntas..."
-[Mostrar 2-3 preguntas de la IA]
-Facilitador: "Ahora tengo un framework. Pero no termina aquí.
-Le pido que use MI framework para producir un contenido real."
-[Mostrar borrador de contenido]
-Facilitador: "¿Está perfecto? No. Aquí aplico criterio editorial:
-¿suena a mí? ¿es preciso? ¿le serviría a mi audiencia?"
+Facilitador: "Miren esta slide de Resumen del reporte de Roberto."
+[Muestra slide con {{ventas_total}}, {{variacion_pct}}, {{resumen_ejecutivo}}]
+Facilitador: "¿Ven los tres marcadores? Cada uno viene de un lugar distinto."
+[Explica: ventas_total = Sheet. variacion_pct = Make. resumen = Gemini]
+Facilitador: "En 2 clases todos se llenarán solos. Hoy los nombramos."
 ```
 
-**Plan B (si la demo falla):**
-Si la IA genera contenido genérico en vez de preguntar: "Esto pasa cuando las instrucciones no son claras. El socio pensante debe PREGUNTAR primero, no asumir." Mostrar capturas de pantalla preparadas previamente.
-
----
+**Plan B (si Google Slides no carga):** pantalla compartida con capturas previas de la plantilla de Roberto.
 
 ### Transición al Lab
 
+**Momento crítico:** los estudiantes se bloquean si quieren nombrar "perfectamente" los marcadores. Tenés que darles permiso de iterar.
+
 **Script sugerido:**
 ```
-Facilitador: "Ahora ustedes van a hacer esto en 3 partes.
-Parte 1: Configuran su Claude Project como socio pensante.
-Parte 2: Extraen su framework personal con brainstorming guiado.
-Parte 3: Producen UNA pieza de contenido profesional usando su framework.
-
-El valor está en SUS respuestas y en SU criterio editorial.
-Si aceptan el primer borrador sin cuestionar, el resultado será genérico."
+Facilitador: "No busquen nombres perfectos. Busquen nombres claros.
+`{{hallazgo_1}}` es mejor que `{{h1}}`, pero `{{principal_insight_comercial_de_la_semana}}` es peor.
+Si dudan, empecen simple y después refinan en la Clase 6."
 ```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### Dinámica 1: "El conocimiento invisible"
+### Dinámica 1: "Clasifica en 10 segundos"
 
-Antes de la demo, pide a 2-3 voluntarios que describan algo que hacen bien en su trabajo. Casi siempre dirán "depende" o "es intuición".
+Contexto: durante la teoría, para consolidar tipos de marcadores.
 
-```
-Facilitador: "María, ¿cómo decides si una propuesta está lista?"
-María: "No sé... la reviso y siento si le falta algo."
-Facilitador: "¿Qué buscas cuando la revisas?"
-María: "Bueno... que tenga presupuesto claro, que los plazos sean realistas..."
-Facilitador: "¡Ahí está! Ya tienes 2 criterios. Eso es lo que haremos hoy."
-```
-
-### Dinámica 2: "Editor en jefe"
-
-Después de la demo, muestra un párrafo de contenido generado con IA y pregunta al grupo qué cambiarían.
+Lanzás marcadores y el grupo grita el tipo:
 
 ```
-Facilitador: "Lean este párrafo. ¿Suena a algo que escribiría un profesional
-con 10 años de experiencia, o a un artículo genérico de internet?"
-[Escuchar respuestas]
-Facilitador: "Ese ojo crítico es criterio editorial. Lo van a necesitar en Parte 3."
+Facilitador: "{{meta_semanal}}" → Crudo (del Sheet, celda Config)
+Facilitador: "{{ventas_vs_meta_pct}}" → Calculado (Make: ventas/meta)
+Facilitador: "{{recomendacion_gerencial}}" → IA (Gemini analiza)
+Facilitador: "{{nombre_top_vendedor}}" → Crudo (Sheet) o Calculado (Make max)
 ```
+
+### Dinámica 2: "Prueba manual cruzada"
+
+Contexto: al final de Actividad 3.
+
+Cada estudiante intercambia plantilla con el vecino. El vecino elige 3 marcadores y los reemplaza con datos inventados (en la plantilla prestada). Si el diseño aguanta, el nombre es claro. Si el vecino duda de qué poner, el nombre no es suficientemente descriptivo.
+
+```
+Facilitador: "Roten con el vecino. 3 minutos cada uno.
+Si no sabés qué poner en `{{x}}`, el nombre no es claro. Anótalo.
+Al final, cada uno recibe feedback de qué renombrar."
+```
+
+---
+
+## 💡 Ejemplos Listos para Usar
+
+### Ejemplo 1: Prompt para las 6 secciones (caso Roberto)
+
+**Cuándo usarlo:** cuando un estudiante pregunta "¿qué pongo en mis 6 secciones?"
+
+```
+Según mi brief (reporte semanal de ventas para gerente), dame las 6
+secciones de mi reporte ejecutivo. Para cada sección: nombre, propósito
+(1 línea), y qué información debería mostrar.
+```
+
+**Tip:** la "Portada" suele ser obviada — recordar que lleva contexto (fecha, nombre de empresa, período).
+
+### Ejemplo 2: Nombres de marcadores bien formados (caso genérico)
+
+**Cuándo usarlo:** cuando un estudiante duda de la convención.
+
+```
+{{portada_titulo}}           # agrupado por sección
+{{portada_fecha_reporte}}    # prefijo portada_
+{{resumen_ventas_total}}     # prefijo resumen_
+{{hallazgo_1_texto}}         # numerado 1, 2, 3
+{{riesgo_1_descripcion}}     # subíndice descripcion para claridad
+{{accion_1}}                 # corto porque todo va en esa celda
+```
+
+**Tip:** el prefijo por sección sirve para buscar rápido en la tabla de parámetros cuando sean 20+ marcadores.
 
 ---
 
@@ -160,113 +151,87 @@ Facilitador: "Ese ojo crítico es criterio editorial. Lo van a necesitar en Part
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "La IA no me hace preguntas" | No configuró bien las instrucciones | Revisar el system prompt del Project |
-| Elige tema que no domina | Quiere aprender, no documentar | "Elige algo que ya HACES bien. Esto es para documentar, no para aprender." |
-| Acepta primera propuesta | No valida autenticidad | "¿Esto es lo que REALMENTE haces? ¿Falta algo?" |
-| Framework genérico | Dio respuestas superficiales | "Dame un ejemplo específico de la última vez que hiciste esto." |
-| "Mi conocimiento es muy simple" | Subestima lo que sabe | "Si 3 personas te preguntan lo mismo, hay algo que documentar." |
-| Contenido Parte 3 suena a IA | No aplicó criterio editorial | "Lee en voz alta. ¿Así hablarías tú? Marca lo que no suena auténtico." |
+| "No sé qué marcadores debería tener" | No identifica qué es variable | Mostrar reporte viejo suyo y preguntar "¿qué cambia aquí cada semana?" |
+| "Tengo 8 marcadores, no 18" | Se quedó en titulares, no llegó a detalles | Revisar slide por slide: cada sección suele tener 2-4 marcadores |
+| "{{variación %}}" con tilde y símbolo | Caracteres especiales rompen Replace Text | Cambiar a `{{variacion_pct}}` |
+| "Mi gráfico es imagen estática" | Insertó como imagen, no vinculado | Insertar → Gráfico → Desde Hojas de cálculo |
+| "No sé si mi marcador es crudo o calculado" | Confunde origen de datos | Regla: si existe como celda única en el Sheet → crudo; si se calcula con 2+ datos → calculado |
 
 ---
 
 ## ✅ Señales de Comprensión
 
 ### El estudiante ENTIENDE cuando:
-- Responde las preguntas de la IA con ejemplos específicos, no genéricos
-- Cuestiona la estructura propuesta y sugiere cambios
-- Su contenido profesional refleja su voz y experiencia, no "mejores prácticas" genéricas
-- Puede explicar por qué editó algo del borrador de la IA
+- Nombra marcadores en snake_case sin que le recuerdes
+- Distingue crudo/calculado/IA sin dudar
+- Agrupa marcadores por sección con prefijo consistente
 
 ### El estudiante NECESITA AYUDA cuando:
-- Le dice a la IA "documéntame X" sin dar input propio
-- Acepta todo lo que la IA propone sin cuestionar
-- Su framework podría ser de cualquier persona (no tiene su sello)
-- En Parte 3, no sabe qué tipo de contenido producir
+- Todos sus marcadores son tipo "crudo" (no identifica lo calculado ni lo IA)
+- Sus nombres tienen espacios o mayúsculas
+- No entiende por qué nombrar algo que hoy está vacío
+
+---
+
+## 🎯 Checkpoints de Validación
+
+| Minuto | Checkpoint | Cómo validar | Si no cumple |
+|--------|------------|--------------|--------------|
+| 10 | Apertura terminada | Reporte modelo mostrado + reacción grupal | Avanzar si hay comentarios |
+| 25 | Teoría terminada | Los 3 tipos de marcadores comprendidos (dinámica "Clasifica en 10 segundos") | Hacer 2-3 rondas extra de la dinámica |
+| 60 | Actividad 1 | 6 slides con títulos y estilo | Si no llegan a 6, priorizar Portada, Resumen, Hallazgos |
+| 105 | Actividad 2 | Tabla de parámetros con 18-20 marcadores | Si solo tienen 10-12, revisar qué sección está pobre |
+| 135 | Actividad 3 | Marcadores insertados + prueba manual | Si no probaron, pedir que reemplacen 2 marcadores en vivo |
+| 150 | Cierre | Revisión por pares exitosa | — |
+
+---
+
+## 🧑‍🏫 Tips de Facilitación
+
+### Si el grupo está callado:
+- Mostrar tu propia plantilla (como facilitador) y pedir "¿qué marcador le agregarían?"
+- Pedir que 2 estudiantes compartan pantalla con su plantilla al mismo tiempo.
+
+### Si alguien domina la conversación:
+- Pedirle que ayude a un compañero con dudas (mentoría cruzada).
+
+### Si la mayoría termina antes:
+- Logro 🟡 (slide de apéndice con marcadores adicionales).
+
+### Si la mayoría se atrasa:
+- Reducir objetivo a 12-15 marcadores (en vez de 18-20). La clase 5 los puede pedir agregar más.
+- Saltar la revisión por pares del cierre y hacer cierre individual.
+
+### Si hay preguntas fuera de alcance:
+> "Buena pregunta. Replace Text lo vemos Clase 4; insights con Gemini los llenamos Clase 5."
 
 ---
 
 ## 🔀 Diferenciación
 
 ### Para estudiantes avanzados:
-- Crear un segundo framework para otra área de expertise
-- Producir contenido en 2 formatos diferentes (ej. post + checklist)
-- Rol de mentor: ayudar a compañeros a verbalizar su conocimiento
+- Logro 🔴 (versión móvil de la plantilla para WhatsApp).
+- Pedir que diseñen 25+ marcadores (incluyendo apéndice y metadata).
 
 ### Para estudiantes con dificultades:
-- Usar la lista de temas sugeridos de la tabla de ejemplos
-- Simplificar a 3-4 criterios en vez de 5-7
-- Pair programming: un compañero hace las preguntas en vez de la IA
-
----
-
-## 🎯 Checkpoints de Validación
-
-| Minuto | Checkpoint | Cómo validar |
-|--------|------------|--------------|
-| ~10 | Intro completada | Pregunta detonadora votada y discutida |
-| ~25 | Demo terminada | Al menos 2 comentarios sobre framework → contenido |
-| ~40 | Parte 1 completada | "¿Quién tiene su Claude Project configurado y funcionando?" |
-| ~60 | Parte 2 completada | "¿Quién tiene un framework con 5+ puntos extraídos?" |
-| ~85 | Parte 3 en progreso | "¿Quién tiene un borrador de contenido profesional?" |
-| ~100 | Parte 3 completada | "¿Quién aplicó criterio editorial y tiene versión refinada?" |
-| ~115 | Reflexión y cierre | "¿Qué descubrieron que no sabían que sabían?" |
-
----
-
-## 🧑‍🏫 Tips de Facilitación
-
-### Si el grupo está callado durante reflexión:
-- Preguntar específico: "Juan, ¿qué criterio oculto descubriste?"
-- Compartir tu experiencia: "Yo descubrí que siempre verifico X antes de decidir. No sabía que era un patrón."
-
-### Si alguien tiene dificultad eligiendo tema:
-- "¿Qué te preguntan frecuentemente en el trabajo?"
-- "¿Qué proceso haces 'por intuición' que podrías enseñar?"
-- "¿Qué harías diferente si tuvieras que delegar esto a alguien?"
-
-### Si hay escepticismo sobre el valor:
-- "El ejercicio de verbalizar es valioso aunque no uses el framework. Ahora SABES cómo lo haces."
-- Conectar con Clase 04: "Este framework será base cuando investigues y analices temas con IA."
-
-### Si alguien no sabe qué contenido producir en Parte 3:
-- "¿A quién le serviría tu framework? Escríbelo para esa persona."
-- Sugerir formatos concretos: post de LinkedIn, guía para el equipo, checklist para clientes, email a tu jefe justificando un proceso.
-
-### Si la mayoría se atrasa:
-- Priorizar Partes 1 y 2. Parte 3 puede simplificarse: "Tienen el framework — eso es lo más valioso. El contenido pueden refinarlo después."
-
----
-
-## Sección Anti-Hype: Cómo Manejarla
-
-**Script para introducir limitaciones:**
-```
-Facilitador: "La IA como socio pensante NO es perfecta. Tres trampas:
-puede completar gaps con contenido genérico, no todo cabe en 5 pasos,
-y tendemos a aceptar lo que suena bien. Sean críticos."
-```
-
-**Script para cerrar:**
-```
-Facilitador: "Tanto el framework como el contenido deben pasar UNA prueba:
-¿Esto es lo que REALMENTE hago y diría? Si es 'más o menos', sigan refinando."
-```
+- Ofrecer la plantilla modelo de Roberto como punto de partida para duplicar.
+- Ayudarlos a nombrar los primeros 5 marcadores y que completen los siguientes solos.
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### "¿Necesito Claude Pro para Projects?"
-No. Claude Projects está disponible en todas las cuentas, incluyendo gratuitas.
+### P: ¿Los marcadores tienen que ser exactamente `{{x}}` con llaves dobles?
+**R:** Sí. Las llaves dobles son la convención que reconocen las herramientas. `<x>` o `[x]` funcionarían pero no son estándar.
 
-### "¿Y si la IA inventa cosas en mi framework?"
-Es un riesgo real. Por eso la fase de validación es crítica: "¿Esto captura lo que REALMENTE hago?" Si algo suena a "mejores prácticas genéricas", probablemente la IA rellenó gaps. Aplica el mismo criterio al contenido de la Parte 3.
+### P: ¿Qué pasa si nombro 2 marcadores igual?
+**R:** Replace Text reemplaza todos los que coincidan — así que si ponés `{{nombre}}` en 2 slides, ambos reciben el mismo valor. Útil para títulos que se repiten; problemático si querías valores distintos.
 
-### "¿Puedo clarificar conocimiento de mi equipo, no solo mío?"
-Sí, pero hoy practicamos con conocimiento personal. En el futuro, el mismo sistema funciona para entrevistar expertos y documentar su conocimiento.
+### P: ¿Puedo usar imágenes como marcadores?
+**R:** Sí, pero no con Replace Text directamente. En la Clase 5 aprenderán a usar "Replace Image" para el logo/gráficos, pero hoy es texto.
 
-### "¿Esto reemplaza una sesión de coaching real?"
-No. Un coach humano tiene empatía, lee señales no verbales, y puede desafiar tus creencias. La IA es un buen complemento, no un reemplazo.
+### P: ¿Cuántos marcadores es demasiado?
+**R:** 25 está bien. Más de 30 empieza a ser frágil (más puntos de falla). Si tenés más, probablemente hay marcadores redundantes (ej: `{{total_ventas}}` y `{{ventas_total}}` duplicados).
 
 ---
 
@@ -276,24 +241,23 @@ No. Un coach humano tiene empatía, lee señales no verbales, y puede desafiar t
 
 | Clase | Concepto | Cómo se conecta |
 |-------|----------|-----------------|
-| 01 | Sistema reusable (ROL + CONTEXTO + INSTRUCCIÓN) | El Claude Project es un sistema con instrucciones persistentes |
-| 02 | RICE + Few-shot | El criterio editorial aplica las mismas técnicas de calidad |
+| 01 | Gem asistente | Sugiere las 6 secciones según el brief |
+| 02 | Sheet con 3 pestañas | Los marcadores crudos vienen de VentasSemanaActual y Config |
 
 ### Conexión con la Próxima Clase
 
 Al cerrar, planta la semilla:
 
-> "Hoy extrajeron conocimiento propio y lo convirtieron en contenido profesional. La próxima clase aprenderán a investigar y analizar con IA — usando herramientas como Perplexity y Gemini para complementar lo que ya saben con datos externos verificables."
+> "La próxima clase es la primera vez que conectamos todo. Construimos 2 flujos en Make: uno que captura correos y actualiza el Sheet, otro que toma el Sheet, llena los marcadores crudos y calculados en Slides, exporta PDF y lo manda por Gmail. Todavía sin IA — solo tipos 1 y 2. Al terminar tendrán un sistema funcional end-to-end."
 
-**Pre-work:** Google Doc con Claude Project configurado (screenshot), framework extraído, y pieza de contenido profesional refinada.
+**Pre-work / Tarea implícita:** crear cuenta gratuita de Make ([make.com](https://make.com/){:target="_blank"}) antes de la próxima clase. Sin cuenta, no se puede hacer el lab.
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
 ### Preguntas para el facilitador:
-- ¿Los estudiantes lograron extraer conocimiento auténtico o se quedaron en lo genérico?
-- ¿La Parte 3 (producción de contenido) fluyó bien o necesitó más tiempo?
-- ¿El concepto de criterio editorial quedó claro o necesita refuerzo?
-- ¿Qué estudiantes necesitan seguimiento antes de Clase 04?
-- ¿Algún tema de conocimiento funcionó particularmente bien como ejemplo?
+- ¿Cuántos estudiantes llegaron a 18+ marcadores?
+- ¿Hubo plantillas con diseños muy sobrios vs muy cargados? (guía para Clase 7 cuando personalicen)
+- ¿Quién tuvo problemas con caracteres especiales en nombres? (seguimiento)
+- ¿Ya crearon cuenta de Make? (mandar recordatorio por chat)

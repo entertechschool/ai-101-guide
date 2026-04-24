@@ -1,118 +1,85 @@
-> 📦 **Módulo 1:** Clase 2 de 4
+> **Módulo 1:** Clase 2 de 4
 
-# Clase 02: Diseño de instrucciones efectivas
+# Clase 02: Google Sheets con IA
 
 ## Resumen
 
-En la Clase 01 probaste que la IA funciona. En esta clase aprenderás a hacer que funcione **extraordinariamente bien**. La diferencia entre un prompt genérico y uno bien diseñado es la diferencia entre un resultado que descartas y uno que usas tal cual. Dominarás el framework RICE (Rol, Instrucción, Contexto, Ejemplo) y técnicas como Few-shot que transforman outputs mediocres en resultados de alta calidad.
+Hoy construirás la fuente de datos de tu sistema automatizado. No vas a abrir un Sheet en blanco: vas a usar a tu Gem como copiloto para diseñar la estructura correcta desde el primer intento. La diferencia entre un Sheet que "funciona para ver" y uno que "funciona para automatizar" está en tres decisiones: qué pestañas tiene, cómo están nombradas las columnas y qué rangos nombrados defines.
 
-El 95% de usuarios escribe prompts como mensajes de texto: vagos, sin estructura, esperando que la IA "entienda" lo que quieren. El resultado es predecible: respuestas genéricas que requieren múltiples iteraciones o se descartan por completo. Esta clase te gradúa del "funciona a veces" al "funciona casi siempre".
+Al terminar vas a tener un Google Sheet con tres pestañas — operación, configuración e histórico — listas para que en la Clase 4 se conecten automáticamente con Make y en la Clase 5 reciban datos de correos procesados por IA. También vas a iniciar la **tabla de parámetros**, un documento vivo que acumula decisiones y te acompaña hasta el Demo Day.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **El 95% de usuarios** escribe prompts como mensajes de texto: vagos y sin estructura
-- **Resultado típico:** respuestas genéricas que requieren 5-10 iteraciones o se descartan
-- **La diferencia medible:** Un prompt RICE reduce iteraciones de 10 a 2 en promedio
-- **El secreto:** Mostrar un ejemplo de output deseado elimina el 80% de la ambigüedad
-- **Después de esta clase:** Tus prompts producirán resultados que usas tal cual, no que reescribes
+- **Automatizar sobre datos mal estructurados multiplica los errores por 10.** Make y Gemini necesitan columnas consistentes y pestañas separadas — sin eso, cualquier sistema falla.
+- **Un rango nombrado bien definido hace que tu sistema sobreviva a cambios de layout.** Agregar columnas, reordenar filas o renombrar pestañas deja de romper tu flujo.
+- **Separar datos operativos de configuración ahorra semanas cuando quieras ajustar metas o agregar miembros al equipo.** Los parámetros del negocio viven aparte y los editas sin tocar el flujo.
 
 ---
 
-## 💡 El Insight Central
+## 🎯 ¿Qué haremos en clase?
 
-**RICE = Prompts que Transforman**
-
-```
-R - Rol:        ¿Quién quieres que sea la IA?
-I - Instrucción: ¿Qué debe hacer exactamente?
-C - Contexto:    ¿Qué información necesita?
-E - Ejemplo:     ¿Cómo debe verse el resultado?
-```
-
-La estructura [ROL][CONTEXTO][TAREA][FORMATO] de la Clase 01 evoluciona:
-- **Tarea** → **Instrucción** (más precisa)
-- **Formato** → **Ejemplo** (más poderoso)
-
-El ejemplo es el secreto. Mostrar qué SÍ quieres (y qué NO) elimina ambigüedad.
+1. **Exploraremos por qué la IA necesita estructura** - Descubrirás la diferencia entre datos para mirar y datos para automatizar.
+2. **Diseñarás la pestaña de operación** - Usarás tu Gem para proponer columnas y generar 15 filas de ejemplo.
+3. **Construirás la pestaña de configuración** - Capturarás los parámetros del negocio (metas, equipo, categorías) en un solo lugar.
+4. **Cerrarás con la pestaña histórica y rangos nombrados** - Dejarás el Sheet listo para que Make lo lea sin riesgo.
 
 ---
 
-## ¿Qué haremos en clase?
+## Objetivos de Aprendizaje
 
-1. **Veremos la transformación en vivo** — El mismo prompt en 3 niveles de calidad
-2. **Construirás un sistema de triage** — Clasificar mensajes de clientes con prioridad y acción
-3. **Aprenderás técnicas de forma iterativa** — Agregarás Rol → Formato → Few-shot paso a paso
-4. **Analizarás las limitaciones** — Verás dónde falla la IA y cómo corregirlo
-5. **Competirás en un Prompt Battle** — Mismo reto, diferentes soluciones, votación grupal
+Al finalizar esta clase, podrás:
 
-## 🎯 Objetivos de aprendizaje
-
-Al finalizar esta clase, serás capaz de:
-
-1. **Aplicar el framework RICE** para estructurar cualquier prompt profesional
-2. **Usar Few-shot** para enseñar patrones específicos a la IA con ejemplos
-3. **Identificar limitaciones de la IA** y cuándo el juicio humano es necesario
+1. **Explicar** por qué la automatización requiere datos estructurados y no texto libre.
+2. **Diseñar** un Google Sheet con 3 pestañas (operación, configuración, histórico) con propósitos claros.
+3. **Generar** 15 filas de datos de ejemplo usando Gemini para probar la estructura.
+4. **Definir** rangos nombrados en Google Sheets y documentarlos en la tabla de parámetros.
 
 ---
 
-## 📌 Preparación para la clase
+## ✅ Preparación para la Clase
 
-> **Antes de llegar a clase, prepárate:**
+### De clases anteriores
 
-### ✅ Tareas previas (OBLIGATORIAS)
+- Gem asistente del curso funcionando (Clase 1)
+- Brief del proyecto de instrucción en Google Doc
+- Carpeta "Proyecto de Instrucción" en Google Drive
 
-1. **Revisar tu entregable de Clase 01**
-   - Tu prompt básico será el punto de partida para ver la evolución
-   - Trae el sistema que creaste (el revisor u otro)
+### Reflexión previa
 
-2. **(Opcional) Traer 5 mensajes reales de clientes**
-   - Si tienes acceso a mensajes de clientes de tu trabajo
-   - Anonimiza datos sensibles (nombres, números de cuenta)
-   - Los usarás para probar tu sistema de triage
+Antes de llegar a clase, reflexiona sobre:
 
-### 🧠 Reflexiona sobre esto
+- ¿Qué datos manejas cada semana y cómo los tienes organizados hoy (Excel, papel, Notion, cabeza)?
+- ¿Qué información te cuesta más consolidar cuando llega el momento de armar tu reporte?
 
-- ¿Qué prompts has intentado que NO funcionaron bien?
-- ¿Cuándo has tenido que iterar muchas veces para obtener algo útil?
-- ¿Hay tareas donde sientes que la IA "no entiende" lo que necesitas?
+### Herramientas
 
-### 📚 Recursos opcionales
+- [ ] **Google Sheets** - Accesible desde [sheets.google.com](https://sheets.google.com/){:target="_blank"} con tu cuenta de Google
+- [ ] **Gem del curso** - Ya configurado en la Clase 1 con tu brief y archivo de referencia
+- [ ] **Tabla de parámetros** - La iniciarás en esta clase (Google Doc nuevo)
 
-- [Prompt Engineering Guide](https://www.anthropic.com/news/prompt-engineering-guide){:target="_blank"} - Guía oficial de Anthropic
-- [Claude's Character](https://www.anthropic.com/news/claude-character){:target="_blank"} - Cómo "piensa" Claude
+### Lectura sugerida
 
----
-
-## Glosario de nuevos términos
-
-- **RICE**: Framework de prompting: Rol, Instrucción, Contexto, Ejemplo
-- **Few-shot**: Técnica que incluye ejemplos de input/output para enseñar el patrón deseado
-- **Zero-shot**: Prompt sin ejemplos, confiando solo en las instrucciones
-- **Triage**: Proceso de clasificar y priorizar elementos según urgencia e importancia
-- **Role-playing**: Asignar un rol específico a la IA para obtener respuestas desde esa perspectiva
+- [Rangos con nombre en Google Sheets](https://support.google.com/docs/answer/63175){:target="_blank"} - Guía oficial de Google.
+- [Buenas prácticas para Sheets que se automatizan](https://developers.google.com/sheets/api/guides/concepts){:target="_blank"} - Conceptos de cómo ven las APIs un Sheet.
 
 ---
 
-## La Evolución desde Clase 01
+## Glosario
 
-```
-Clase 01: [ROL][CONTEXTO][TAREA][FORMATO]
-   ↓ evoluciona a ↓
-Clase 02: RICE + Few-shot
-
-R - Rol         → Se mantiene (role-playing)
-I - Instrucción → Refinamiento de "Tarea" (más específica)
-C - Contexto    → Se mantiene (pero más detallado)
-E - Ejemplo     → Evolución de "Formato" (mucho más poderoso)
-```
+| Término | Definición |
+|---------|------------|
+| **Datos estructurados** | Información organizada en tabla con columnas consistentes, lista para ser procesada automáticamente. |
+| **Pestaña operativa** | Donde llegan los datos del día a día (nombre sugerido: `VentasSemanaActual`). |
+| **Pestaña de configuración** | Parámetros del negocio que no cambian (metas, vendedores, categorías). |
+| **Pestaña histórica** | Memoria acumulada semana a semana para comparar y detectar tendencias. |
+| **Rango nombrado** | Apodo para un rango de celdas (ej: `RangoVentas` = `VentasSemanaActual!A:G`). |
+| **Tabla de parámetros** | Documento vivo del curso que registra columnas, rangos, marcadores y decisiones. |
 
 ---
 
-## Herramientas necesarias
+## Recursos Adicionales
 
-- [ ] 💻 Laptop con Claude abierto
-- [ ] 🔄 Tu prompt/sistema de Clase 01 para referencia
-- [ ] 📝 Google Doc para documentar tu evolución
-- [ ] 📱 (Opcional) 5 mensajes reales de clientes anonimizados
+- [Plantillas de Google Sheets](https://docs.google.com/spreadsheets/u/0/?ftv=1){:target="_blank"} - Galería oficial, útil para ver ejemplos de estructura.
+- [Fórmulas básicas de Google Sheets](https://support.google.com/docs/table/25273){:target="_blank"} - Referencia rápida para SUMA, BUSCARV, CONTAR.SI.

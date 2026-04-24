@@ -1,3 +1,3 @@
-# Image Prompts — Clase 01: Panorama actual de la IA
+# Image Prompts — Clase 01: Prompts y Gems
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (tablas comparativas y bloques de código).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con anatomía del prompt, bloques de estructura del Gem y glosario).

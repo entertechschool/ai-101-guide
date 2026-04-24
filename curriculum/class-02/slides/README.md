@@ -1,185 +1,149 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 02: Diseño de instrucciones efectivas
-## De resultados mediocres a extraordinarios
-
-*AI 101 — EnterTech School*
+# Clase 02: Google Sheets con IA
+## Diseña la fuente de datos de tu sistema
 
 ---
 
-## 🔗 TRANSICIÓN: Clase 01 → Clase 02
+## TRANSICIÓN: Clase 01 → Clase 02
 
 ### Clase anterior:
-- Construiste tu primer SISTEMA con Claude
-- Fórmula: `ROL + CONTEXTO + INSTRUCCIÓN`
+- Creaste tu Gem con brief + archivo
+- Practicaste prompts profesionales
 
 ### Hoy:
-- Evolucionamos a **RICE** (+ Ejemplo)
-- El Ejemplo es el upgrade que transforma resultados
+- Tu Gem pasa de asistente conceptual a copiloto de diseño de datos
+- Dejas listo un Sheet con 3 pestañas para Make (Clase 4)
 
-> "La IA no me da buenos resultados" — ¿Seguro que el problema es la IA?
-
----
-
-## 🧠 QUIZ PRE-LAB
-
-### ¿Cuál elemento de un prompt hace MÁS diferencia en la calidad del resultado?
-
-**A)** El rol que le asignas a la IA
-
-**B)** La longitud y detalle del prompt
-
-**C)** Los ejemplos de output deseado
-
-**D)** Las palabras que usas al inicio
-
-*Toma 2-3 respuestas antes de continuar*
+> "La IA no automatiza datos desordenados — los desordena más rápido."
 
 ---
 
-## 🎬 Demo: Triage de Mensajes — 3 Niveles
+## QUIZ PRE-LAB
 
-### El Caso: PetShop Express — 5 mensajes, ¿cuál atender primero?
+### Pregunta:
 
-**Nivel 1 — Casual:**
-> "Clasifica estos mensajes de clientes."
+¿Por qué separar parámetros del negocio (meta, equipo) en una pestaña distinta a los datos operativos? ¿Qué problema se evita?
 
-**Nivel 2 — Con Rol:**
-> "Eres agente de soporte senior... Clasifica."
-
-**Nivel 3 — RICE Completo:**
-> Rol + Formato tabla + **Ejemplos de clasificación**
+*Toma 2-3 respuestas antes de continuar.*
 
 ---
 
-## 🎯 COMPROBACIÓN
+## COMPROBACIÓN
 
-### ¿Qué hizo que el Nivel 3 produjera el mejor resultado?
+### Pregunta (después de la demo):
 
-**A)** Tenía más palabras y era más detallado
+Viste que Make leerá el Sheet usando rangos nombrados (`RangoVentas`) en vez de coordenadas (`A1:G50`). ¿Por qué importa?
 
-**B)** Incluía ejemplos concretos de cómo clasificar
-
-**C)** Usaba un rol más específico que los anteriores
-
-**D)** Estaba mejor formateado con secciones claras
-
-> 🕐 30 segundos para pensar → levanten la mano
+A. Porque los rangos nombrados son más rápidos de leer para Make
+B. Porque evita romper el flujo si alguien agrega/reordena columnas
+C. Porque solo los rangos nombrados permiten filtrar datos
+D. Porque Make no puede leer coordenadas tradicionales
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## COMPROBACIÓN - Respuesta
 
-**Respuesta correcta: B**
+**Respuesta correcta:** B
 
-- **A:** ❌ Más palabras sin dirección no mejoran el resultado
-- **B:** ✅ Los ejemplos enseñan el CRITERIO — la IA VE cómo clasificar
-- **C:** ❌ El rol ayuda, pero sin ejemplos el output es inconsistente
-- **D:** ❌ El formato organiza, pero los ejemplos calibran
+**Análisis de opciones:**
+- **A:** El desempeño es igual. El beneficio es de mantenibilidad, no velocidad.
+- **B:** Correcto. Si usas `A1:G50` y agregas una columna, Make sigue leyendo G pero perdiste información. Con rango nombrado, el rango crece automáticamente.
+- **C:** Los filtros funcionan con cualquier referencia.
+- **D:** Make lee ambos formatos. La diferencia es robustez, no compatibilidad.
 
-> **Regla memorable:** Mostrar > Describir. Un ejemplo vale más que mil instrucciones.
-
----
-
-## 📐 Concepto Clave: Framework RICE
-
-| Letra | Pregunta | Tip |
-|-------|----------|-----|
-| **R** | ¿Quién debe ser la IA? | Específico > "experto" |
-| **I** | ¿Qué debe hacer exactamente? | Verbo de acción |
-| **C** | ¿Qué necesita saber? | Todo lo que evite que adivine |
-| **E** | ¿Cómo debe verse el resultado? | **Mostrar > Describir** |
-
-> Evolución: `SISTEMA` (Clase 01) → `RICE` (Clase 02) — se agrega el Ejemplo.
+> **Clave:** Los rangos nombrados hacen tu automatización inmune a cambios visuales del Sheet.
 
 ---
 
-## 🔑 Few-shot + ⚠️ Limitaciones
+## CHECKPOINT Actividad 1: Pestaña operativa con 15 filas
 
-### Few-shot: incluir 2-3 ejemplos input → output
+### Verificar:
+Cada estudiante muestra su pestaña `VentasSemanaActual` en pantalla.
 
-Usar cuando: clasificación, formato específico, criterio subjetivo <!-- .element: class="fragment" -->
-
-### 3 errores comunes de la IA en triage:
-
-1. **Prioriza por TONO, no por necesidad real** <!-- .element: class="fragment" -->
-2. **Categorías ambiguas** (¿venta o soporte?) <!-- .element: class="fragment" -->
-3. **Se cree lo que dice el cliente** ("no es urgente" pero tiene deadline) <!-- .element: class="fragment" -->
-
-> La IA clasifica, TÚ validas. El juicio humano no es opcional.
-
----
-
-## 🔬 Lab Time: Mi Sistema de Triage
-
-**Objetivo:** Prompt de triage que evoluciona en 5 partes
-
-**Tiempo:** 70 min
-
-| Parte | Técnica | Tiempo |
-|-------|---------|--------|
-| 1 | El Caos (sin técnicas) | 10 min |
-| 2 | +Rol | 15 min |
-| 3 | +Formato | 15 min |
-| 4 | +Few-shot | 15 min |
-| 5 | Análisis Crítico | 10 min |
-
----
-
-## ✅ CHECKPOINT: Parte 1-2
-
-### Debes ver en pantalla:
-- [ ] Clasificación caótica (Parte 1) documentada
-- [ ] Clasificación con rol (Parte 2) documentada
-- [ ] Comparación anotada en Google Doc
-
-**¿El rol mejoró el CRITERIO o el FORMATO?**
+**¿Qué debe verse?**
+- 7 columnas con nombres específicos (no "Columna A")
+- 15 filas con datos realistas generados por Gemini
+- Columna "Descripción" presente y con texto en 1 línea
 
 **Problemas comunes:**
-- Resultado casi igual → Verificar que el rol sea específico, no genérico
+- Columnas vagas ("Dato 1", "Info") → pedir al Gem que sea específico según el brief
+- Datos genéricos copiados literal → el Gem los personaliza si le recuerdas el brief
 
 ---
 
-## ✅ CHECKPOINT: Parte 3-5
+## CHECKPOINT Actividad 2: Pestaña Config con parámetros reales
 
-### Debes ver en pantalla:
-- [ ] Tabla con 5 mensajes clasificados (Parte 3-4)
-- [ ] Prompt con ejemplos few-shot ejecutado
-- [ ] 1 error de la IA identificado y documentado (Parte 5)
+### Verificar:
+Cada estudiante muestra su pestaña `Config`.
 
-**¿Los ejemplos calibraron mejor las prioridades?**
+**¿Qué debe verse?**
+- Al menos 4 parámetros con valores (no en blanco)
+- Valores en unidades reales (S/, %, número de personas)
+- Parámetros del negocio del estudiante, no del caso Roberto literal
 
 **Problemas comunes:**
-- IA no mantiene formato → Revisar que los ejemplos usen exactamente la tabla
+- Copiaron el ejemplo de Roberto sin adaptar → preguntar por su contexto real
+- Parámetros vagos ("muchas ventas") → pedir número concreto, aunque sea estimado
 
 ---
 
-## 💡 REFLEXIÓN
+## CHECKPOINT Actividad 3: 3 pestañas + rangos nombrados
 
-### Hoy aprendiste:
+### Verificar:
+**Datos → Rangos con nombre** muestra 3 entradas.
 
-- RICE = ROL + INSTRUCCIÓN + CONTEXTO + **EJEMPLO**
-- Few-shot: mostrar ejemplos > describir reglas
-- Progresión iterativa: Caos → Rol → Formato → Ejemplos
-- La IA clasifica, pero TÚ validas
+**¿Qué debe verse?**
+- `RangoVentas`, `RangoConfig`, `RangoHistorico` visibles
+- Cada uno apunta a la pestaña correcta con columnas correctas
+- Pestaña `Historico` tiene al menos 2 filas de datos simulados
 
-### Preguntas de cierre:
-
-1. ¿Por qué "mostrar" es más poderoso que "describir"?
-2. ¿Qué tarea de tu trabajo convertirías en sistema de triage?
-3. ¿Qué limitación de la IA te sorprendió más?
+**Problemas comunes:**
+- Rango apunta a `A1:G50` (coordenadas fijas) → reemplazar con `A:G` (columna completa)
+- Nombre del rango no es descriptivo → renombrar para que sea legible en Make
 
 ---
 
-## 📝 Entrega
+## REFLEXIÓN: Dato operativo vs dato de configuración
 
-### Biblioteca personal: mínimo 3 prompts
+| Aspecto | Dato operativo | Dato de configuración |
+|---------|----------------|-----------------------|
+| **Frecuencia de cambio** | Varias veces al día | 1 vez al mes o menos |
+| **Origen** | Correos, formularios | Decisión gerencial |
+| **Ejemplo (Roberto)** | Venta registrada | Meta semanal |
+| **Dónde vive** | `VentasSemanaActual` | `Config` |
 
-1. **Prompt de triage** — RICE + Few-shot + tabla clasificada
-2. **Prompt para TU trabajo** — RICE aplicado a tarea real
-3. **Reflexión crítica** — 1 error encontrado + corrección propuesta
+> **Regla memorable:** "Lo que cambia seguido vive en operativa. Lo que define el negocio vive en Config."
 
-**Formato:** Google Doc con link público
+---
 
-### Próxima clase: Producción de contenido profesional con IA
-De prompts individuales a **Claude Projects** + frameworks personales
+## TRANSICIÓN: Preview Clase 03
+
+### Hoy lograste:
+- Sheet con 3 pestañas estructuradas
+- 15 filas de ejemplo + 3 rangos nombrados
+- Tabla de parámetros iniciada
+
+### Próxima clase:
+- Diseñar plantilla de Slides con 6 secciones
+- Nombrar 18-20 marcadores que se conectarán a este Sheet
+- Tabla de parámetros crece con marcadores clasificados por tipo
+
+---
+
+## Preguntas de Cierre
+
+1. ¿Qué columna de tu pestaña operativa va a ser la más importante para que Gemini genere buenos insights?
+
+2. ¿Qué parámetro de Config crees que cambiará primero cuando adaptes el sistema a tu caso real (Clase 7)?
+
+3. Si tuvieras que explicarle a un colega por qué usas rangos nombrados, ¿cómo lo dirías en una frase?
+
+---
+
+## Entrega
+
+- Sheet con 3 pestañas y datos de ejemplo
+- 3 rangos nombrados definidos
+- Tabla de parámetros actualizada
+
+### Próxima clase: Google Slides con IA

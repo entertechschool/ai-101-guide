@@ -1,30 +1,29 @@
 > **Módulo 1:** Clase 3 de 4
 
-# Clase 03: Producción de contenido profesional con IA
+# Clase 03: Google Slides con IA
 
 ## Resumen
 
-Las Clases 01 y 02 te enseñaron a comunicarte con la IA: tú escribes, la IA responde. Esta clase invierte el patrón. Aquí, la IA te hará preguntas para extraer y estructurar TU conocimiento, y luego lo aplicarás para producir contenido profesional real con criterio editorial propio.
+Un reporte ejecutivo no es un documento — es una **plantilla** con partes fijas y marcadores variables que se reemplazan cada vez que el sistema corre. Hoy vas a diseñar esa plantilla para el reporte de tu proyecto de instrucción. Vas a usar tu Gem para proponer las 6 secciones clásicas, nombrar cada marcador variable con convenciones claras y clasificarlos por tipo: unos vienen del Sheet (crudos), otros los calcula Make (calculados) y otros los genera Gemini (generados por IA).
 
-Todos tenemos conocimiento valioso que nunca documentamos: cómo evaluamos proveedores, cómo priorizamos proyectos, cómo detectamos si un candidato es bueno. Hoy usarás la IA como socio pensante para capturar esa expertise en un framework personal, y luego producirás una pieza de contenido profesional que demuestra tu dominio.
+Al terminar, tu plantilla de Slides estará lista para que en la Clase 4 Make reemplace los marcadores automáticamente con datos reales. La tabla de parámetros que iniciaste la Clase 2 va a crecer con ~18-20 marcadores documentados — es la pieza de información más importante que construyes en el Módulo 1.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Tu conocimiento tácito tiene valor enorme** — pero vive en tu cabeza y se pierde si no lo documentas
-- **La IA puede extraer patrones** que tú haces "por intuición" y estructurarlos en frameworks transferibles
-- **Producir contenido profesional con IA** requiere criterio editorial: saber qué aceptar, qué corregir y qué descartar
-- **Claude Projects** te permite crear un espacio persistente que recuerda tu contexto y estilo
+- **Los reportes profesionales tienen 80% de estructura fija y 20% de datos variables.** Diseñar esa estructura una sola vez ahorra 2-4 horas cada vez que toca armar un reporte.
+- **Un marcador bien nombrado es documentación viva del sistema.** Leer `{{ventas_total_semana}}` en una plantilla deja claro qué es, de dónde viene y qué esperar — sin abrir ningún otro archivo.
+- **Clasificar marcadores por tipo (crudo/calculado/IA) es el mapa que guía todas las decisiones del Módulo 2.** En la Clase 5 sabrás exactamente qué prompt escribir para cada marcador tipo IA, y qué fórmula para los calculados.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Configurarás un Claude Project** — Tu socio pensante personal y reusable
-2. **Extraerás tu framework personal** — La IA pregunta, tú respondes, tu conocimiento queda estructurado
-3. **Producirás contenido profesional** — Aplicarás tu framework para crear una pieza real de contenido
-4. **Aplicarás criterio editorial** — Evaluarás y refinarás el resultado con ojo crítico
+1. **Exploraremos la anatomía de un reporte ejecutivo** - Descubrirás las 6 secciones clásicas y la regla "1 slide = 1 idea".
+2. **Diseñarás tu plantilla con 6 slides** - Usarás tu Gem para proponer secciones según tu brief y aplicarás paleta y jerarquía.
+3. **Nombrarás todos los marcadores** - Aplicarás convención `snake_case`, los clasificarás por tipo y los registrarás en la tabla de parámetros.
+4. **Probarás la plantilla manualmente** - Reemplazarás 3-4 marcadores con datos reales para ver cómo se verá el reporte final.
 
 ---
 
@@ -32,10 +31,10 @@ Todos tenemos conocimiento valioso que nunca documentamos: cómo evaluamos prove
 
 Al finalizar esta clase, podrás:
 
-1. **Configurar un Claude Project** con instrucciones persistentes para extracción de conocimiento
-2. **Usar la IA como socio pensante** que extrae y estructura tu expertise profesional
-3. **Producir contenido profesional** aplicando tu framework personal con asistencia de IA
-4. **Aplicar criterio editorial** para evaluar y refinar contenido generado con IA
+1. **Describir** las 6 secciones clásicas de un reporte ejecutivo y qué pertenece a cada una.
+2. **Clasificar** marcadores variables en 3 tipos (crudo, calculado, generado por IA) según su origen.
+3. **Diseñar** una plantilla de Slides con marcadores en convención `snake_case` alineada a la tabla de parámetros.
+4. **Validar** visualmente la plantilla reemplazando marcadores con datos de prueba.
 
 ---
 
@@ -43,25 +42,27 @@ Al finalizar esta clase, podrás:
 
 ### De clases anteriores
 
-- Tu biblioteca de prompts de Clase 02 (RICE + Few-shot)
-- Comprensión de la fórmula SISTEMA (ROL + CONTEXTO + INSTRUCCIÓN)
+- Google Sheet con 3 pestañas y datos de ejemplo (Clase 2)
+- Tabla de parámetros con columnas y rangos nombrados registrados
+- Gem del curso funcionando con brief y archivo de referencia
 
 ### Reflexión previa
 
 Antes de llegar a clase, reflexiona sobre:
 
-- ¿Qué conocimiento tienes que otros te piden que compartas frecuentemente?
-- ¿Qué proceso haces "por intuición" que en realidad tiene pasos?
-- ¿Qué pieza de contenido profesional te gustaría producir? (email, reporte, propuesta, post, presentación)
+- Si tuvieras que describir tu reporte actual en 6 secciones, ¿cuáles serían?
+- ¿Qué partes del reporte cambian semana a semana y cuáles son siempre iguales?
 
 ### Herramientas
 
-- [ ] **Claude** — Cuenta activa en [claude.ai](https://claude.ai){:target="_blank"} con acceso a Projects
-- [ ] **Google Doc** — Para documentar tu framework y contenido final
+- [ ] **Google Slides** - Accesible desde [slides.google.com](https://slides.google.com/){:target="_blank"}
+- [ ] **Tu Sheet con 3 pestañas** - De la Clase 2
+- [ ] **Tabla de parámetros** - Google Doc iniciado en la Clase 2 (va a crecer hoy)
 
 ### Lectura sugerida
 
-- [Claude Projects](https://support.anthropic.com/en/articles/9517075-what-are-projects){:target="_blank"} - Documentación oficial
+- [Storytelling con datos](https://www.storytellingwithdata.com/blog/2013/04/what-it-means-to-be-a-data-driven-organization){:target="_blank"} - Principios básicos de reportes efectivos.
+- [Reemplazar texto en Google Slides](https://support.google.com/docs/answer/6317504){:target="_blank"} - Referencia de la función Replace Text que Make usará en Clase 4.
 
 ---
 
@@ -69,14 +70,16 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **Claude Project** | Espacio en Claude con instrucciones persistentes y archivos de contexto |
-| **Socio pensante** | Paradigma donde la IA pregunta para extraer tu conocimiento, en vez de generar contenido |
-| **Framework personal** | Estructura reutilizable que captura tu expertise en formato aplicable |
-| **Criterio editorial** | Capacidad de evaluar, refinar y decidir qué contenido generado con IA tiene calidad profesional |
-| **Brainstorming guiado** | Proceso donde la IA hace preguntas sistemáticas para estructurar ideas dispersas |
+| **Marcador variable** | Texto en la plantilla (tipo `{{nombre}}`) que Make reemplaza por un valor. |
+| **Marcador crudo (tipo 1)** | Viene directo de una celda del Sheet. Ej: `{{ventas_total}}`. |
+| **Marcador calculado (tipo 2)** | Make lo calcula con fórmula. Ej: `{{variacion_pct}}`. |
+| **Marcador de IA (tipo 3)** | Gemini lo genera analizando datos. Ej: `{{hallazgo_1}}`. |
+| **snake_case** | Convención: todo minúsculas, palabras separadas por guion bajo (`ventas_total_semana`). |
+| **Replace Text** | Operación de Slides que busca `{{marcador}}` y lo sustituye por un valor. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Custom Instructions](https://support.anthropic.com/en/articles/9443503-setting-custom-instructions-for-your-conversations){:target="_blank"} - Cómo funcionan las instrucciones persistentes
+- [Google Slides: inserción de gráficos vinculados](https://support.google.com/docs/answer/7009814){:target="_blank"} - Para el gráfico vinculado al Sheet.
+- [Paletas de colores para reportes ejecutivos](https://coolors.co/palettes/trending){:target="_blank"} - Referencia visual si no tienes paleta propia.

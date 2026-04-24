@@ -1,172 +1,150 @@
 <!-- .slide: data-background="#0A192F" -->
-
-# Clase 01: Panorama actual de la IA aplicada al trabajo
-
-## Tu entrada al mundo de la IA profesional
-
-*AI 101 — IA para Profesionales · EnterTech School*
-
-> "El 95% usa IA como Google. El 5% la usa como superpoder."
+# Clase 01: Prompts y Gems
+## Diseña prompts profesionales y crea tu asistente del curso
 
 ---
 
-## 🧠 QUIZ PRE-LAB
+## TRANSICIÓN: Bienvenida → Primera clase
 
-### ¿Qué diferencia al 5% que domina IA del 95% que no?
+### Antes de este curso:
+- Usabas IA para tareas sueltas (ChatGPT, Gemini)
+- Cada vez empezabas de cero: repetías contexto, copiabas instrucciones
 
-**A)** Tienen acceso a herramientas más caras
+### Hoy:
+- Aprendes la estructura que cambia 10x los resultados
+- Dejas listo un asistente personalizado con el contexto de TU proyecto
 
-**B)** Saben programar y crear sus propios modelos
-
-**C)** Usan sistemas reusables en vez de prompts únicos
-
-**D)** Pasan más horas al día usando IA
-
-*30 segundos para pensar → levanten la mano*
+> "Un buen prompt no describe lo que quieres — describe a quién debe convertirse la IA."
 
 ---
 
-## 🎬 Demo: Email de Disculpa a Cliente VIP
+## QUIZ PRE-LAB
 
-### Sin IA: ~1 hora
+### Pregunta:
 
-Brainstorm + redacción + revisión + edición
+¿Por qué la IA "alucina" (inventa datos que suenan creíbles)?
 
-### Con IA: ~3 minutos
-
-Con el enfoque correcto
-
-> 🎬 **Demo en vivo** — Prompt casual vs sistema estructurado
+*Toma 2-3 respuestas del grupo antes de avanzar.*
 
 ---
 
-## 🎯 COMPROBACIÓN
+## COMPROBACIÓN
 
-### ¿Por qué el segundo prompt produjo mejor resultado?
+### Pregunta (después de la demo):
 
-**A)** Era más largo y tenía más palabras
+Acabas de ver 3 variaciones del prompt "Escribe sobre productividad". ¿Cuál es el elemento que MÁS cambia la calidad del resultado?
 
-**B)** Usaba palabras mágicas como "experto"
-
-**C)** Incluía contexto específico y rol definido
-
-**D)** Se ejecutó en una versión más nueva de Claude
-
-*30 segundos → levanten la mano*
+A. Pedir que la IA sea "experta" (Rol)
+B. Explicar tu contexto específico
+C. Definir el formato (lista numerada, número de palabras)
+D. Los 3 juntos — ningún elemento solo es suficiente
 
 ---
 
-## 🎯 COMPROBACIÓN — Respuesta
+## COMPROBACIÓN - Respuesta
 
-**Respuesta correcta: C**
+**Respuesta correcta:** D
 
-- **A:** ❌ Longitud ≠ calidad
-- **B:** ❌ "Palabras mágicas" no funcionan sin contexto real
-- **C:** ✅ Contexto elimina ambigüedad, rol guía el tono
-- **D:** ❌ Misma versión, diferente prompt
+**Análisis de opciones:**
+- **A:** El Rol solo ayuda si viene con contexto. "Actúa como doctor" sin más no es útil.
+- **B:** El Contexto por sí solo da información pero no dirige el resultado.
+- **C:** El Formato solo restringe la salida pero no la enfoca en lo que importa.
+- **D:** Los 3 elementos combinados es lo que transforma una respuesta genérica en una útil. Agregando Tarea y Restricciones se completa el prompt profesional.
 
-> **Clave:** Prompt genérico = resultado genérico. Contexto específico = resultado específico.
-
----
-
-## 💡 Concepto Clave: Prompt vs SISTEMA
-
-| | Prompt | Sistema |
-|---|--------|---------|
-| Resuelve | UNA tarea | TODAS las similares |
-| Ejemplo | "Ayúdame con este email" | "Eres mi revisor. Mi contexto es X." |
-| Reusable | No | Sí |
-
-```
-SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN
-```
+> **Clave:** Rol + Contexto + Tarea + Formato + Restricciones. Falta alguno y la calidad cae.
 
 ---
 
-## ✅ CHECKPOINT Parte 1: Verificación y Comparación (15 min)
+## CHECKPOINT Actividad 1: 3 prompts del mismo tema
 
-### Debes ver en pantalla:
+### Verificar:
+Cada estudiante muestra 3 pestañas de Gemini abiertas.
 
-- Claude y ChatGPT abiertos con respuestas al mismo prompt
-- Diferencias documentadas en tu Google Doc
+**¿Qué debe verse?**
+- Conversación 1: prompt genérico (Rol + Tarea) con respuesta corta
+- Conversación 2: agregado Contexto, respuesta más específica
+- Conversación 3: Formato + Restricciones, respuesta directamente usable
 
 **Problemas comunes:**
-
-- No carga Claude → limpiar caché o probar incógnito
-- No tiene cuenta → crear con email personal
+- Variaciones casi iguales → el estudiante no cambió suficiente entre versiones
+- Respuestas de Gemini parecidas → refinar las restricciones (ser más exigente con el formato)
 
 ---
 
-## ✅ CHECKPOINT Parte 2: Tu Tarea Real (40 min)
+## CHECKPOINT Actividad 2: Brief en Google Doc
 
-### Debes ver en pantalla:
+### Verificar:
+Google Doc con 1 párrafo usando la plantilla de 4 elementos.
 
-- Tu sistema de revisor con ROL + CONTEXTO + INSTRUCCIÓN
-- Al menos 2 iteraciones sobre tu tarea real
+**¿Qué debe verse?**
+- Tipo de reporte específico (no "un reporte cualquiera")
+- Frecuencia explícita (semanal, mensual)
+- Destinatario real (persona, cargo)
+- Tiempo estimado ahorrado (cuantificado)
 
 **Problemas comunes:**
-
-- Respuesta genérica → agregar más contexto de tu industria/rol
-- No sabe qué tarea usar → elegir de la tabla del lab
+- "Quiero automatizar mi trabajo" → demasiado genérico, pedir detalles
+- No mencionar destinatario → sin este dato, los prompts del Módulo 2 no tendrán contexto
 
 ---
 
-## ✅ CHECKPOINT Parte 3: Captura y Reflexión (10 min)
+## CHECKPOINT Actividad 3: Gem respondiendo con contexto
 
-### Debes ver en pantalla:
+### Verificar:
+Cada estudiante muestra su Gem respondiendo "Resume mi brief en una línea".
 
-- Screenshot con prompt + resultado final
-- 3 tareas con potencial IA identificadas
+**¿Qué debe verse?**
+- Nombre del Gem visible en la parte superior
+- Respuesta mencionando el proyecto específico (no uno genérico)
+- Al menos 1 archivo de referencia cargado (visible en la configuración del Gem)
 
 **Problemas comunes:**
-
-- No sabe qué tareas elegir → pensar en lo repetitivo de su semana
-
----
-
-## 💡 REFLEXIÓN
-
-| Antes de hoy | Después de hoy |
-|-------|---------|
-| IA = Google mejorado | IA = asistente con contexto |
-| Prompts sueltos | SISTEMA = ROL + CONTEXTO + INSTRUCCIÓN |
-| Una sola herramienta | Claude vs ChatGPT según la tarea |
-
-> **Regla memorable:** "La IA no reemplaza tu juicio. Amplifica lo que ya sabes."
+- El Gem responde genérico → instrucciones no incluyeron el brief completo
+- Archivo no se subió → verificar tamaño/formato permitido por Gemini
 
 ---
 
-## 🔗 TRANSICIÓN: Preview Clase 02
+## REFLEXIÓN: Prompt genérico vs profesional
+
+| Aspecto | Prompt genérico | Prompt profesional |
+|---------|-----------------|--------------------|
+| **Salida** | Texto que sirve a cualquiera | Texto que sirve a TU caso |
+| **Iteraciones** | 5-8 intentos | 1-2 intentos |
+| **Tiempo total** | 15 min + decepción | 3 min + resultado usable |
+| **Aprendizaje** | La IA "no me entiende" | "Yo no expliqué bien qué quería" |
+
+> **Regla memorable:** "La IA no adivina tu contexto. Dárselo es trabajo tuyo."
+
+---
+
+## TRANSICIÓN: Preview Clase 02
 
 ### Hoy lograste:
+- 3 prompts profesionales probados
+- Brief de tu proyecto de instrucción escrito
+- Gem asistente configurado con archivo
 
-- Tu primer "wow moment" con IA
-- Un SISTEMA reusable (ROL + CONTEXTO + INSTRUCCIÓN)
-- Comparar Claude vs ChatGPT en la misma tarea
-
-### Próxima clase: Diseño de instrucciones efectivas
-
-- Framework **RICE** (Rol, Instrucción, Contexto, Ejemplo)
-- Técnica **Few-shot** para enseñar patrones a la IA
-
----
-
-## ❓ Preguntas de Cierre
-
-1. ¿Qué tarea repetitiva de tu semana podrías convertir en un sistema?
-
-2. ¿Cuándo elegirías Claude sobre ChatGPT (o viceversa)?
-
-3. ¿Qué información de contexto mejoró más tus resultados hoy?
+### Próxima clase:
+- Diseñar el Google Sheet del proyecto con 3 pestañas
+- Tu Gem sugerirá columnas, filas de ejemplo y parámetros
+- Primera pieza de datos del sistema
 
 ---
 
-## 📝 Entrega
+## Preguntas de Cierre
 
-1. **Comparación Claude vs ChatGPT** — Screenshot de ambas respuestas + observación
-2. **Sistema reusable** — Prompt (ROL + CONTEXTO + INSTRUCCIÓN) con resultado real
-3. **3 tareas con potencial IA** — De tu trabajo, con justificación breve
+1. ¿En qué tarea de tu trabajo aplicarás la estructura de prompt profesional esta semana?
 
-**Formato:** Google Doc con los 3 elementos
+2. ¿Cómo cambiaría tu flujo actual si pudieras delegar algo al Gem que hiciste hoy?
 
-### Próxima clase: Diseño de instrucciones efectivas
+3. ¿Qué pieza de tu reporte crees que será más fácil de automatizar? ¿Y cuál la más difícil?
+
+---
+
+## Entrega
+
+- Brief en Google Doc (carpeta "Proyecto de Instrucción")
+- Gem funcionando con nombre, instrucciones y archivo de referencia
+- Screenshot del Gem respondiendo "Resume mi brief en una línea"
+
+### Próxima clase: Google Sheets con IA

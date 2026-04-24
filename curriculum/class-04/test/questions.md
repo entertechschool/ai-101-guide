@@ -1,111 +1,135 @@
 # Test Módulo 1 - Questions
 
-**8 preguntas diagnósticas**
+**8 preguntas diagnósticas** | **Duración:** 15 min | **No afecta calificación**
 
 ---
 
-## Preguntas 1-2 (Clase 01: Panorama actual de la IA)
+## Pregunta 1 (Clase 01 — Prompts)
 
-### Pregunta 1
+Un prompt profesional bien estructurado incluye 5 elementos. ¿Cuál de los siguientes NO es uno de los 5?
 
-¿Cuál es la diferencia principal entre un "prompt" y un "sistema" según lo aprendido en Clase 01?
+A. Rol
+B. Contexto
+C. Temperature
+D. Restricciones
 
-- A) El prompt es más corto y el sistema es más largo
-- B) El prompt resuelve UNA tarea, el sistema resuelve TODAS las tareas similares
-- C) El sistema requiere programación y el prompt no
-- D) El prompt es para Claude y el sistema es para otras IAs
-
-> Respuesta: B
-
-### Pregunta 2
-
-Según los niveles de dominio de IA presentados, ¿en qué nivel estará un egresado de AI 101?
-
-- A) Usuario - usa IA para tareas puntuales
-- B) Operador - integra IA en su workflow diario con prompts avanzados
-- C) Constructor - crea soluciones con IA para otros
-- D) Experto - entrena sus propios modelos de IA
-
-> Respuesta: B
+> **Respuesta:** C. Temperature es un parámetro técnico de la API (lo verás en Clase 5), no parte de la estructura del prompt profesional.
 
 ---
 
-## Preguntas 3-4 (Clase 02: Diseño de instrucciones efectivas)
+## Pregunta 2 (Clase 01 — Gems)
 
-### Pregunta 3
+¿Cuál es la ventaja principal de usar un Gem personalizado en vez del chat normal de Gemini?
 
-En el framework RICE, ¿qué representa la letra "E" y por qué es tan poderosa?
+A. Los Gems tienen modelos más potentes que el chat normal
+B. Los Gems mantienen contexto fijo (instrucciones y archivos) sin repetirlo cada vez
+C. Los Gems no consumen tokens del plan gratuito
+D. Los Gems procesan más rápido las respuestas
 
-- A) Especificidad - ser más detallado en las instrucciones
-- B) Estructura - organizar el prompt en secciones claras
-- C) Ejemplo - mostrar cómo debe verse el resultado deseado
-- D) Evaluación - pedir a la IA que revise su propio trabajo
-
-> Respuesta: C
-
-### Pregunta 4
-
-¿Cuándo es más útil usar la técnica Few-shot (incluir 2-3 ejemplos de input/output)?
-
-- A) Siempre, sin excepción, mejora cualquier prompt
-- B) Solo cuando la IA no entiende español correctamente
-- C) Cuando necesitas clasificación, formato específico o calibrar criterio subjetivo
-- D) Únicamente para tareas matemáticas o de programación
-
-> Respuesta: C
+> **Respuesta:** B. Los Gems persisten las instrucciones y archivos de referencia — dejas de pegar el mismo contexto en cada conversación.
 
 ---
 
-## Preguntas 5-6 (Clase 03: Producción de contenido profesional con IA)
+## Pregunta 3 (Clase 02 — 3 pestañas)
 
-### Pregunta 5
+¿Por qué conviene separar los parámetros del negocio (meta, vendedores) en una pestaña `Config` distinta a la pestaña operativa?
 
-¿Cuál es el cambio de paradigma de la Clase 03 respecto a las clases anteriores?
+A. Porque Make lee más rápido cuando las pestañas están separadas
+B. Porque evita tener que editar la misma columna en 50 filas cuando cambia un parámetro
+C. Porque los gráficos solo funcionan con datos de Config
+D. Porque Gemini no puede leer pestañas mixtas
 
-- A) En Clase 03 se usan prompts más largos y detallados
-- B) La IA pasa de ejecutar instrucciones a preguntar para extraer TU conocimiento y producir contenido con criterio editorial
-- C) En Clase 03 se trabaja con documentos en vez de conversaciones
-- D) En las clases anteriores se usa Claude y en Clase 03 se usa otra herramienta
-
-> Respuesta: B
-
-### Pregunta 6
-
-¿Qué es un Claude Project y cómo se relaciona con la producción de contenido profesional?
-
-- A) Una conversación más larga con más contexto disponible
-- B) Un espacio con instrucciones persistentes donde creas un framework personal para producir contenido con tu expertise
-- C) Una forma de compartir prompts con otros usuarios de Claude
-- D) Un tipo de suscripción premium de Claude
-
-> Respuesta: B
+> **Respuesta:** B. Un parámetro vive en una sola celda de Config — cambiarlo una vez actualiza todo. Sin esa separación, tocarías 50 filas.
 
 ---
 
-## Pregunta 7 (Clase 04: Investigación y análisis asistidos por IA)
+## Pregunta 4 (Clase 02 — Rangos nombrados)
 
-### Pregunta 7
+¿Cuál es el beneficio principal de usar un rango nombrado (`RangoVentas`) en Make en vez de coordenadas (`A1:G50`)?
 
-Un proyecto integrador efectivo debe incluir 5 elementos. ¿Cuál de las siguientes opciones describe correctamente el flujo completo?
+A. Los rangos nombrados son más rápidos de leer
+B. Make solo soporta rangos nombrados
+C. El flujo no se rompe si alguien agrega o reordena columnas del Sheet
+D. Los rangos nombrados consumen menos operaciones de Make
 
-- A) Idea → Diseño → Desarrollo → Pruebas → Entrega
-- B) Problema real → Research con fuentes → Clarificación → Sistema → Documentación con antes/después
-- C) Prompt básico → Prompt mejorado → Prompt final → Screenshot → Reflexión
-- D) Claude → Perplexity → Gemini → Google Docs → Presentación
-
-> Respuesta: B
+> **Respuesta:** C. Robustez ante cambios. Si un compañero agrega una columna, `A:G` sigue leyendo G (perdiste info); `RangoVentas` se ajusta.
 
 ---
 
-## Pregunta 8 (Autoevaluación)
+## Pregunta 5 (Clase 03 — Tipos de marcadores)
 
-### Pregunta 8
+El marcador `{{variacion_pct}}` que compara ventas de esta semana con la anterior, ¿de qué tipo es?
 
-Después de completar el Módulo 1, ¿cómo describirías tu nivel de confianza para usar IA como herramienta profesional en tu trabajo diario?
+A. Crudo (viene directo del Sheet)
+B. Calculado (Make lo calcula con módulo Math)
+C. Generado por IA (Gemini lo produce)
+D. Manual (se llena a mano antes de correr el flujo)
 
-- A) Muy seguro/a - podría crear sistemas y resolver problemas complejos sin ayuda
-- B) Bastante seguro/a - puedo aplicar las técnicas con algo de referencia
-- C) Algo inseguro/a - necesitaría bastante guía para aplicar lo aprendido
-- D) Muy inseguro/a - no sabría por dónde empezar en un caso real
+> **Respuesta:** B. Hay 2 valores (ventas actual y anterior) y se calcula la variación — eso es tipo 2, calculado por Make.
 
-> Sin respuesta correcta - todas las opciones son válidas para diagnóstico
+---
+
+## Pregunta 6 (Clase 04 — Instant vs Scheduled)
+
+Para un sistema que recibe correos de ventas durante el día y debe actualizar el Sheet lo más rápido posible, ¿qué trigger es el correcto?
+
+A. Scheduled cada 1 hora
+B. Scheduled cada 5 minutos
+C. Instant Trigger
+D. Manual (Run once cada vez)
+
+> **Respuesta:** C. Instant reacciona en 2-5 segundos vs 1 hora o 5 min. Además consume ops solo cuando hay correo, no en cada revisión vacía.
+
+---
+
+## Pregunta 7 (Clase 04 — Operaciones)
+
+Tu escenario semanal usa: Search Rows (1), Create from Template (1), 10 Replace Text (10), Export PDF (1), Send Email (1). ¿Cuántas operaciones consume por reporte?
+
+A. 5
+B. 12
+C. 14
+D. 50
+
+> **Respuesta:** C. 1+1+10+1+1 = 14 ops por reporte. Con 1,000 ops/mes, eso son ~71 reportes máximos.
+
+---
+
+## Pregunta 8 (Integración M1)
+
+Un estudiante llega a la Clase 5 con Gem configurado, Sheet con 3 pestañas y rangos nombrados, plantilla de Slides con 18 marcadores, pero SIN tabla de parámetros actualizada. ¿Qué problema específico va a tener?
+
+A. Ninguno, la tabla es opcional
+B. No podrá conectar Gemini API en Make
+C. Tendrá que abrir 3 archivos distintos cada vez que quiera saber de dónde viene cada marcador
+D. Su plantilla de Slides no funcionará con Replace Text
+
+> **Respuesta:** C. La tabla de parámetros es el mapa unificado. Sin ella, cada vez que configuras un prompt para un marcador tipo IA, tenés que rastrear manualmente de qué celda del Sheet viene. Es lento y propenso a errores.
+
+---
+
+## Clave de Respuestas Rápida
+
+| # | Respuesta | Tema |
+|---|-----------|------|
+| 1 | C | Estructura de prompt profesional |
+| 2 | B | Gems y contexto persistente |
+| 3 | B | Separación Config/Operativa |
+| 4 | C | Rangos nombrados |
+| 5 | B | Clasificación de marcadores |
+| 6 | C | Instant Trigger |
+| 7 | C | Conteo de operaciones |
+| 8 | C | Tabla de parámetros |
+
+---
+
+## Análisis para el instructor
+
+Si hay <60% de acierto en:
+
+- **Pregunta 1:** repasar anatomía del prompt en apertura de Clase 5
+- **Pregunta 2:** demo rápida del Gem en vivo al inicio de Clase 5
+- **Preguntas 3-4:** revisar estructura del Sheet antes de integrar Gemini API
+- **Pregunta 5:** retomar antes de que armen prompts tipo IA
+- **Preguntas 6-7:** consolidar conceptos de Make en pausa de Clase 5
+- **Pregunta 8:** hacer ejercicio rápido de completar tabla de parámetros en grupo

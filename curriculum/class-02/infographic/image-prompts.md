@@ -1,3 +1,3 @@
-# Image Prompts — Clase 02: Diseño de instrucciones efectivas
+# Image Prompts — Clase 02: Google Sheets con IA
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (grid RICE, bloques de código y progresión iterativa).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con pestañas del Sheet, tabla de comparación operativa/config y glosario).

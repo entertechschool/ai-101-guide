@@ -1,200 +1,236 @@
-# Lab 02: Mi Sistema de Triage — Diseño de instrucciones efectivas
+# Lab 02: Google Sheets con IA
 
-Construirás un sistema de triage que evoluciona en 4 fases. Cada fase agrega UNA técnica y verás cómo mejora el resultado.
+## 🎯 Objetivos
 
-> ⏱️ **Tiempo total:** 65 minutos
-
----
-
-## El Caso: PetShop Express
-
-Trabajas en **PetShop Express**, una tienda online de productos para mascotas. Recibes mensajes de clientes por WhatsApp, email y chat. Tu reto: clasificarlos rápidamente para que el equipo sepa qué atender primero.
-
-### Los 5 Mensajes para Clasificar
-
-```
-MENSAJE 1: "Hola, pedí comida especial para mi perro hace 5 días y no ha llegado. Mi perro tiene problemas renales y SOLO puede comer esta marca. Ya se me está acabando. Orden: #45892"
-
-MENSAJE 2: "Vi en su Instagram un rascador para gatos que se ve muy bonito. ¿Todavía lo tienen? ¿Cuánto cuesta? Mi gato destruyó el anterior jaja"
-
-MENSAJE 3: "PÉSIMO SERVICIO. Me llegó el producto equivocado y nadie me contesta. Llevo 3 días esperando. Quiero mi reembolso YA o voy a poner queja en redes."
-
-MENSAJE 4: "Necesito que corrijan mi factura porque pusieron mal el RFC de mi empresa. No es urgente, pero sí necesito tenerla antes del viernes para cerrar mes."
-
-MENSAJE 5: "Compré unas vitaminas para mi perro y no le funcionaron. Sigue igual de decaído. No sé si pedir reembolso, cambio por otra marca, o si me pueden recomendar algo."
-```
+1. Diseñar una pestaña operativa (`VentasSemanaActual`) con columnas coherentes y 15 filas de ejemplo generadas con Gemini.
+2. Construir una pestaña `Config` con los parámetros del negocio (meta, equipo, categorías).
+3. Cerrar con una pestaña `Historico` y 3 rangos nombrados documentados en la tabla de parámetros.
 
 ---
 
-## Parte 1: El Caos — Sin Técnicas (10 min)
+## 🔑 Conceptos Clave
 
-Empezamos con el prompt más básico posible para ver qué pasa.
-
-### 1.1 Prompt inicial
-
-Copia y pega en Claude:
-
-```
-Clasifica estos mensajes de clientes:
-
-[PEGA LOS 5 MENSAJES]
-```
-
-### 1.2 Observa y documenta
-
-Anota en tu Google Doc: ¿El formato es consistente? ¿Las categorías son claras? ¿Sabrías qué hacer con cada mensaje?
-
-✅ **Checkpoint:** Tienes tu primera clasificación caótica documentada.
+- **Arquitectura de 3 pestañas** — operación + configuración + histórico. Cada una tiene un propósito claro.
+- **Rango nombrado** — apodo que sobrevive a cambios de layout; Make los usa en vez de coordenadas `A1:G50`.
+- **Tabla de parámetros** — documento vivo donde registras columnas, rangos y decisiones del sistema.
 
 ---
 
-## Parte 2: +Rol — El Experto (15 min)
+## ⚙️ Setup Inicial
 
-Agregamos UN elemento: el rol de experto.
+Esta sesión continúa el proyecto de instrucción. Verifica que tengas todo listo:
 
-### 2.1 Prompt con rol
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Gem del curso funcionando | Responde a "Resume mi brief en una línea" mencionando tu proyecto |
+| ☐ | Brief del proyecto en Google Doc | Carpeta "Proyecto de Instrucción" en Drive |
+| ☐ | Tabla de parámetros (Google Doc) | Crear nuevo Doc con el título "Tabla de Parámetros — [tu proyecto]" |
 
-```
-Eres un agente de soporte al cliente senior con 5 años de experiencia
-en e-commerce de productos para mascotas. Conoces los tipos de
-problemas más comunes y sabes priorizar según impacto en el cliente.
-
-Clasifica estos mensajes de clientes:
-
-[PEGA LOS 5 MENSAJES]
-```
-
-### 2.2 Compara con Parte 1
-
-¿Mejoró la consistencia? ¿Las prioridades tienen más sentido? El rol mejora el CRITERIO pero el formato sigue inconsistente.
-
-✅ **Checkpoint:** Segunda clasificación con rol, comparación documentada.
+> ⚠️ Si no completaste el Gem de la Clase 1, agrégalo antes de continuar. Sin él, no podrás pedir sugerencias contextualizadas al diseñar el Sheet.
 
 ---
 
-## Parte 3: +Formato Estructurado (15 min)
+## Actividad 1: Diseña la pestaña VentasSemanaActual (40 min)
 
-Agregamos formato de tabla con campos específicos.
+### 1.1 Crea un Google Sheet nuevo
 
-### 3.1 Prompt con rol + formato
+Nombre del archivo:
 
 ```
-Eres un agente de soporte al cliente senior con 5 años de experiencia
-en e-commerce de productos para mascotas.
-
-Clasifica estos mensajes en una tabla con las siguientes columnas:
-
-| # | Prioridad | Categoría | Resumen (1 línea) | Acción siguiente | Tiempo máx |
-|---|-----------|-----------|-------------------|------------------|------------|
-
-Usa estos códigos de prioridad:
-- 🔴 Alta: Requiere acción inmediata (cliente en riesgo, escalamiento)
-- 🟡 Media: Importante pero no urgente (puede esperar horas)
-- 🟢 Baja: Consulta general (puede esperar 24h)
-
-Categorías permitidas: Envío, Producto, Facturación, Venta, Queja
-
-Mensajes a clasificar:
-
-[PEGA LOS 5 MENSAJES]
+Sistema [<!-- tu proyecto -->] — [<!-- tu nombre -->]
 ```
 
-### 3.2 Compara con Parte 2
+Renombra la primera pestaña a `VentasSemanaActual`. Si tu caso no son ventas, usa el nombre que corresponda (`CampanasSemanaActual`, `CohortesSemana`, etc.) — el patrón es `[Entidad]SemanaActual`.
 
-¿Puedes comparar mensajes fácilmente? El formato estructurado hace la clasificación ACCIONABLE.
+### 1.2 Pide columnas al Gem
 
-✅ **Checkpoint:** Tercera clasificación en tabla, campos consistentes.
+Abre tu Gem y envía:
+
+```
+Según mi brief, dame las columnas para la pestaña operativa del Sheet
+donde se capturarán los datos del día a día. Incluye una columna
+"Descripción" para capturar contexto en 1 línea. Dame también el
+tipo de dato por columna.
+```
+
+Como mínimo obligatorio, la pestaña debe tener:
+
+| Columna | Tipo | Propósito |
+|---------|------|-----------|
+| Fecha | Fecha | Cuándo ocurrió el evento |
+| [<!-- Quién registra -->] | Texto | Autor del dato (vendedor, autor, responsable) |
+| [<!-- Entidad principal -->] | Texto | Cliente, campaña, proyecto, etc. |
+| [<!-- Subcategoría -->] | Texto | Producto, canal, módulo, etc. |
+| [<!-- Métrica numérica -->] | Número | Monto, alcance, horas |
+| Tipo | Texto | Nuevo / Recurrente (o equivalente) |
+| Descripción | Texto | Contexto en 1 línea (CLAVE para Gemini en clase 5) |
+
+### 1.3 Genera 15 filas de ejemplo con el Gem
+
+Envía al Gem:
+
+```
+Genera 15 filas de datos de ejemplo realistas para la pestaña
+VentasSemanaActual con las columnas anteriores. Úsalas en formato TSV
+(separado por tabulaciones) para pegar directamente en Sheets.
+```
+
+Copia-pega la respuesta en el Sheet. Ajusta tipos si hace falta.
+
+### 1.4 Registra las columnas en la tabla de parámetros
+
+Abre la tabla de parámetros y agrega:
+
+| Categoría | Item | Valor |
+|-----------|------|-------|
+| Sheet: pestaña operativa | Nombre | `VentasSemanaActual` |
+| Sheet: pestaña operativa | Columnas | [<!-- lista separada por comas -->] |
+
+✅ **Checkpoint:** Tu Sheet tiene la pestaña `VentasSemanaActual` con las 7 columnas y 15 filas de ejemplo realistas. La tabla de parámetros registra el nombre y columnas.
 
 ---
 
-## Parte 4: +Few-shot — Los Ejemplos (15 min)
+## Actividad 2: Construye la pestaña Config (25 min)
 
-Agregamos 2 ejemplos que muestran EXACTAMENTE cómo clasificar.
+### 2.1 Crea la pestaña Config
 
-### 4.1 Prompt completo con Few-shot
+En tu Sheet, agrega una pestaña nueva llamada `Config`. Va a funcionar como "archivo de parámetros" del sistema.
+
+### 2.2 Pide al Gem los parámetros del negocio
 
 ```
-Eres un agente de soporte al cliente senior con 5 años de experiencia
-en e-commerce de productos para mascotas.
-
-Clasifica mensajes de clientes en una tabla con estas columnas:
-
-| # | Prioridad | Categoría | Resumen (1 línea) | Acción siguiente | Tiempo máx |
-|---|-----------|-----------|-------------------|------------------|------------|
-
-Prioridades:
-- 🔴 Alta: Acción inmediata (cliente en riesgo, escalamiento)
-- 🟡 Media: Importante pero no urgente (horas)
-- 🟢 Baja: Consulta general (24h)
-
-Categorías: Envío, Producto, Facturación, Venta, Queja
-
-### EJEMPLOS DE CLASIFICACIÓN CORRECTA:
-
-Mensaje: "Mi pedido llegó roto y necesito el producto para mañana porque
-es regalo de cumpleaños de mi hija"
-| 1 | 🔴 Alta | Envío | Producto dañado, urgencia por evento | Reenvío express + cupón disculpa | 2h |
-
-Mensaje: "¿Tienen descuento por volumen? Quiero comprar 10 bolsas de
-alimento para mi refugio"
-| 2 | 🟢 Baja | Venta | Consulta de precio mayoreo para refugio | Responder con política de descuentos | 24h |
-
-### AHORA CLASIFICA ESTOS MENSAJES:
-
-[PEGA LOS 5 MENSAJES]
+¿Qué parámetros de configuración necesita un reporte semanal según mi brief?
+Dame una tabla con columnas: Parámetro, Valor (de ejemplo), Tipo de dato.
 ```
 
-### 4.2 Compara con Parte 3
+Como referencia (caso Roberto):
 
-¿Los ejemplos "calibraron" mejor las prioridades? Los ejemplos enseñan el CRITERIO — la IA entiende el RAZONAMIENTO, no solo el formato.
+| Parámetro | Valor | Tipo de dato |
+|-----------|-------|--------------|
+| Meta semanal | S/ 20,000 | Número |
+| Ticket promedio objetivo | S/ 2,800 | Número |
+| Vendedores del equipo | Juan, María, Carlos, Ana | Texto (lista) |
+| Meta por vendedor | S/ 5,000 | Número |
+| % objetivo clientes nuevos | 30 | Porcentaje |
 
-✅ **Checkpoint:** Clasificación final con las 3 técnicas combinadas.
+### 2.3 Reemplaza con valores reales
+
+Usa los valores de TU negocio. Si no los tienes exactos, estima — después los refinas en la Clase 7.
+
+### 2.4 Registra en la tabla de parámetros
+
+Agrega sección:
+
+| Categoría | Item | Valor |
+|-----------|------|-------|
+| Sheet: pestaña config | Nombre | `Config` |
+| Sheet: pestaña config | Parámetros | [<!-- lista -->] |
+
+✅ **Checkpoint:** La pestaña `Config` tiene al menos 4 parámetros del negocio con valores reales. La tabla de parámetros los registra.
 
 ---
 
-## Parte 5: Análisis Crítico — ¿Dónde Falló? (10 min)
+## Actividad 3: Construye Historico y rangos nombrados (35 min)
 
-La IA no es perfecta. Vamos a encontrar sus errores.
+### 3.1 Crea la pestaña Historico
 
-### 5.1 Encuentra UN error
+En tu Sheet, agrega la pestaña `Historico`.
 
-Enfócate en tu Versión 4 (Few-shot). Busca un mensaje donde la IA se equivocó:
-
-- **Mensaje 1 vs 3:** ¿Priorizó la urgencia REAL (salud del animal) o el TONO (mayúsculas, amenaza)?
-- **Mensaje 4:** Dice "no es urgente" pero tiene deadline real. ¿La IA lo detectó?
-- **Mensaje 5:** ¿La categoría elegida es la más útil para actuar?
-
-### 5.2 Documenta el error
+### 3.2 Pide al Gem las métricas a acumular
 
 ```
-ERROR ENCONTRADO:
-- Mensaje #: ___
-- Qué hizo la IA: ___
-- Qué debería haber hecho: ___
-- Cómo ajustaría el prompt: ___
+¿Qué métricas debo guardar semana a semana para comparar el desempeño
+de mi reporte? Dame una tabla con: Columna, Fórmula (si aplica),
+Explicación.
 ```
 
-✅ **Checkpoint:** Tienes 1 error documentado con propuesta de corrección.
+Columnas típicas:
+
+| Semana | Ventas_Total | Clientes_Nuevos | Ticket_Promedio | Meta_Cumplida_Pct |
+|--------|-------------|-----------------|-----------------|-------------------|
+
+### 3.3 Llena 2-3 filas con datos simulados
+
+Usa datos de semanas pasadas reales o inventados para tener material de prueba en la Clase 4.
+
+### 3.4 Define los 3 rangos nombrados
+
+En el menú: **Datos → Rangos con nombre → + Añadir un rango**.
+
+```
+RangoVentas    →  VentasSemanaActual!A:G
+RangoConfig    →  Config!A:C
+RangoHistorico →  Historico!A:E
+```
+
+### 3.5 Actualiza la tabla de parámetros
+
+Agrega sección final:
+
+| Categoría | Item | Valor |
+|-----------|------|-------|
+| Sheet: pestaña histórica | Nombre | `Historico` |
+| Sheet: pestaña histórica | Columnas | Semana, Ventas_Total, ... |
+| Sheet: rangos nombrados | `RangoVentas` | `VentasSemanaActual!A:G` |
+| Sheet: rangos nombrados | `RangoConfig` | `Config!A:C` |
+| Sheet: rangos nombrados | `RangoHistorico` | `Historico!A:E` |
+
+✅ **Checkpoint:** Tu Sheet tiene 3 pestañas funcionando (con datos) y 3 rangos nombrados visibles en **Datos → Rangos con nombre**. La tabla de parámetros los documenta.
 
 ---
 
-## 📝 Entregable
+## 📁 Estructura Final del Proyecto
 
-**Google Doc con 3 prompts documentados (link público):**
-
-1. **Prompt de triage** — RICE + Few-shot + tabla clasificada
-2. **Prompt para TU trabajo** — RICE aplicado a tarea real con resultado
-3. **Reflexión crítica** — 1 error encontrado + corrección propuesta
-
----
-
-## Checklist Final
-
-- [ ] ¿Documenté el prompt de triage con RICE + Few-shot?
-- [ ] ¿Creé un segundo prompt aplicado a MI trabajo?
-- [ ] ¿Identifiqué al menos 1 error/limitación de la IA?
+```
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc
+    ├── Tabla-de-Parámetros.doc   ← NUEVO
+    └── sistema-reporte.xlsx       ← El Sheet
+        ├── VentasSemanaActual (pestaña operativa + 15 filas)
+        ├── Config (pestaña parámetros)
+        └── Historico (pestaña memoria + 2-3 filas)
+```
 
 ---
 
-## Bonus: Tus Mensajes Reales (Opcional)
-Si tienes mensajes reales de clientes: anonimiza datos, usa tu prompt maestro, y compara. Los prompts que funcionan con mockups a veces fallan con datos reales — ajustar es parte del proceso.
+## Reflexión
+
+Antes de terminar, responde brevemente:
+
+1. **¿Cuál de las 3 pestañas crees que será la más difícil de mantener actualizada en tu trabajo real?**
+2. **¿Qué beneficio ves en separar datos de configuración de datos operativos?**
+3. **¿Qué pregunta te quedó sobre cómo Make conectará con este Sheet la próxima clase?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Agrega validación de datos
+En la columna Tipo de `VentasSemanaActual`, agrega validación con lista desplegable (Datos → Validación de datos) con opciones "Nuevo" y "Recurrente". Esto evita inconsistencias cuando Gemini procese descripciones.
+
+### 🟡 Diseña un gráfico dinámico
+Inserta un gráfico que se actualice automáticamente con la columna Monto de `VentasSemanaActual`. En la Clase 3 lo vincularás con Slides.
+
+### 🔴 Prepara el formato para Historico automático
+Diseña fórmulas que tomarán los totales de `VentasSemanaActual` para que en la Clase 5 solo copiemos valores al Historico. Preview de la próxima clase.
+
+---
+
+## 📝 Entrega
+
+### Checklist
+
+- [ ] Google Sheet con 3 pestañas (`VentasSemanaActual`, `Config`, `Historico`) funcionando
+- [ ] 15 filas de ejemplo en la pestaña operativa
+- [ ] 3 rangos nombrados definidos (`RangoVentas`, `RangoConfig`, `RangoHistorico`)
+- [ ] Tabla de parámetros actualizada en Google Doc
+
+### Entregable
+
+📸 **Screenshot** de la ventana **Datos → Rangos con nombre** mostrando:
+- Los 3 rangos nombrados visibles
+- El nombre del archivo del Sheet visible en la pestaña del navegador
+- Tu correo de Google visible (esquina superior derecha)
+
+> ⚠️ El entregable debe mostrar tu cuenta de Google para verificar que es tu Sheet.

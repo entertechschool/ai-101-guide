@@ -1,384 +1,269 @@
-# Lab 04: Investigación y análisis asistidos por IA
+# Lab 04: Make básico — Tus primeros 2 flujos sin IA
 
-Este es el proyecto de cierre del Módulo 1. Integrarás todo lo aprendido — sistema (Clase 01), prompting (Clase 02), clarificación (Clase 03), más research — para resolver un problema real de tu trabajo. El resultado es calificable y será parte de tu portfolio.
+> ⚠️ **Lab Calificado** - Este lab será evaluado según la rúbrica incluida abajo.
+>
+> 📌 **Distribución:** Se espera completar ~50% durante la sesión en vivo (Actividades 1-2) y el resto antes de la fecha de entrega.
 
-> ⏱️ **Tiempo total:** 90 minutos
+## 🎯 Objetivos del Módulo
 
-### 🎯 Objetivo
+Este lab integra todo lo aprendido en el Módulo 1:
 
-Crear un proyecto completo que resuelve un problema real usando múltiples habilidades de IA, documentado con antes/después medible.
-
----
-
-## Lo que Integrarás
-
-| De Clase | Habilidad | Cómo la usarás |
-|----------|-----------|----------------|
-| 01 | Sistemas reusables | Tu solución será un sistema, no un prompt único |
-| 02 | RICE + Few-shot | Aplicarás estructura y ejemplos en tu prompt |
-| 03 | Socio pensante + contenido | Aplicarás tu framework personal + criterio editorial |
-| **Nuevo** | Deep Research | Investigación profunda con Gemini |
-| **Nuevo** | Gems | Crearás un asistente especializado |
+1. Construir el flujo Gmail → Sheet con Instant Trigger funcionando end-to-end.
+2. Construir el flujo Sheet → Slides → PDF → Gmail con ≥5 marcadores reemplazados.
+3. Aplicar mejoras básicas (nombre de PDF con fecha, error handler).
 
 ---
 
-## Antes de Empezar
+## 🔑 Conceptos Clave
 
-| Requisito | Verificación |
-|-----------|--------------|
-| Problema real identificado | Algo de tu trabajo que quieres mejorar |
-| Claude abierto | Para sistema/prompts |
-| Gemini abierto | Para Deep Research + Gem |
-| Perplexity abierto | Para research con fuentes |
-| Google Doc nuevo | Para documentar el proyecto |
+- **Escenario de Make** — flujo visual sin código que conecta módulos con un trigger.
+- **Instant Trigger** — activación en 2-5 segundos; úsalo para efecto WOW.
+- **Replace Text en Slides** — reemplaza `{{marcador}}` por un valor; 1 operación por marcador.
 
 ---
 
-## Parte 1: Define Tu Problema (10 min)
+## ⚙️ Setup Inicial
 
-### 1.1 Elige un problema real
+Este lab integra todo el Módulo 1. Verifica que tengas todo listo:
 
-Tu problema debe cumplir:
-- [ ] Es algo de TU trabajo (no hipotético)
-- [ ] Te consume tiempo o genera fricción
-- [ ] Tiene solución (no solo es una queja)
-- [ ] Puedes medir mejora (antes/después)
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Cuenta de Make activa | Puedes entrar a [make.com](https://make.com/){:target="_blank"} y ver tu dashboard |
+| ☐ | Sheet con 3 pestañas (Clase 2) | `VentasSemanaActual`, `Config`, `Historico` funcionando |
+| ☐ | Plantilla de Slides (Clase 3) | 6 slides con ~18-20 marcadores insertados |
+| ☐ | Tabla de parámetros actualizada | Marcadores documentados con tipo y origen |
 
-**Ejemplos que funcionan:**
-
-| Problema | Por qué funciona |
-|----------|------------------|
-| "Respondo las mismas preguntas de clientes 5x por semana" | Medible, repetitivo, solucionable |
-| "Mis propuestas no tienen estructura consistente" | Afecta resultados, sistematizable |
-| "No tengo criterios claros para priorizar proyectos" | Impacta decisiones, clarificable |
-| "Los reportes semanales me toman 3 horas" | Tiempo medible, automatizable |
-
-### 1.2 Documenta el "antes"
-
-En tu Google Doc, escribe:
-
-```
-## Mi Proyecto Integrador M1
-
-### 1. El Problema
-**Descripción:** [Qué problema resuelves]
-
-**Impacto actual (el "antes"):**
-- Tiempo que consume: ___
-- Frecuencia: ___
-- Fricción que genera: ___
-- Consecuencias de no resolverlo: ___
-
-**Meta (el "después"):**
-- ¿Cómo se vería resuelto?
-- ¿Qué métrica mejoraría?
-```
-
-✅ **Checkpoint:** Tienes problema definido con "antes" documentado.
+> ⚠️ Si te falta alguno, completa primero. Make necesita el Sheet y la plantilla con marcadores para poder conectarlos.
 
 ---
 
-## Parte 2: Research con Fuentes (15 min)
+## Actividad 1: Gmail → Sheet con Instant Trigger (40 min)
 
-Ahora investigas contexto externo que enriquezca tu solución.
+### 1.1 Crea el primer escenario
 
-### 2.1 Elige tu herramienta de research
-
-| Herramienta | Cuándo usarla |
-|-------------|---------------|
-| **Perplexity** | Preguntas específicas, necesitas fuentes rápidas |
-| **Gemini Deep Research** | Investigación profunda, múltiples ángulos |
-
-### 2.2 Conduce el research
-
-**En Perplexity:**
-1. Ve a [perplexity.ai](https://perplexity.ai){:target="_blank"}
-2. Haz 2-3 búsquedas relacionadas con tu problema
-3. Guarda las fuentes relevantes
-
-**En Gemini (Deep Research):**
-1. Ve a [gemini.google.com](https://gemini.google.com){:target="_blank"}
-2. Activa "Deep Research" si está disponible
-3. Pide investigación sobre tu tema
-
-**Preguntas de research sugeridas:**
-- "Mejores prácticas para [tu problema] en [tu industria]"
-- "Cómo empresas resuelven [tu problema]"
-- "Frameworks para [tu área de problema]"
-
-### 2.3 Documenta hallazgos
-
-En tu Google Doc, agrega:
+En Make → **+ Create a new scenario**. Nómbralo:
 
 ```
-### 2. Research
-
-**Fuentes consultadas:**
-1. [Título] - [URL] - Hallazgo clave
-2. [Título] - [URL] - Hallazgo clave
-3. [Título] - [URL] - Hallazgo clave
-
-**Insights relevantes:**
-- Insight 1: ___
-- Insight 2: ___
-- Insight 3: ___
-
-**Cómo aplica a mi problema:**
-___
+Captura: Correo → [<!-- Tu proyecto -->]
 ```
 
-✅ **Checkpoint:** Tienes research con al menos 3 fuentes citadas.
+### 1.2 Agrega el módulo Gmail Watch Emails (Instant)
+
+Busca **Gmail → Watch Emails**. Elige el modo **Instant**.
+
+- **Folder:** Inbox
+- **Filter by subject contains:** `Ventas del día` (o el asunto que defines para tu caso)
+- **Mark message as:** Read (opcional)
+
+Conecta tu cuenta de Gmail cuando pida permisos.
+
+### 1.3 Agrega Google Sheets Add a Row
+
+Después de Gmail, **+ Add module → Google Sheets → Add a row**.
+
+- **Spreadsheet:** tu Sheet del sistema
+- **Sheet:** `VentasSemanaActual`
+- **Values:** mapea las columnas a campos del correo:
+  - `Fecha` → `{{1.date}}` (fecha del correo)
+  - `Descripción` → `{{1.text}}` (cuerpo del correo)
+  - Los demás campos quedan vacíos por ahora — los llenará Gemini en Clase 5
+
+### 1.4 Prueba en vivo
+
+1. Guarda el escenario y activa el toggle "On"
+2. Envíate 3 correos con el asunto exacto (ej: "Ventas del día - Lunes")
+3. Ve tu Sheet — deberías ver 3 filas nuevas en segundos
+
+✅ **Checkpoint:** Al enviar un correo con el asunto filtro, el Sheet agrega una fila nueva en <10 segundos.
 
 ---
 
-## Parte 3: Clarifica Tu Enfoque (15 min)
+## Actividad 2: Sheet → Slides → PDF → Gmail (35 min)
 
-Usas técnicas de Clase 03 para estructurar tu solución.
+### 2.1 Crea el segundo escenario
 
-### 3.1 Abre tu Claude Project de socio pensante
-
-(El que configuraste en Clase 03, o crea uno nuevo)
-
-### 3.2 Clarifica tu enfoque
-
-Inicia conversación:
+**+ Create a new scenario**. Nómbralo:
 
 ```
-Quiero resolver [TU PROBLEMA].
-
-Ya investigué y encontré que [RESUMEN DE RESEARCH].
-
-Ayúdame a estructurar MI enfoque para resolverlo.
-¿Qué preguntas me harías para entender cómo debería abordarlo?
+Reporte: [<!-- Tu proyecto -->] Semanal
 ```
 
-### 3.3 Responde las preguntas
+Este escenario lo vas a correr manualmente por ahora (Run once). En Clase 5 lo convertirás en Scheduled.
 
-La IA te preguntará cosas como:
-- "¿Qué has intentado antes?"
-- "¿Cuál es el obstáculo principal?"
-- "¿Qué recursos tienes disponibles?"
-- "¿Cómo sabrías que funcionó?"
+### 2.2 Agrega Google Sheets Search Rows
 
-### 3.4 Documenta el enfoque
+**Google Sheets → Search Rows**.
 
-En tu Google Doc:
+- **Spreadsheet:** tu Sheet
+- **Sheet:** `VentasSemanaActual`
+- **Filter:** las filas de la última semana (o deja vacío por ahora para traer todo)
 
-```
-### 3. Mi Enfoque
+### 2.3 Agrega Google Slides Create a Presentation from a Template
 
-**Estructura de la solución:**
-- Paso 1: ___
-- Paso 2: ___
-- Paso 3: ___
+**Google Slides → Create a Presentation from a Template**.
 
-**Criterios de éxito:**
-- ___
-- ___
+- **Template:** tu plantilla de la Clase 3
+- **Destination folder:** la carpeta "Proyecto de Instrucción" en Drive
 
-**Lo que aprendí al clarificar:**
-___
-```
+### 2.4 Agrega Replace Text (uno por cada marcador crudo/calculado)
 
-✅ **Checkpoint:** Tienes enfoque estructurado documentado.
+Por cada marcador crudo o calculado que quieras llenar, agrega **Google Slides → Replace Text**:
+
+- **Presentation:** output del paso anterior
+- **Old text:** `{{ventas_total}}` (sin espacios, exacto como está en la plantilla)
+- **New text:** fórmula o valor a mapear
+
+**Para marcadores calculados (tipo 2):** agrega primero un módulo **Math** o **Date** para calcular el valor.
+
+Ejemplos de calculados:
+- `{{semana}}` → módulo **Date** → `formatDate(now; "DD/MM")` + " - " + fecha fin semana
+- `{{variacion_pct}}` → módulo **Math** → `(ventas_actual - ventas_anterior) / ventas_anterior * 100`
+- `{{meta_cumplida_pct}}` → **Math** → `ventas_total / meta_config * 100`
+
+**Meta:** al menos 5 marcadores (tipo 1 y 2) reemplazados. Los tipo 3 (IA) quedan vacíos — los llenamos en Clase 5.
+
+✅ **Checkpoint:** Al correr el escenario (Run once), la plantilla duplicada tiene valores reales en ≥5 marcadores.
 
 ---
 
-## Parte 4: Crea Tu Sistema (30 min)
+## Actividad 3: Exporta PDF y envía por Gmail (25 min)
 
-Ahora construyes la solución reusable.
+### 3.1 Agrega Google Slides Export as PDF
 
-### 4.1 Decide qué tipo de sistema crear
+**Google Slides → Export a Presentation**.
 
-| Tipo | Cuándo elegirlo |
-|------|-----------------|
-| **Prompt maestro (Claude)** | Tarea repetitiva que resuelves con instrucciones |
-| **Claude Project** | Necesitas contexto persistente y archivos |
-| **Gem de Gemini** | Quieres asistente especializado en Google |
+- **Presentation:** output del último Replace Text
+- **Format:** PDF
 
-### 4.2 Crea tu Gem de Gemini
+### 3.2 Agrega Gmail Send an Email
 
-Todos deben crear un Gem como parte del proyecto:
+**Gmail → Send an Email**.
 
-1. Ve a [gemini.google.com](https://gemini.google.com){:target="_blank"}
-2. En el menú lateral, busca **"Gems"** o **"Gem manager"**
-3. Clic en **"New Gem"** o **"Create"**
-4. Configura:
-   - **Nombre:** [Relacionado con tu problema]
-   - **Instrucciones:** Tu system prompt especializado
+- **To:** tu correo
+- **Subject:** `Reporte semanal - [<!-- proyecto -->]`
+- **Content:** texto corto anunciando el reporte
+- **Attachments:** el PDF del paso anterior
 
-**Template para instrucciones del Gem:**
+### 3.3 Run once del flujo completo
 
-```
-Eres mi asistente especializado en [TU ÁREA].
+Ejecuta el escenario con el botón **Run once**. Observa cada módulo ejecutar.
 
-Mi contexto:
-- Rol: [tu rol]
-- Industria: [tu industria]
-- Objetivo: [qué necesitas lograr]
+### 3.4 Verifica el correo
 
-Tu trabajo:
-[Describe qué debe hacer el Gem cuando le hables]
+Abre tu bandeja de entrada — debe llegar un correo con el PDF adjunto con los marcadores reemplazados.
 
-Formato de respuestas:
-[Cómo debe estructurar sus outputs]
-
-Restricciones:
-[Qué NO debe hacer o asumir]
-```
-
-### 4.3 Crea tu prompt/sistema adicional
-
-Además del Gem, crea al menos UN sistema en Claude:
-- Un prompt maestro con RICE + Few-shot
-- O un Claude Project con instrucciones
-
-### 4.4 Prueba tu sistema
-
-1. Usa tu Gem con un caso real
-2. Usa tu prompt/Project con un caso real
-3. Evalúa: ¿Produce el resultado esperado?
-
-### 4.5 Documenta el sistema
-
-En tu Google Doc:
-
-```
-### 4. Mi Sistema/Solución
-
-**Gem de Gemini:**
-- Nombre: ___
-- Instrucciones: [copia las instrucciones]
-- Screenshot del Gem funcionando
-
-**Sistema adicional (Claude):**
-- Tipo: [Prompt / Project]
-- Contenido: [copia el prompt o instrucciones]
-- Screenshot funcionando
-
-**Prueba con caso real:**
-- Input de prueba: ___
-- Output obtenido: ___
-- ¿Funciona? [Sí/No/Parcialmente]
-- Ajustes necesarios: ___
-```
-
-✅ **Checkpoint:** Tienes Gem + sistema adicional documentados.
+✅ **Checkpoint:** El PDF en tu bandeja muestra los marcadores crudos y calculados reemplazados por valores reales.
 
 ---
 
-## Parte 5: Documenta el "Después" (10 min)
+## Actividad 4: Desafío Avanzado (post-clase, 30-45 min)
 
-### 5.1 Mide la mejora
+> 🔥 **Desafío Post-Clase** - Esta sección se completa después de la sesión en vivo.
 
-Compara con tu "antes":
+### 4.1 Nombre de PDF con fecha dinámica
 
-| Métrica | Antes | Después | Mejora |
-|---------|-------|---------|--------|
-| Tiempo | ___ | ___ | ___% |
-| Esfuerzo | ___ | ___ | ___% |
-| Calidad | ___ | ___ | ___% |
-
-### 5.2 Reflexiona sobre el proceso
-
-En tu Google Doc:
+En el módulo **Export as PDF**, edita el campo **File name** para que use la fecha:
 
 ```
-### 5. Resultados y Reflexión
-
-**Antes vs Después:**
-[Tabla de métricas]
-
-**¿Qué funcionó bien?**
-___
-
-**¿Qué ajustaría?**
-___
-
-**¿Cómo usaré esto en el futuro?**
-___
-
-**Lo más valioso que aprendí:**
-___
+Reporte_{{formatDate(now; "YYYY-MM-DD")}}.pdf
 ```
 
-### 5.3 Revisa completitud
+Resultado: `Reporte_2026-04-19.pdf`. Ordena cronológicamente en Drive automáticamente.
 
-Verifica que tu documento tiene:
-- [ ] Problema definido con "antes"
-- [ ] Research con fuentes citadas
-- [ ] Enfoque estructurado
-- [ ] Gem de Gemini configurado
-- [ ] Sistema adicional (Claude)
-- [ ] Prueba con caso real
-- [ ] "Después" con métricas
-- [ ] Reflexión
+### 4.2 Agrega un Error Handler básico
 
-✅ **Checkpoint:** Proyecto completo documentado.
+Click derecho en el módulo más frágil (generalmente Replace Text) → **Add error handler → Resume**.
 
----
+En el handler, agrega un módulo **Gmail → Send an Email** a tu correo con:
+- **Subject:** `❌ Error en flujo del reporte`
+- **Content:** `El flujo falló en el módulo [nombre]. Revisar Make History.`
 
-## 📝 Entregable
+✅ **Checkpoint:** El escenario tiene nombre de PDF con fecha y al menos 1 error handler configurado.
 
-**Google Doc completo con 5 secciones:**
+### 4.3 Sube el escenario a una carpeta de Backups
 
-### 1. El Problema
-- Descripción clara
-- Impacto actual (el "antes")
-- Meta esperada
-
-### 2. Research
-- 3+ fuentes citadas con URLs
-- Insights relevantes
-- Cómo aplica a tu problema
-
-### 3. Mi Enfoque
-- Estructura de la solución
-- Criterios de éxito
-
-### 4. Mi Sistema/Solución
-- **Gem de Gemini** (screenshot + instrucciones)
-- **Sistema Claude** (prompt o Project)
-- Prueba con caso real
-
-### 5. Resultados y Reflexión
-- Antes vs después (métricas)
-- Reflexión sobre el proceso
-
-**Entrega:** Link público del Google Doc.
+En Drive, crea carpeta `Backups` y configura que Make guarde una copia del PDF ahí también (segundo módulo Gmail → Copy to folder).
 
 ---
 
-## Criterios de Evaluación
+## 📁 Estructura Final del Proyecto
 
-| Criterio | Peso | Qué se evalúa |
-|----------|------|---------------|
-| **Problema real** | 20% | ¿Es genuino y tiene impacto medible? |
-| **Research** | 20% | ¿Hay fuentes verificables y relevantes? |
-| **Clarificación** | 20% | ¿El enfoque está bien estructurado? |
-| **Sistema** | 25% | ¿El Gem y sistema funcionan? ¿Son reusables? |
-| **Documentación** | 15% | ¿Está completo con antes/después? |
+```
+Make.com/
+├── Escenario 1: Captura Correo → Sheet (Instant, activo)
+└── Escenario 2: Reporte Semanal (Manual, Run once)
 
----
-
-## Checklist Final
-
-- [ ] ¿Mi problema es real y tiene impacto medible?
-- [ ] ¿Tengo al menos 3 fuentes de research citadas?
-- [ ] ¿Mi enfoque está estructurado con pasos claros?
-- [ ] ¿Configuré un Gem de Gemini funcional?
-- [ ] ¿Tengo un sistema adicional en Claude?
-- [ ] ¿Probé ambos con un caso real?
-- [ ] ¿Documenté antes/después con métricas?
-- [ ] ¿Escribí reflexión sobre el proceso?
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc
+    ├── Tabla-de-Parámetros.doc
+    ├── sistema-reporte.xlsx  (Sheet, ahora recibe filas de correos)
+    ├── Reporte-Plantilla.slides
+    └── Backups/
+        └── Reporte_2026-04-19.pdf  (si completaste el desafío)
+```
 
 ---
 
-## 🚀 Bonus: Presentación (5 min)
+## Verificación Final
 
-Si el tiempo lo permite, prepara un pitch de 2 minutos:
+Usa la rúbrica de abajo para verificar que tu proyecto esté completo antes de entregar.
 
-1. **El problema** (20 seg): "Yo tenía [problema] que me costaba [impacto]"
-2. **La solución** (40 seg): "Creé [sistema] que [qué hace]"
-3. **El resultado** (30 seg): "Ahora [métrica mejoró] de [antes] a [después]"
-4. **Demo rápida** (30 seg): Muestra tu Gem o sistema en acción
+---
+
+## Reflexión
+
+Responde en tu documento:
+
+1. **¿Qué habilidad del Módulo 1 te parece más valiosa para tu trabajo inmediato?**
+2. **¿Qué cambiarías en tu forma de trabajar a partir de hoy?**
+3. **¿Qué te entusiasma más del Módulo 2 cuando integremos IA en estos flujos?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Agrega logs en una pestaña del Sheet
+Crea una pestaña `Logs` y haz que cada ejecución del escenario 2 registre fecha, hora y resultado (éxito/error). Preview de mejores prácticas de Clase 6.
+
+### 🟡 Configura filtro de asunto con regex
+En lugar de "contains", usa expresión regular para capturar varios formatos: `^(Ventas del día|Vtas|Reporte).*`. Más flexibilidad al vendedor.
+
+### 🔴 Prepara el scheduled trigger
+Duplica el Escenario 2 y cámbiale el trigger a **Scheduled** cada viernes 4pm. Todavía no lo actives — lo completas en la Clase 5 cuando agreguemos IA.
+
+---
+
+## Rúbrica de Evaluación
+
+| Criterio | Excelente (20) | Bueno (15) | Satisfactorio (10) | Bajo (5) |
+|----------|---------------|------------|-------------------|----------|
+| **Escenario 1 — Gmail → Sheet** | Instant Trigger activo, filtro correcto, 3+ filas registradas en prueba | Funciona pero sin filtro específico | Funciona manual, no Instant | No funciona end-to-end |
+| **Escenario 2 — Flujo del reporte** | ≥8 marcadores reemplazados (crudos y calculados), PDF generado | 5-7 marcadores reemplazados | 3-4 marcadores reemplazados | <3 marcadores o PDF no se genera |
+| **Entrega por Gmail** | Correo llega con PDF adjunto, asunto descriptivo | PDF llega pero asunto genérico | PDF generado pero no enviado | No llega correo |
+| **Mejores prácticas (desafío)** | Nombre con fecha + error handler + backup folder | Nombre con fecha + error handler | Solo nombre con fecha | Sin mejoras aplicadas |
+| **Tabla de parámetros actualizada** | Documentados todos los mapeos de Make (módulos, operaciones, conexiones) | Mapeos principales documentados | Solo estructura básica registrada | Sin actualización post-lab |
+
+**Total: 100 puntos** (5 criterios x 20 pts)
+
+| Nota | Rango |
+|------|-------|
+| A | 90-100 |
+| B | 80-89 |
+| C | 70-79 |
+| F | < 70 |
+
+---
+
+## 📝 Entrega
+
+📦 **Entregable:**
+
+1. **Screenshots** del proyecto terminado mostrando:
+   - **Escenario 1** activo en Make (toggle "On" visible)
+   - **Sheet** con al menos 3 filas agregadas por el Instant Trigger (con hora registrada)
+   - **Escenario 2** completo en Make (vista del flujo completo con todos los módulos)
+   - **PDF generado** llegando al correo con marcadores reemplazados
+   - Tu nombre o correo visible en al menos 2 de los 4 screenshots
+
+2. **Fuente:** link compartido (con permisos de lectura) a la carpeta "Proyecto de Instrucción" en Drive.

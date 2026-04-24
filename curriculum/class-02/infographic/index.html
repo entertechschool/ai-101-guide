@@ -3,322 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompting — Framework RICE + Few-shot</title>
+  <title>Google Sheets con IA — Diseña la fuente de datos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      width: 1080px;
-      margin: 0 auto;
-      background: #060913;
-      background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
-      color: #e2e8f0;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-
+    html { font-size: 19.2px; }
+    body { width: 1080px; margin: 0 auto; background: #060913; background-image: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 60%); color: #e2e8f0; font-family: 'Inter', sans-serif; line-height: 1.6; }
     h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
     code, pre { font-family: 'JetBrains Mono', monospace; font-size: 0.9em; }
-    pre {
-      background: #161b22;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      overflow-x: auto;
-    }
-
+    pre { background: #161b22; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1rem 1.25rem; overflow-x: auto; color: #e2e8f0; }
     section { padding: 2.5rem 3rem; }
-
-    .hero {
-      text-align: center;
-      padding: 3.5rem 3rem 2.5rem;
-    }
-    .hero .badge {
-      display: inline-block;
-      background: rgba(217, 70, 239, 0.15);
-      color: #d946ef;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-    .hero .subtitle {
-      font-size: 1.15rem;
-      color: #94a3b8;
-    }
-
-    .card {
-      background: #0d1117;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-    .card .desc {
-      color: #94a3b8;
-      margin-bottom: 1rem;
-    }
-
+    .hero { text-align: center; padding: 3.5rem 3rem 2.5rem; }
+    .hero .badge { display: inline-block; background: rgba(74, 222, 128, 0.15); color: #4ade80; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1rem; }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero .subtitle { font-size: 1.15rem; color: #94a3b8; }
+    .card { background: #0d1117; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+    .card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+    .card .desc { color: #94a3b8; margin-bottom: 1rem; }
     .accent-purple { border-left: 3px solid #d946ef; }
-    .accent-green  { border-left: 3px solid #4ade80; }
-    .accent-blue   { border-left: 3px solid #93c5fd; }
+    .accent-green { border-left: 3px solid #4ade80; }
+    .accent-blue { border-left: 3px solid #93c5fd; }
     .accent-orange { border-left: 3px solid #fb923c; }
-
-    /* ── RICE grid ── */
-    .rice-grid {
-      display: grid;
-      grid-template-columns: 60px 1fr 1fr;
-      gap: 0;
-      margin-top: 0.75rem;
-    }
-    .rice-grid .letter {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 0;
-    }
-    .rice-grid .question,
-    .rice-grid .tip {
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-    .rice-grid .question { color: #e2e8f0; }
-    .rice-grid .tip { color: #94a3b8; }
-
-    /* ── Evolution arrow ── */
-    .evolution {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .evolution .step {
-      background: #161b22;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-      text-align: center;
-    }
-    .evolution .arrow {
-      color: #d946ef;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .glossary {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .glossary .term {
-      flex: 1 1 200px;
-      background: #0d1117;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 8px;
-      padding: 1rem;
-    }
-    .glossary .term strong {
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .glossary .term span {
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 2rem 3rem 3rem;
-      color: #64748b;
-      font-size: 0.85rem;
-    }
+    .glossary { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .glossary .term { flex: 1 1 200px; background: #0d1117; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 8px; padding: 1rem; }
+    .glossary .term strong { display: block; margin-bottom: 0.25rem; }
+    .glossary .term span { color: #94a3b8; font-size: 0.9rem; }
+    .footer { text-align: center; padding: 2rem 3rem 3rem; color: #64748b; font-size: 0.85rem; }
+    table.compare { width: 100%; border-collapse: collapse; color: #e2e8f0; font-size: 0.95em; }
+    table.compare th, table.compare td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    table.compare th { color: #94a3b8; font-weight: 500; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.05em; }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="badge">Módulo 1 · Clase 02</div>
-    <h1>Prompting — Framework RICE + Few-shot</h1>
-    <p class="subtitle">De resultados mediocres a outputs que usas tal cual</p>
+    <h1>Google Sheets con IA</h1>
+    <p class="subtitle">Diseña la fuente de datos de tu sistema con 3 pestañas</p>
   </section>
 
-  <!-- BLOQUES DE CONTENIDO -->
   <section>
-
-    <!-- BLOQUE 1: Framework RICE -->
-    <div class="card accent-purple">
-      <h3>Framework RICE</h3>
-      <p class="desc">Cuatro componentes que eliminan la ambigüedad de cualquier prompt.</p>
-      <div class="rice-grid">
-        <div class="letter" style="color: #d946ef;">R</div>
-        <div class="question"><strong>Rol</strong> — ¿Quién debe ser la IA?</div>
-        <div class="tip">Específico > "experto"</div>
-
-        <div class="letter" style="color: #4ade80;">I</div>
-        <div class="question"><strong>Instrucción</strong> — ¿Qué debe hacer exactamente?</div>
-        <div class="tip">Verbo de acción claro</div>
-
-        <div class="letter" style="color: #93c5fd;">C</div>
-        <div class="question"><strong>Contexto</strong> — ¿Qué necesita saber?</div>
-        <div class="tip">Todo lo que evite que adivine</div>
-
-        <div class="letter" style="color: #fb923c;">E</div>
-        <div class="question"><strong>Ejemplo</strong> — ¿Cómo debe verse el resultado?</div>
-        <div class="tip">Mostrar > Describir</div>
-      </div>
-      <div class="evolution">
-        <div class="step">Clase 01<br><span style="color: #94a3b8;">ROL + CONTEXTO + TAREA + FORMATO</span></div>
-        <div class="arrow">→</div>
-        <div class="step" style="border-color: #d946ef;">Clase 02<br><span style="color: #d946ef;">RICE (+ Ejemplo)</span></div>
-      </div>
-    </div>
-
-    <!-- BLOQUE 2: Few-shot -->
     <div class="card accent-green">
-      <h3>Few-shot: enseñar con ejemplos</h3>
-      <p class="desc">Incluir 2-3 ejemplos de input → output para que la IA entienda el patrón deseado.</p>
-      <pre><code>## Ejemplos de clasificación:
-
-Mensaje: "Mi pedido no llegó y ya pasaron 5 días"
-→ Prioridad: ALTA | Categoría: Logística | Acción: Escalar
-
-Mensaje: "¿Tienen el producto en color azul?"
-→ Prioridad: BAJA | Categoría: Consulta | Acción: Responder
-
-## Ahora clasifica estos 5 mensajes nuevos:</code></pre>
-      <p style="color: #4ade80; font-size: 0.9rem; margin-top: 0.75rem;">Un ejemplo vale más que mil instrucciones.</p>
+      <h3>Arquitectura de 3 pestañas</h3>
+      <p class="desc">Cada pestaña tiene un propósito claro y frecuencia de cambio distinta.</p>
+<pre><code>VentasSemanaActual  →  Operación (1 fila por transacción)
+Config              →  Parámetros del negocio (cambios raros)
+Historico           →  Memoria semanal (1 fila por período)</code></pre>
     </div>
 
-    <!-- BLOQUE 3: Progresión iterativa -->
     <div class="card accent-blue">
-      <h3>Progresión iterativa: 4 niveles de calidad</h3>
-      <p class="desc">El mismo prompt evoluciona agregando una técnica a la vez.</p>
-      <pre><code>Nivel 1 · Casual
-  "Clasifica estos mensajes"         → Caos
-
-Nivel 2 · + Rol
-  "Eres agente de soporte senior..." → Mejor tono
-
-Nivel 3 · + Formato
-  "...en tabla con prioridad/acción" → Estructura
-
-Nivel 4 · + Few-shot (RICE completo)
-  "...como en estos ejemplos:"       → Resultado usable</code></pre>
+      <h3>Operativa vs Configuración</h3>
+      <p class="desc">La diferencia que hace sostenible la automatización.</p>
+      <table class="compare">
+        <tr><th>Aspecto</th><th>Operativa</th><th>Config</th></tr>
+        <tr><td>Cambio</td><td>Varias veces/día</td><td>1 vez/mes</td></tr>
+        <tr><td>Origen</td><td>Correos, forms</td><td>Decisión gerencial</td></tr>
+        <tr><td>Ejemplo</td><td>Venta registrada</td><td>Meta semanal</td></tr>
+        <tr><td>Filas típicas</td><td>50-500</td><td>4-20</td></tr>
+      </table>
     </div>
 
-    <!-- BLOQUE 4: Limitaciones -->
+    <div class="card accent-purple">
+      <h3>Rangos nombrados</h3>
+      <p class="desc">Apodos para rangos que sobreviven a cambios de layout.</p>
+<pre><code>Antes: Make → A1:G50     (se rompe si agregás columna)
+Despues: Make → RangoVentas (sigue funcionando siempre)
+
+Definir en:  Datos → Rangos con nombre
+RangoVentas    = VentasSemanaActual!A:G
+RangoConfig    = Config!A:C
+RangoHistorico = Historico!A:E</code></pre>
+    </div>
+
     <div class="card accent-orange">
-      <h3>Limitaciones: la IA clasifica, TÚ validas</h3>
-      <p class="desc">Tres errores comunes de la IA en tareas de clasificación y triage.</p>
-      <pre><code>⚠️  Prioriza por TONO, no por necesidad real
-    → "URGENTE!!!" sube aunque no sea crítico
+      <h3>La columna Descripción</h3>
+      <p class="desc">El campo clave que Gemini usará para generar insights en la Clase 5.</p>
+<pre><code>Monto: S/ 2,800
+Descripción: "Renovación grande, cliente retenido
+              después de 2 meses de negociación"
 
-⚠️  Categorías ambiguas
-    → ¿Es venta o soporte? La IA elige una
-
-⚠️  Se cree lo que dice el cliente
-    → "No es urgente" pero tiene deadline mañana</code></pre>
-      <p style="color: #fb923c; font-size: 0.9rem; margin-top: 0.75rem;">El juicio humano no es opcional. La IA es tu co-piloto, no tu piloto.</p>
+→ En Clase 5, Gemini lee la Descripción
+  y explica el POR QUÉ del dato, no solo el QUÉ.</code></pre>
     </div>
   </section>
 
-  <!-- GLOSARIO -->
   <section>
     <div class="glossary">
-      <div class="term">
-        <strong>RICE</strong>
-        <span>Rol, Instrucción, Contexto, Ejemplo — framework de prompting profesional</span>
-      </div>
-      <div class="term">
-        <strong>Few-shot</strong>
-        <span>Incluir ejemplos de input/output para enseñar el patrón deseado</span>
-      </div>
-      <div class="term">
-        <strong>Zero-shot</strong>
-        <span>Prompt sin ejemplos, confiando solo en las instrucciones</span>
-      </div>
-      <div class="term">
-        <strong>Triage</strong>
-        <span>Clasificar y priorizar elementos según urgencia e importancia</span>
-      </div>
+      <div class="term"><strong>Pestaña operativa</strong><span>Datos del día a día (crece)</span></div>
+      <div class="term"><strong>Pestaña config</strong><span>Parámetros fijos del negocio</span></div>
+      <div class="term"><strong>Rango nombrado</strong><span>Apodo robusto para un rango</span></div>
+      <div class="term"><strong>Tabla de parámetros</strong><span>Documento vivo del curso</span></div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <section class="footer">
-    AI 101 — IA para Profesionales · EnterTechSchool · Clase 02
+    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 02
   </section>
 
-  <!-- ════════ EXPORT PNG ════════ -->
-  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">
-    Exportar a PNG
-  </button>
-
+  <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>
   <script>
-  (function(){
-    var btn = document.getElementById('export-btn');
-    var originalText = btn.textContent;
-
-    btn.addEventListener('click', function(){
-      btn.disabled = true;
-      btn.textContent = 'Exportando...';
-
-      var script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-      script.onload = function(){
-        btn.style.display = 'none';
-        document.fonts.ready.then(function(){
-          html2canvas(document.body, { scale: 3, useCORS: true, windowWidth: 1080 }).then(function(canvas){
-            var link = document.createElement('a');
-            var title = document.title
-              .toLowerCase()
-              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-              .replace(/[^a-z0-9]+/g, '-')
-              .replace(/^-|-$/g, '');
-            link.download = 'clase-02-' + title + '.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-            btn.style.display = '';
-            btn.disabled = false;
-            btn.textContent = originalText;
-          }).catch(function(){
-            btn.style.display = '';
-            btn.disabled = false;
-            btn.textContent = 'Error — Intenta de nuevo';
-            setTimeout(function(){ btn.textContent = originalText; }, 2000);
-          });
-        });
-      };
-      script.onerror = function(){
-        btn.disabled = false;
-        btn.textContent = 'Error — Intenta de nuevo';
-        setTimeout(function(){ btn.textContent = originalText; }, 2000);
-      };
-      document.head.appendChild(script);
-    });
-  })();
+  (function(){ var btn = document.getElementById('export-btn'); var originalText = btn.textContent; btn.addEventListener('click', function(){ btn.disabled = true; btn.textContent = 'Exportando...'; var script = document.createElement('script'); script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js'; script.onload = function(){ btn.style.display = 'none'; html2canvas(document.body, { backgroundColor: '#060913', scale: 2, useCORS: true, logging: false }).then(function(canvas){ var link = document.createElement('a'); link.download = 'infografia-clase-02.png'; link.href = canvas.toDataURL('image/png'); link.click(); btn.style.display = ''; btn.disabled = false; btn.textContent = originalText; }); }; document.head.appendChild(script); }); })();
   </script>
 
 </body>

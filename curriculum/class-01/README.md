@@ -1,29 +1,29 @@
 > **Módulo 1:** Clase 1 de 4
 
-# Clase 01: Panorama actual de la IA aplicada al trabajo
+# Clase 01: Prompts y Gems
 
 ## Resumen
 
-Esta primera clase de **AI 101** marca tu entrada al mundo de la inteligencia artificial como herramienta profesional. Desmitificamos la IA: separamos el hype de las capacidades reales y entendemos qué puede y qué NO puede hacer. Compararás Claude y ChatGPT frente a la misma tarea para entender sus diferencias, y tendrás tu primer "momento wow" resolviendo algo real de tu trabajo en minutos.
+En esta sesión descubrirás cómo piensa la IA generativa y aprenderás a hablarle de forma profesional. Vas a conocer los conceptos que cambian la forma en que usas herramientas como Gemini: tokens, probabilidad y alucinaciones. Más importante, vas a dominar una estructura de prompt que multiplica 10 veces la calidad de tus resultados.
+
+Al final de la clase tendrás definido tu **proyecto de instrucción**: un reporte real de tu trabajo que vas a automatizar durante las próximas 4 semanas. Ese reporte es el hilo conductor del curso. También vas a configurar tu propio **Gem** — un asistente personalizado de Gemini con el contexto de tu proyecto y archivos de referencia — que te acompañará en las 8 sesiones.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **El 95% de profesionales usa IA de forma superficial** — preguntas genéricas, respuestas genéricas, conclusión: "no es tan útil"
-- **La brecha se agranda cada mes** — quienes dominan IA multiplican su productividad mientras otros siguen haciendo todo manualmente
-- **Las herramientas son accesibles** — no necesitas programar, solo aprender a comunicarte con ellas
-- **No todas las IAs son iguales** — Claude, ChatGPT y Gemini tienen fortalezas diferentes; conocerlas te da ventaja
+- **Los profesionales que usan IA con prompts estructurados recuperan 4-8 horas por semana.** No se trata de escribir mejor: se trata de describir el resultado que quieres con precisión.
+- **Un Gem bien configurado ahorra el 70% del tiempo repetitivo.** Dejas de pegar el mismo contexto una y otra vez — tu asistente ya sabe quién eres, qué haces y qué estás construyendo.
+- **El brief que escribirás hoy es la base del sistema que vas a presentar en Demo Day.** Todo lo que construyes en las siguientes 7 sesiones parte de este párrafo.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Veremos una demo impactante** — Una tarea de 1+ hora resuelta en minutos
-2. **Compararemos Claude vs ChatGPT** — La misma tarea en ambas herramientas
-3. **Separarás el hype de la realidad** — Qué puede y qué NO puede la IA
-4. **Construirás tu primer SISTEMA** — No solo un prompt, sino algo reusable
-5. **Identificarás 3 tareas con potencial IA** — Oportunidades reales en tu trabajo
+1. **Exploraremos cómo funciona la IA** - Descubrirás por qué la IA "alucina" y cómo detectar errores disfrazados de confianza.
+2. **Diseñarás prompts profesionales** - Aplicarás la estructura Rol + Contexto + Tarea + Formato + Restricciones en 3 variaciones del mismo prompt.
+3. **Definirás tu proyecto de instrucción** - Escribirás un brief de 1 párrafo que describe el reporte real que vas a automatizar.
+4. **Crearás tu Gem asistente del curso** - Configurarás un Gem personalizado con instrucciones, tu brief y un archivo de referencia.
 
 ---
 
@@ -31,31 +31,36 @@ Esta primera clase de **AI 101** marca tu entrada al mundo de la inteligencia ar
 
 Al finalizar esta clase, podrás:
 
-1. **Distinguir las capacidades reales de la IA** vs. el hype y las expectativas infladas
-2. **Comparar herramientas de IA** (Claude vs ChatGPT) y seleccionar la adecuada según la tarea
-3. **Configurar y usar Claude** como tu asistente IA principal
-4. **Identificar oportunidades** donde la IA puede multiplicar tu productividad
+1. **Explicar** cómo una IA generativa predice texto y por qué "alucina" en algunos casos.
+2. **Diseñar** un prompt profesional usando la estructura Rol + Contexto + Tarea + Formato + Restricciones.
+3. **Definir** el brief de tu proyecto de instrucción con los cuatro elementos clave (qué, cuándo, quién, cuánto).
+4. **Configurar** un Gem personalizado en Gemini con instrucciones, archivos de referencia y probarlo con tareas reales.
 
 ---
 
 ## ✅ Preparación para la Clase
 
+### De clases anteriores
+
+- Ninguna — esta es la primera sesión del curso.
+
 ### Reflexión previa
 
 Antes de llegar a clase, reflexiona sobre:
 
-- ¿Cuáles son las 3 tareas que más tiempo te consumen cada semana?
-- ¿Has usado ChatGPT, Claude u otro asistente IA? ¿Qué funcionó y qué no?
+- ¿Cuál es la tarea de tu trabajo que más tiempo te quita cada semana y que podrías automatizar?
+- ¿Qué reporte (semanal, mensual) tienes que armar a mano y te gustaría que llegara solo a tu correo?
 
 ### Herramientas
 
-- [ ] **Claude** — Crear cuenta gratuita en [claude.ai](https://claude.ai){:target="_blank"} (llegar con cuenta lista)
-- [ ] **ChatGPT** — Crear cuenta gratuita en [chatgpt.com](https://chatgpt.com){:target="_blank"} (para comparación en clase)
-- [ ] **Google Doc** — Para documentar tu registro de interacción
+- [ ] **Gemini** - Cuenta creada en [gemini.google.com](https://gemini.google.com/){:target="_blank"} (versión gratuita con tu cuenta de Google es suficiente)
+- [ ] **Google Drive / Docs** - Para guardar tu brief y tus entregables del curso
+- [ ] **Un archivo de referencia** - Un reporte, documento o ejemplo real de tu trabajo que puedas usar como base del Gem (PDF, Doc, imagen — cualquier formato)
 
 ### Lectura sugerida
 
-- [Introducción a Claude](https://support.claude.com/en/){:target="_blank"} - Centro de ayuda oficial
+- [¿Qué son los LLMs?](https://ai.google/discover/foundation-models/){:target="_blank"} - Introducción corta de Google sobre modelos de lenguaje.
+- [Guía oficial de Gems](https://support.google.com/gemini/answer/15235603){:target="_blank"} - Documentación oficial de cómo crear y configurar Gems.
 
 ---
 
@@ -63,16 +68,16 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **LLM** | Large Language Model — modelo de IA entrenado con texto masivo, capaz de entender y generar lenguaje natural |
-| **Prompt** | La instrucción o pregunta que le das a una IA para obtener una respuesta |
-| **Alucinación** | Cuando una IA genera información que suena convincente pero es incorrecta o inventada |
-| **Contexto** | Información adicional que le das a la IA para que entienda mejor tu situación |
-| **Token** | Unidad de texto que procesa la IA (~3/4 de una palabra en español) |
-| **ChatGPT** | Asistente IA creado por OpenAI, uno de los más populares del mercado |
+| **LLM** | *Large Language Model* — modelo de IA que predice la siguiente palabra probable a partir de lo que ya escribió. |
+| **Token** | Unidad que procesa la IA (aproximadamente 3/4 de palabra en español). Los planes gratuitos tienen límites medidos en tokens. |
+| **Alucinación** | Cuando la IA inventa información (nombres, fechas, datos) que suena creíble pero es falsa. |
+| **Prompt profesional** | Instrucción con estructura: Rol + Contexto + Tarea + Formato + Restricciones. |
+| **Gem** | Asistente personalizado de Gemini con instrucciones permanentes y archivos de referencia fijos. |
+| **Brief** | Resumen de 1 párrafo que describe el proyecto de instrucción del estudiante. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Claude: Guía de inicio](https://docs.anthropic.com/claude/docs){:target="_blank"} - Documentación oficial
-- [ChatGPT: Getting Started](https://help.openai.com/en/collections/3742473-chatgpt){:target="_blank"} - Centro de ayuda
+- [Google AI Studio](https://aistudio.google.com/){:target="_blank"} - Playground oficial para experimentar con prompts (lo usarás en la sesión 5).
+- [Tokenizer de Gemini](https://ai.google.dev/gemini-api/docs/tokens){:target="_blank"} - Herramienta para ver cuántos tokens consume un texto.

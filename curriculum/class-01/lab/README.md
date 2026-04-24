@@ -1,190 +1,233 @@
-# Lab 01: Panorama actual de la IA — Mi primer "Wow Moment"
+# Lab 01: Prompts y Gems
 
-En este primer lab experimentarás el poder de la IA aplicada a tu trabajo real. Usarás Claude como herramienta principal y compararás con ChatGPT para entender sus diferencias. Al terminar, tendrás un registro de tu primera interacción y 3 tareas con potencial IA identificadas.
+## 🎯 Objetivos
 
-> ⏱️ **Tiempo total:** 65 minutos
-
-### 🎯 Objetivo
-
-Resolver una tarea real usando Claude, comparar con ChatGPT, e identificar 3 oportunidades de IA en tu trabajo.
-
-### 🔑 Conceptos Clave
-
-- **Prompt**: La instrucción que le das a la IA
-- **Contexto**: Información adicional que mejora la respuesta
-- **Iteración**: Refinar el resultado con follow-ups
-- **Sistema**: ROL + CONTEXTO + INSTRUCCIÓN que resuelve categorías de tareas
+1. Diseñar 3 variaciones del mismo prompt aplicando la estructura Rol + Contexto + Tarea + Formato + Restricciones.
+2. Escribir el brief de tu proyecto de instrucción (1 párrafo) usando la plantilla de 4 elementos.
+3. Configurar un Gem personalizado con instrucciones, brief y al menos 1 archivo de referencia.
 
 ---
 
-## Parte 1: Verificación y Comparación Claude vs ChatGPT (15 min)
+## 🔑 Conceptos Clave
 
-#### 1.1. Verificar acceso
-- Abre [claude.ai](https://claude.ai){:target="_blank"} y [chatgpt.com](https://chatgpt.com){:target="_blank"} en dos tabs
-- Confirma que puedes ver ambas interfaces
-- Si tienes problemas, levanta la mano para troubleshooting
-
-#### 1.2. La misma tarea en ambos
-Copia y pega este prompt exactamente **en Claude y en ChatGPT**:
-
-```
-Actúa como un experto en productividad.
-En 3 bullet points, explícame por qué la IA puede multiplicar
-mi productividad profesional.
-```
-
-#### 1.3. Compara los resultados
-Anota en tu Google Doc:
-- ¿Qué herramienta respondió más rápido?
-- ¿Cuál fue más concreta y útil?
-- ¿Notas diferencias de estilo o profundidad?
-
-✅ **Checkpoint:** Tienes ambas respuestas documentadas y una primera impresión de las diferencias.
+- **Prompt profesional** — Instrucción con 5 elementos: Rol + Contexto + Tarea + Formato + Restricciones.
+- **Brief del proyecto de instrucción** — Resumen de 1 párrafo del reporte que vas a automatizar durante el curso.
+- **Gem** — Asistente personalizado de Gemini con instrucciones y archivos fijos.
 
 ---
 
-## Parte 2: Tu Tarea Real (40 min)
+## ⚙️ Setup Inicial
 
-Esta es la parte más importante del lab. Vas a usar Claude para resolver algo real de tu trabajo.
+Esta es la primera sesión del curso. Verifica que tengas todo listo:
 
-#### 2.1. Elige tu tarea (5 min)
+| ✓ | Requisito | Verificación |
+|---|-----------|--------------|
+| ☐ | Cuenta de Gemini activa | Abre [gemini.google.com](https://gemini.google.com/){:target="_blank"} y envía un mensaje de prueba |
+| ☐ | Google Drive con carpeta "Proyecto de Instrucción" | Crea una carpeta nueva en Drive para guardar tus entregables |
+| ☐ | 1 archivo real de tu trabajo | Un reporte, plantilla o ejemplo que describa el resultado que buscas (PDF, Doc, captura) |
 
-Selecciona UNA de las siguientes opciones basada en lo que trajiste preparado:
-
-| Tipo de tarea | Qué harás |
-|---------------|-----------|
-| **Destrabar** | Convertir una idea confusa en algo claro y estructurado |
-| **Simular** | Ver tu trabajo desde los ojos de un crítico o audiencia específica |
-| **Anticipar** | Descubrir qué puede salir mal con un plan antes de que pase |
-| **Extraer** | Obtener solo lo esencial de algo largo y denso |
-| **Estructurar** | Convertir caos (notas, ideas sueltas) en orden |
-
-#### 2.2. Ejercicio guiado: Tu primer sistema (15 min)
-
-Antes de usar tu tarea real, experimenta con este mini-sistema pre-armado.
-
-**Paso 1: Copia este bloque completo en Claude:**
-
-```
-Eres mi revisor de comunicaciones profesionales.
-
-Mi contexto:
-- Rol: [completa con tu rol real]
-- Industria: [completa con tu industria]
-- Audiencia típica: [a quién le escribes normalmente]
-
-Tu trabajo: Cuando te pase un borrador o idea, dame feedback
-directo sobre claridad, tono y qué falta. Sin rodeos, sé honesto.
-```
-
-**Paso 2: Ahora pégale este borrador de prueba:**
-
-```
-Hola equipo, quería comentarles sobre el tema del proyecto que
-hablamos. Creo que deberíamos avanzar pero hay algunas cosas
-que ver. Me dicen qué opinan?
-```
-
-**Paso 3: Observa cómo lo analiza.**
-
-**Paso 4: Ahora prueba con algo TUYO.** Pega un borrador real que tengas pendiente y compara.
-
-> ✅ **Checkpoint intermedio:** ¿Tienes tu sistema de revisor funcionando?
-> Si la IA responde como experto que conoce tu contexto, continúa.
-> Si no, revisa que incluiste tu rol e industria.
-
-> 💡 **El insight:** No fue un prompt mágico. Fue un SISTEMA: contexto + rol + instrucción clara. Esto lo puedes reusar mañana.
-
-#### 2.3. Escribe tu primer prompt (5 min)
-
-Usa esta estructura básica:
-
-```
-[ROL] Actúa como un experto en [tu área]
-
-[CONTEXTO] Trabajo en [industria/rol] y necesito [objetivo]
-
-[TAREA] Ayúdame a [acción específica]
-
-[FORMATO] Preséntalo como [lista/párrafos/tabla/etc.]
-```
-
-**Ejemplo real:**
-```
-Actúa como un experto en comunicación corporativa.
-
-Trabajo como gerente de marketing en una empresa de software
-y necesito comunicar un aumento de precios a nuestros clientes.
-
-Ayúdame a redactar un email que sea honesto pero que minimice
-la fricción y destaque el valor que reciben.
-
-Preséntalo como un email listo para enviar, con subject line incluido.
-```
-
-#### 2.4. Ejecuta e itera (15 min)
-
-1. **Envía tu prompt** a Claude
-2. **Evalúa la respuesta**: ¿Es útil? ¿Qué le falta?
-3. **Refina con follow-ups**:
-   - "Hazlo más corto"
-   - "Agrega un tono más empático"
-   - "Dame 3 versiones diferentes"
-   - "¿Qué le cambiarías para [audiencia específica]?"
-4. **Repite** hasta obtener algo realmente útil
-
-#### 2.5. Documenta tu resultado (5 min)
-
-En un documento o nota, guarda:
-- Tu prompt final (el que mejor funcionó)
-- El output de Claude
-- Tiempo aproximado que te hubiera tomado sin IA
+> ⚠️ Si no tienes un archivo de referencia listo, usa un documento similar de cualquier otra empresa o un ejemplo genérico. Puedes reemplazarlo después.
 
 ---
 
-## Parte 3: Captura y Reflexión (10 min)
+## Actividad 1: Diseña tu primer prompt profesional (35 min)
 
-#### 3.1. Toma tu screenshot
-- Captura la pantalla mostrando tu resultado final
-- Asegúrate de que se vea el prompt y la respuesta
+### 1.1 Recibe el prompt genérico
 
-#### 3.2. Prepara tu "elevator pitch" (para compartir con el grupo)
-En 30 segundos, prepárate para decir:
-- Qué tarea resolviste
-- Cuánto tiempo te hubiera tomado normalmente
-- Qué aprendiste del proceso
+El prompt base que vas a mejorar es:
 
-#### 3.3. Reflexión personal
-Responde mentalmente (o escríbelo):
-- ¿Qué me sorprendió?
-- ¿Dónde más podría aplicar esto?
-- ¿Qué haría diferente la próxima vez?
+```
+Escribe sobre productividad
+```
+
+Ese prompt es genérico — Gemini responderá algo útil pero que sirve a cualquiera. Tu trabajo es hacerlo específico para TU contexto.
+
+### 1.2 Crea 3 variaciones progresivas
+
+Escribe 3 variaciones del prompt. Cada una suma elementos:
+
+**Variación 1 — Rol + Tarea:**
+
+```
+Actúa como [<!-- Tu rol profesional -->].
+Escribe sobre cómo mejorar la productividad en [<!-- tu industria -->].
+```
+
+**Variación 2 — suma Contexto:**
+
+```
+Actúa como [<!-- Tu rol profesional -->].
+Mi contexto es [<!-- tamaño de empresa, tipo de equipo, herramientas actuales -->].
+Escribe sobre cómo mejorar la productividad en [<!-- tu industria -->].
+```
+
+**Variación 3 — suma Formato y Restricciones:**
+
+```
+Actúa como [<!-- Tu rol profesional -->].
+Mi contexto es [<!-- tamaño de empresa, tipo de equipo, herramientas actuales -->].
+Escribe sobre cómo mejorar la productividad en [<!-- tu industria -->].
+Formato: lista numerada de 5 tips, cada uno con [<!-- máximo 40 palabras -->].
+Restricciones: [<!-- evita herramientas pagas / jerga técnica / soluciones que requieran permisos adicionales -->].
+```
+
+### 1.3 Envía las 3 variaciones a Gemini
+
+Ejecuta las 3 en Gemini (en conversaciones separadas para comparar) y observa:
+
+- ¿Cuál respuesta es más útil para tu trabajo?
+- ¿Qué elemento del prompt tuvo más impacto: contexto, formato o restricciones?
+
+✅ **Checkpoint:** Tienes 3 conversaciones en Gemini con las 3 variaciones y puedes explicar por qué la variación 3 es más útil que la 1.
 
 ---
 
-## 🏆 Retos Adicionales (si terminas antes)
+## Actividad 2: Define tu proyecto de instrucción (35 min)
 
-#### Reto 1: Segunda tarea
-- Elige otra tarea de tu lista y resuélvela
-- Compara: ¿fue más fácil la segunda vez?
+### 2.1 Piensa en tu trabajo real
 
-#### Reto 2: Mejora tu prompt
-- Toma tu mejor prompt y hazlo aún más específico
-- Agrega ejemplos de lo que SÍ quieres y lo que NO quieres
+Responde mentalmente (o en un papel):
 
-#### Reto 3: Explora límites
-- Pídele algo que crees que NO puede hacer
-- ¿Te sorprendió el resultado?
+- ¿Qué reporte semanal o mensual armas hoy a mano?
+- ¿Quién lo recibe (jefe, cliente, equipo)?
+- ¿Qué datos incluye (números, textos, gráficos)?
+- ¿Cuánto tiempo te quita (horas/semana)?
+
+### 2.2 Escribe tu brief en 1 párrafo
+
+Abre un Google Doc en tu carpeta "Proyecto de Instrucción" y escribe:
+
+```
+Quiero automatizar [<!-- tipo de reporte -->] que genero [<!-- frecuencia: semanal, mensual -->],
+dirigido a [<!-- destinatario: jefe, cliente, equipo -->],
+que incluye [<!-- tipo de datos: ventas, alcance, métricas -->],
+para ahorrar [<!-- tiempo estimado: 4 horas/semana -->].
+```
+
+### 2.3 Ejemplos válidos como referencia
+
+| Rol | Brief |
+|-----|-------|
+| Gerente comercial | "Quiero automatizar el reporte semanal de ventas que genero cada viernes, dirigido a mis 3 vendedores y al gerente general, que incluye ventas totales, clientes nuevos y hallazgos por vendedor, para ahorrar 4 horas semanales." |
+| Freelance marketing | "Quiero automatizar el reporte mensual de desempeño de campañas, dirigido a mis clientes de marketing, que incluye alcance, engagement y recomendaciones, para ahorrar 6 horas mensuales." |
+| Coordinador académico | "Quiero automatizar el reporte de progreso de cohortes que genero cada miércoles, dirigido al director académico, que incluye asistencia, entregables y alertas tempranas, para ahorrar 3 horas semanales." |
+
+### 2.4 Comparte con el grupo
+
+Pega tu brief en el chat del aula para recibir feedback rápido del instructor y compañeros.
+
+✅ **Checkpoint:** Tu brief está en un Google Doc dentro de la carpeta "Proyecto de Instrucción" y contiene los 4 elementos (qué + cuándo + quién + datos + tiempo).
 
 ---
 
-## 📝 Entregable
+## Actividad 3: Crea tu Gem asistente del curso (40 min)
 
-**Registro de primera interacción + reflexión:**
+### 3.1 Entra a Gems
 
-1. **Comparación Claude vs ChatGPT** — Screenshot de ambas respuestas al mismo prompt y tu observación
-2. **Sistema reusable** — Tu prompt de sistema (ROL + CONTEXTO + INSTRUCCIÓN) con un resultado real
-3. **3 tareas con potencial IA** — Lista de 3 tareas de tu trabajo donde la IA podría multiplicar tu productividad, con una breve justificación de cada una
+En Gemini, busca en el menú lateral izquierdo "**Gestor de Gems**" → "**Nuevo Gem**".
 
-**Formato:** Google Doc con los 3 elementos, compartir públicamente y pegar el link como entrega.
+### 3.2 Configura los campos del Gem
 
+**Nombre:**
+
+```
+Asistente de mi proyecto — [<!-- Tu nombre -->]
+```
+
+**Instrucciones del Gem:** pega la plantilla y personaliza los bloques marcados:
+
+```
+Eres mi asistente de curso. Me acompañarás durante las 8 sesiones del programa
+AI 101, en las que construiré un sistema automatizado de reportes.
+
+MI PROYECTO:
+[<!-- Pega aquí el brief completo de la Actividad 2 -->]
+
+MI ROL Y CONTEXTO:
+- Rol: [<!-- Tu rol profesional -->]
+- Industria: [<!-- Tu industria -->]
+- Herramientas actuales: [<!-- Google Workspace, Excel, WhatsApp, etc. -->]
+
+TU ROL:
+- Ayudarme a diseñar prompts, estructuras de datos y textos del reporte.
+- Recordar el contexto de mi proyecto en todo momento.
+- Sugerir mejoras cuando te pregunte, con ejemplos concretos.
+
+TONO: profesional pero cercano, directo al punto. Responde en español latinoamericano.
+```
+
+### 3.3 Sube al menos 1 archivo de referencia
+
+Arrastra al Gem un archivo real:
+- Un reporte que hayas generado manualmente antes
+- Un documento con el tono de marca de tu empresa
+- Un ejemplo de los datos que manejas
+
+### 3.4 Prueba el Gem
+
+Pídele al Gem 3 cosas:
+
+1. `Resume mi brief en una línea.`
+2. `¿Qué 6 secciones debería tener mi reporte ejecutivo?`
+3. `Según el archivo que te subí, ¿qué datos ves que deberíamos capturar en el sistema?`
+
+Verifica que el Gem responde mencionando **tu** contexto (no uno genérico).
+
+✅ **Checkpoint:** Tu Gem responde las 3 preguntas haciendo referencia al brief y al archivo que subiste.
+
+---
+
+## 📁 Estructura Final del Proyecto
+
+```
+Google Drive/
+└── Proyecto de Instrucción/
+    ├── brief.doc              # Brief de 1 párrafo (Actividad 2)
+    ├── archivo-referencia.*   # Archivo que subiste al Gem (Actividad 3)
+    └── capturas/
+        ├── prompt-v1.png      # Captura variación 1 (Actividad 1)
+        ├── prompt-v2.png      # Captura variación 2
+        └── prompt-v3.png      # Captura variación 3
+```
+
+---
+
+## Reflexión
+
+Antes de terminar, responde brevemente:
+
+1. **¿Qué fue lo más útil que aprendiste hoy?**
+2. **¿Cómo aplicarías la estructura de prompt profesional en tu trabajo esta semana?**
+3. **¿Qué pregunta te quedó sin responder?**
+
+---
+
+## Logros Adicionales (Opcional)
+
+### 🟢 Sube más archivos al Gem
+Agrega 2-3 archivos adicionales (plantillas, manuales, ejemplos de tono). Observa cómo cambian las respuestas del Gem. Más contexto = mejores respuestas.
+
+### 🟡 Diseña una biblioteca de prompts
+Crea un Google Doc con 5 prompts profesionales para tareas recurrentes de tu trabajo (responder clientes, redactar correos, resumir reuniones). Usa la estructura de 5 elementos.
+
+### 🔴 Prueba el Gem con un caso límite
+Pregúntale algo que NO esté en el archivo de referencia y observa si alucina o si admite el límite. En la Clase 6 aprenderás a mejorar esto con few-shot y chain-of-thought.
+
+---
+
+## 📝 Entrega
+
+### Checklist
+
+- [ ] Brief del proyecto de instrucción (1 párrafo) en Google Doc
+- [ ] Gem funcionando con nombre, instrucciones y al menos 1 archivo
+- [ ] 3 capturas de pantalla de las variaciones del prompt (Actividad 1)
+
+### Entregable
+
+📸 **Screenshot** de tu Gem respondiendo la pregunta "Resume mi brief en una línea", donde se vea:
+- El nombre del Gem visible en la parte superior
+- La respuesta haciendo referencia a tu brief real
+- Tu nombre o correo de Gemini visible (para autenticar el trabajo)
+
+> ⚠️ El entregable debe mostrar tu cuenta de Gemini visible para verificar que es tu Gem.
