@@ -1,4 +1,4 @@
-# 📚 AI 101 — IA para Profesionales · Hub del Instructor
+# 📚 AI 101 — IA estratégica para Profesionales · Hub del Instructor
 
 > Acceso rápido a todos los materiales del curso. Haz clic en cualquier enlace para abrir la vista directamente.
 
@@ -21,6 +21,14 @@ Cada clase cuenta con los siguientes documentos:
 
 ---
 
+## 🎯 El caso guía: Roberto
+
+Todo el curso gira alrededor de un caso único: **Roberto**, gerente de una pequeña empresa con 3-4 vendedores que pierde 4 horas cada viernes consolidando reportes manuales. El sistema que construimos clase a clase resuelve su problema con herramientas 100% gratuitas (Gemini + Make + Google Workspace).
+
+En **Módulo 1** se construye el sistema modelo para Roberto, pieza por pieza. En **Módulo 2** se integra con IA, se optimiza y se adapta al caso real del estudiante para presentarlo en Demo Day.
+
+---
+
 ## 🖥️ Acceso a Presentaciones — URL Patrón
 
 Para abrir la presentación de **cualquier clase**, usa la siguiente URL reemplazando `XX` con el número de clase (con ceros: `01`, `02` ... `08`):
@@ -39,7 +47,7 @@ https://entertechschool.github.io/public/slides/?class=ai-101_XX
 
 ## 🎬 Clase 00 — Kick-off · Orientación del Curso
 
-Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluación y herramientas.
+Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucción, sistema de evaluación, stack 100% gratuito.
 
 | Documento | Enlace |
 |-----------|--------|
@@ -48,11 +56,11 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 
 ---
 
-## 🧱 Módulo 1: Fundamentos y Primeras Aplicaciones
+## 🧱 Módulo 1: Piezas del Sistema
 
-**Proyecto:** Portfolio Profesional IA (Fundamentos) — biblioteca de prompts + Claude Project + pieza de contenido + proyecto integrador con research verificable.
+**Proyecto:** Cada estudiante define su proyecto de instrucción (Clase 1) y construye las piezas pieza por pieza: Gem asistente → Google Sheet con 3 pestañas → plantilla de Slides con marcadores → 2 escenarios de Make sin IA funcionando end-to-end.
 
-### Clase 01 — Panorama actual de la IA aplicada al trabajo
+### Clase 01 — Prompts y Gems
 
 | Documento | Enlace |
 |-----------|--------|
@@ -62,7 +70,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/infographic/){:target="_blank"} |
 
-### Clase 02 — Diseño de instrucciones efectivas
+### Clase 02 — Google Sheets con IA
 
 | Documento | Enlace |
 |-----------|--------|
@@ -72,7 +80,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/infographic/){:target="_blank"} |
 
-### Clase 03 — Producción de contenido profesional con IA
+### Clase 03 — Google Slides con IA
 
 | Documento | Enlace |
 |-----------|--------|
@@ -82,7 +90,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/infographic/){:target="_blank"} |
 
-### ⭐ Clase 04 — Investigación y análisis asistidos por IA *(Lab Evaluado M1)*
+### ⭐ Clase 04 — Make básico (sin IA) *(Lab Evaluado M1)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -95,11 +103,11 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 
 ---
 
-## 🚀 Módulo 2: Aplicaciones Avanzadas y Portfolio Profesional
+## 🚀 Módulo 2: Integración y Proyecto
 
-**Proyecto:** Portfolio Profesional IA (Aplicaciones) — app en Vercel + agente clasificador + agente generativo deployado + Demo Day + repo GitHub + LinkedIn post.
+**Proyecto:** Integrar Gemini API al sistema modelo, optimizar prompts + aplicar mejores prácticas, adaptar al caso real del estudiante, y presentar en Demo Day con cálculo de ROI y plan de 30 días.
 
-### Clase 05 — Construcción de apps con asistencia de IA
+### Clase 05 — Gemini API + 2 flujos completos
 
 | Documento | Enlace |
 |-----------|--------|
@@ -109,7 +117,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/infographic/){:target="_blank"} |
 
-### Clase 06 — Configuración de asistente IA personalizado
+### Clase 06 — Integración total y mejores prácticas
 
 | Documento | Enlace |
 |-----------|--------|
@@ -119,7 +127,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/infographic/){:target="_blank"} |
 
-### Clase 07 — Asistente avanzado aplicado al trabajo
+### Clase 07 — Tu proyecto propio *(acompañamiento 1 a 1)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -129,7 +137,7 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 | 🎓 Guía del Facilitador | [Ver Facilitador 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/infographic/){:target="_blank"} |
 
-### ⭐ Clase 08 — Demo Day y desarrollo continuo *(Demo Day M2)*
+### ⭐ Clase 08 — Demo Day + ROI + Plan 30 días *(Lab Evaluado M2 · Cierre del curso)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -146,15 +154,31 @@ Sesión de bienvenida: estructura del curso, expectativas, sistema de evaluació
 
 | Clase | Tema | Lab | Tipo |
 |-------|------|-----|------|
-| 01 | Panorama actual de la IA aplicada al trabajo | [Lab 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/lab/){:target="_blank"} | Regular |
-| 02 | Diseño de instrucciones efectivas | [Lab 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/lab/){:target="_blank"} | Regular |
-| 03 | Producción de contenido profesional con IA | [Lab 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/lab/){:target="_blank"} | Regular |
-| **04** | **Investigación y análisis asistidos por IA** | [**Lab 04**](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/lab/){:target="_blank"} | ⭐ **Evaluado M1** |
-| 05 | Construcción de apps con asistencia de IA | [Lab 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/lab/){:target="_blank"} | Regular |
-| 06 | Configuración de asistente IA personalizado | [Lab 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/lab/){:target="_blank"} | Regular |
-| 07 | Asistente avanzado aplicado al trabajo | [Lab 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/lab/){:target="_blank"} | Regular |
-| **08** | **Demo Day y desarrollo continuo** | [**Lab 08**](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/lab/){:target="_blank"} | ⭐ **Demo Day M2** |
+| 01 | Prompts y Gems | [Lab 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/lab/){:target="_blank"} | Regular |
+| 02 | Google Sheets con IA | [Lab 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/lab/){:target="_blank"} | Regular |
+| 03 | Google Slides con IA | [Lab 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/lab/){:target="_blank"} | Regular |
+| **04** | **Make básico (sin IA)** | [**Lab 04**](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/lab/){:target="_blank"} | ⭐ **Evaluado M1** |
+| 05 | Gemini API + 2 flujos completos | [Lab 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/lab/){:target="_blank"} | Regular |
+| 06 | Integración total y mejores prácticas | [Lab 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/lab/){:target="_blank"} | Regular |
+| 07 | Tu proyecto propio | [Lab 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/lab/){:target="_blank"} | Regular (1 a 1) |
+| **08** | **Demo Day + ROI + Plan 30 días** | [**Lab 08**](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/lab/){:target="_blank"} | ⭐ **Cierre M2** |
 
 ---
 
-*AI 101 — IA para Profesionales · EnterTechSchool*
+## 📦 Stack del Curso
+
+Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de crédito**.
+
+| Herramienta | Uso | Clase |
+|-------------|-----|-------|
+| **Gemini** | Chat base, diseño de prompts, asistente del curso | 1-8 |
+| **Gemini Gems** | Asistentes personalizados con contexto fijo | 1-8 |
+| **Gemini API** | Extracción + insights (1,500 req/día free) | 5-8 |
+| **Make** | Automatización visual (1,000 ops/mes free) | 4-8 |
+| **Google Sheets** | Fuente de datos con 3 pestañas | 2-8 |
+| **Google Slides** | Plantilla del reporte con marcadores | 3-8 |
+| **Gmail** | Entrada (Instant Trigger) y entrega del PDF | 4-8 |
+
+---
+
+*AI 101 — IA estratégica para Profesionales · EnterTechSchool · v2-2026*
