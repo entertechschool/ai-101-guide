@@ -1,6 +1,10 @@
 # Claude development files (proyecto-específicos)
 TODOS.md
 
+# Material fuente del instructor (sílabo, PPTs, notas)
+# Queda solo en máquina local, no se versiona
+dev/
+
 # Entregas de estudiantes (por cohorte)
 _entregas/ai-*/
 
