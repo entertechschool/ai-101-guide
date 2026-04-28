@@ -1,163 +1,150 @@
 <!-- .slide: data-background="#0A192F" -->
-# Clase 08: Demo Day + ROI + Plan 30 días
-## Presentás, cuantificás y proyectás
+
+# SESIÓN 8
+## DEMO DAY
+
+Presentación, ROI y plan 30 días
+
+*2.5 horas · IA estratégica para Profesionales*
 
 ---
 
-## TRANSICIÓN: Clase 07 → Clase 08
+## QUÉ VAMOS A LOGRAR
 
-### Clase anterior:
-- Sistema propio funcionando con datos reales
-- 2 escenarios v2 con tu marca y tu caso
-- Validación end-to-end exitosa
+*Aprendizaje esperado · Puntos clave · Evaluación*
 
-### Hoy — último día del curso:
-- Demo en vivo ante el grupo (5 min)
-- ROI calculado en soles
-- Plan 30 días con 3 próximos agentes
+### APRENDIZAJE ESPERADO
 
-> "Lo que construiste merece presentarse. Lo que ahorrás merece cuantificarse."
+Presenta su sistema automatizado funcionando ante el grupo calculando el ROI en horas ahorradas y proyectando los próximos pasos.
 
----
+### PUNTOS CLAVE
 
-## ESTRUCTURA PSDR — 5 minutos exactos
+1. Presentación de 5 minutos (PSDR)
+2. Demo en vivo con datos reales
+3. Calcular y comunicar el ROI
+4. Feedback con rúbrica entre pares
+5. Plan 30 días con 3 próximos agentes
 
-### Cada demo sigue esta estructura:
+### EVALUACIÓN
 
-| Bloque | Tiempo | Qué mostrar |
-|--------|--------|-------------|
-| **P — Problema** | 1 min | Tarea manual + cuánto tiempo perdías |
-| **S — Solución** | 1 min | Arquitectura general (1 imagen) |
-| **D — Demo en vivo** | 2 min | Correo real → sistema → PDF |
-| **R — Resultado** | 1 min | Horas ahorradas + ROI en soles |
-
-> **Crítico:** la demo es EN VIVO. No slides de capturas. No videos pregrabados.
+- Demo grabado
+- ROI documentado
+- Plan 30 días
+- Rúbricas de compañeros
 
 ---
 
-## CHECKPOINT 1: Demos (60 min total)
+## Apertura · 10 min
 
-### Orden: voluntario primero, luego sorteo
+### Todo listo para el Demo Day
 
-- 5 min por persona (cronómetro visible)
-- 1 min de preguntas entre presentaciones
-- Rúbrica de pares se llena mientras presenta cada uno
+**01 · FORMATO**
+5 min por persona con demo en vivo obligatoria
+Revisemos la rúbrica.
 
-**Si la demo falla:**
-- No es penalización — puede pasar
-- Ofrecer mostrar capturas de la última ejecución exitosa
-- Continuar con Resultado y seguir adelante
+**02 · EVALUACIÓN**
+Rúbrica entre pares
+Se llena durante presentaciones.
 
----
-
-## CÁLCULO DE ROI
-
-### La fórmula simple:
-
-```
-Horas ahorradas/semana × Tarifa por hora × 4 = Ahorro MENSUAL
-Ahorro mensual × 12 = Ahorro ANUAL
-```
-
-### Ejemplo caso Roberto:
-
-- 6 horas/semana × S/ 100/hora × 4 = **S/ 2,400/mes**
-- S/ 2,400 × 12 = **S/ 28,800/año**
-
-> **Regla:** sé conservador en horas ahorradas. Un ROI realista es más creíble que uno inflado.
+**03 · ORDEN**
+¿Voluntario para empezar?
+Sorteo si no.
 
 ---
 
-## CHECKPOINT 2: Calculá TU ROI (40 min)
+## ESTRUCTURA PSDR PARA 5 MINUTOS
 
-### Cada estudiante documenta:
+*La fórmula de una presentación impactante*
 
-1. Horas ahorradas/semana (conservador)
-2. Tu tarifa por hora (o salario ÷ horas mensuales)
-3. Ahorro mensual y anual
-4. Frase de 1 línea para comunicar en LinkedIn/trabajo
+**5 min · Teoría**
 
-### Comparación grupal:
+- **P — PROBLEMA** (1 min): qué resolvías antes
+- **S — SOLUCIÓN** (1 min): cómo lo automatizaste
+- **D — DEMO** (2 min): muéstralo funcionando
+- **R — RESULTADO** (1 min): horas/dinero ahorrado
 
-- ¿Quién tiene el ROI más alto?
-- ¿Qué decisión fue clave en ese caso?
-- ¿Qué podemos replicar?
+Tip: la demo es lo más impactante
 
 ---
 
-## PLAN 30 DÍAS CON PRINCIPIO 80/20
+## Cálculo de ROI
 
-### Los 3 pasos:
+**5 min · Teoría**
 
-1. **Listá 10 tareas repetitivas** de tu trabajo
-2. **Marcá las 3 que concentran 80% del tiempo** (Pareto)
-3. **Diseñá 1 agente por cada una**: qué / datos / herramientas / semana
-
----
-
-## CHECKPOINT 3: Plan 30 días (30 min)
-
-### Tabla de los 3 agentes:
-
-| Agente | Qué automatiza | Datos | Herramientas | Semana |
-|--------|----------------|-------|--------------|--------|
-| Agente 1 | [tarea #1 del 80/20] | [input] | Gemini + Make + ... | Semana 1 |
-| Agente 2 | [tarea #2] | [input] | [...] | Semana 2 |
-| Agente 3 | [tarea #3] | [input] | [...] | Semana 3 |
-| Ajustes | Medición de ROI agregado | — | — | Semana 4 |
-
-### Compromiso público:
-
-Cada estudiante comparte su plan en voz alta ante el grupo.
+| Métrica | Valor | Cálculo |
+|---------|-------|---------|
+| **HORAS AHORRADAS SEMANA** | 6 h | Conservador |
+| **AHORRO MENSUAL** | S/ 2,400 | 6 × S/ 100 × 4 |
+| **AHORRO ANUAL** | S/ 28,800 | Mensual × 12 |
 
 ---
 
-## REFLEXIÓN: Del 95% al 5%
+## DEMO · EN VIVO DE TU SISTEMA
 
-| Antes del curso | Hoy |
-|-----------------|-----|
-| 95% de profesionales NO automatiza con IA | Vos estás en el 5% que SÍ lo hace |
-| IA es "cosa de tech" | IA es una herramienta de todos |
-| "No sé por dónde empezar" | "Tengo plan de 3 agentes más" |
-| Tiempo invisible perdido en tareas manuales | Tiempo cuantificado y ahorrado |
+*5 minutos por estudiante con rúbrica de compañeros*
 
-> **Regla memorable:** "El cambio no es el curso. El cambio son los 30 días después."
+**60 min · Individual**
 
----
+### QUÉ HACER
 
-## PATHWAY: Qué sigue después
+1. Formato PSDR: problema, solución, demo, resultado
+2. Demo en vivo: correo → Sheet → PDF llega
+3. Compañeros llenan rúbrica de feedback
+4. 1 min de preguntas entre presentaciones
+5. 8-10 estudiantes = ~60 min total
 
-### Opciones para continuar:
-
-- **AI 201 — Construye con IA** (8 semanas, 80h)
-  - Soluciones no-code más complejas
-  - Producto/herramienta funcional
-
-- **AI 301 — Escala con IA** (10 semanas, 100h)
-  - Integración técnica
-  - Proyecto profesional o startup
-
-- **Comunidad post-curso**
-  - Sesiones mensuales de refuerzo
-  - Compartir casos y ROIs reales
+✓ **Verificación:** Todos presentaron y recibieron feedback
 
 ---
 
-## Preguntas de Cierre
+## CALCULA · TU ROI FINAL
 
-1. ¿Qué habilidad del curso vas a aplicar PRIMERO esta semana?
+*Cuantifica el valor real de tu automatización*
 
-2. ¿Qué cambiaría en tu vida profesional si ahorraras 10 horas semanales?
+**40 min · Individual**
 
-3. ¿Qué vas a compartir con tu equipo/jefe sobre lo que aprendiste?
+### QUÉ HACER
+
+1. Horas reales ahorradas semana (conservador)
+2. Tu tarifa por hora (o salario ÷ horas)
+3. Mensual = horas × tarifa × 4
+4. Anual = mensual × 12
+5. Identifiquen el caso con mayor ROI
+
+✓ **Verificación:** Número de ROI listo para LinkedIn
 
 ---
 
-## Entrega Final del Curso
+## PLAN · 30 DÍAS CON 3 PRÓXIMOS AGENTES
 
-- Grabación del demo de 5 min
-- ROI-Calculado.doc con fórmula y frase
-- Plan-30-Dias.doc con 3 agentes
-- Rúbricas llenas de ≥3 compañeros
+*Compromiso público de tus próximas automatizaciones*
 
-### ¡Felicitaciones! Completaste AI 101.
+**30 min · Individual**
+
+### QUÉ HACER
+
+1. Lista 10 tareas repetitivas de tu trabajo
+2. Aplica 80/20: marca las 3 que más tiempo quitan
+3. Para cada una: qué, datos, herramientas, cuándo
+4. Organiza en semana 1, 2, 3 del próximo mes
+5. Comparte plan con el grupo
+
+✓ **Verificación:** Plan 30 días escrito con 3 agentes
+
+---
+
+## LO QUE TE LLEVAS DEL CURSO
+
+*Los artefactos que construiste hoy*
+
+**01** Demo de TU sistema grabado
+
+**02** ROI calculado en soles reales (mensual y anual)
+
+**03** Plan 30 días con 3 próximos agentes
+
+**04** Comunidad de profesionales construyendo con IA
+
+### PRÓXIMA SESIÓN
+
+Post-curso: comunidad activa + sesiones mensuales de refuerzo + siguientes niveles AI Pro y AI 201.

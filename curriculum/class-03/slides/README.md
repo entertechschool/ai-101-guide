@@ -1,151 +1,148 @@
 <!-- .slide: data-background="#0A192F" -->
-# Clase 03: Google Slides con IA
-## Diseña la plantilla del reporte con marcadores
+
+# SESIÓN 3
+## GOOGLE SLIDES CON IA
+
+Diseña la plantilla del reporte ejecutivo
+
+*2.5 horas · IA estratégica para Profesionales*
 
 ---
 
-## TRANSICIÓN: Clase 02 → Clase 03
+## QUÉ VAMOS A LOGRAR
 
-### Clase anterior:
-- Sheet con 3 pestañas y 15 filas de ejemplo
-- 3 rangos nombrados listos para Make
-- Tabla de parámetros iniciada
+*Aprendizaje esperado · Puntos clave · Evaluación*
 
-### Hoy:
-- Plantilla visual del reporte con marcadores
-- 18-20 marcadores nombrados y clasificados por tipo
-- Tabla de parámetros crece con la información clave del sistema
+### APRENDIZAJE ESPERADO
 
-> "Un reporte ejecutivo bien diseñado es 80% plantilla fija y 20% datos variables."
+Utiliza Gemini para diseñar la plantilla visual del reporte ejecutivo en Google Slides con todos los marcadores conectados a la tabla de parámetros.
 
----
+### PUNTOS CLAVE
 
-## QUIZ PRE-LAB
+1. Diseñar las 6 secciones del reporte
+2. Nombrar y documentar todos los marcadores
+3. Clasificar marcadores por tipo (crudo/calculado/IA)
+4. Insertar marcadores y probar manualmente
+5. Definir paleta visual y jerarquía
 
-### Pregunta:
+### EVALUACIÓN
 
-Si tuvieras que dividir tu reporte actual en "partes que cambian siempre" vs "partes que siempre son iguales", ¿cuáles serían las partes que cambian?
-
-*Toma 2-3 respuestas antes de continuar.*
+- Plantilla de Slides con 6 slides
+- 18-20 marcadores clasificados
+- Prueba manual exitosa
 
 ---
 
-## COMPROBACIÓN
+## Apertura · 10 min
 
-### Pregunta (después de la demo):
+### Empieza por tu realidad
 
-Acabas de ver la clasificación de marcadores en 3 tipos (crudo, calculado, IA). ¿Por qué importa distinguirlos HOY si todavía no los llenamos automáticamente?
+**01 · MUESTRA**
+Comparte un reporte que hayas armado antes
+(30 seg en pantalla)
 
-A. Porque es una convención académica estándar
-B. Porque los tipos definen qué herramienta llenará cada uno (Sheet/Make/Gemini)
-C. Porque así se ven más organizados en Slides
-D. Porque los marcadores tipo IA necesitan colores distintos
+**02 · LO QUE REPITE**
+¿Qué partes se repiten semana a semana?
+Identifica lo estable.
 
----
-
-## COMPROBACIÓN - Respuesta
-
-**Respuesta correcta:** B
-
-**Análisis de opciones:**
-- **A:** No es solo convención. Sin tipo, no sabés dónde configurar cada marcador.
-- **B:** Correcto. En la Clase 4, Make lee marcadores crudos del Sheet. En Clase 5, las HTTP requests de Gemini llenan los tipo IA. Cada tipo = configuración distinta.
-- **C:** La visibilidad en Slides es la misma para los 3 tipos.
-- **D:** No hay diferencia visual necesaria; sí hay diferencia operativa.
-
-> **Clave:** Clasificar marcadores hoy evita confusión operativa en las clases 4 y 5.
+**03 · LO QUE CAMBIA**
+¿Qué cambia cada vez?
+Eso serán los marcadores variables.
 
 ---
 
-## CHECKPOINT Actividad 1: 6 slides con diseño inicial
+## ANATOMÍA DE UN REPORTE EJECUTIVO
 
-### Verificar:
-Cada estudiante muestra su plantilla con 6 slides.
+*Las 6 secciones clásicas*
 
-**¿Qué debe verse?**
-- 6 slides distintas con títulos descriptivos (no "Slide 1", "Slide 2")
-- Paleta consistente (2-3 colores)
-- Tipografías legibles y consistentes
+**8 min · Teoría**
 
-**Problemas comunes:**
-- Títulos genéricos → recordar que las 6 secciones tienen nombres específicos
-- Diseño muy denso → aplicar "1 slide = 1 idea"
-
----
-
-## CHECKPOINT Actividad 2: ~18-20 marcadores clasificados
-
-### Verificar:
-Tabla de parámetros en Google Doc con sección de marcadores.
-
-**¿Qué debe verse?**
-- Al menos 18 filas de marcadores
-- Cada fila tiene tipo (crudo/calculado/IA) y origen
-- Nombres en snake_case (no espacios ni mayúsculas)
-
-**Problemas comunes:**
-- Solo 5-6 marcadores → revisar slide por slide qué más cambia
-- Tipo IA confundido con crudo → crudo viene de una celda; IA se genera a partir de muchas celdas
+1. **Portada** — contexto, fecha, marca
+2. **Resumen ejecutivo** — KPIs + narrativa
+3. **Hallazgos** — 3 insights clave
+4. **Visualización** — gráfico de la semana
+5. **Riesgos y oportunidades**
+6. **Próximos pasos**
 
 ---
 
-## CHECKPOINT Actividad 3: Plantilla con marcadores + prueba
+## LOS 3 TIPOS DE MARCADORES
 
-### Verificar:
-Cada slide tiene marcadores insertados.
+*Cada tipo se llena de forma distinta*
 
-**¿Qué debe verse?**
-- Marcadores `{{...}}` visibles en cada slide
-- Gráfico vinculado al Sheet presente
-- Al menos 1 slide con prueba manual (datos reales reemplazando 3-4 marcadores)
+**7 min · Teoría**
 
-**Problemas comunes:**
-- Marcadores con espacios (`{{ventas total}}`) → Replace Text es sensible, usar snake_case
-- Gráfico insertado como imagen estática → debe ser "Desde Hojas de cálculo"
+- **Tipo 1 CRUDO** — directo del Sheet → `{{ventas_total}}`
+- **Tipo 2 CALCULADO** — Make lo calcula → `{{variacion_pct}}`
+- **Tipo 3 IA** — Gemini lo genera → `{{hallazgo_1}}`
+
+Convención: snake_case, descriptivos, agrupados
 
 ---
 
-## REFLEXIÓN: Los 3 tipos de marcadores
+## DISEÑA · LAS 6 SECCIONES DEL REPORTE
 
-| Tipo | Viene de | Ejemplo | Configuración en Make |
-|------|----------|---------|------------------------|
-| **Crudo** | Sheet (celda) | `{{ventas_total}}` | Search Rows → variable |
-| **Calculado** | Make (fórmula) | `{{variacion_pct}}` | Módulo Math |
-| **IA** | Gemini (prompt) | `{{hallazgo_1}}` | HTTP module + prompt |
+*Tu Gem propone la estructura según tu brief*
 
-> **Regla memorable:** "El nombre del marcador es para el lector. El tipo es para el sistema."
+**30 min · Individual**
 
----
+### QUÉ HACER
 
-## TRANSICIÓN: Preview Clase 04
+1. Pide al Gem las 6 secciones según tu brief
+2. Crea plantilla de Slides con 6 slides
+3. Agrega título a cada slide
+4. Aplica paleta y tipografía sugerida
 
-### Hoy lograste:
-- Plantilla de Slides con 6 secciones
-- 18-20 marcadores clasificados y documentados
-- Gráfico vinculado al Sheet
-
-### Próxima clase:
-- Construir 2 flujos en Make (todavía sin IA)
-- Gmail → Sheet en tiempo real
-- Sheet → Slides → PDF → Gmail
-- Los marcadores crudos y calculados empezarán a llenarse solos
+✓ **Verificación:** 6 slides con títulos y diseño inicial
 
 ---
 
-## Preguntas de Cierre
+## NOMBRA · TODOS LOS MARCADORES
 
-1. ¿Qué slide de tu plantilla crees que va a impactar más a tu lector? ¿Por qué?
+*Documenta cada marcador en la tabla de parámetros*
 
-2. De tus marcadores tipo IA, ¿cuál crees que Gemini va a ser mejor generando? ¿Cuál peor?
+**45 min · Individual**
 
-3. Si tuvieras que explicarle en 1 frase a un colega para qué es la tabla de parámetros, ¿qué dirías?
+### QUÉ HACER
+
+1. Revisa cada slide e identifica lo variable
+2. Nombra cada uno en snake_case
+3. Clasifica: tipo (crudo/calculado/IA), origen, ejemplo
+4. Meta: 18-20 marcadores clasificados
+
+✓ **Verificación:** Tabla completa con tipo y origen de cada marcador
 
 ---
 
-## Entrega
+## INSERTA · MARCADORES Y PRUEBA MANUAL
 
-- Plantilla con 6 slides y marcadores insertados
-- Tabla de parámetros con 18-20 marcadores clasificados
-- Prueba manual en al menos 1 slide
+*Valida visualmente con datos reales*
 
-### Próxima clase: Make básico (sin IA)
+**25 min · Individual**
+
+### QUÉ HACER
+
+1. Reemplaza textos por `{{marcadores}}`
+2. Inserta gráfico vinculado al Sheet
+3. Prueba manual: reemplaza 3-4 con datos reales
+4. Ajusta diseño si hace falta
+
+✓ **Verificación:** Plantilla con marcadores + prueba visual OK
+
+---
+
+## LO QUE TE LLEVAS HOY
+
+*Los artefactos que construiste hoy*
+
+**01** Plantilla de Slides con 6 slides diseñadas
+
+**02** Tabla de parámetros con 18-20 marcadores
+
+**03** Marcadores insertados y probados
+
+**04** Gráfico vinculado al Sheet
+
+### PRÓXIMA SESIÓN
+
+Sesión 4: Conectaremos Gmail + Sheets + Slides con Make usando Instant Trigger. Los marcadores tipo 1 y 2 se llenarán automáticamente.

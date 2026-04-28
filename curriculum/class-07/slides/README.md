@@ -1,157 +1,139 @@
 <!-- .slide: data-background="#0A192F" -->
-# Clase 07: Tu proyecto propio
-## El sistema deja de ser de Roberto y se vuelve tuyo
+
+# SESIÓN 7
+## TU PROYECTO PROPIO
+
+Construye el sistema para TU caso real
+
+*2.5 horas · IA estratégica para Profesionales*
 
 ---
 
-## TRANSICIÓN: Clase 06 → Clase 07
+## QUÉ VAMOS A LOGRAR
 
-### Clase anterior:
-- Prompts optimizados con persona + few-shot + CoT
-- 4 mejores prácticas aplicadas
-- Plan de personalización con 5 puntos listo
+*Aprendizaje esperado · Puntos clave · Evaluación*
 
-### Hoy:
-- Acompañamiento 1 a 1 del instructor
-- Construís TU sistema con TUS datos reales
-- La arquitectura se queda, el cerebro cambia
+### APRENDIZAJE ESPERADO
 
-> "La habilidad más valiosa del curso: transferir patrones a contextos nuevos."
+Aplica el sistema aprendido al caso real de su trabajo construyendo un reporte automático personalizado con sus datos, métricas y formato de marca.
 
----
+### PUNTOS CLAVE
 
-## QUIZ PRE-LAB
+1. Sheet personalizado con 3 pestañas
+2. Plantilla de Slides con TU marca
+3. Duplicar flujos con prompts propios
+4. Validar end-to-end con datos reales
+5. Sistema listo para presentar
 
-### Pregunta:
+### EVALUACIÓN
 
-Si tuvieras que escribir el SystemPrompt de TU caso en este momento, ¿qué palabra clave incluirías que NO está en el de Roberto?
-
-*Toma 2-3 respuestas. Es calentamiento para la personalización.*
-
----
-
-## COMPROBACIÓN
-
-### Pregunta (después de la demo):
-
-Viste cómo el Escenario 2 se duplica vía Export/Import Blueprint. ¿Qué DEBE reconfigurarse después de importar el duplicado?
-
-A. Nada — queda idéntico al original
-B. Las conexiones (apuntan al Sheet/Slides nuevos) y los prompts (tu caso)
-C. Solo las conexiones, los prompts se mantienen
-D. Solo los prompts, las conexiones se mantienen
+- Sheet con datos propios
+- Slides con tu marca
+- 2 flujos personalizados
+- Reporte PDF con datos reales
 
 ---
 
-## COMPROBACIÓN - Respuesta
+## Apertura · 5 min
 
-**Respuesta correcta:** B
+### Hoy construyes TU sistema
 
-**Análisis de opciones:**
-- **A:** Falso. El blueprint copia estructura pero apunta al Sheet/Slides originales.
-- **B:** Correcto. Conexiones = a qué Sheet/Slides lee/escribe (debe ser tu v2). Prompts = contexto de Gemini (debe ser tu industria).
-- **C:** Incompleto — si mantenés los prompts de Roberto, Gemini genera insights de ventas B2B aunque vos hagas marketing.
-- **D:** Incompleto al revés — si las conexiones apuntan al Sheet viejo, no procesás tus datos.
+**01 · QUÉ**
+Comparte en 1 línea lo que construirás hoy
+Todos responden.
 
-> **Clave:** Duplicar un escenario = copiar el esqueleto. Adaptás los órganos después.
+**02 · DATOS**
+¿Tienes datos reales listos?
+Sí / No
 
----
-
-## CHECKPOINT Actividad 1: Sheet personalizado con datos reales
-
-### Verificar:
-Cada estudiante muestra su Sheet v2.
-
-**¿Qué debe verse?**
-- Pestañas con nombres de su caso (no `VentasSemanaActual` literal si no es ventas)
-- Columnas específicas de su industria
-- Datos reales (o simulados realistas) en las 3 pestañas
-- Rangos nombrados actualizados
-
-**Problemas comunes:**
-- Sheet copiado pero sin renombrar pestañas → "solo cambiaste el nombre del archivo"
-- Datos del caso Roberto todavía presentes → limpiar filas de ejemplo
+**03 · MARCA**
+¿Tienes logo y colores?
+Tráelos a mano.
 
 ---
 
-## CHECKPOINT Actividad 2: Slides con marca + 2 escenarios duplicados
+## CÓMO ADAPTAR UN SISTEMA MODELO
 
-### Verificar:
-Plantilla v2 + 2 escenarios v2 visibles en Make.
+*Los 5 puntos críticos de personalización*
 
-**¿Qué debe verse?**
-- Logo, colores y tipografías propias en Slides
-- Marcadores renombrados (o razonables) según caso
-- Escenarios v2 activos y apuntando al Sheet/Slides v2
-- Prompts del HTTP mencionan tu industria
+**5 min · Teoría**
 
-**Problemas comunes:**
-- Escenario v2 sigue apuntando al Sheet viejo → actualizar Search Rows y Add a row
-- Prompt de Gemini dice "ventas" aunque el caso es marketing → personalizar el SystemPrompt
+1. Datos de entrada (qué recolectas)
+2. Estructura del Sheet (columnas propias)
+3. Plantilla de Slides (tu marca)
+4. Prompts de Gemini (tu contexto)
+5. Destinatarios y frecuencia
 
----
-
-## CHECKPOINT Actividad 3: Validación end-to-end con datos reales
-
-### Verificar:
-PDF generado con datos reales del estudiante.
-
-**¿Qué debe verse?**
-- Logo propio en portada
-- Marcadores llenos con datos reales (no simulados)
-- Insights tipo IA mencionando nombres/métricas específicas a tu caso
-- Diseño visual respetado
-
-**Problemas comunes:**
-- Insights siguen genéricos → el SystemPrompt del Escenario 2 no se actualizó
-- Replace Text no funciona → marcadores renombrados en Slides pero viejos en Make
-- PDF desbordado → ajustar tamaños de texto (Gemini puede generar respuestas largas)
+Debug: Run this module only + ver log
 
 ---
 
-## REFLEXIÓN: Lo que cambia vs lo que se queda
+## CONSTRUYE · TU SHEET CON 3 PESTAÑAS
 
-| Se queda | Cambia |
-|----------|--------|
-| Arquitectura (Gmail → Sheet → Slides → PDF → Gmail) | Nombres de pestañas y columnas |
-| Patrón de 3 pestañas | Columnas específicas |
-| Estructura de prompt (Persona + Contexto + Reglas + Ejemplo) | Contenido de cada bloque |
-| 4 mejores prácticas | Marca y destinatarios |
+*Duplica y personaliza con datos reales (acompañamiento 1 a 1)*
 
-> **Regla memorable:** "El patrón se queda. El contenido cambia. Esa es la transferencia."
+**50 min · Individual**
 
----
+### QUÉ HACER
 
-## TRANSICIÓN: Preview Clase 08
+1. Duplica Sheet modelo del curso
+2. Renombra columnas según TU caso
+3. Adapta Config con TUS parámetros reales
+4. Llena Historico con 2-3 semanas reales
+5. Crea rangos nombrados
 
-### Hoy lograste:
-- Sistema propio funcionando con datos reales
-- Marca aplicada en Slides
-- Prompts adaptados a tu industria
-- PDF del reporte llegando a tu correo
-
-### Próxima clase:
-- Demo Day — presentás tu sistema en 5 min
-- Cálculo de ROI (horas × tarifa)
-- Plan 30 días con 3 próximas automatizaciones
-- Cierre del curso
+✓ **Verificación:** Sheet con 3 pestañas y datos propios
 
 ---
 
-## Preguntas de Cierre
+## CONSTRUYE · SLIDES + FLUJOS PERSONALIZADOS
 
-1. ¿Qué parte de la transferencia fue más fácil de lo que esperabas? ¿Cuál más difícil?
+*Adapta plantilla y flujos a tu caso*
 
-2. Si ajustás tu sistema 1 hora cada mes, ¿cuánto tiempo te ahorrará al año? Haz la cuenta rápida.
+**50 min · Individual**
 
-3. ¿Qué demo de 2 minutos vas a preparar para la Clase 8 que muestre el impacto más claro?
+### QUÉ HACER
+
+1. Duplica plantilla Slides modelo
+2. Aplica tu logo, colores, tipografía
+3. Renombra marcadores según TU caso
+4. Duplica los 2 flujos de Make
+5. Reemplaza prompts con los tuyos
+
+✓ **Verificación:** Flujos propios funcionando con tu estructura
 
 ---
 
-## Entrega
+## VALIDA · END-TO-END CON DATOS REALES
 
-- Screenshots de Sheet v2, Slides v2, 2 escenarios v2
-- PDF del reporte con datos reales
-- Sistema listo para Demo Day
+*Prueba el sistema completo y ajusta*
 
-### Próxima clase: Demo Day + ROI + Plan 30 días
+**20 min · Individual**
+
+### QUÉ HACER
+
+1. Envía 3 correos de prueba con datos reales
+2. Verifica que el Sheet se actualiza
+3. Ejecuta Run once del flujo semanal
+4. Revisa PDF: marcadores, insights, diseño
+5. Activa scheduled con tu frecuencia real
+
+✓ **Verificación:** Sistema propio funcionando con datos reales
+
+---
+
+## LO QUE TE LLEVAS HOY
+
+*Los artefactos que construiste hoy*
+
+**01** Sheet personalizado con tus datos
+
+**02** Plantilla de Slides con tu marca
+
+**03** 2 flujos de Make personalizados activos
+
+**04** Reporte PDF llegando a tu correo
+
+### PRÓXIMA SESIÓN
+
+Sesión 8: Demo Day. Presentación 5 min frente al grupo + cálculo de ROI + plan 30 días con 3 próximos agentes.

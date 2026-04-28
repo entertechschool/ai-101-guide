@@ -1,153 +1,139 @@
 <!-- .slide: data-background="#0A192F" -->
-# Clase 05: Gemini API + 2 flujos completos
-## La IA entra al sistema — clase bisagra del curso
+
+# SESIÓN 5
+## GEMINI API + DOS FLUJOS
+
+Sistema modelo completo con IA funcionando
+
+*2.5 horas · IA estratégica para Profesionales*
 
 ---
 
-## TRANSICIÓN: Módulo 1 → Módulo 2
+## QUÉ VAMOS A LOGRAR
 
-### Módulo 1 (Clases 1-4):
-- Gem + brief + Sheet + Slides + 2 flujos en Make
-- Sistema end-to-end **sin IA** en el flujo
-- Marcadores tipo IA nombrados pero **vacíos**
+*Aprendizaje esperado · Puntos clave · Evaluación*
 
-### Hoy (bisagra al Módulo 2):
-- Gemini API entra al flujo vía módulo HTTP
-- Los marcadores tipo 3 dejan de estar vacíos
-- Los dos escenarios quedan activos 24/7
+### APRENDIZAJE ESPERADO
 
-> "Hasta hoy movías datos. Desde hoy, el sistema piensa."
+Integra la Gemini API gratuita en Make para extraer datos estructurados desde texto libre y deja funcionando dos flujos: recolección instantánea (correo → Gemini → Sheet) y reporte semanal (Sheet → Gemini → Slides → PDF).
 
----
+### PUNTOS CLAVE
 
-## QUIZ PRE-LAB
+1. Obtener API key de Gemini gratuita
+2. Extraer datos desde correos con IA
+3. Generar insights con IA (marcadores tipo 3)
+4. Cerrar flujo instantáneo con confirmación
+5. Activar flujo semanal scheduled + Historico
 
-### Pregunta:
+### EVALUACIÓN
 
-Cuando leés un correo informal de un vendedor ("Hola, hoy Juan cerró con Industrias López por 3500 soles..."), ¿qué "datos" extraes mentalmente sin pensarlo?
-
-*Toma 2-3 respuestas. Eso es exactamente lo que Gemini hará hoy.*
+- Sistema modelo completo funcionando
+- Flujo instantáneo activo
+- Flujo semanal scheduled
 
 ---
 
-## COMPROBACIÓN
+## Apertura · 10 min
 
-### Pregunta (después de la demo):
+### Del texto libre al sistema activo
 
-Viste el primer test de la API. ¿Qué pasa si Gemini responde un texto que NO es JSON válido (ej: agrega un párrafo introductorio)?
+**01 · DEMO INICIAL**
+Correo informal → JSON en 5 seg
+Observa la magia de la IA.
 
-A. Parse JSON lanza error y el flujo se detiene
-B. Parse JSON salta el texto intro y procesa solo el JSON
-C. Make convierte automáticamente cualquier respuesta a JSON
-D. Gemini nunca responde nada que no sea JSON válido
+**02 · TU META HOY**
+Salir con sistema modelo completo
+funcionando 24/7.
 
----
-
-## COMPROBACIÓN - Respuesta
-
-**Respuesta correcta:** A
-
-**Análisis de opciones:**
-- **A:** Correcto. Parse JSON espera un JSON puro; si recibe "Claro, aquí está: {...}" da error. Solución: prompt más estricto ("responde SOLO JSON, sin texto adicional").
-- **B:** Falso. Parse JSON no es inteligente — falla si hay ruido.
-- **C:** Falso. Make no "arregla" respuestas.
-- **D:** Falso. Gemini a veces agrega prosa; por eso hay que ser explícito en el prompt.
-
-> **Clave:** La palabra mágica del prompt es "SOLO JSON, sin texto adicional."
+**03 · EXPERIENCIA**
+¿Has escuchado de APIs?
+Sí / No / Más o menos
 
 ---
 
-## CHECKPOINT Actividad 1: Gemini extrae datos de correos
+## API, HTTP Y JSON
 
-### Verificar:
-Cada estudiante envía 3 correos informales y muestra el Sheet.
+*El idioma que entiende Make con Gemini*
 
-**¿Qué debe verse?**
-- 3 filas nuevas con todos los campos llenos
-- Datos coherentes aunque los correos tengan formatos distintos
-- Columna Descripción con resumen en 1 línea generado por Gemini
+**15 min · Teoría**
 
-**Problemas comunes:**
-- Parse JSON falla → prompt no fue estricto, agregar "responde SOLO en JSON"
-- Campos vacíos → el correo no menciona ese dato; Gemini dejó null (OK)
-- API key no funciona → verificar que se copió sin espacios, proyecto activo en AI Studio
+- API = interfaz entre programas (analogía: mozo en restaurante)
+- HTTP request POST → envías datos a Gemini
+- Response → recibes la respuesta
+- **API Key:** tu contraseña (nunca compartirla)
+- **JSON:** estructura `{clave: valor}` y listas `[]`
+- Plan gratuito Gemini: 1,500 requests/día
 
 ---
 
-## CHECKPOINT Actividad 2: Marcadores tipo IA llenos
+## OBTÉN + EXTRAE · API KEY Y EXTRACCIÓN CON GEMINI
 
-### Verificar:
-Cada estudiante corre Run once del Escenario 2 y muestra el PDF.
+*Configura Gemini API y convierte texto libre en JSON*
 
-**¿Qué debe verse?**
-- Al menos 3 marcadores tipo IA con texto coherente (no `{{hallazgo_1}}` literal)
-- Texto específico a los datos del Sheet (menciona nombres, números)
-- Formato PDF intacto (no desbordamiento por textos largos de Gemini)
+**45 min · Individual**
 
-**Problemas comunes:**
-- Marcadores siguen literales → Replace Text no está mapeado al Parse JSON correcto
-- Textos demasiado largos → agregar al prompt "máximo 25 palabras por campo"
-- Gemini devuelve español con errores → agregar al prompt "responde en español latinoamericano"
+### QUÉ HACER
 
----
+1. Google AI Studio → Get API key
+2. En Make agrega módulo HTTP con la key
+3. Modifica flujo sesión 4: Gmail → Gemini → Sheets
+4. Prompt: extraer ventas en JSON estructurado
+5. Prueba con 3 correos informales distintos
 
-## CHECKPOINT Actividad 3: Scheduled + Historico activos
-
-### Verificar:
-Ambos escenarios con toggle "On".
-
-**¿Qué debe verse?**
-- Escenario 1: Instant trigger activo, icono verde
-- Escenario 2: Scheduled viernes 4pm, próxima ejecución visible
-- Historico con fila nueva después del Run once
-
-**Problemas comunes:**
-- Scheduled no se activa → revisar zona horaria del escenario
-- Historico no recibe fila → módulo Add a row al final no está conectado al flujo principal
+✓ **Verificación:** Correo informal → filas bien estructuradas en Sheet
 
 ---
 
-## REFLEXIÓN: Consumo de operaciones con IA
+## GENERA + CIERRA · INSIGHTS + FLUJO INSTANTÁNEO
 
-| Escenario | Ops sin IA | Ops con IA | Mensuales (plan free) |
-|-----------|-----------|-----------|----------------------|
-| Captura correos (por correo) | 2 | 4 | ~240 correos/mes |
-| Reporte semanal | 12 | 18 | ~55 reportes/mes |
+*Gemini analiza datos y cierra la recolección con confirmación*
 
-> **Regla memorable:** "Agregar IA cuesta 2-6 ops extra — mínimo comparado con el valor que agrega."
+**40 min · Individual**
 
----
+### QUÉ HACER
 
-## TRANSICIÓN: Preview Clase 06
+1. En flujo semanal: HTTP a Gemini con datos del Sheet
+2. Prompt JSON: resumen, hallazgos, riesgos, oportunidad
+3. Mapea cada campo al marcador de Slides
+4. En flujo instantáneo: agrega confirmación al vendedor
+5. Activa el flujo instantáneo (botón de activación)
 
-### Hoy lograste:
-- API key de Gemini configurada
-- 2 escenarios activos con IA
-- Marcadores tipo 3 llenos automáticamente
-- Sistema modelo completo 24/7
-
-### Próxima clase:
-- Optimizar prompts con chain-of-thought, few-shot, persona
-- Comparar insights "planos" vs "potentes"
-- Aplicar 4 mejores prácticas del sistema
-- Definir plan de personalización para TU caso
+✓ **Verificación:** Flujo instantáneo activo + insights generados
 
 ---
 
-## Preguntas de Cierre
+## ACTIVA · FLUJO SEMANAL SCHEDULED + HISTORICO
 
-1. De los insights que Gemini generó, ¿cuál te pareció más útil? ¿Cuál más plano?
+*Cierra el sistema modelo completo*
 
-2. Si comparás el reporte de hoy con cómo lo armabas a mano antes del curso, ¿qué tiempo calcularías que ahorras por reporte?
+**30 min · Individual**
 
-3. ¿Qué marcador tipo IA crees que se beneficiará más de un prompt optimizado en Clase 6?
+### QUÉ HACER
+
+1. Cambia trigger manual a Scheduled viernes 4pm
+2. Al final del flujo: Sheets — Add a row (Historico)
+3. Asunto del correo generado por IA
+4. Activa scheduled trigger
+5. Run once para verificar funcionamiento completo
+
+✓ **Verificación:** Sistema modelo completo: 2 flujos activos con IA
 
 ---
 
-## Entrega
+## SISTEMA MODELO COMPLETO FUNCIONANDO
 
-- Screenshots de ambos escenarios activos con módulos visibles
-- PDF con marcadores tipo IA llenos
-- Historico con fila nueva del test
+*Los artefactos que construiste hoy*
 
-### Próxima clase: Integración total + mejores prácticas
+**01** API key de Gemini configurada y funcionando
+
+**02** Flujo instantáneo activo: recolección 24/7
+
+**03** Flujo semanal scheduled: reporte automático cada viernes
+
+**04** Todos los marcadores conectados (tipo 1, 2 y 3)
+
+**05** Historico acumulándose solo
+
+### PRÓXIMA SESIÓN
+
+Sesión 6: Optimizamos prompts para storytelling de datos + mejores prácticas + definimos puntos de personalización para tu proyecto propio.

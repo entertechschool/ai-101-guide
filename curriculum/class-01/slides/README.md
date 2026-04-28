@@ -1,150 +1,148 @@
 <!-- .slide: data-background="#0A192F" -->
-# Clase 01: Prompts y Gems
-## Diseña prompts profesionales y crea tu asistente del curso
+
+# SESIÓN 1
+## PROMPTS Y GEMS
+
+Diseña prompts efectivos y crea tu Gem asistente del curso
+
+*2.5 horas · IA estratégica para Profesionales*
 
 ---
 
-## TRANSICIÓN: Bienvenida → Primera clase
+## QUÉ VAMOS A LOGRAR
 
-### Antes de este curso:
-- Usabas IA para tareas sueltas (ChatGPT, Gemini)
-- Cada vez empezabas de cero: repetías contexto, copiabas instrucciones
+*Aprendizaje esperado · Puntos clave · Evaluación*
 
-### Hoy:
-- Aprendes la estructura que cambia 10x los resultados
-- Dejas listo un asistente personalizado con el contexto de TU proyecto
+### APRENDIZAJE ESPERADO
 
-> "Un buen prompt no describe lo que quieres — describe a quién debe convertirse la IA."
+Diseña prompts efectivos y configura Proyectos (Gems) personalizados en Gemini con instrucciones y archivos de referencia para mantener contexto profesional persistente.
 
----
+### PUNTOS CLAVE
 
-## QUIZ PRE-LAB
+1. Estructura rol + contexto + tarea + formato + restricciones
+2. Iterar un prompt hasta el resultado esperado
+3. Definir el brief del proyecto de instrucción
+4. Crear un Gem personalizado con archivos
+5. Utilizar el Gem durante todo el curso
 
-### Pregunta:
+### EVALUACIÓN
 
-¿Por qué la IA "alucina" (inventa datos que suenan creíbles)?
-
-*Toma 2-3 respuestas del grupo antes de avanzar.*
-
----
-
-## COMPROBACIÓN
-
-### Pregunta (después de la demo):
-
-Acabas de ver 3 variaciones del prompt "Escribe sobre productividad". ¿Cuál es el elemento que MÁS cambia la calidad del resultado?
-
-A. Pedir que la IA sea "experta" (Rol)
-B. Explicar tu contexto específico
-C. Definir el formato (lista numerada, número de palabras)
-D. Los 3 juntos — ningún elemento solo es suficiente
+- Brief del proyecto escrito (1 párrafo)
+- Gem funcionando con archivo cargado
+- 3 prompts de la Actividad 1
 
 ---
 
-## COMPROBACIÓN - Respuesta
+## Apertura · 15 min
 
-**Respuesta correcta:** D
+### 3 preguntas para empezar
 
-**Análisis de opciones:**
-- **A:** El Rol solo ayuda si viene con contexto. "Actúa como doctor" sin más no es útil.
-- **B:** El Contexto por sí solo da información pero no dirige el resultado.
-- **C:** El Formato solo restringe la salida pero no la enfoca en lo que importa.
-- **D:** Los 3 elementos combinados es lo que transforma una respuesta genérica en una útil. Agregando Tarea y Restricciones se completa el prompt profesional.
+**01 · USO ACTUAL**
+¿Cuántas veces al mes usas IA?
+Responde en el chat: 0, 1-5, 5-20, 20+
 
-> **Clave:** Rol + Contexto + Tarea + Formato + Restricciones. Falta alguno y la calidad cae.
+**02 · EXPECTATIVA**
+¿Qué esperas que la IA te solucione?
+Escribe tu expectativa en el chat.
 
----
-
-## CHECKPOINT Actividad 1: 3 prompts del mismo tema
-
-### Verificar:
-Cada estudiante muestra 3 pestañas de Gemini abiertas.
-
-**¿Qué debe verse?**
-- Conversación 1: prompt genérico (Rol + Tarea) con respuesta corta
-- Conversación 2: agregado Contexto, respuesta más específica
-- Conversación 3: Formato + Restricciones, respuesta directamente usable
-
-**Problemas comunes:**
-- Variaciones casi iguales → el estudiante no cambió suficiente entre versiones
-- Respuestas de Gemini parecidas → refinar las restricciones (ser más exigente con el formato)
+**03 · REALIDAD**
+¿Cuál es la tarea que más tiempo te quita?
+La usaremos en la Actividad 2.
 
 ---
 
-## CHECKPOINT Actividad 2: Brief en Google Doc
+## CÓMO FUNCIONA LA IA
 
-### Verificar:
-Google Doc con 1 párrafo usando la plantilla de 4 elementos.
+*Tokens, probabilidad y alucinaciones*
 
-**¿Qué debe verse?**
-- Tipo de reporte específico (no "un reporte cualquiera")
-- Frecuencia explícita (semanal, mensual)
-- Destinatario real (persona, cargo)
-- Tiempo estimado ahorrado (cuantificado)
+**10 min · Teoría**
 
-**Problemas comunes:**
-- "Quiero automatizar mi trabajo" → demasiado genérico, pedir detalles
-- No mencionar destinatario → sin este dato, los prompts del Módulo 2 no tendrán contexto
+- La IA no 'piensa', predice la siguiente palabra probable
+- Entrenada con millones de textos (libros, artículos, web)
+- Token = aprox. 3/4 de palabra en español
+- Los planes gratuitos tienen límites por tokens
+- Por eso a veces alucina — aprende a detectarla
 
 ---
 
-## CHECKPOINT Actividad 3: Gem respondiendo con contexto
+## ANATOMÍA DE UN PROMPT PROFESIONAL
 
-### Verificar:
-Cada estudiante muestra su Gem respondiendo "Resume mi brief en una línea".
+*La estructura que cambia 10x los resultados*
 
-**¿Qué debe verse?**
-- Nombre del Gem visible en la parte superior
-- Respuesta mencionando el proyecto específico (no uno genérico)
-- Al menos 1 archivo de referencia cargado (visible en la configuración del Gem)
+**10 min · Teoría**
 
-**Problemas comunes:**
-- El Gem responde genérico → instrucciones no incluyeron el brief completo
-- Archivo no se subió → verificar tamaño/formato permitido por Gemini
+- **ROL** — Quién debe ser la IA
+- **CONTEXTO** — Para qué lo necesitas
+- **TAREA** — Qué quieres exactamente
+- **FORMATO** — Cómo quieres la respuesta
+- **RESTRICCIONES** — Qué debe evitar
 
 ---
 
-## REFLEXIÓN: Prompt genérico vs profesional
+## DISEÑA · TU PRIMER PROMPT PROFESIONAL
 
-| Aspecto | Prompt genérico | Prompt profesional |
-|---------|-----------------|--------------------|
-| **Salida** | Texto que sirve a cualquiera | Texto que sirve a TU caso |
-| **Iteraciones** | 5-8 intentos | 1-2 intentos |
-| **Tiempo total** | 15 min + decepción | 3 min + resultado usable |
-| **Aprendizaje** | La IA "no me entiende" | "Yo no expliqué bien qué quería" |
+*Mejora un prompt genérico aplicando la estructura*
 
-> **Regla memorable:** "La IA no adivina tu contexto. Dárselo es trabajo tuyo."
+**35 min · Individual**
 
----
+### QUÉ HACER
 
-## TRANSICIÓN: Preview Clase 02
+1. Toma el prompt genérico 'Escribe sobre productividad'
+2. Crea 3 variaciones aplicando la estructura profesional
+3. Prueba las 3 en Gemini y observa diferencias
+4. Identifica qué parte tuvo más impacto
 
-### Hoy lograste:
-- 3 prompts profesionales probados
-- Brief de tu proyecto de instrucción escrito
-- Gem asistente configurado con archivo
-
-### Próxima clase:
-- Diseñar el Google Sheet del proyecto con 3 pestañas
-- Tu Gem sugerirá columnas, filas de ejemplo y parámetros
-- Primera pieza de datos del sistema
+✓ **Verificación:** 3 prompts + resultados listos para mostrar
 
 ---
 
-## Preguntas de Cierre
+## DEFINE · TU PROYECTO DE INSTRUCCIÓN
 
-1. ¿En qué tarea de tu trabajo aplicarás la estructura de prompt profesional esta semana?
+*Escribe el brief del sistema que vas a construir*
 
-2. ¿Cómo cambiaría tu flujo actual si pudieras delegar algo al Gem que hiciste hoy?
+**35 min · Individual**
 
-3. ¿Qué pieza de tu reporte crees que será más fácil de automatizar? ¿Y cuál la más difícil?
+### QUÉ HACER
+
+1. Piensa qué reporte semanal podrías automatizar
+2. Escribe 1 párrafo: qué reporte, quién lo recibe, qué datos
+3. Usa plantilla: 'Automatizar X dirigido a Y con Z'
+4. Comparte tu brief con el grupo
+
+✓ **Verificación:** Brief claro en un Google Doc
 
 ---
 
-## Entrega
+## CREA · TU GEM ASISTENTE DEL CURSO
 
-- Brief en Google Doc (carpeta "Proyecto de Instrucción")
-- Gem funcionando con nombre, instrucciones y archivo de referencia
-- Screenshot del Gem respondiendo "Resume mi brief en una línea"
+*El asistente que te acompañará las 8 sesiones*
 
-### Próxima clase: Google Sheets con IA
+**40 min · Individual**
+
+### QUÉ HACER
+
+1. Entra a Gemini → Gems → Nuevo Gem
+2. Nombre: 'Asistente de mi proyecto'
+3. Pega tu brief en instrucciones + define rol
+4. Sube 1 archivo de referencia
+5. Prueba pidiendo que resuma tu brief
+
+✓ **Verificación:** Gem funcionando con archivo cargado
+
+---
+
+## LO QUE TE LLEVAS HOY
+
+*Los artefactos que construiste hoy*
+
+**01** Tu Gem personalizado listo para acompañarte las 8 sesiones
+
+**02** Un brief claro del proyecto que vas a construir
+
+**03** Dominio de la estructura ROL+CONTEXTO+TAREA+FORMATO+RESTRICCIONES
+
+**04** Biblioteca inicial de 3 prompts profesionales
+
+### PRÓXIMA SESIÓN
+
+Sesión 2: Diseñaremos el Google Sheet del proyecto con 3 pestañas. Tu Gem nos ayudará a estructurar los datos.
