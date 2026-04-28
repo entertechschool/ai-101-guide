@@ -20,10 +20,9 @@ Después cada uno calcula su **ROI** en soles: horas ahorradas × tarifa × 4 se
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Empezarás con el test diagnóstico del Módulo 2** - 15 min de preguntas sobre todo lo aprendido en M2.
-2. **Presentarás tu demo en vivo (5 min)** - Estructura PSDR con correo real disparando tu sistema.
-3. **Calcularás tu ROI personal** - Horas ahorradas × tarifa × 4 × 12 = tu argumento en números.
-4. **Definirás tu plan 30 días con 3 agentes** - Las 3 próximas automatizaciones priorizadas con principio 80/20.
+1. **Presentarás tu demo en vivo (5 min)** - Estructura PSDR con correo real disparando tu sistema.
+2. **Calcularás tu ROI personal** - Horas ahorradas × tarifa × 4 × 12 = tu argumento en números.
+3. **Definirás tu plan 30 días con 3 agentes** - Las 3 próximas automatizaciones priorizadas con principio 80/20.
 
 ---
 

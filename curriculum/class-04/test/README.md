@@ -1,6 +1,6 @@
 # Test Módulo 1: Piezas del Sistema
 
-**Duración:** 15 min | **Preguntas:** 8 | **Formato:** Opción múltiple
+**Duración:** 10 min | **Preguntas:** 5 | **Formato:** Opción múltiple
 
 ---
 
@@ -15,9 +15,10 @@ Se aplica al final de la Clase 4, después de completar el lab calificado.
 ## Instrucciones
 
 - Individual y a libro cerrado (no abras Gemini, Make ni tu Sheet)
-- 15 minutos máximo
-- 8 preguntas de opción múltiple
-- Responde lo que crees correcto; no adivines al azar (deja en blanco si dudas mucho)
+- 10 minutos máximo
+- 5 preguntas de opción múltiple
+- Cada pregunta integra los conceptos centrales de su clase — no hay relleno
+- Responde lo que crees correcto; deja en blanco si dudas mucho
 
 ---
 
@@ -25,11 +26,11 @@ Se aplica al final de la Clase 4, después de completar el lab calificado.
 
 | # | Clase | Tema |
 |---|-------|------|
-| 1-2 | Clase 01 | Prompts profesionales y Gems |
-| 3-4 | Clase 02 | Arquitectura de 3 pestañas y rangos nombrados |
-| 5 | Clase 03 | Clasificación de marcadores |
-| 6-7 | Clase 04 | Make (Instant vs Scheduled, operaciones) |
-| 8 | Integración | Cómo conectan las piezas del M1 |
+| 1 | Clase 01 | Prompts profesionales y Gems como contexto persistente |
+| 2 | Clase 02 | Arquitectura Config + rangos nombrados |
+| 3 | Clase 03 | Clasificación de marcadores (crudo/calculado/IA) |
+| 4 | Clase 04 | Instant vs Scheduled + consumo de operaciones |
+| 5 | Integración M1 | Tabla de parámetros como mapa del sistema |
 
 Ver preguntas en `questions.md`.
 
@@ -37,11 +38,11 @@ Ver preguntas en `questions.md`.
 
 ## Qué pasa después
 
-El instructor revisa los resultados agregados (sin nombres) y:
+El instructor revisa los resultados agregados (sin nombres) al inicio de la Clase 5:
 
-- **>80% acierto en una pregunta:** tema dominado, se celebra.
-- **60-80%:** tema a reforzar brevemente en Clase 5.
-- **<60%:** tema que se retoma en detalle en Clase 5 antes de avanzar.
+- **>80% acierto en una pregunta:** tema dominado, se celebra y se avanza.
+- **60-80%:** tema a reforzar brevemente con un ejemplo en vivo en Clase 5.
+- **<60%:** tema que se retoma en detalle antes de introducir Gemini API.
 
 Los resultados individuales solo los ves tú (autoevaluación). No hay ranking.
 

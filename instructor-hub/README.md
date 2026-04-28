@@ -146,7 +146,6 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🖥️ Presentación | [Ver Slides 08](https://entertechschool.github.io/public/slides/?class=ai-101_08){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/infographic/){:target="_blank"} |
-| 📝 Test Diagnóstico M2 | [Ver Test 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/test/){:target="_blank"} |
 
 ---
 

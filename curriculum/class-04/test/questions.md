@@ -1,135 +1,96 @@
 # Test Módulo 1 - Questions
 
-**8 preguntas diagnósticas** | **Duración:** 15 min | **No afecta calificación**
+**5 preguntas diagnósticas** | **Duración:** 10 min | **No afecta calificación**
 
 ---
 
-## Pregunta 1 (Clase 01 — Prompts)
+## Pregunta 1 (Clase 01 — Prompts y Gems)
 
-Un prompt profesional bien estructurado incluye 5 elementos. ¿Cuál de los siguientes NO es uno de los 5?
+Un colega te dice: "Le pregunté a Gemini lo mismo 3 veces en chats distintos y siempre tengo que repetirle quién soy y qué hago. Es agotador." ¿Qué le falta a su flujo?
 
-A. Rol
-B. Contexto
-C. Temperature
-D. Restricciones
+A. Usar un modelo pago de Gemini
+B. Configurar un Gem con instrucciones y archivos de referencia persistentes
+C. Aplicar la estructura Rol + Contexto + Tarea + Formato + Restricciones
+D. Pasar a un servicio diferente (Claude o ChatGPT)
 
-> **Respuesta:** C. Temperature es un parámetro técnico de la API (lo verás en Clase 5), no parte de la estructura del prompt profesional.
-
----
-
-## Pregunta 2 (Clase 01 — Gems)
-
-¿Cuál es la ventaja principal de usar un Gem personalizado en vez del chat normal de Gemini?
-
-A. Los Gems tienen modelos más potentes que el chat normal
-B. Los Gems mantienen contexto fijo (instrucciones y archivos) sin repetirlo cada vez
-C. Los Gems no consumen tokens del plan gratuito
-D. Los Gems procesan más rápido las respuestas
-
-> **Respuesta:** B. Los Gems persisten las instrucciones y archivos de referencia — dejas de pegar el mismo contexto en cada conversación.
+> **Respuesta:** B. Un Gem persiste contexto fijo (instrucciones + archivos) — eliminás la repetición. Las opciones A y D no atacan el problema; la C ayuda en cada prompt individual pero no resuelve la repetición.
 
 ---
 
-## Pregunta 3 (Clase 02 — 3 pestañas)
+## Pregunta 2 (Clase 02 — Google Sheets con IA)
 
-¿Por qué conviene separar los parámetros del negocio (meta, vendedores) en una pestaña `Config` distinta a la pestaña operativa?
+Estás diseñando el Sheet de tu sistema. La meta semanal del negocio (S/ 20,000) y los nombres de los 3 vendedores aparecen en muchos cálculos. ¿Cuál es la decisión correcta de diseño?
 
-A. Porque Make lee más rápido cuando las pestañas están separadas
-B. Porque evita tener que editar la misma columna en 50 filas cuando cambia un parámetro
-C. Porque los gráficos solo funcionan con datos de Config
-D. Porque Gemini no puede leer pestañas mixtas
+A. Repetir esos valores en una columna de la pestaña operativa para que estén disponibles fila por fila
+B. Guardarlos en una pestaña `Config` y referenciarlos vía rangos nombrados desde donde haga falta
+C. Hardcodearlos en las fórmulas de Make para que sean inmutables
+D. Crear un archivo separado de Drive solo para parámetros
 
-> **Respuesta:** B. Un parámetro vive en una sola celda de Config — cambiarlo una vez actualiza todo. Sin esa separación, tocarías 50 filas.
-
----
-
-## Pregunta 4 (Clase 02 — Rangos nombrados)
-
-¿Cuál es el beneficio principal de usar un rango nombrado (`RangoVentas`) en Make en vez de coordenadas (`A1:G50`)?
-
-A. Los rangos nombrados son más rápidos de leer
-B. Make solo soporta rangos nombrados
-C. El flujo no se rompe si alguien agrega o reordena columnas del Sheet
-D. Los rangos nombrados consumen menos operaciones de Make
-
-> **Respuesta:** C. Robustez ante cambios. Si un compañero agrega una columna, `A:G` sigue leyendo G (perdiste info); `RangoVentas` se ajusta.
+> **Respuesta:** B. La separación operativa/Config + rangos nombrados es el corazón del Módulo 1. Cambiar la meta una vez actualiza todo el sistema. Sin esa separación, tocás 50 filas (A) o tenés que editar Make cada vez (C).
 
 ---
 
-## Pregunta 5 (Clase 03 — Tipos de marcadores)
+## Pregunta 3 (Clase 03 — Marcadores variables)
 
-El marcador `{{variacion_pct}}` que compara ventas de esta semana con la anterior, ¿de qué tipo es?
+Tu plantilla de Slides tiene estos 3 marcadores: `{{ventas_total}}`, `{{variacion_pct}}` y `{{hallazgo_1}}`. Para conectar el sistema en la Clase 4 y 5, necesitás saber el origen de cada uno. ¿Qué tipos son, en orden?
 
-A. Crudo (viene directo del Sheet)
-B. Calculado (Make lo calcula con módulo Math)
-C. Generado por IA (Gemini lo produce)
-D. Manual (se llena a mano antes de correr el flujo)
+A. Crudo · Crudo · Calculado
+B. Crudo · Calculado · Generado por IA
+C. Calculado · Calculado · Generado por IA
+D. Generado por IA · Crudo · Calculado
 
-> **Respuesta:** B. Hay 2 valores (ventas actual y anterior) y se calcula la variación — eso es tipo 2, calculado por Make.
-
----
-
-## Pregunta 6 (Clase 04 — Instant vs Scheduled)
-
-Para un sistema que recibe correos de ventas durante el día y debe actualizar el Sheet lo más rápido posible, ¿qué trigger es el correcto?
-
-A. Scheduled cada 1 hora
-B. Scheduled cada 5 minutos
-C. Instant Trigger
-D. Manual (Run once cada vez)
-
-> **Respuesta:** C. Instant reacciona en 2-5 segundos vs 1 hora o 5 min. Además consume ops solo cuando hay correo, no en cada revisión vacía.
+> **Respuesta:** B. `ventas_total` viene directo de una celda del Sheet (crudo). `variacion_pct` requiere fórmula sobre 2 valores (calculado por Make). `hallazgo_1` es un insight contextual (generado por Gemini).
 
 ---
 
-## Pregunta 7 (Clase 04 — Operaciones)
+## Pregunta 4 (Clase 04 — Make básico sin IA)
 
-Tu escenario semanal usa: Search Rows (1), Create from Template (1), 10 Replace Text (10), Export PDF (1), Send Email (1). ¿Cuántas operaciones consume por reporte?
+Tu escenario semanal en Make tiene: Search Rows (1) + Create from Template (1) + 10 Replace Text (10) + Export PDF (1) + Send Email (1). Para procesar correos en vivo durante el día, además necesitás un segundo escenario. ¿Qué configuración usás y por qué?
 
-A. 5
-B. 12
-C. 14
-D. 50
+A. El mismo escenario semanal con trigger Scheduled cada 5 minutos — total ~14 ops por corrida
+B. Un escenario separado con Instant Trigger de Gmail — reacciona en 2-5 segundos y consume ops solo cuando llega correo
+C. Un escenario separado con Scheduled cada hora — minimiza el consumo de operaciones
+D. El mismo escenario semanal pero corriendo manualmente cada vez que llega un correo
 
-> **Respuesta:** C. 1+1+10+1+1 = 14 ops por reporte. Con 1,000 ops/mes, eso son ~71 reportes máximos.
+> **Respuesta:** B. Instant es la única opción que reacciona en segundos sin desperdiciar operaciones. La C consume ops cada hora aunque no haya correos; la A duplica trabajo y revienta el plan free; la D no escala.
 
 ---
 
-## Pregunta 8 (Integración M1)
+## Pregunta 5 (Integración M1)
 
-Un estudiante llega a la Clase 5 con Gem configurado, Sheet con 3 pestañas y rangos nombrados, plantilla de Slides con 18 marcadores, pero SIN tabla de parámetros actualizada. ¿Qué problema específico va a tener?
+Llegás a la Clase 5 con: Gem configurado, Sheet con 3 pestañas y rangos nombrados, plantilla de Slides con 18 marcadores. PERO no actualizaste la tabla de parámetros desde la Clase 2. ¿Qué problema específico vas a tener al armar los prompts de Gemini API?
 
-A. Ninguno, la tabla es opcional
-B. No podrá conectar Gemini API en Make
-C. Tendrá que abrir 3 archivos distintos cada vez que quiera saber de dónde viene cada marcador
-D. Su plantilla de Slides no funcionará con Replace Text
+A. Ninguno — la tabla de parámetros es solo organización personal
+B. Make no podrá leer el Sheet sin la tabla
+C. Tendrás que abrir Sheet, Slides y notas mentales para rastrear de dónde viene cada marcador en cada prompt — lento y propenso a errores
+D. Los marcadores tipo IA no podrán generarse
 
-> **Respuesta:** C. La tabla de parámetros es el mapa unificado. Sin ella, cada vez que configuras un prompt para un marcador tipo IA, tenés que rastrear manualmente de qué celda del Sheet viene. Es lento y propenso a errores.
+> **Respuesta:** C. La tabla de parámetros es el mapa unificado del sistema. Sin ella, cada prompt de IA requiere rastrear el origen del marcador manualmente. El sistema sigue funcionando técnicamente, pero la productividad cae 3-5x.
 
 ---
 
 ## Clave de Respuestas Rápida
 
-| # | Respuesta | Tema |
-|---|-----------|------|
-| 1 | C | Estructura de prompt profesional |
-| 2 | B | Gems y contexto persistente |
-| 3 | B | Separación Config/Operativa |
-| 4 | C | Rangos nombrados |
-| 5 | B | Clasificación de marcadores |
-| 6 | C | Instant Trigger |
-| 7 | C | Conteo de operaciones |
-| 8 | C | Tabla de parámetros |
+| # | Respuesta | Clase | Tema |
+|---|-----------|-------|------|
+| 1 | B | C01 | Gems como contexto persistente |
+| 2 | B | C02 | Arquitectura Config + rangos nombrados |
+| 3 | B | C03 | Clasificación de marcadores (crudo/calculado/IA) |
+| 4 | B | C04 | Instant vs Scheduled + consumo de operaciones |
+| 5 | C | Integración | Tabla de parámetros como mapa del sistema |
 
 ---
 
 ## Análisis para el instructor
 
-Si hay <60% de acierto en:
+Si hay **<60% de acierto** en alguna pregunta, retomar el concepto al inicio de la Clase 5 antes de avanzar:
 
-- **Pregunta 1:** repasar anatomía del prompt en apertura de Clase 5
-- **Pregunta 2:** demo rápida del Gem en vivo al inicio de Clase 5
-- **Preguntas 3-4:** revisar estructura del Sheet antes de integrar Gemini API
-- **Pregunta 5:** retomar antes de que armen prompts tipo IA
-- **Preguntas 6-7:** consolidar conceptos de Make en pausa de Clase 5
-- **Pregunta 8:** hacer ejercicio rápido de completar tabla de parámetros en grupo
+- **Pregunta 1 (Gems):** demo rápida del Gem en vivo + revisar instrucciones de uno de los estudiantes en pantalla
+- **Pregunta 2 (Sheets):** ejercicio de "¿operativa o Config?" con 5 ejemplos en chat
+- **Pregunta 3 (Marcadores):** clasificar 5 marcadores en vivo con el grupo antes de armar prompts JSON
+- **Pregunta 4 (Make):** revisar 1 historial de ejecución del escenario instantáneo en pantalla — el "efecto WOW" en vivo refuerza el concepto
+- **Pregunta 5 (Integración):** dedicar 10 min al inicio de Clase 5 a completar/actualizar la tabla de parámetros con el grupo
+
+**Si el promedio del grupo es <70%:** considerar reorganizar la Clase 5 para empezar con un repaso integrador de M1 (15-20 min) antes de introducir Gemini API.
+
+**Si el promedio es >85%:** el grupo está sólido — avanzar directo con la API y aprovechar el tiempo extra para profundizar en optimización de prompts (anticipo de C06).

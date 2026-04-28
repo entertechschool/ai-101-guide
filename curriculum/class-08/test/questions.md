@@ -1,141 +1,96 @@
 # Test Módulo 2 - Questions
 
-**8 preguntas diagnósticas** | **Duración:** 15 min | **No afecta calificación**
+**5 preguntas diagnósticas** | **Duración:** 10 min | **No afecta calificación**
 
 ---
 
-## Pregunta 1 (Clase 05 — Gemini API)
+## Pregunta 1 (Clase 05 — Gemini API + JSON)
 
-¿Dónde va la API key de Gemini en una llamada HTTP desde Make?
+Configurás un módulo HTTP en Make para llamar a Gemini API. La llamada funciona pero el siguiente módulo Parse JSON falla con error "Invalid JSON". Revisás la respuesta y ves que empieza con: `Claro, aquí está tu JSON: {...}`. ¿Cuáles son los DOS arreglos que necesita la configuración?
 
-A. En los headers como `Authorization: Bearer YOUR_KEY`
-B. En el body JSON como `"api_key": "YOUR_KEY"`
-C. Al final de la URL como `?key=YOUR_KEY`
-D. En una variable de entorno separada
+A. Mover la API key del header al cuerpo + cambiar el modelo a Gemini Pro
+B. Poner la API key como `?key=YOUR_KEY` al final de la URL + agregar al prompt "responde SOLO JSON, sin markdown ni texto adicional"
+C. Aumentar el timeout del módulo HTTP + reducir el tamaño del prompt
+D. Cambiar el método HTTP de POST a GET + reformatear el JSON
 
-> **Respuesta:** C. Gemini API usa el formato `?key=YOUR_KEY` al final de la URL del endpoint.
-
----
-
-## Pregunta 2 (Clase 05 — JSON)
-
-El módulo Parse JSON de Make falla con error "Invalid JSON". ¿Cuál es la causa MÁS probable?
-
-A. La API key de Gemini caducó
-B. Gemini respondió con texto introductorio antes del JSON (ej: "Aquí está tu respuesta:")
-C. El prompt era demasiado largo
-D. La cuota diaria de 1,500 requests se agotó
-
-> **Respuesta:** B. Parse JSON es literal — si hay cualquier texto que no sea JSON puro al inicio, falla. Solución: agregar al prompt "responde SOLO JSON, sin markdown ni texto adicional".
+> **Respuesta:** B. Son los 2 fundamentos de Clase 5: la key va al final de la URL (no en headers tipo Bearer como otras APIs), y el prompt debe ser estricto para que Parse JSON no falle ante texto introductorio. Las otras opciones no atacan los problemas reales.
 
 ---
 
-## Pregunta 3 (Clase 06 — Prompt engineering)
+## Pregunta 2 (Clase 06 — Optimización + mejores prácticas)
 
-De estas 3 técnicas, ¿cuál aporta MÁS a reducir inconsistencia en la salida de Gemini?
+Tu sistema modelo en producción tiene insights "planos" ("las ventas subieron") y a veces falla silenciosamente cuando Gemini API se cae. ¿Cuál combinación de cambios resuelve AMBOS problemas a la vez?
 
-A. Chain of thought ("piensa paso a paso")
-B. Persona explícita ("eres analista senior")
-C. Few-shot (incluir 2 ejemplos de output deseado)
-D. Aumentar longitud del prompt general
+A. Cambiar al modelo Gemini Pro + aumentar el timeout del HTTP
+B. Reescribir el prompt con persona + few-shot + chain of thought, y agregar un error handler en modo "Resume" con alerta por correo
+C. Ejecutar el escenario más seguido para tener más datos
+D. Renombrar los marcadores con snake_case más descriptivo
 
-> **Respuesta:** C. Few-shot es la técnica más efectiva para consistencia — muestra a la IA exactamente qué tipo de output querés.
-
----
-
-## Pregunta 4 (Clase 06 — Mejores prácticas)
-
-Configuraste un error handler en modo "Resume" en el módulo HTTP a Gemini. ¿Qué pasa si ese módulo falla una vez?
-
-A. El escenario completo se detiene y se envía alerta
-B. El módulo se reintenta infinitamente hasta funcionar
-C. El escenario continúa con los módulos siguientes; el error handler ejecuta en paralelo
-D. Solo se envía la alerta, no se genera el reporte esa semana
-
-> **Respuesta:** C. "Resume" permite continuar después del error. El error handler envía la alerta, y el flujo sigue con los módulos posteriores.
+> **Respuesta:** B. Few-shot transforma insights planos en accionables (storytelling: dato + comparación + causa + acción). El error handler "Resume" deja que el flujo continúe y manda alerta — sin él, los fallos pasan inadvertidos. Las opciones A, C, D no atacan los 2 problemas mencionados.
 
 ---
 
-## Pregunta 5 (Clase 07 — Transferencia)
+## Pregunta 3 (Clase 07 — Transferencia y personalización)
 
-Duplicás un escenario de Make vía Export/Import Blueprint. Después de importar, ¿qué debe reconfigurarse ANTES de activar el escenario v2?
+Duplicás un escenario de Make vía Export/Import Blueprint para tu caso real. Lo activás sin cambiar nada y notás que: (1) escribe en el Sheet de Roberto en vez del tuyo, y (2) Gemini genera insights de ventas aunque tu caso es marketing. ¿Cuáles son los 2 ajustes mínimos para tu caso propio?
 
-A. Solo las conexiones a Sheet/Slides (apuntan a recursos nuevos)
-B. Solo los SystemPrompts (para adaptar a tu caso)
-C. Las conexiones Y los SystemPrompts
-D. Nada — el blueprint preserva todo automáticamente
+A. Reconectar las conexiones a tu Sheet/Slides v2 + reescribir el SystemPrompt del HTTP con tu industria y contexto
+B. Solo cambiar las credenciales de Make a tu cuenta personal
+C. Cambiar el nombre del escenario y la zona horaria
+D. Pagar el plan de Make Pro para evitar conflictos entre escenarios
 
-> **Respuesta:** C. El blueprint preserva la estructura, pero los recursos apuntan a los originales y hay que redireccionarlos. Además, el SystemPrompt del HTTP menciona el caso original.
-
----
-
-## Pregunta 6 (Clase 07 — Personalización)
-
-Los 5 puntos críticos de personalización al transferir el sistema al caso propio son:
-
-A. Datos + Sheet + Slides + Prompts + Destinatarios/frecuencia
-B. Marca + Colores + Tipografía + Logo + Paleta
-C. Gmail + Drive + Calendar + Meet + Chat
-D. Semana 1 + Semana 2 + Semana 3 + Semana 4 + Ajustes
-
-> **Respuesta:** A. Los 5 puntos son los elementos que cambian según el caso.
+> **Respuesta:** A. El Blueprint preserva la estructura del flujo, pero los recursos apuntan al original (problema 1) y los prompts mencionan el caso modelo (problema 2). Adaptar conexiones y prompts es el mínimo. Esto se conecta con los 5 puntos de personalización (datos, Sheet, Slides, prompts, destinatarios).
 
 ---
 
-## Pregunta 7 (Clase 08 — ROI)
+## Pregunta 4 (Clase 08 — ROI)
 
-Un estudiante ahorra 5 horas/semana con su sistema. Su tarifa efectiva es S/ 40/hora. ¿Cuál es su ROI ANUAL?
+Trabajás 160 horas al mes y ganás S/ 4,000 netos mensuales. Tu sistema te ahorra 5 horas a la semana. ¿Cuál es tu ROI ANUAL aplicando la fórmula del curso?
 
-A. S/ 200
-B. S/ 800
+A. S/ 800
+B. S/ 6,000
 C. S/ 9,600
-D. S/ 19,200
+D. S/ 25,000
 
-> **Respuesta:** C. Fórmula: 5 h/sem × S/ 40/h × 4 sem = S/ 800/mes. S/ 800 × 12 = S/ 9,600/año.
+> **Respuesta:** B. Tarifa efectiva: 4,000 ÷ 160 = S/ 25/hora. Ahorro mensual: 5 × 25 × 4 = S/ 500/mes. Ahorro anual: 500 × 12 = **S/ 6,000/año**. La A es solo mensual ×1.6; la C usa S/ 40/hora (no la calculada); la D infla la tarifa.
 
 ---
 
-## Pregunta 8 (Integración M1+M2)
+## Pregunta 5 (Integración M1+M2)
 
-Un estudiante completó las 8 sesiones. Su sistema está activo con:
-- Escenario 1 Instant (Gmail → Gemini → Sheet)
-- Escenario 2 Scheduled (Sheet → Gemini → Slides → PDF → Gmail + Historico)
+Tu sistema completo está activo: Escenario 1 Instant (Gmail → Gemini → Sheet) consume ~4 ops por correo capturado, y Escenario 2 Scheduled (Sheet → Gemini → Slides → PDF → Gmail + Historico) consume ~28 ops por reporte semanal. Si capturás 50 correos por mes y emitís 4 reportes mensuales, ¿llegás al límite de 1,000 ops/mes del plan free?
 
-¿Cuántas operaciones de Make consume APROXIMADAMENTE por cada reporte semanal generado?
+A. Sí, te quedás sin operaciones la segunda semana del mes
+B. Justo en el límite (~1,000 ops); cualquier corrida extra agota el plan
+C. No — consumís ~312 ops, queda margen amplio para crecer
+D. Imposible saberlo sin medir el consumo real durante un mes
 
-A. 5 operaciones
-B. 15 operaciones
-C. 30 operaciones
-D. 100 operaciones
-
-> **Respuesta:** C. El Escenario 2 típico con IA: Scheduled (1) + Search Rows (1) + HTTP Gemini (1) + Parse JSON (1) + Create Template (1) + 10-15 Replace Text (10-15) + Export PDF (1) + Send Email (1) + Add row Historico (1) + Upload Backup (1) = ~28-30 ops.
+> **Respuesta:** C. Cálculo: (50 correos × 4 ops) + (4 reportes × 28 ops) = 200 + 112 = **312 ops/mes**. Te queda ~70% del plan libre para ajustes, errores o agregar agentes nuevos del plan 30 días. Esto valida que el plan free es suficiente para uso profesional real.
 
 ---
 
 ## Clave de Respuestas Rápida
 
-| # | Respuesta | Tema |
-|---|-----------|------|
-| 1 | C | API key en URL |
-| 2 | B | Parse JSON falla por texto extra |
-| 3 | C | Few-shot reduce inconsistencia |
-| 4 | C | Error handler Resume |
-| 5 | C | Reconfiguración tras clonar |
-| 6 | A | 5 puntos de personalización |
-| 7 | C | Cálculo de ROI anual |
-| 8 | C | Operaciones por reporte |
+| # | Respuesta | Clase | Tema |
+|---|-----------|-------|------|
+| 1 | B | C05 | Gemini API + JSON estricto |
+| 2 | B | C06 | Optimización de prompts + error handlers |
+| 3 | A | C07 | Transferencia: conexiones + SystemPrompt |
+| 4 | B | C08 | Cálculo de ROI con tarifa efectiva |
+| 5 | C | Integración | Consumo total del sistema vs plan free |
 
 ---
 
 ## Análisis para el instructor
 
-Si hay <60% de acierto en:
+Si hay **<60% de acierto** en alguna pregunta, indica un riesgo concreto post-curso:
 
-- **Pregunta 1:** muchos estudiantes tienen mala configuración — sospechar sistemas que no funcionan en Demo Day
-- **Pregunta 2:** sistemas con Parse JSON failing; recomendar revisión de prompts post-curso
-- **Pregunta 3:** grupo no internalizó few-shot; recomendar práctica en plan 30 días
-- **Pregunta 4:** mejores prácticas no aplicadas; riesgo de sistemas que fallan silenciosamente
-- **Pregunta 5:** algunos no entienden la clonación; revisar sus sistemas v2 antes de demos
-- **Pregunta 6:** plan de personalización fue superficial; candidatos a mentoría post-curso
-- **Pregunta 7:** problema de matemáticas básicas; validar cálculos de ROI uno por uno
-- **Pregunta 8:** no entienden consumo de ops; riesgo de agotar plan free pronto
+- **Pregunta 1 (API + JSON):** estudiantes con sistemas que probablemente no funcionan o fallan intermitentemente. Riesgo en Demo Day. Hacer revisión 1 a 1 de las llamadas HTTP antes de presentar.
+- **Pregunta 2 (Optimización + error handlers):** sistemas que generan insights tibios y/o fallan silenciosamente en producción. Riesgo de abandono post-curso porque el sistema "no parece útil". Recomendar plan 30 días que incluya 1 ronda de optimización de prompts.
+- **Pregunta 3 (Transferencia):** los estudiantes no internalizaron qué cambia y qué se queda. Riesgo de no poder construir los 3 agentes del plan 30 días. Revisar sistemas v2 antes de Demo Day.
+- **Pregunta 4 (ROI):** error de cálculo o de aplicación de la fórmula. Validar el ROI de cada estudiante en vivo antes de Demo Day — un ROI bien calculado es el argumento principal para justificar el curso a su jefe/empresa.
+- **Pregunta 5 (Consumo):** estudiantes no internalizan que el plan free es suficiente. Riesgo de pagar Make Pro innecesariamente o de abandonar pensando "mi sistema se rompió". Reforzar con la pestaña Logs durante Demo Day.
+
+**Si el promedio del grupo es <70%:** considerar agregar una sesión post-curso opcional de 1h para revisar sistemas en producción y hacer ajustes antes de la primera semana del plan 30 días.
+
+**Si el promedio es >85%:** grupo listo para AI 201. Mencionarlo explícitamente en el cierre del Demo Day como invitación.

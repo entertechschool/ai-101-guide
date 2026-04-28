@@ -187,10 +187,9 @@ La clase 5 es la **bisagra** del curso: es la primera vez que los marcadores tip
 | Aspecto | Detalle |
 |---------|---------|
 | **Concepto Principal** | Presentar, cuantificar valor y proyectar (cierre del curso) |
-| **Objetivo del Lab** | Test M2 + presentar sistema en vivo + calcular ROI + definir plan 30 días |
+| **Objetivo del Lab** | Presentar sistema en vivo + calcular ROI + definir plan 30 días |
 | **Herramientas** | 0 nuevas |
 | **Entregable** | Demo grabado + ROI documentado + plan 30 días + rúbricas de pares |
-| **Test Diagnóstico** | 8 preguntas (15 min) — no afecta calificación |
 
 **Actividades del Lab (formato Demo Day):**
 1. **Actividad 1 (60 min):** Demos en vivo — 5 min por estudiante con estructura PSDR (Problema / Solución / Demo en vivo / Resultado), rúbrica entre pares llenada.
@@ -198,10 +197,9 @@ La clase 5 es la **bisagra** del curso: es la primera vez que los marcadores tip
 3. **Actividad 3 (30 min):** Plan 30 días — listar 10 tareas repetitivas → aplicar 80/20 → 3 próximos agentes a construir → compromiso público con el grupo.
 
 **Checkpoints del Lab:**
-1. Test M2 completado (15 min al inicio)
-2. Demo en vivo de 5 min exitosa (todos presentan)
-3. ROI calculado con números concretos
-4. Plan 30 días escrito con 3 agentes identificados
+1. Demo en vivo de 5 min exitosa (todos presentan)
+2. ROI calculado con números concretos
+3. Plan 30 días escrito con 3 agentes identificados
 
 **Glosario de la Clase:**
 

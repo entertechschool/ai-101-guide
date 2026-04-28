@@ -20,18 +20,6 @@
 
 ---
 
-## TEST M2 (15 min)
-
-### Antes de las demos:
-
-Completá el test diagnóstico del Módulo 2 (8 preguntas, 15 min).
-
-**Recordatorio:** es individual, a libro cerrado, NO afecta calificación.
-
-Es feedback para el instructor y autoevaluación tuya.
-
----
-
 ## ESTRUCTURA PSDR — 5 minutos exactos
 
 ### Cada demo sigue esta estructura:

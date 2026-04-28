@@ -219,20 +219,6 @@ Bien: "Semana 1: construir agente que responde consultas frecuentes
 
 ---
 
-## 📊 Revisión del Test Diagnóstico
-
-Al final de la clase (10 min):
-
-Abrir estadísticas del test en Canvas. Compartir en pantalla (sin nombres):
-
-- **Preguntas con >90% acierto:** celebrar
-- **Preguntas con 60-90%:** "retomar en tu plan 30 días"
-- **Preguntas con <60%:** mencionar qué concepto revisar
-
-No hacer examen de nuevo — es diagnóstico, no evaluación.
-
----
-
 ## 🔗 Conexiones del Curriculum
 
 ### Esta clase cierra:

@@ -31,17 +31,7 @@ Este es el lab de cierre. Verifica:
 | ☐ | Tarifa por hora definida | Calculá: salario mensual ÷ horas trabajadas mensuales |
 | ☐ | Google Doc "Plan 30 días" | Creado vacío, listo para llenar |
 
-> 💡 **Orden del día:** Test (15 min) → Demos en vivo (60 min) → ROI (40 min) → Plan 30 días (30 min) → Cierre.
-
----
-
-## Actividad 0: Test Diagnóstico del Módulo 2 (15 min)
-
-Antes de empezar las demos, completá el test del Módulo 2 (8 preguntas, opción múltiple).
-
-> **No afecta tu calificación.** Es diagnóstico para el instructor y para tu autoevaluación.
-
-Ver `test/README.md` y `test/questions.md` para el test.
+> 💡 **Orden del día:** Demos en vivo (60 min) → ROI (40 min) → Plan 30 días (30 min) → Cierre.
 
 ---
 
