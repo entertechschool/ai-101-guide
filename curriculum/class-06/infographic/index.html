@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integración total y mejores prácticas</title>
+  <title>Flujo end-to-end robusto — Un sistema que aguanta el mundo real</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,77 +39,68 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 2 · Clase 06</div>
-    <h1>Integración total y mejores prácticas</h1>
-    <p class="subtitle">De sistema demo a sistema de producción</p>
+    <div class="badge">Sesión 06 · Flujo end-to-end robusto</div>
+    <h1>Flujo end-to-end robusto</h1>
+    <p class="subtitle">Un proceso completo que aguanta el mundo real</p>
   </section>
 
   <section>
-    <div class="card accent-purple">
-      <h3>Las 3 técnicas de prompt optimizado</h3>
-      <p class="desc">Aplicadas juntas, transforman insights planos en accionables.</p>
-<pre><code>1. PERSONA     →  "Eres analista senior con 10 años..."
-2. FEW-SHOT    →  "Ejemplo de buen output: [ejemplo concreto]"
-3. CHAIN OF    →  "Piensa paso a paso:
-   THOUGHT        1. Identifica fenómenos notables
-                  2. Encuentra datos específicos
-                  3. Formula acciones concretas"</code></pre>
-    </div>
-
     <div class="card accent-blue">
-      <h3>Plano vs Potente: el storytelling de datos</h3>
-      <p class="desc">La diferencia de 15 minutos de optimización.</p>
+      <h3>Watch vs Schedule</h3>
+      <p class="desc">Dos formas de disparar un flujo.</p>
       <table class="compare">
-        <tr><th>Nivel</th><th>Ejemplo</th></tr>
-        <tr><td>Plano</td><td>"Las ventas fueron S/ 21,700"</td></tr>
-        <tr><td>Mediocre</td><td>"S/ 21,700 (108% de meta)"</td></tr>
-        <tr><td>Potente</td><td>"S/ 21,700 (108% de meta, +12% vs anterior), impulsado por 2 renovaciones de Juan. Acción: replicar su estrategia."</td></tr>
+        <tr><th>Aspecto</th><th>Watch</th><th>Schedule</th></tr>
+        <tr><td>Dispara</td><td>Cuando algo cambia</td><td>A hora fija</td></tr>
+        <tr><td>Ritmo</td><td>Tiempo real</td><td>Por lotes</td></tr>
+        <tr><td>Ejemplo</td><td>Archivo nuevo</td><td>Reporte lunes 8am</td></tr>
       </table>
     </div>
 
+    <div class="card accent-purple">
+      <h3>Filtros y routers</h3>
+      <p class="desc">Que el flujo decida solo qué procesar y por qué ruta.</p>
+<pre><code>FILTRO  →  "solo seguir si es PDF y monto > 0"
+ROUTER  →  "factura grande → alerta
+            factura normal → registro"
+
+Evita procesar basura · maneja varios casos
+en un solo escenario</code></pre>
+    </div>
+
     <div class="card accent-green">
-      <h3>Las 4 mejores prácticas</h3>
-      <p class="desc">Lo que separa un demo de una semana de un sistema de 2 años.</p>
-<pre><code>1. Nombre con fecha dinámica
-   Reporte_{{formatDate(now; "YYYY-MM-DD")}}.pdf
+      <h3>Manejo de errores</h3>
+      <p class="desc">Que el flujo no muera en silencio.</p>
+<pre><code>Error handler en cada módulo crítico
+Reintentos automáticos (3 con espera)
+Notificación por email/Slack si se cae
+El flujo sigue con el próximo item
 
-2. Carpeta Backups en Drive
-   Módulo Google Drive → Upload → Backups/
-
-3. Error handler con alerta
-   Click derecho → Add error handler → Resume
-   → Gmail Send Email al instructor
-
-4. Pestaña Logs en Sheet
-   Columns: Fecha, Hora, Escenario, Estado, Duracion</code></pre>
+Click derecho → Add error handler → Resume</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>Los 5 puntos de personalización (preview C7)</h3>
-      <p class="desc">El puente entre el caso Roberto y TU caso real.</p>
-<pre><code>1. Datos de entrada      (qué recolectas)
-2. Estructura del Sheet  (columnas propias)
-3. Plantilla de Slides   (tu marca)
-4. Prompts de Gemini     (tu contexto)
-5. Destinatarios         (tu frecuencia)
+      <h3>Logs y tu mini-proyecto</h3>
+      <p class="desc">Saber qué pasó en cada corrida + el flujo completo de facturas.</p>
+<pre><code>History de Make: verde = éxito, rojo = error
+Run once con datos de prueba (sin gastar ops)
 
-Cada uno escrito como:
-  "Caso Roberto → TU caso"
-  (ejemplos específicos, no genéricos)</code></pre>
+Flujo completo:
+Drive → IA → Sheets → Docs → Email
+con filtros + router + error handler</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>Chain of thought</strong><span>"Piensa paso a paso"</span></div>
-      <div class="term"><strong>Few-shot</strong><span>Ejemplos en el prompt</span></div>
-      <div class="term"><strong>Error handler</strong><span>Reacción a fallas</span></div>
-      <div class="term"><strong>Storytelling</strong><span>Datos + causa + acción</span></div>
+      <div class="term"><strong>Watch / Schedule</strong><span>Trigger por evento / a hora fija</span></div>
+      <div class="term"><strong>Filtro</strong><span>Deja pasar solo lo válido</span></div>
+      <div class="term"><strong>Router</strong><span>Cada caso por su ruta</span></div>
+      <div class="term"><strong>Error handler</strong><span>Avisa si algo falla</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 06
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 06
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>

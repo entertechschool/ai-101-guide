@@ -1,135 +1,153 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 6
-## INTEGRACIÓN TOTAL
+## FLUJO END-TO-END ROBUSTO
 
-Optimización del sistema y mejores prácticas
+Un proceso completo que aguanta el mundo real
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Integra todas las piezas aprendidas aplicándolas al caso modelo completo identificando mejores prácticas y puntos de personalización.
-
-### PUNTOS CLAVE
-
-1. Optimizar prompts para storytelling
-2. Mejores prácticas (nombres, respaldos, logs)
-3. Identificar puntos de personalización
-4. Actualizar brief con aprendizajes
-5. Tabla de parámetros personalizada
-
-### EVALUACIÓN
-
-- Prompts optimizados (antes/después)
-- Sistema con mejores prácticas
-- Plan de personalización con 5 puntos
+*Sesión 6 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · DE PIEZAS A SISTEMA
 
-### Reflexión del camino recorrido
+### Las sesiones pasadas:
 
-**01 · REVISIÓN**
-Sistema modelo funcionando end-to-end
-Observación conjunta.
+- Prompts, Make, Gemini, JSON, plantillas
+- Cada pieza por separado
 
-**02 · ANÁLISIS**
-¿Qué insights fueron potentes?
-¿Cuáles planos? Discusión.
+### Hoy:
 
-**03 · FOCO**
-¿Qué quieres mejorar antes de tu proyecto?
-Identifica tu foco.
+- Unimos todo en **un flujo completo**
+- Que aguanta errores, datos raros y feriados
+
+> "Hoy pasas de un escenario simple a un sistema en producción."
 
 ---
 
-## PROMPT ENGINEERING AVANZADO
+## QUÉ VAMOS A LOGRAR HOY
 
-*Las técnicas que cambian 10x los resultados*
+### OBJETIVO DE LA SESIÓN
 
-**15 min · Teoría**
+Diseñar un flujo completo Drive → IA → Sheets/Docs/Gmail que automatiza un proceso real de principio a fin.
 
-- **Chain of thought:** 'piensa paso a paso'
-- **Few-shot:** dar ejemplos en el prompt
-- **Persona:** 'eres analista con 10 años experiencia'
-- **Storytelling:** contextualizar con meta/anterior/benchmark
-- Explicar POR QUÉ no solo QUÉ pasó
+### FUNDAMENTOS
+
+1. Trigger por evento (Watch) vs programado (Schedule)
+2. Filtros y routers — lógica condicional
+3. Manejo de errores y notificaciones
+4. Logs y depuración
+
+### MINI-PROYECTO
+
+Flujo completo de facturas: Drive → IA → Sheets → Docs → Email
 
 ---
 
-## OPTIMIZA · PROMPTS PARA STORYTELLING
+## APERTURA · 10 min
 
-*Transforma insights planos en narrativas potentes*
+*Responde por chat — 1 línea por pregunta*
 
-**45 min · Individual**
+**01** ¿Alguna vez se cayó un proceso tuyo y nadie se enteró hasta tarde?
+
+**02** ¿Tu flujo actual aguanta feriados, datos raros o formatos distintos?
+
+**03** Si tu flujo se rompe mañana, ¿cómo te enteras?
+
+> 💡 Un flujo de juguete falla en silencio. Uno robusto te avisa antes que el cliente.
+
+---
+
+## FUNDAMENTO 1 · WATCH VS SCHEDULE
+
+*Cuándo usar cada trigger*
+
+| WATCH (por evento) | SCHEDULE (programado) |
+|--------------------|-----------------------|
+| Dispara cuando algo cambia | Dispara a una hora fija |
+| Tiempo real | Por lotes |
+| Ej: archivo nuevo en Drive | Ej: reporte cada lunes 8am |
+
+---
+
+## FUNDAMENTO 2 · FILTROS Y ROUTERS
+
+*Que el flujo decida por sí solo*
+
+- **FILTRO:** "solo seguir si el archivo es PDF"
+- **ROUTER:** "si es factura → ruta A, si es boleta → ruta B"
+- Evita procesar lo que no debe procesarse
+- Permite manejar varios casos en un solo escenario
+
+---
+
+## EJEMPLO REAL · UN FILTRO EN MAKE
+
+*Solo procesa facturas PDF con monto > 0*
+
+```
+MAKE · Filter Configuration
+──────────────────────────────────
+Label: Solo PDF con monto > 0
+
+ File extension  equals  "pdf"
+        AND
+ Monto detected  greater than  0
+
+✓ Match:    continúa al siguiente módulo
+✗ No match: salta este registro
+```
+
+---
+
+## FUNDAMENTO 3 · MANEJO DE ERRORES
+
+*Que el flujo no muera en silencio*
+
+- Error handler en cada módulo crítico
+- Reintentos automáticos (3 intentos con espera)
+- Notificación por email/Slack si se cae
+- Que el flujo siga con el próximo item, no se detenga
+
+---
+
+## FUNDAMENTO 4 · LOGS Y DEPURACIÓN
+
+*Saber qué pasó en cada corrida*
+
+- El **History** de Make muestra cada ejecución
+- Verde = éxito, rojo = error
+- Clic en cada módulo para ver entrada/salida
+- **Run once** con datos de prueba sin gastar operaciones
+
+---
+
+## MINI-PROYECTO · FLUJO COMPLETO DE FACTURAS
+
+*Drive → IA → Sheets → Docs → Email*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Compara 3 insights: plano, mediocre, potente
-2. Identifica qué diferencia un insight potente
-3. Reescribe 3 prompts con persona + few-shot
-4. Agrega: comparar meta, explicar causa
-5. Ejecuta y compara antes/después
+1. Integrar S2-S5 en un solo escenario
+2. Agregar **filtros** (solo PDF, monto > 0)
+3. Agregar **router** (facturas grandes → alerta; normales → registro)
+4. Agregar **error handler** + notificación al jefe si algo falla
+5. Probar con casos límite (factura sin total, archivo corrupto)
 
-✓ **Verificación:** Insights específicos y accionables
-
----
-
-## AGREGA · MEJORES PRÁCTICAS
-
-*Profesionaliza el sistema con 4 prácticas clave*
-
-**40 min · Individual**
-
-### QUÉ HACER
-
-1. Nombres archivo con fecha (Reporte_2026-04-19.pdf)
-2. Carpeta respaldo en Drive (backup automático)
-3. Alertas por correo si el flujo falla
-4. Log en Sheet: pestaña 'Logs' con fecha, estado
-
-✓ **Verificación:** Sistema con las 4 mejores prácticas
-
----
-
-## DEFINE · TU PERSONALIZACIÓN
-
-*Prepárate para construir TU proyecto*
-
-**30 min · Individual**
-
-### QUÉ HACER
-
-1. Revisa tu brief original de sesión 1
-2. Lista 5 puntos críticos a personalizar
-3. Datos / Frecuencia / Destinatarios / Métricas / Tono
-4. Actualiza tabla de parámetros para TU caso
-5. Prepara datos reales que vas a usar
-
-✓ **Verificación:** Plan de personalización con 5 puntos
+✓ **Verificación:** Flujo completo que aguanta el mundo real y avisa si se rompe
 
 ---
 
 ## LO QUE TE LLEVAS HOY
 
-*Los artefactos que construiste hoy*
+**01** Flujo end-to-end corriendo de inicio a fin
 
-**01** Prompts optimizados con storytelling
+**02** Filtros, routers y manejo de errores configurados
 
-**02** Sistema con mejores prácticas aplicadas
-
-**03** Plan de personalización de TU proyecto
-
-**04** Tabla de parámetros actualizada
+**03** Confianza en que el flujo no muere en silencio
 
 ### PRÓXIMA SESIÓN
 
-Sesión 7: Construyes TU proyecto propio. Acompañamiento 1 a 1 del instructor durante toda la sesión.
+Sesión 7: Aplicas todo a TU caso real. Construyes tu proyecto integrador propio.
