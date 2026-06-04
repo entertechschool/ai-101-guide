@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Make básico — Tus primeros 2 flujos sin IA</title>
+  <title>JSON + Parse JSON — Datos estructurados desde la IA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,70 +39,67 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 1 · Clase 04 · Lab Calificado</div>
-    <h1>Make básico (sin IA)</h1>
-    <p class="subtitle">Tus primeros 2 flujos — el sistema cobra vida</p>
+    <div class="badge">Sesión 04 · JSON + Parse JSON</div>
+    <h1>JSON + Parse JSON</h1>
+    <p class="subtitle">Que la IA devuelva datos estructurados, no charla</p>
   </section>
 
   <section>
     <div class="card accent-orange">
-      <h3>Escenario 1: Gmail → Sheet (Instant)</h3>
-      <p class="desc">Reacción en 2-5 segundos cuando llega un correo con filtro de asunto.</p>
-<pre><code>[Gmail: Watch Emails — Instant]
-   filter: subject contains "Ventas del día"
-         ↓
-[Google Sheets: Add a row]
-   target: VentasSemanaActual
-   values: Fecha, Descripción mapeados del correo</code></pre>
-    </div>
-
-    <div class="card accent-purple">
-      <h3>Escenario 2: Sheet → Slides → PDF → Gmail</h3>
-      <p class="desc">El reporte completo con marcadores reemplazados. Todavía sin IA.</p>
-<pre><code>[Sheets: Search Rows]  →  [Slides: Create from Template]
-                              ↓
-        [Replace Text × N]  (1 por marcador crudo/calculado)
-                              ↓
-        [Slides: Export as PDF]
-                              ↓
-        [Gmail: Send an Email con PDF adjunto]</code></pre>
+      <h3>¿Qué es JSON?</h3>
+      <p class="desc">Formato estándar de datos: objetos, pares clave-valor.</p>
+<pre><code>{
+  "vendedor": "Ana",
+  "cliente": "Acme S.A.",
+  "monto": 1500,
+  "fecha": "2026-06-01"
+}</code></pre>
     </div>
 
     <div class="card accent-blue">
-      <h3>Instant vs Scheduled</h3>
-      <p class="desc">Dos formas de activar un flujo. Se elige según el caso de uso.</p>
+      <h3>Texto libre vs JSON</h3>
+      <p class="desc">Por qué pedirle JSON a la IA cambia todo.</p>
       <table class="compare">
-        <tr><th>Aspecto</th><th>Instant</th><th>Scheduled</th></tr>
-        <tr><td>Latencia</td><td>2-5 segundos</td><td>15 min - 1 día</td></tr>
-        <tr><td>Consumo ops</td><td>Solo con evento</td><td>Cada corrida</td></tr>
-        <tr><td>Caso típico</td><td>Captura en vivo</td><td>Reporte semanal</td></tr>
-        <tr><td>Efecto WOW</td><td>Sí</td><td>No (esperaste)</td></tr>
+        <tr><th>Aspecto</th><th>Texto libre</th><th>JSON</th></tr>
+        <tr><td>Forma</td><td>"Ana vendió a..."</td><td>clave: valor</td></tr>
+        <tr><td>Extraer dato</td><td>Hay que adivinar</td><td>Cada uno en su clave</td></tr>
+        <tr><td>Para un flujo</td><td>Frágil</td><td>Robusto</td></tr>
       </table>
     </div>
 
-    <div class="card accent-green">
-      <h3>Consumo de operaciones</h3>
-      <p class="desc">Plan gratuito: 1,000 ops/mes. Suficiente para 30-80 reportes.</p>
-<pre><code>Escenario 1 típico:  ~2 ops por correo
-Escenario 2 típico: ~12 ops por reporte (sin IA)
-Escenario 2 en M2:  ~28 ops por reporte (con IA)
+    <div class="card accent-purple">
+      <h3>Data Structure: el molde</h3>
+      <p class="desc">Le dices a Make qué forma tiene el JSON que va a llegar.</p>
+<pre><code>vendedor   Text       ✓ requerido
+cliente    Text       ✓ requerido
+monto      Number     ✓ requerido
+fecha      Date (ISO) ✓ requerido
 
-1,000 ops / 28 ops ≈ 35 reportes semanales mensuales
-(Más que 4 reportes mensuales esperados)</code></pre>
+→ Make genera las variables automáticamente</code></pre>
+    </div>
+
+    <div class="card accent-green">
+      <h3>Parse JSON + tu mini-proyecto</h3>
+      <p class="desc">Convierte el texto en variables que caen en su columna.</p>
+<pre><code>Gmail → Gemini (JSON) → Parse JSON → Sheet "Ventas"
+
+vendedor → {{parse.vendedor}}
+monto    → {{parse.monto}}
+fecha    → {{parse.fecha}}</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>Escenario</strong><span>El flujo completo en Make</span></div>
-      <div class="term"><strong>Módulo</strong><span>Cada paso del flujo</span></div>
-      <div class="term"><strong>Operación</strong><span>1 ejecución = 1 op</span></div>
-      <div class="term"><strong>Replace Text</strong><span>Reemplaza {{x}} en Slides</span></div>
+      <div class="term"><strong>JSON</strong><span>Datos en pares clave-valor</span></div>
+      <div class="term"><strong>System prompt</strong><span>"responde SOLO en JSON"</span></div>
+      <div class="term"><strong>Data Structure</strong><span>El molde del JSON en Make</span></div>
+      <div class="term"><strong>Parse JSON</strong><span>Texto JSON → variables</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 04
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 04
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>

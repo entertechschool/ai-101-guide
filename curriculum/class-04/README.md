@@ -1,68 +1,67 @@
-> **Módulo 1:** Clase 4 de 4 — Lab Calificado
+> **Sesión 4 de 8** · JSON + Parse JSON
 
-# Clase 04: Make básico (sin IA)
+# Sesión 04: JSON + Parse JSON
 
 ## Resumen
 
-Hoy ves por primera vez el sistema funcionando end-to-end. Vas a construir dos escenarios en Make que conectan las piezas que armaste en las clases anteriores: el Sheet (Clase 2) y la plantilla de Slides (Clase 3). Todavía sin IA — solo Gmail, Sheets, Slides y exportación a PDF.
+En la sesión pasada Gemini extrajo un solo dato en texto libre. Hoy aprendes a pedirle **varios datos a la vez, ordenados** — y a recibirlos dentro del flujo en formato **JSON**, el lenguaje estándar de datos que las apps entienden. Entenderás qué es JSON (objetos, arrays, pares clave-valor) y por qué pedirle a la IA que responda en JSON convierte una respuesta frágil en una robusta.
 
-El primer escenario captura correos entrantes y registra filas automáticamente en tu pestaña operativa usando un **Instant Trigger** (reacción en 2-5 segundos). El segundo escenario toma los datos del Sheet, duplica la plantilla de Slides, reemplaza los marcadores crudos y calculados, exporta PDF y lo envía por correo. Este es el **lab calificado** del Módulo 1 — tu evaluación integradora.
+Luego conocerás dos piezas clave de Make: el **Data Structure** (el "molde" que describe cómo viene el JSON) y el módulo **Parse JSON** (que convierte ese texto en variables que puedes arrastrar a cada columna). Al terminar, cuando un vendedor envía un correo informal con una venta, Gemini devuelve JSON y cada campo —vendedor, cliente, producto, monto, fecha— cae solo en su columna del Sheet.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Make ejecuta ~10 operaciones por cada reporte completo.** En el plan gratuito (1,000 ops/mes) caben 100+ reportes sin pagar nada. Para la mayoría de profesionales, es gratis de verdad.
-- **Un Instant Trigger de Gmail reacciona en segundos, no minutos.** La diferencia con Scheduled (cada 15 min) es el "efecto WOW" cuando tu audiencia ve el sistema actualizarse en vivo.
-- **Aprender Make abre la puerta a 1,500+ integraciones.** Slack, Notion, HubSpot, WhatsApp Business — todo conectable. Lo que construyes hoy es solo la primera automatización de muchas.
+- **JSON es cómo la IA "habla" con cualquier sistema.** Dominarlo te abre la puerta a conectar IA con casi cualquier herramienta, no solo Sheets.
+- **Pedir respuestas estructuradas elimina el copy/paste manual.** En vez de leer un texto y separar datos a mano, cada campo llega en su lugar.
+- **El Data Structure hace tu flujo confiable.** Si la IA devuelve algo fuera del molde, Make avisa con un error claro en vez de guardar basura.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Exploraremos los conceptos de Make** - Descubrirás escenarios, módulos, operaciones, conexiones y la diferencia Instant vs Scheduled.
-2. **Construirás el escenario Gmail → Sheet** - Configurarás un Instant Trigger con filtro y agregarás filas automáticamente.
-3. **Conectarás Sheet → Slides → PDF → Gmail** - Segundo escenario que genera el reporte completo y lo envía a tu correo.
-4. **Completarás el Desafío post-clase** - Nombre de PDF con fecha dinámica y error handler básico.
+1. **Entenderás qué es JSON** — objetos, arrays y pares clave-valor.
+2. **Aprenderás a pedirle JSON a la IA** desde el system prompt y por qué es más robusto que el texto libre.
+3. **Crearás un Data Structure en Make** — el molde que describe el JSON esperado.
+4. **Usarás Parse JSON** para convertir la respuesta en variables y mapear cada campo a su columna en el caso "ventas desde Gmail".
 
 ---
 
 ## Objetivos de Aprendizaje
 
-Al finalizar esta clase, podrás:
+Al finalizar esta sesión, podrás:
 
-1. **Explicar** los conceptos base de Make (escenario, módulo, operación, trigger, conexión) y la diferencia Instant vs Scheduled.
-2. **Construir** un flujo Gmail → Sheet con Instant Trigger y filtro de asunto.
-3. **Construir** un flujo Sheet → Slides → PDF → Gmail reemplazando ≥5 marcadores crudos y calculados.
-4. **Agregar** mejoras básicas (nombre de archivo con fecha, error handler) como preparación para el Módulo 2.
+1. **Explicar** qué es JSON y por qué conviene que la IA responda en ese formato.
+2. **Escribir** un system prompt que obligue a la IA a responder en JSON con campos definidos.
+3. **Crear** un Data Structure en Make que describa la estructura del JSON.
+4. **Procesar** la respuesta con Parse JSON y mapear cada variable a una columna del Sheet.
 
 ---
 
 ## ✅ Preparación para la Clase
 
-### De clases anteriores
+### De sesiones anteriores
 
-- Sheet con 3 pestañas y rangos nombrados (Clase 2)
-- Plantilla de Slides con ~18-20 marcadores documentados (Clase 3)
-- Tabla de parámetros actualizada
+- Tu escenario con Gemini funcionando (Sesión 3), extrayendo al menos un dato.
+- Conexión Gemini (Connection) y conexión Google activas en Make.
 
 ### Reflexión previa
 
-Antes de llegar a clase, reflexiona sobre:
+Antes de llegar a clase, piensa en:
 
-- Si tu sistema estuviera funcionando hoy, ¿qué haría la diferencia más grande en tu trabajo semanal?
-- ¿Qué correo sueles recibir con información que podría ir directamente a un Sheet si fuera automático?
+- ¿Qué información recibes en texto libre (correos, mensajes) que luego transcribes a una tabla?
+- ¿Qué campos concretos te gustaría separar de ese texto (nombre, monto, fecha)?
 
 ### Herramientas
 
-- [ ] **Cuenta de Make** - [make.com](https://make.com/){:target="_blank"} — crear cuenta gratuita antes de la clase
-- [ ] **Sheet de Clase 2 y plantilla de Clase 3** - Listas y accesibles
-- [ ] **Correo de prueba** - Puedes enviarte correos a ti mismo para probar el Instant Trigger
+- [ ] **Tu escenario de Make** con Gemini (Sesión 3).
+- [ ] **Gmail** — para enviarte correos de prueba de "ventas".
+- [ ] **Un Google Sheet** con una pestaña `Ventas` (la crearás en clase si no la tienes).
 
 ### Lectura sugerida
 
-- [Make: Primer escenario](https://www.make.com/en/help/tools/create-your-first-scenario){:target="_blank"} - Tutorial oficial corto.
-- [Make vs Zapier](https://www.make.com/en/help/tools/make-vs-zapier){:target="_blank"} - Comparación útil si ya usabas Zapier.
+- [¿Qué es JSON? (explicado simple)](https://developer.mozilla.org/es/docs/Learn/JavaScript/Objects/JSON){:target="_blank"} — Introducción amable.
+- [Parse JSON en Make](https://www.make.com/en/help/tools/json){:target="_blank"} — Documentación del módulo y los Data Structures.
 
 ---
 
@@ -70,22 +69,15 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **Escenario** | El flujo completo que construyes en Make (equivalente a "workflow" o "Zap"). |
-| **Módulo** | Cada paso del flujo (leer Gmail, escribir en Sheet, exportar PDF). |
-| **Operación** | Cada vez que un módulo ejecuta. Cuenta para el límite de 1,000/mes. |
-| **Conexión** | Autenticación entre Make y tus cuentas (Gmail, Sheets). |
-| **Trigger** | Módulo que inicia el flujo. |
-| **Instant Trigger** | Se activa en 2-5 segundos cuando algo pasa. |
-| **Scheduled Trigger** | Corre cada X tiempo (cada 15 min, diario, semanal). |
-| **Replace Text** | Operación de Slides que busca `{{marcador}}` y lo sustituye. |
+| **JSON** | Formato estándar de datos: objetos `{}`, arrays `[]`, pares clave-valor. |
+| **System prompt** | Instrucción que fija cómo debe responder la IA (ej: "responde SOLO en JSON"). |
+| **Data Structure** | El "molde" en Make que describe nombres y tipos de cada campo del JSON. |
+| **Parse JSON** | Módulo de Make que convierte el texto JSON en variables usables. |
+| **Variable** | Cada campo resultante (vendedor, monto...) que arrastras a un módulo siguiente. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Plan gratuito de Make](https://www.make.com/en/pricing){:target="_blank"} - Verifica límites y qué incluye.
-- [Gmail Watch Emails en modo Instant](https://www.make.com/en/help/app/gmail){:target="_blank"} - Documentación del módulo que usarás.
-
----
-
-> ⚠️ **Lab Calificado** - Este lab es la evaluación integradora del Módulo 1. Ver rúbrica en `lab/README.md`.
+- [Pedir salida estructurada a Gemini](https://ai.google.dev/gemini-api/docs/structured-output){:target="_blank"} — Cómo forzar respuestas JSON.
+- [Data Structures en Make](https://www.make.com/en/help/tools/data-structures){:target="_blank"} — Crear y editar moldes.

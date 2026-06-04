@@ -1,269 +1,135 @@
-# Lab 04: Make básico — Tus primeros 2 flujos sin IA
+# Lab 04: Extracción de ventas desde Gmail
 
-> ⚠️ **Lab Calificado** - Este lab será evaluado según la rúbrica incluida abajo.
->
-> 📌 **Distribución:** Se espera completar ~50% durante la sesión en vivo (Actividades 1-2) y el resto antes de la fecha de entrega.
+## 🎯 Objetivo
 
-## 🎯 Objetivos del Módulo
-
-Este lab integra todo lo aprendido en el Módulo 1:
-
-1. Construir el flujo Gmail → Sheet con Instant Trigger funcionando end-to-end.
-2. Construir el flujo Sheet → Slides → PDF → Gmail con ≥5 marcadores reemplazados.
-3. Aplicar mejoras básicas (nombre de PDF con fecha, error handler).
+Hacer que la IA devuelva **varios datos juntos en JSON** y que cada campo caiga solo en su columna: cuando un vendedor envía un correo informal con una venta, Gemini devuelve JSON, **Parse JSON** lo convierte en variables y el Sheet `Ventas` se llena estructurado.
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Escenario de Make** — flujo visual sin código que conecta módulos con un trigger.
-- **Instant Trigger** — activación en 2-5 segundos; úsalo para efecto WOW.
-- **Replace Text en Slides** — reemplaza `{{marcador}}` por un valor; 1 operación por marcador.
+- **JSON** — formato de datos en pares clave-valor que las apps entienden.
+- **Data Structure** — el "molde" en Make que describe cómo viene el JSON.
+- **Parse JSON** — módulo que convierte el texto JSON en variables mapeables.
 
 ---
 
 ## ⚙️ Setup Inicial
 
-Este lab integra todo el Módulo 1. Verifica que tengas todo listo:
-
 | ✓ | Requisito | Verificación |
 |---|-----------|--------------|
-| ☐ | Cuenta de Make activa | Puedes entrar a [make.com](https://make.com/){:target="_blank"} y ver tu dashboard |
-| ☐ | Sheet con 3 pestañas (Clase 2) | `VentasSemanaActual`, `Config`, `Historico` funcionando |
-| ☐ | Plantilla de Slides (Clase 3) | 6 slides con ~18-20 marcadores insertados |
-| ☐ | Tabla de parámetros actualizada | Marcadores documentados con tipo y origen |
-
-> ⚠️ Si te falta alguno, completa primero. Make necesita el Sheet y la plantilla con marcadores para poder conectarlos.
+| ☐ | Connection a Gemini en Make (Sesión 3) | Disponible al agregar un módulo Gemini |
+| ☐ | Cuenta de Gmail | Para enviarte correos de venta de prueba |
+| ☐ | Google Sheet con pestaña `Ventas` | Columnas: vendedor, cliente, producto, monto, fecha |
 
 ---
 
-## Actividad 1: Gmail → Sheet con Instant Trigger (40 min)
+## Mini-proyecto: ventas desde Gmail
 
-### 1.1 Crea el primer escenario
+> Vas a armar un escenario que vigila correos de ventas, le pide a Gemini un JSON, lo parsea y lo guarda estructurado.
 
-En Make → **+ Create a new scenario**. Nómbralo:
+### Paso 1: Configura el trigger Gmail Watch
 
-```
-Captura: Correo → [<!-- Tu proyecto -->]
-```
-
-### 1.2 Agrega el módulo Gmail Watch Emails (Instant)
-
-Busca **Gmail → Watch Emails**. Elige el modo **Instant**.
-
+En un escenario nuevo (`Ventas: Gmail → Sheet`), agrega **Gmail › Watch Emails**:
 - **Folder:** Inbox
-- **Filter by subject contains:** `Ventas del día` (o el asunto que defines para tu caso)
-- **Mark message as:** Read (opcional)
+- **Filter by subject contains:** `Venta` (o el asunto que definas para los vendedores)
 
-Conecta tu cuenta de Gmail cuando pida permisos.
+### Paso 2: Diseña el system prompt para Gemini
 
-### 1.3 Agrega Google Sheets Add a Row
-
-Después de Gmail, **+ Add module → Google Sheets → Add a row**.
-
-- **Spreadsheet:** tu Sheet del sistema
-- **Sheet:** `VentasSemanaActual`
-- **Values:** mapea las columnas a campos del correo:
-  - `Fecha` → `{{1.date}}` (fecha del correo)
-  - `Descripción` → `{{1.text}}` (cuerpo del correo)
-  - Los demás campos quedan vacíos por ahora — los llenará Gemini en Clase 5
-
-### 1.4 Prueba en vivo
-
-1. Guarda el escenario y activa el toggle "On"
-2. Envíate 3 correos con el asunto exacto (ej: "Ventas del día - Lunes")
-3. Ve tu Sheet — deberías ver 3 filas nuevas en segundos
-
-✅ **Checkpoint:** Al enviar un correo con el asunto filtro, el Sheet agrega una fila nueva en <10 segundos.
-
----
-
-## Actividad 2: Sheet → Slides → PDF → Gmail (35 min)
-
-### 2.1 Crea el segundo escenario
-
-**+ Create a new scenario**. Nómbralo:
+Agrega el módulo **Gemini** después de Gmail. En el prompt, pide JSON explícito:
 
 ```
-Reporte: [<!-- Tu proyecto -->] Semanal
+Eres un asistente que extrae datos de correos de ventas.
+Devuelve SOLO un JSON con estos campos, sin texto adicional:
+{ "vendedor": "", "cliente": "", "producto": "", "monto": 0, "fecha": "YYYY-MM-DD" }
+
+CORREO:
+{{1.text}}
 ```
 
-Este escenario lo vas a correr manualmente por ahora (Run once). En Clase 5 lo convertirás en Scheduled.
+> `{{1.text}}` es el cuerpo del correo del módulo Gmail.
 
-### 2.2 Agrega Google Sheets Search Rows
+✓ **Verificación:** Al probar, Gemini responde con un JSON válido.
 
-**Google Sheets → Search Rows**.
+### Paso 3: Crea el Data Structure (el molde)
 
-- **Spreadsheet:** tu Sheet
-- **Sheet:** `VentasSemanaActual`
-- **Filter:** las filas de la última semana (o deja vacío por ahora para traer todo)
+Agrega el módulo **JSON › Parse JSON**. Al crear el Data Structure:
+- **Generate** desde un ejemplo: pega una respuesta típica de Gemini, o
+- Define los campos a mano:
 
-### 2.3 Agrega Google Slides Create a Presentation from a Template
+| Campo | Tipo |
+|-------|------|
+| vendedor | Text |
+| cliente | Text |
+| producto | Text |
+| monto | Number |
+| fecha | Date |
 
-**Google Slides → Create a Presentation from a Template**.
+### Paso 4: Conecta Parse JSON
 
-- **Template:** tu plantilla de la Clase 3
-- **Destination folder:** la carpeta "Proyecto de Instrucción" en Drive
+- **JSON string:** la salida de texto del módulo Gemini.
+- Parse JSON genera las variables `vendedor`, `cliente`, `producto`, `monto`, `fecha`.
 
-### 2.4 Agrega Replace Text (uno por cada marcador crudo/calculado)
+✓ **Verificación:** El módulo Parse JSON muestra las variables separadas.
 
-Por cada marcador crudo o calculado que quieras llenar, agrega **Google Slides → Replace Text**:
+### Paso 5: Mapea las variables al Sheet "Ventas"
 
-- **Presentation:** output del paso anterior
-- **Old text:** `{{ventas_total}}` (sin espacios, exacto como está en la plantilla)
-- **New text:** fórmula o valor a mapear
+Agrega **Google Sheets › Add a Row** y mapea cada columna:
+- `vendedor` → `{{parse.vendedor}}`
+- `cliente` → `{{parse.cliente}}`
+- `producto` → `{{parse.producto}}`
+- `monto` → `{{parse.monto}}`
+- `fecha` → `{{parse.fecha}}`
 
-**Para marcadores calculados (tipo 2):** agrega primero un módulo **Math** o **Date** para calcular el valor.
+### Paso 6: Prueba con un correo de venta
 
-Ejemplos de calculados:
-- `{{semana}}` → módulo **Date** → `formatDate(now; "DD/MM")` + " - " + fecha fin semana
-- `{{variacion_pct}}` → módulo **Math** → `(ventas_actual - ventas_anterior) / ventas_anterior * 100`
-- `{{meta_cumplida_pct}}` → **Math** → `ventas_total / meta_config * 100`
-
-**Meta:** al menos 5 marcadores (tipo 1 y 2) reemplazados. Los tipo 3 (IA) quedan vacíos — los llenamos en Clase 5.
-
-✅ **Checkpoint:** Al correr el escenario (Run once), la plantilla duplicada tiene valores reales en ≥5 marcadores.
-
----
-
-## Actividad 3: Exporta PDF y envía por Gmail (25 min)
-
-### 3.1 Agrega Google Slides Export as PDF
-
-**Google Slides → Export a Presentation**.
-
-- **Presentation:** output del último Replace Text
-- **Format:** PDF
-
-### 3.2 Agrega Gmail Send an Email
-
-**Gmail → Send an Email**.
-
-- **To:** tu correo
-- **Subject:** `Reporte semanal - [<!-- proyecto -->]`
-- **Content:** texto corto anunciando el reporte
-- **Attachments:** el PDF del paso anterior
-
-### 3.3 Run once del flujo completo
-
-Ejecuta el escenario con el botón **Run once**. Observa cada módulo ejecutar.
-
-### 3.4 Verifica el correo
-
-Abre tu bandeja de entrada — debe llegar un correo con el PDF adjunto con los marcadores reemplazados.
-
-✅ **Checkpoint:** El PDF en tu bandeja muestra los marcadores crudos y calculados reemplazados por valores reales.
-
----
-
-## Actividad 4: Desafío Avanzado (post-clase, 30-45 min)
-
-> 🔥 **Desafío Post-Clase** - Esta sección se completa después de la sesión en vivo.
-
-### 4.1 Nombre de PDF con fecha dinámica
-
-En el módulo **Export as PDF**, edita el campo **File name** para que use la fecha:
+Envíate un correo informal, por ejemplo:
 
 ```
-Reporte_{{formatDate(now; "YYYY-MM-DD")}}.pdf
+Asunto: Venta del día
+Hoy Ana cerró a Acme S.A. por 1500 soles en consultoría mensual, cliente nuevo.
 ```
 
-Resultado: `Reporte_2026-04-19.pdf`. Ordena cronológicamente en Drive automáticamente.
+Corre **Run once** y revisa el Sheet.
 
-### 4.2 Agrega un Error Handler básico
-
-Click derecho en el módulo más frágil (generalmente Replace Text) → **Add error handler → Resume**.
-
-En el handler, agrega un módulo **Gmail → Send an Email** a tu correo con:
-- **Subject:** `❌ Error en flujo del reporte`
-- **Content:** `El flujo falló en el módulo [nombre]. Revisar Make History.`
-
-✅ **Checkpoint:** El escenario tiene nombre de PDF con fecha y al menos 1 error handler configurado.
-
-### 4.3 Sube el escenario a una carpeta de Backups
-
-En Drive, crea carpeta `Backups` y configura que Make guarde una copia del PDF ahí también (segundo módulo Gmail → Copy to folder).
-
----
-
-## 📁 Estructura Final del Proyecto
-
-```
-Make.com/
-├── Escenario 1: Captura Correo → Sheet (Instant, activo)
-└── Escenario 2: Reporte Semanal (Manual, Run once)
-
-Google Drive/
-└── Proyecto de Instrucción/
-    ├── brief.doc
-    ├── Tabla-de-Parámetros.doc
-    ├── sistema-reporte.xlsx  (Sheet, ahora recibe filas de correos)
-    ├── Reporte-Plantilla.slides
-    └── Backups/
-        └── Reporte_2026-04-19.pdf  (si completaste el desafío)
-```
-
----
-
-## Verificación Final
-
-Usa la rúbrica de abajo para verificar que tu proyecto esté completo antes de entregar.
+✓ **Verificación:** El Sheet `Ventas` recibe una fila con cada campo en su columna, sin importar el formato del correo.
 
 ---
 
 ## Reflexión
 
-Responde en tu documento:
+Antes de terminar, responde brevemente:
 
-1. **¿Qué habilidad del Módulo 1 te parece más valiosa para tu trabajo inmediato?**
-2. **¿Qué cambiarías en tu forma de trabajar a partir de hoy?**
-3. **¿Qué te entusiasma más del Módulo 2 cuando integremos IA en estos flujos?**
+1. **¿Por qué el Data Structure evita que se guarde basura en el Sheet?**
+2. **¿Qué pasaría si la IA devolviera texto libre en vez de JSON?**
 
 ---
 
 ## Logros Adicionales (Opcional)
 
-### 🟢 Agrega logs en una pestaña del Sheet
-Crea una pestaña `Logs` y haz que cada ejecución del escenario 2 registre fecha, hora y resultado (éxito/error). Preview de mejores prácticas de Clase 6.
+### 🟢 Agrega un campo "tipo"
+Suma `tipo` (Nuevo / Recurrente) al JSON y al Data Structure. Observa cómo Gemini lo infiere del texto.
 
-### 🟡 Configura filtro de asunto con regex
-En lugar de "contains", usa expresión regular para capturar varios formatos: `^(Ventas del día|Vtas|Reporte).*`. Más flexibilidad al vendedor.
+### 🟡 Prueba 3 correos con formatos distintos
+Envía correos formales, informales y con typos. Verifica que el JSON sale consistente igual.
 
-### 🔴 Prepara el scheduled trigger
-Duplica el Escenario 2 y cámbiale el trigger a **Scheduled** cada viernes 4pm. Todavía no lo actives — lo completas en la Clase 5 cuando agreguemos IA.
-
----
-
-## Rúbrica de Evaluación
-
-| Criterio | Excelente (20) | Bueno (15) | Satisfactorio (10) | Bajo (5) |
-|----------|---------------|------------|-------------------|----------|
-| **Escenario 1 — Gmail → Sheet** | Instant Trigger activo, filtro correcto, 3+ filas registradas en prueba | Funciona pero sin filtro específico | Funciona manual, no Instant | No funciona end-to-end |
-| **Escenario 2 — Flujo del reporte** | ≥8 marcadores reemplazados (crudos y calculados), PDF generado | 5-7 marcadores reemplazados | 3-4 marcadores reemplazados | <3 marcadores o PDF no se genera |
-| **Entrega por Gmail** | Correo llega con PDF adjunto, asunto descriptivo | PDF llega pero asunto genérico | PDF generado pero no enviado | No llega correo |
-| **Mejores prácticas (desafío)** | Nombre con fecha + error handler + backup folder | Nombre con fecha + error handler | Solo nombre con fecha | Sin mejoras aplicadas |
-| **Tabla de parámetros actualizada** | Documentados todos los mapeos de Make (módulos, operaciones, conexiones) | Mapeos principales documentados | Solo estructura básica registrada | Sin actualización post-lab |
-
-**Total: 100 puntos** (5 criterios x 20 pts)
-
-| Nota | Rango |
-|------|-------|
-| A | 90-100 |
-| B | 80-89 |
-| C | 70-79 |
-| F | < 70 |
+### 🔴 Maneja el campo faltante
+¿Qué pasa si el correo no menciona el monto? Ajusta el prompt para que devuelva `null` y observa cómo lo maneja Parse JSON.
 
 ---
 
-## 📝 Entrega
+## 📝 Cierre de la sesión
 
-📦 **Entregable:**
+Esta práctica se valida **en clase** (0 = no la hiciste / 100 = la hiciste). No hay entrega posterior.
 
-1. **Screenshots** del proyecto terminado mostrando:
-   - **Escenario 1** activo en Make (toggle "On" visible)
-   - **Sheet** con al menos 3 filas agregadas por el Instant Trigger (con hora registrada)
-   - **Escenario 2** completo en Make (vista del flujo completo con todos los módulos)
-   - **PDF generado** llegando al correo con marcadores reemplazados
-   - Tu nombre o correo visible en al menos 2 de los 4 screenshots
+### Lo que debes mostrar
 
-2. **Fuente:** link compartido (con permisos de lectura) a la carpeta "Proyecto de Instrucción" en Drive.
+- [ ] System prompt que pide JSON con los 5 campos
+- [ ] Data Structure + módulo Parse JSON funcionando
+- [ ] Al enviar un correo de venta, el Sheet `Ventas` se llena con cada campo en su columna
+
+> 📸 Ten a la mano el escenario corrido (Gmail → Gemini → Parse JSON → Sheets) y el Sheet con la fila estructurada.
+
+---
+
+> 📌 Esta sesión cierra el bloque de "piezas técnicas" del sistema. En la Sesión 4 también puede aplicarse el **test diagnóstico** del primer bloque (ver carpeta `test/`) — es de control interno y no afecta la calificación.

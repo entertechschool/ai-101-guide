@@ -1,96 +1,96 @@
-# Test Módulo 1 - Questions
+# Test diagnóstico Sesiones 1-4 - Questions
 
 **5 preguntas diagnósticas** | **Duración:** 10 min | **No afecta calificación**
 
 ---
 
-## Pregunta 1 (Clase 01 — Prompts y Gems)
+## Pregunta 1 (Sesión 01 — Prompts efectivos)
 
-Un colega te dice: "Le pregunté a Gemini lo mismo 3 veces en chats distintos y siempre tengo que repetirle quién soy y qué hago. Es agotador." ¿Qué le falta a su flujo?
+Un colega le pide a Gemini "escribe sobre productividad" y recibe una respuesta genérica que no puede usar. ¿Qué le falta a su prompt para volverlo profesional?
 
-A. Usar un modelo pago de Gemini
-B. Configurar un Gem con instrucciones y archivos de referencia persistentes
-C. Aplicar la estructura Rol + Contexto + Tarea + Formato + Restricciones
-D. Pasar a un servicio diferente (Claude o ChatGPT)
+A. Un modelo pago de Gemini
+B. Aplicar la anatomía: rol + tarea + contexto + formato
+C. Repetir la misma pregunta varias veces hasta que mejore
+D. Escribir el prompt en inglés
 
-> **Respuesta:** B. Un Gem persiste contexto fijo (instrucciones + archivos) — eliminás la repetición. Las opciones A y D no atacan el problema; la C ayuda en cada prompt individual pero no resuelve la repetición.
-
----
-
-## Pregunta 2 (Clase 02 — Google Sheets con IA)
-
-Estás diseñando el Sheet de tu sistema. La meta semanal del negocio (S/ 20,000) y los nombres de los 3 vendedores aparecen en muchos cálculos. ¿Cuál es la decisión correcta de diseño?
-
-A. Repetir esos valores en una columna de la pestaña operativa para que estén disponibles fila por fila
-B. Guardarlos en una pestaña `Config` y referenciarlos vía rangos nombrados desde donde haga falta
-C. Hardcodearlos en las fórmulas de Make para que sean inmutables
-D. Crear un archivo separado de Drive solo para parámetros
-
-> **Respuesta:** B. La separación operativa/Config + rangos nombrados es el corazón del Módulo 1. Cambiar la meta una vez actualiza todo el sistema. Sin esa separación, tocás 50 filas (A) o tenés que editar Make cada vez (C).
+> **Respuesta:** B. La anatomía rol + tarea + contexto + formato es lo que ancla la respuesta a su caso. El modelo (A) y el idioma (D) no atacan el problema; repetir (C) no agrega información.
 
 ---
 
-## Pregunta 3 (Clase 03 — Marcadores variables)
+## Pregunta 2 (Sesión 02 — Make 101 + Google Cloud)
 
-Tu plantilla de Slides tiene estos 3 marcadores: `{{ventas_total}}`, `{{variacion_pct}}` y `{{hallazgo_1}}`. Para conectar el sistema en la Clase 4 y 5, necesitás saber el origen de cada uno. ¿Qué tipos son, en orden?
+Al conectar Make con tu cuenta de Google vía OAuth, ¿qué es lo que Make recibe y usa para acceder a tu Drive?
 
-A. Crudo · Crudo · Calculado
-B. Crudo · Calculado · Generado por IA
-C. Calculado · Calculado · Generado por IA
-D. Generado por IA · Crudo · Calculado
+A. Tu contraseña de Google, que queda guardada en Make
+B. Un token que Google emite tras aprobar permisos — tu contraseña nunca se comparte
+C. El Client Secret, que reemplaza a tu contraseña
+D. Un código de un solo uso que caduca en 5 minutos
 
-> **Respuesta:** B. `ventas_total` viene directo de una celda del Sheet (crudo). `variacion_pct` requiere fórmula sobre 2 valores (calculado por Make). `hallazgo_1` es un insight contextual (generado por Gemini).
-
----
-
-## Pregunta 4 (Clase 04 — Make básico sin IA)
-
-Tu escenario semanal en Make tiene: Search Rows (1) + Create from Template (1) + 10 Replace Text (10) + Export PDF (1) + Send Email (1). Para procesar correos en vivo durante el día, además necesitás un segundo escenario. ¿Qué configuración usás y por qué?
-
-A. El mismo escenario semanal con trigger Scheduled cada 5 minutos — total ~14 ops por corrida
-B. Un escenario separado con Instant Trigger de Gmail — reacciona en 2-5 segundos y consume ops solo cuando llega correo
-C. Un escenario separado con Scheduled cada hora — minimiza el consumo de operaciones
-D. El mismo escenario semanal pero corriendo manualmente cada vez que llega un correo
-
-> **Respuesta:** B. Instant es la única opción que reacciona en segundos sin desperdiciar operaciones. La C consume ops cada hora aunque no haya correos; la A duplica trabajo y revienta el plan free; la D no escala.
+> **Respuesta:** B. OAuth funciona con un token que Google entrega tras tu aprobación; la contraseña nunca viaja a Make. El Client ID/Secret identifican la app, pero el acceso se da por el token.
 
 ---
 
-## Pregunta 5 (Integración M1)
+## Pregunta 3 (Sesión 03 — API key de Gemini)
 
-Llegás a la Clase 5 con: Gem configurado, Sheet con 3 pestañas y rangos nombrados, plantilla de Slides con 18 marcadores. PERO no actualizaste la tabla de parámetros desde la Clase 2. ¿Qué problema específico vas a tener al armar los prompts de Gemini API?
+Vas a usar Gemini en varios escenarios de Make para leer facturas simples y de alto volumen. ¿Qué decisiones son las correctas?
 
-A. Ninguno — la tabla de parámetros es solo organización personal
-B. Make no podrá leer el Sheet sin la tabla
-C. Tendrás que abrir Sheet, Slides y notas mentales para rastrear de dónde viene cada marcador en cada prompt — lento y propenso a errores
-D. Los marcadores tipo IA no podrán generarse
+A. Pegar la API key en cada módulo y usar Gemini Pro
+B. Guardar la key como Connection reutilizable y usar Gemini Flash
+C. Guardar la key como Connection y usar Gemini Pro para todo
+D. Pegar la key en cada módulo y usar Gemini Flash
 
-> **Respuesta:** C. La tabla de parámetros es el mapa unificado del sistema. Sin ella, cada prompt de IA requiere rastrear el origen del marcador manualmente. El sistema sigue funcionando técnicamente, pero la productividad cae 3-5x.
+> **Respuesta:** B. La Connection guarda la credencial de forma segura y reutilizable; Flash es rápido y económico, ideal para tareas simples de alto volumen. Pro (A, C) es innecesario y caro aquí; pegar la key suelta (A, D) la expone.
+
+---
+
+## Pregunta 4 (Sesión 04 — JSON + Parse JSON)
+
+Le pides a Gemini que extraiga datos de un correo y quieres que cada dato caiga en su columna del Sheet. ¿Qué combinación lo logra de forma confiable?
+
+A. Pedir la respuesta en texto libre y separar los datos a mano
+B. Pedir la respuesta en JSON + un Data Structure + módulo Parse JSON
+C. Pedir la respuesta en JSON y mapearla directo sin Parse JSON
+D. Usar Gemini Pro para que el texto salga mejor ordenado
+
+> **Respuesta:** B. El JSON da estructura, el Data Structure define el molde y Parse JSON lo convierte en variables. Sin Parse (C) la salida es un solo bloque de texto; el texto libre (A) es frágil; el modelo (D) no resuelve el mapeo.
+
+---
+
+## Pregunta 5 (Integración — el flujo de facturas)
+
+En el sistema de facturas que construyes, ¿cuál es el orden correcto de los módulos para que una factura nueva termine registrada con sus datos separados?
+
+A. Sheets Add a Row → Drive Watch → Gemini → Parse JSON
+B. Drive Watch Files → Gemini (JSON) → Parse JSON → Sheets Add a Row
+C. Gemini → Drive Watch Files → Sheets Add a Row → Parse JSON
+D. Drive Watch Files → Sheets Add a Row → Gemini → Parse JSON
+
+> **Respuesta:** B. Primero el trigger (entra la factura), luego Gemini la lee y devuelve JSON, Parse JSON lo separa en variables y recién al final se escribe la fila en el Sheet. Cualquier otro orden rompe el flujo de datos.
 
 ---
 
 ## Clave de Respuestas Rápida
 
-| # | Respuesta | Clase | Tema |
-|---|-----------|-------|------|
-| 1 | B | C01 | Gems como contexto persistente |
-| 2 | B | C02 | Arquitectura Config + rangos nombrados |
-| 3 | B | C03 | Clasificación de marcadores (crudo/calculado/IA) |
-| 4 | B | C04 | Instant vs Scheduled + consumo de operaciones |
-| 5 | C | Integración | Tabla de parámetros como mapa del sistema |
+| # | Respuesta | Sesión | Tema |
+|---|-----------|--------|------|
+| 1 | B | S01 | Anatomía del prompt |
+| 2 | B | S02 | OAuth (token, no contraseña) |
+| 3 | B | S03 | Connection + Flash |
+| 4 | B | S04 | JSON + Data Structure + Parse |
+| 5 | B | Integración | Orden del flujo de facturas |
 
 ---
 
 ## Análisis para el instructor
 
-Si hay **<60% de acierto** en alguna pregunta, retomar el concepto al inicio de la Clase 5 antes de avanzar:
+Si hay **<60% de acierto** en alguna pregunta, retomar el concepto al inicio de la siguiente sesión:
 
-- **Pregunta 1 (Gems):** demo rápida del Gem en vivo + revisar instrucciones de uno de los estudiantes en pantalla
-- **Pregunta 2 (Sheets):** ejercicio de "¿operativa o Config?" con 5 ejemplos en chat
-- **Pregunta 3 (Marcadores):** clasificar 5 marcadores en vivo con el grupo antes de armar prompts JSON
-- **Pregunta 4 (Make):** revisar 1 historial de ejecución del escenario instantáneo en pantalla — el "efecto WOW" en vivo refuerza el concepto
-- **Pregunta 5 (Integración):** dedicar 10 min al inicio de Clase 5 a completar/actualizar la tabla de parámetros con el grupo
+- **Pregunta 1 (Prompts):** mejorar un prompt débil en vivo, agregando rol/contexto/formato.
+- **Pregunta 2 (OAuth):** repasar los 5 pasos de OAuth con la analogía de la llave de hotel.
+- **Pregunta 3 (API key):** mostrar la diferencia entre Connection y key suelta en Make.
+- **Pregunta 4 (JSON):** parsear una respuesta de Gemini en vivo con "Generate from sample".
+- **Pregunta 5 (Flujo):** dibujar el flujo de facturas de punta a punta en pantalla.
 
-**Si el promedio del grupo es <70%:** considerar reorganizar la Clase 5 para empezar con un repaso integrador de M1 (15-20 min) antes de introducir Gemini API.
+**Si el promedio del grupo es <70%:** dedicar 15 min a un repaso integrador antes de avanzar a plantillas.
 
-**Si el promedio es >85%:** el grupo está sólido — avanzar directo con la API y aprovechar el tiempo extra para profundizar en optimización de prompts (anticipo de C06).
+**Si el promedio es >85%:** el grupo está sólido — avanzar directo a plantillas con placeholders.

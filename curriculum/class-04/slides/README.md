@@ -1,152 +1,161 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 4
-## MAKE BÁSICO
+## JSON + PARSE JSON
 
-Tu primer flujo automático con Instant Trigger
+Que la IA devuelva datos estructurados, no charla
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Construye flujos automáticos en Make usando Instant Trigger de Gmail conectando Sheets y Slides para entender módulos, triggers y rutas con actualización en tiempo real.
-
-### PUNTOS CLAVE
-
-1. Módulos, triggers, operaciones y conexiones
-2. Instant Trigger de Gmail (2-5 segundos)
-3. Conectar Gmail con Google Sheets
-4. Conectar Sheets con Slides (Replace Text)
-5. Exportar PDF y enviar por Gmail
-
-### EVALUACIÓN
-
-- Escenario 1: Gmail → Sheets (instant)
-- Escenario 2: Sheets → Slides → PDF
-- 5 marcadores tipo 1 y 2 funcionando
+*Sesión 4 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · DE UN DATO A VARIOS
 
-### Prepárate para el efecto WOW
+### La sesión pasada:
 
-**01 · CUENTA LISTA**
-¿Tienes cuenta gratuita de Make?
-Levanta la mano si sí.
+- Gemini extrajo UN dato (el proveedor)
+- En texto libre
 
-**02 · DEMO EN VIVO**
-Correo enviado → Sheet actualizado
-en 5 segundos. Observa.
+### Hoy:
 
-**03 · TU SUEÑO**
-¿Qué automatización personal harías?
-Responde en chat.
+- La IA devuelve **varios datos juntos**, ordenados
+- Cada campo cae en su columna automáticamente
+
+> "Hoy domesticamos lo que la IA devuelve."
 
 ---
 
-## QUÉ ES MAKE Y SUS CONCEPTOS BASE
+## QUÉ VAMOS A LOGRAR HOY
 
-*Plataforma de automatización visual sin código*
+### OBJETIVO DE LA SESIÓN
 
-**10 min · Teoría**
+Procesar la respuesta estructurada de la IA con Parse JSON y un Data Structure para convertir texto en variables.
 
-- Plan gratuito: 1,000 operaciones/mes
-- **Escenario** = el flujo completo
-- **Módulo** = cada paso del flujo
-- **Operación** = cada ejecución (cuenta para el límite)
-- **Conexión** = autenticación con tus apps
-- **Trigger** = el módulo que inicia el flujo
+### FUNDAMENTOS
 
----
+1. ¿Qué es JSON?
+2. Por qué pedirle a la IA que responda en JSON
+3. Data Structure en Make (el "molde")
+4. Parse JSON + variables resultantes
 
-## INSTANT VS SCHEDULED TRIGGER
+### MINI-PROYECTO
 
-*Dos formas de activar un flujo*
-
-**10 min · Teoría**
-
-- **Instant:** se activa al instante (2-5 segundos)
-  → Recolección en tiempo real (efecto WOW en clase)
-- **Scheduled:** corre cada X tiempo
-  → Reporte periódico (viernes 4pm)
-
-Este curso usa AMBOS
+Extracción de ventas desde Gmail
 
 ---
 
-## CONECTA · GMAIL CON SHEETS (INSTANT)
+## APERTURA · 10 min
 
-*Primer flujo con reacción en tiempo real*
+*Responde por chat — 1 línea por pregunta*
 
-**40 min · Individual**
+**01** ¿La IA te devolvió una respuesta tan larga que no sabías qué hacer con ella?
+
+**02** ¿Cómo extraes datos de un texto largo hoy (a mano, copy/paste)?
+
+**03** ¿Te tocó parsear un Excel a mano para subirlo a otro sistema?
+
+> 💡 JSON es el formato que hace que la IA hable un idioma que tu flujo entiende.
+
+---
+
+## FUNDAMENTO 1 · ¿QUÉ ES JSON?
+
+*Formato estándar de datos*
+
+Objetos `{}`, arrays `[]`, pares clave-valor:
+
+```json
+{
+  "vendedor": "Ana",
+  "cliente": "Acme S.A.",
+  "monto": 1500,
+  "fecha": "2026-06-01"
+}
+```
+
+---
+
+## FUNDAMENTO 2 · POR QUÉ PEDIR JSON A LA IA
+
+*Texto libre = imposible de procesar*
+
+| SIN JSON (texto libre) | CON JSON (estructurado) |
+|------------------------|-------------------------|
+| "Ana vendió a Acme..." | `{ "vendedor": "Ana", ... }` |
+| Hay que adivinar el dato | Cada dato en su clave |
+| Frágil | Robusto |
+
+> Lo pides en el **system prompt**: "responde SOLO en JSON".
+
+---
+
+## FUNDAMENTO 3 · DATA STRUCTURE EN MAKE
+
+*El "molde" que le dices a Make*
+
+- Defines el **nombre** de cada campo (vendedor, monto...)
+- Defines el **tipo** (texto, número, fecha)
+- Make genera **variables** para los módulos siguientes
+- Si la IA devuelve algo distinto al molde → error claro
+
+---
+
+## EJEMPLO REAL · DATA STRUCTURE "VENTA"
+
+*El molde del JSON que llega desde Gemini*
+
+```
+MAKE · Data Structures · Venta
+──────────────────────────────────
+vendedor   Text          ✓ requerido
+cliente    Text          ✓ requerido
+producto   Text          ✓ requerido
+monto      Number        ✓ requerido
+fecha      Date (ISO)    ✓ requerido
+tipo       Text          ✗ opcional
+```
+
+---
+
+## FUNDAMENTO 4 · PARSE JSON + VARIABLES
+
+*Convierte el texto en objeto*
+
+- **TEXTO JSON** — lo que devolvió la IA
+- **PARSE JSON** — lo convierte usando el molde
+- **VARIABLES** — vendedor, monto, fecha... listas para usar
+
+> Cada campo queda como una variable que arrastras al Sheet.
+
+---
+
+## MINI-PROYECTO · VENTAS DESDE GMAIL
+
+*Correo informal → JSON → columnas del Sheet*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Crea escenario nuevo en Make
-2. Gmail — Watch Emails en modo Instant
-3. Filtro: asunto 'Ventas del día'
-4. Agrega Google Sheets — Add a row
-5. Prueba: envía correo y ve Sheet actualizar en segundos
+1. Configurar **Gmail Watch** en Make (correos de vendedores)
+2. Diseñar el **system prompt**: JSON con vendedor, cliente, producto, monto, fecha
+3. Crear el **Data Structure** (el molde del JSON)
+4. Agregar el módulo **Parse JSON**
+5. Mapear cada variable a su columna del Sheet **"Ventas"**
+6. Probar enviando un correo de venta
 
-✓ **Verificación:** Sheet con 3 filas agregadas automáticamente
-
----
-
-## CONECTA · SHEETS CON SLIDES
-
-*Flujo manual que genera el reporte*
-
-**35 min · Individual**
-
-### QUÉ HACER
-
-1. Crea segundo escenario (Run once)
-2. Sheets — Search Rows lee VentasSemanaActual
-3. Slides — Create from Template (duplica)
-4. Slides — Replace Text (3-5 marcadores)
-5. Calcula tipo 2 con módulos Date/Math
-
-✓ **Verificación:** Plantilla duplicada con valores reales
-
----
-
-## ENVÍA · PDF POR GMAIL
-
-*Cierra el flujo completo*
-
-**25 min · Individual**
-
-### QUÉ HACER
-
-1. Slides — Export as PDF
-2. Gmail — Send an Email
-3. A tu propio correo con PDF adjunto
-4. Run once del flujo completo
-5. Verifica que el correo llega
-
-✓ **Verificación:** PDF en tu bandeja con marcadores reemplazados
+✓ **Verificación:** El Sheet "Ventas" se llena solo al llegar un correo
 
 ---
 
 ## LO QUE TE LLEVAS HOY
 
-*Los artefactos que construiste hoy*
+**01** Saber pedirle a la IA que responda en JSON
 
-**01** 2 escenarios de Make funcionando
+**02** Data Structure + Parse JSON funcionando
 
-**02** Instant Trigger Gmail → Sheet en tiempo real
-
-**03** Flujo manual Sheets → Slides → PDF → Gmail
-
-**04** 5 marcadores tipo 1 y 2 reemplazados automáticamente
+**03** Sheet de ventas alimentado desde Gmail
 
 ### PRÓXIMA SESIÓN
 
-Sesión 5: Agregamos IA al flujo con Gemini API y dejamos los DOS flujos completos funcionando. Fin de la Fase 1, inicio de Fase 2.
+Sesión 5: Plantillas con placeholders. Convertimos estos datos en documentos automáticos.
