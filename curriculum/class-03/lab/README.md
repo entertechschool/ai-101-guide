@@ -1,180 +1,82 @@
-# Lab 03: Google Slides con IA
+# Lab 03: La IA extrae el proveedor
 
-## 🎯 Objetivos
+## 🎯 Objetivo
 
-1. Diseñar una plantilla de Google Slides con 6 secciones del reporte ejecutivo usando tu Gem.
-2. Nombrar y clasificar ~18-20 marcadores variables en la tabla de parámetros (tipo crudo/calculado/IA).
-3. Insertar los marcadores en la plantilla y validar visualmente con una prueba manual.
+Sumar **Gemini** al escenario de la Sesión 2: cuando entra una factura a Drive, la IA lee el documento, extrae el **proveedor** y lo registra en una columna nueva del Sheet.
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Anatomía del reporte ejecutivo** — 6 secciones: Portada, Resumen, Hallazgos, Visualización, Riesgos/Oportunidades, Próximos pasos.
-- **3 tipos de marcadores** — Crudo (del Sheet), Calculado (de Make), Generado por IA (de Gemini).
-- **Convención snake_case** — nombres descriptivos, sin espacios, agrupados por sección (`portada_titulo`, `resumen_ventas`).
+- **API key** — tu llave personal y secreta para usar Gemini, generada en Google AI Studio.
+- **Connection en Make** — credencial guardada una vez y reutilizada en cualquier escenario.
+- **Gemini Flash** — modelo rápido y económico, ideal para leer documentos.
 
 ---
 
 ## ⚙️ Setup Inicial
 
-Esta sesión usa los artefactos de las clases anteriores. Verifica:
-
 | ✓ | Requisito | Verificación |
 |---|-----------|--------------|
-| ☐ | Sheet con 3 pestañas y datos | Puedes abrir `VentasSemanaActual` y ver las 15 filas |
-| ☐ | Tabla de parámetros (Google Doc) | Tiene secciones de columnas y rangos registradas |
-| ☐ | Gem del curso funcionando | Responde mencionando tu brief |
+| ☐ | Escenario Drive → Sheet (Sesión 2) | Corre y registra filas al subir una factura |
+| ☐ | Cuenta de Make activa | Entras a tu dashboard |
+| ☐ | Cuenta de Google | Para acceder a Google AI Studio |
 
-> ⚠️ Si no completaste el Sheet de la Clase 2, completa primero las 3 pestañas antes de continuar.
-
----
-
-## Actividad 1: Diseña las 6 secciones del reporte (30 min)
-
-### 1.1 Pide al Gem la estructura
-
-Envía a tu Gem:
-
-```
-Según mi brief, dame las 6 secciones de mi reporte ejecutivo.
-Para cada sección, dame: nombre, 1 línea de propósito, y qué
-información debería mostrar. Usa como referencia la anatomía
-clásica: portada, resumen, hallazgos, visualización, riesgos/oportunidades,
-próximos pasos.
-```
-
-### 1.2 Crea la plantilla en Slides
-
-Nombre del archivo:
-
-```
-Reporte [<!-- tu proyecto -->] — Plantilla
-```
-
-Crea 6 slides con estos títulos (ajusta a tu caso):
-
-1. **Portada** — contexto, fecha, marca
-2. **Resumen ejecutivo** — KPIs principales + narrativa
-3. **Hallazgos** — 3 insights clave
-4. **Visualización** — gráfico del período
-5. **Riesgos y oportunidades** — qué cuidar, qué aprovechar
-6. **Próximos pasos** — acciones concretas
-
-### 1.3 Aplica paleta y tipografía
-
-Pide al Gem:
-
-```
-Según mi industria y tipo de reporte, sugiere 2-3 colores
-(paleta hex) y 2 tipografías de Google Fonts que transmitan
-[<!-- ejecutivo, moderno, cercano, sobrio -->].
-```
-
-Aplica los colores al fondo/títulos y las tipografías al cuerpo.
-
-✅ **Checkpoint:** Tu plantilla tiene 6 slides con títulos específicos a tu reporte y un estilo visual consistente.
+> ⚠️ Sin el escenario de la Sesión 2 funcionando no puedes hacer este lab. Complétalo primero.
 
 ---
 
-## Actividad 2: Nombra todos los marcadores (45 min)
+## Mini-proyecto: la IA lee la factura y extrae el proveedor
 
-### 2.1 Identifica qué es variable
+> Vas a insertar un módulo de Gemini entre el trigger de Drive y la fila del Sheet.
 
-Slide por slide, subraya mentalmente qué texto cambia cada vez que corres el reporte. Esos son los marcadores.
+### Paso 1: Genera tu API key en Google AI Studio
 
-### 2.2 Nombra cada marcador en snake_case
+1. Ve a [aistudio.google.com/apikey](https://aistudio.google.com/apikey){:target="_blank"}.
+2. Click **Create API key** → elige tu proyecto.
+3. **Copia la key** (se ve como `AIzaSy...`) y guárdala en un lugar seguro.
 
-Reglas:
-- Todo minúsculas
-- Palabras separadas por guion bajo
-- Descriptivo, no abreviado (`ventas_total_semana`, no `vts`)
-- Agrupado por sección como prefijo (`portada_titulo`, `resumen_ventas`)
+> ⚠️ Nunca compartas tu API key (ni en capturas, repos o chats). Es como una contraseña.
 
-### 2.3 Clasifica por tipo en la tabla de parámetros
+✓ **Verificación:** Tienes tu API key copiada.
 
-Agrega sección nueva a tu tabla de parámetros:
+### Paso 2: Crea la Connection a Gemini en Make
 
-| Marcador | Tipo | Origen | Ejemplo |
-|----------|------|--------|---------|
-| `{{semana}}` | Calculado | Make (fechas) | "13-19 abril" |
-| `{{ventas_total}}` | Crudo | Sheet | "21,700" |
-| `{{variacion_pct}}` | Calculado | Make | "+12%" |
-| `{{clientes_nuevos}}` | Crudo | Sheet | "8" |
-| `{{meta_cumplida_pct}}` | Calculado | Make | "108%" |
-| `{{resumen_ejecutivo}}` | IA | Gemini | Párrafo |
-| `{{hallazgo_1}}` | IA | Gemini | Texto |
-| `{{hallazgo_2}}` | IA | Gemini | Texto |
-| `{{hallazgo_3}}` | IA | Gemini | Texto |
-| `{{riesgo_1}}` | IA | Gemini | Texto |
-| `{{riesgo_2}}` | IA | Gemini | Texto |
-| `{{oportunidad_1}}` | IA | Gemini | Texto |
-| `{{grafico_ventas}}` | Crudo | Sheet (imagen) | — |
-| `{{accion_1}}` | IA | Gemini | Texto |
-| `{{accion_2}}` | IA | Gemini | Texto |
-| `{{fecha_reporte}}` | Calculado | Make | "19-04-2026" |
-| `{{proximo_reporte}}` | Calculado | Make | "26-04-2026" |
-| ... | ... | ... | ... |
+1. En tu escenario, agrega un módulo **Google AI (Gemini)**.
+2. Al pedir conexión, elige **Add** y pega tu **API key**.
+3. Nombra la conexión `Gemini - Curso AI101` para reutilizarla después.
 
-**Meta:** ~18-20 marcadores clasificados.
+✓ **Verificación:** La conexión queda guardada y disponible en Make.
 
-### 2.4 Adapta a tu caso
+### Paso 3: Agrega el módulo Gemini al escenario
 
-Si tu caso no son ventas, cambia los nombres pero mantén la estructura. Ejemplos:
-
-- Marketing: `{{alcance_total}}`, `{{engagement_promedio}}`, `{{campana_destacada}}`
-- Consultoría: `{{horas_facturadas}}`, `{{proyectos_activos}}`, `{{cliente_mes}}`
-
-✅ **Checkpoint:** Tu tabla de parámetros tiene entre 18-20 filas de marcadores, cada una con tipo y origen claros.
-
----
-
-## Actividad 3: Inserta marcadores y prueba manual (25 min)
-
-### 3.1 Reemplaza textos por marcadores en cada slide
-
-En cada slide, reemplaza los textos placeholder por `{{marcadores}}` correspondientes.
-
-Ejemplo de la slide de Resumen ejecutivo:
+Coloca el módulo de Gemini **después del trigger de Drive** y **antes del Sheets Add a Row**:
 
 ```
-Esta semana generamos {{ventas_total}} soles,
-un {{variacion_pct}} vs la semana anterior.
-{{resumen_ejecutivo}}
+Drive Watch Files  →  Gemini (leer factura)  →  Sheets Add a Row
 ```
 
-### 3.2 Inserta el gráfico vinculado
+### Paso 4: Pídele que extraiga el proveedor
 
-**Insertar → Gráfico → Desde Hojas de cálculo** → selecciona tu Sheet → pestaña `VentasSemanaActual` → elige el gráfico que quieres mostrar.
+En el módulo de Gemini:
+- **Model:** `gemini-2.5-flash`
+- **Prompt:**
+  ```
+  Lee esta factura y devuelve SOLO el nombre del proveedor (la empresa
+  que emite la factura), sin texto adicional.
+  ```
+- Adjunta el archivo de la factura desde el módulo de Drive (campo de archivo/imagen).
 
-> 💡 El gráfico se actualiza automáticamente cuando cambian los datos del Sheet.
+✓ **Verificación:** Al probar, Gemini responde con el nombre del proveedor.
 
-### 3.3 Prueba manual
+### Paso 5: Mapea el proveedor a una columna nueva
 
-Elige 3-4 marcadores y reemplázalos a mano con datos reales para verificar que el diseño aguanta:
+1. En tu Sheet `Facturas-Registro`, agrega una columna **`Proveedor`**.
+2. En el módulo **Sheets Add a Row**, mapea:
+   - `Proveedor` → la salida de texto del módulo Gemini
+3. Corre **Run once** y sube una factura de prueba.
 
-- `{{ventas_total}}` → `21,700`
-- `{{clientes_nuevos}}` → `8`
-- `{{hallazgo_1}}` → `Juan cerró 2 renovaciones grandes...`
-
-### 3.4 Ajusta diseño
-
-Si el texto queda cortado o desbordado, ajusta tamaños y espaciados. Cuando pongas los datos reales en Clase 4, no habrá tiempo de rediseñar.
-
-✅ **Checkpoint:** Tu plantilla tiene todos los marcadores visibles, un gráfico vinculado al Sheet y la prueba manual muestra un diseño estable.
-
----
-
-## 📁 Estructura Final del Proyecto
-
-```
-Google Drive/
-└── Proyecto de Instrucción/
-    ├── brief.doc
-    ├── Tabla-de-Parámetros.doc  (crece con marcadores)
-    ├── sistema-reporte.xlsx     (Sheet con 3 pestañas)
-    └── Reporte-Plantilla.slides ← NUEVO (6 slides + marcadores)
-```
+✓ **Verificación:** El Sheet registra la fila con la columna **Proveedor** llena por la IA.
 
 ---
 
@@ -182,39 +84,32 @@ Google Drive/
 
 Antes de terminar, responde brevemente:
 
-1. **¿Qué marcador de tu plantilla crees que será el más difícil de llenar automáticamente?**
-2. **¿Por qué conviene que los marcadores tipo IA (`hallazgo_1`, `riesgo_2`) estén nombrados aunque hoy estén vacíos?**
-3. **¿Qué sección del reporte te parece la más valiosa para tu lector final?**
+1. **¿Por qué una Connection es más segura que pegar la API key en cada módulo?**
+2. **¿Para esta tarea conviene Flash o Pro? ¿Por qué?**
 
 ---
 
 ## Logros Adicionales (Opcional)
 
-### 🟢 Duplica la plantilla antes de la próxima clase
-Crea una copia llamada `Reporte-SemanaReal` y prueba llenar a mano TODOS los marcadores con datos reales de una semana pasada. Te prepara para Clase 4 cuando Make lo haga solo.
+### 🟢 Extrae un segundo dato
+Pídele a Gemini también el **monto total** y mapéalo a otra columna. (Cuando sean varios datos juntos, en la Sesión 4 lo haremos ordenado con JSON.)
 
-### 🟡 Agrega una slide de "Apéndice"
-Slide 7 con una tabla de apéndice para detalles (top clientes, desglose por vendedor). Define 3-4 marcadores adicionales.
+### 🟡 Prueba con una factura "difícil"
+Sube una factura con formato raro o foto borrosa. ¿Acierta? Anota dónde falla — útil para la Sesión 6.
 
-### 🔴 Diseña versión móvil
-Una segunda plantilla formato vertical (para compartir por WhatsApp) con los 3 KPIs principales. Preview del reto de Clase 6 (optimización para canal).
+### 🔴 Compara Flash vs Pro
+Duplica el módulo con `gemini-2.5-pro` y compara la calidad y velocidad de la extracción.
 
 ---
 
-## 📝 Entrega
+## 📝 Cierre de la sesión
 
-### Checklist
+Esta práctica se valida **en clase** (0 = no la hiciste / 100 = la hiciste). No hay entrega posterior.
 
-- [ ] Plantilla de Google Slides con 6 slides diseñadas
-- [ ] Tabla de parámetros con 18-20 marcadores clasificados
-- [ ] Prueba manual exitosa (al menos 1 slide con datos reales)
-- [ ] Gráfico vinculado al Sheet insertado
+### Lo que debes mostrar
 
-### Entregable
+- [ ] API key generada y guardada como Connection en Make
+- [ ] Módulo Gemini en el escenario, entre Drive y Sheets
+- [ ] Al subir una factura, el Sheet registra el **Proveedor** extraído por la IA
 
-📸 **Screenshot** de la slide 2 (Resumen ejecutivo) de tu plantilla, donde se vean:
-- Los marcadores `{{...}}` visibles en su posición
-- El título de la plantilla en la barra superior
-- Tu correo de Google visible en la esquina
-
-> ⚠️ El entregable debe mostrar tu cuenta de Google para verificar que es tu plantilla.
+> 📸 Ten a la mano el escenario con el módulo Gemini en verde y el Sheet con la columna Proveedor llena.

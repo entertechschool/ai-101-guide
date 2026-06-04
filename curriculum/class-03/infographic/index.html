@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Slides con IA — Plantilla del reporte</title>
+  <title>API key de Gemini — Que la IA procese tus datos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -43,73 +43,63 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 1 · Clase 03</div>
-    <h1>Google Slides con IA</h1>
-    <p class="subtitle">Diseña la plantilla del reporte con marcadores variables</p>
+    <div class="badge">Sesión 03 · API key de Gemini</div>
+    <h1>API key de Gemini</h1>
+    <p class="subtitle">Que la IA procese tus datos dentro del flujo</p>
   </section>
 
   <section>
     <div class="card accent-blue">
-      <h3>Anatomía del reporte ejecutivo</h3>
-      <p class="desc">Las 6 secciones clásicas. Regla de oro: 1 slide = 1 idea.</p>
-      <div class="sections-grid">
-        <div class="section-tile"><strong>1. Portada</strong><span>Contexto + fecha + marca</span></div>
-        <div class="section-tile"><strong>2. Resumen</strong><span>KPIs + narrativa</span></div>
-        <div class="section-tile"><strong>3. Hallazgos</strong><span>3 insights clave</span></div>
-        <div class="section-tile"><strong>4. Gráfico</strong><span>Visualización del período</span></div>
-        <div class="section-tile"><strong>5. Riesgos</strong><span>Lo que cuidar + oportunidades</span></div>
-        <div class="section-tile"><strong>6. Próximos pasos</strong><span>Acciones concretas</span></div>
-      </div>
-    </div>
-
-    <div class="card accent-purple">
-      <h3>Los 3 tipos de marcadores</h3>
-      <p class="desc">Cada tipo tiene un origen distinto y una herramienta que lo llena.</p>
-      <table class="compare">
-        <tr><th>Tipo</th><th>Ejemplo</th><th>Fuente</th><th>Cuándo se llena</th></tr>
-        <tr><td>Crudo</td><td><code>{{ventas_total}}</code></td><td>Sheet</td><td>Clase 4</td></tr>
-        <tr><td>Calculado</td><td><code>{{variacion_pct}}</code></td><td>Make</td><td>Clase 4</td></tr>
-        <tr><td>IA</td><td><code>{{hallazgo_1}}</code></td><td>Gemini</td><td>Clase 5</td></tr>
-      </table>
-    </div>
-
-    <div class="card accent-green">
-      <h3>Convención snake_case</h3>
-      <p class="desc">Nombres que Replace Text entiende y la tabla de parámetros puede agrupar.</p>
-<pre><code>✅  {{portada_titulo}}            agrupado con prefijo
-✅  {{resumen_ventas_total}}      descriptivo
-✅  {{hallazgo_1}}                numerado
-
-❌  {{Ventas Total}}              espacios rompen Replace Text
-❌  {{v1}}                        ilegible en tabla de parámetros
-❌  {{variación %}}               caracteres especiales</code></pre>
+      <h3>¿Qué es una API?</h3>
+      <p class="desc">El puente que deja a tu flujo pedirle algo a la IA.</p>
+<pre><code>MAKE        →   tu flujo
+API GEMINI  →   el puente
+RESPUESTA   →   lo que devuelve la IA</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>Tabla de parámetros = mapa del sistema</h3>
-      <p class="desc">18-20 marcadores documentados. Es la pieza más importante que construyes en M1.</p>
-<pre><code>| Marcador            | Tipo       | Origen  |
-|---------------------|-----------|---------|
-| {{ventas_total}}    | Crudo     | Sheet   |
-| {{variacion_pct}}   | Calculado | Make    |
-| {{hallazgo_1}}      | IA        | Gemini  |
-| {{resumen}}         | IA        | Gemini  |
-| {{grafico_ventas}}  | Crudo     | Sheet   |
-| ...</code></pre>
+      <h3>API key: tu llave secreta</h3>
+      <p class="desc">Se genera gratis en Google AI Studio. Trátala como una contraseña.</p>
+<pre><code>🔑 Personal   — te identifica como usuario
+🔒 Secreta    — no compartir, no subir a GitHub
+💵 Free tier  — alcanza de sobra para el curso
+📍 Origen     — aistudio.google.com</code></pre>
+    </div>
+
+    <div class="card accent-green">
+      <h3>Connection vs API key directa</h3>
+      <p class="desc">Guardar la credencial una vez es más seguro que pegarla suelta.</p>
+      <table class="compare">
+        <tr><th>Aspecto</th><th>Connection</th><th>Key directa</th></tr>
+        <tr><td>Config</td><td>1 sola vez</td><td>En cada módulo</td></tr>
+        <tr><td>Reúso</td><td>Cualquier escenario</td><td>Manual</td></tr>
+        <tr><td>Seguridad</td><td>Alta</td><td>Riesgo de exponerla</td></tr>
+      </table>
+    </div>
+
+    <div class="card accent-purple">
+      <h3>Flash vs Pro + tu mini-proyecto</h3>
+      <p class="desc">Flash es rápido y económico — perfecto para leer facturas.</p>
+<pre><code>Flash → simple, alto volumen, barato
+Pro   → análisis profundo, más caro
+
+Mini-proyecto:
+Drive → Gemini (extrae proveedor) → Sheet
+"extrae SOLO el nombre del proveedor"</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>Marcador</strong><span>Texto {{x}} que Make reemplaza</span></div>
-      <div class="term"><strong>Replace Text</strong><span>Operación de Slides en Make</span></div>
-      <div class="term"><strong>snake_case</strong><span>Convención de nombres</span></div>
-      <div class="term"><strong>Gráfico vinculado</strong><span>Se actualiza solo desde el Sheet</span></div>
+      <div class="term"><strong>API</strong><span>Puente entre tu flujo y la IA</span></div>
+      <div class="term"><strong>API key</strong><span>Llave personal y secreta</span></div>
+      <div class="term"><strong>Connection</strong><span>Credencial guardada en Make</span></div>
+      <div class="term"><strong>Flash / Pro</strong><span>Modelos rápido / capaz</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 03
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 03
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>

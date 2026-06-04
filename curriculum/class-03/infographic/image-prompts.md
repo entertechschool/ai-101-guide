@@ -1,3 +1,3 @@
-# Image Prompts — Clase 03: Google Slides con IA
+# Image Prompts — Sesión 03: API key de Gemini
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con las 6 secciones, tabla de tipos de marcadores y ejemplo de plantilla).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con qué es una API, la API key, la comparación Connection vs key directa y Flash vs Pro).

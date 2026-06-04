@@ -1,148 +1,157 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 3
-## GOOGLE SLIDES CON IA
+## API KEY DE GEMINI
 
-Diseña la plantilla del reporte ejecutivo
+Que la IA procese tus datos automáticamente
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Utiliza Gemini para diseñar la plantilla visual del reporte ejecutivo en Google Slides con todos los marcadores conectados a la tabla de parámetros.
-
-### PUNTOS CLAVE
-
-1. Diseñar las 6 secciones del reporte
-2. Nombrar y documentar todos los marcadores
-3. Clasificar marcadores por tipo (crudo/calculado/IA)
-4. Insertar marcadores y probar manualmente
-5. Definir paleta visual y jerarquía
-
-### EVALUACIÓN
-
-- Plantilla de Slides con 6 slides
-- 18-20 marcadores clasificados
-- Prueba manual exitosa
+*Sesión 3 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · LA IA ENTRA AL FLUJO
 
-### Empieza por tu realidad
+### La sesión pasada:
 
-**01 · MUESTRA**
-Comparte un reporte que hayas armado antes
-(30 seg en pantalla)
+- Armaste tu primer escenario en Make
+- Drive → Sheet, sin IA
 
-**02 · LO QUE REPITE**
-¿Qué partes se repiten semana a semana?
-Identifica lo estable.
+### Hoy:
 
-**03 · LO QUE CAMBIA**
-¿Qué cambia cada vez?
-Eso serán los marcadores variables.
+- Conectas **Gemini** dentro del escenario
+- La IA lee la factura y extrae datos sola
+
+> "Hoy tu flujo deja de solo copiar y empieza a entender."
 
 ---
 
-## ANATOMÍA DE UN REPORTE EJECUTIVO
+## QUÉ VAMOS A LOGRAR HOY
 
-*Las 6 secciones clásicas*
+### OBJETIVO DE LA SESIÓN
 
-**8 min · Teoría**
+Integrar Gemini dentro de un flujo de Make generando una API key en Google AI Studio.
 
-1. **Portada** — contexto, fecha, marca
-2. **Resumen ejecutivo** — KPIs + narrativa
-3. **Hallazgos** — 3 insights clave
-4. **Visualización** — gráfico de la semana
-5. **Riesgos y oportunidades**
-6. **Próximos pasos**
+### FUNDAMENTOS
 
----
+1. ¿Qué es una API?
+2. ¿Qué es una API key?
+3. Connection en Make vs API key directa
+4. Modelos de Gemini — Flash vs Pro
 
-## LOS 3 TIPOS DE MARCADORES
+### MINI-PROYECTO
 
-*Cada tipo se llena de forma distinta*
-
-**7 min · Teoría**
-
-- **Tipo 1 CRUDO** — directo del Sheet → `{{ventas_total}}`
-- **Tipo 2 CALCULADO** — Make lo calcula → `{{variacion_pct}}`
-- **Tipo 3 IA** — Gemini lo genera → `{{hallazgo_1}}`
-
-Convención: snake_case, descriptivos, agrupados
+La IA lee la factura y extrae el proveedor
 
 ---
 
-## DISEÑA · LAS 6 SECCIONES DEL REPORTE
+## APERTURA · 10 min
 
-*Tu Gem propone la estructura según tu brief*
+*Responde por chat — 1 línea por pregunta*
 
-**30 min · Individual**
+**01** ¿Sabes qué es una API?
+
+**02** ¿Te suena "clave secreta" / "API key" / "token"?
+
+**03** ¿Por qué crees que una IA cuesta plata cada vez que la usas?
+
+> 💡 La API es el puente entre tu flujo de Make y la IA. Hoy aprendemos a usarlo.
+
+---
+
+## FUNDAMENTO 1 · ¿QUÉ ES UNA API?
+
+*Un puente entre apps*
+
+Permite que una app le pida algo a otra de forma estructurada:
+
+- **MAKE** — tu flujo
+- **API GEMINI** — el puente
+- **RESPUESTA** — lo que devuelve la IA
+
+> Tu escenario "llama" a Gemini y recibe el resultado.
+
+---
+
+## FUNDAMENTO 2 · ¿QUÉ ES UNA API KEY?
+
+*Una llave personal y secreta*
+
+- 🔑 **Personal** — te identifica como usuario
+- 🔒 **Secreta** — no compartir, no subir a GitHub
+- 💵 **Asociada a una cuenta** (free tier de Gemini)
+- 📍 Se genera en **Google AI Studio** (aistudio.google.com)
+
+---
+
+## EJEMPLO REAL · PANTALLA DE AI STUDIO
+
+*Donde generas y copias tu key*
+
+```
+GOOGLE AI STUDIO · API Keys
+──────────────────────────────────
+[ + Create API Key ]
+
+Curso IA — Make Gemini
+AIzaSyD-XXXXXXXXXXXXXXXX...   [👁 Show] [📋 Copy]
+
+⚠ No la compartas. No la subas a GitHub.
+```
+
+---
+
+## FUNDAMENTO 3 · CONNECTION VS API KEY DIRECTA
+
+*Make guarda credenciales en "Connections"*
+
+| CONNECTION DE MAKE | API KEY MANUAL |
+|--------------------|----------------|
+| Se configura 1 vez | Se pega en cada módulo |
+| Se reutiliza en cualquier escenario | Riesgo de exponerla |
+| Más segura | Solo casos puntuales |
+
+---
+
+## FUNDAMENTO 4 · GEMINI FLASH VS PRO
+
+*Distintos modelos, distintos usos*
+
+| GEMINI 2.5 FLASH | GEMINI 2.5 PRO |
+|------------------|----------------|
+| Rápido | Más capaz |
+| Económico | Más caro |
+| Tareas simples, alto volumen | Análisis profundo |
+
+> Para leer facturas: **Flash** alcanza y sobra.
+
+---
+
+## MINI-PROYECTO · LA IA EXTRAE EL PROVEEDOR
+
+*Sumamos Gemini al escenario de la sesión 2*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Pide al Gem las 6 secciones según tu brief
-2. Crea plantilla de Slides con 6 slides
-3. Agrega título a cada slide
-4. Aplica paleta y tipografía sugerida
+1. Generar API key en Google AI Studio (guardarla segura)
+2. Crear **Connection** a Gemini en Make con esa key
+3. Agregar el módulo **Gemini** tras el trigger de Drive
+4. Pedirle: "extrae el nombre del proveedor de esta factura"
+5. Mapear la respuesta a una columna **"Proveedor"** del Sheet
 
-✓ **Verificación:** 6 slides con títulos y diseño inicial
-
----
-
-## NOMBRA · TODOS LOS MARCADORES
-
-*Documenta cada marcador en la tabla de parámetros*
-
-**45 min · Individual**
-
-### QUÉ HACER
-
-1. Revisa cada slide e identifica lo variable
-2. Nombra cada uno en snake_case
-3. Clasifica: tipo (crudo/calculado/IA), origen, ejemplo
-4. Meta: 18-20 marcadores clasificados
-
-✓ **Verificación:** Tabla completa con tipo y origen de cada marcador
-
----
-
-## INSERTA · MARCADORES Y PRUEBA MANUAL
-
-*Valida visualmente con datos reales*
-
-**25 min · Individual**
-
-### QUÉ HACER
-
-1. Reemplaza textos por `{{marcadores}}`
-2. Inserta gráfico vinculado al Sheet
-3. Prueba manual: reemplaza 3-4 con datos reales
-4. Ajusta diseño si hace falta
-
-✓ **Verificación:** Plantilla con marcadores + prueba visual OK
+✓ **Verificación:** Subir factura → Gemini lee → Sheet con proveedor lleno
 
 ---
 
 ## LO QUE TE LLEVAS HOY
 
-*Los artefactos que construiste hoy*
+**01** API key generada y guardada en Make como Connection
 
-**01** Plantilla de Slides con 6 slides diseñadas
+**02** Gemini integrado al escenario procesando facturas
 
-**02** Tabla de parámetros con 18-20 marcadores
-
-**03** Marcadores insertados y probados
-
-**04** Gráfico vinculado al Sheet
+**03** Una columna del Sheet llenándose sola con la IA
 
 ### PRÓXIMA SESIÓN
 
-Sesión 4: Conectaremos Gmail + Sheets + Slides con Make usando Instant Trigger. Los marcadores tipo 1 y 2 se llenarán automáticamente.
+Sesión 4: JSON + Parse JSON. Haremos que la IA devuelva varios datos juntos, ordenados.

@@ -1,68 +1,66 @@
-> **Módulo 1:** Clase 3 de 4
+> **Sesión 3 de 8** · API key de Gemini
 
-# Clase 03: Google Slides con IA
+# Sesión 03: API key de Gemini
 
 ## Resumen
 
-Un reporte ejecutivo no es un documento — es una **plantilla** con partes fijas y marcadores variables que se reemplazan cada vez que el sistema corre. Hoy vas a diseñar esa plantilla para el reporte de tu proyecto de instrucción. Vas a usar tu Gem para proponer las 6 secciones clásicas, nombrar cada marcador variable con convenciones claras y clasificarlos por tipo: unos vienen del Sheet (crudos), otros los calcula Make (calculados) y otros los genera Gemini (generados por IA).
+Hasta ahora tu flujo solo copiaba el nombre del archivo. Hoy metes **inteligencia** dentro del escenario: conectas **Gemini** a Make para que lea cada factura y extraiga datos automáticamente. Para eso vas a entender qué es una **API** (el puente entre tu flujo y la IA) y una **API key** (tu llave personal y secreta), que generarás gratis en **Google AI Studio**.
 
-Al terminar, tu plantilla de Slides estará lista para que en la Clase 4 Make reemplace los marcadores automáticamente con datos reales. La tabla de parámetros que iniciaste la Clase 2 va a crecer con ~18-20 marcadores documentados — es la pieza de información más importante que construyes en el Módulo 1.
+Aprenderás también la diferencia entre guardar la credencial como una **Connection** reutilizable en Make versus pegar la key a mano, y cuándo conviene el modelo **Gemini Flash** (rápido y económico) frente a **Pro**. Al terminar, tu escenario subirá una factura, Gemini leerá el documento y el nombre del proveedor caerá solo en una columna del Sheet.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Los reportes profesionales tienen 80% de estructura fija y 20% de datos variables.** Diseñar esa estructura una sola vez ahorra 2-4 horas cada vez que toca armar un reporte.
-- **Un marcador bien nombrado es documentación viva del sistema.** Leer `{{ventas_total_semana}}` en una plantilla deja claro qué es, de dónde viene y qué esperar — sin abrir ningún otro archivo.
-- **Clasificar marcadores por tipo (crudo/calculado/IA) es el mapa que guía todas las decisiones del Módulo 2.** En la Clase 5 sabrás exactamente qué prompt escribir para cada marcador tipo IA, y qué fórmula para los calculados.
+- **Una API key es lo que conecta cualquier IA con tus herramientas.** Es la misma llave que abre la puerta a automatizar casi cualquier tarea con IA, no solo facturas.
+- **Dejar que la IA lea documentos elimina la transcripción manual.** Lo que hoy lees y copias a mano, Gemini lo extrae en segundos dentro del flujo.
+- **Entender Connection vs key directa te ahorra problemas de seguridad.** Aprendes a manejar credenciales sin exponerlas — clave para cualquier sistema serio.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Exploraremos la anatomía de un reporte ejecutivo** - Descubrirás las 6 secciones clásicas y la regla "1 slide = 1 idea".
-2. **Diseñarás tu plantilla con 6 slides** - Usarás tu Gem para proponer secciones según tu brief y aplicarás paleta y jerarquía.
-3. **Nombrarás todos los marcadores** - Aplicarás convención `snake_case`, los clasificarás por tipo y los registrarás en la tabla de parámetros.
-4. **Probarás la plantilla manualmente** - Reemplazarás 3-4 marcadores con datos reales para ver cómo se verá el reporte final.
+1. **Entenderás qué es una API y una API key** — el puente y la llave entre tu flujo y la IA.
+2. **Generarás tu API key** gratis en Google AI Studio y la guardarás de forma segura.
+3. **Distinguirás Connection vs key directa** y los modelos Gemini Flash vs Pro.
+4. **Sumarás Gemini al escenario de la Sesión 2** para que lea la factura y extraiga el proveedor.
 
 ---
 
 ## Objetivos de Aprendizaje
 
-Al finalizar esta clase, podrás:
+Al finalizar esta sesión, podrás:
 
-1. **Describir** las 6 secciones clásicas de un reporte ejecutivo y qué pertenece a cada una.
-2. **Clasificar** marcadores variables en 3 tipos (crudo, calculado, generado por IA) según su origen.
-3. **Diseñar** una plantilla de Slides con marcadores en convención `snake_case` alineada a la tabla de parámetros.
-4. **Validar** visualmente la plantilla reemplazando marcadores con datos de prueba.
+1. **Explicar** qué es una API y qué es una API key, y por qué la key es secreta.
+2. **Generar** una API key de Gemini en Google AI Studio.
+3. **Distinguir** entre una Connection de Make y una API key directa, y entre los modelos Flash y Pro.
+4. **Integrar** un módulo de Gemini en un escenario de Make para extraer un dato de un documento.
 
 ---
 
 ## ✅ Preparación para la Clase
 
-### De clases anteriores
+### De sesiones anteriores
 
-- Google Sheet con 3 pestañas y datos de ejemplo (Clase 2)
-- Tabla de parámetros con columnas y rangos nombrados registrados
-- Gem del curso funcionando con brief y archivo de referencia
+- Tu escenario de Make **Drive → Sheet** funcionando (Sesión 2).
+- Conexión Google activa en Make (Cloud Project con Client ID/Secret).
 
 ### Reflexión previa
 
-Antes de llegar a clase, reflexiona sobre:
+Antes de llegar a clase, piensa en:
 
-- Si tuvieras que describir tu reporte actual en 6 secciones, ¿cuáles serían?
-- ¿Qué partes del reporte cambian semana a semana y cuáles son siempre iguales?
+- ¿Qué documentos recibes (facturas, comprobantes, formularios) de los que extraes datos a mano?
+- ¿Qué dato concreto te gustaría que la IA leyera y registrara por ti?
 
 ### Herramientas
 
-- [ ] **Google Slides** - Accesible desde [slides.google.com](https://slides.google.com/){:target="_blank"}
-- [ ] **Tu Sheet con 3 pestañas** - De la Clase 2
-- [ ] **Tabla de parámetros** - Google Doc iniciado en la Clase 2 (va a crecer hoy)
+- [ ] **Google AI Studio** — Accederás a [aistudio.google.com](https://aistudio.google.com/){:target="_blank"} para crear tu API key (gratis).
+- [ ] **Tu escenario de Make** — El de la Sesión 2 (Drive → Sheet).
 
 ### Lectura sugerida
 
-- [Storytelling con datos](https://www.storytellingwithdata.com/blog/2013/04/what-it-means-to-be-a-data-driven-organization){:target="_blank"} - Principios básicos de reportes efectivos.
-- [Reemplazar texto en Google Slides](https://support.google.com/docs/answer/6317504){:target="_blank"} - Referencia de la función Replace Text que Make usará en Clase 4.
+- [Obtener una API key de Gemini](https://ai.google.dev/gemini-api/docs/api-key){:target="_blank"} — Guía oficial de Google AI Studio.
+- [Modelos de Gemini](https://ai.google.dev/gemini-api/docs/models){:target="_blank"} — Diferencias entre Flash y Pro.
 
 ---
 
@@ -70,16 +68,16 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **Marcador variable** | Texto en la plantilla (tipo `{{nombre}}`) que Make reemplaza por un valor. |
-| **Marcador crudo (tipo 1)** | Viene directo de una celda del Sheet. Ej: `{{ventas_total}}`. |
-| **Marcador calculado (tipo 2)** | Make lo calcula con fórmula. Ej: `{{variacion_pct}}`. |
-| **Marcador de IA (tipo 3)** | Gemini lo genera analizando datos. Ej: `{{hallazgo_1}}`. |
-| **snake_case** | Convención: todo minúsculas, palabras separadas por guion bajo (`ventas_total_semana`). |
-| **Replace Text** | Operación de Slides que busca `{{marcador}}` y lo sustituye por un valor. |
+| **API** | Puente que permite a una app pedirle algo a otra de forma estructurada. |
+| **API key** | Llave personal y secreta para usar una API; se asocia a tu cuenta. |
+| **Google AI Studio** | Plataforma de Google donde generas tu API key de Gemini y pruebas prompts. |
+| **Connection (Make)** | Credencial guardada en Make que se reutiliza en cualquier escenario. |
+| **Gemini Flash** | Modelo rápido y económico, ideal para tareas simples de alto volumen. |
+| **Gemini Pro** | Modelo más capaz y costoso, para análisis complejo. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Google Slides: inserción de gráficos vinculados](https://support.google.com/docs/answer/7009814){:target="_blank"} - Para el gráfico vinculado al Sheet.
-- [Paletas de colores para reportes ejecutivos](https://coolors.co/palettes/trending){:target="_blank"} - Referencia visual si no tienes paleta propia.
+- [Gemini en Make](https://www.make.com/en/integrations/google-ai){:target="_blank"} — Módulos de Google AI / Gemini disponibles.
+- [Buenas prácticas con API keys](https://ai.google.dev/gemini-api/docs/api-key#keep-safe){:target="_blank"} — Cómo no exponer tu credencial.

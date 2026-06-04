@@ -1,149 +1,115 @@
-# Guía del Facilitador - Clase 03: Google Slides con IA
+# Guía del Facilitador - Sesión 03: API key de Gemini
 
-> Tiempo de lectura: 8 minutos | Prepárate antes de clase
+> Tiempo de lectura: 7 minutos | Prepárate antes de clase
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Plantilla con marcadores**: estructura fija con huecos nombrados que Make llenará automáticamente.
-- **Marcador crudo (tipo 1)**: sale directo de una celda del Sheet; Make hace Search + Replace Text.
-- **Marcador calculado (tipo 2)**: Make calcula con fórmula/módulo (Date, Math); luego Replace Text.
-- **Marcador generado por IA (tipo 3)**: Gemini lo produce en Clase 5; hoy queda nombrado y vacío.
-- **snake_case**: convención (`ventas_total_semana`) que Replace Text soporta sin problemas.
+- **API**: puente que permite a una app pedirle algo a otra de forma estructurada.
+- **API key**: llave personal y secreta para usar la API; se asocia a tu cuenta.
+- **Connection (Make)**: credencial guardada una vez y reutilizada; más segura que pegar la key suelta.
+- **Flash vs Pro**: Flash es rápido/económico (ideal para leer facturas); Pro es más capaz/caro.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**Plantilla con marcadores <> formulario legal en papel:**
-Los contratos tienen huecos marcados donde escribís el nombre del cliente, la fecha, el monto. El contrato es la plantilla; los huecos son los marcadores. Make es la mano que llena los huecos.
+**API ⟷ mesero del restaurante:**
+No entras a la cocina a cocinar. Le pides al mesero (la API) en un formato entendible, y te trae el plato. Tu escenario le pide a Gemini vía la API y recibe la respuesta.
 
-**3 tipos de marcadores <> 3 fuentes de información en un noticiero:**
-Crudo = dato en la pantalla del productor (cotización, hora). Calculado = estadística derivada (variación vs ayer). IA = comentario del analista (explica el movimiento). Cada uno tiene origen distinto pero van en el mismo noticiero.
+**API key ⟷ tu credencial de socio:**
+El gimnasio no te deja entrar con la contraseña de otro. Tu API key te identifica a ti, cuenta tu uso y se puede revocar. Por eso no se comparte.
 
-**Tabla de parámetros <> manual de referencia del sistema:**
-Si mañana alguien más del equipo tiene que modificar el sistema, no necesita leer tu Make — lee la tabla de parámetros y sabe qué marcador existe, de dónde viene y qué contiene.
+**Connection ⟷ tarjeta guardada en la app de delivery:**
+Cargas tu método de pago una vez y todos tus pedidos lo reutilizan. La Connection de Make hace lo mismo con tu API key.
 
 ---
 
-## 📚 Contexto Histórico / Contexto Actual
+## 📚 Contexto para Compartir
 
-### Reportes con marcadores: por qué es el patrón estándar
+### Por qué la IA "cuesta" cada vez que la usas
 
-En las agencias de reportería y en herramientas como Looker Studio, PowerPoint con plugins, Canva, se usa el mismo patrón hace 15 años: una plantilla fija + datos que se reemplazan. Make con Google Slides trajo ese patrón a no-code en 2021-2022, y hoy es la forma más simple de generar PDFs reportables automáticamente.
+Cada llamada a la API consume recursos de cómputo. Por eso la key se asocia a una cuenta con límites (el free tier de Gemini alcanza de sobra para el curso). Es útil que el estudiante entienda que automatizar con IA tiene un costo por uso, aunque hoy sea gratis.
 
-> **Para contar en clase:** "Lo que hacen las grandes agencias con software de $500/mes, ustedes lo hacen gratis con Google Slides + Make."
+> **Para contar en clase:** "Cuando la IA vive dentro de un flujo que corre solo, cada ejecución es una llamada. Por eso elegimos Flash: hace el trabajo a una fracción del costo."
 
-### La columna Descripción del Sheet: la mina de oro de los insights
+### Connection vs API key directa
 
-En la Clase 2 los estudiantes agregaron una columna "Descripción" en `VentasSemanaActual`. Parece trivial, pero es donde Gemini hace su magia en la Clase 5: lee todas las descripciones de la semana y genera los marcadores tipo IA (hallazgos, riesgos, oportunidades). Sin Descripción, los hallazgos son tibios.
-
-> **Para contar en clase:** "La diferencia entre un reporte que dice cifras y uno que cuenta historias está en esa columnita que agregamos la clase pasada."
-
-**Fuentes:** [Make: Google Slides módulos](https://www.make.com/en/integrations/google-slides){:target="_blank"}, [Google Workspace: Docs + Slides templates](https://support.google.com/a/answer/6283553){:target="_blank"}
+Pegar la key en cada módulo la expone (aparece en capturas, se duplica, es difícil de rotar). La Connection la guarda cifrada y se reutiliza. Es la diferencia entre una práctica amateur y una profesional.
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora (Quiz Pre-Lab)
+### Pregunta Detonadora (Apertura)
 
-**Pregunta:** "Si tuvieras que dividir tu reporte actual en 'partes que cambian siempre' vs 'partes que siempre son iguales', ¿cuáles serían las partes que cambian?"
+**Pregunta:** "Cuando una app dice 'conecta tu cuenta de OpenAI/Gemini con tu API key', ¿qué crees que es esa key?"
 
-**Respuesta esperada:** La fecha, los números, los nombres de clientes, las conclusiones del período.
+**Respuesta esperada:** Una llave personal y secreta que identifica tu cuenta y permite usar el servicio (y cuenta tu consumo).
 
 **Script post-respuestas:**
 ```
-Facilitador: "Exacto — lo que acaban de decir son los marcadores variables.
-Las partes que no cambian forman la plantilla. Hoy diseñamos ambas por separado."
+Facilitador: "Esa llave es lo que hoy van a generar. Es lo que conecta CUALQUIER IA con sus herramientas.
+La tratan como una contraseña: nunca se comparte."
 ```
 
 ### Demo Principal
 
-**Qué mostrar:** la plantilla del caso Roberto con marcadores `{{...}}` visibles + demo rápida en Slides de cómo Replace Text reemplaza un marcador.
+**Qué mostrar:** generar una API key en AI Studio y agregar el módulo Gemini al escenario de facturas en vivo, extrayendo el proveedor.
 
 **Script sugerido:**
 ```
-Facilitador: "Miren esta slide de Resumen del reporte de Roberto."
-[Muestra slide con {{ventas_total}}, {{variacion_pct}}, {{resumen_ejecutivo}}]
-Facilitador: "¿Ven los tres marcadores? Cada uno viene de un lugar distinto."
-[Explica: ventas_total = Sheet. variacion_pct = Make. resumen = Gemini]
-Facilitador: "En 2 clases todos se llenarán solos. Hoy los nombramos."
+Facilitador: "Genero la key acá en AI Studio... la copio."
+[Crea la Connection en Make con la key]
+Facilitador: "Ahora pongo a Gemini entre Drive y el Sheet."
+[Agrega el módulo, prompt 'extrae el proveedor', adjunta el archivo]
+Facilitador: "Subo una factura... miren la columna Proveedor llenándose sola."
 ```
 
-**Plan B (si Google Slides no carga):** pantalla compartida con capturas previas de la plantilla de Roberto.
+**Plan B (si AI Studio o Make fallan):** ten una Connection ya creada y el escenario armado para mostrar el Run once.
 
-### Transición al Lab
+### Transición al Mini-proyecto
 
-**Momento crítico:** los estudiantes se bloquean si quieren nombrar "perfectamente" los marcadores. Tenés que darles permiso de iterar.
+**Momento crítico:** el miedo a "exponer" la key. Tranquilízalos: la Connection la protege.
 
 **Script sugerido:**
 ```
-Facilitador: "No busquen nombres perfectos. Busquen nombres claros.
-`{{hallazgo_1}}` es mejor que `{{h1}}`, pero `{{principal_insight_comercial_de_la_semana}}` es peor.
-Si dudan, empecen simple y después refinan en la Clase 6."
+Facilitador: "Generar la key es un click. Guardarla como Connection la mantiene segura.
+Vamos juntos: primero la key, después la conexión, después el módulo."
 ```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### Dinámica 1: "Clasifica en 10 segundos"
+### Dinámica 1: "¿Flash o Pro?"
 
-Contexto: durante la teoría, para consolidar tipos de marcadores.
-
-Lanzás marcadores y el grupo grita el tipo:
+Durante la teoría, lanza tareas y el grupo responde:
 
 ```
-Facilitador: "{{meta_semanal}}" → Crudo (del Sheet, celda Config)
-Facilitador: "{{ventas_vs_meta_pct}}" → Calculado (Make: ventas/meta)
-Facilitador: "{{recomendacion_gerencial}}" → IA (Gemini analiza)
-Facilitador: "{{nombre_top_vendedor}}" → Crudo (Sheet) o Calculado (Make max)
+"Leer 500 facturas simples por mes" → Flash
+"Analizar un contrato legal complejo" → Pro
+"Extraer el proveedor de una factura" → Flash
+"Redactar un informe estratégico largo" → Pro
 ```
 
-### Dinámica 2: "Prueba manual cruzada"
+### Dinámica 2: "Checkpoint de la key"
 
-Contexto: al final de Actividad 3.
-
-Cada estudiante intercambia plantilla con el vecino. El vecino elige 3 marcadores y los reemplaza con datos inventados (en la plantilla prestada). Si el diseño aguanta, el nombre es claro. Si el vecino duda de qué poner, el nombre no es suficientemente descriptivo.
-
-```
-Facilitador: "Roten con el vecino. 3 minutos cada uno.
-Si no sabés qué poner en `{{x}}`, el nombre no es claro. Anótalo.
-Al final, cada uno recibe feedback de qué renombrar."
-```
+Pide que peguen un ✅ en el chat cuando tengan su API key creada y la Connection guardada. Así nadie se queda atrás antes de armar el módulo.
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### Ejemplo 1: Prompt para las 6 secciones (caso Roberto)
-
-**Cuándo usarlo:** cuando un estudiante pregunta "¿qué pongo en mis 6 secciones?"
+### Prompt de extracción (para el módulo Gemini)
 
 ```
-Según mi brief (reporte semanal de ventas para gerente), dame las 6
-secciones de mi reporte ejecutivo. Para cada sección: nombre, propósito
-(1 línea), y qué información debería mostrar.
+Lee esta factura y devuelve SOLO el nombre del proveedor
+(la empresa que emite la factura), sin texto adicional.
 ```
 
-**Tip:** la "Portada" suele ser obviada — recordar que lleva contexto (fecha, nombre de empresa, período).
-
-### Ejemplo 2: Nombres de marcadores bien formados (caso genérico)
-
-**Cuándo usarlo:** cuando un estudiante duda de la convención.
-
-```
-{{portada_titulo}}           # agrupado por sección
-{{portada_fecha_reporte}}    # prefijo portada_
-{{resumen_ventas_total}}     # prefijo resumen_
-{{hallazgo_1_texto}}         # numerado 1, 2, 3
-{{riesgo_1_descripcion}}     # subíndice descripcion para claridad
-{{accion_1}}                 # corto porque todo va en esa celda
-```
-
-**Tip:** el prefijo por sección sirve para buscar rápido en la tabla de parámetros cuando sean 20+ marcadores.
+**Tip:** pedir "SOLO el nombre, sin texto adicional" evita que Gemini agregue frases tipo "El proveedor es...". En la Sesión 4 formalizamos esto con JSON.
 
 ---
 
@@ -151,25 +117,24 @@ secciones de mi reporte ejecutivo. Para cada sección: nombre, propósito
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "No sé qué marcadores debería tener" | No identifica qué es variable | Mostrar reporte viejo suyo y preguntar "¿qué cambia aquí cada semana?" |
-| "Tengo 8 marcadores, no 18" | Se quedó en titulares, no llegó a detalles | Revisar slide por slide: cada sección suele tener 2-4 marcadores |
-| "{{variación %}}" con tilde y símbolo | Caracteres especiales rompen Replace Text | Cambiar a `{{variacion_pct}}` |
-| "Mi gráfico es imagen estática" | Insertó como imagen, no vinculado | Insertar → Gráfico → Desde Hojas de cálculo |
-| "No sé si mi marcador es crudo o calculado" | Confunde origen de datos | Regla: si existe como celda única en el Sheet → crudo; si se calcula con 2+ datos → calculado |
+| "Error 400 / API key inválida" | Key mal copiada o con espacios | Volver a copiarla completa desde AI Studio |
+| "El módulo Gemini no ve la factura" | No adjuntó el archivo del módulo Drive | Mapear el campo de archivo/imagen del módulo Drive al de Gemini |
+| "Gemini responde con texto de más" | El prompt no restringe la salida | Agregar "SOLO el nombre, sin texto adicional" |
+| "No encuentro el módulo de Gemini" | Busca con otro nombre | Buscar "Google AI" o "Gemini" en el buscador de módulos |
 
 ---
 
 ## ✅ Señales de Comprensión
 
 ### El estudiante ENTIENDE cuando:
-- Nombra marcadores en snake_case sin que le recuerdes
-- Distingue crudo/calculado/IA sin dudar
-- Agrupa marcadores por sección con prefijo consistente
+- Explica qué es una API key y por qué es secreta
+- Sabe por qué una Connection es mejor que pegar la key suelta
+- Elige Flash para tareas simples sin dudar
 
 ### El estudiante NECESITA AYUDA cuando:
-- Todos sus marcadores son tipo "crudo" (no identifica lo calculado ni lo IA)
-- Sus nombres tienen espacios o mayúsculas
-- No entiende por qué nombrar algo que hoy está vacío
+- Quiere pegar la key en cada módulo
+- No logra adjuntar la factura al módulo de Gemini
+- Confunde la API key con la contraseña de su cuenta Google
 
 ---
 
@@ -177,87 +142,55 @@ secciones de mi reporte ejecutivo. Para cada sección: nombre, propósito
 
 | Minuto | Checkpoint | Cómo validar | Si no cumple |
 |--------|------------|--------------|--------------|
-| 10 | Apertura terminada | Reporte modelo mostrado + reacción grupal | Avanzar si hay comentarios |
-| 25 | Teoría terminada | Los 3 tipos de marcadores comprendidos (dinámica "Clasifica en 10 segundos") | Hacer 2-3 rondas extra de la dinámica |
-| 60 | Actividad 1 | 6 slides con títulos y estilo | Si no llegan a 6, priorizar Portada, Resumen, Hallazgos |
-| 105 | Actividad 2 | Tabla de parámetros con 18-20 marcadores | Si solo tienen 10-12, revisar qué sección está pobre |
-| 135 | Actividad 3 | Marcadores insertados + prueba manual | Si no probaron, pedir que reemplacen 2 marcadores en vivo |
-| 150 | Cierre | Revisión por pares exitosa | — |
+| 10 | Apertura completada | 3 preguntas respondidas en chat | Avanzar aunque no respondan todos |
+| 30 | Fundamentos terminados | Pueden explicar API key y Connection | Tomar 1 respuesta buena y seguir |
+| 55 | Mini-proyecto listo | Sheet registra el Proveedor extraído por Gemini | Usar el escenario pre-armado del facilitador para que todos vean el resultado |
+| 60 | Cierre | Cada quien confirma su columna Proveedor llena | — |
 
 ---
 
 ## 🧑‍🏫 Tips de Facilitación
 
-### Si el grupo está callado:
-- Mostrar tu propia plantilla (como facilitador) y pedir "¿qué marcador le agregarían?"
-- Pedir que 2 estudiantes compartan pantalla con su plantilla al mismo tiempo.
-
-### Si alguien domina la conversación:
-- Pedirle que ayude a un compañero con dudas (mentoría cruzada).
-
-### Si la mayoría termina antes:
-- Logro 🟡 (slide de apéndice con marcadores adicionales).
-
-### Si la mayoría se atrasa:
-- Reducir objetivo a 12-15 marcadores (en vez de 18-20). La clase 5 los puede pedir agregar más.
-- Saltar la revisión por pares del cierre y hacer cierre individual.
-
-### Si hay preguntas fuera de alcance:
-> "Buena pregunta. Replace Text lo vemos Clase 4; insights con Gemini los llenamos Clase 5."
-
----
-
-## 🔀 Diferenciación
-
-### Para estudiantes avanzados:
-- Logro 🔴 (versión móvil de la plantilla para WhatsApp).
-- Pedir que diseñen 25+ marcadores (incluyendo apéndice y metadata).
-
-### Para estudiantes con dificultades:
-- Ofrecer la plantilla modelo de Roberto como punto de partida para duplicar.
-- Ayudarlos a nombrar los primeros 5 marcadores y que completen los siguientes solos.
+- **Si el grupo se atrasa con la key:** háganlo todos al mismo tiempo, pantalla compartida.
+- **Si alguien termina antes:** propón el Logro 🟢 (extraer el monto también).
+- **Si el módulo Gemini no lee el archivo:** revisa que el trigger de Drive entregue el archivo (no solo metadatos) y que esté bien mapeado.
+- **Preguntas sobre múltiples datos:** "Eso es exactamente la próxima sesión — pedirle a la IA varios datos en JSON ordenado."
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### P: ¿Los marcadores tienen que ser exactamente `{{x}}` con llaves dobles?
-**R:** Sí. Las llaves dobles son la convención que reconocen las herramientas. `<x>` o `[x]` funcionarían pero no son estándar.
+### P: ¿La API key de Gemini es gratis?
+**R:** Sí, el free tier de Google AI Studio alcanza de sobra para el curso. No requiere tarjeta.
 
-### P: ¿Qué pasa si nombro 2 marcadores igual?
-**R:** Replace Text reemplaza todos los que coincidan — así que si ponés `{{nombre}}` en 2 slides, ambos reciben el mismo valor. Útil para títulos que se repiten; problemático si querías valores distintos.
+### P: ¿Tengo que crear una key nueva en cada escenario?
+**R:** No. Generas una key, la guardas como Connection en Make y la reutilizas en todos los escenarios.
 
-### P: ¿Puedo usar imágenes como marcadores?
-**R:** Sí, pero no con Replace Text directamente. En la Clase 5 aprenderán a usar "Replace Image" para el logo/gráficos, pero hoy es texto.
-
-### P: ¿Cuántos marcadores es demasiado?
-**R:** 25 está bien. Más de 30 empieza a ser frágil (más puntos de falla). Si tenés más, probablemente hay marcadores redundantes (ej: `{{total_ventas}}` y `{{ventas_total}}` duplicados).
+### P: ¿Por qué Flash y no Pro?
+**R:** Para leer facturas, Flash es rápido y mucho más económico. Pro se reserva para análisis complejos.
 
 ---
 
 ## 🔗 Conexiones del Curriculum
 
-### Esta clase construye sobre:
+### Esta sesión construye sobre:
 
-| Clase | Concepto | Cómo se conecta |
-|-------|----------|-----------------|
-| 01 | Gem asistente | Sugiere las 6 secciones según el brief |
-| 02 | Sheet con 3 pestañas | Los marcadores crudos vienen de VentasSemanaActual y Config |
+| Sesión | Concepto | Cómo se conecta |
+|--------|----------|-----------------|
+| 01 | Prompt (rol + tarea + contexto + formato) | El prompt del módulo Gemini aplica la misma anatomía |
+| 02 | Escenario Drive → Sheet | Insertamos Gemini en medio de ese flujo |
 
-### Conexión con la Próxima Clase
+### Conexión con la Próxima Sesión
 
 Al cerrar, planta la semilla:
 
-> "La próxima clase es la primera vez que conectamos todo. Construimos 2 flujos en Make: uno que captura correos y actualiza el Sheet, otro que toma el Sheet, llena los marcadores crudos y calculados en Slides, exporta PDF y lo manda por Gmail. Todavía sin IA — solo tipos 1 y 2. Al terminar tendrán un sistema funcional end-to-end."
-
-**Pre-work / Tarea implícita:** crear cuenta gratuita de Make ([make.com](https://make.com/){:target="_blank"}) antes de la próxima clase. Sin cuenta, no se puede hacer el lab.
+> "Hoy Gemini extrajo UN dato: el proveedor. La próxima sesión le pedimos varios datos a la vez —vendedor, cliente, monto, fecha— y aprendemos a recibirlos ordenados con JSON y Parse JSON, para que cada uno caiga en su columna."
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
 ### Preguntas para el facilitador:
-- ¿Cuántos estudiantes llegaron a 18+ marcadores?
-- ¿Hubo plantillas con diseños muy sobrios vs muy cargados? (guía para Clase 7 cuando personalicen)
-- ¿Quién tuvo problemas con caracteres especiales en nombres? (seguimiento)
-- ¿Ya crearon cuenta de Make? (mandar recordatorio por chat)
+- ¿Cuántos lograron la columna Proveedor llena por la IA?
+- ¿Dónde se trabaron: generar la key, la Connection o adjuntar el archivo?
+- ¿Quiénes quedaron sin Gemini funcionando? (seguimiento antes de la Sesión 4, que depende de esto)
