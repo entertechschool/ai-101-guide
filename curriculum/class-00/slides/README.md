@@ -2,7 +2,7 @@
 
 # AI 101
 
-## IA estratégica para Profesionales
+## IA + Automatización No-Code para Profesionales
 ## - Bienvenido a Enter Tech School
 ## - Orientación del Curso
 
@@ -10,55 +10,47 @@
 
 ### ¿Qué esperar de ETS?
 
-> - Un camino claro desde 0 hasta operador de sistemas con IA en 4 semanas.
+> - Un camino claro de profesional a constructor de automatizaciones con IA.
 > - Acompañamiento personalizado y comunidad activa.
-> - Contenido curricular de vanguardia con herramientas 100% gratuitas.
-> - Retroalimentación real y oportuna.
+> - Contenido de vanguardia con herramientas 100% gratuitas.
+> - Práctica en vivo en cada sesión — construyes mientras aprendes.
 
 ### ¿Qué esperamos de ti?
 
-> - Compromiso de ~5 horas semanales (2.5h clase + 2h práctica).
-> - Preparación previa a cada clase.
-> - **Participación activa en clase**.
+> - Asistencia a las 8 sesiones en vivo (60 min cada una).
+> - **Participación activa** en la apertura y el cierre de cada sesión.
+> - Construir tu mini-proyecto en clase.
 > - Respeto y honestidad total.
 
 ---
 
 <!-- .slide: data-background="#1a1a2e" -->
 
-## El caso guía: Roberto
+## El caso guía: el sistema de facturas
 
-> Todo el curso gira alrededor de un caso único:
-
-**Roberto** es gerente de una pequeña empresa con 3-4 vendedores.
+> Las sesiones 1 a 6 construyen, pieza por pieza, un mismo sistema real.
 
 | Dolor | Solución que construiremos |
 |-------|----------------------------|
-| Vendedores reportan por WhatsApp, correo, llamadas | Correo informal → sistema registra automáticamente |
-| 4 horas cada viernes consolidando | Reporte automático cada viernes 4pm |
-| Sin visibilidad en tiempo real | Insights generados por IA con contexto |
-| Reportes armados a mano | PDF listo para enviar al gerente |
+| Las facturas llegan dispersas y se registran a mano | Subes a Drive → Make la detecta sola |
+| Alguien transcribe proveedor, montos y fechas | Gemini lee el documento y extrae los datos |
+| El reporte mensual se arma copiando y pegando | Reporte con plantilla generado y enviado solo |
+| Si algo falla, nadie se entera | El flujo avisa con alertas y logs |
 
-> En Módulo 1 construís el sistema para Roberto. En Módulo 2, lo adaptás a TU caso real.
+> No hay un protagonista: el hilo conductor es el sistema mismo.
 
 ---
 
 <!-- .slide: data-background="#1a1a2e" -->
 
-## Tu proyecto de instrucción
+## Cómo vas a aprender
 
-> El hilo conductor de tu aprendizaje.
+> Primero el caso guía, luego tu propio caso.
 
-Cada estudiante define en la Clase 1:
+- **Sesiones 1-6 — Piezas del sistema:** aprendes cada pieza sobre el caso de facturas (prompts, Make, Gemini API, JSON, plantillas, flujo robusto).
+- **Sesiones 7-8 — Tu proyecto:** eliges un **caso real propio** (contabilidad, ventas, atención al cliente, marketing, RR.HH.), lo construyes y lo presentas.
 
-- **Qué reporte** de su trabajo querés automatizar
-- **Quién lo recibe** (jefe, cliente, equipo)
-- **Qué datos** incluye
-- **Cuánto tiempo** te ahorraría
-
-Cada sesión produce un artefacto que se integra al sistema final — tu proyecto de instrucción.
-
-> Al cerrar la Sesión 8, presentás TU sistema funcionando + cálculo de ROI.
+> Al cerrar la Sesión 8 presentas TU sistema funcionando en vivo.
 
 ---
 
@@ -67,17 +59,17 @@ Cada sesión produce un artefacto que se integra al sistema final — tu proyect
 ## Estructura del Curso
 
 ```
-8 sesiones = 2 módulos × 4 sesiones
+8 sesiones × 60 min = 8 horas
 ```
 
-- Cada sesión: **2.5 horas en vivo**
-- Formato: 20% teoría + 80% práctica (laboratorios)
-- Frecuencia: 2 sesiones/semana durante 4 semanas
+- Cada sesión: **60 minutos en vivo**
+- Estructura fija: Apertura 10' → Fundamentos 20' → Mini-proyecto 25' → Cierre 5'
+- Modalidad: online sincrónica
 
-| Módulo | Contenido |
-|--------|-----------|
-| 1 | **Piezas del Sistema** — Prompts+Gems, Sheets, Slides, Make sin IA |
-| 2 | **Integración y Proyecto** — Gemini API, Optimización, Tu caso real, Demo Day |
+| Sesiones | Contenido |
+|----------|-----------|
+| 1-6 | Prompts · Make + Cloud · API Gemini · JSON + Parse · Plantillas · Flujo end-to-end |
+| 7-8 | Proyecto integrador propio · Exposición / Demo Day |
 
 ---
 
@@ -85,15 +77,14 @@ Cada sesión produce un artefacto que se integra al sistema final — tu proyect
 
 ## Sistema de Evaluación
 
-| Componente | Peso | Observación |
-|------------|------|-------------|
-| Entregables de sesión (8) | 40% | Completado y presentado en plazo |
-| Participación en labs en vivo | 20% | Asistencia activa ≥75% |
-| Lab calificado M1 (Clase 4) | 15% | 2 flujos Make end-to-end |
-| Sistema propio (Clase 7) | 10% | Adaptado a tu caso real |
-| Demo Day (Clase 8) | 15% | Presentación 5 min + ROI + plan 30 días |
+| Componente | Cómo se evalúa |
+|------------|----------------|
+| Práctica en clase | Cada sesión: **0 (no hizo) / 100 (sí hizo)** el mini-proyecto |
+| Proyecto integrador (S7) | Tu sistema propio con datos reales |
+| Demo Day (S8) | Exposición del proyecto ante la clase |
+| Asistencia y participación | Las 8 sesiones + apertura y cierre |
 
-> **Aprobación:** ≥70/100 + asistencia ≥6/8 sesiones
+> **No hay entregables post-clase.** Lo que importa es que construyas durante la sesión.
 
 ---
 
@@ -103,13 +94,11 @@ Cada sesión produce un artefacto que se integra al sistema final — tu proyect
 
 | Herramienta | Uso |
 |-------------|-----|
-| **Gemini** | Chat base, diseño de prompts, asistente del curso |
-| **Gemini Gems** | Asistentes personalizados con contexto fijo |
-| **Gemini API** | Extracción + insights (1,500 req/día free) |
-| **Make** | Automatización visual (1,000 ops/mes free) |
-| **Google Sheets** | Fuente de datos con 3 pestañas |
-| **Google Slides** | Plantilla del reporte con marcadores |
-| **Gmail** | Entrada (Instant Trigger) y entrega (PDF) |
+| **Gemini** | Chat base, diseño y prueba de prompts |
+| **Make** | Automatización visual sin código (1,000 ops/mes free) |
+| **Google Cloud** | Conectar Google vía OAuth (Client ID + Secret) |
+| **Gemini API** | Extracción de datos e insights dentro de Make (Google AI Studio) |
+| **Drive · Sheets · Docs · Slides · Gmail** | Datos, plantillas y entrega de reportes |
 
 > Todo funciona con plan gratuito. Sin pagos, sin tarjeta.
 
@@ -117,12 +106,12 @@ Cada sesión produce un artefacto que se integra al sistema final — tu proyect
 
 <!-- .slide: data-background="#0f3460" -->
 
-## El Pathway Entertech
+## La Ruta AI Solutions
 
 ```
-AI 101: IA estratégica para Profesionales (4 sem / 20h)  ← Estás aquí
-   → Sistema automatizado de reportes
-   → Gemini + Make + Google Workspace
+AI 101: IA + Automatización No-Code (8 sesiones / 8h)  ← Estás aquí
+   → Sistema automatizado con IA
+   → Make + Gemini + Google Workspace
 
          ↓
 
@@ -145,8 +134,8 @@ AI 301: Escala con IA (10 semanas)
 
 > "El 95% de profesionales NO automatiza con IA.
 > El 5% construye sistemas que trabajan por ellos.
-> En 4 semanas, vas a estar en ese 5%."
+> En 8 sesiones, vas a estar en ese 5%."
 
-Próxima sesión: **Clase 01 — Prompts y Gems**
+Próxima sesión: **Sesión 01 — Prompts efectivos**
 
-Preparate con tu cuenta de Gemini lista.
+Prepárate con tu cuenta de Gemini lista.

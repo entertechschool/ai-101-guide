@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Sheets con IA — Diseña la fuente de datos</title>
+  <title>Make 101 + Google Cloud — Tu primer flujo automatizado</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,67 +39,61 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 1 · Clase 02</div>
-    <h1>Google Sheets con IA</h1>
-    <p class="subtitle">Diseña la fuente de datos de tu sistema con 3 pestañas</p>
+    <div class="badge">Sesión 02 · Make 101 + Google Cloud</div>
+    <h1>Make 101 + Google Cloud</h1>
+    <p class="subtitle">Tu primer flujo automatizado real, sin código</p>
   </section>
 
   <section>
     <div class="card accent-green">
-      <h3>Arquitectura de 3 pestañas</h3>
-      <p class="desc">Cada pestaña tiene un propósito claro y frecuencia de cambio distinta.</p>
-<pre><code>VentasSemanaActual  →  Operación (1 fila por transacción)
-Config              →  Parámetros del negocio (cambios raros)
-Historico           →  Memoria semanal (1 fila por período)</code></pre>
+      <h3>Anatomía de un escenario</h3>
+      <p class="desc">Una receta automática en tres partes.</p>
+<pre><code>TRIGGER   →  lo que dispara (archivo nuevo en Drive)
+MÓDULOS   →  procesan los datos en el medio
+ACCIÓN    →  el resultado (fila nueva en el Sheet)</code></pre>
     </div>
 
     <div class="card accent-blue">
-      <h3>Operativa vs Configuración</h3>
-      <p class="desc">La diferencia que hace sostenible la automatización.</p>
-      <table class="compare">
-        <tr><th>Aspecto</th><th>Operativa</th><th>Config</th></tr>
-        <tr><td>Cambio</td><td>Varias veces/día</td><td>1 vez/mes</td></tr>
-        <tr><td>Origen</td><td>Correos, forms</td><td>Decisión gerencial</td></tr>
-        <tr><td>Ejemplo</td><td>Venta registrada</td><td>Meta semanal</td></tr>
-        <tr><td>Filas típicas</td><td>50-500</td><td>4-20</td></tr>
-      </table>
+      <h3>OAuth en 5 pasos</h3>
+      <p class="desc">El permiso que le das a Make sin compartir tu contraseña.</p>
+<pre><code>1. Make pide acceso a tu Google
+2. Te redirige al login de Google
+3. Apruebas los permisos específicos
+4. Google le da un "token" a Make
+5. Make usa el token — tu contraseña nunca viaja</code></pre>
     </div>
 
     <div class="card accent-purple">
-      <h3>Rangos nombrados</h3>
-      <p class="desc">Apodos para rangos que sobreviven a cambios de layout.</p>
-<pre><code>Antes: Make → A1:G50     (se rompe si agregás columna)
-Despues: Make → RangoVentas (sigue funcionando siempre)
-
-Definir en:  Datos → Rangos con nombre
-RangoVentas    = VentasSemanaActual!A:G
-RangoConfig    = Config!A:C
-RangoHistorico = Historico!A:E</code></pre>
+      <h3>Google Cloud Project</h3>
+      <p class="desc">El "carnet" que identifica tu app ante Google.</p>
+<pre><code>Genera:    Client ID + Client Secret
+Habilita:  Google Drive API, Google Sheets API
+Pegás en:  la conexión de Make
+Sin esto:  ciertos conectores no autentican</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>La columna Descripción</h3>
-      <p class="desc">El campo clave que Gemini usará para generar insights en la Clase 5.</p>
-<pre><code>Monto: S/ 2,800
-Descripción: "Renovación grande, cliente retenido
-              después de 2 meses de negociación"
+      <h3>Tu mini-proyecto</h3>
+      <p class="desc">Registro automático de facturas: Drive → Sheet, sin IA aún.</p>
+<pre><code>Drive Watch Files  →  Sheets Add a Row
 
-→ En Clase 5, Gemini lee la Descripción
-  y explica el POR QUÉ del dato, no solo el QUÉ.</code></pre>
+Nombre archivo  →  {{1.name}}
+Fecha de subida →  {{1.createdTime}}
+Link            →  {{1.webViewLink}}</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>Pestaña operativa</strong><span>Datos del día a día (crece)</span></div>
-      <div class="term"><strong>Pestaña config</strong><span>Parámetros fijos del negocio</span></div>
-      <div class="term"><strong>Rango nombrado</strong><span>Apodo robusto para un rango</span></div>
-      <div class="term"><strong>Tabla de parámetros</strong><span>Documento vivo del curso</span></div>
+      <div class="term"><strong>Make</strong><span>Automatización no-code visual</span></div>
+      <div class="term"><strong>Escenario</strong><span>Trigger → módulos → acción</span></div>
+      <div class="term"><strong>OAuth</strong><span>Permiso sin compartir contraseña</span></div>
+      <div class="term"><strong>Client ID / Secret</strong><span>Credenciales del Cloud Project</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 02
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 02
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>

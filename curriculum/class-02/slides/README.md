@@ -1,137 +1,153 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 2
-## GOOGLE SHEETS CON IA
+## MAKE 101 + GOOGLE CLOUD
 
-Diseña la fuente de datos del proyecto
+Tu primer flujo automatizado real
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Utiliza Gemini para diseñar la estructura del Sheet del proyecto de instrucción con datos crudos, configuración e histórico, dejándolo listo para automatización.
-
-### PUNTOS CLAVE
-
-1. Diseñar VentasSemanaActual con columna Descripción
-2. Construir Config con parámetros del negocio
-3. Construir Historico para comparativas
-4. Usar Gemini para fórmulas y estructura
-5. Definir rangos nombrados
-
-### EVALUACIÓN
-
-- Sheet con 3 pestañas funcionando
-- 15 filas de datos ejemplo
-- Tabla de parámetros actualizada
+*Sesión 2 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · DE PROMPTS A FLUJOS
 
-### Tu realidad actual de datos
+### La sesión pasada:
 
-**01 · QUÉ MANEJAS**
-¿Qué datos manejas cada semana?
-Escribe 3 tipos en el chat.
+- Escribiste 3 prompts profesionales
+- Aprendiste a pedir output libre vs estructurado
 
-**02 · DÓNDE**
-¿Cómo los tienes organizados?
-Excel, Notion, papel, cabeza.
+### Hoy:
 
-**03 · QUÉ DUELE**
-¿Qué te cuesta más consolidar?
-Identifica tu dolor real.
+- Conectas dos apps **sin programar**
+- Tu primer escenario corriendo solo en Make
+
+> "Hoy dejamos de pedirle cosas a la IA a mano y empezamos a automatizar."
 
 ---
 
-## POR QUÉ LA IA NECESITA ESTRUCTURA
+## QUÉ VAMOS A LOGRAR HOY
 
-*Arquitectura de 3 pestañas + rangos nombrados*
+### OBJETIVO DE LA SESIÓN
 
-**15 min · Teoría**
+Construir un primer escenario en Make conectando una cuenta Google vía OAuth.
 
-- Datos en tabla vs datos en texto libre
-- Make necesita columnas consistentes
-- Gemini necesita contexto + comparables
-- **VentasSemanaActual** = datos crudos diarios
-- **Config** = parámetros que no cambian (meta, vendedores)
-- **Historico** = memoria que se acumula semana a semana
+### FUNDAMENTOS
+
+1. ¿Qué es Make?
+2. Anatomía de un escenario
+3. OAuth — cómo una app autoriza a otra
+4. Google Cloud Project — para qué se necesita
+
+### MINI-PROYECTO
+
+Registro automático de facturas: Drive → Sheet (sin IA aún)
 
 ---
 
-## DISEÑA · PESTAÑA VENTASSEMANAACTUAL
+## APERTURA · 10 min
 
-*Gemini te sugiere la estructura y genera datos ejemplo*
+*Responde por chat — 1 línea por pregunta*
 
-**40 min · Individual**
+**01** ¿Conectaste alguna vez dos apps sin programar?
+
+**02** ¿Cuántas facturas o documentos manejas al mes?
+
+**03** Si pudieras automatizar UN proceso de tu trabajo, ¿cuál sería?
+
+> 💡 Make + Google es el primer paso para que esos procesos se hagan solos.
+
+---
+
+## FUNDAMENTO 1 · ¿QUÉ ES MAKE?
+
+*Plataforma no-code para conectar apps*
+
+- Un "tablero" donde conectas bloques que representan apps
+- Drive, Sheets, Gmail, Gemini... todos se enlazan
+- **Sin escribir una línea de código**
+
+> Cada bloque hace una cosa; tú decides el orden.
+
+---
+
+## FUNDAMENTO 2 · ANATOMÍA DE UN ESCENARIO
+
+*Trigger → módulos → acción*
+
+- **TRIGGER** — lo que dispara el flujo (ej: archivo nuevo en Drive)
+- **MÓDULOS** — procesan los datos en el medio
+- **ACCIÓN** — el resultado final (ej: fila en un Sheet)
+
+> Un escenario = una receta automática.
+
+---
+
+## FUNDAMENTO 3 · OAUTH
+
+*El permiso que le das a Make sin compartir tu contraseña*
+
+1. Make pide acceso a tu Google
+2. Te redirige al login de Google
+3. Apruebas los permisos específicos
+4. Google le da un "token" a Make
+5. Make usa el token — tu contraseña nunca se comparte
+
+---
+
+## FUNDAMENTO 4 · GOOGLE CLOUD PROJECT
+
+*Para qué se necesita*
+
+- Un "contenedor" donde Google guarda la config de tu app
+- Genera **Client ID + Client Secret** (las credenciales que Make pide)
+- Habilitas las APIs que vas a usar (Drive, Sheets...)
+
+> Sin esto, ciertos conectores no autentican.
+
+---
+
+## EJEMPLO REAL · CLIENTE OAUTH EN CLOUD CONSOLE
+
+*Lo que copias en Make para conectar tu cuenta*
+
+```
+GOOGLE CLOUD CONSOLE · Credentials
+──────────────────────────────────
+Nombre:        Make Google Drive
+Tipo:          Aplicación web
+Client ID:     8214...apps.googleusercontent.com
+Client Secret: ****qGV3   [👁 Ver]
+Estado:        ✓ Habilitada
+```
+
+---
+
+## MINI-PROYECTO · REGISTRO DE FACTURAS
+
+*Drive → Sheet, sin IA aún*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Crea nuevo Google Sheet
-2. Pide al Gem columnas para capturar ventas diarias
-3. Columnas: Fecha, Vendedor, Cliente, Producto, Monto, Tipo, Descripción
-4. Pide 15 filas de datos ejemplo y pégalas
-5. Actualiza la tabla de parámetros
+1. Crear cuenta Make + Google Cloud Project (Client ID + Secret)
+2. Crear carpeta Drive **"Facturas-Entrada"**
+3. Crear Sheet **"Facturas-Registro"** (archivo, fecha, link)
+4. Armar escenario: **Drive Watch Files → Sheets Add a Row**
+5. Probar con **Run once**: subir una factura, ver la fila
 
-✓ **Verificación:** Pestaña con 15 filas ejemplo + tabla actualizada
-
----
-
-## CONSTRUYE · PESTAÑA CONFIG
-
-*Parámetros del negocio que no cambian semana a semana*
-
-**25 min · Individual**
-
-### QUÉ HACER
-
-1. Crea pestaña 'Config'
-2. Pide al Gem qué parámetros necesita un reporte
-3. Llena: Meta semanal, Ticket objetivo, Vendedores
-4. Usa valores reales de TU negocio
-5. Registra cada parámetro en la tabla
-
-✓ **Verificación:** Config con al menos 4 parámetros definidos
-
----
-
-## CONSTRUYE · PESTAÑA HISTORICO
-
-*La memoria que permite comparar semana a semana*
-
-**35 min · Individual**
-
-### QUÉ HACER
-
-1. Crea pestaña 'Historico'
-2. Columnas: Semana, Ventas_Total, Clientes_Nuevos, Ticket, Meta_Cumplida
-3. Llena 2-3 filas con datos simulados
-4. Define rangos nombrados: RangoVentas, RangoConfig, RangoHistorico
-5. Actualiza tabla de parámetros
-
-✓ **Verificación:** 3 pestañas funcionando con rangos nombrados
+✓ **Verificación:** Cada factura nueva en Drive aparece sola en el Sheet
 
 ---
 
 ## LO QUE TE LLEVAS HOY
 
-*Los artefactos que construiste hoy*
+**01** Cuenta Make + Google Cloud Project configurados
 
-**01** Google Sheet con 3 pestañas estructuradas
+**02** Entiendes OAuth y por qué necesita Client ID/Secret
 
-**02** 15 filas de datos ejemplo listos para pruebas
-
-**03** Rangos nombrados configurados para Make
-
-**04** Tabla de parámetros con columnas y valores
+**03** Tu primer escenario corriendo: Drive → Sheets
 
 ### PRÓXIMA SESIÓN
 
-Sesión 3: Diseñaremos la plantilla de Google Slides del reporte. Nombraremos todos los marcadores y los conectaremos a este Sheet.
+Sesión 3: API key de Gemini. Metemos IA dentro de este flujo para que lea las facturas.

@@ -1,196 +1,85 @@
-# Lab 02: Google Sheets con IA
+# Lab 02: Registro automático de facturas
 
-## 🎯 Objetivos
+## 🎯 Objetivo
 
-1. Diseñar una pestaña operativa (`VentasSemanaActual`) con columnas coherentes y 15 filas de ejemplo generadas con Gemini.
-2. Construir una pestaña `Config` con los parámetros del negocio (meta, equipo, categorías).
-3. Cerrar con una pestaña `Historico` y 3 rangos nombrados documentados en la tabla de parámetros.
+Construir tu **primer escenario en Make** conectando tu cuenta Google vía OAuth: cuando subes una factura a una carpeta de Drive, se registra sola una fila en un Google Sheet. **Sin IA aún.**
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Arquitectura de 3 pestañas** — operación + configuración + histórico. Cada una tiene un propósito claro.
-- **Rango nombrado** — apodo que sobrevive a cambios de layout; Make los usa en vez de coordenadas `A1:G50`.
-- **Tabla de parámetros** — documento vivo donde registras columnas, rangos y decisiones del sistema.
+- **Escenario de Make** — flujo visual sin código: trigger → módulos → acción.
+- **OAuth** — el permiso que le das a Make para usar tu Google sin compartir tu contraseña.
+- **Google Cloud Project** — genera el Client ID + Secret que Make necesita para conectar.
 
 ---
 
 ## ⚙️ Setup Inicial
 
-Esta sesión continúa el proyecto de instrucción. Verifica que tengas todo listo:
-
 | ✓ | Requisito | Verificación |
 |---|-----------|--------------|
-| ☐ | Gem del curso funcionando | Responde a "Resume mi brief en una línea" mencionando tu proyecto |
-| ☐ | Brief del proyecto en Google Doc | Carpeta "Proyecto de Instrucción" en Drive |
-| ☐ | Tabla de parámetros (Google Doc) | Crear nuevo Doc con el título "Tabla de Parámetros — [tu proyecto]" |
-
-> ⚠️ Si no completaste el Gem de la Clase 1, agrégalo antes de continuar. Sin él, no podrás pedir sugerencias contextualizadas al diseñar el Sheet.
+| ☐ | Cuenta de Make activa | Entra a [make.com](https://make.com/){:target="_blank"} y ves tu dashboard |
+| ☐ | Cuenta de Google | La misma que usas para Drive y Sheets |
+| ☐ | Acceso a Google Cloud | Abre [console.cloud.google.com](https://console.cloud.google.com/){:target="_blank"} |
 
 ---
 
-## Actividad 1: Diseña la pestaña VentasSemanaActual (40 min)
+## Mini-proyecto: registro automático de facturas
 
-### 1.1 Crea un Google Sheet nuevo
+> Vas a armar el flujo **Drive → Sheets** de punta a punta. Al final, cada archivo nuevo en una carpeta de Drive aparece como fila en tu Sheet.
 
-Nombre del archivo:
+### Paso 1: Crea tu Google Cloud Project (Client ID + Secret)
 
-```
-Sistema [<!-- tu proyecto -->] — [<!-- tu nombre -->]
-```
+En [console.cloud.google.com](https://console.cloud.google.com/){:target="_blank"}:
 
-Renombra la primera pestaña a `VentasSemanaActual`. Si tu caso no son ventas, usa el nombre que corresponda (`CampanasSemanaActual`, `CohortesSemana`, etc.) — el patrón es `[Entidad]SemanaActual`.
+1. **Crea un proyecto** nuevo: `AI101-Make-[<!-- tu nombre -->]`.
+2. Ve a **APIs y servicios → Biblioteca** y habilita **Google Drive API** y **Google Sheets API**.
+3. Configura la **Pantalla de consentimiento OAuth** (tipo "Externo", nombre de la app, tu correo).
+4. Ve a **Credenciales → Crear credenciales → ID de cliente de OAuth → Aplicación web**.
+5. En **URIs de redireccionamiento autorizados** pega la que indica Make:
+   ```
+   https://www.integromat.com/oauth/cb/google-restricted
+   ```
+6. Copia el **Client ID** y el **Client Secret** — los pegarás en Make.
 
-### 1.2 Pide columnas al Gem
+✓ **Verificación:** Tienes Client ID y Secret a la mano y las dos APIs habilitadas.
 
-Abre tu Gem y envía:
+### Paso 2: Crea la carpeta de entrada en Drive
 
-```
-Según mi brief, dame las columnas para la pestaña operativa del Sheet
-donde se capturarán los datos del día a día. Incluye una columna
-"Descripción" para capturar contexto en 1 línea. Dame también el
-tipo de dato por columna.
-```
+En Google Drive, crea una carpeta llamada **`Facturas-Entrada`**. Aquí subirás las facturas que el flujo va a detectar.
 
-Como mínimo obligatorio, la pestaña debe tener:
+### Paso 3: Crea el Sheet de registro
 
-| Columna | Tipo | Propósito |
-|---------|------|-----------|
-| Fecha | Fecha | Cuándo ocurrió el evento |
-| [<!-- Quién registra -->] | Texto | Autor del dato (vendedor, autor, responsable) |
-| [<!-- Entidad principal -->] | Texto | Cliente, campaña, proyecto, etc. |
-| [<!-- Subcategoría -->] | Texto | Producto, canal, módulo, etc. |
-| [<!-- Métrica numérica -->] | Número | Monto, alcance, horas |
-| Tipo | Texto | Nuevo / Recurrente (o equivalente) |
-| Descripción | Texto | Contexto en 1 línea (CLAVE para Gemini en clase 5) |
+Crea un Google Sheet llamado **`Facturas-Registro`** con estas columnas en la fila 1:
 
-### 1.3 Genera 15 filas de ejemplo con el Gem
+| Nombre archivo | Fecha de subida | Link |
+|----------------|-----------------|------|
 
-Envía al Gem:
+### Paso 4: Arma el escenario en Make
 
-```
-Genera 15 filas de datos de ejemplo realistas para la pestaña
-VentasSemanaActual con las columnas anteriores. Úsalas en formato TSV
-(separado por tabulaciones) para pegar directamente en Sheets.
-```
+En Make → **+ Create a new scenario**. Nómbralo `Facturas: Drive → Sheet`.
 
-Copia-pega la respuesta en el Sheet. Ajusta tipos si hace falta.
+**4.1 Trigger — Google Drive › Watch Files**
+- Al conectar, elige **crear una conexión** y pega tu **Client ID + Secret** del Paso 1.
+- **Folder:** `Facturas-Entrada`
+- **Watch:** archivos creados en esa carpeta
 
-### 1.4 Registra las columnas en la tabla de parámetros
+**4.2 Acción — Google Sheets › Add a Row**
+- **Spreadsheet:** `Facturas-Registro`
+- **Values:**
+  - `Nombre archivo` → `{{1.name}}`
+  - `Fecha de subida` → `{{1.createdTime}}`
+  - `Link` → `{{1.webViewLink}}`
 
-Abre la tabla de parámetros y agrega:
+✓ **Verificación:** El escenario tiene 2 módulos conectados: Drive (verde) → Sheets.
 
-| Categoría | Item | Valor |
-|-----------|------|-------|
-| Sheet: pestaña operativa | Nombre | `VentasSemanaActual` |
-| Sheet: pestaña operativa | Columnas | [<!-- lista separada por comas -->] |
+### Paso 5: Prueba con Run once
 
-✅ **Checkpoint:** Tu Sheet tiene la pestaña `VentasSemanaActual` con las 7 columnas y 15 filas de ejemplo realistas. La tabla de parámetros registra el nombre y columnas.
+1. Click en **Run once**.
+2. Sube una factura (PDF o imagen) a la carpeta `Facturas-Entrada`.
+3. Observa los módulos ejecutarse y revisa tu Sheet.
 
----
-
-## Actividad 2: Construye la pestaña Config (25 min)
-
-### 2.1 Crea la pestaña Config
-
-En tu Sheet, agrega una pestaña nueva llamada `Config`. Va a funcionar como "archivo de parámetros" del sistema.
-
-### 2.2 Pide al Gem los parámetros del negocio
-
-```
-¿Qué parámetros de configuración necesita un reporte semanal según mi brief?
-Dame una tabla con columnas: Parámetro, Valor (de ejemplo), Tipo de dato.
-```
-
-Como referencia (caso Roberto):
-
-| Parámetro | Valor | Tipo de dato |
-|-----------|-------|--------------|
-| Meta semanal | S/ 20,000 | Número |
-| Ticket promedio objetivo | S/ 2,800 | Número |
-| Vendedores del equipo | Juan, María, Carlos, Ana | Texto (lista) |
-| Meta por vendedor | S/ 5,000 | Número |
-| % objetivo clientes nuevos | 30 | Porcentaje |
-
-### 2.3 Reemplaza con valores reales
-
-Usa los valores de TU negocio. Si no los tienes exactos, estima — después los refinas en la Clase 7.
-
-### 2.4 Registra en la tabla de parámetros
-
-Agrega sección:
-
-| Categoría | Item | Valor |
-|-----------|------|-------|
-| Sheet: pestaña config | Nombre | `Config` |
-| Sheet: pestaña config | Parámetros | [<!-- lista -->] |
-
-✅ **Checkpoint:** La pestaña `Config` tiene al menos 4 parámetros del negocio con valores reales. La tabla de parámetros los registra.
-
----
-
-## Actividad 3: Construye Historico y rangos nombrados (35 min)
-
-### 3.1 Crea la pestaña Historico
-
-En tu Sheet, agrega la pestaña `Historico`.
-
-### 3.2 Pide al Gem las métricas a acumular
-
-```
-¿Qué métricas debo guardar semana a semana para comparar el desempeño
-de mi reporte? Dame una tabla con: Columna, Fórmula (si aplica),
-Explicación.
-```
-
-Columnas típicas:
-
-| Semana | Ventas_Total | Clientes_Nuevos | Ticket_Promedio | Meta_Cumplida_Pct |
-|--------|-------------|-----------------|-----------------|-------------------|
-
-### 3.3 Llena 2-3 filas con datos simulados
-
-Usa datos de semanas pasadas reales o inventados para tener material de prueba en la Clase 4.
-
-### 3.4 Define los 3 rangos nombrados
-
-En el menú: **Datos → Rangos con nombre → + Añadir un rango**.
-
-```
-RangoVentas    →  VentasSemanaActual!A:G
-RangoConfig    →  Config!A:C
-RangoHistorico →  Historico!A:E
-```
-
-### 3.5 Actualiza la tabla de parámetros
-
-Agrega sección final:
-
-| Categoría | Item | Valor |
-|-----------|------|-------|
-| Sheet: pestaña histórica | Nombre | `Historico` |
-| Sheet: pestaña histórica | Columnas | Semana, Ventas_Total, ... |
-| Sheet: rangos nombrados | `RangoVentas` | `VentasSemanaActual!A:G` |
-| Sheet: rangos nombrados | `RangoConfig` | `Config!A:C` |
-| Sheet: rangos nombrados | `RangoHistorico` | `Historico!A:E` |
-
-✅ **Checkpoint:** Tu Sheet tiene 3 pestañas funcionando (con datos) y 3 rangos nombrados visibles en **Datos → Rangos con nombre**. La tabla de parámetros los documenta.
-
----
-
-## 📁 Estructura Final del Proyecto
-
-```
-Google Drive/
-└── Proyecto de Instrucción/
-    ├── brief.doc
-    ├── Tabla-de-Parámetros.doc   ← NUEVO
-    └── sistema-reporte.xlsx       ← El Sheet
-        ├── VentasSemanaActual (pestaña operativa + 15 filas)
-        ├── Config (pestaña parámetros)
-        └── Historico (pestaña memoria + 2-3 filas)
-```
+✓ **Verificación:** Aparece una fila nueva en `Facturas-Registro` con el nombre, fecha y link del archivo.
 
 ---
 
@@ -198,39 +87,32 @@ Google Drive/
 
 Antes de terminar, responde brevemente:
 
-1. **¿Cuál de las 3 pestañas crees que será la más difícil de mantener actualizada en tu trabajo real?**
-2. **¿Qué beneficio ves en separar datos de configuración de datos operativos?**
-3. **¿Qué pregunta te quedó sobre cómo Make conectará con este Sheet la próxima clase?**
+1. **¿Qué hace exactamente el trigger y qué hace la acción en tu escenario?**
+2. **¿Por qué OAuth es más seguro que darle tu contraseña a Make?**
 
 ---
 
 ## Logros Adicionales (Opcional)
 
-### 🟢 Agrega validación de datos
-En la columna Tipo de `VentasSemanaActual`, agrega validación con lista desplegable (Datos → Validación de datos) con opciones "Nuevo" y "Recurrente". Esto evita inconsistencias cuando Gemini procese descripciones.
+### 🟢 Activa el escenario
+Cambia el toggle a **On** y configura el intervalo de chequeo (cada 15 min). Sube otra factura y verás la fila aparecer sola, sin Run once.
 
-### 🟡 Diseña un gráfico dinámico
-Inserta un gráfico que se actualice automáticamente con la columna Monto de `VentasSemanaActual`. En la Clase 3 lo vincularás con Slides.
+### 🟡 Agrega una columna "Estado"
+Suma una columna `Estado` al Sheet y mapea un valor fijo `"Registrada"`. Preview de cómo más adelante el flujo marcará el avance.
 
-### 🔴 Prepara el formato para Historico automático
-Diseña fórmulas que tomarán los totales de `VentasSemanaActual` para que en la Clase 5 solo copiemos valores al Historico. Preview de la próxima clase.
+### 🔴 Renombra el archivo con fecha
+Investiga el módulo **Google Drive › Rename a File** para que cada factura quede con un nombre estandarizado. Lo retomamos en la Sesión 6.
 
 ---
 
-## 📝 Entrega
+## 📝 Cierre de la sesión
 
-### Checklist
+Esta práctica se valida **en clase** (0 = no la hiciste / 100 = la hiciste). No hay entrega posterior.
 
-- [ ] Google Sheet con 3 pestañas (`VentasSemanaActual`, `Config`, `Historico`) funcionando
-- [ ] 15 filas de ejemplo en la pestaña operativa
-- [ ] 3 rangos nombrados definidos (`RangoVentas`, `RangoConfig`, `RangoHistorico`)
-- [ ] Tabla de parámetros actualizada en Google Doc
+### Lo que debes mostrar
 
-### Entregable
+- [ ] Escenario en Make con Drive Watch Files → Sheets Add a Row
+- [ ] Conexión Google funcionando (con tu Client ID/Secret)
+- [ ] Al subir una factura a Drive, aparece una fila en `Facturas-Registro`
 
-📸 **Screenshot** de la ventana **Datos → Rangos con nombre** mostrando:
-- Los 3 rangos nombrados visibles
-- El nombre del archivo del Sheet visible en la pestaña del navegador
-- Tu correo de Google visible (esquina superior derecha)
-
-> ⚠️ El entregable debe mostrar tu cuenta de Google para verificar que es tu Sheet.
+> 📸 Ten a la mano la pantalla de Make con el escenario corrido (módulos en verde) y el Sheet con la fila nueva.
