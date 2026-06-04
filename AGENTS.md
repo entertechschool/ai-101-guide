@@ -7,15 +7,15 @@
 
 ## Proyecto
 
-Repositorio del curso **AI 101 — IA estratégica para Profesionales** de EnterTechSchool. Contiene curriculum completo: READMEs, laboratorios, slides, guías de facilitador y tests diagnósticos. **8 sesiones en 4 semanas** para que profesionales construyan un sistema automatizado de recolección de datos y generación de reportes ejecutivos usando herramientas 100% gratuitas.
+Repositorio del curso **AI 101 — IA + Automatización No-Code para Profesionales** de EnterTechSchool. Contiene curriculum completo: READMEs, laboratorios, slides, guías de facilitador y tests diagnósticos. **8 sesiones de 60 min (8 horas)** para que profesionales construyan soluciones automatizadas que integran IA con herramientas no-code (Make + Gemini + Google Workspace), sin programar.
 
-### Caso guía: Roberto
+### Caso guía: el sistema de facturas
 
-Todo el curso gira alrededor de un caso único: **Roberto, gerente de una pequeña empresa con 3-4 vendedores**, que pierde horas cada viernes consolidando reportes manuales. El estudiante construye el sistema que resuelve el problema de Roberto, y en el Módulo 2 lo personaliza a su propio trabajo.
+Las sesiones 2 a 6 construyen, pieza por pieza, un mismo sistema real: la **automatización de facturas** (subir factura a Drive → Make la detecta → Gemini extrae los datos → caen estructurados en un Sheet → reporte mensual con plantilla → envío por correo). **No hay protagonista con nombre**; el hilo conductor es el sistema mismo.
 
-### Proyecto de instrucción (hilo conductor)
+### Proyecto integrador (sesiones 7-8)
 
-Cada estudiante define en la Sesión 1 un **proyecto de instrucción**: un reporte real de su trabajo que quiere automatizar. Ese proyecto acompaña las 8 sesiones — cada sesión produce un entregable que se integra al sistema final. Al cerrar la Sesión 8, el estudiante presenta su sistema funcionando en vivo y calcula el ROI en horas ahorradas.
+Durante las sesiones 1 a 6 el estudiante aprende cada pieza sobre el caso de facturas. En la **Sesión 7** elige un **caso real propio**, lo diagrama y construye una primera versión de su flujo con datos reales. En la **Sesión 8** lo presenta en Demo Day (caso → demo → resultados → aprendizajes).
 
 ---
 
@@ -49,9 +49,9 @@ Cada estudiante define en la Sesión 1 un **proyecto de instrucción**: un repor
 │   └── module-2/                    # Plan del Módulo 2
 ├── resources/
 │   ├── prompts/                     # Biblioteca de prompts de referencia
-│   └── templates/                   # Plantillas (Gem, Sheet, Slides, Blueprints Make)
-├── dev/
-│   └── nuevo_silabus_walter/        # Material fuente del instructor
+│   └── templates/                   # Plantillas (Sheet, Slides, Blueprints Make)
+├── fuente/
+│   └── (sílabo v3 + PPTs)           # Material fuente del instructor (v3)
 └── .claude/skills/                  # Skills de generación de contenido
 ```
 
@@ -65,7 +65,7 @@ Cada estudiante define en la Sesión 1 un **proyecto de instrucción**: un repor
 - **Encoding:** UTF-8 puro (tildes directas: á, é, í, ó, ú, ñ, ü)
 - **Signos:** ¿?, ¡! (nunca omitir el signo de apertura)
 - **Corrupción:** Si aparecen `�` o `\u00f3`, el archivo está corrupto — regenerar
-- **Lenguaje público:** "asistente IA" o "sistema automatizado" (catálogo). Internamente: "flujo", "escenario de Make", "Gem"
+- **Lenguaje público:** "asistente IA" o "sistema automatizado" (catálogo). Internamente: "flujo", "escenario de Make", "módulo Gemini"
 
 ### Enlaces Externos (GitHub Pages / Kramdown)
 
@@ -108,21 +108,16 @@ Estratégicos en headers para escaneo visual. No decorativos ni excesivos.
 
 ---
 
-## Tipos de Lab
+## Mini-proyecto por sesión
 
-Determinar tipo según posición de la clase en el módulo:
+Cada sesión (60 min) incluye un **mini-proyecto en vivo** que produce un entregable concreto. No hay labs calificados aparte ni entregables post-clase.
 
-```
-Posición = ((clase - 1) % 4) + 1
-Lab calificado = (Posición == 4)
-```
+| Tipo | Sesiones | Tiempo del mini-proyecto |
+|------|----------|--------------------------|
+| Estándar | 1-6 | ~25 min (dentro de la sesión de 60 min) |
+| Extendido | 7-8 | ~55 min (proyecto integrador y Demo Day) |
 
-| Tipo | Clases | Partes | Tiempo | Rúbrica |
-|------|--------|--------|--------|---------|
-| Regular | 1-3, 5-7 | 3 actividades | ~105 min (en clase) | No |
-| Calificado | 4, 8 | 3 actividades + Desafío | ~90 min clase + post | Sí |
-
-> **Nota sobre la clase 8:** es Demo Day (presentaciones en vivo de 5 min + cálculo de ROI + plan 30 días), con rúbrica de pares.
+> **Nota sobre la sesión 8:** es Demo Day — presentaciones en vivo de 5 min con estructura caso → demo → resultados → Q&A. Sin cálculo de ROI ni plan 30 días ni rúbrica de pares (no están en la fuente v3).
 
 ---
 
@@ -130,10 +125,11 @@ Lab calificado = (Posición == 4)
 
 Leer de `README.md`. Reglas derivadas:
 
-- Solo la **última clase de cada módulo** tiene lab calificado (clases 4 y 8)
-- Clase 8 es **Demo Day** (presentaciones de 5 min con demo en vivo + ROI)
+- **Práctica en clase calificada 0/100** por sesión (hizo / no hizo el mini-proyecto)
+- **No hay entregables post-clase**
+- Proyecto integrador (S7) + Demo Day (S8) son el cierre evaluativo
 - Tests diagnósticos: NO afectan calificación, son control interno
-- Aprobación: puntaje mínimo 70/100, asistencia mínima 6/8 sesiones
+- Se valora asistencia a las 8 sesiones y participación en la Apertura y el Cierre
 
 ---
 
@@ -149,14 +145,14 @@ Leer de `README.md`. Reglas derivadas:
 |----------|-------|-------------|
 | `course_level` | 1 | Complejidad general (1=intro, 2=intermedio, 3=avanzado) |
 | `scaffolding_style` | guided | Estilo: `guided` / `descriptive` / `spec-based` |
-| `part_naming` | Actividad | Nombre de secciones del lab (el sílabo usa "Actividad 1/2/3") |
+| `part_naming` | Paso | Nombre de secciones del mini-proyecto (pasos numerados 1, 2, 3...) |
 | `checkpoint_style` | visual | Tipo de checkpoints: `visual` / `functional` / `documental` |
 | `instruction_style` | step-by-step | Redacción: `step-by-step` / `constrained-tasks` / `acceptance-criteria` |
 | `gap_types` | comment-placeholders | Tipos de gap: `comment-placeholders` / `+blank-lines` |
-| `class_duration` | 150 | Duración anunciada de la clase en minutos (2.5h) |
-| `buffer` | 15 | Minutos reservados para imprevistos |
-| `lab_duration_regular` | 105 | Minutos de lab en clase regular (3 actividades × ~35 min) |
-| `lab_duration_graded` | 135 | Lab calificado (clase + post-clase) |
+| `class_duration` | 60 | Duración de la sesión en minutos (60 min) |
+| `buffer` | 5 | Cierre / margen al final de la sesión |
+| `lab_duration_regular` | 25 | Minutos de mini-proyecto en sesiones 1-6 |
+| `lab_duration_graded` | 55 | Mini-proyecto extendido (S7 integrador, S8 Demo Day) |
 | `has_reflection` | true | Incluir sección de reflexión |
 | `reflection_name` | Reflexión | Nombre de la sección |
 | `achievements_name` | Logros Adicionales | Nombre de la sección opcional |
@@ -168,8 +164,8 @@ Leer de `README.md`. Reglas derivadas:
 
 | Módulo | Contenido Guiado | Gaps | Descripción |
 |--------|------------------|------|-------------|
-| M1 | 90% | 10% | Instrucciones detalladas; el estudiante personaliza dentro de pasos claros (brief propio, parámetros del negocio, datos de muestra) |
-| M2 | 80% | 20% | El estudiante toma más decisiones (prompts propios, diseño de marca, caso real) con acompañamiento 1 a 1 en C07 |
+| M1 (S1-4) | 90% | 10% | Instrucciones detalladas; el estudiante construye el caso de facturas dentro de pasos claros (prompts propios, datos de muestra) |
+| M2 (S5-8) | 80% | 20% | El estudiante toma más decisiones (su caso real, su plantilla, su flujo) — proyecto integrador propio en S7 |
 
 ### Formato de Gaps por Nivel
 
@@ -183,13 +179,13 @@ Me ayudarás a automatizar [<!-- tu reporte -->]."
 ### Checkpoints por Nivel
 
 **visual** (Nivel 1): Describe lo que el estudiante debe VER en pantalla.
-> ✅ **Checkpoint:** Tu Gem muestra el nombre "Asistente de mi proyecto" y responde mencionando los datos de tu brief.
+> ✅ **Checkpoint:** Tu escenario de Make muestra el módulo de Drive en verde y, al correr "Run once", aparece una fila nueva en tu Sheet.
 
 ### Densidad de Contenido
 
 AI 101 es un curso **no-code para profesionales**. No se enseña programación.
 
-- Los labs guían al estudiante por interfaces gráficas (Gemini, Gems, Google Sheets/Slides, Make, Gmail)
+- Los labs guían al estudiante por interfaces gráficas (Gemini, Make, Google Cloud, Google Sheets/Docs/Slides, Gmail, Google AI Studio)
 - Los "gaps" son decisiones de contenido (qué prompt escribir, qué datos cargar, qué marcadores nombrar), no código
 - Cuando hay "código" (JSON en prompts de Gemini API, nombres de campos en Make), el estudiante lo copia/adapta — no lo escribe desde cero
 - Herramientas máximas por clase: **2 nuevas** (regla `MAX_TWO_NEW_TOOLS`)
@@ -198,12 +194,12 @@ AI 101 es un curso **no-code para profesionales**. No se enseña programación.
 
 | Clase | Herramienta nueva | Ya conocida |
 |-------|-------------------|-------------|
-| 1 | Gemini, Gems | — |
-| 2 | Google Sheets (con Gemini) | Gemini |
-| 3 | Google Slides (con Gemini) | Gemini, Sheets |
-| 4 | Make, Gmail en Make | Sheets, Slides |
-| 5 | Gemini API, HTTP/JSON en Make | Make, Gemini |
-| 6 | (ninguna nueva) | Todo el stack |
+| 1 | Gemini (chat) | — |
+| 2 | Make, Google Cloud (OAuth) | Gemini |
+| 3 | Gemini API (Google AI Studio) | Make |
+| 4 | Parse JSON + Data Structure, Gmail en Make | Make, Gemini |
+| 5 | Google Slides/Docs (plantillas) | Make, Sheets |
+| 6 | Filtros, routers, error handler | Todo el stack |
 | 7 | (ninguna nueva) | Todo el stack |
 | 8 | (ninguna nueva) | Todo el stack |
 
@@ -245,15 +241,16 @@ AI 101 es un curso **no-code para profesionales**. No se enseña programación.
 
 ### Material fuente del instructor
 
-El curso v2 se construye a partir del material de Walter en `dev/nuevo_silabus_walter/`:
+El curso v3 se construye a partir del material del instructor en `fuente/`:
 
 | Archivo | Contenido |
 |---------|-----------|
-| `silabo-ai-profesionales-basev2.docx.md` | Sílabo académico oficial (fuente última) |
-| `PPTs/sesion{N}/sesion-*.md` | Notas detalladas del instructor por sesión (teoría, actividades, tiempos, verificación) |
-| `PPTs/sesion{N}/ppt-sesion{N}-*.pptx.txt` | Texto extraído del PPT correspondiente |
+| `silabo-ai-v3.docx` | Sílabo oficial v3 (fuente última) |
+| `silabo-8sesiones-v3.xlsx` | Malla de las 8 sesiones (capacidad, objetivo MINEDU, fundamentos, mini-proyecto) |
+| `sesion0N-*.pptx` | Presentación por sesión — su contenido se refleja casi tal cual en `slides/` |
 
-> **Nota de numeración:** los PPTs (y sus `.txt`) tienen la numeración oficial (Sesión 1..8 = clase-01..class-08). Las notas `.md` de las sesiones 6, 7 y 8 tienen desfase heredado (dicen "Sesión 7", "8" y "9" internamente) pero corresponden a class-06, class-07 y class-08 respectivamente. Confiar en los PPTs para numeración.
+> **Numeración directa:** sesión 1..8 = class-01..class-08.
+> **Atención:** `dev/nuevo_silabus_walter/` es la fuente **v2 anterior** (ya usada en una actualización previa). **No usar para v3.**
 
 ### Regla de contexto
 
@@ -275,10 +272,10 @@ Al crear contenido de clase, aplicar estos 9 principios:
 
 1. **MOTIVATION_FIRST** — "Por qué" y valor práctico ANTES de cualquier técnica. Demo de impacto.
 2. **ONE_CONCEPT_PER_CLASS** — UN concepto principal. No mezclar temas.
-3. **REAL_WORK_ONLY** — Tareas reales del estudiante (proyecto de instrucción), nunca ficticias. Entregable USABLE.
+3. **REAL_WORK_ONLY** — Tareas reales del estudiante (caso de facturas en S1-6, su propio caso en S7-8), nunca ficticias. Entregable USABLE.
 4. **VERIFIABLE_DELIVERABLE** — Screenshot, documento, Sheet, Slides, flujo funcionando. "Entendí" NO es entregable.
 5. **EXPLICIT_DEPENDENCIES** — Declarar qué requiere de clases anteriores y qué habilita.
 6. **MAX_TWO_NEW_TOOLS** — Máximo 2 herramientas nuevas por clase. 3+ = PROHIBIDO.
 7. **PORTFOLIO_BY_DEFAULT** — Cada entregable ES pieza del sistema final. Sin tarea separada.
 8. **ANTI_HYPE_ALWAYS** — Al menos 1 momento de limitaciones/errores por clase.
-9. **CUMULATIVE_ARTIFACTS** — Cada sesión produce un artefacto que el estudiante reusa en la siguiente. La tabla de parámetros es el documento vivo del curso.
+9. **CUMULATIVE_ARTIFACTS** — Cada sesión produce un artefacto que el estudiante reusa en la siguiente. El sistema de facturas (escenario de Make + Sheet + plantilla) es el artefacto vivo que crece sesión a sesión.

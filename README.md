@@ -1,8 +1,8 @@
-# AI 101 — IA estratégica para Profesionales
+# AI 101 — IA + Automatización No-Code para Profesionales
 
-> En 4 semanas construirás un sistema automatizado que recolecta datos reales de tu trabajo y genera reportes ejecutivos con insights de IA — todo con herramientas 100% gratuitas.
+> En 8 sesiones construirás soluciones automatizadas que integran inteligencia artificial con herramientas no-code (Make + Gemini + Google Workspace) para resolver problemas reales de tu trabajo — todo sin escribir código.
 
-Guía completa del curso AI 101: de profesional a operador de sistemas con IA.
+Guía completa del curso AI 101: de profesional a constructor de automatizaciones con IA.
 
 ---
 
@@ -11,32 +11,48 @@ Guía completa del curso AI 101: de profesional a operador de sistemas con IA.
 | Aspecto | Detalle |
 |---------|---------|
 | **Total de sesiones** | 8 sesiones sincrónicas |
-| **Duración por sesión** | 2.5h en vivo |
-| **Carga total** | 20 horas académicas (4 semanas × 2 sesiones) |
-| **Estructura** | 2 módulos × 4 sesiones |
-| **Modalidad** | 100% online en vivo (cohort-based) |
-| **Práctica** | 80% de cada sesión es laboratorio |
-| **Prerequisitos** | Navegación web, correo, Google Drive. **Sin programación**. Sin experiencia previa en IA. |
+| **Duración por sesión** | 60 min en vivo |
+| **Carga total** | 8 horas |
+| **Estructura** | 8 sesiones (clases en vivo) |
+| **Modalidad** | Online sincrónica (clases en vivo) |
+| **Práctica** | Cada sesión incluye un mini-proyecto en vivo que produce un entregable concreto |
+| **Audiencia** | Profesionales sin formación técnica que buscan automatizar tareas con IA. **Sin programación.** |
+
+### Estructura de cada sesión (60 min)
+
+| Momento | Duración | Propósito |
+|---------|----------|-----------|
+| **Apertura** | 10 min | Preguntas al grupo para conectar con la realidad del estudiante y diagnosticar |
+| **Teoría / Fundamentos** | 20 min | Conceptos clave de la sesión, cada uno con visual conceptual + ejemplo real |
+| **Mini-proyecto** | 25 min | Práctica en vivo que produce un entregable que se suma al sistema |
+| **Cierre** | 5 min | Síntesis de lo aprendido + conexión con la próxima sesión |
 
 ---
 
-## El caso guía: Roberto
+## Capacidad general del curso
 
-Todo el curso gira alrededor de un caso real. **Roberto** es gerente de una pequeña empresa con 3-4 vendedores:
+Construir soluciones automatizadas que integran inteligencia artificial usando herramientas no-code (Make + Gemini + Google Workspace) para resolver problemas reales del entorno profesional.
+
+---
+
+## El caso guía: el sistema de facturas
+
+Las sesiones 2 a 6 construyen, pieza por pieza, un mismo sistema real: la **automatización de facturas**.
 
 **Dolor actual:**
-- Cada vendedor reporta a su manera (WhatsApp, llamadas, correos dispersos)
-- Pierde horas cada viernes consolidando datos manualmente
-- Arma el reporte ejecutivo a mano
-- No tiene visibilidad en tiempo real del desempeño del equipo
+- Las facturas llegan dispersas (correo, Drive, papel) y se registran a mano
+- Alguien transcribe proveedor, montos y fechas a una hoja de cálculo
+- El reporte mensual se arma manualmente, copiando y pegando
+- Si algo se cae, nadie se entera hasta tarde
 
 **Solución que construyes durante el curso:**
-- Los vendedores envían correos informales → el sistema registra todo automáticamente
-- Cada viernes 4pm llega el reporte ejecutivo listo al correo del gerente
-- Los insights los genera Gemini con el contexto del negocio
-- Roberto recupera 4-8 horas semanales
+- Subes una factura a Drive → Make la detecta automáticamente
+- Gemini lee el documento y extrae los datos (proveedor, monto, fecha)
+- Los datos caen estructurados en un Google Sheet
+- Cada mes se genera un reporte con plantilla y se envía por correo
+- El flujo tiene filtros, manejo de errores y alertas si algo falla
 
-En el **Módulo 1** construyes el sistema piezas por pieza usando el caso Roberto. En el **Módulo 2** lo integras con IA, lo optimizas, y luego lo **adaptas a tu propio caso de trabajo** para presentarlo en Demo Day.
+En las **sesiones 1 a 6** aprendes cada pieza sobre el caso facturas (y casos paralelos como clasificar correos o extraer ventas desde Gmail). En las **sesiones 7 y 8** construyes y presentas tu **proyecto integrador propio**, aplicando todo a un caso real de tu trabajo.
 
 ---
 
@@ -44,15 +60,17 @@ En el **Módulo 1** construyes el sistema piezas por pieza usando el caso Robert
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│                       AI 101 (4 semanas)                         │
+│              AI 101 — 8 sesiones × 60 min = 8 horas              │
 ├────────────────────────────────┬─────────────────────────────────┤
-│   MÓDULO 1 (Semanas 1-2)       │    MÓDULO 2 (Semanas 3-4)       │
-│   Piezas del sistema           │    Integración y proyecto       │
+│   PIEZAS DEL SISTEMA (1-6)     │    TU PROYECTO (7-8)            │
+│   Caso guía: facturas          │    Caso propio del estudiante   │
 ├────────────────────────────────┼─────────────────────────────────┤
-│ 1. Prompts y Gems              │ 5. Gemini API + 2 flujos        │
-│ 2. Google Sheets con IA        │ 6. Integración total            │
-│ 3. Google Slides con IA        │ 7. Tu proyecto propio           │
-│ 4. Make básico (sin IA)        │ 8. Demo Day + ROI + plan 30d    │
+│ 1. Prompts efectivos           │ 7. Proyecto integrador          │
+│ 2. Make 101 + Google Cloud     │ 8. Exposición / Demo Day        │
+│ 3. API key de Gemini           │                                 │
+│ 4. JSON + Parse JSON           │                                 │
+│ 5. Plantillas con placeholders │                                 │
+│ 6. Flujo end-to-end robusto    │                                 │
 └────────────────────────────────┴─────────────────────────────────┘
 ```
 
@@ -62,114 +80,72 @@ En el **Módulo 1** construyes el sistema piezas por pieza usando el caso Robert
 
 Al completar el programa, el participante podrá:
 
-1. **Diseñar prompts efectivos** aplicando la estructura Rol + Contexto + Tarea + Formato + Restricciones, y configurar Gems personalizados en Gemini.
-2. **Estructurar datos para automatización** diseñando Google Sheets con 3 pestañas (operación, configuración, histórico) y rangos nombrados.
-3. **Diseñar plantillas de reportes** en Google Slides con marcadores variables clasificados por tipo (crudo, calculado, generado por IA).
-4. **Construir flujos automáticos en Make** usando Instant Trigger de Gmail, sin escribir código.
-5. **Integrar Gemini API** en Make para extraer datos estructurados desde texto libre y generar insights contextuales.
-6. **Optimizar prompts y aplicar mejores prácticas** de sistemas automatizados (storytelling, nombres con fecha, respaldos, logs, alertas).
-7. **Aplicar el sistema a un caso real** de su trabajo, adaptando datos, marca y prompts.
-8. **Presentar el sistema calculando ROI** en horas ahorradas y proyectar un plan de 30 días con próximas automatizaciones.
+1. **Aplicar prompts estructurados** (rol + tarea + contexto + formato) usando asistentes de IA generativa para obtener respuestas precisas en tareas profesionales.
+2. **Construir un escenario en Make** conectando una cuenta Google vía OAuth, entendiendo OAuth y Google Cloud Project (Client ID + Secret).
+3. **Integrar el modelo Gemini** dentro de un flujo de Make generando una API key en Google AI Studio.
+4. **Procesar la respuesta estructurada de la IA** con el módulo Parse JSON y un Data Structure para convertir texto en variables que el flujo entiende.
+5. **Generar documentos y presentaciones automáticas** usando plantillas con placeholders `{{variable}}` en Docs/Slides.
+6. **Diseñar un flujo end-to-end robusto** (Watch vs Schedule, filtros, routers, manejo de errores, logs) que automatiza un proceso real de principio a fin.
+7. **Construir un proyecto integrador propio** aplicando todo lo aprendido para resolver un caso real de su trabajo o emprendimiento.
+8. **Sustentar el proyecto integrador** en Demo Day, evidenciando decisiones técnicas, resultados y aprendizajes.
 
 ---
 
-## Módulo 1: Piezas del Sistema (Sesiones 1-4)
+## Las 8 Sesiones
 
-El estudiante aprende una pieza por sesión y acumula un inventario de artefactos que integrará en el Módulo 2.
-
-| # | Clase | Contenido | Entregable |
-|---|-------|-----------|------------|
-| 1 | [Prompts y Gems](curriculum/class-01/) | Cómo funciona la IA, tokens y alucinaciones, anatomía del prompt profesional, creación de Gems con archivos | Brief del proyecto de instrucción (1 párrafo) + Gem personalizado funcionando + 3 prompts probados |
-| 2 | [Google Sheets con IA](curriculum/class-02/) | Por qué la IA necesita estructura, arquitectura de 3 pestañas (operación + config + histórico), rangos nombrados | Sheet con 3 pestañas + 15 filas de ejemplo + tabla de parámetros |
-| 3 | [Google Slides con IA](curriculum/class-03/) | Anatomía del reporte ejecutivo (6 secciones), 3 tipos de marcadores (crudo/calculado/IA), paleta y jerarquía | Plantilla de Slides + tabla de ~18-20 marcadores clasificados |
-| 4 | [Make básico (sin IA)](curriculum/class-04/) | Conceptos de Make (escenario, módulo, operación, trigger), Instant vs Scheduled, Replace Text en Slides | 2 escenarios de Make funcionando: Gmail→Sheet (instant) + Sheet→Slides→PDF→Gmail (manual) |
-
-### Salida del Módulo 1
-
-- Brief del proyecto de instrucción validado
-- Gem personalizado como asistente del curso
-- Google Sheet con 3 pestañas y rangos nombrados
-- Plantilla de Slides con marcadores documentados
-- 2 flujos de Make funcionando sin IA
-- Tabla de parámetros actualizada (documento vivo del curso)
+| # | Sesión | Objetivo de aprendizaje | Mini-proyecto (entregable) |
+|---|--------|-------------------------|----------------------------|
+| 1 | [Prompts efectivos](curriculum/class-01/) | Aplicar prompts estructurados para obtener respuestas precisas en tareas profesionales | 3 prompts profesionales: clasificar correos, resumir reunión, redactar respuesta de venta |
+| 2 | [Make 101 + Google Cloud](curriculum/class-02/) | Construir un primer escenario en Make conectando Google vía OAuth | Registro automático de facturas: Drive → Make → fila en Sheet (sin IA aún) |
+| 3 | [API key de Gemini](curriculum/class-03/) | Integrar Gemini dentro del flujo generando una API key en Google AI Studio | La factura pasa por Gemini → extrae el proveedor → columna nueva en el Sheet |
+| 4 | [JSON + Parse JSON](curriculum/class-04/) | Procesar la respuesta de la IA con Parse JSON y un Data Structure | Extracción de ventas desde Gmail → JSON → cada campo en su columna del Sheet |
+| 5 | [Plantillas con placeholders](curriculum/class-05/) | Generar documentos/presentaciones con plantillas y placeholders `{{variable}}` | Reporte mensual de facturas: Sheet → Slide con plantilla → Drive/email |
+| 6 | [Flujo end-to-end robusto](curriculum/class-06/) | Diseñar un flujo completo Drive → IA → Sheets/Docs/Gmail | Flujo completo de facturas con filtros, router, manejo de errores y alertas |
+| 7 | [Proyecto integrador](curriculum/class-07/) | Construir un proyecto propio que resuelve un caso real | Tu flujo v1 funcionando con datos reales de tu trabajo |
+| 8 | [Exposición / Demo Day](curriculum/class-08/) | Sustentar el proyecto integrador ante la clase | Demo en vivo de 5 min: caso → demo → resultados → Q&A |
 
 ---
 
-## Módulo 2: Integración y Proyecto (Sesiones 5-8)
+## El Proyecto Integrador (sesiones 7-8)
 
-El estudiante integra las piezas con IA, optimiza el sistema, lo adapta a su caso real y lo presenta.
+Durante las sesiones 1 a 6 el estudiante aprende cada pieza sobre el caso guía de facturas. En la **sesión 7** elige un **caso real propio** (contabilidad, atención al cliente, marketing, ventas, RR.HH., etc.), lo diagrama y construye una primera versión de su flujo con datos reales. En la **sesión 8** lo presenta en Demo Day.
 
-| # | Clase | Contenido | Entregable |
-|---|-------|-----------|------------|
-| 5 | [Gemini API + 2 flujos](curriculum/class-05/) | API, HTTP, JSON, API key gratis (1,500 req/día), extracción de datos desde correos informales, generación de insights | Sistema modelo completo: flujo instantáneo activo + flujo semanal scheduled con IA |
-| 6 | [Integración total](curriculum/class-06/) | Prompt engineering avanzado (chain of thought, few-shot, persona), storytelling de datos, mejores prácticas (nombres con fecha, respaldos, alertas, logs) | Prompts optimizados (antes/después) + sistema con 4 mejores prácticas + plan de personalización (5 puntos) |
-| 7 | [Tu proyecto propio](curriculum/class-07/) | Los 5 puntos críticos de personalización, acompañamiento 1 a 1, debug de flujos en Make | Sistema propio funcionando con datos reales (Sheet + Slides con marca + 2 flujos adaptados) |
-| 8 | [Demo Day + ROI](curriculum/class-08/) | Estructura PSDR (Problema-Solución-Demo-Resultado), cálculo de ROI, plan 30 días con 3 próximos agentes | Demo grabado + ROI calculado (mensual y anual) + plan 30 días + rúbricas de pares |
+### Entregables finales
 
-### Salida del Módulo 2
-
-- Sistema automatizado funcionando para un caso real del estudiante
-- Prompts optimizados con storytelling (antes/después documentado)
-- ROI calculado en soles con proyección mensual y anual
-- Plan 30 días con 3 automatizaciones priorizadas (80/20)
-- Demo en vivo presentado ante pares con feedback de rúbrica
-
----
-
-## El Proyecto de Instrucción (hilo conductor)
-
-Cada estudiante define en la Sesión 1 un **proyecto de instrucción**: un reporte real de su trabajo que quiere automatizar. Ese proyecto acompaña las 8 sesiones — cada sesión produce un artefacto que se integra al sistema final.
-
-### Evolución clase a clase
-
-| Clase | Pieza del Sistema |
-|-------|-------------------|
-| 1 | Brief del proyecto + Gem asistente |
-| 2 | Google Sheet con 3 pestañas estructurado |
-| 3 | Plantilla de Slides con ~18-20 marcadores documentados |
-| 4 | 2 flujos de Make funcionando sin IA |
-| 5 | Sistema modelo con Gemini API integrada (flujo instantáneo + semanal) |
-| 6 | Prompts optimizados + mejores prácticas + plan de personalización |
-| 7 | Sistema propio adaptado al caso real del estudiante |
-| 8 | Demo en vivo + cálculo de ROI + plan 30 días |
-
-### Entregables Finales
-
-- Sistema de automatización funcionando con datos reales de tu trabajo
-- Reporte ejecutivo en PDF llegando automáticamente a tu correo
-- Cálculo de ROI documentado (horas ahorradas × tarifa)
-- Plan de 30 días con 3 próximos agentes a construir
-- Presentación grabada para compartir en LinkedIn o con tu equipo
+- Un flujo automatizado propio funcionando con datos reales de tu trabajo
+- Resultado tangible del sistema (documento, reporte o registro generado automáticamente)
+- Demo en vivo presentado ante pares con feedback
+- Roadmap personal: la próxima automatización a construir
 
 ---
 
 ## Evaluación
 
-| Componente | Criterio | Peso |
-|------------|----------|------|
-| Entregables de sesión (8) | Completado y presentado en plazo | 40% |
-| Participación en labs en vivo | Asistencia activa ≥ 75% de sesiones | 20% |
-| Lab calificado M1 (Clase 4) | 2 flujos de Make funcionando end-to-end | 15% |
-| Sistema propio (Clase 7) | Sistema adaptado funcionando con datos reales | 10% |
-| Demo Day (Clase 8) | Demo en vivo de 5 minutos + ROI + plan 30 días | 15% |
+| Componente | Criterio |
+|------------|----------|
+| **Práctica en clase** | Cada sesión incluye un reto/mini-proyecto en vivo. El docente califica **0 (no hizo) / 100 (sí hizo)**. **No hay entregables post-clase.** |
+| **Proyecto integrador (S7)** | Cada estudiante construye su proyecto propio con datos reales |
+| **Demo Day (S8)** | Exposición del proyecto integrador ante la clase |
+| **Asistencia y participación** | Asistencia a las 8 sesiones + participación en la Apertura y el Cierre de cada una |
 
-**Aprobación:** Puntaje mínimo 70/100. Asistencia mínima: 6 de 8 sesiones.
+> El sistema se centra en la práctica en vivo: lo que importa es que el estudiante **construya durante la clase**, no que entregue tareas después.
 
 ---
 
 ## Stack de Herramientas — 100% gratuito
 
-Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de crédito**.
+Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de crédito.**
 
-| Herramienta | Plan | Uso en el programa | Clase |
-|-------------|------|--------------------|-------|
-| **Gemini** | Free | Chat base, diseño de prompts, asistente del curso | 1-8 |
-| **Gemini Gems** | Free | Asistentes personalizados con contexto fijo | 1-8 |
-| **Gemini API** | Free (1,500 req/día) | Extracción de datos y generación de insights en Make | 5-8 |
-| **Make** | Free (1,000 ops/mes) | Plataforma de automatización visual sin código | 4-8 |
-| **Google Sheets** | Free | Fuente de datos estructurados (3 pestañas) | 2-8 |
-| **Google Slides** | Free | Plantilla del reporte ejecutivo con marcadores | 3-8 |
-| **Gmail** | Free | Entrada de datos (Instant Trigger) y entrega del PDF | 4-8 |
+| Herramienta | Plan | Uso en el programa | Sesión |
+|-------------|------|--------------------|--------|
+| **Gemini** | Free | Chat base, diseño y prueba de prompts | 1 |
+| **Make** | Free (1,000 ops/mes) | Plataforma de automatización visual sin código | 2-8 |
+| **Google Cloud** | Free | Proyecto con Client ID + Secret para conectar Google vía OAuth | 2 |
+| **Google Drive** | Free | Entrada de archivos (trigger) y almacenamiento | 2-8 |
+| **Google Sheets** | Free | Fuente de datos estructurados | 2-8 |
+| **Gemini API** | Free (Google AI Studio) | Extracción de datos y generación de insights dentro de Make | 3-8 |
+| **Gmail** | Free | Entrada de datos (Watch) y entrega de reportes | 4-8 |
+| **Google Docs / Slides** | Free | Plantillas con placeholders para reportes automáticos | 5-8 |
 
 ---
 
@@ -179,7 +155,7 @@ Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de 
 curriculum/class-XX/
 ├── README.md           # Resumen + preparación del estudiante
 ├── lab/
-│   └── README.md       # Guía de taller paso a paso
+│   └── README.md       # Mini-proyecto paso a paso
 ├── slides/
 │   └── README.md       # Presentación reveal.js
 ├── facilitator/
@@ -189,16 +165,16 @@ curriculum/class-XX/
     └── image-prompts.md
 ```
 
-Las clases 4 y 8 incluyen además `lab/rubric.md` (rúbrica de evaluación) y `test/` (test diagnóstico del módulo).
+Las clases 4 y 8 incluyen además `test/` (test diagnóstico).
 
 ---
 
 ## Ruta AI Solutions
 
 ```
-AI 101: IA estratégica para Profesionales (4 semanas / 20h)  ← Estás aquí
-   → Sistema automatizado de reportes
-   → Gemini + Make + Google Workspace
+AI 101: IA + Automatización No-Code para Profesionales (8 sesiones / 8h)  ← Estás aquí
+   → Sistema automatizado con IA
+   → Make + Gemini + Google Workspace
 
          ↓
 
@@ -223,21 +199,19 @@ ai-101-guide/
 ├── AGENTS.md                  # Instrucciones para agentes AI
 ├── CLAUDE.md                  # Convenciones de Claude Code
 ├── curriculum/
-│   ├── module-1/              # Plan del Módulo 1
-│   ├── class-01/              # Prompts y Gems
-│   ├── class-02/              # Google Sheets con IA
-│   ├── class-03/              # Google Slides con IA
-│   ├── class-04/              # Make básico (sin IA)
-│   ├── module-2/              # Plan del Módulo 2
-│   ├── class-05/              # Gemini API + 2 flujos
-│   ├── class-06/              # Integración total
-│   ├── class-07/              # Tu proyecto propio
-│   └── class-08/              # Demo Day + ROI
+│   ├── class-00/              # Orientación del curso
+│   ├── class-01/              # Prompts efectivos
+│   ├── class-02/              # Make 101 + Google Cloud
+│   ├── class-03/              # API key de Gemini
+│   ├── class-04/              # JSON + Parse JSON
+│   ├── class-05/              # Plantillas con placeholders
+│   ├── class-06/              # Flujo end-to-end robusto
+│   ├── class-07/              # Proyecto integrador
+│   └── class-08/              # Exposición / Demo Day
 ├── resources/
 │   ├── prompts/               # Biblioteca de prompts de referencia
-│   └── templates/             # Plantillas (Gem, Sheet, Slides, Blueprints Make)
-└── dev/
-    └── nuevo_silabus_walter/  # Material fuente del instructor (sílabo + PPTs)
+│   └── templates/             # Plantillas (Sheet, Slides, Blueprints Make)
+└── fuente/                    # Material fuente del instructor (sílabo v3 + PPTs)
 ```
 
 ---
@@ -246,8 +220,8 @@ ai-101-guide/
 
 - Ver [AGENTS.md](AGENTS.md) para convenciones del repositorio y pipeline de generación
 - Cada clase tiene su carpeta con: `README`, `lab/`, `slides/`, `facilitator/`, `infographic/`
-- 80% práctica en cada clase, sin grabaciones como recurso principal
-- El proyecto de instrucción es el hilo conductor — todo entregable se reusa en la siguiente sesión
+- Cada sesión es de 60 min con estructura fija: Apertura (10') → Fundamentos (20') → Mini-proyecto (25') → Cierre (5')
+- El caso guía de facturas hila las sesiones 1-6; el proyecto propio cierra en las sesiones 7-8
 
 ---
 
