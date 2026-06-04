@@ -1,3 +1,3 @@
-# Image Prompts — Clase 01: Prompts y Gems
+# Image Prompts — Sesión 01: Prompts efectivos
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con anatomía del prompt, bloques de estructura del Gem y glosario).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con la anatomía del prompt, comparación libre vs estructurado, ejemplo en JSON y glosario).

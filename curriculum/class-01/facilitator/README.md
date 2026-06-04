@@ -1,91 +1,79 @@
-# Guía del Facilitador - Clase 01: Prompts y Gems
+# Guía del Facilitador - Sesión 01: Prompts efectivos
 
-> Tiempo de lectura: 8 minutos | Prepárate antes de clase
+> Tiempo de lectura: 7 minutos | Prepárate antes de clase
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **LLM**: modelo de IA que predice la siguiente palabra probable; no "piensa", calcula probabilidades.
-- **Token**: unidad que procesa la IA (~3/4 de palabra en español); los planes gratuitos tienen límite medido en tokens.
-- **Alucinación**: cuando la IA inventa datos (nombres, fechas, números) con apariencia creíble.
-- **Prompt profesional**: estructura Rol + Contexto + Tarea + Formato + Restricciones.
-- **Gem**: asistente personalizado de Gemini con instrucciones y archivos de referencia fijos.
+- **Prompt**: la instrucción que le das a la IA; de su claridad depende la calidad de la respuesta.
+- **Prompt profesional**: estructura Rol + Tarea + Contexto + Formato.
+- **Output libre**: respuesta en texto natural, para que la lea una persona.
+- **Output estructurado (JSON)**: respuesta en formato fijo, para que la procese otra app o flujo.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**Token <> Pieza de LEGO:**
-Cada palabra que procesa la IA es una "pieza". Con el plan gratuito tienes una caja limitada al día. Frases largas consumen más piezas — la IA no cobra por tiempo, cobra por piezas.
+**Prompt profesional ⟷ Briefing a un freelance:**
+Nunca le dirías a un diseñador "hazme algo bonito". Le das rol (¿qué perfil?), tarea (¿afiche o post?), contexto (¿para qué marca?) y formato (¿tamaño, idioma?). La IA funciona igual.
 
-**Prompt profesional <> Briefing a un freelance:**
-Nunca le dirías a un diseñador freelance "hazme algo bonito". Le das rol (¿qué nivel?), contexto (¿para qué marca?), tarea (¿afiche o post?), formato (¿tamaño, idioma?) y restricciones (¿qué NO hacer?). La IA funciona igual.
-
-**Gem <> Empleado con manual:**
-Un Gem es como contratar a un empleado y entregarle un manual permanente ("eres X, trabajas para Y, usa siempre este tono"). No tienes que re-entrenarlo cada vez que le das una tarea.
+**Output libre vs estructurado ⟷ Carta vs formulario:**
+Una carta es linda para leer pero difícil de procesar. Un formulario tiene cada dato en su casilla — feo para leer, perfecto para que un sistema lo use. JSON es el formulario de la IA.
 
 ---
 
-## 📚 Contexto Histórico / Contexto Actual
+## 📚 Contexto para Compartir
 
-### Gemini: de Bard a asistente con Gems
+### Por qué la estructura cambia tanto el resultado
 
-Google lanzó Bard en marzo 2023 como respuesta a ChatGPT. En febrero 2024 lo renombró Gemini y en 2024-2025 sumó Gems (asistentes personalizados), conectores con Google Workspace y API gratuita (1,500 req/día). Hoy compite de frente con Claude y ChatGPT.
+El modelo predice la siguiente palabra más probable a partir de lo que le diste. Si le das poco ("escribe sobre productividad"), la respuesta probable es genérica. Si le das rol, tarea, contexto y formato, las palabras probables se anclan a TU caso. No es magia: es darle suficiente para acertar.
 
-La ventaja de Gemini para profesionales: integración nativa con Drive, Docs, Sheets y Gmail — sin salir del ecosistema que ya usan.
+> **Para contar en clase:** "La IA no adivina lo que tienes en la cabeza. Si no se lo dices, rellena con lo más genérico que existe."
 
-> **Para contar en clase:** "Cuando Google lanzó Gems en 2024, se volvió la primera IA con la que podés crear asistentes temáticos sin escribir una línea de código."
+### Por qué importa el output estructurado
 
-### Por qué "alucina" la IA
-
-El corazón del LLM es un modelo de probabilidades. Si le preguntas "¿quién escribió el Quijote?", la palabra más probable después de "escribió" es "Cervantes" — acertó. Pero si le preguntas algo sin entrenamiento suficiente, el modelo igual completa con la palabra más probable, aunque no sea cierta. No distingue entre "saber" y "no saber" — solo completa.
-
-> **Para contar en clase:** "La IA no miente a propósito. Simplemente no tiene un botón interno que diga 'no sé'."
-
-**Fuentes:** [Google: Gemini Gems](https://support.google.com/gemini/answer/15235603){:target="_blank"}, [Anthropic: Why models hallucinate](https://www.anthropic.com/research){:target="_blank"}
+En la Sesión 4 estos prompts dejarán de leerse a ojo y empezarán a viajar dentro de un flujo de Make. Una app no puede "interpretar" un párrafo, pero sí puede leer un JSON con campos. Por eso hoy ya sembramos la diferencia.
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora (Quiz Pre-Lab)
+### Pregunta Detonadora (Apertura)
 
-**Pregunta:** "¿Por qué la IA 'alucina' (inventa datos que suenan creíbles)?"
+**Pregunta:** "¿Por qué dos personas le piden casi lo mismo a la IA y reciben resultados tan distintos?"
 
-**Respuesta esperada:** Porque predice palabras probables sin verificar contra una fuente de verdad. No tiene mecanismo interno de "no sé".
+**Respuesta esperada:** Porque una da estructura (rol, tarea, contexto, formato) y la otra no. La IA responde a lo que recibe, no a lo que imaginamos.
 
 **Script post-respuestas:**
 ```
-Facilitador: "Noten lo que acaban de decir: la IA no miente — solo sigue la palabra probable.
-Por eso los detalles (fechas, nombres, números) son donde más alucina.
-Hoy aprendemos a darle contexto suficiente para que la siguiente palabra probable sea la correcta."
+Facilitador: "Lo que cambia no es la IA — es el prompt.
+Hoy aprendemos la anatomía que convierte una respuesta genérica en una que mandás tal cual."
 ```
 
 ### Demo Principal
 
-**Qué mostrar:** el prompt "Escribe sobre productividad" y tus 3 variaciones propias en vivo. Usa tu propio rol como facilitador.
+**Qué mostrar:** el prompt genérico "Escribe sobre productividad" vs el mismo con Rol + Tarea + Contexto + Formato, en vivo.
 
 **Script sugerido:**
 ```
-Facilitador: "Voy a pedirle a Gemini lo más genérico del mundo..."
+Facilitador: "Le pido lo más genérico del mundo..."
 [Envía "Escribe sobre productividad" — respuesta larga, genérica]
-Facilitador: "¿Lo usarían hoy? No. Es genérico."
-[Envía variación 3 con Rol + Contexto + Tarea + Formato + Restricciones]
-Facilitador: "¿Notaron la diferencia? Esto sí lo mando hoy mismo."
+Facilitador: "¿Lo usarían hoy? No. Ahora miren con estructura."
+[Envía la versión con rol + tarea + contexto + formato]
+Facilitador: "Misma IA, otro resultado. Esto sí lo mando hoy mismo."
 ```
 
-**Plan B (si Gemini falla o está lento):** tener capturas de pantalla de las 3 variaciones listas para pegar.
+**Plan B (si Gemini falla o está lento):** ten capturas de las dos respuestas listas para pegar.
 
-### Transición al Lab
+### Transición al Mini-proyecto
 
-**Momento crítico:** muchos estudiantes se bloquean en la Actividad 2 (brief) porque "no saben qué automatizar". Tenés que darles permiso de escribir un brief imperfecto.
+Muchos se bloquean en "¿qué tarea elijo?". Dales permiso de empezar con el ejemplo y adaptarlo.
 
 **Script sugerido:**
 ```
-Facilitador: "No necesitan el brief perfecto. Necesitan UN brief.
-Si no están seguros, usen el caso Roberto de referencia, o el primero que se les ocurra.
-Lo van a refinar en la clase 6. Lo importante hoy es tener algo escrito."
+Facilitador: "No busquen la tarea perfecta. Tomen las 3 de ejemplo —clasificar correo, resumir reunión, responder a un cliente—
+y adáptenlas a lo que ustedes hacen. Lo importante es practicar la anatomía."
 ```
 
 ---
@@ -94,62 +82,39 @@ Lo van a refinar en la clase 6. Lo importante hoy es tener algo escrito."
 
 ### Dinámica 1: "Las 3 preguntas de apertura"
 
-Contexto: primeros 10 minutos, antes de teoría.
-
-Lanzás 3 preguntas al chat en este orden:
+Primeros 10 minutos, antes de teoría. Lanza al chat en orden:
 
 ```
-Facilitador: "1. ¿Cuántas veces al mes usás IA? Rangos: 0 / 1-5 / 5-20 / 20+"
-(Leer respuestas — calibra el nivel del grupo)
-
-Facilitador: "2. ¿Qué esperás que la IA te solucione? Una frase."
-(Esto lo retomás al final de la clase para confrontar expectativa vs realidad)
-
-Facilitador: "3. ¿Cuál es la tarea que más tiempo te quita cada semana?"
-(Esto es material directo para la Actividad 2 — el brief)
+1. "¿Qué tareas hacen todos los días que les quitan tiempo?"   (calibra casos reales)
+2. "¿Usaron ChatGPT, Gemini o Claude? ¿Qué tal les fue?"        (calibra nivel del grupo)
+3. "Si la IA hiciera UNA cosa por ustedes hoy, ¿cuál sería?"    (material para el mini-proyecto)
 ```
 
-### Dinámica 2: "Brief en voz alta"
+### Dinámica 2: "Prompt en voz alta"
 
-Contexto: durante la Actividad 2, antes del checkpoint.
-
-Pedís que 2-3 estudiantes lean su brief en voz alta. Tu rol es señalar qué elemento falta:
+Durante el mini-proyecto, pide que 2-3 lean su Prompt 1 en voz alta. Tu rol es señalar qué elemento falta:
 
 ```
-Facilitador: "Excelente — ¿quién recibe ese reporte?"
-Estudiante: "...no lo dije."
-Facilitador: "Perfecto, agrégalo. Ese dato es crítico para la clase 6."
+Facilitador: "Buenísimo — ¿qué contexto le diste para que acierte?"
+Estudiante: "...ninguno."
+Facilitador: "Agrégalo. Ese dato es el que cambia la respuesta."
 ```
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### Ejemplo 1: Brief de gerente comercial (caso Roberto)
-
-**Cuándo usarlo:** como ejemplo vivo cuando un estudiante pregunta "¿qué tan específico tiene que ser?"
+### Ejemplo: prompt débil vs fuerte (para la demo)
 
 ```
-Quiero automatizar el reporte semanal de ventas que genero cada viernes,
-dirigido a mis 3 vendedores y al gerente general,
-que incluye ventas totales, clientes nuevos y hallazgos por vendedor,
-para ahorrar 4 horas semanales.
+DÉBIL:  "Escribe sobre productividad."
+
+FUERTE: "Actúa como gerente de operaciones. Dame 5 tips para que un equipo
+         de 4 personas pierda menos tiempo en reuniones. Formato: lista
+         numerada, máximo 25 palabras por tip, en español."
 ```
 
-**Tip:** muestra cómo cada elemento (qué/cuándo/quién/datos/tiempo) es específico, no abstracto.
-
-### Ejemplo 2: Instrucciones mínimas de Gem para demo
-
-**Cuándo usarlo:** durante la demo de Gem, si el estudiante no sabe qué poner.
-
-```
-Eres mi asistente del curso AI 101.
-MI PROYECTO: Automatizar reporte semanal de ventas (caso Roberto).
-TU ROL: ayudarme a diseñar prompts, estructuras y textos.
-TONO: directo, práctico, español latinoamericano.
-```
-
-**Tip:** menos es más. Un Gem con 5 líneas bien pensadas supera uno con 50 líneas vagas.
+**Tip:** muestra cómo cada elemento (rol/tarea/contexto/formato) hace la respuesta más útil.
 
 ---
 
@@ -157,25 +122,23 @@ TONO: directo, práctico, español latinoamericano.
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "No entiendo qué brief escribir" | El estudiante no identifica una tarea concreta | Pedirle que piense en su último viernes: ¿qué reporte armó a mano? |
-| "Mi Gem responde genérico" | Las instrucciones no incluyen el brief completo | Abrir el Gem y verificar que el campo "Instrucciones" tenga el brief pegado |
-| "No puedo subir archivo al Gem" | Formato no soportado o archivo >10 MB | Convertir a PDF o reducir tamaño |
-| "Las 3 variaciones del prompt dan respuestas iguales" | El estudiante cambió poco entre versiones | Forzar que la V3 tenga restricciones muy explícitas (número de palabras, formato) |
-| "Gemini me pide iniciar sesión otra vez" | Sesión expirada o cuenta institucional con restricciones | Pedir que usen cuenta personal de Gmail |
+| "No sé qué tarea elegir" | No identifica una tarea concreta | Que use una de las 3 de ejemplo y la adapte |
+| "Las respuestas me salen genéricas" | Falta contexto en el prompt | Pedir que agregue 1-2 datos específicos de su caso |
+| "Copié el prompt y no funciona" | No reemplazó los bloques `<!-- ... -->` | Revisar que haya completado rol, contexto, etc. |
+| "Gemini me pide iniciar sesión otra vez" | Cuenta institucional con restricciones | Usar cuenta personal de Gmail |
 
 ---
 
 ## ✅ Señales de Comprensión
 
 ### El estudiante ENTIENDE cuando:
-- Puede explicar por qué la IA alucina sin mencionar "errores" o "bugs"
-- Puede identificar cuál de los 5 elementos (Rol/Contexto/Tarea/Formato/Restricciones) le falta a un prompt dado
-- Su Gem responde con contexto de SU proyecto, no con respuestas genéricas
+- Puede señalar cuál de los 4 elementos (rol/tarea/contexto/formato) le falta a un prompt dado
+- Mejora una respuesta agregando contexto, no escribiendo más texto
+- Distingue cuándo conviene pedir texto libre y cuándo JSON
 
 ### El estudiante NECESITA AYUDA cuando:
 - Copia el prompt de ejemplo sin adaptar los bloques `<!-- ... -->`
-- Se queda trabado en "¿qué automatizo?" por más de 10 min
-- Su Gem responde como el chat normal (señal de que no guardó las instrucciones)
+- Cambia muy poco entre intentos y no ve diferencia en el resultado
 
 ---
 
@@ -183,85 +146,55 @@ TONO: directo, práctico, español latinoamericano.
 
 | Minuto | Checkpoint | Cómo validar | Si no cumple |
 |--------|------------|--------------|--------------|
-| 15 | Apertura completada | 3 preguntas respondidas en chat | Avanzar aunque no respondan todos |
-| 35 | Teoría terminada | Pregunta Quiz Pre-Lab respondida | Tomar 1 respuesta buena y seguir |
-| 70 | Actividad 1 lista | 3 prompts visibles en Gemini por estudiante | Ofrecer el prompt "battery" — cambiar tema si no aparecen variaciones |
-| 105 | Actividad 2 lista | Brief en Google Doc con los 4 elementos | Si falta destinatario o tiempo, pedir agregarlo ahí mismo |
-| 145 | Actividad 3 lista | Gem respondiendo con contexto del brief | Revisar que el campo "Instrucciones" del Gem tenga el brief |
-| 150 | Cierre | Reflexión + compromiso de usar el Gem 3 veces esta semana | — |
+| 10 | Apertura completada | 3 preguntas respondidas en chat | Avanzar aunque no respondan todos |
+| 30 | Fundamentos terminados | Pueden nombrar los 4 elementos del prompt | Tomar 1 respuesta buena y seguir |
+| 55 | Mini-proyecto listo | 3 prompts ejecutados en Gemini con resultados usables | Recortar a 2 prompts (clasificar + responder) |
+| 60 | Cierre | Cada quien nombra la tarea que automatizará esta semana | — |
 
 ---
 
 ## 🧑‍🏫 Tips de Facilitación
 
-### Si el grupo está callado:
-- Nombrar específicamente 2-3 personas y preguntarles por su tarea recurrente.
-- Compartir TU propio brief como instructor primero.
-
-### Si alguien domina la conversación:
-- "Excelente — guardemos ese caso para la clase 7 donde cada uno trabaja sobre el suyo."
-
-### Si la mayoría termina antes:
-- Proponer el Logro Adicional 🟡 (biblioteca de 5 prompts).
-
-### Si la mayoría se atrasa:
-- Recortar la Actividad 1 a 2 variaciones (V1 y V3). El insight del contraste igual se mantiene.
-
-### Si hay preguntas fuera de alcance:
-> "Excelente pregunta. Eso lo vemos en la clase 5 cuando conectemos Gemini API a Make."
-
----
-
-## 🔀 Diferenciación
-
-### Para estudiantes avanzados:
-- Sugerir Logro 🔴 (probar el Gem con un caso límite, observar alucinaciones).
-- Rol de mentor de pares durante la Actividad 3.
-
-### Para estudiantes con dificultades:
-- Usar el caso Roberto como su brief inicial. Pueden personalizar en la clase 7.
-- Sentarse con ellos 3-4 minutos durante la Actividad 3 para configurar el Gem paso a paso.
+- **Si el grupo está callado:** nombra 2-3 personas y pregúntales por su tarea recurrente; comparte tu propio ejemplo primero.
+- **Si alguien domina:** "Guardemos ese caso para la Sesión 7, donde cada uno trabaja sobre el suyo."
+- **Si terminan antes:** propón el Logro 🟢 (pedir el resultado en JSON) — siembra la Sesión 4.
+- **Si se atrasan:** recorta a 2 prompts; el insight de la anatomía se mantiene.
+- **Preguntas fuera de alcance:** "Eso lo vemos en la Sesión 3, cuando conectemos Gemini a Make."
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### P: ¿Qué pasa si no tengo un "reporte real" que automatizar?
-**R:** Usá el caso Roberto (reporte semanal de ventas) como tu brief inicial. En la clase 7 lo vas a personalizar. Lo importante hoy es practicar la estructura, no tener el caso perfecto.
+### P: ¿Necesito una cuenta de pago de Gemini?
+**R:** No. La versión gratuita con tu cuenta de Google alcanza para toda la sesión.
 
-### P: ¿El Gem funciona con la cuenta gratuita?
-**R:** Sí, Gems es gratis. El límite está en el uso de Gemini (cantidad de mensajes al día), no en cuántos Gems podés crear.
+### P: ¿Por qué pedir JSON si todavía no usamos Make?
+**R:** Para que la idea ya esté sembrada. En la Sesión 4 ese JSON será lo que viaje dentro del flujo automático.
 
-### P: ¿Puedo subir varios archivos al Gem?
-**R:** Sí, hasta 10 archivos por Gem en plan free. Recomiendo empezar con 1 y agregar según necesidad.
-
-### P: ¿Qué pasa si pierdo la cuenta de Google que usé para el Gem?
-**R:** El Gem está atado a tu cuenta de Google. Recomiendo usar la cuenta personal, no una laboral que pueda cerrarse.
+### P: ¿Sirve cualquier tarea o tiene que ser de oficina?
+**R:** Cualquiera que el estudiante haga seguido. Mientras más real, mejor practica la anatomía.
 
 ---
 
 ## 🔗 Conexiones del Curriculum
 
-### Esta clase construye sobre:
+### Esta sesión construye sobre:
 
-| Clase | Concepto | Cómo se conecta |
-|-------|----------|-----------------|
-| — | — | Es la primera clase del curso |
+| Sesión | Concepto | Cómo se conecta |
+|--------|----------|-----------------|
+| — | — | Es la primera sesión del curso |
 
-### Conexión con la Próxima Clase
+### Conexión con la Próxima Sesión
 
 Al cerrar, planta la semilla:
 
-> "La próxima clase vamos a diseñar el Google Sheet de tu proyecto con 3 pestañas. Le vamos a pedir al Gem que te acaba de ayudar hoy que te sugiera columnas, datos de ejemplo y parámetros. El brief y el Gem que construiste hoy son la base de todo."
-
-**Pre-work / Tarea implícita:** usar el Gem al menos 3 veces en la semana en tareas reales. Si hace algo mal, tomar nota — eso vamos a corregir en clase 6.
+> "La próxima sesión entramos a Make y conectamos tu cuenta de Google. Vamos a armar el primer flujo automático real — y muy pronto, estos prompts dejarán de correrse a mano para ejecutarse solos dentro del flujo."
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
 ### Preguntas para el facilitador:
-- ¿Cuántos estudiantes terminaron con un Gem respondiendo con contexto real?
-- ¿Qué briefs fueron los más genéricos? (seguimiento en clase 2)
-- ¿Quiénes identificaron tareas de automatización realmente valiosas? (candidatos a mentores de pares)
-- ¿Algún estudiante se quedó bloqueado en "qué automatizar"? (seguimiento 1 a 1 antes de clase 2)
+- ¿Cuántos lograron 3 prompts con resultados realmente usables?
+- ¿Qué tareas reales aparecieron? (material para casos en sesiones siguientes)
+- ¿Alguien siguió obteniendo respuestas genéricas? (seguimiento antes de la Sesión 2)

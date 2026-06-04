@@ -1,66 +1,63 @@
-> **Módulo 1:** Clase 1 de 4
+> **Sesión 1 de 8** · Prompts efectivos
 
-# Clase 01: Prompts y Gems
+# Sesión 01: Prompts efectivos
 
 ## Resumen
 
-En esta sesión descubrirás cómo piensa la IA generativa y aprenderás a hablarle de forma profesional. Vas a conocer los conceptos que cambian la forma en que usas herramientas como Gemini: tokens, probabilidad y alucinaciones. Más importante, vas a dominar una estructura de prompt que multiplica 10 veces la calidad de tus resultados.
+En esta sesión aprenderás a hablarle a la IA de forma profesional para obtener resultados precisos en lugar de respuestas genéricas. Vas a dominar una estructura de prompt — **Rol + Tarea + Contexto + Formato** — que multiplica la calidad de lo que te devuelve Gemini, ChatGPT o Claude.
 
-Al final de la clase tendrás definido tu **proyecto de instrucción**: un reporte real de tu trabajo que vas a automatizar durante las próximas 4 semanas. Ese reporte es el hilo conductor del curso. También vas a configurar tu propio **Gem** — un asistente personalizado de Gemini con el contexto de tu proyecto y archivos de referencia — que te acompañará en las 8 sesiones.
+También entenderás cuándo pedir el resultado en **texto libre** (para leer) y cuándo pedirlo **estructurado en JSON** (para que más adelante viaje dentro de un flujo automático). Al final saldrás con **3 prompts profesionales** listos para usar en tareas reales de tu trabajo.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Los profesionales que usan IA con prompts estructurados recuperan 4-8 horas por semana.** No se trata de escribir mejor: se trata de describir el resultado que quieres con precisión.
-- **Un Gem bien configurado ahorra el 70% del tiempo repetitivo.** Dejas de pegar el mismo contexto una y otra vez — tu asistente ya sabe quién eres, qué haces y qué estás construyendo.
-- **El brief que escribirás hoy es la base del sistema que vas a presentar en Demo Day.** Todo lo que construyes en las siguientes 7 sesiones parte de este párrafo.
+- **Un prompt bien estructurado es la diferencia entre una respuesta genérica y una que puedes usar tal cual.** No se trata de escribir más, sino de describir con precisión el resultado que quieres.
+- **Estos 3 prompts los vas a reusar toda la semana** — clasificar correos, resumir reuniones y redactar respuestas dejan de hacerse desde cero.
+- **Es la base de todo el curso:** en las próximas sesiones estos prompts dejan de correrse a mano y pasan a ejecutarse solos dentro de un flujo en Make.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Exploraremos cómo funciona la IA** - Descubrirás por qué la IA "alucina" y cómo detectar errores disfrazados de confianza.
-2. **Diseñarás prompts profesionales** - Aplicarás la estructura Rol + Contexto + Tarea + Formato + Restricciones en 3 variaciones del mismo prompt.
-3. **Definirás tu proyecto de instrucción** - Escribirás un brief de 1 párrafo que describe el reporte real que vas a automatizar.
-4. **Crearás tu Gem asistente del curso** - Configurarás un Gem personalizado con instrucciones, tu brief y un archivo de referencia.
+1. **Entenderás qué es un prompt** — la instrucción que conecta lo que pides con lo que la IA devuelve.
+2. **Aplicarás la anatomía Rol + Tarea + Contexto + Formato** sobre un caso real (clasificar un correo de cliente).
+3. **Distinguirás output libre vs estructurado** — y por qué el JSON importa cuando el resultado va a otra app.
+4. **Escribirás 3 prompts profesionales** para tareas reales: clasificar correo, resumir reunión y redactar respuesta de venta.
 
 ---
 
 ## Objetivos de Aprendizaje
 
-Al finalizar esta clase, podrás:
+Al finalizar esta sesión, podrás:
 
-1. **Explicar** cómo una IA generativa predice texto y por qué "alucina" en algunos casos.
-2. **Diseñar** un prompt profesional usando la estructura Rol + Contexto + Tarea + Formato + Restricciones.
-3. **Definir** el brief de tu proyecto de instrucción con los cuatro elementos clave (qué, cuándo, quién, cuánto).
-4. **Configurar** un Gem personalizado en Gemini con instrucciones, archivos de referencia y probarlo con tareas reales.
+1. **Explicar** qué es un prompt y cómo influye en la calidad de la respuesta de la IA.
+2. **Diseñar** un prompt profesional aplicando la estructura Rol + Tarea + Contexto + Formato.
+3. **Decidir** cuándo conviene un output en texto libre y cuándo en formato estructurado (JSON).
+4. **Construir** 3 prompts probados para tareas reales de tu trabajo.
 
 ---
 
 ## ✅ Preparación para la Clase
 
-### De clases anteriores
+### De sesiones anteriores
 
 - Ninguna — esta es la primera sesión del curso.
 
 ### Reflexión previa
 
-Antes de llegar a clase, reflexiona sobre:
+Antes de llegar a clase, piensa en:
 
-- ¿Cuál es la tarea de tu trabajo que más tiempo te quita cada semana y que podrías automatizar?
-- ¿Qué reporte (semanal, mensual) tienes que armar a mano y te gustaría que llegara solo a tu correo?
+- ¿Qué 2-3 tareas haces cada semana que te quitan tiempo y que la IA podría ayudarte a resolver?
+- ¿Tienes a la mano un correo, una reunión o un mensaje de cliente reales que podamos usar como ejemplo?
 
 ### Herramientas
 
-- [ ] **Gemini** - Cuenta creada en [gemini.google.com](https://gemini.google.com/){:target="_blank"} (versión gratuita con tu cuenta de Google es suficiente)
-- [ ] **Google Drive / Docs** - Para guardar tu brief y tus entregables del curso
-- [ ] **Un archivo de referencia** - Un reporte, documento o ejemplo real de tu trabajo que puedas usar como base del Gem (PDF, Doc, imagen — cualquier formato)
+- [ ] **Gemini** — Cuenta activa en [gemini.google.com](https://gemini.google.com/){:target="_blank"} (la versión gratuita con tu cuenta de Google es suficiente)
 
 ### Lectura sugerida
 
-- [¿Qué son los LLMs?](https://ai.google/discover/foundation-models/){:target="_blank"} - Introducción corta de Google sobre modelos de lenguaje.
-- [Guía oficial de Gems](https://support.google.com/gemini/answer/15235603){:target="_blank"} - Documentación oficial de cómo crear y configurar Gems.
+- [¿Qué son los LLMs?](https://ai.google/discover/foundation-models/){:target="_blank"} — Introducción corta de Google sobre modelos de lenguaje.
 
 ---
 
@@ -68,16 +65,15 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **LLM** | *Large Language Model* — modelo de IA que predice la siguiente palabra probable a partir de lo que ya escribió. |
-| **Token** | Unidad que procesa la IA (aproximadamente 3/4 de palabra en español). Los planes gratuitos tienen límites medidos en tokens. |
-| **Alucinación** | Cuando la IA inventa información (nombres, fechas, datos) que suena creíble pero es falsa. |
-| **Prompt profesional** | Instrucción con estructura: Rol + Contexto + Tarea + Formato + Restricciones. |
-| **Gem** | Asistente personalizado de Gemini con instrucciones permanentes y archivos de referencia fijos. |
-| **Brief** | Resumen de 1 párrafo que describe el proyecto de instrucción del estudiante. |
+| **Prompt** | La instrucción que le das a la IA. De su claridad depende la calidad de la respuesta. |
+| **Prompt profesional** | Instrucción con estructura: Rol + Tarea + Contexto + Formato. |
+| **Output libre** | Respuesta en texto natural, pensada para que la lea una persona. |
+| **Output estructurado** | Respuesta en un formato fijo (como JSON) pensada para que la procese otra app o flujo. |
+| **JSON** | Formato estándar de datos en pares clave-valor. Lo veremos a fondo en la Sesión 4. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Google AI Studio](https://aistudio.google.com/){:target="_blank"} - Playground oficial para experimentar con prompts (lo usarás en la sesión 5).
-- [Tokenizer de Gemini](https://ai.google.dev/gemini-api/docs/tokens){:target="_blank"} - Herramienta para ver cuántos tokens consume un texto.
+- [Guía de prompting de Google](https://ai.google.dev/gemini-api/docs/prompting-intro){:target="_blank"} — Buenas prácticas para escribir prompts.
+- [Google AI Studio](https://aistudio.google.com/){:target="_blank"} — Playground para experimentar con prompts (lo usarás desde la Sesión 3).

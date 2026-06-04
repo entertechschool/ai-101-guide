@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prompts y Gems — Diseña instrucciones profesionales</title>
+  <title>Prompts efectivos — El arte de pedirle a la IA lo que necesitas</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -73,68 +73,60 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 1 · Clase 01</div>
-    <h1>Prompts y Gems</h1>
-    <p class="subtitle">Diseña instrucciones profesionales y crea tu asistente del curso</p>
+    <div class="badge">Sesión 01 · Prompts efectivos</div>
+    <h1>Prompts efectivos</h1>
+    <p class="subtitle">El arte de pedirle a la IA lo que necesitas</p>
   </section>
 
   <section>
     <div class="card accent-purple">
       <h3>Anatomía de un prompt profesional</h3>
-      <p class="desc">5 elementos que cambian 10x los resultados de la IA.</p>
-<pre><code><span class="label">ROL:</span>        Eres un analista de ventas.
-<span class="label">CONTEXTO:</span>   Trabajo en una pyme con 3 vendedores.
-<span class="label">TAREA:</span>      Dame 3 hallazgos de esta semana.
-<span class="label">FORMATO:</span>    Lista numerada, máx. 40 palabras c/u.
-<span class="label">RESTRICCIONES:</span> Sin jerga técnica. En español.</code></pre>
+      <p class="desc">4 elementos que cambian el resultado de la IA.</p>
+<pre><code><span class="label">ROL:</span>      Actúa como asesor comercial senior.
+<span class="label">TAREA:</span>    Clasifica este correo de cliente.
+<span class="label">CONTEXTO:</span> Cliente VIP con factura impaga.
+<span class="label">FORMATO:</span>  Categoría en 1 palabra + 2 líneas.</code></pre>
     </div>
 
     <div class="card accent-green">
-      <h3>El brief del proyecto de instrucción</h3>
-      <p class="desc">Tu reporte real, escrito en 1 párrafo. Es el hilo conductor del curso.</p>
-<pre><code>Quiero automatizar [tipo de reporte]
-que genero [frecuencia],
-dirigido a [destinatario],
-que incluye [tipo de datos],
-para ahorrar [tiempo estimado].</code></pre>
+      <h3>Output libre vs estructurado</h3>
+      <p class="desc">Texto para que lo lea una persona; JSON para que lo procese una app.</p>
+<pre><code>LIBRE        →  bueno para leer, difícil de procesar
+ESTRUCTURADO →  difícil de leer, fácil de procesar
+
+Cuando el resultado va a otra app, pedí JSON.</code></pre>
     </div>
 
     <div class="card accent-blue">
-      <h3>El Gem asistente del curso</h3>
-      <p class="desc">Un chatbot personalizado con tu brief, tu rol y archivos de referencia — fijos.</p>
-<pre><code>Nombre: Asistente de mi proyecto — [tu nombre]
-
-Instrucciones:
-  MI PROYECTO: [tu brief]
-  MI ROL: [tu rol profesional]
-  TU ROL: diseñar prompts, estructuras, textos
-  TONO: directo, práctico, en español
-
-Archivos: 1+ documentos reales de tu trabajo</code></pre>
+      <h3>La misma tarea, en JSON</h3>
+      <p class="desc">Cada dato en su clave — listo para viajar dentro de un flujo (Sesión 4).</p>
+<pre><code>{
+  "categoria": "Queja",
+  "urgencia": "alta",
+  "accion": "disculpa + descuento 10%"
+}</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>Por qué la IA "alucina"</h3>
-      <p class="desc">No miente — predice la siguiente palabra probable. Sin contexto suficiente, rellena con lo que suene bien.</p>
-<pre><code>Prompt débil  →  IA rellena con plausibilidad
-Prompt fuerte →  IA ancla respuesta a tus datos
-
-Solución: Rol + Contexto + Restricciones
-          + archivo de referencia en el Gem</code></pre>
+      <h3>Tus 3 prompts de hoy</h3>
+      <p class="desc">Tareas reales que dejás resueltas con la anatomía Rol + Tarea + Contexto + Formato.</p>
+<pre><code>1. Clasificar un correo de cliente
+2. Resumir una reunión (bullets + acciones)
+3. Redactar una respuesta de venta (2 opciones)</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>LLM</strong><span>Modelo que predice palabras probables</span></div>
-      <div class="term"><strong>Token</strong><span>~3/4 de palabra en español</span></div>
-      <div class="term"><strong>Gem</strong><span>Asistente Gemini con contexto fijo</span></div>
-      <div class="term"><strong>Brief</strong><span>Tu proyecto de instrucción en 1 párrafo</span></div>
+      <div class="term"><strong>Prompt</strong><span>La instrucción que le das a la IA</span></div>
+      <div class="term"><strong>Anatomía</strong><span>Rol + Tarea + Contexto + Formato</span></div>
+      <div class="term"><strong>Output libre</strong><span>Texto natural, para leer</span></div>
+      <div class="term"><strong>JSON</strong><span>Formato estructurado, para apps</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 01
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 01
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">

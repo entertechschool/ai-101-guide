@@ -1,148 +1,153 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 1
-## PROMPTS Y GEMS
+## PROMPTS EFECTIVOS
 
-Diseña prompts efectivos y crea tu Gem asistente del curso
+El arte de pedirle a la IA lo que necesitas
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Diseña prompts efectivos y configura Proyectos (Gems) personalizados en Gemini con instrucciones y archivos de referencia para mantener contexto profesional persistente.
-
-### PUNTOS CLAVE
-
-1. Estructura rol + contexto + tarea + formato + restricciones
-2. Iterar un prompt hasta el resultado esperado
-3. Definir el brief del proyecto de instrucción
-4. Crear un Gem personalizado con archivos
-5. Utilizar el Gem durante todo el curso
-
-### EVALUACIÓN
-
-- Brief del proyecto escrito (1 párrafo)
-- Gem funcionando con archivo cargado
-- 3 prompts de la Actividad 1
+*Sesión 1 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 15 min
+## QUÉ VAMOS A LOGRAR HOY
 
-### 3 preguntas para empezar
+*Objetivo · Fundamentos · Mini-proyecto*
 
-**01 · USO ACTUAL**
-¿Cuántas veces al mes usas IA?
-Responde en el chat: 0, 1-5, 5-20, 20+
+### OBJETIVO DE LA SESIÓN
 
-**02 · EXPECTATIVA**
-¿Qué esperas que la IA te solucione?
-Escribe tu expectativa en el chat.
+Aplicar prompts estructurados con asistentes de IA para obtener respuestas precisas en tareas profesionales.
 
-**03 · REALIDAD**
-¿Cuál es la tarea que más tiempo te quita?
-La usaremos en la Actividad 2.
+### FUNDAMENTOS
 
----
+1. ¿Qué es un prompt?
+2. Anatomía de un buen prompt
+3. Formato del output: libre vs estructurado
 
-## CÓMO FUNCIONA LA IA
+### MINI-PROYECTO
 
-*Tokens, probabilidad y alucinaciones*
-
-**10 min · Teoría**
-
-- La IA no 'piensa', predice la siguiente palabra probable
-- Entrenada con millones de textos (libros, artículos, web)
-- Token = aprox. 3/4 de palabra en español
-- Los planes gratuitos tienen límites por tokens
-- Por eso a veces alucina — aprende a detectarla
+3 prompts profesionales que resuelven tareas reales
 
 ---
 
-## ANATOMÍA DE UN PROMPT PROFESIONAL
+## APERTURA · 10 min
 
-*La estructura que cambia 10x los resultados*
+*Responde por chat — 1 línea por pregunta*
 
-**10 min · Teoría**
+**01** ¿Qué tareas haces todos los días que te quitan tiempo?
 
-- **ROL** — Quién debe ser la IA
-- **CONTEXTO** — Para qué lo necesitas
-- **TAREA** — Qué quieres exactamente
-- **FORMATO** — Cómo quieres la respuesta
-- **RESTRICCIONES** — Qué debe evitar
+**02** ¿Usaste alguna vez ChatGPT, Gemini o Claude? ¿Qué tal te fue?
+
+**03** Si la IA pudiera hacer UNA cosa por ti hoy, ¿cuál sería?
+
+> 💡 Tus respuestas nos dicen qué casos reales atacar en las próximas 7 sesiones.
 
 ---
 
-## DISEÑA · TU PRIMER PROMPT PROFESIONAL
+## FUNDAMENTO 1 · ¿QUÉ ES UN PROMPT?
 
-*Mejora un prompt genérico aplicando la estructura*
+*La instrucción que le das a la IA*
 
-**35 min · Individual**
+**Teoría**
+
+Entrada → modelo → respuesta:
+
+- **Tu instrucción** — lo que pides
+- **Modelo de IA** — procesa
+- **Respuesta** — lo que devuelve
+
+> Mejor instrucción = mejor respuesta.
+
+---
+
+## FUNDAMENTO 2 · ANATOMÍA DE UN BUEN PROMPT
+
+*Rol + Tarea + Contexto + Formato*
+
+- 🎭 **ROL** — quién es la IA ("actúa como contador")
+- 🎯 **TAREA** — qué debe hacer ("clasifica este correo")
+- 🧩 **CONTEXTO** — datos relevantes ("cliente VIP, factura impaga")
+- 📦 **FORMATO** — cómo lo quieres ("en 2 líneas, tono formal")
+
+---
+
+## EJEMPLO REAL · LAS 4 PARTES
+
+*Clasificar un correo de cliente*
+
+```
+Actúa como asesor comercial senior.          ← ROL
+Clasifica el siguiente correo en una de
+estas categorías: [Venta / Queja / Consulta]. ← TAREA
+El cliente es VIP y tiene una factura
+impaga del mes pasado.                         ← CONTEXTO
+Devuelve la categoría en 1 palabra y una
+explicación de máximo 2 líneas.                ← FORMATO
+```
+
+---
+
+## FUNDAMENTO 3 · LIBRE VS ESTRUCTURADO
+
+*Cuando el resultado va a otra app, pide formato fijo*
+
+| TEXTO LIBRE | ESTRUCTURADO (JSON) |
+|-------------|---------------------|
+| Bueno para leer | Difícil de leer |
+| Difícil de procesar | Fácil de procesar |
+| Para humanos | Para apps / flujos |
+
+> Lo que en la sesión 4 va a viajar dentro de un flujo automático.
+
+---
+
+## EJEMPLO REAL · LA MISMA TAREA
+
+*Texto libre vs JSON*
+
+**Texto libre (para leer):**
+
+> "El cliente está molesto por la demora. Recomiendo responder con disculpa y 10% de descuento."
+
+**JSON (para procesar en Make):**
+
+```json
+{
+  "categoria": "Queja",
+  "urgencia": "alta",
+  "accion": "disculpa + descuento 10%"
+}
+```
+
+---
+
+## MINI-PROYECTO · 3 PROMPTS PROFESIONALES
+
+*Tareas reales de tu trabajo*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Toma el prompt genérico 'Escribe sobre productividad'
-2. Crea 3 variaciones aplicando la estructura profesional
-3. Prueba las 3 en Gemini y observa diferencias
-4. Identifica qué parte tuvo más impacto
+1. Elige 3 tareas reales que te quitan tiempo
+2. **Prompt 1** — Clasificar un correo (rol + tarea + contexto + formato de lista)
+3. **Prompt 2** — Resumir una reunión (bullets + acciones siguientes)
+4. **Prompt 3** — Redactar respuesta de venta (tono profesional, 2 opciones)
+5. Prueba y ajusta cada uno hasta que el output esté listo
 
-✓ **Verificación:** 3 prompts + resultados listos para mostrar
-
----
-
-## DEFINE · TU PROYECTO DE INSTRUCCIÓN
-
-*Escribe el brief del sistema que vas a construir*
-
-**35 min · Individual**
-
-### QUÉ HACER
-
-1. Piensa qué reporte semanal podrías automatizar
-2. Escribe 1 párrafo: qué reporte, quién lo recibe, qué datos
-3. Usa plantilla: 'Automatizar X dirigido a Y con Z'
-4. Comparte tu brief con el grupo
-
-✓ **Verificación:** Brief claro en un Google Doc
-
----
-
-## CREA · TU GEM ASISTENTE DEL CURSO
-
-*El asistente que te acompañará las 8 sesiones*
-
-**40 min · Individual**
-
-### QUÉ HACER
-
-1. Entra a Gemini → Gems → Nuevo Gem
-2. Nombre: 'Asistente de mi proyecto'
-3. Pega tu brief en instrucciones + define rol
-4. Sube 1 archivo de referencia
-5. Prueba pidiendo que resuma tu brief
-
-✓ **Verificación:** Gem funcionando con archivo cargado
+✓ **Verificación:** 3 prompts probados y guardados para reusar
 
 ---
 
 ## LO QUE TE LLEVAS HOY
 
-*Los artefactos que construiste hoy*
+*Listo para empezar a automatizar*
 
-**01** Tu Gem personalizado listo para acompañarte las 8 sesiones
+**01** 3 prompts profesionales listos para usar
 
-**02** Un brief claro del proyecto que vas a construir
+**02** La anatomía: Rol + Tarea + Contexto + Formato
 
-**03** Dominio de la estructura ROL+CONTEXTO+TAREA+FORMATO+RESTRICCIONES
-
-**04** Biblioteca inicial de 3 prompts profesionales
+**03** Cuándo pedir output estructurado vs libre
 
 ### PRÓXIMA SESIÓN
 
-Sesión 2: Diseñaremos el Google Sheet del proyecto con 3 pestañas. Tu Gem nos ayudará a estructurar los datos.
+Sesión 2: Make 101 + Google Cloud. Metemos estos prompts dentro de un flujo automático real.
