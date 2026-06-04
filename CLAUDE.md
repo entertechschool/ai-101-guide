@@ -41,7 +41,7 @@ Los 10 skills vienen de [shared-skills](https://github.com/entertechschool/share
 
 ## Progreso del Curso
 
-Versión actual: **v3 (2026)** (rama `ia-v3`). Basada en el sílabo v3 del instructor (`fuente/`): soluciones automatizadas no-code con Make + Gemini + Google Workspace, caso guía el **sistema de facturas**. 8 sesiones × 60 min. Migración v2→v3 documentada en `context/auditoria-fuente-v3.md`.
+Versión actual: **v3 (2026)** (rama `v3-2026`). Basada en el sílabo v3 del instructor (`fuente/`): soluciones automatizadas no-code con Make + Gemini + Google Workspace, caso guía el **sistema de facturas**. 8 sesiones × 60 min. Migración v2→v3 documentada en `context/auditoria-fuente-v3.md`.
 
 | Bloque | Sesiones | Contenido |
 |--------|----------|-----------|
