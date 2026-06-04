@@ -30,22 +30,6 @@ En las **sesiones 7 y 8** cada estudiante construye y presenta su **proyecto int
 
 ---
 
-## 🖥️ Acceso a Presentaciones — URL Patrón
-
-Para abrir la presentación de **cualquier clase**, usa la siguiente URL reemplazando `XX` con el número de clase (con ceros: `01`, `02` ... `08`):
-
-```
-https://entertechschool.github.io/public/slides/?class=ai-101_XX
-```
-
-| Clase | URL directa |
-|-------|-------------|
-| Sesión 01 | `https://entertechschool.github.io/public/slides/?class=ai-101_01` |
-| Sesión 04 | `https://entertechschool.github.io/public/slides/?class=ai-101_04` |
-| Sesión 08 | `https://entertechschool.github.io/public/slides/?class=ai-101_08` |
-
----
-
 ## 🎬 Sesión 00 — Kick-off · Orientación del Curso
 
 Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evaluación 0/100, stack 100% gratuito.
