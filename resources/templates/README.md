@@ -1,252 +1,110 @@
 # Plantillas — AI 101
 
-Plantillas listas para usar durante el curso.
+Plantillas listas para usar durante el curso (caso guía: sistema de facturas).
 
 ---
 
 ## Índice
 
-1. [Brief del proyecto de instrucción](#1-brief-del-proyecto-de-instruccion)
-2. [Estructura del Sheet (3 pestañas)](#2-estructura-del-sheet-3-pestañas)
-3. [Tabla de parámetros](#3-tabla-de-parametros)
-4. [Plantilla de Slides (6 secciones)](#4-plantilla-de-slides-6-secciones)
-5. [Cálculo de ROI](#5-calculo-de-roi)
-6. [Plan 30 días](#6-plan-30-dias)
+1. [Sheet de registro de facturas (Sesión 02)](#1-sheet-de-registro-de-facturas-sesión-02)
+2. [Sheet de ventas estructurado (Sesión 04)](#2-sheet-de-ventas-estructurado-sesión-04)
+3. [Data Structure — el molde del JSON (Sesión 04)](#3-data-structure--el-molde-del-json-sesión-04)
+4. [Plantilla de Slides con placeholders (Sesión 05)](#4-plantilla-de-slides-con-placeholders-sesión-05)
+5. [Escenarios de Make (resumen)](#5-escenarios-de-make-resumen)
+6. [Roadmap personal (Sesión 08)](#6-roadmap-personal-sesión-08)
 
 ---
 
-## 1. Brief del proyecto de instrucción
+## 1. Sheet de registro de facturas (Sesión 02)
 
-Plantilla para el Google Doc de la Clase 01:
+Hoja `Facturas-Registro`:
 
-```
-Quiero automatizar [tipo de reporte] que genero [frecuencia],
-dirigido a [destinatario],
-que incluye [tipo de datos],
-para ahorrar [tiempo estimado].
-```
-
-**Ejemplo completo:**
-
-> "Quiero automatizar el reporte semanal de ventas que genero cada viernes, dirigido a mis 3 vendedores y al gerente general, que incluye ventas totales, clientes nuevos y hallazgos por vendedor, para ahorrar 4 horas semanales."
+| Nombre archivo | Fecha de subida | Link | Proveedor |
+|----------------|-----------------|------|-----------|
+| factura-001.pdf | YYYY-MM-DD | https://... | (se llena con IA en S03) |
 
 ---
 
-## 2. Estructura del Sheet (3 pestañas)
+## 2. Sheet de ventas estructurado (Sesión 04)
 
-### Pestaña 1: Operativa (ejemplo `VentasSemanaActual`)
+Hoja `Ventas` (alimentada por Gemini + Parse JSON desde Gmail):
 
-| Fecha | Vendedor | Cliente | Producto | Monto | Tipo | Descripción |
-|-------|----------|---------|----------|-------|------|-------------|
-| YYYY-MM-DD | Nombre | Empresa | Servicio | 1000 | Nuevo/Recurrente | Texto contexto 1 línea |
+| vendedor | cliente | producto | monto | fecha |
+|----------|---------|----------|-------|-------|
+| Ana | Acme S.A. | Consultoría | 1500 | 2026-06-01 |
 
-### Pestaña 2: Config
+---
 
-| Parámetro | Valor |
-|-----------|-------|
-| Meta semanal | S/ 20,000 |
-| Ticket promedio objetivo | S/ 2,800 |
-| Vendedores del equipo | Juan, María, Carlos |
-| Meta por vendedor | S/ 5,000 |
-| % objetivo clientes nuevos | 30 |
+## 3. Data Structure — el molde del JSON (Sesión 04)
 
-### Pestaña 3: Historico
+Lo que defines en Make para que Parse JSON genere variables:
 
-| Semana | Ventas_Total | Clientes_Nuevos | Ticket_Promedio | Meta_Cumplida_Pct |
-|--------|-------------|-----------------|-----------------|-------------------|
-| 01-07 abril | 18500 | 6 | 2642 | 92 |
+| Campo | Tipo | Requerido |
+|-------|------|-----------|
+| vendedor | Text | Sí |
+| cliente | Text | Sí |
+| producto | Text | Sí |
+| monto | Number | Sí |
+| fecha | Date (ISO) | Sí |
+| tipo | Text | Opcional |
 
-### Rangos nombrados (Datos → Rangos con nombre)
+System prompt que produce ese JSON:
 
 ```
-RangoVentas    →  VentasSemanaActual!A:G
-RangoConfig    →  Config!A:B
-RangoHistorico →  Historico!A:E
+Devuelve SOLO un JSON con estos campos, sin texto adicional:
+{ "vendedor": "", "cliente": "", "producto": "", "monto": 0, "fecha": "YYYY-MM-DD" }
 ```
 
 ---
 
-## 3. Tabla de parámetros
+## 4. Plantilla de Slides con placeholders (Sesión 05)
 
-Documento vivo del curso. Se crea en Clase 02 y crece durante las 8 sesiones.
+Diseña la plantilla con marcadores `{{variable}}`; Make los reemplaza con datos reales.
 
-### Sección: Sheet
-
-| Categoría | Item | Valor |
-|-----------|------|-------|
-| Pestaña operativa | Nombre | `VentasSemanaActual` |
-| Pestaña operativa | Columnas | Fecha, Vendedor, Cliente, Producto, Monto, Tipo, Descripción |
-| Pestaña config | Nombre | `Config` |
-| Pestaña config | Parámetros | Meta semanal, Ticket objetivo, Vendedores, Meta/vendedor |
-| Pestaña histórica | Nombre | `Historico` |
-| Pestaña histórica | Columnas | Semana, Ventas_Total, Clientes_Nuevos, Ticket_Promedio, Meta_Cumplida_Pct |
-| Rango nombrado | `RangoVentas` | `VentasSemanaActual!A:G` |
-| Rango nombrado | `RangoConfig` | `Config!A:B` |
-| Rango nombrado | `RangoHistorico` | `Historico!A:E` |
-
-### Sección: Marcadores de Slides
-
-| Marcador | Tipo | Origen | Ejemplo |
-|----------|------|--------|---------|
-| `{{semana}}` | Calculado | Make (fechas) | "13-19 abril" |
-| `{{ventas_total}}` | Crudo | Sheet | "21,700" |
-| `{{variacion_pct}}` | Calculado | Make | "+12%" |
-| `{{clientes_nuevos}}` | Crudo | Sheet | "8" |
-| `{{meta_cumplida_pct}}` | Calculado | Make | "108%" |
-| `{{resumen_ejecutivo}}` | IA | Gemini | Párrafo |
-| `{{hallazgo_1}}` | IA | Gemini | Texto |
-| `{{hallazgo_2}}` | IA | Gemini | Texto |
-| `{{hallazgo_3}}` | IA | Gemini | Texto |
-| `{{riesgo_1}}` | IA | Gemini | Texto |
-| `{{riesgo_2}}` | IA | Gemini | Texto |
-| `{{oportunidad_1}}` | IA | Gemini | Texto |
-| `{{grafico_ventas}}` | Crudo | Sheet (imagen) | — |
-| `{{accion_1}}` | IA | Gemini | Texto |
-| `{{accion_2}}` | IA | Gemini | Texto |
-| `{{fecha_reporte}}` | Calculado | Make | "19-04-2026" |
-
-### Sección: Make
-
-| Categoría | Item | Valor |
-|-----------|------|-------|
-| Escenario 1 | Nombre | `Captura: Correo → [caso]` |
-| Escenario 1 | Trigger | Gmail Watch Emails (Instant) |
-| Escenario 1 | Filtro | `subject contains "Ventas del día"` |
-| Escenario 2 | Nombre | `Reporte: [caso] Semanal` |
-| Escenario 2 | Trigger | Scheduled Viernes 4pm |
-| Error handler | Módulo | HTTP Gemini |
-| Logs | Pestaña | `Logs` (en Sheet) |
-
----
-
-## 4. Plantilla de Slides (6 secciones)
-
-### Slide 1: Portada
+### Reporte mensual de facturas
 
 ```
-{{empresa_nombre}}
-Reporte Ejecutivo — {{semana}}
-Fecha: {{fecha_reporte}}
+REPORTE MENSUAL DE FACTURAS
+{{mes}} {{anio}}
+
+Total facturado:   {{total}}
+Top proveedor:     {{top_proveedor}}
+N° de facturas:    {{num_facturas}}
+
+Generado el {{fecha_generacion}}
 ```
 
-### Slide 2: Resumen Ejecutivo
+> Regla: el nombre del placeholder debe coincidir **exacto** con el del mapeo en Make (sin espacios ni mayúsculas distintas).
+
+### Formato de datos (antes de inyectar)
 
 ```
-Esta semana: {{ventas_total}} ({{variacion_pct}} vs anterior)
-
-{{resumen_ejecutivo}}
-
-Clientes nuevos: {{clientes_nuevos}}
-Meta cumplida: {{meta_cumplida_pct}}%
-```
-
-### Slide 3: Hallazgos
-
-```
-1. {{hallazgo_1}}
-2. {{hallazgo_2}}
-3. {{hallazgo_3}}
-```
-
-### Slide 4: Visualización
-
-```
-[Gráfico vinculado al Sheet — pestaña VentasSemanaActual]
-```
-
-### Slide 5: Riesgos y Oportunidades
-
-```
-RIESGOS:
-• {{riesgo_1}}
-• {{riesgo_2}}
-
-OPORTUNIDADES:
-• {{oportunidad_1}}
-```
-
-### Slide 6: Próximos Pasos
-
-```
-1. {{accion_1}}
-2. {{accion_2}}
-
-Próximo reporte: {{proximo_reporte}}
+{{total}}            → "S/ " + formatNumber(total; 2)
+{{mes}}              → formatDate(now; "MMMM")
+{{fecha_generacion}} → formatDate(now; "D [de] MMMM [de] YYYY")
 ```
 
 ---
 
-## 5. Cálculo de ROI
+## 5. Escenarios de Make (resumen)
 
-Fórmula (Clase 08):
+El sistema de facturas se arma en estos escenarios (se duplican y adaptan para el proyecto propio en S07):
 
-```
-Ahorro MENSUAL = Horas ahorradas/semana × Tarifa/hora × 4 semanas
-Ahorro ANUAL = Ahorro mensual × 12
-```
-
-### Ejemplo (caso Roberto)
-
-| Concepto | Valor |
-|----------|-------|
-| Horas ahorradas/semana | 6 |
-| Tarifa por hora | S/ 100 |
-| Ahorro mensual | S/ 2,400 |
-| Ahorro anual | S/ 28,800 |
-
-### Frase de 1 línea para comunicar
-
-```
-"Construí un sistema automatizado que me ahorra [X] horas al mes,
-equivalente a S/ [Y] al año, usando IA gratuita."
-```
-
-### Si no sabés tu tarifa (asalariado)
-
-```
-Tarifa efectiva = Salario mensual neto ÷ Horas trabajadas al mes
-
-Ejemplo:
-- Salario: S/ 4,000/mes
-- Horas/mes: 160 (8h × 20 días)
-- Tarifa efectiva: S/ 25/hora
-```
+| Escenario | Trigger | Flujo |
+|-----------|---------|-------|
+| Registro de facturas | Drive Watch Files | Drive → Gemini (proveedor) → Sheet |
+| Ventas desde Gmail | Gmail Watch Emails | Gmail → Gemini (JSON) → Parse JSON → Sheet |
+| Reporte mensual | Schedule / Run once | Sheet (Search Rows) → Create from Template → Drive/Email |
+| Flujo robusto | Watch + Schedule | Drive → IA → Sheets → Docs → Email + filtros + router + error handler |
 
 ---
 
-## 6. Plan 30 días
+## 6. Roadmap personal (Sesión 08)
 
-Plantilla (Clase 08):
-
-### Paso 1: Lista de 10 tareas repetitivas
+Cierre del curso: define tu próxima automatización.
 
 ```
-1. [Tarea]
-2. [Tarea]
-3. [Tarea]
-...
-10. [Tarea]
-```
-
-### Paso 2: Aplicar 80/20
-
-Marcá con ⭐ las 3 que concentran 80% del tiempo.
-
-### Paso 3: Diseño de 3 agentes
-
-| Agente | Qué automatiza | Datos que necesita | Herramientas | Semana |
-|--------|----------------|--------------------|--------------|--------|
-| Agente 1 | [tarea ⭐ #1] | [input] | Gemini + Make + [...] | Semana 1 |
-| Agente 2 | [tarea ⭐ #2] | [input] | [...] | Semana 2 |
-| Agente 3 | [tarea ⭐ #3] | [input] | [...] | Semana 3 |
-| Ajustes | Medición ROI agregado | — | — | Semana 4 |
-
-### Paso 4: Compromiso público
-
-```
-"En los próximos 30 días voy a construir:
-Semana 1: [Agente 1]
-Semana 2: [Agente 2]
-Semana 3: [Agente 3]
-Semana 4: ajustes y medición de ROI agregado."
+Mi próxima automatización será [proceso de tu trabajo].
+Los datos salen de [origen] y van a [destino].
+La construiré en las próximas [semanas].
 ```

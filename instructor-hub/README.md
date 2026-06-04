@@ -1,4 +1,4 @@
-# 📚 AI 101 — IA estratégica para Profesionales · Hub del Instructor
+# 📚 AI 101 — IA + Automatización No-Code para Profesionales · Hub del Instructor
 
 > Acceso rápido a todos los materiales del curso. Haz clic en cualquier enlace para abrir la vista directamente.
 
@@ -11,21 +11,22 @@ Cada clase cuenta con los siguientes documentos:
 | Ícono | Documento | ¿Para quién? | Descripción |
 |-------|-----------|--------------|-------------|
 | 📄 | **Resumen de la clase** | Estudiante (pre-clase) | Resumen del tema, objetivos y material de preparación antes de llegar a la sesión. |
-| 🧪 | **Laboratorio** | Estudiante (en clase) | Guía paso a paso de la práctica que se realiza durante la sesión. |
-| 🖥️ | **Presentación** | Instructor (en clase) | Slides reveal.js para conducir la explicación teórica. |
-| 🎓 | **Guía del Facilitador** | Instructor (pre-clase) | Notas pedagógicas, tips de facilitación y contexto de la sesión. Lectura opcional pero recomendada. |
+| 🧪 | **Laboratorio** | Estudiante (en clase) | Mini-proyecto paso a paso que se realiza durante la sesión. |
+| 🖥️ | **Presentación** | Instructor (en clase) | Slides reveal.js para conducir la explicación. |
+| 🎓 | **Guía del Facilitador** | Instructor (pre-clase) | Notas pedagógicas, tips de facilitación y contexto. Lectura recomendada. |
 | 📁 | **Infografía** | Estudiante (post-clase) | Resumen visual de la sesión para repaso y difusión. |
-| 📝 | **Test Diagnóstico** | Estudiante (al cierre del módulo) | Evaluación al final del módulo. No afecta calificación — es control interno de avance. |
+| 📝 | **Test Diagnóstico** | Estudiante (cierre del bloque) | No afecta calificación — control interno de avance. |
 
-> ⭐ Las clases marcadas con estrella corresponden al **lab evaluado del módulo**.
+> 💯 La práctica de cada sesión se evalúa **en clase: 0 (no hizo) / 100 (sí hizo)**. No hay entregables post-clase.
+> ⭐ Las sesiones marcadas con estrella incluyen **test diagnóstico** del bloque.
 
 ---
 
-## 🎯 El caso guía: Roberto
+## 🎯 El caso guía: el sistema de facturas
 
-Todo el curso gira alrededor de un caso único: **Roberto**, gerente de una pequeña empresa con 3-4 vendedores que pierde 4 horas cada viernes consolidando reportes manuales. El sistema que construimos clase a clase resuelve su problema con herramientas 100% gratuitas (Gemini + Make + Google Workspace).
+Las sesiones 1 a 6 construyen, pieza por pieza, un mismo sistema real: la **automatización de facturas** (subir a Drive → Make la detecta → Gemini extrae los datos → caen en un Sheet → reporte mensual con plantilla → envío por correo), con herramientas 100% gratuitas (Gemini + Make + Google Workspace). **No hay protagonista con nombre.**
 
-En **Módulo 1** se construye el sistema modelo para Roberto, pieza por pieza. En **Módulo 2** se integra con IA, se optimiza y se adapta al caso real del estudiante para presentarlo en Demo Day.
+En las **sesiones 7 y 8** cada estudiante construye y presenta su **proyecto integrador propio**, aplicando el método a un caso real de su trabajo.
 
 ---
 
@@ -39,15 +40,15 @@ https://entertechschool.github.io/public/slides/?class=ai-101_XX
 
 | Clase | URL directa |
 |-------|-------------|
-| Clase 01 | `https://entertechschool.github.io/public/slides/?class=ai-101_01` |
-| Clase 04 | `https://entertechschool.github.io/public/slides/?class=ai-101_04` |
-| Clase 08 | `https://entertechschool.github.io/public/slides/?class=ai-101_08` |
+| Sesión 01 | `https://entertechschool.github.io/public/slides/?class=ai-101_01` |
+| Sesión 04 | `https://entertechschool.github.io/public/slides/?class=ai-101_04` |
+| Sesión 08 | `https://entertechschool.github.io/public/slides/?class=ai-101_08` |
 
 ---
 
-## 🎬 Clase 00 — Kick-off · Orientación del Curso
+## 🎬 Sesión 00 — Kick-off · Orientación del Curso
 
-Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucción, sistema de evaluación, stack 100% gratuito.
+Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evaluación 0/100, stack 100% gratuito.
 
 | Documento | Enlace |
 |-----------|--------|
@@ -56,11 +57,11 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 
 ---
 
-## 🧱 Módulo 1: Piezas del Sistema
+## 🧱 Módulo 1: Fundamentos del Sistema (Sesiones 1-4)
 
-**Proyecto:** Cada estudiante define su proyecto de instrucción (Clase 1) y construye las piezas pieza por pieza: Gem asistente → Google Sheet con 3 pestañas → plantilla de Slides con marcadores → 2 escenarios de Make sin IA funcionando end-to-end.
+**Construye las bases sobre el caso de facturas:** prompts efectivos → Make + Google Cloud → API de Gemini → JSON + Parse JSON.
 
-### Clase 01 — Prompts y Gems
+### Sesión 01 — Prompts efectivos
 
 | Documento | Enlace |
 |-----------|--------|
@@ -70,7 +71,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/infographic/){:target="_blank"} |
 
-### Clase 02 — Google Sheets con IA
+### Sesión 02 — Make 101 + Google Cloud
 
 | Documento | Enlace |
 |-----------|--------|
@@ -80,7 +81,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/infographic/){:target="_blank"} |
 
-### Clase 03 — Google Slides con IA
+### Sesión 03 — API key de Gemini
 
 | Documento | Enlace |
 |-----------|--------|
@@ -90,7 +91,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/infographic/){:target="_blank"} |
 
-### ⭐ Clase 04 — Make básico (sin IA) *(Lab Evaluado M1)*
+### ⭐ Sesión 04 — JSON + Parse JSON *(cierre M1 + test diagnóstico)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -99,15 +100,15 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🖥️ Presentación | [Ver Slides 04](https://entertechschool.github.io/public/slides/?class=ai-101_04){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/infographic/){:target="_blank"} |
-| 📝 Test Diagnóstico M1 | [Ver Test 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/test/){:target="_blank"} |
+| 📝 Test Diagnóstico (S1-4) | [Ver Test 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/test/){:target="_blank"} |
 
 ---
 
-## 🚀 Módulo 2: Integración y Proyecto
+## 🚀 Módulo 2: Integración y Proyecto (Sesiones 5-8)
 
-**Proyecto:** Integrar Gemini API al sistema modelo, optimizar prompts + aplicar mejores prácticas, adaptar al caso real del estudiante, y presentar en Demo Day con cálculo de ROI y plan de 30 días.
+**Convierte datos en documentos, robustece el flujo y lleva el método al caso propio:** plantillas con placeholders → flujo end-to-end robusto → proyecto integrador → Demo Day.
 
-### Clase 05 — Gemini API + 2 flujos completos
+### Sesión 05 — Plantillas con placeholders
 
 | Documento | Enlace |
 |-----------|--------|
@@ -117,7 +118,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/infographic/){:target="_blank"} |
 
-### Clase 06 — Integración total y mejores prácticas
+### Sesión 06 — Flujo end-to-end robusto
 
 | Documento | Enlace |
 |-----------|--------|
@@ -127,7 +128,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/infographic/){:target="_blank"} |
 
-### Clase 07 — Tu proyecto propio *(acompañamiento 1 a 1)*
+### Sesión 07 — Proyecto integrador *(acompañamiento 1 a 1)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -137,7 +138,7 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🎓 Guía del Facilitador | [Ver Facilitador 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/infographic/){:target="_blank"} |
 
-### ⭐ Clase 08 — Demo Day + ROI + Plan 30 días *(Lab Evaluado M2 · Cierre del curso)*
+### ⭐ Sesión 08 — Exposición / Demo Day *(cierre del curso + test diagnóstico)*
 
 | Documento | Enlace |
 |-----------|--------|
@@ -146,21 +147,22 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 | 🖥️ Presentación | [Ver Slides 08](https://entertechschool.github.io/public/slides/?class=ai-101_08){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/infographic/){:target="_blank"} |
+| 📝 Test Diagnóstico (S5-8) | [Ver Test 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/test/){:target="_blank"} |
 
 ---
 
 ## 🗂️ Vista Rápida — Todos los Labs
 
-| Clase | Tema | Lab | Tipo |
-|-------|------|-----|------|
-| 01 | Prompts y Gems | [Lab 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/lab/){:target="_blank"} | Regular |
-| 02 | Google Sheets con IA | [Lab 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/lab/){:target="_blank"} | Regular |
-| 03 | Google Slides con IA | [Lab 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/lab/){:target="_blank"} | Regular |
-| **04** | **Make básico (sin IA)** | [**Lab 04**](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/lab/){:target="_blank"} | ⭐ **Evaluado M1** |
-| 05 | Gemini API + 2 flujos completos | [Lab 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/lab/){:target="_blank"} | Regular |
-| 06 | Integración total y mejores prácticas | [Lab 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/lab/){:target="_blank"} | Regular |
-| 07 | Tu proyecto propio | [Lab 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/lab/){:target="_blank"} | Regular (1 a 1) |
-| **08** | **Demo Day + ROI + Plan 30 días** | [**Lab 08**](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/lab/){:target="_blank"} | ⭐ **Cierre M2** |
+| Sesión | Tema | Lab |
+|--------|------|-----|
+| 01 | Prompts efectivos | [Lab 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/lab/){:target="_blank"} |
+| 02 | Make 101 + Google Cloud | [Lab 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/lab/){:target="_blank"} |
+| 03 | API key de Gemini | [Lab 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/lab/){:target="_blank"} |
+| **04** | **JSON + Parse JSON** | [**Lab 04**](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/lab/){:target="_blank"} ⭐ |
+| 05 | Plantillas con placeholders | [Lab 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/lab/){:target="_blank"} |
+| 06 | Flujo end-to-end robusto | [Lab 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/lab/){:target="_blank"} |
+| 07 | Proyecto integrador | [Lab 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/lab/){:target="_blank"} (1 a 1) |
+| **08** | **Exposición / Demo Day** | [**Lab 08**](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/lab/){:target="_blank"} ⭐ |
 
 ---
 
@@ -168,16 +170,16 @@ Sesión de bienvenida: caso Roberto, estructura del curso, proyecto de instrucci
 
 Todas las herramientas funcionan con plan gratuito. **No se requiere tarjeta de crédito**.
 
-| Herramienta | Uso | Clase |
-|-------------|-----|-------|
-| **Gemini** | Chat base, diseño de prompts, asistente del curso | 1-8 |
-| **Gemini Gems** | Asistentes personalizados con contexto fijo | 1-8 |
-| **Gemini API** | Extracción + insights (1,500 req/día free) | 5-8 |
-| **Make** | Automatización visual (1,000 ops/mes free) | 4-8 |
-| **Google Sheets** | Fuente de datos con 3 pestañas | 2-8 |
-| **Google Slides** | Plantilla del reporte con marcadores | 3-8 |
-| **Gmail** | Entrada (Instant Trigger) y entrega del PDF | 4-8 |
+| Herramienta | Uso | Sesión |
+|-------------|-----|--------|
+| **Gemini** | Chat base, diseño y prueba de prompts | 1 |
+| **Make** | Automatización visual (1,000 ops/mes free) | 2-8 |
+| **Google Cloud** | Client ID + Secret para conectar Google vía OAuth | 2 |
+| **Gemini API** | Extracción de datos e insights en Make (Google AI Studio) | 3-8 |
+| **Google Drive / Sheets** | Entrada de archivos y datos estructurados | 2-8 |
+| **Google Docs / Slides** | Plantillas con placeholders para reportes | 5-8 |
+| **Gmail** | Entrada de datos (Watch) y entrega de reportes | 4-8 |
 
 ---
 
-*AI 101 — IA estratégica para Profesionales · EnterTechSchool · v2-2026*
+*AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · v3 (2026)*
