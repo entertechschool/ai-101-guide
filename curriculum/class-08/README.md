@@ -1,69 +1,66 @@
-> **Módulo 2:** Clase 4 de 4 — Demo Day y Cierre del Curso
+> **Sesión 8 de 8** · Exposición / Demo Day
 
-# Clase 08: Demo Day + ROI + Plan 30 días
+# Sesión 08: Exposición / Demo Day
 
 ## Resumen
 
-Esta es la última clase. Traes tu sistema funcionando con datos reales y lo presentas ante el grupo en 5 minutos usando la estructura **PSDR** (Problema → Solución → Demo en vivo → Resultado). La demo en vivo es obligatoria — no se trata de mostrar slides bonitas, se trata de enviar un correo real y que el sistema actualice el Sheet en pantalla para que todos vean la automatización funcionando.
+Última sesión. Traes tu **proyecto integrador** funcionando con datos reales y lo **sustentas ante el grupo en 5 minutos**, con la estructura **caso → demo → resultados → aprendizajes**. La demo en vivo es el corazón: no se trata de mostrar slides bonitas, sino de ejecutar tu flujo con datos reales para que todos vean la automatización funcionando.
 
-Después cada uno calcula su **ROI** en soles: horas ahorradas × tarifa × 4 semanas = ahorro mensual, × 12 = anual. Esto convierte el sistema de "proyecto de curso" en "argumento para vender servicios" o "caso para pedir un aumento". Cierras con un plan de 30 días donde priorizás las 3 próximas automatizaciones usando principio 80/20 y te comprometes públicamente con el grupo.
+Aprenderás a **preparar la demo** (con plan B por si algo falla en vivo) y a **comunicar resultados** tanto cuantitativos (tiempo ahorrado, costo, items procesados) como cualitativos (qué problemas tuviste y cómo los resolviste). Cierras con un **roadmap personal**: qué otro proceso de tu trabajo vas a automatizar después del curso.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **Un demo en vivo impacta 10x más que 20 slides explicativas.** Las personas no olvidan ver un sistema hacer magia en segundos.
-- **El ROI en soles convierte tu trabajo invisible en argumento visible.** "Ahorro 6 horas a la semana" es abstracto. "Ahorro S/ 28,800 al año" entra en cualquier conversación con tu jefe o cliente.
-- **Un compromiso público con plan 30 días reduce la probabilidad de abandono al 20%.** Sin plan, 90% de estudiantes abandonan sus sistemas en 1 mes.
+- **Una demo en vivo impacta mucho más que veinte slides.** Ver el sistema funcionar en segundos es lo que la gente recuerda.
+- **Saber comunicar resultados convierte tu trabajo invisible en algo visible** — para tu jefe, tu cliente o tu equipo.
+- **Sustentar un proyecto técnico es una habilidad transferible** a cualquier presentación profesional futura.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Presentarás tu demo en vivo (5 min)** - Estructura PSDR con correo real disparando tu sistema.
-2. **Calcularás tu ROI personal** - Horas ahorradas × tarifa × 4 × 12 = tu argumento en números.
-3. **Definirás tu plan 30 días con 3 agentes** - Las 3 próximas automatizaciones priorizadas con principio 80/20.
+1. **Estructurarás tu exposición** — caso → demo → resultados → aprendizajes.
+2. **Prepararás la demo en vivo** con un plan B por si algo falla.
+3. **Presentarás en 5 minutos** y responderás preguntas del grupo.
+4. **Definirás tu roadmap personal** — tu próxima automatización.
 
 ---
 
 ## Objetivos de Aprendizaje
 
-Al finalizar esta clase, podrás:
+Al finalizar esta sesión, podrás:
 
-1. **Estructurar** una presentación ejecutiva de 5 minutos usando el formato PSDR.
-2. **Ejecutar** una demo en vivo con datos reales ante una audiencia.
-3. **Calcular** el ROI de un sistema automatizado en unidades monetarias y temporales.
-4. **Priorizar** 3 próximas automatizaciones aplicando el principio 80/20 a tus tareas repetitivas.
+1. **Estructurar** una exposición técnica de 5 minutos (caso → demo → resultados → aprendizajes).
+2. **Ejecutar** una demo en vivo con datos reales, con un plan de contingencia.
+3. **Comunicar** resultados cuantitativos y cualitativos de tu sistema.
+4. **Definir** un roadmap personal con tus próximas automatizaciones.
 
 ---
 
 ## ✅ Preparación para la Clase
 
-### De clases anteriores
+### De sesiones anteriores
 
-- Tu sistema propio de Clase 7 funcionando con datos reales
-- 2 escenarios v2 activos (flujo instantáneo + semanal scheduled)
-- Plantilla de Slides con tu marca
-- Tabla de parámetros actualizada
+- Tu proyecto integrador de la Sesión 7 funcionando con datos reales.
+- Tu flujo propio activo y un par de casos de prueba listos.
 
 ### Reflexión previa
 
-Antes de llegar a clase, reflexiona sobre:
+Antes de llegar a clase, piensa en:
 
-- ¿Cuál es el momento más impactante que puedes mostrar en 2 minutos?
-- ¿Cuál es tu tarifa por hora (o salario ÷ horas trabajadas al mes) para calcular ROI?
+- ¿Cuál es el momento más impactante que puedes mostrar en 2 minutos de demo?
+- ¿Qué resultado tangible puedes nombrar (tiempo ahorrado, costo, items procesados)?
 
 ### Herramientas
 
-- [ ] **Sistema propio funcionando** — con 3 correos de prueba reales listos para disparar en vivo
-- [ ] **Calculadora** — para el cálculo de ROI (apps de celular o Google)
-- [ ] **Cronómetro visible** — para cumplir los 5 minutos
-- [ ] **Google Doc "Plan 30 días"** — crearlo vacío antes de clase
+- [ ] **Tu sistema funcionando** — con datos de prueba reales listos para disparar en vivo.
+- [ ] **Un video de respaldo** (opcional) — por si la demo falla en vivo.
+- [ ] **Cronómetro visible** — para cumplir los 5 minutos.
 
 ### Lectura sugerida
 
-- [Storytelling en presentaciones ejecutivas](https://hbr.org/2014/07/how-to-give-a-killer-presentation){:target="_blank"} - Harvard Business Review clásico.
-- [Principio 80/20 (Pareto)](https://en.wikipedia.org/wiki/Pareto_principle){:target="_blank"} - Concepto aplicado al plan 30 días.
+- [Cómo dar una presentación memorable (HBR)](https://hbr.org/2014/07/how-to-give-a-killer-presentation){:target="_blank"} — Clásico sobre exposiciones.
 
 ---
 
@@ -71,21 +68,15 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **PSDR** | Problema + Solución + Demo + Resultado — estructura de 5 minutos. |
 | **Demo en vivo** | Mostrar el sistema funcionando con datos reales, no solo hablar de él. |
-| **ROI** | *Return on Investment* — horas ahorradas × tarifa = ahorro monetario. |
-| **Tarifa efectiva** | Tu valor por hora real (salario mensual ÷ horas trabajadas mensuales). |
-| **Principio 80/20** | El 20% de tareas concentra el 80% del tiempo — identificar esas 3 tareas. |
-| **Quick-win** | Automatización de alto impacto y baja dificultad para implementar rápido. |
-| **Compromiso público** | Anunciar el plan al grupo — aumenta probabilidad de cumplirlo. |
+| **Caso → demo → resultados → aprendizajes** | La estructura de 5 minutos de la exposición. |
+| **Plan B de demo** | Video o capturas de respaldo por si algo falla en vivo. |
+| **Resultado cuantitativo** | Tiempo ahorrado, costo, número de items procesados. |
+| **Roadmap personal** | Tus próximas automatizaciones a construir tras el curso. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Plantilla de cálculo de ROI](https://docs.google.com/spreadsheets/){:target="_blank"} - Puedes hacer una rápida en Google Sheets en clase.
-- [AI 201 — Construye con IA](https://entertechschool.com/){:target="_blank"} - Siguiente paso en la ruta AI Solutions.
-
----
-
-> ⚠️ **Lab Calificado** - Este lab integra Demo Day + ROI + Plan 30 días. Ver rúbrica en `lab/README.md`.
+- [AI 201 — Construye con IA](https://entertechschool.com/){:target="_blank"} — Siguiente paso en la ruta AI Solutions.
+- [Galería de plantillas de Make](https://www.make.com/en/templates){:target="_blank"} — Ideas para tu roadmap de próximas automatizaciones.

@@ -1,150 +1,128 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 8
-## DEMO DAY
+## EXPOSICIÓN · DEMO DAY
 
-Presentación, ROI y plan 30 días
+Sustenta tu proyecto frente al grupo
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Presenta su sistema automatizado funcionando ante el grupo calculando el ROI en horas ahorradas y proyectando los próximos pasos.
-
-### PUNTOS CLAVE
-
-1. Presentación de 5 minutos (PSDR)
-2. Demo en vivo con datos reales
-3. Calcular y comunicar el ROI
-4. Feedback con rúbrica entre pares
-5. Plan 30 días con 3 próximos agentes
-
-### EVALUACIÓN
-
-- Demo grabado
-- ROI documentado
-- Plan 30 días
-- Rúbricas de compañeros
+*Sesión 8 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · DE CONSTRUIR A PRESENTAR
 
-### Todo listo para el Demo Day
+### La sesión pasada:
 
-**01 · FORMATO**
-5 min por persona con demo en vivo obligatoria
-Revisemos la rúbrica.
+- Construiste tu proyecto integrador propio
+- Tu flujo v1 corriendo con datos reales
 
-**02 · EVALUACIÓN**
-Rúbrica entre pares
-Se llena durante presentaciones.
+### Hoy:
 
-**03 · ORDEN**
-¿Voluntario para empezar?
-Sorteo si no.
+- Lo **presentas en vivo** ante el grupo
+- Caso → demo → resultados → aprendizajes
+
+> "Una demo clara vale más que mil slides."
 
 ---
 
-## ESTRUCTURA PSDR PARA 5 MINUTOS
+## QUÉ VAMOS A LOGRAR HOY
 
-*La fórmula de una presentación impactante*
+### OBJETIVO DE LA SESIÓN
 
-**5 min · Teoría**
+Sustentar el proyecto integrador ante la clase, evidenciando decisiones técnicas, resultados y aprendizajes.
 
-- **P — PROBLEMA** (1 min): qué resolvías antes
-- **S — SOLUCIÓN** (1 min): cómo lo automatizaste
-- **D — DEMO** (2 min): muéstralo funcionando
-- **R — RESULTADO** (1 min): horas/dinero ahorrado
+### FUNDAMENTOS
 
-Tip: la demo es lo más impactante
+1. Estructura de una expo técnica
+2. Preparar la demo (incl. errores en vivo)
+3. Comunicar resultados (cuantitativos y cualitativos)
 
----
+### MINI-PROYECTO
 
-## Cálculo de ROI
-
-**5 min · Teoría**
-
-| Métrica | Valor | Cálculo |
-|---------|-------|---------|
-| **HORAS AHORRADAS SEMANA** | 6 h | Conservador |
-| **AHORRO MENSUAL** | S/ 2,400 | 6 × S/ 100 × 4 |
-| **AHORRO ANUAL** | S/ 28,800 | Mensual × 12 |
+Demo Day: cada estudiante presenta en 5 minutos
 
 ---
 
-## DEMO · EN VIVO DE TU SISTEMA
+## APERTURA · 10 min
 
-*5 minutos por estudiante con rúbrica de compañeros*
+*Responde por chat — 1 línea por pregunta*
 
-**60 min · Individual**
+**01** ¿Cómo le explicarías tu proyecto a alguien que no entiende de IA?
+
+**02** ¿Qué resultado tangible puedes mostrar (tiempo ahorrado, costo)?
+
+**03** ¿Qué falló y cómo lo resolviste?
+
+> 💡 Hoy presentas tu sistema funcionando.
+
+---
+
+## FUNDAMENTO 1 · ESTRUCTURA DE EXPO
+
+*Caso → demo → resultados → aprendizajes*
+
+- **CASO** — el problema que resolviste
+- **DEMO** — el sistema en vivo
+- **RESULTADOS** — lo que lograste
+- **APRENDIZAJES** — lo que aprendiste
+
+> 5 minutos, en ese orden.
+
+---
+
+## FUNDAMENTO 2 · PREPARAR LA DEMO
+
+*Plan A, plan B y plan C*
+
+- Probar la demo antes de exponer (varias veces)
+- Tener un **video de respaldo** por si algo falla
+- Datos de prueba listos y validados
+- Si algo se cae en vivo: explica qué iba a pasar
+
+---
+
+## FUNDAMENTO 3 · COMUNICAR RESULTADOS
+
+*Lo cuantitativo + lo cualitativo*
+
+| CUANTITATIVO | CUALITATIVO |
+|--------------|-------------|
+| Tiempo ahorrado | Qué problemas encontraste |
+| Costo del flujo (créditos) | Cómo los resolviste |
+| N° de items procesados | Qué replicarías a otro caso |
+
+---
+
+## MINI-PROYECTO · DEMO DAY
+
+*Cada estudiante presenta en 5 minutos*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Formato PSDR: problema, solución, demo, resultado
-2. Demo en vivo: correo → Sheet → PDF llega
-3. Compañeros llenan rúbrica de feedback
-4. 1 min de preguntas entre presentaciones
-5. 8-10 estudiantes = ~60 min total
+1. Presentación en 5 min: caso → demo → resultados → aprendizajes
+2. **Demo en vivo** del flujo (ejecutar con datos reales)
+3. Q&A del grupo (preguntas técnicas y de aplicación)
+4. Feedback estructurado (qué funciona + qué mejorarías)
+5. **Roadmap personal**: qué otro proceso vas a automatizar después
 
-✓ **Verificación:** Todos presentaron y recibieron feedback
-
----
-
-## CALCULA · TU ROI FINAL
-
-*Cuantifica el valor real de tu automatización*
-
-**40 min · Individual**
-
-### QUÉ HACER
-
-1. Horas reales ahorradas semana (conservador)
-2. Tu tarifa por hora (o salario ÷ horas)
-3. Mensual = horas × tarifa × 4
-4. Anual = mensual × 12
-5. Identifiquen el caso con mayor ROI
-
-✓ **Verificación:** Número de ROI listo para LinkedIn
+✓ **Verificación:** Proyecto sustentado + feedback recibido + roadmap
 
 ---
 
-## PLAN · 30 DÍAS CON 3 PRÓXIMOS AGENTES
+## SOS UN CONSTRUCTOR DE AUTOMATIZACIONES
 
-*Compromiso público de tus próximas automatizaciones*
+*Lo que te llevas del curso*
 
-**30 min · Individual**
+**01** Proyecto presentado y sustentado
 
-### QUÉ HACER
+**02** Feedback del grupo aplicable a tu siguiente versión
 
-1. Lista 10 tareas repetitivas de tu trabajo
-2. Aplica 80/20: marca las 3 que más tiempo quitan
-3. Para cada una: qué, datos, herramientas, cuándo
-4. Organiza en semana 1, 2, 3 del próximo mes
-5. Comparte plan con el grupo
+**03** Roadmap personal: tu próxima automatización ya en mente
 
-✓ **Verificación:** Plan 30 días escrito con 3 agentes
+**04** Comunidad de pares con quien seguir aprendiendo
 
----
+### DESPUÉS DEL CURSO
 
-## LO QUE TE LLEVAS DEL CURSO
-
-*Los artefactos que construiste hoy*
-
-**01** Demo de TU sistema grabado
-
-**02** ROI calculado en soles reales (mensual y anual)
-
-**03** Plan 30 días con 3 próximos agentes
-
-**04** Comunidad de profesionales construyendo con IA
-
-### PRÓXIMA SESIÓN
-
-Post-curso: comunidad activa + sesiones mensuales de refuerzo + siguientes niveles AI Pro y AI 201.
+8 sesiones, 1 proyecto propio, infinitos casos por automatizar. Saliste con un método para resolver problemas reales con IA y no-code.
