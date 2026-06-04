@@ -24,7 +24,7 @@ Cada clase cuenta con los siguientes documentos:
 
 ## 🎯 El caso guía: el sistema de facturas
 
-Las sesiones 1 a 6 construyen, pieza por pieza, un mismo sistema real: la **automatización de facturas** (subir a Drive → Make la detecta → Gemini extrae los datos → caen en un Sheet → reporte mensual con plantilla → envío por correo), con herramientas 100% gratuitas (Gemini + Make + Google Workspace). **No hay protagonista con nombre.**
+Las sesiones 1 a 6 construyen, pieza por pieza, un mismo sistema real: la **automatización de facturas** (subir a Drive → Make la detecta → Gemini extrae los datos → caen en un Sheet → reporte mensual con plantilla → envío por correo), con herramientas 100% gratuitas (Gemini + Make + Google Workspace).
 
 En las **sesiones 7 y 8** cada estudiante construye y presenta su **proyecto integrador propio**, aplicando el método a un caso real de su trabajo.
 
