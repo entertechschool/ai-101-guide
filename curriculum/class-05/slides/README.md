@@ -1,139 +1,165 @@
 <!-- .slide: data-background="#0A192F" -->
 
 # SESIÓN 5
-## GEMINI API + DOS FLUJOS
+## PLANTILLAS CON PLACEHOLDERS
 
-Sistema modelo completo con IA funcionando
+Genera documentos con formato profesional automáticamente
 
-*2.5 horas · IA estratégica para Profesionales*
-
----
-
-## QUÉ VAMOS A LOGRAR
-
-*Aprendizaje esperado · Puntos clave · Evaluación*
-
-### APRENDIZAJE ESPERADO
-
-Integra la Gemini API gratuita en Make para extraer datos estructurados desde texto libre y deja funcionando dos flujos: recolección instantánea (correo → Gemini → Sheet) y reporte semanal (Sheet → Gemini → Slides → PDF).
-
-### PUNTOS CLAVE
-
-1. Obtener API key de Gemini gratuita
-2. Extraer datos desde correos con IA
-3. Generar insights con IA (marcadores tipo 3)
-4. Cerrar flujo instantáneo con confirmación
-5. Activar flujo semanal scheduled + Historico
-
-### EVALUACIÓN
-
-- Sistema modelo completo funcionando
-- Flujo instantáneo activo
-- Flujo semanal scheduled
+*Sesión 5 de 8 · 60 minutos · Online en vivo*
 
 ---
 
-## Apertura · 10 min
+## TRANSICIÓN · DE DATOS A DOCUMENTOS
 
-### Del texto libre al sistema activo
+### La sesión pasada:
 
-**01 · DEMO INICIAL**
-Correo informal → JSON en 5 seg
-Observa la magia de la IA.
+- La IA devolvió datos estructurados (JSON)
+- Cada campo cayó en su columna del Sheet
 
-**02 · TU META HOY**
-Salir con sistema modelo completo
-funcionando 24/7.
+### Hoy:
 
-**03 · EXPERIENCIA**
-¿Has escuchado de APIs?
-Sí / No / Más o menos
+- Convertimos esos datos en **documentos con formato**
+- Una plantilla que se llena sola
+
+> "Hoy tus datos se vuelven un reporte presentable."
 
 ---
 
-## API, HTTP Y JSON
+## QUÉ VAMOS A LOGRAR HOY
 
-*El idioma que entiende Make con Gemini*
+### OBJETIVO DE LA SESIÓN
 
-**15 min · Teoría**
+Generar documentos y presentaciones automáticas usando plantillas con placeholders `{{variable}}` en Docs/Slides.
 
-- API = interfaz entre programas (analogía: mozo en restaurante)
-- HTTP request POST → envías datos a Gemini
-- Response → recibes la respuesta
-- **API Key:** tu contraseña (nunca compartirla)
-- **JSON:** estructura `{clave: valor}` y listas `[]`
-- Plan gratuito Gemini: 1,500 requests/día
+### FUNDAMENTOS
+
+1. ¿Qué es una plantilla?
+2. Placeholders `{{variable}}`
+3. Mapeo dato → placeholder
+4. Plantillas en Slides y Docs
+5. Formato de datos (fechas, números, monedas)
+
+### MINI-PROYECTO
+
+Reporte mensual de facturas
 
 ---
 
-## OBTÉN + EXTRAE · API KEY Y EXTRACCIÓN CON GEMINI
+## APERTURA · 10 min
 
-*Configura Gemini API y convierte texto libre en JSON*
+*Responde por chat — 1 línea por pregunta*
 
-**45 min · Individual**
+**01** ¿Cuántos reportes haces al mes que son el mismo formato?
+
+**02** ¿Tienes alguna plantilla en Word/Slides que repites?
+
+**03** ¿Cuánto tiempo te toma armar uno a mano?
+
+> 💡 Las plantillas con placeholders convierten ese tiempo manual en cero.
+
+---
+
+## FUNDAMENTO 1 · ¿QUÉ ES UNA PLANTILLA?
+
+*Un esqueleto reutilizable*
+
+- El **formato y diseño** están fijos
+- Los **datos** cambian cada vez
+
+> Pensá en una factura o un contrato: el formato es siempre el mismo, solo cambia el contenido.
+
+---
+
+## FUNDAMENTO 2 · PLACEHOLDERS {{variable}}
+
+*Marcadores que Make reemplaza por datos reales*
+
+- En Docs/Slides escribís: `Hola {{nombre}}, tu total es {{monto}}`
+- Make reemplaza `{{nombre}}` → "Ana", `{{monto}}` → "S/ 1,500"
+- Tipos: texto, número, fecha, link de imagen
+- ⚠️ Los nombres deben **coincidir exactamente** con tus variables
+
+---
+
+## EJEMPLO REAL · PLANTILLA DE SLIDES
+
+*Lo que escribís y lo que aparece después*
+
+```
+┌────────────────────────────────────┐
+│  REPORTE MENSUAL DE FACTURAS        │
+│  {{mes}} {{anio}}                   │
+│                                     │
+│  Total facturado:  {{total}}        │
+│  Top proveedor:    {{top_proveedor}}│
+│  Generado el {{fecha_generacion}}   │
+└────────────────────────────────────┘
+```
+
+---
+
+## FUNDAMENTO 3 · MAPEO DATO → PLACEHOLDER
+
+*El paso clave: qué variable va en cada marcador*
+
+- **DATO** — fila del Sheet
+- **MAPEO** — variable → `{{placeholder}}`
+- **DOC FINAL** — ya con los datos
+
+> Si el nombre no coincide, el marcador queda sin reemplazar.
+
+---
+
+## FUNDAMENTO 4 · PLANTILLAS EN SLIDES Y DOCS
+
+*Make tiene módulos específicos: Create from Template*
+
+| GOOGLE DOCS | GOOGLE SLIDES |
+|-------------|---------------|
+| Ficha de cliente | Reporte ejecutivo |
+| Carta de respuesta | Dashboard visual |
+| Reporte narrativo | Presentación |
+
+---
+
+## FUNDAMENTO 5 · FORMATO DE DATOS
+
+*Antes de inyectar al placeholder, convertir el formato*
+
+- Fechas: `2026-06-01` → `1 de junio de 2026` (formatDate)
+- Números: `1500` → `S/ 1,500.00` (formatNumber)
+- Mayúsculas/minúsculas según la plantilla
+
+> Make tiene funciones built-in para todas estas transformaciones.
+
+---
+
+## MINI-PROYECTO · REPORTE MENSUAL DE FACTURAS
+
+*Sheet → Slide con plantilla → Drive/email*
+
+**Individual**
 
 ### QUÉ HACER
 
-1. Google AI Studio → Get API key
-2. En Make agrega módulo HTTP con la key
-3. Modifica flujo sesión 4: Gmail → Gemini → Sheets
-4. Prompt: extraer ventas en JSON estructurado
-5. Prueba con 3 correos informales distintos
+1. Diseñar la plantilla en Slides con placeholders `{{mes}}`, `{{total}}`, `{{top_proveedor}}`...
+2. Crear escenario que lea el Sheet de facturas (**Search Rows**)
+3. Calcular agregados (total, top proveedor, ranking)
+4. Módulo **Create a Presentation from Template** + mapear cada placeholder
+5. Probar y revisar el Slide generado
 
-✓ **Verificación:** Correo informal → filas bien estructuradas en Sheet
-
----
-
-## GENERA + CIERRA · INSIGHTS + FLUJO INSTANTÁNEO
-
-*Gemini analiza datos y cierra la recolección con confirmación*
-
-**40 min · Individual**
-
-### QUÉ HACER
-
-1. En flujo semanal: HTTP a Gemini con datos del Sheet
-2. Prompt JSON: resumen, hallazgos, riesgos, oportunidad
-3. Mapea cada campo al marcador de Slides
-4. En flujo instantáneo: agrega confirmación al vendedor
-5. Activa el flujo instantáneo (botón de activación)
-
-✓ **Verificación:** Flujo instantáneo activo + insights generados
+✓ **Verificación:** Slide del reporte con datos reales y formato profesional
 
 ---
 
-## ACTIVA · FLUJO SEMANAL SCHEDULED + HISTORICO
+## LO QUE TE LLEVAS HOY
 
-*Cierra el sistema modelo completo*
+**01** Plantilla en Slides con placeholders funcionando
 
-**30 min · Individual**
+**02** Escenario que genera el reporte automáticamente
 
-### QUÉ HACER
-
-1. Cambia trigger manual a Scheduled viernes 4pm
-2. Al final del flujo: Sheets — Add a row (Historico)
-3. Asunto del correo generado por IA
-4. Activa scheduled trigger
-5. Run once para verificar funcionamiento completo
-
-✓ **Verificación:** Sistema modelo completo: 2 flujos activos con IA
-
----
-
-## SISTEMA MODELO COMPLETO FUNCIONANDO
-
-*Los artefactos que construiste hoy*
-
-**01** API key de Gemini configurada y funcionando
-
-**02** Flujo instantáneo activo: recolección 24/7
-
-**03** Flujo semanal scheduled: reporte automático cada viernes
-
-**04** Todos los marcadores conectados (tipo 1, 2 y 3)
-
-**05** Historico acumulándose solo
+**03** Saber convertir formatos de fecha, número y moneda
 
 ### PRÓXIMA SESIÓN
 
-Sesión 6: Optimizamos prompts para storytelling de datos + mejores prácticas + definimos puntos de personalización para tu proyecto propio.
+Sesión 6: Armamos el flujo completo de inicio a fin, robusto, con filtros y manejo de errores.

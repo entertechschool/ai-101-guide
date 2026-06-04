@@ -1,69 +1,67 @@
-> **Módulo 2:** Clase 1 de 4
+> **Sesión 5 de 8** · Plantillas con placeholders
 
-# Clase 05: Gemini API + 2 flujos completos
+# Sesión 05: Plantillas con placeholders
 
 ## Resumen
 
-Esta es la **clase bisagra** del curso. Hasta ahora construiste el sistema sin IA — piezas conectadas con Make que mueven datos. Hoy la IA entra al flujo. Vas a conectar **Gemini API** directamente a los escenarios de Make, y los marcadores tipo 3 (`{{hallazgo_1}}`, `{{resumen_ejecutivo}}`) que estaban vacíos empezarán a llenarse con insights contextuales generados en segundos.
+Ya tienes datos limpios y estructurados en tu Sheet. Hoy los conviertes en **documentos con formato profesional** de forma automática. Aprenderás qué es una **plantilla** (un esqueleto con formato fijo y datos que cambian) y cómo los **placeholders** `{{variable}}` marcan los huecos que Make rellena con datos reales.
 
-Al terminar, el sistema modelo está completo: un flujo instantáneo que convierte correos informales en filas estructuradas del Sheet, y un flujo scheduled semanal que lee todo, genera insights con Gemini, llena la plantilla, exporta PDF y lo manda por correo. Todo activo 24/7, consumiendo el plan gratuito de Gemini (1,500 requests/día — más que suficiente).
+Verás cómo **mapear** cada dato a su placeholder, qué módulos usar para generar documentos desde plantillas en **Slides y Docs** (Create from Template), y cómo dar **formato** a fechas, números y monedas antes de inyectarlos. Al terminar, tu escenario consultará el Sheet de facturas y generará un reporte mensual con plantilla, listo para guardarse en Drive o enviarse por correo.
 
 ---
 
 ## ¿Por qué te sirve?
 
-- **La API gratuita de Gemini da 1,500 requests por día.** Para un reporte semanal con ~15 llamadas, eso son meses de uso sin costo.
-- **Un correo informal se convierte en datos estructurados en 5 segundos.** Adiós a pedirle formatos rígidos a tu equipo — Gemini extrae lo importante sin importar cómo lo escribieron.
-- **El mismo JSON llena 10 marcadores del Slides con una sola llamada a Gemini.** Eficiencia de operaciones de Make + coherencia del output.
+- **Los reportes repetitivos tienen 80% de formato fijo y 20% de datos que cambian.** Diseñar la plantilla una vez elimina horas de copiar-pegar cada período.
+- **Un placeholder bien mapeado convierte una fila del Sheet en un documento presentable** sin que toques el diseño nunca más.
+- **Generar Docs y Slides automáticos sirve para mucho más que facturas:** fichas de cliente, cartas, dashboards, presentaciones — el mismo patrón.
 
 ---
 
 ## 🎯 ¿Qué haremos en clase?
 
-1. **Exploraremos qué es una API y cómo funciona HTTP/JSON** - Descubrirás el lenguaje que Make usa para hablar con Gemini.
-2. **Configurarás tu API key de Gemini** - Obtendrás credenciales gratuitas y las conectarás al módulo HTTP de Make.
-3. **Agregarás IA al flujo instantáneo** - Gemini convertirá correos informales en filas bien estructuradas del Sheet.
-4. **Activarás el flujo scheduled semanal** - Gemini generará los insights tipo 3 y alimentará el Historico automáticamente.
+1. **Entenderás qué es una plantilla** y cómo los placeholders `{{variable}}` marcan lo que cambia.
+2. **Mapearás datos a placeholders** — el paso clave para que el documento se llene bien.
+3. **Usarás Create from Template** en Slides/Docs desde Make.
+4. **Generarás un reporte mensual de facturas** con formato de fechas, números y monedas.
 
 ---
 
 ## Objetivos de Aprendizaje
 
-Al finalizar esta clase, podrás:
+Al finalizar esta sesión, podrás:
 
-1. **Explicar** qué son API, HTTP POST y JSON con analogías propias.
-2. **Obtener** una API key de Gemini gratuita y configurarla en el módulo HTTP de Make.
-3. **Construir** un prompt JSON que Gemini responde con datos estructurados para marcadores tipo 3.
-4. **Activar** los dos escenarios del sistema modelo (instantáneo + scheduled) y verificar ciclo completo end-to-end.
+1. **Explicar** qué es una plantilla y cómo funcionan los placeholders `{{variable}}`.
+2. **Mapear** cada dato del Sheet a su placeholder en la plantilla.
+3. **Generar** un documento o presentación desde una plantilla usando Make (Create from Template).
+4. **Aplicar** formato a fechas, números y monedas antes de inyectarlos al documento.
 
 ---
 
 ## ✅ Preparación para la Clase
 
-### De clases anteriores
+### De sesiones anteriores
 
-- Los 2 escenarios de Make del Módulo 1 funcionando (Clase 4)
-- Sheet con 3 pestañas recibiendo filas vía Instant Trigger
-- Plantilla de Slides con marcadores tipo 3 nombrados (vacíos, se llenarán hoy)
-- Tabla de parámetros actualizada
+- Tu Sheet con datos estructurados (Sesión 4): facturas y/o ventas registradas.
+- Conexión Google activa en Make (Drive, Sheets, Slides).
 
 ### Reflexión previa
 
-Antes de llegar a clase, reflexiona sobre:
+Antes de llegar a clase, piensa en:
 
-- Cuando lees un correo informal de un vendedor, ¿qué datos "extraes" mentalmente? Eso es lo que Gemini va a hacer.
-- De los marcadores tipo 3 de tu plantilla, ¿cuál te da más curiosidad ver generado por IA?
+- ¿Qué reporte o documento armas repetidamente con el mismo formato?
+- ¿Qué partes son siempre iguales y cuáles cambian cada vez?
 
 ### Herramientas
 
-- [ ] **API Key de Gemini** - Obtenerla en [Google AI Studio](https://aistudio.google.com/apikey){:target="_blank"} antes de la clase (gratis, usa tu cuenta de Google)
-- [ ] **Cuenta de Make** con los 2 escenarios de Clase 4
-- [ ] **3-5 correos de prueba** con texto informal (como los que reciben tus vendedores/clientes/colaboradores)
+- [ ] **Google Slides / Docs** — Para diseñar la plantilla.
+- [ ] **Tu Sheet con datos** — De la Sesión 4 (facturas / ventas).
+- [ ] **Tu escenario de Make** — Donde agregarás el módulo de plantilla.
 
 ### Lectura sugerida
 
-- [Documentación de Gemini API](https://ai.google.dev/gemini-api/docs){:target="_blank"} - Referencia oficial.
-- [Módulo HTTP en Make](https://www.make.com/en/help/tools/http){:target="_blank"} - Cómo hacer llamadas API genéricas.
+- [Crear presentación desde plantilla en Make](https://www.make.com/en/integrations/google-slides){:target="_blank"} — Módulo Create a Presentation from a Template.
+- [Funciones de formato en Make](https://www.make.com/en/help/functions){:target="_blank"} — formatDate, formatNumber y más.
 
 ---
 
@@ -71,17 +69,15 @@ Antes de llegar a clase, reflexiona sobre:
 
 | Término | Definición |
 |---------|------------|
-| **API** | *Application Programming Interface* — forma en que un programa habla con otro. Analogía: mozo en restaurante. |
-| **API Key** | Contraseña única que te identifica ante Gemini API. **Nunca la compartas**. |
-| **HTTP POST** | Método de envío de datos a una API (como enviar un formulario). |
-| **JSON** | Formato de datos `{clave: valor}` que APIs entienden universalmente. |
-| **Módulo HTTP en Make** | Módulo genérico para llamar cualquier API con URL, headers y body. |
-| **Rate limit** | Límite de llamadas por día/minuto. Gemini free: 1,500 requests/día, 15/min. |
-| **SystemPrompt** | Instrucciones base que definen el comportamiento de Gemini en cada llamada. |
+| **Plantilla** | Esqueleto reutilizable: formato fijo, datos variables. |
+| **Placeholder** | Marcador `{{variable}}` en la plantilla que Make reemplaza por un dato. |
+| **Mapeo** | Asignar qué variable del flujo va en cada placeholder. |
+| **Create from Template** | Módulo de Make que genera un Doc/Slide a partir de una plantilla. |
+| **formatDate / formatNumber** | Funciones de Make para dar formato a fechas y números antes de inyectarlos. |
 
 ---
 
 ## Recursos Adicionales
 
-- [Google AI Studio Playground](https://aistudio.google.com/){:target="_blank"} - Experimenta con prompts antes de llevarlos a Make.
-- [Límites del plan gratuito](https://ai.google.dev/pricing){:target="_blank"} - Detalle de rate limits y cuotas.
+- [Reemplazar texto/imagen en Google Slides](https://support.google.com/docs/answer/6317504){:target="_blank"} — Cómo funciona el reemplazo de marcadores.
+- [Plantillas de Google Slides](https://docs.google.com/presentation/u/0/?ftv=1){:target="_blank"} — Galería para inspirarte en el diseño.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gemini API + 2 flujos — La IA entra al sistema</title>
+  <title>Plantillas con placeholders — Documentos automáticos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -36,90 +36,67 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 2 · Clase 05 · Bisagra del curso</div>
-    <h1>Gemini API + 2 flujos completos</h1>
-    <p class="subtitle">La IA entra al sistema — marcadores tipo 3 dejan de estar vacíos</p>
+    <div class="badge">Sesión 05 · Plantillas con placeholders</div>
+    <h1>Plantillas con placeholders</h1>
+    <p class="subtitle">Genera documentos con formato profesional automáticamente</p>
   </section>
 
   <section>
     <div class="card accent-purple">
-      <h3>Flujo instantáneo con IA</h3>
-      <p class="desc">Correo informal → JSON estructurado → Sheet con datos limpios.</p>
-<pre><code>[Gmail Watch — Instant]
-         ↓
-[HTTP POST a Gemini API]
-  Body JSON: prompt de extracción
-  URL: .../generateContent?key=TU_API_KEY
-         ↓
-[JSON: Parse JSON]
-         ↓
-[Sheets: Add a Row con campos mapeados]</code></pre>
+      <h3>¿Qué es una plantilla?</h3>
+      <p class="desc">Esqueleto reutilizable: el formato es fijo, los datos cambian.</p>
+<pre><code>┌──────────────────────────────┐
+│  REPORTE MENSUAL DE FACTURAS │
+│  {{mes}} {{anio}}            │
+│  Total:    {{total}}         │
+│  Top prov: {{top_proveedor}} │
+└──────────────────────────────┘
+Make reemplaza cada {{...}} con un dato real</code></pre>
     </div>
 
     <div class="card accent-blue">
-      <h3>Flujo semanal con IA</h3>
-      <p class="desc">Scheduled viernes 4pm → genera insights → envía PDF → actualiza Historico.</p>
-<pre><code>[Scheduled Viernes 4pm]
-         ↓
-[Sheets: Search Rows de la semana]
-         ↓
-[HTTP POST a Gemini]  ← genera marcadores tipo 3
-         ↓
-[Parse JSON]
-         ↓
-[Slides: Create Template + Replace Text × N]
-         ↓
-[Export PDF] → [Gmail Send] → [Sheets Add Historico]</code></pre>
+      <h3>Placeholders {{variable}}</h3>
+      <p class="desc">Los huecos que Make rellena. El nombre debe coincidir exacto.</p>
+<pre><code>✅  {{total}}          ·  mapeo "total"        → reemplaza
+❌  {{Total}}          ·  mapeo "total"        → no (mayúscula)
+❌  {{ total }}        ·  mapeo "total"        → no (espacios)
+
+Tipos: texto · número · fecha · link de imagen</code></pre>
     </div>
 
     <div class="card accent-green">
-      <h3>Prompt JSON estructurado</h3>
-      <p class="desc">Pedir SOLO JSON evita 90% de errores de Parse JSON.</p>
-<pre><code>Eres analista. Responde SOLO JSON válido, sin markdown
-ni texto adicional. Si un campo no está en los datos, usa null.
+      <h3>Formato de datos</h3>
+      <p class="desc">Vestir el dato antes de inyectarlo al placeholder.</p>
+<pre><code>1500        → S/ 1,500.00     formatNumber(monto; 2)
+2026-06-01  → 1 de junio 2026 formatDate(fecha; "...")
+0.12        → 12%
 
-Campos requeridos:
-{ "resumen": "...",
-  "hallazgo_1": "...",
-  "hallazgo_2": "...",
-  "riesgo_1": "...",
-  "accion_1": "..." }
-
-DATOS:
-[datos del Sheet aquí]
-
-REGLAS:
-- Español latinoamericano
-- Máximo 25 palabras por campo
-- Compara contra meta cuando aplique</code></pre>
+Make tiene funciones built-in para todas.</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>Plan gratuito de Gemini API</h3>
-      <p class="desc">Más que suficiente para el curso y uso profesional cotidiano.</p>
-<pre><code>Rate limits:  15 requests/minuto
-              1,500 requests/día
-
-Consumo típico del curso:
-  Correos capturados: ~20/día = 20 req
-  Reporte semanal:    ~1 req (genera 9 insights)
-
-Total mensual:  ~620 req  (menos del 1.5% del límite)
-Costo:          S/ 0.00</code></pre>
+      <h3>Tu mini-proyecto</h3>
+      <p class="desc">Reporte mensual de facturas, generado solo desde el Sheet.</p>
+<pre><code>Sheet (Search Rows) → calcular agregados
+        ↓
+Create a Presentation from Template
+  {{mes}} {{total}} {{top_proveedor}} mapeados
+        ↓
+Slide del reporte → Drive / email</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>API</strong><span>Cómo un programa habla con otro</span></div>
-      <div class="term"><strong>API Key</strong><span>Tu contraseña para la API</span></div>
-      <div class="term"><strong>HTTP POST</strong><span>Método para enviar datos</span></div>
-      <div class="term"><strong>JSON</strong><span>Formato {clave: valor}</span></div>
+      <div class="term"><strong>Plantilla</strong><span>Formato fijo, datos variables</span></div>
+      <div class="term"><strong>Placeholder</strong><span>Marcador {{variable}}</span></div>
+      <div class="term"><strong>Mapeo</strong><span>Qué variable va en cada marcador</span></div>
+      <div class="term"><strong>formatDate/Number</strong><span>Dar formato al dato</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 05
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 05
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>
