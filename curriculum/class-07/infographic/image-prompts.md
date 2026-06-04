@@ -1,3 +1,3 @@
-# Image Prompts — Clase 07: Tu proyecto propio
+# Image Prompts — Sesión 07: Proyecto integrador
 
-> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con los 5 puntos de personalización y diagrama de transferencia).
+> Esta infografía no requiere imágenes generadas con IA. Todos los conceptos se representan mediante HTML/CSS (cards con la estructura del proyecto, el diagrama del flujo, la iteración y ejemplos por industria).

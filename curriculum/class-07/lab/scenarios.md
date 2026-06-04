@@ -19,7 +19,7 @@ Todos los SystemPrompts de producción usan esta estructura de 5 bloques:
 
 ---
 
-## Caso 1: Ventas B2B (caso modelo Roberto)
+## Caso 1: Ventas B2B
 
 **Para extracción de datos (Escenario 1 — HTTP en flujo instantáneo):**
 
@@ -124,7 +124,7 @@ EJEMPLO:
 Acción: reasignar $200 del budget de Google hacia Meta Ads hasta validar."
 
 DATOS: {{datos}}
-[resto igual al caso Roberto: Piensa paso a paso + JSON]
+[resto igual al Caso 1: Piensa paso a paso + JSON]
 ```
 
 ---

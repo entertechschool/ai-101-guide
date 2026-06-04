@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tu proyecto propio — Transferencia del patrón</title>
+  <title>Proyecto integrador — Tu caso real, tu sistema</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -39,73 +39,65 @@
 <body>
 
   <section class="hero">
-    <div class="badge">Módulo 2 · Clase 07 · Acompañamiento 1 a 1</div>
-    <h1>Tu proyecto propio</h1>
-    <p class="subtitle">El sistema deja de ser de Roberto y se vuelve tuyo</p>
+    <div class="badge">Sesión 07 · Proyecto integrador</div>
+    <h1>Proyecto integrador</h1>
+    <p class="subtitle">Tu caso real, tu sistema automatizado</p>
   </section>
 
   <section>
     <div class="card accent-green">
-      <h3>Los 5 puntos de personalización</h3>
-      <p class="desc">Tu roadmap de hoy. La arquitectura se queda; estos 5 elementos cambian.</p>
-<pre><code>1. Datos de entrada      →  Qué recolectás (correos, forms, chats)
-2. Estructura del Sheet  →  Columnas de tu caso
-3. Plantilla de Slides   →  Tu logo, colores, tipografía
-4. Prompts de Gemini     →  Tu contexto, industria, estilo
-5. Destinatarios/Frec.   →  Tu audiencia, tu ritmo</code></pre>
+      <h3>Estructura del proyecto</h3>
+      <p class="desc">Antes de tocar Make, ten claras las tres.</p>
+<pre><code>PROBLEMA     →  qué te quita tiempo hoy
+SOLUCIÓN     →  qué harías que se haga solo
+ARQUITECTURA →  qué módulos usar y en qué orden</code></pre>
     </div>
 
     <div class="card accent-blue">
-      <h3>Lo que se queda vs lo que cambia</h3>
-      <p class="desc">La regla de la transferencia: patrón estable, contenido mutable.</p>
-      <table class="compare">
-        <tr><th>Se queda</th><th>Cambia</th></tr>
-        <tr><td>Arquitectura Gmail → Sheet → Slides → PDF</td><td>Nombres de pestañas/columnas</td></tr>
-        <tr><td>Patrón de 3 pestañas</td><td>Contenido de cada una</td></tr>
-        <tr><td>Estructura del SystemPrompt</td><td>Persona + contexto + reglas</td></tr>
-        <tr><td>4 mejores prácticas</td><td>Destinatarios + frecuencia</td></tr>
-      </table>
+      <h3>Diagrama antes de construir</h3>
+      <p class="desc">Una hoja con cajas y flechas ahorra horas de retoque.</p>
+<pre><code>[Trigger: correo/archivo nuevo]
+        ↓
+[Gemini extrae datos → JSON]
+        ↓
+[Parse JSON → Sheet]
+        ↓
+[Plantilla → documento → destinatario]</code></pre>
     </div>
 
     <div class="card accent-purple">
-      <h3>Clonación de escenarios en Make</h3>
-      <p class="desc">Duplicar un flujo completo en 30 segundos.</p>
-<pre><code>1. Menú (...) del escenario modelo
-2. Export Blueprint → descarga JSON
+      <h3>Iteración: construir, probar, refinar</h3>
+      <p class="desc">El primer intento nunca es el último — y está bien.</p>
+<pre><code>CONSTRUIR  →  una v1 mínima (punta a punta)
+PROBAR     →  con tus datos reales
+REFINAR    →  ajustar prompts, filtros, mapeos
 
-3. + Create scenario → Import Blueprint
-4. Sube el JSON
-5. Renombrá con "v2" o el nombre de tu caso
-
-DESPUÉS DE IMPORTAR (crítico):
-- Reconectar cada módulo al Sheet/Slides v2
-- Actualizar el SystemPrompt del HTTP a Gemini
-- Activar el toggle "On"</code></pre>
+Tip: parte de tus escenarios de facturas
+y adáptalos (Export/Import Blueprint).</code></pre>
     </div>
 
     <div class="card accent-orange">
-      <h3>Ejemplos por industria</h3>
-      <p class="desc">Ver scenarios.md para plantillas completas de SystemPrompts.</p>
-<pre><code>Caso Roberto     →  ventas_total, vendedor, cliente
-Marketing        →  alcance_total, especialista, campana
-Consultoría      →  horas_facturadas, consultor, proyecto
-Academia         →  asistencia_pct, docente, cohorte
-Ecommerce        →  pedidos_total, canal, sku
-Salud            →  pacientes_atendidos, especialidad, adherencia</code></pre>
+      <h3>Ideas por industria</h3>
+      <p class="desc">Ver scenarios.md para plantillas completas de prompts.</p>
+<pre><code>Contabilidad   →  facturas, proveedor, monto
+Marketing      →  alcance, campaña, canal
+Consultoría    →  horas, consultor, proyecto
+Atención       →  tickets, cliente, prioridad
+RR.HH.         →  candidatos, etapa, vacante</code></pre>
     </div>
   </section>
 
   <section>
     <div class="glossary">
-      <div class="term"><strong>Transferencia</strong><span>Aplicar patrón a contexto nuevo</span></div>
-      <div class="term"><strong>Blueprint</strong><span>Export/Import de escenario Make</span></div>
-      <div class="term"><strong>Datos reales</strong><span>Verídicos de tu trabajo</span></div>
-      <div class="term"><strong>Debug módulo</strong><span>"Run this module only"</span></div>
+      <div class="term"><strong>Arquitectura</strong><span>Qué módulos y en qué orden</span></div>
+      <div class="term"><strong>Diagramar</strong><span>El plano antes de la obra</span></div>
+      <div class="term"><strong>v1 mínima</strong><span>Funciona punta a punta</span></div>
+      <div class="term"><strong>Iterar</strong><span>Construir, probar, refinar</span></div>
     </div>
   </section>
 
   <section class="footer">
-    AI 101 — IA estratégica para Profesionales · EnterTechSchool · Clase 07
+    AI 101 — IA + Automatización No-Code para Profesionales · EnterTechSchool · Sesión 07
   </section>
 
   <button id="export-btn" style="position:fixed;top:16px;right:16px;z-index:1000;background:rgba(13,17,23,0.85);color:#e2e8f0;border:1px solid rgba(255,255,255,0.12);padding:0.5rem 1.15rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:opacity 0.2s">Exportar a PNG</button>

@@ -1,144 +1,117 @@
-# Guía del Facilitador - Clase 07: Tu proyecto propio
+# Guía del Facilitador - Sesión 07: Proyecto integrador
 
-> Tiempo de lectura: 10 minutos | Prepárate antes de clase
+> Tiempo de lectura: 7 minutos | Prepárate antes de clase
 >
-> ⚠️ **Clase con acompañamiento 1 a 1.** Preparate para circular y dar soporte individual — no es una clase magistral.
+> ⚠️ **Sesión con acompañamiento 1 a 1.** Prepárate para circular y dar soporte individual — no es una clase magistral.
 
 ---
 
 ## 🔑 Conceptos Clave
 
-- **Transferencia**: aplicar el patrón aprendido (caso Roberto) a un contexto nuevo (caso real del estudiante).
-- **Clonación de escenario**: duplicar un flujo completo en Make vía Export/Import Blueprint.
-- **Personalización**: adaptar datos, marca, métricas y prompts al caso específico.
-- **Debug en Make**: aislar problemas con "Run this module only" sobre módulos frágiles.
+- **Estructura del proyecto**: problema → solución → arquitectura.
+- **Diagramar**: dibujar el flujo (trigger → módulos → output) antes de construir.
+- **Iteración**: construir v1, probar con datos reales, refinar.
+- **Transferencia**: aplicar el método del caso de facturas a un caso propio.
 
 ---
 
 ## 🔗 Analogías Útiles
 
-**Transferencia <> aprender a cocinar un plato nuevo con técnicas que ya dominás:**
-Si aprendiste a hacer risotto, sabés que el arroz se tuesta, se añade caldo caliente gradualmente, se revuelve. Esas técnicas sirven para un risotto de champiñones, mariscos o trufa. El patrón se queda; los ingredientes cambian. En el sistema es igual: la arquitectura se queda, el caso cambia.
+**Transferencia ⟷ cocinar un plato nuevo con técnicas que ya dominas:**
+Si aprendiste a hacer risotto, las técnicas (tostar el arroz, añadir caldo, revolver) sirven para cualquier risotto. El método se queda; los ingredientes cambian. Aquí: la arquitectura se queda, el caso cambia.
 
-**Clonar escenario <> moldear galletas con un cortador:**
-El cortador (blueprint) es el mismo. El ingrediente (masa = tu caso) cambia. Lo que sale tiene la forma del cortador pero el sabor de tu ingrediente. Duplicar un escenario preserva la forma; los datos son tu sabor.
+**Diagramar ⟷ el plano antes de la obra:**
+Nadie construye una casa sin plano. Una hoja con cajas y flechas (trigger, módulos, output) ahorra horas de retoque en Make.
 
 ---
 
-## 📚 Contexto Histórico / Contexto Actual
+## 📚 Contexto para Compartir
 
-### El mito del "sistema universal" vs la realidad de la personalización
+### Por qué adaptar > usar plantillas universales
 
-En 2020-2022, muchas herramientas no-code prometían "plantillas universales que sirven para cualquier negocio". La realidad mostró que esos sistemas terminaban usándose por 1-2 meses y se abandonaban. Los que perduran son los **adaptados al caso específico**. Hoy la mejor práctica es: aprender el patrón → adaptarlo. Exactamente lo que hace esta clase.
+Las "plantillas universales" suelen abandonarse en 1-2 meses; los sistemas que perduran son los **adaptados al caso específico**, porque el dueño los entiende y los mantiene. Por eso el curso enseña el método sobre un caso (facturas) y hoy cada quien lo lleva al suyo.
 
-> **Para contar en clase:** "Las plantillas 'universales' fallan porque cada trabajo tiene matices. Un sistema adaptado a TU caso sobrevive porque vos lo entendés y lo podés mantener."
+> **Para contar en clase:** "Un sistema que entiendes y mantienes vale más que uno perfecto que no tocaste."
 
-**Fuentes:** [Make: Blueprints](https://www.make.com/en/help/scenarios/exporting-importing-a-blueprint){:target="_blank"}
+### Diagramar primero ahorra tiempo
+
+El error más común es saltar directo a Make. 10 minutos de diagrama en papel evitan una hora de módulos mal conectados.
 
 ---
 
 ## 🎯 Momentos Clave de la Clase
 
-### Pregunta Detonadora (Quiz Pre-Lab)
+### Pregunta Detonadora (Apertura)
 
-**Pregunta:** "Si tuvieras que escribir el SystemPrompt de TU caso en este momento, ¿qué palabra clave incluirías que NO está en el de Roberto?"
+**Pregunta:** "¿Qué proceso de tu trabajo automatizarías HOY si pudieras, y quién recibiría el resultado?"
 
-**Respuesta esperada:** varía por estudiante — tu industria, tu métrica clave, tu vocabulario.
+**Respuesta esperada:** varía por estudiante — ese es su proyecto integrador.
 
 **Script post-respuestas:**
 ```
-Facilitador: "Exacto — esas palabras son el 'cerebro' que le vamos a cambiar al sistema hoy.
-La arquitectura se queda igual, pero todo lo que diga 'ventas', 'vendedor', 'monto'
-va a pasar a decir algo que tenga sentido en TU trabajo."
+Facilitador: "Esa idea es tu proyecto. Hoy la convertimos en flujo.
+Antes de tocar Make, la vamos a diagramar."
 ```
 
 ### Demo Principal
 
-**Qué mostrar:** Export Blueprint + Import Blueprint de un escenario, y cómo reconectar los módulos al Sheet nuevo.
+**Qué mostrar:** diagramar un flujo en una hoja y luego armar la v1 partiendo de un escenario duplicado (Export/Import Blueprint).
 
 **Script sugerido:**
 ```
-Facilitador: "Voy a duplicar mi Escenario 1 en 30 segundos."
-[Menú (...) → Export Blueprint → download]
-[+ Create scenario → Import Blueprint → upload]
-Facilitador: "Tengo el mismo escenario. PERO apunta al Sheet viejo."
-[Click en Search Rows → elegir Sheet v2]
-[Click en Add a row → elegir Sheet v2 → pestaña CampanasSemanaActual]
-Facilitador: "Ahora es el cerebro de MI caso. Esto es lo que van a hacer hoy."
+Facilitador: "Primero el plano: trigger acá, IA en el medio, output allá."
+[Dibuja cajas y flechas]
+Facilitador: "Ahora duplico mi escenario de facturas y lo reapunto a este caso."
+[Export/Import Blueprint → reconecta módulos]
 ```
 
-**Plan B:** tener un video pregrabado de 2 min del proceso Export/Import.
+**Plan B:** ten un video corto del proceso Export/Import y un diagrama de ejemplo.
 
-### Transición al Lab
+### Transición al Mini-proyecto
 
-**Momento crítico:** algunos estudiantes no tienen datos reales y se paralizan.
+**Momento crítico:** algunos no tienen datos reales y se paralizan.
 
 **Script sugerido:**
 ```
-Facilitador: "Si no tienen datos reales de su trabajo en este momento, inventen simulados
-REALISTAS. Nombres de clientes reales pueden ser reemplazados por 'Cliente A', 'Cliente B',
-pero las métricas y fechas deben ser plausibles. El objetivo es VALIDAR el sistema,
-no tener datos perfectos."
+Facilitador: "Si no tienen datos reales a mano, inventen simulados realistas.
+El objetivo es VER el flujo funcionar, no tener datos perfectos."
 ```
 
 ---
 
 ## 🎭 Dinámicas de Clase
 
-### Dinámica 1: "Tu prompt en voz alta"
+### Dinámica 1: "Tu flujo en 3 frases"
 
-Contexto: durante la Actividad 2, cuando algún estudiante está atascado con el SystemPrompt.
-
-Pedís que 2-3 estudiantes lean sus SystemPrompts adaptados:
-
-```
-Facilitador: "Leé los 3 primeros bloques de tu prompt: Persona, Contexto, Reglas."
-[Estudiante lee]
-Facilitador: "¿Qué del caso Roberto sigue ahí sin adaptar?"
-(Típicamente: una referencia a "ventas" o "vendedores" que quedó olvidada)
-```
+Al inicio, cada quien escribe en el chat: problema / solución / resultado de su caso. Detecta de inmediato quién tiene el caso claro y quién necesita ayuda.
 
 ### Dinámica 2: "El 1 a 1 compartido"
 
-Contexto: cuando resolvés un problema de un estudiante en vivo.
-
-Pedís permiso al estudiante para proyectar su pantalla y resolver juntos:
-
-```
-Facilitador: "María, ¿puedo proyectar tu pantalla? Creo que otros tienen el mismo problema."
-[Proyecta]
-Facilitador: "Miren — el Search Rows apunta al Sheet modelo, no al v2.
-Esa es la reconexión que mencionamos en la demo. Quien tenga el mismo síntoma, esta es la fix."
-```
+Cuando resuelves el problema de alguien, pide proyectar su pantalla: "Creo que otros tienen lo mismo." Convierte un soporte individual en aprendizaje grupal.
 
 ---
 
 ## 💡 Ejemplos Listos para Usar
 
-### Ejemplo 1: Troubleshooting rápido de "Replace Text no reemplaza"
-
-**Cuándo usarlo:** problema frecuente en Actividad 2/3.
+### Diagrama mínimo (para mostrar)
 
 ```
-1. Abrí la plantilla Slides v2 en otra pestaña
-2. Buscá el marcador exacto (Ctrl+F "{{ventas_total}}")
-3. Si cambiaste a "{{alcance_total}}" en Slides pero Make todavía dice "{{ventas_total}}",
-   reemplazá en el Replace Text del Make
-4. Regla: el texto debe ser IDÉNTICO en ambos lados, letra por letra
+[Trigger: correo/archivo nuevo]
+        ↓
+[Gemini extrae datos → JSON]
+        ↓
+[Parse JSON → Sheet]
+        ↓
+[Plantilla → documento → destinatario]
 ```
 
-### Ejemplo 2: Diagnóstico "mi Sheet v2 no recibe filas"
-
-**Cuándo usarlo:** Actividad 3, al probar correos reales.
+### Diagnóstico rápido "no recibo datos"
 
 ```
-Checklist:
-□ ¿El Escenario 1 v2 está ACTIVO (toggle On)?
-□ ¿El filtro de asunto captura tu correo? (enviá uno con exacto el asunto del filtro)
-□ ¿El módulo Add a row apunta al Sheet v2 y a la pestaña correcta?
-□ ¿Las columnas del mapping coinciden con las de la pestaña v2?
-
-Si falla: Run History del escenario muestra qué módulo falló y por qué.
+□ ¿El escenario está activo (toggle On)?
+□ ¿El trigger captura tu entrada? (probá con un caso real)
+□ ¿Los módulos apuntan a TU Sheet/plantilla, no al de facturas?
+□ El History muestra qué módulo falló y por qué.
 ```
 
 ---
@@ -147,26 +120,24 @@ Si falla: Run History del escenario muestra qué módulo falló y por qué.
 
 | Señal | Qué está pasando | Qué hacer |
 |-------|------------------|-----------|
-| "Duplicación fallida en Make" | Blueprint con referencias a recursos privados | Export manual con "Include connections" desmarcado |
-| "Gemini sigue dando insights de Roberto" | SystemPrompt no actualizado en el HTTP v2 | Abrir módulo HTTP → editar el body JSON del prompt |
-| "No tengo logo/paleta" | Estudiante no preparó elementos de marca | Usar texto simple con la tipografía del Sheet; Canva tiene paletas gratuitas rápidas |
-| "Datos simulados no me convencen" | Estudiante quiere datos reales pero no tiene | Priorizar: ver el sistema funcionar > perfección; usará datos reales en su trabajo después |
-| "Escenario v2 tiene el mismo nombre que el modelo" | Confusión al activar | Renombrar con "v2" o el nombre de su caso |
-| "Rangos nombrados no funcionan" | Renombró la pestaña pero el rango apunta al nombre viejo | Datos → Rangos con nombre → editar o recrear |
+| "Salté a Make sin diagramar" | Se pierde en módulos | Pedir que dibuje el flujo en papel primero |
+| "Duplicó pero no adaptó" | Mismo contenido de facturas | Revisar que el prompt y los campos sean de SU caso |
+| "No tengo datos reales" | Parálisis de perfeccionismo | Usar simulados realistas; lo importante es validar |
+| "No recibo datos" | Trigger o mapeo mal | Revisar toggle, filtro y a qué Sheet apunta |
 
 ---
 
 ## ✅ Señales de Comprensión
 
 ### El estudiante ENTIENDE cuando:
-- Su Sheet v2 tiene pestañas y columnas de SU caso (no Roberto disfrazado)
-- Su SystemPrompt menciona su industria específica, no "ventas"
-- Puede explicar por qué la arquitectura se queda y el contenido cambia
+- Define su caso como problema → solución → arquitectura
+- Diagrama antes de construir
+- Su flujo apunta a SU caso, no a facturas disfrazado
 
 ### El estudiante NECESITA AYUDA cuando:
-- Duplicó archivos pero no los adaptó (mismo contenido de Roberto)
-- No sabe qué datos reales usar (parálisis de perfeccionismo)
-- Su PDF v2 sale igual al PDF del caso Roberto
+- Salta a Make sin plan
+- Duplicó el flujo de facturas sin adaptarlo
+- No sabe qué datos usar (parálisis)
 
 ---
 
@@ -174,96 +145,61 @@ Si falla: Run History del escenario muestra qué módulo falló y por qué.
 
 | Minuto | Checkpoint | Cómo validar | Si no cumple |
 |--------|------------|--------------|--------------|
-| 10 | Apertura | Plan de personalización revisado en voz alta | Ajustar puntos vagos antes de arrancar |
-| 15 | Demo Export/Import terminada | Quiz de COMPROBACIÓN correcto | Repetir demo si hay confusión |
-| 65 | Actividad 1 | Sheet v2 con pestañas y datos reales | 1 a 1 con rezagados 5 min |
-| 120 | Actividad 2 | Slides v2 con marca + 2 escenarios v2 apuntando a v2 | Checklist: Search Rows, Replace Text, Add a row |
-| 140 | Actividad 3 | PDF del reporte v2 con datos reales | Si falla, debug "Run this module only" |
-| 150 | Cierre | Sistema funcionando end-to-end para SU caso | — |
+| 10 | Apertura | Cada quien escribió problema/solución/resultado | Ayudar a definir el caso a los que dudan |
+| 30 | Diagrama listo | Tienen el flujo dibujado | Sentarse 2 min a dibujarlo juntos |
+| 55 | v1 corriendo | El flujo corre con datos reales | Priorizar que funcione punta a punta aunque básico |
+| 60 | Cierre | Cada quien sabe qué mostrará en Demo Day | — |
 
 ---
 
 ## 🧑‍🏫 Tips de Facilitación
 
-### Clase con acompañamiento 1 a 1:
-- Circular constantemente, no quedarse frente a la pantalla
-- Llevar un "score" mental: quién terminó Actividad 1, quién está atascado en Actividad 2
-- Priorizar 1:1 con quienes tienen casos muy distintos a Roberto
+### Sesión con acompañamiento 1 a 1:
+- Circula constantemente; no te quedes frente a tu pantalla.
+- Lleva un "score" mental de quién diagramó, quién ya tiene v1.
+- Prioriza 1:1 con casos muy distintos al de facturas.
 
-### Si el grupo está callado:
-- Típico en clase de construcción — no hay que forzar discusión
-- Señal de concentración, no de confusión
-
-### Si alguien domina la conversación:
-- Probablemente está avanzado — convertilo en mentor de pares
-- "¿Podrías ayudar a Juan 5 min? Él tiene un caso parecido al tuyo."
-
-### Si la mayoría termina antes:
-- Logro 🟡 (versión móvil) o 🔴 (indicador de salud).
-- Tiempo extra para pulir diseño visual.
-
-### Si la mayoría se atrasa:
-- Priorizar Actividad 1 (Sheet) y Actividad 3 (validación end-to-end).
-- Actividad 2 puede completarse post-clase (menos crítico para Demo Day).
-
-### Si hay preguntas fuera de alcance:
-> "Guardá esa — es perfecta para explorar en tu plan 30 días de Clase 8."
-
----
-
-## 🔀 Diferenciación
-
-### Para estudiantes avanzados:
-- Logros 🟡 y 🔴 rápido → mentor de pares.
-- Proponer que agreguen un segundo formulario de entrada (ej: WhatsApp Business, Google Forms).
-
-### Para estudiantes con dificultades:
-- Ofrecer Blueprint pre-hecho del escenario ajustado a su caso (si conocés la industria).
-- Sentarse 10-15 min con ellos en la Actividad 2 para reconfigurar escenarios juntos.
-- Alternativa: que usen el caso Roberto literal y lo presenten como "ejemplo del curso" en Demo Day (menos ideal pero funcional).
+- **Si el grupo está callado:** normal en sesión de construcción — es concentración.
+- **Si alguien va muy avanzado:** conviértelo en mentor de pares.
+- **Si la mayoría se atrasa:** prioriza que la v1 corra, aunque falten refinamientos.
+- **Preguntas fuera de alcance:** "Guárdala para tu plan de próximos pasos en Demo Day."
 
 ---
 
 ## ❓ Preguntas Frecuentes
 
-### P: ¿Tengo que adaptar TODOS los marcadores, o puedo dejar algunos iguales?
-**R:** Los crudos y calculados SÍ adaptar (vienen del Sheet, así que sus nombres deberían reflejar tus columnas). Los tipo IA pueden quedar iguales (`hallazgo_1`, `riesgo_1`) — el contenido se adapta vía SystemPrompt.
+### P: ¿Tengo que construir desde cero?
+**R:** No. Lo más rápido es duplicar tu escenario de facturas (Export/Import Blueprint) y adaptarlo a tu caso.
 
 ### P: ¿Qué pasa si mi reporte no es semanal?
-**R:** Cambiá el trigger del Escenario 2 a tu frecuencia real: diario, quincenal, mensual. Make soporta cualquier intervalo estándar.
+**R:** Ajusta el trigger a tu frecuencia real (diario, quincenal, mensual) o usa Watch si reaccionas a eventos.
 
-### P: ¿Puedo tener más de una plantilla de Slides?
-**R:** Sí, pero duplicá el Escenario 2 para cada una. Cada escenario apunta a una plantilla específica.
-
-### P: ¿Y si mi caso no encaja en ninguno del `scenarios.md`?
-**R:** Usá la sección "Plantilla para TU caso" al final. Los bloques son genéricos para adaptar.
+### P: ¿Y si mi caso no encaja en `scenarios.md`?
+**R:** Usa la sección "Plantilla para tu caso" del apéndice — los bloques son genéricos para adaptar.
 
 ---
 
 ## 🔗 Conexiones del Curriculum
 
-### Esta clase construye sobre:
+### Esta sesión construye sobre:
 
-| Clase | Concepto | Cómo se conecta |
-|-------|----------|-----------------|
-| Todo el M1 | Piezas modelo | Hoy se copian y adaptan |
-| 05 | Gemini API | Los prompts se re-personalizan |
-| 06 | Prompts optimizados + personalización | El roadmap se ejecuta |
+| Sesión | Concepto | Cómo se conecta |
+|--------|----------|-----------------|
+| 2-6 | El método completo | Hoy se aplica a un caso propio |
 
-### Conexión con la Próxima Clase
+### Conexión con la Próxima Sesión
 
 Al cerrar, planta la semilla:
 
-> "La próxima clase es Demo Day. 5 minutos por estudiante con demo en vivo de TU sistema funcionando. Calculás tu ROI en horas ahorradas × tarifa y armás un plan 30 días con 3 próximos agentes. Lleguen con su sistema pulido y 3 correos de prueba reales para disparar en vivo."
+> "La próxima sesión es Demo Day: 5 minutos por persona con tu sistema funcionando en vivo. Llega con tu flujo pulido y datos de prueba listos para dispararlo frente al grupo."
 
-**Pre-work / Tarea implícita:** practicar la demo frente al espejo/cámara. Cronometrá los 5 minutos. Los nervios se reducen 70% con 2 ensayos.
+**Pre-work / Tarea implícita:** practicar la demo y cronometrar los 5 minutos. Dos ensayos reducen los nervios mucho.
 
 ---
 
 ## 🪞 Reflexión Post-Clase
 
 ### Preguntas para el facilitador:
-- ¿Cuántos estudiantes terminaron con sistema propio funcionando end-to-end?
-- ¿Quiénes tuvieron casos muy distintos al modelo? (seguimiento antes de Demo Day)
-- ¿Hay estudiantes sin datos reales? (sugerir alternativas creativas antes de C8)
-- ¿Quiénes necesitan mentoría extra antes de presentar? (oferta 1:1 opcional)
+- ¿Cuántos terminaron con una v1 propia corriendo?
+- ¿Quiénes tienen casos muy distintos y necesitan apoyo antes de Demo Day?
+- ¿Quiénes siguen sin datos reales? (sugerir alternativas antes de la Sesión 8)
