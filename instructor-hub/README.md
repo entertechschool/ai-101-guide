@@ -37,7 +37,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 | Documento | Enlace |
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 00](https://entertechschool.github.io/ai-101-guide/curriculum/class-00/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 00](https://entertechschool.github.io/public/slides/?class=ai-101_00){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 00](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_00){:target="_blank"} |
 
 ---
 
@@ -51,7 +51,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 01](https://entertechschool.github.io/public/slides/?class=ai-101_01){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 01](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_01){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 01](https://entertechschool.github.io/ai-101-guide/curriculum/class-01/infographic/){:target="_blank"} |
 
@@ -61,7 +61,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 02](https://entertechschool.github.io/public/slides/?class=ai-101_02){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 02](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_02){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 02](https://entertechschool.github.io/ai-101-guide/curriculum/class-02/infographic/){:target="_blank"} |
 
@@ -71,7 +71,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 03](https://entertechschool.github.io/public/slides/?class=ai-101_03){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 03](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_03){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 03](https://entertechschool.github.io/ai-101-guide/curriculum/class-03/infographic/){:target="_blank"} |
 
@@ -81,7 +81,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 04](https://entertechschool.github.io/public/slides/?class=ai-101_04){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 04](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_04){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/infographic/){:target="_blank"} |
 | 📝 Test Diagnóstico (S1-4) | [Ver Test 04](https://entertechschool.github.io/ai-101-guide/curriculum/class-04/test/){:target="_blank"} |
@@ -98,7 +98,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 05](https://entertechschool.github.io/public/slides/?class=ai-101_05){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 05](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_05){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 05](https://entertechschool.github.io/ai-101-guide/curriculum/class-05/infographic/){:target="_blank"} |
 
@@ -108,7 +108,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 06](https://entertechschool.github.io/public/slides/?class=ai-101_06){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 06](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_06){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 06](https://entertechschool.github.io/ai-101-guide/curriculum/class-06/infographic/){:target="_blank"} |
 
@@ -118,7 +118,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 07](https://entertechschool.github.io/public/slides/?class=ai-101_07){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 07](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_07){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 07](https://entertechschool.github.io/ai-101-guide/curriculum/class-07/infographic/){:target="_blank"} |
 
@@ -128,7 +128,7 @@ Sesión de bienvenida: caso de facturas, estructura del curso (8×60min), evalua
 |-----------|--------|
 | 📄 Resumen de la clase | [Ver Clase 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/){:target="_blank"} |
 | 🧪 Laboratorio | [Ver Lab 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/lab/){:target="_blank"} |
-| 🖥️ Presentación | [Ver Slides 08](https://entertechschool.github.io/public/slides/?class=ai-101_08){:target="_blank"} |
+| 🖥️ Presentación | [Ver Slides 08](https://entertechschool.github.io/public-sylabus/slides/?class=ai-101_08){:target="_blank"} |
 | 🎓 Guía del Facilitador | [Ver Facilitador 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/facilitator/){:target="_blank"} |
 | 📁 Infografía | [Ver Infografía 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/infographic/){:target="_blank"} |
 | 📝 Test Diagnóstico (S5-8) | [Ver Test 08](https://entertechschool.github.io/ai-101-guide/curriculum/class-08/test/){:target="_blank"} |
