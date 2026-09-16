@@ -59,7 +59,7 @@ Antes de llegar a clase, piensa en:
 
 ### Lectura sugerida
 
-- [¿Qué es Make?](https://www.make.com/en/how-it-works){:target="_blank"} — Introducción visual a la plataforma.
+- [¿Qué es Make?](https://www.make.com/en/product){:target="_blank"} — Introducción visual a la plataforma.
 - [Cómo funciona OAuth (explicado simple)](https://support.google.com/cloud/answer/6158849){:target="_blank"} — Documentación de Google sobre credenciales OAuth.
 
 ---
